@@ -1,0 +1,75 @@
+.collectionImageContainer {
+    width: 170px;
+	height: 120px;
+	float: left;
+	margin-right: 15px;
+}
+.collectionImage {
+	width:160px;
+    height:120px;
+    border-left:10px solid #1076bb;
+    float:left;
+}
+.collectionreplay {
+	width: 170px;
+	height: 36px;
+	box-sizing: border-box;
+	text-indent: -171px;
+	position: relative;
+	background: url('images/replay.png') center 30px no-repeat, rgba(0, 0, 0, .6);
+	transition: background-color 0.5s ease;
+	color: white;
+	text-align: center;
+	padding-top: 85px;
+	cursor: pointer;
+}
+.collectionreplayText {
+	margin-top:85px;
+}
+.collectionreplay:hover{
+	background: url('images/replay.png') center 30px no-repeat, rgba(0, 0, 0, .8);
+}
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+.infoSection {
+    margin-top:30px;
+}
+.endTitle{
+	font-weight: normal;
+	font-size: 20px;
+	font-family: Arial, sans-serif !important;
+	color:#515151;
+}
+
+ .resources {
+    width:580px;
+    height:60px;
+    overflow:hidden;
+    white-space:nowrap;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.collectionbuttons hr {
+margin: 10px 0px;
+border: 0px;
+height: 1px;
+background-color: #DDD;
+}
+.collectionbuttons button{
+	margin-right:5px;
+}
+.goal{
+	color:#515151;
+	font-size:12px;
+	font-family: Arial, sans-serif !important;
+}
+.infoSection h3{
+	margin-bottom:12px;
+	color:#515151;
+}

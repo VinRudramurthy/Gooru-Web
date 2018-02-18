@@ -1,0 +1,179 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:hpanel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:s="urn:import:org.ednovo.gooru.client.mvp.search" xmlns:dnd="urn:import:org.ednovo.gooru.client.mvp.dnd"
+	xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel>
+		<g:HTMLPanel ui:field="fixedFilterSearch" styleName="fixedPosition">
+			<div class="subNavigation">
+				<g:HTMLPanel styleName="container">
+					<g:HTMLPanel styleName="no-gutter">
+						<g:HTMLPanel styleName="col-md-1 col-sm-5 no-gutter-col">
+							<g:HTMLPanel styleName="seachLeftNavigation resourceDropDown">
+							    <div class="btn-group ScienceBtn">
+									<g:Button ui:field="btnSearchType" styleName="btn btn-default dropdown-toggle"></g:Button>
+								</div>
+								<g:HTMLPanel ui:field="ulDropdown" styleName="dropdown">
+									<hpanel:HTMLEventPanel ui:field="collectionPanel" styleName="dropdownItem"></hpanel:HTMLEventPanel>
+									<hpanel:HTMLEventPanel ui:field="resourcePanel" styleName="dropdownItem"></hpanel:HTMLEventPanel>
+								</g:HTMLPanel>
+
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<!-- collection search filters -->
+							<g:HTMLPanel  ui:field="collectionSearchPanel" visible="false">
+								<div class="">
+									<div class="no-gutter">
+										<div class="col-md-9 col-sm-10 collectionDetails">
+											<div class="seachLeftNavigation">
+												<panel:UlPanel>
+													<panel:LiPanel styleName="active" ui:field="collectionsBtn">
+														<g:Anchor styleName="collectionsIcon"  text="{i18n.GL0175}" title="{i18n.GL0175}"/>
+													</panel:LiPanel>
+													<panel:LiPanel ui:field="assessmentsBtn">
+														<g:Anchor styleName="assessmentIcon"  text="{i18n.GL1325}" title="{i18n.GL1325}"/>
+													</panel:LiPanel>
+												</panel:UlPanel>
+												<div class="authorDetails">
+													<div class="input-group">
+														<g:InlineLabel text="{i18n.GL0573}" title="{i18n.GL0573}"></g:InlineLabel>
+														<g:TextBox  styleName="form-control" ui:field="authorTxtBox" />
+														<g:Image url="images/mos/questionmark.png" styleName="searchQuestionMark" ui:field="authorQuestionTooltip"/>
+													</div>
+												</div>
+												<div class="authorDetails" style="display:none;">
+													<div class="input-group">
+														<g:InlineLabel text="Contributor" title="{i18n.GL0573}"></g:InlineLabel>
+														<g:TextBox  styleName="form-control" ui:field="contCollectionTxtBox" />
+														<g:Image url="images/mos/questionmark.png" styleName="searchQuestionMark"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</g:HTMLPanel>
+							<!-- collection search filters end -->
+							<!-- Resource search filters Start -->
+							<g:HTMLPanel styleName="resourceDetails" ui:field="resourceSearchPanel" visible="false">
+											<div class="seachLeftNavigation">
+						  						<panel:UlPanel styleName="resourceTypes" ui:field="ulCategoryPanel"/>
+						   						 <div class="ratingandGrid">
+						   						    <g:HTMLPanel styleName="oerStyle" >
+						   						        <g:Label ui:field="oerLbl">OER</g:Label>
+						   						    </g:HTMLPanel>
+													<div class="ratingDetails">
+														<panel:UlPanel styleName="rating playerrating" ui:field="ulRatingsPanel"/>
+						                                <g:Label ui:field="ratingsLbl" visible="false">+ Stars</g:Label>
+													</div>
+													<g:HTMLPanel styleName="gridToggle">
+														<!-- Split button -->
+														<g:HTMLPanel styleName="btn-group">
+														    <hpanel:HTMLEventPanel ui:field="resourceFiltersDropDwn">
+																<button type="button" class="btn btn-primary">
+																	<span class="glyphicon gliphIconImage"
+																		aria-hidden="true"></span>
+																</button>
+																<button type="button" class="btn btn-primary dropdown-toggle"
+																	data-toggle="dropdown" aria-expanded="false">
+																	<span class="caret"></span>
+																	<span class="sr-only">Toggle Dropdown</span>
+																</button>
+															</hpanel:HTMLEventPanel>
+															 <hpanel:HTMLEventPanel styleName="dropdown-menu" ui:field="moreFilterPanel">
+															   <div class="resourceDropdown">
+															 	 <div class="paddingBlock">
+																	<panel:PPanel ui:field="panelNotMobileFriendly"/>
+															 	 </div>
+															 	  <div class="paddingBlock">
+																	<panel:PPanel ui:field="reviewPanelUc"/>
+															 	 </div>
+															    <div class="paddingBlock">
+																	<p>Publisher <g:Image url="images/mos/questionmark.png" ui:field="publisherTooltip"/></p>
+														 			<p><panel:AppSuggestBox styleName="form-control" ui:field="publisherSgstBox"/></p>
+																	<g:Label ui:field="sourcesNotFoundLbl"/>
+																	<g:FlowPanel ui:field="sourceContainerFloPanel" />
+																 </div>
+															    <div class="paddingBlock">
+																	<p>Aggregator <g:Image url="images/mos/questionmark.png" ui:field="aggregatorTooltip"/></p>
+																	<p><panel:AppSuggestBox styleName="form-control" ui:field="aggregatorSgstBox"/></p>
+																	<g:Label ui:field="aggregatorNotFoundLbl"/>
+															   </div>
+															    <div class="paddingBlock no-gutter">
+																	<p>Access Mode</p>
+																	<panel:PPanel styleName="col-md-6 accessStyle" ui:field="accessModePanel" />
+																</div>
+															</div>
+												</hpanel:HTMLEventPanel>
+											</g:HTMLPanel>
+										</g:HTMLPanel>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</g:HTMLPanel>
+			<!-- Resource search filters End -->
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</div>
+		</g:HTMLPanel>
+		<!-- Filters Section Starts from here -->
+		<div class="subFilters">
+			<g:HTMLPanel styleName="container searchFiltersContainer">
+				<g:HTMLPanel styleName="seachRightNavigation">
+					<div class="panelFilterOptions">
+					    <!-- <g:InlineLabel styleName="searchResultsBox" ui:field="searchResults"/> -->
+						<g:HTMLPanel styleName="btn-group grade" ui:field="gradesDropDown">
+							<g:Button styleName="btn btn-primary" text="{i18n.GL0325}" title="{i18n.GL0325}"/>
+							<hpanel:HTMLEventPanel styleName="btn btn-primary dropdown-toggle" >
+								<g:InlineLabel styleName="caret"></g:InlineLabel>
+								<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+							</hpanel:HTMLEventPanel>
+							<g:HTMLPanel styleName="dropdown-menu" ui:field="gradesPanel"></g:HTMLPanel>
+						</g:HTMLPanel>
+
+						<g:HTMLPanel styleName="btn-group" ui:field="subjectDropDown">
+							<g:Button styleName="btn btn-primary" text="{i18n.GL3208}" title="{i18n.GL3208}"/>
+							<g:HTMLPanel styleName="btn btn-primary dropdown-toggle" >
+								<g:InlineLabel styleName="caret"></g:InlineLabel>
+								<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+							</g:HTMLPanel>
+							<panel:UlPanel ui:field="ulSubjectPanel"/>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="btn-group standards" ui:field="btnStandardsBrowse">
+							<g:Button styleName="btn btn-primary"  text="{i18n.GL3209}" title="{i18n.GL3209}"/>
+						<g:HTMLPanel styleName="btn btn-primary dropdown-toggle" >
+								<g:InlineLabel styleName="caret"></g:InlineLabel>
+								<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+							</g:HTMLPanel>
+							<panel:UlPanel styleName="dropdown-menu" ui:field="standardsDropListValues"/>
+						</g:HTMLPanel>
+					</div>
+					<g:FlowPanel ui:field="pnlAddFilters" styleName="searchFilters"></g:FlowPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</div>
+		<!-- Filters Section Ends here -->
+		<div class="container">
+			<div class="SmallWidthContainer">
+				<div>
+					<g:InlineLabel styleName="searchResultsBox" ui:field="searchResults"/>
+					<!-- <g:FlowPanel ui:field="pnlAddFilters" styleName="searchFilters"></g:FlowPanel>-->
+				</div>
+				<g:HTMLPanel styleName="borderBox" ui:field="panelBorderBox">
+					<g:Label ui:field="lblLoadingTextPrevious" styleName="loadingText" text="{i18n.GL3206}" title="{i18n.GL3206}"/>
+					<g:HTMLPanel ui:field="hideScrollDiv" />
+					<g:FlowPanel ui:field="searchResultPanel" styleName="less-gutter libraryMainContainerBlock" />
+					<div class="clearfix"></div>
+					<g:Label ui:field="lblLoadingText" styleName="loadingText" text="{i18n.GL3206}" title="{i18n.GL3206}"/>
+					<div class="clearfix"></div>
+				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="pnlBackToTop">
+					<a><span></span></a>
+				</g:HTMLPanel>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

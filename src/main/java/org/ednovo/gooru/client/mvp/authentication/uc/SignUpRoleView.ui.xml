@@ -15,7 +15,6 @@
 				<g:HTMLPanel styleName="{res.css.h1}" ui:field="oneMoreStepText"></g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.subheader}" ui:field="fillText"></g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.userInfoContainer}">
-					<!-- <g:HTMLPanel styleName="{res.css.ssoEmail}">Your email: user@goorulearning.org</g:HTMLPanel> -->
 					<g:HTMLPanel styleName="{res.css.role}">
 						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.teacherRole}">
 							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
@@ -47,4 +46,4 @@
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 
-</ui:UiBinder> 
+</ui:UiBinder>

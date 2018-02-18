@@ -1,0 +1,53 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc"
+    xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src=""/>
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="pageContainerBG">
+	  	 	<g:HTMLPanel styleName="gettingStartedStep2">
+				<g:HTMLPanel styleName="mainHeader">
+				   <span:H3Panel ui:field="headerText"></span:H3Panel>
+				   <span:PPanel ui:field="headerMsg"></span:PPanel>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="stepsBlockStep2">
+					<g:HTMLPanel styleName="stepsBlockInner">
+					   <g:HTMLPanel styleName="numaricCircle">1</g:HTMLPanel>
+					   <g:HTMLPanel styleName="StepsContent">
+					       <span:H3Panel ui:field="txt1Msg"></span:H3Panel>
+					   </g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="stepsBlockInner">
+					   <g:Label styleName="numaricCircle" ui:field="countTwo">2</g:Label>
+					   <g:HTMLPanel styleName="StepsContent" ui:field="stepsContentTwo">
+					      <span:H3Panel ui:field="txt2Msg"></span:H3Panel>
+					   </g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="contenFolderbuttonGroup" ui:field="coursePanel">
+					   <img src="../images/Classpage/folderContentGreen.png"/>
+					   <g:Button styleName="primary" ui:field="btnCourse"></g:Button>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="stepsBlockInner">
+						<g:Label styleName="numaricCircle" ui:field="countThree">3</g:Label>
+					   	<g:HTMLPanel styleName="StepsContent" ui:field="stepsContentThree">
+					      <span:H3Panel ui:field="txt3Msg"></span:H3Panel>
+					   	</g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="contenFolderbuttonGroup" ui:field="studentPanel">
+					   <g:Button styleName="primary alinMiddle" ui:field="btnInviteStudents"></g:Button>
+					   <g:HTMLPanel styleName="indicationText">
+					      <span:PPanel ui:field="joinClassErrorMsg"></span:PPanel>
+					   </g:HTMLPanel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				<hr/>
+				<g:HTMLPanel styleName="gettingStartedFooter">
+				   <g:HTMLPanel>
+				       <g:InlineLabel text="{i18n.GL3462_10}" title="{i18n.GL3462_10}"></g:InlineLabel>
+				       <g:Anchor text="{i18n.GL1752}" title="{i18n.GL1752}" ui:field="myContentAnr"></g:Anchor>
+				       <g:InlineLabel text="{i18n.GL3462_11}" title="{i18n.GL3462_11}"></g:InlineLabel>
+				   </g:HTMLPanel>
+				   <a href="http://support.gooru.org/hc/en-us/sections/201152845" target="_blank" text="{i18n.GL3462_12}" title="{i18n.GL3462_12}">More information in the Support Center</a>
+				</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,272 +1,280 @@
-.registrationPopupContainer {
-	width: 427px;
-	height: 330px;
-	background-color: #fff;
-	margin: 0 auto;
-	padding: 3px 5px 0px 3px;
-}
-.registrationPopupInnerdiv {
-	background-color: rgb(255,255,255);
-	width: 427px;
-	height: 325px;
-	margin: 0 auto;
-	border-color: rgb(221,221,221);
-	border-width: 1px;
-	-moz-border-radius: 1px;
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-	border-style: solid;
-}
-.registrationPopupHeaderBg {
-	width: 100%;
-	height: 39px;
-	background-color: rgb(81,81,81);
-}
-.registrationPopupHeaderTitle {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	line-height: 120%;
-	color: rgb(255,255,255);
-	padding: 10px 5px 5px 15px;
-}
-.registrationPopupCloseBtnContainer {
-	float: right;
-	padding: 10px 10px 0px 0px;
-}
-.registrationPopupBtnSprite {
-	background: url(images/sprites-login.png) no-repeat;
-}
-.registrationPopupCloseBtn {
-	background-position: -52px -116px;
-	width: 18px;
-	height: 19px;
-}
-.registrationPopupDesc {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(81,81,81);
-	text-align: left;
-	padding: 20px 0px 15px 15px;
-}
-.registrationPopupInputContainer {
-	float: left;
-	padding: 0px 0px 2px 15px;
-}
-.registrationPopupInputText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(81,81,81);
-	text-align: left;
-	padding: 10px 0px 0px 0px;
-	width: 70px;
-}
-.registrationPopupInputDropDownText
-{
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: #999999;
-	/* color: rgb(81,81,81); */
-	text-align: left;
-	width: 70px;
-}
-.registrationPopupRoleText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(81,81,81);
-	text-align: left;
-	margin: 10px 0px 0px 0px;
-	width: 70px;
-}
-.registrationPopupInputOuterDiv {
-	float: left;
-	width: 300px;
-	position: relative;
-	margin-bottom: 10px;
-}
-.registrationPopupInputControl {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	position: relative;
-	float: left;
-	background-color: rgb(255,255,255);
-	width: 300px;
-	height: 28px;
-	border-color: rgb(221,221,221);
-	border-width: 1px;
-	-moz-border-radius: 1px;
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-	border-style: solid;
-	padding: 0px 0px 0px 8px;
-	outline: 0;
+
+.popup {
+	background-color:white;
+	margin:50px auto;
+	padding:3px;
+	width: 500px;
 }
 
-.registrationPopupDropdownControl {
-	float: left;
-	position: relative;
-	width: 310px;
-	height: 30px;
-	border-color: rgb(221,221,221);
-	border-width: 1px;
-	-moz-border-radius: 1px;
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-	cursor: pointer;
+.popupInner {
+	border: 1px solid #DDD;
+	position:relative;	
+	/* height:500px; */
+}
+
+.popupHeader {
+	padding:10px 15px;
+	color:white;
+	background-color:#4e9746;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7AB075), to(#4e9746));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #7AB075, #4e9746);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #7AB075, #4e9746);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #7AB075, #4e9746);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #7AB075, #4e9746);
 	
 }
-.registrationPopupDropdownDesc {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(81,81,81);
-	padding: 8px 0px 0px 5px;
-}
-.registrationPopupInputBorderNone {
-	border: none;
-}
-.registrationPopupButtonCotnainer {
-	float: left;
-	padding: 8px 0px 0px 180px;
+
+.popup .closeButton {
+	width:17px;
+	height:17px;
+	background: url(./images/signup/close-button.png) no-repeat;
+	position:absolute;
+	top:10px;
+	right:10px;
 }
 
-.registrationLegalMessage {
-	float: left;
-	padding: 20px 0 2px 15px;
-	width: 400px;
+.popup .closeButton:hover {
+	opacity:.6;
+	cursor:pointer;
 }
 
-.registrationPopupButton {
-	background-image: -moz-linear-gradient(53% -12% -90deg, rgb(221,221,221) 0%, rgb(153,153,153) 99%);
-	background-image: -webkit-gradient(linear, 53% -12%, 53% 103%, color-stop(0, rgb(221,221,221)), color-stop(0.99, rgb(153,153,153)));
-	background-image: -o-linear-gradient(-90deg, rgb(221,221,221) 0%, rgb(153,153,153) 99%);
-	background-image: -ms-linear-gradient(-90deg, rgb(221,221,221) 0%, rgb(153,153,153) 99%);
-	width: 55px;
-	height: 32px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ff999999,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endColorstr=#ff999999, GradientType=0);
+.popupContent {
+	padding:40px 75px;
 }
-.registrationPopupBlueButton {
-	background-image: -webkit-gradient(linear, 51% 3%, 51% 100%, color-stop(0, rgb(76,152,204)), color-stop(0.99, rgb(16,118,187)));
-	background-image: -webkit-linear-gradient(-90deg, rgb(76,152,204) 0%, rgb(16,118,187) 99%);
-	background-image: -o-linear-gradient(-90deg, rgb(76,152,204) 0%, rgb(16,118,187) 99%);
-	background-image: -ms-linear-gradient(-90deg, rgb(76,152,204) 0%, rgb(16,118,187) 99%);
-	width: 55px;
-	height: 32px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	/* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4c98cc,endColorstr=#ff1076bb,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4c98cc, endColorstr=#ff1076bb, GradientType=0); */
-background-color:#1076BB;
-}
-.registrationPopupButtonText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	font-weight: bold;
-	color: rgb(255,255,255);
-	text-align: center;
-	padding: 10px 0px 0px 0px;
-}
-.registrationPopupDropdown {
-	float: left;
-	width: 300px;
-	border-radius: 1px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgb(221,221,221);
+
+
+.tooltipContainer, .usernameToolTipContainer {
+	width: 150px;
 	position: absolute;
-	top: 27px;
-	left: -1px;
+	z-index:9999;
+	margin-top: 0px;
+	margin-left:-41px;
 }
-.registrationPopupDropdownList {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #515151;
-	line-height: 120%;
-	padding: 5px;
-	background: white;
-	margin: 0px;
+
+.usernameToolTipContainer{
+	width: 213px;
+	margin-top: -16px;
+	margin-left: 29px !important;
 }
-.registrationPopupDropdownList:hover {
-	background-color: #CFE3F1;
-	cursor: pointer;
-}
-.registrationPopupDownArrContainer {
-	position: absolute;
+.arrowBorder {
+ 	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent #DDD transparent;
+	position: relative;
 	top: 0px;
-	float: right;
-	right: 10px;
-	padding: 8px 0px 0px 0px
-}
-.registrationPopupDownArrSprite {
-	background: url(../images/sprites.png) no-repeat;
-}
-.registrationPopupDownArr {
-	background-position: -44px -154px;
-	width: 22px;
-	height: 11px;
-}
-.registrationPopupInputControl:hover {
-	/* cursor: pointer; */
+	margin:auto;
+	border-top: none;
 }
 
-.registrationPopupButton:hover {
-	cursor: pointer;
+.arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	margin: auto;
+	top: -9px;
+	border-top: none;
+	z-index: 100;
 }
-.registrationPopupCloseBtnContainer {
-	cursor: pointer;
-}
-.registrationPopupDownArrContainer {
-	cursor: pointer;
-}
-.registrationPopupBlueButton:hover {
-	cursor: pointer;
-	background-image: -moz-linear-gradient(51% 3% -90deg, rgb(16,118,187) 0%, rgb(16,118,187) 99%);
-	background-image: -webkit-gradient(linear, 51% 3%, 51% 100%, color-stop(0, rgb(16,118,187)), color-stop(0.99, rgb(16,118,187)));
-	background-image: -webkit-linear-gradient(-90deg, rgb(16,118,187) 0%, rgb(16,118,187) 99%);
-	background-image: -o-linear-gradient(-90deg, rgb(16,118,187) 0%, rgb(16,118,187) 99%);
-	background-image: -ms-linear-gradient(-90deg, rgb(16,118,187) 0%, rgb(16,118,187) 99%);
-	background-image: linear-gradient(-90deg, rgb(16,118,187) 0%, rgb(16,118,187) 99%);
-	width: 55px;
-	height: 32px;
+.tooltipContent {
+	text-align:left;
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 15px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	background-color:#1076BB;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff1076bb,endColorstr=#ff1076bb,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff1076bb, endColorstr=#ff1076bb, GradientType=0);
+	position: relative;
+	top: -10px;
+	width: 180px;
+	float:left;
 }
 
-.almostDoneFormInputBottomText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: rgb(250,176,58);
-	text-align: right;
-	margin:4px -10px 0px 0px;
-	float: right;
+.tooltipContentTitle {
+	font-weight: bold;
+	padding-bottom: 10px;
 }
-.almostDoneFormInputBottomRoleText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: rgb(250,176,58);
-	text-align: right;
-	margin:4px 0px 0px 0px;
-	float: right;
+
+.popup.imgBG {
+	background: white url("./images/login/registration-bg.png") no-repeat;
+	background-position: -50px 30px;
 }
-.anchorText {
-	text-decoration: none !important;
-	cursor: pointer;
+
+.h1 {
+	font-size:20px;
+	text-align:center;
+	margin:0px 0px 20px 0px;
+	color: #4e9746;
+}
+
+.subheader {
+	text-align:center;
+	margin:-10px 0px 15px 0px;
+}
+
+
+.userInfoContainer {
+	background-color:#f0f0f0;
+	border:1px solid #ddd;
+	margin-top: 20px;
+}
+
+.role {
+	margin:20px 0px;
+	text-align:center;
+}
+
+/* #submitRegistration {
+	display: block;
+	margin: 0px auto 15px auto;
+	width: 53px;
+} */
+
+.roleOption {
+	width:69px;
+	display:inline-block;
+	text-align:center;
+}
+
+.roleOptionImage {
+	width:100%;
+	height:45px;
+	margin: 10px 0px 5px 0px;
+}
+
+.roleOption input {
+	margin: 5px auto !important;
+	width: 12px;
+	display: block;
+}
+
+.teacherRole .roleOptionImage {
+	background: url("./images/signup/teacher.png") center bottom no-repeat;
+}
+
+.studentRole .roleOptionImage {
+	background: url("./images/signup/student.png") center bottom no-repeat;
+}
+
+.parentRole .roleOptionImage {
+	background: url("./images/signup/parent.png") center bottom no-repeat;
+}
+
+.otherRole .roleOptionImage {
+	background: url("./images/signup/other.png") center bottom no-repeat;
+}
+
+.roleOption:hover .tooltipContainer, .questionHoverContainer:hover .tooltipContainer {
+	display:block;
+}
+
+
+.ssoEmail {
+	background: #e3e3e3;
+	padding: 7px;
+	text-align: center;
+}
+
+
+.chooseUsername {
+	text-align:center;
+}
+
+
+.inputRow {
+	position:relative;
+}
+
+.inputRow:hover .horizontalTooltipContainer {
+	display:block;
+}
+
+.tooltipContainer {
+	display: none;
+}
+
+
+.textUserName{
+	width: 275px;
+	padding: 5px;
+	border: 1px solid #DDD;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+
+.submitRegistration {
+	display: block;
+	margin: 0px auto 15px auto;
+}
+
+.roleLabel {
+	opacity:.5;
+}
+
+
+.teacherRoleSelected .roleOptionImage{
+	background: url("images/signup/teacher_selected.png") center bottom no-repeat;
+}
+
+.studentRoleSelected .roleOptionImage{
+	background: url("images/signup/student_selected.png") center bottom no-repeat;
+}
+
+.parentRoleSelected .roleOptionImage{
+	background: url("images/signup/parent_selected.png") center bottom no-repeat;
+}
+
+.otherRoleSelected .roleOptionImage{
+	background: url("images/signup/other_selected.png") center bottom no-repeat;
+}
+
+
+.studentRoleDefault .roleOptionImage {
+	background: url("images/signup/student_selected.png") center bottom no-repeat;
+}
+
+.userRegErrorStyle {
+	margin-top: 3px;
+	text-align: right;
+	width: 89%;
+	margin-bottom: 8px;
+}
+
+.errorLbl{
+	float: right;
+	width: 62%;
+	margin-bottom: 10px;
+}
+.roleStep1{
+	font-weight: bold;
+margin-top: 8px;
+margin-left: 19px;
+position: absolute;
+}
+.unameStep2{
+	font-weight: bold;
+margin-top: 8px;
+margin-left: 19px;
+position: relative;
+margin-bottom: 13px;
 }

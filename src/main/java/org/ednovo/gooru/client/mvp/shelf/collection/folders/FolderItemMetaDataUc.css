@@ -1,0 +1,222 @@
+.mainSection {
+    border-top:1px solid white;
+    margin: 5px 30px;
+    background: #f0f0f0;
+}
+
+.contentBlock {
+	background: white;
+	border: 1px solid #ddd;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	border-radius: 4px;
+	overflow: hidden;
+	margin: 10px auto;
+	width: 91%;
+	position: relative;
+}
+
+.contentBlock:hover {
+	cursor: pointer;
+	-moz-box-shadow: 0 0 10px #4c98cc;
+	-webkit-box-shadow: 0 0 10px #4c98cc;
+	box-shadow: 0 0 10px #4c98cc;
+}
+
+.ideasBlock {
+	 border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+	line-height: 1.42857;
+	margin-right: 2px;
+	display: inline-block;
+	padding: 10px 15px;
+	position: relative;
+	margin: 5px 0;
+	color: #999;
+}
+
+.ideasBlockMyColl {
+	margin: -2px 0 !important;
+}
+
+.ideasBlockLast {
+	border-right: 0px solid #f4f4f4;
+}
+
+.blockView {
+	padding-left: 22px;
+}
+
+.blockView {
+	position: relative;
+}
+
+.blockViewTitle {
+	color: #515151;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.idea {
+	background: url(../images/folders/metadata/ideas.png) no-repeat 2px 0px;
+	height: 17px;
+}
+
+.question {
+	background: url(../images/folders/metadata/question.png) no-repeat 0px 0px;
+	height: 17px;
+}
+
+.task {
+	background: url(../images/folders/metadata/task.png) no-repeat 0px 2px;
+	height: 17px;
+}
+
+.openItem {
+	background: url(../images/folders/metadata/c_in.png) no-repeat 0px 2px;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.closeItem {
+	background: url(../images/folders/metadata/c_out.png) no-repeat 0px 2px;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.ideasBlock:first-child {
+	padding-left: 12px;
+}
+
+.gutter {
+	width: 190px !important;
+}
+
+.formButtons {
+	width: 120px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 23px;
+}
+
+.padding10{
+	padding: 2px 20px;
+	overflow: auto;
+	height:73px;
+	white-space: pre-line;
+}
+
+.paddingTextValues{
+	padding: 14px 20px;
+	white-space: pre-line;
+	  overflow-y: auto;
+  word-break: break-word;
+  max-height: 200px;
+}
+
+.textAreaStyle {
+	font-size:10px;
+	color: #515151;
+	width: 95%;
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	direction: ltr;
+	height: 152px;
+	font-family: Arial;
+	font-size:12px;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow: visible;
+	-moz-box-shadow: inset 0px 0px 3px;
+	-webkit-box-shadow: inset 0px 0px 3px;
+	  margin-left: 14px;
+}
+
+.closedPanelHeight {
+	height: 14px;
+}
+
+.openedPanelHeight {
+	height: 170px;
+}
+.errorLabel{
+	float: right;
+}
+.sausdMetaData {
+	margin: 0px auto;
+	width: 700px;
+	margin-right: 0;
+}
+.sausdContent {
+	width: 313px;
+	background: white;
+	margin-right: 6px;
+	margin-top: 0px;
+	height: 100px;
+	border: 1px solid #ddd;
+	float: left;
+	box-sizing: content-box;
+}
+.sausdContentLast {
+	width: 318px;
+	margin-top: 0px;
+	background: white;
+	height: 100px;
+	border: 1px solid #ddd;
+	box-sizing: content-box;
+}
+.sausdContentBlock {
+	width: 696px;
+	background: white;
+	height: 90px;
+}
+.MaintabDiv{
+color: #515151;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #eee !important;
+background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#ededed));
+background: -moz-linear-gradient(center top, #fdfdfd, #ededed) repeat scroll 0 0 transparent;
+background-color: #ededed;
+padding: 0 0;
+width:100%;
+display:inline-block;
+
+}
+.highlightContent{
+		-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: #ddd #ddd transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #555;
+    cursor: default;
+}
+.pencilHolderDiv{
+	position: absolute;
+	width: 100%;
+	top: 55%;
+	left: 50%;
+}
+
+.editHolder{
+position: absolute;
+  margin:0 auto;
+  }
+  .mainWidthDiv{
+  width:100%;
+  }
+  .addBackground{
+    opacity: 0.6;
+  background: #F4F1F1;
+  }

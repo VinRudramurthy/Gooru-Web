@@ -50,4 +50,13 @@ public class ResourceImageUtil {
 	public static String youtubeImageLink(String videoId, String protocol) {
 		return protocol+"//img.youtube.com/vi/"+videoId+"/1.jpg";
 	}
+	
+	public static String ensure_has_protocol(final String url)
+	{
+	    if (!url.startsWith("http://"))
+	    {
+	        return "http://" + url;
+	    }
+	    return url;
+	}
 }

@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.events;
 
-import org.ednovo.gooru.shared.model.library.ConceptDo;
+import org.ednovo.gooru.application.shared.model.library.ConceptDo;
 
 import com.google.gwt.event.shared.GwtEvent;
 
@@ -50,18 +50,20 @@ public class OpenLessonConceptEvent extends GwtEvent<OpenLessonConceptHandler> {
 	private String lessonId;
 	private String lessonLabel;
 	private String lessonCode;
+	private String libraryGooruOid;
 	
 	public static final Type<OpenLessonConceptHandler> TYPE = new Type<OpenLessonConceptHandler>();
 	
 	/**
 	 * 
 	 */
-	public OpenLessonConceptEvent(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode) {
+	public OpenLessonConceptEvent(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode,String libraryGooruOid) {
 		setConceptDo(conceptDo);
 		setTopicId(topicId);
 		setLessonId(lessonId);
 		setLessonLabel(lessonLabel);
 		setLessonCode(lessonCode);
+		this.libraryGooruOid=libraryGooruOid;
 	}
 
 	@Override
@@ -71,7 +73,7 @@ public class OpenLessonConceptEvent extends GwtEvent<OpenLessonConceptHandler> {
 
 	@Override
 	protected void dispatch(OpenLessonConceptHandler handler) {
-		handler.openLessonConcept(getConceptDo(),getTopicId(),getLessonId(),getLessonLabel(),getLessonCode());
+		handler.openLessonConcept(getConceptDo(),getTopicId(),getLessonId(),getLessonLabel(),getLessonCode(),libraryGooruOid);
 	}
 
 	/** 

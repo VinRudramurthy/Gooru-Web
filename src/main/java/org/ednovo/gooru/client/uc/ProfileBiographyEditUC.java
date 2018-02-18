@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,6 +23,8 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 package org.ednovo.gooru.client.uc;
+
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.KeyUpEvent;
@@ -62,108 +64,45 @@ public class ProfileBiographyEditUC extends Composite implements
 
 	@UiField
 	protected FocusPanel focusPanel;
-//	@UiField Label errorLabel;
 	protected String placeholder = "";
 
 	private InlineLabel biographyLabel;
 	private InlineLabel biographyEditImage;
-	
+
 	protected String text;
-	@UiField(provided = true)
-	UcCBundle res;
 
 	public ProfileBiographyEditUC() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
+		focusPanel.getElement().setId("focuspnlFocusPanel");
+		deckPanel.getElement().setId("dpnlDeckPanel");
+		editLabel.getElement().setId("pnlEditLabel");
 		deckPanel.showWidget(0);
-		
+
 		biographyLabel = new InlineLabel();
 		biographyEditImage = new InlineLabel();
-		biographyEditImage.setStyleName(res.css().editImage());
-		//errorLabel.setVisible(false);
-		
+		biographyEditImage.setStyleName("Uc-editImage");
+
 		editTextBox.setHeight("146px");
 		editTextBox.setWidth("200px");
 		editTextBox.getElement().setAttribute("maxlength", "500");
 		editTextBox.addKeyUpHandler(new ValidateConfirmText());
 		editTextBox.getElement().setAttribute("id", "txtAreaAboutYourself");
-		
+		StringUtil.setAttributes(editTextBox, true);
+
 	}
 
 	public InlineLabel getBiographyEditImage() {
 		return biographyEditImage;
 	}
-	
+
 	private class ValidateConfirmText implements KeyUpHandler {
 
 		@Override
 		public void onKeyUp(KeyUpEvent event) {
-			//errorLabel.setVisible(false);
 			checkCharacterLimit(editTextBox.getText());
 		}
 	}
 
-	/**
-	 * Change to editable view
-	 */
-	/*public void switchToEdit() {
-		if (deckPanel.getVisibleWidget() == 1)
-			return;
-		editTextBox.setText(getValue());
-		deckPanel.showWidget(1);
-		editTextBox.setFocus(true);
-		
-	}
-
-	*//**
-	 * Change to label
-	 *//*
-	public void switchToLabel() {
-
-		if (deckPanel.getVisibleWidget() == 0)
-			
-			return;
-
-		if (editTextBox.getText().trim().length() > 0) {
-			setValue(editTextBox.getText().trim(), true); // fires events, too
-
-		}
-
-		else {
-			
-			deckPanel.showWidget(0);
-			//errorLabel.setVisible(true);
-			//new AlertContentUc("Oops", "Title Shouldn't be empty!");
-			//return;
-		}
-
-		if ((getText() != null && text.trim().length() > 0)) {
-			//errorLabel.setVisible(false);
-			deckPanel.showWidget(0);
-			setText(editTextBox.getText());
-			onEditDisabled(editTextBox.getText());
-			// Element
-			// characterlimit=(Element)getWidget().getParent().getParent().getParent().getParent().getParent().getElement().getLastChild();
-			// characterlimit.getFirstChildElement().getStyle().setOpacity(-15);
-
-		}
-
-		String text = getValue();
-
-		if ((getText() != null && text.trim().length() > 0)) {
-		//	errorLabel.setVisible(false);
-			deckPanel.showWidget(0);
-			setText(editTextBox.getText());
-			onEditDisabled(editTextBox.getText());
-			}
-
-	}
-
-	public void cancel() {
-		editTextBox.setText(biographyLabel.getText());
-		//errorLabel.setVisible(false);
-		deckPanel.showWidget(0);
-	}*/
 
 	// Override this method to catch on blur
 	/**
@@ -199,6 +138,8 @@ public class ProfileBiographyEditUC extends Composite implements
 		editLabel.add(biographyLabel);
 		editLabel.add(biographyEditImage);
 		editTextBox.setText(value);
+		editTextBox.getElement().setAttribute("alt", value);
+		editTextBox.getElement().setAttribute("title", value);
 	}
 
 	/**
@@ -232,9 +173,5 @@ public class ProfileBiographyEditUC extends Composite implements
 	public TextArea getTextBoxSource() {
 		return editTextBox;
 	}
-
-	
-	
-	
 
 }

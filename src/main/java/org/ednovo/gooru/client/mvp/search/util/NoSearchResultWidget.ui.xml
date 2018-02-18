@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:tbp="urn:import:org.ednovo.gooru.client.uc" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+    	<g:HTMLPanel ui:field="pnlNoSearchResults">
+		<div class="noResultsContainer">
+			<div class="clearfix"></div>
+
+			<div class="borderBox noSearchResultsTextContainer">
+
+			<tbp:H2Panel styleName="h3 text-center" ui:field="searchNoResultsHeader"></tbp:H2Panel>
+			<tbp:H2Panel styleName="h3 text-center" ui:field="searchNoResultssubHeader"></tbp:H2Panel>
+			<p class="text-center"><span>Suggested Tips:</span> <span class="dot">•</span> Remove some filters <span class="dot">•</span> Check the spelling <span class="dot">•</span> Use a different keyword <span class="dot">•</span> Switch between collection and resource search</p>
+			</div>
+		</div>
+		<g:HTMLPanel styleName="featuredLibrariesContainer">
+			<g:Label styleName="featuredLibraryDiv" text="{i18n.GL3211}" title="{i18n.GL3211}"/>
+			<g:HTMLPanel ui:field="libraryWidgetsContainer" styleName="less-gutter">
+
+			</g:HTMLPanel>
+			<g:HTMLPanel ui:field="libraryWidgetsContainerViewMore" styleName="less-gutter">
+
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="text-center"><g:Button styleName="secondary" ui:field="viewMoreBtn">View More</g:Button></g:HTMLPanel>
+
+	</g:HTMLPanel>
+</ui:UiBinder>

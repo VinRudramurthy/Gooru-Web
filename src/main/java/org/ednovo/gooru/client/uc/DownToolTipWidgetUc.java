@@ -27,6 +27,8 @@ package org.ednovo.gooru.client.uc;
 import java.util.List;
 import java.util.Map;
 
+import org.ednovo.gooru.shared.util.StringUtil;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.MouseOutEvent;
@@ -49,11 +51,14 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 	private Widget toolTipWidget;
 	private boolean isIe= false;
 	private boolean isFireFox=false;
+	//assigning the default value true so that it will display always standards text, if we need to display 21st centruy skills we need to set the isStandards value as false.
+	private boolean isStandards=true;
 	String newMsg;
 	int Count;
+	boolean isStandardsTitle = false;
 	
 	List<Map<String, String>> standards = null;
-	
+	private String title;
 	
 	/**
 	 * Class constructor with no parameter
@@ -62,7 +67,7 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 		addDomHandler(this, MouseOutEvent.getType());
 		addDomHandler(this, MouseOverEvent.getType());
 		addDomHandler(this, ClickEvent.getType());
-		}
+	}
 
 	/**
 	 * Class constructor with two parameter
@@ -70,7 +75,9 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 	 * @param html text for html widget
 	 */
 	public DownToolTipWidgetUc(Widget widget, String html) {
-		this(widget, html != null ? new HTML(html) : null);
+		
+		this(widget, !StringUtil.isEmpty(html)? new HTML(html) : null);
+		this.title=title;
 	}
 
 	/**
@@ -93,18 +100,18 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 		return Count;
 	}
 	/**
-	 * Class constructor with two parameter
+	 * Class constructor with three parameter
 	 * @param widget instance of {@link Widget}
 	 * @param toolTipWidget instance of {@link Widget}
+	 * @param standards
 	 */
 	public DownToolTipWidgetUc(Widget widget, Widget toolTipWidget, List<Map<String, String>> standards) {
 		this();
 		setWidget(widget);
 		setToolTipWidget(toolTipWidget);
 		this.standards = standards;
-
 	}
-
+	
 	@UiChild(tagname = "widget")
 	public void setWidget(Widget widget) {
 		super.setWidget(widget);
@@ -121,17 +128,24 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 			tooltipPopUpUc = new DownToolTipUc();
 			tooltipPopUpUc.getElement().setAttribute("style", "z-index: 99999;");
 			tooltipPopUpUc.setContent(toolTipWidget);
+			isStandardsTitle = true;
+		}else{
+			isStandardsTitle = false;
 		}
 	}
 	
 	@Override
 	public void onClick(ClickEvent event){
-		if (standards.size()>1){
+		StandardsPopupVc standardsPopupVc;
+		if (standards!=null && standards.size()>1){
 			if (tooltipPopUpUc != null) {
 				tooltipPopUpUc.hide();
 			}
-			
-			StandardsPopupVc standardsPopupVc = new StandardsPopupVc(standards);
+			if(isStandardsTitle){
+				 standardsPopupVc = new StandardsPopupVc(standards,isStandards());
+			}else{
+				 standardsPopupVc = new StandardsPopupVc(standards,false);
+			}
 			standardsPopupVc.center();
 			standardsPopupVc.show();
 		}
@@ -152,17 +166,8 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 			isFireFox=isFirefoxBrowser();
 			if(isIe){
 				tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft() + (getWidget().getOffsetWidth() / 2) - (tooltipPopUpUc.getOffsetWidth() / 2), getWidget().getAbsoluteTop()+6 + getWidget().getOffsetHeight());	
-				
-				//tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft() + (getWidget().getOffsetWidth() / 2) - (tooltipPopUpUc.getOffsetWidth() / 2),20+event.getRelativeElement().getAbsoluteTop() + getWidget().getOffsetHeight()+(-1)*(toolTipWidget.getAbsoluteTop()));
-				
-				/*if(tooltipPopUpUc.getElement().getStyle().getTop().equalsIgnoreCase("0px")){
-					tooltipPopUpUc.hide();
-				}else{
-					tooltipPopUpUc.show();
-				}*/
 			}
-			else if(isFireFox)
-			{
+			else if(isFireFox){
 				tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft()-85,getWidget().getAbsoluteTop()+10);
 				tooltipPopUpUc.show();
 				if(tooltipPopUpUc.getElement().getStyle().getTop().equalsIgnoreCase("0px")){
@@ -171,22 +176,19 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 					tooltipPopUpUc.show();
 				}
 				if(newMsg !=null && newMsg!=""){
-				if(isFireFox && newMsg.contains("Team")){
-					tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft()-25,getWidget().getAbsoluteTop()+10);
-				}
+					if(isFireFox && newMsg.contains("Team")){
+						tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft()-25,getWidget().getAbsoluteTop()+10);
+					}
 				}
 				if(Count>=1){
 					if(isFireFox && Count>=1){
-						tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft()-50,getWidget().getAbsoluteTop()+10);
+						tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft()-80,getWidget().getAbsoluteTop()+10);
 					}
-					}
+				}
 			}
 			else{
 				tooltipPopUpUc.setPopupPosition(getWidget().getAbsoluteLeft() + (getWidget().getOffsetWidth() / 2) - (tooltipPopUpUc.getOffsetWidth() / 2), getWidget().getAbsoluteTop() + getWidget().getOffsetHeight());	
-				
 			}
-			
-			
 		}
 	}
 
@@ -220,5 +222,16 @@ public class DownToolTipWidgetUc extends FocusPanel implements MouseOverHandler,
 	*/
 	public static boolean isFirefoxBrowser() {
 	    return getBrowserName().toLowerCase().contains("firefox");
+	}
+
+	public boolean isStandards() {
+		return isStandards;
+	}
+
+	public void setStandards(boolean isStandards) {
+		this.isStandards = isStandards;
+	}
+	public String getTitle(){
+		return title;
 	}
 }

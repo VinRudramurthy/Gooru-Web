@@ -125,8 +125,6 @@ public interface AssignmentsTabViewCBundle extends ClientBundle {
 
 		String collectionHover();
 
-		String playIcon();
-		
 		String mandatoryLabel();
 		
 		String copyPopUpPanelStyle();
@@ -169,8 +167,6 @@ public interface AssignmentsTabViewCBundle extends ClientBundle {
 		String cantFindCollectionInfo();
 		
 		String assignCollection();
-		
-		String classpageAddPlusIcon();
 		
 		String btnContainer();
 		

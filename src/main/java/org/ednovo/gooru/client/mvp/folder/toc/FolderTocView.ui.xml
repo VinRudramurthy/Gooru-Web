@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags"  xmlns:tbp="urn:import:org.ednovo.gooru.client.uc">
+	<!-- <ui:style field="tocStyle" src="floderToc.css" /> -->
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<ui:with field="folderTocStyle"  type="org.ednovo.gooru.client.mvp.folder.toc.FolderContainerCBundle"/>
+	<g:HTMLPanel ui:field="folderTocMainPnl">
+	 	<g:Hidden ui:field="myHiddenField"/>
+		<g:HTMLPanel styleName="bodyContainer">
+			<g:HTMLPanel styleName="container">
+				<g:HTMLPanel styleName="row" ui:field="mainContainer">
+				     <!-- Library banner image start here -->
+				    <g:HTMLPanel styleName="{folderTocStyle.css.bannerImageContainer}" ui:field="bannerImagePanel">
+							<g:Image  styleName="img-responsive" ui:field="bannerImage"/>
+							<g:HTMLPanel styleName="{folderTocStyle.css.bannerImageCaption}">
+								<tbp:H2Panel ui:field="bannerTitle"></tbp:H2Panel>
+								<g:HTMLPanel ui:field="bannerLogoImageContainer" styleName="{folderTocStyle.css.sublogoContainer}">
+									<g:Image  ui:field="logoImage"/>
+								</g:HTMLPanel>
+							</g:HTMLPanel>
+					</g:HTMLPanel>
+					<!--  Library banner image ends here -->
+					<!--  Profile banner image starts here -->
+					<g:HTMLPanel styleName="{folderTocStyle.css.bannerimageContainer1}" ui:field="profileBannerPanel">
+						<g:HTMLPanel styleName="{folderTocStyle.css.bannerimageCaption1}">
+							  <g:Image styleName="{folderTocStyle.css.imgResponsive} img-circle" ui:field="profImage"/> <tbp:H2Panel ui:field="userTitle"></tbp:H2Panel>
+						</g:HTMLPanel>
+					</g:HTMLPanel>
+					<!--  Profile banner image end here -->
+					<g:HTMLPanel ui:field="whiteBgContainer" styleName="whitebg">
+						<g:HTMLPanel ui:field="marginDiv" styleName="marginDiv">
+						    <g:HTMLPanel styleName="{folderTocStyle.css.paginationBlock}">
+							   <g:HTMLPanel ui:field="breadCrumbsPanel">
+							       <!-- <g:Anchor ui:field="mainTitle"/> > <g:Anchor ui:field="firstTitle"/>  -->
+							   </g:HTMLPanel>
+							   <!-- <g:HTMLPanel styleName="col-md-6 {folderTocStyle.css.shareButton}">
+							  		 <g:Label  ui:field="shareLbl" text="{i18n.GL0526}" title="{i18n.GL0526}"></g:Label>
+							  		 <g:TextBox ui:field="shareTxtBox"></g:TextBox>
+							   </g:HTMLPanel> -->
+							</g:HTMLPanel>
+							<g:Button ui:field="btnBackToPrevious" styleName="btnBackToPrevious backArrowButton" />
+							<g:HTMLPanel styleName="tocShareContainer">
+							<g:HTMLPanel styleName="col-md-8 col-xs-6 col-sm-8 folderTitleContainer">
+								<tbp:H3Panel styleName="pageHeader" ui:field="lblFolderTitle"/></g:HTMLPanel>
+								<g:HTMLPanel styleName="col-md-4 col-xs-6 col-sm-4 {folderTocStyle.css.shareButton}" ui:field="sharePanel">
+									<g:Label styleName="tocShareBtn" ui:field="shareLbl" text="{i18n.GL0526}" title="{i18n.GL0526}"></g:Label>
+									<g:TextBox styleName="tocShareTxb" ui:field="shareTxtBox"></g:TextBox>
+								</g:HTMLPanel>
+								<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+							</g:HTMLPanel>
+							<g:HTMLPanel ui:field="bigIdeasPanel">
+								<p>
+									<g:Label styleName="lblFolderTitles" text="{i18n.GL1731}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL1731}"></g:Label>
+									<br>
+									<g:Label styleName="lblFolderMetadata" ui:field="lblBigIdeas"/>
+									</br>
+								</p>
+							</g:HTMLPanel>
+							<g:HTMLPanel ui:field="essentialPanel">
+								<p>
+									<g:Label  styleName="lblFolderTitles" text="{i18n.GL1732}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL1732}"></g:Label>
+									<br>
+									<g:Label styleName="lblFolderMetadata" ui:field="lblEssentalQuestions"/>
+									</br>
+								</p>
+							</g:HTMLPanel>
+							<g:HTMLPanel ui:field="performancePanel">
+								<p>
+									<g:Label styleName="lblFolderTitles" text="{i18n.GL1733}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL1733}"></g:Label>
+									<br>
+									<g:Label styleName="lblFolderMetadata" ui:field="lblPerformanceTasks"/>
+									</br>
+								</p>
+							</g:HTMLPanel>
+	            			<g:HTMLPanel ui:field="floderTreeContainer" styleName="{folderTocStyle.css.folderStucture}">
+			   				</g:HTMLPanel>
+				</g:HTMLPanel>
+				</g:HTMLPanel>
+				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="pageNotFoundPanel">
+				    <g:Image styleName="{folderTocStyle.css.pageNotFoundStyle}" url="images/404_message.png" ui:field="errorPageImg"/>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -3,44 +3,46 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc"
 	xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
-	<ui:with type="org.ednovo.gooru.client.mvp.home.LoginPopUpCBundle"
-		field="res" />
-	<g:HTMLPanel styleName="{res.css.popup} {res.css.imgBG}">
-		<g:HTMLPanel styleName="{res.css.popupInner}">
-			<g:Label styleName="{res.css.popupHeader}" ui:field="lblLoginHeading"></g:Label>
-			<panel:HTMLEventPanel ui:field="cancelButton"
-				styleName="{res.css.closeButton}"></panel:HTMLEventPanel>
-			<g:HTMLPanel styleName="{res.css.popupContent}">
-				<g:Label styleName="{res.css.h1} {res.css.green}" ui:field="lblWelcomeBack" />
-				<g:HTMLPanel styleName="{res.css.signInContainer}">
-					<g:Button ui:field="gmailButton" styleName="{res.css.gConnectButton}"></g:Button>
-					<g:HTMLPanel styleName="{res.css.divider}">
-						<g:Label styleName="{res.css.dividerText}" ui:field="lblOr" />
+	<g:HTMLPanel styleName="LoginpopupMain">
+		<g:HTMLPanel styleName="LoginpopupInner">
+			<g:HTMLPanel styleName="LoginpopupHeader">
+				<g:HTMLPanel styleName="row">
+					<g:HTMLPanel styleName="col-md-8 col-xs-8">
+						<g:Label  ui:field="lblLoginHeading"></g:Label>
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.emailSignIn}">
-					    <g:Label ui:field="lblLoginWithGooru" />
+					<g:HTMLPanel styleName="col-md-4 col-xs-4 closeContainer">
+						<g:Anchor styleName="closeButton" ui:field="cancelButton"></g:Anchor>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="LoginpopupContent">
+				<g:Label styleName="LoginPopUpgreen" ui:field="lblWelcomeBack" />
+				<g:HTMLPanel styleName="signInContainer">
+					<g:HTMLPanel styleName="emailSignIn">
+					    <g:Label ui:field="lblLoginWithGooru" styleName="loginWithGooru" />
 						<br />
-						<gg:TextBoxWithPlaceholder ui:field="loginTxtBox" setFocus="true"/>
-						<gg:TextBoxWithPlaceholder ui:field="passwordTxtBox"
-							password="true" />
-						<g:HTMLPanel styleName="{res.css.forgotPasswordLink}">
+						<g:Button ui:field="gmailButton" styleName="gConnectButton"></g:Button>
+
+						<g:HTMLPanel styleName="divider">
+							<g:Label styleName="dividerText" ui:field="lblOr" />
+						</g:HTMLPanel>
+
+						<gg:TextBoxWithPlaceholder styleName="form-control form_control" ui:field="loginTxtBox" setFocus="true"/>
+						<gg:TextBoxWithPlaceholder styleName="form-control form_control" ui:field="passwordTxtBox" password="true" />
+
+						<g:HTMLPanel styleName="forgotPasswordLink">
 							<g:Anchor ui:field="forgotPwd"></g:Anchor>
-							<!-- <g:HTMLPanel styleName="{res.css.separator}">|</g:HTMLPanel> -->
-							<!-- <g:CheckBox styleName="{res.css.loginPopupCheckBoxDesc}" ui:field="lblKeepMeLogedIn"></g:CheckBox> -->
 						</g:HTMLPanel>
-						
-						
-						<g:HTMLPanel styleName="{res.css.loginPopupCheckBoxContainer}"> 
-							
+						<g:HTMLPanel styleName="loginPopupbtnContainer">
+							<g:Button ui:field="loginButton" styleName="primary"></g:Button>
+							<g:Label ui:field="lblPleaseWait" styleName="processing"></g:Label>
 						</g:HTMLPanel>
-						
-						
-						<g:Button ui:field="loginButton" styleName="primary {res.css.btnLogin}"></g:Button>
-						<g:Label ui:field="lblPleaseWait" styleName="{res.css.processing}"></g:Label>
+
 					</g:HTMLPanel>
 				</g:HTMLPanel>
-				<g:HTMLPanel styleName="{res.css.haveAccountContainer}">
-					<g:Label styleName="{res.css.haveAccount}" ui:field="lblDoYouHaveAccount" />
+				<g:HTMLPanel styleName="haveAccountContainer">
+					<g:Label styleName="haveAccount" ui:field="lblDoYouHaveAccount" />
 					<g:Anchor ui:field="ancRegisterHere" />
 				</g:HTMLPanel>
 			</g:HTMLPanel>

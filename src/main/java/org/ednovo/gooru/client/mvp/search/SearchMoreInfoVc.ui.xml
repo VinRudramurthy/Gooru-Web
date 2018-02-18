@@ -3,7 +3,7 @@
 	xmlns:s="urn:import:org.ednovo.gooru.client.mvp.search" xmlns:t="urn:import:org.ednovo.gooru.client.uc" xmlns:dnd="urn:import:org.ednovo.gooru.client.mvp.dnd">
 	<ui:with type="org.ednovo.gooru.client.mvp.search.SearchMoreInfoVcCBundle" field="res" />
 	<g:FlowPanel>
-			 <g:FlowPanel styleName="{res.css.moreInfoMetaData}" ui:field="metaInfoFloPanel">
+<!-- 			 <g:FlowPanel styleName="{res.css.moreInfoMetaData}" ui:field="metaInfoFloPanel">
                        <g:Label styleName="{res.css.moreInfoTitle}" ui:field="moreInfotext" />
                        <s:MoreInfoFieldVc imageStyle="{res.css.gradeIcon}" ui:field="gradeFieldVc" />
                        <s:MoreInfoFieldVc imageStyle="{res.css.tagIcon}" ui:field="tagsFieldVc" />
@@ -11,15 +11,16 @@
                        <s:MoreInfoFieldVc imageStyle="{res.css.likesIcon}" ui:field="likesFieldVc" />
                        <s:MoreInfoFieldVc imageStyle="{res.css.shareIcon}" ui:field="shareField" />
                        <s:MoreInfoFieldVc imageStyle="{res.css.rightsIcon}" ui:field="rightsFieldVc" />
-               </g:FlowPanel>
+               </g:FlowPanel> -->
              <!--   <g:Label styleName="{res.css.moreInfoResourcesCountLblTxt}" text="Liciense" /> -->
             
-             <g:Label ui:field="rightsLbl" styleName="{res.css.moreInfoRightsLbl}"></g:Label>
+             <g:Label ui:field="rightsLbl"  visible="false"></g:Label>
              <s:MoreInfoFieldVc imageStyle="{res.css.rightsIcon}"  ui:field="resourceSearchRightsFieldVc"/>
             
 				
 		<g:ScrollPanel styleName="{res.css.moreInfoRightScrollPanel}" ui:field="resourceScrPanel">
-			<g:FlowPanel styleName="{res.css.moreInfoRightPanel}" ui:field="resourceMoreInfoRightPanel" >
+			<!-- <g:FlowPanel styleName="{res.css.moreInfoRightPanel}" ui:field="resourceMoreInfoRightPanel" > -->
+				<g:FlowPanel styleName="col-md-12" ui:field="resourceMoreInfoRightPanel" >			
 				<g:Label styleName="{res.css.moreInfoResourcesCountLblTxt}" ui:field="countLblTxt" />
 				<g:Label styleName="{res.css.moreInfoResourcesCountLblTxt}" ui:field="countLbl"/>
 				<g:Label styleName="{res.css.notFriendly}" ui:field="lblNotFriendly"/>

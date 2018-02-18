@@ -24,27 +24,32 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.toc;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.gin.BaseViewWithHandlers;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.BaseViewWithHandlers;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.preview.home.ResourceCurosal;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
+import org.ednovo.gooru.client.mvp.play.collection.preview.metadata.NavigationConfirmPopup;
+import org.ednovo.gooru.client.uc.BrowserAgent;
 import org.ednovo.gooru.client.uc.PlayerBundle;
 import org.ednovo.gooru.client.uc.TocCollectionEndView;
 import org.ednovo.gooru.client.uc.TocCollectionHomeView;
 import org.ednovo.gooru.client.uc.TocResourceView;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
+import org.ednovo.gooru.shared.util.ClientConstants;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Visibility;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -54,10 +59,10 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
-public class CollectionPlayerTocView extends BaseViewWithHandlers<CollectionPlayerTocUiHandlers> implements IsCollectionPlayerTocView,MessageProperties{
+public class CollectionPlayerTocView extends BaseViewWithHandlers<CollectionPlayerTocUiHandlers> implements IsCollectionPlayerTocView,ClientConstants{
 
-	@UiField FlowPanel navgationTocContainer;
-	@UiField Label previousButton,nextButton,hideText;
+	@UiField FlowPanel navgationTocContainer,carouselContainer;
+	@UiField Label previousButton,nextButton,hideText,resourceCountLabel;
 	
 	@UiField HTMLEventPanel hideButton;
 	
@@ -68,55 +73,157 @@ public class CollectionPlayerTocView extends BaseViewWithHandlers<CollectionPlay
 	interface CollectionPlayerTocViewUiBinder extends UiBinder<Widget, CollectionPlayerTocView> {
 	}
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	@Inject
 	public CollectionPlayerTocView(){
 		setWidget(uiBinder.createAndBindUi(this));
-		hideText.setText(GL0592);
+		hideText.setText(i18n.GL0592());
+		hideText.getElement().setId("lblHideText");
+		hideText.getElement().setAttribute("alt",i18n.GL0592());
+		hideText.getElement().setAttribute("title",i18n.GL0592());
+		
+		previousButton.getElement().setId("lblPreviousButton");
+		navgationTocContainer.getElement().setId("fpnlNavgationTocContainer");
+		nextButton.getElement().setId("lblNextButton");
+		hideButton.getElement().setId("epnlHideButton");
+		if(AppClientFactory.getCurrentPlaceToken().contains(PlaceTokens.COLLECTION_PLAY)){
+			hideButton.setVisible(false);
+		}
 	}
 	public void clearNavigationPanel(){
 		navgationTocContainer.clear();
+		selectedWidgetIndex = -1;
+	}
+	public void hideResourceCountLabel(boolean hide){
+		resourceCountLabel.setVisible(!hide);
+	}
+	
+	public void clearMarginLeft(){
+		navgationTocContainer.getElement().getStyle().clearMarginLeft();
 	}
 	@Override
-	public void setNavigationResources(CollectionDo collectionDo){
-		int resourcesSize=collectionDo.getCollectionItems()!=null?collectionDo.getCollectionItems().size():0;
+	public void setNavigationResources(CollectionDo collectionDo,boolean isCollectionHome){
 		if(collectionDo!=null){
+			int resourcesSize=collectionDo.getCollectionItems()!=null?collectionDo.getCollectionItems().size():0;
+			String collectionType=StringUtil.isEmpty(collectionDo.getCollectionType())?null:collectionDo.getCollectionType();
 			if(navgationTocContainer.getWidgetCount()==0){
+				int resourceCount=0;
+				int questionCount=0;
 				navgationTocContainer.clear();
+				selectedWidgetIndex = -1;
 				nextButton.setVisible(true);
 				previousButton.setVisible(true);
 				List<CollectionItemDo> collectionItems=collectionDo.getCollectionItems();
-			
-				TocCollectionHomeView tocCollectionHomeView=new TocCollectionHomeView(collectionDo.getThumbnails().getUrl());
+				TocCollectionHomeView tocCollectionHomeView=null;
+			if(collectionDo.getThumbnails() != null && collectionDo.getThumbnails().getUrl()!=null)
+			{
+				tocCollectionHomeView=new TocCollectionHomeView(collectionDo.getThumbnails().getUrl(),collectionType);
+			}
+			else
+			{
+				if(collectionDo.getCollectionType().equals("assessment")){
+					tocCollectionHomeView=new TocCollectionHomeView("images/default-assessment-image -160x120.png",collectionType);
+				}else{
+					tocCollectionHomeView=new TocCollectionHomeView("images/default-collection-image-160x120.png",collectionType);
+				}
+			}
+				
+				if(!isCollectionHome){
+					tocCollectionHomeView.hideResourceThumbnailContainer(true);
+				}
+				tocCollectionHomeView.addClickHandler(new HomeRequest());
 				navgationTocContainer.add(tocCollectionHomeView);
-				for(int i=0;i<collectionItems.size();i++){
-					CollectionItemDo collectionItemDo=collectionItems.get(i);
-					TocResourceView tocResoruceView=new TocResourceView(collectionItemDo,i+1,true);
-					tocResoruceView.setCollectionItemId(collectionItemDo.getCollectionItemId());
-					navgationTocContainer.add(tocResoruceView);
-				}
-				TocCollectionEndView tocCollectionEndView=new TocCollectionEndView(collectionDo.getThumbnails().getUrl());
-				navgationTocContainer.add(tocCollectionEndView);
-				if(resourcesSize>6){
-					new ResourceCurosal(nextButton, previousButton, navgationTocContainer, resourcesSize, 120);
-				}
-				//resources width with padding and margin constitutes 102px for each and collection home and end with padding and margin width
-				//have 150px each. navgationTocContainer width is derived from this.
-				if(resourcesSize>0)
+				if(collectionDo.getCollectionItems()!=null && collectionDo.getCollectionItems().size()>0){
+					for(int i=0;i<collectionItems.size();i++){
+						if(collectionDo.getCollectionItems().get(i).getResource()!=null&&collectionDo.getCollectionItems().get(i).getResource().getResourceFormat()!=null){
+							if(QUESTION.equalsIgnoreCase(collectionDo.getCollectionItems().get(i).getResource().getResourceFormat().getDisplayName())){
+								questionCount++;
+							}else{
+								resourceCount++;
+							}
+						}
+						CollectionItemDo collectionItemDo=collectionItems.get(i);
+						TocResourceView tocResoruceView=new TocResourceView(collectionItemDo,i+1,true,false);
+						tocResoruceView.addClickHandler(new ResourceRequest(collectionItemDo));
+						tocResoruceView.setCollectionItemId(collectionItemDo.getCollectionItemId());
+						if(!isCollectionHome){
+							tocResoruceView.hideResourceThumbnailContainer(true);
+						}
+						navgationTocContainer.add(tocResoruceView);
+					}
+				
+			}
+				TocCollectionEndView tocCollectionEndView=null;
+				if(collectionDo.getThumbnails() != null && collectionDo.getThumbnails().getUrl()!=null)
 				{
-				navgationTocContainer.getElement().setAttribute("style", "width:"+((resourcesSize*(102))+300)+"px !important;");
+					tocCollectionEndView=new TocCollectionEndView(collectionDo.getThumbnails().getUrl(), collectionType);
 				}
 				else
 				{
-					nextButton.setVisible(false);
-					previousButton.setVisible(false);
-				navgationTocContainer.getElement().setAttribute("style", "width:"+(300)+"px !important;");
+					if(collectionDo.getCollectionType().equals("assessment")){
+						tocCollectionEndView=new TocCollectionEndView("images/default-assessment-image -160x120.png",collectionType);
+					}else{
+						tocCollectionEndView=new TocCollectionEndView("images/default-collection-image-160x120.png",collectionType);
+					}
 				}
-			}
+				tocCollectionEndView.addClickHandler(new EndRequest());
+				if(!isCollectionHome){
+					tocCollectionEndView.hideResourceThumbnailContainer(true);
+				}
+				navgationTocContainer.add(tocCollectionEndView);
+				boolean device = BrowserAgent.isDevice();
+				if (device){
+					navgationTocContainer.getElement().removeAttribute("style");
+					//new ResourceCurosal(nextButton, previousButton, navgationTocContainer, resourcesSize+2, 100,carouselContainer);
+					new ResourceCurosal(nextButton, previousButton, navgationTocContainer, resourcesSize+2, 100,carouselContainer);
+				}else{
+					//resources width with padding and margin constitutes 100px for each and collection home and end with padding and margin width
+					//have 100px each. navgationTocContainer width is derived from this.
+					if(resourcesSize>7){
+						navgationTocContainer.getElement().removeAttribute("style");
+						//new ResourceCurosal(nextButton, previousButton, navgationTocContainer, resourcesSize+2, 100,carouselContainer);
+						new ResourceCurosal(nextButton, previousButton, navgationTocContainer, resourcesSize+2, 100,carouselContainer);
+					}else{
+						nextButton.getElement().getStyle().setVisibility(Visibility.HIDDEN);
+						previousButton.getElement().getStyle().setVisibility(Visibility.HIDDEN);
+						navgationTocContainer.getElement().setAttribute("style", "width:"+((resourcesSize+2)*100)+"px !important;");
+					}
+				}
+				
+				String resourceString = resourceCount == 1? resourceCount + " " + i18n.GL1110().toLowerCase() : resourceCount + " " + i18n.GL0174().toLowerCase();
+				String questionString = questionCount == 1? questionCount + " " + i18n.GL0308().toLowerCase() : questionCount + " " + i18n.GL1042().toLowerCase();
+				String finalMessage = "";
 
-			
+				String message=(collectionDo.getCollectionType()!=null&&collectionDo.getCollectionType().equals("assessment"))?i18n.GL3042():i18n.GL0578();
+
+				if (resourceCount >0 && questionCount > 0){
+					finalMessage = resourceString + " " + i18n.GL_GRR_AND() + " " + questionString + " " + message + i18n.GL_SPL_SEMICOLON()+" ";
+				}else if (resourceCount >0){
+					finalMessage = resourceString + " " + message + i18n.GL_SPL_SEMICOLON()+" ";
+				}else if (questionCount >0){
+					finalMessage = questionString + " " + message + i18n.GL_SPL_SEMICOLON()+" ";
+				}
+				resourceCountLabel.setText(finalMessage);
+				
+			}else{
+				setResourceThumbnailVisibility(isCollectionHome);
+			}
+		}
+	}
+	public void setResourceThumbnailVisibility(boolean visibility){
+		int widgetsCount=navgationTocContainer.getWidgetCount();
+		for(int i=0;i<widgetsCount;i++){
+			Widget widget=navgationTocContainer.getWidget(i);
+			if(widget instanceof TocCollectionHomeView){
+				((TocCollectionHomeView)widget).hideResourceThumbnailContainer(!visibility);
+			}else if(widget instanceof TocResourceView){
+				((TocResourceView)widget).hideResourceThumbnailContainer(!visibility);
+			} else if(widget instanceof TocCollectionEndView){
+				((TocCollectionEndView)widget).hideResourceThumbnailContainer(!visibility);
+			}
 		}
 		
-	
 	}
 	@Override
 	public void setResourceActive(String collectionId,String collectionItemid,boolean isCollectionHome){
@@ -150,6 +257,95 @@ public class CollectionPlayerTocView extends BaseViewWithHandlers<CollectionPlay
 		
 	}
 	
+	public class ResourceRequest implements ClickHandler{
+		private CollectionItemDo collectionItemDo;
+		public ResourceRequest(CollectionItemDo collectionItemDo){
+			this.collectionItemDo=collectionItemDo;
+		}
+		public void onClick(ClickEvent event){
+			Map<String,String> params = new LinkedHashMap<String,String>();
+			String collectionId=AppClientFactory.getPlaceManager().getRequestParameter("id", null);
+			params.put("id", collectionId);
+			params = PreviewPlayerPresenter.setConceptPlayerParameters(params);
+			String viewToken=AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken();
+			if(collectionItemDo.getNarration()!=null&&!collectionItemDo.getNarration().trim().equals("")){
+				params.put("rid", collectionItemDo.getCollectionItemId());
+				params.put("tab", "narration");
+				final PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(viewToken, params);
+				if(!getUiHandlers().isOpenEndedAnswerSubmited()){
+					NavigationConfirmPopup confirmPopup=new NavigationConfirmPopup() {
+						@Override
+						public void navigateToNextResource() {
+							super.hide();
+							AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+						}
+					};
+				}else{
+					AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+				}
+			}else{
+				params.put("rid", collectionItemDo.getCollectionItemId());
+				final PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(viewToken, params);
+				if(!getUiHandlers().isOpenEndedAnswerSubmited()){
+					NavigationConfirmPopup confirmPopup=new NavigationConfirmPopup() {
+						@Override
+						public void navigateToNextResource() {
+							super.hide();
+							AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+						}
+					};
+				}else{
+					AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+				}
+			}
+		}
+	}
+	
+	public class EndRequest implements ClickHandler{
+		public void onClick(ClickEvent event){	
+			Map<String,String> params = new LinkedHashMap<String,String>();
+			String collectionId=AppClientFactory.getPlaceManager().getRequestParameter("id", null);
+			params.put("id", collectionId);
+			params.put("view", "end");
+			params = PreviewPlayerPresenter.setConceptPlayerParameters(params);
+			String viewToken=AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken();
+			//PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(viewToken, params);
+			final PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(viewToken, params);
+			if(!getUiHandlers().isOpenEndedAnswerSubmited()){
+				NavigationConfirmPopup confirmPopup=new NavigationConfirmPopup() {
+					@Override
+					public void navigateToNextResource() {
+						super.hide();
+						AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+					}
+				};
+			}else{
+				AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+			}
+		}
+	}
+	
+	public class HomeRequest implements ClickHandler{
+		public void onClick(ClickEvent event){
+			Map<String,String> params = new LinkedHashMap<String,String>();
+			String collectionId=AppClientFactory.getPlaceManager().getRequestParameter("id", null);
+			params.put("id", collectionId);
+			params = PreviewPlayerPresenter.setConceptPlayerParameters(params);
+			String viewToken=AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken();
+			final PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(viewToken, params);
+			if(!getUiHandlers().isOpenEndedAnswerSubmited()){
+				NavigationConfirmPopup confirmPopup=new NavigationConfirmPopup() {
+					@Override
+					public void navigateToNextResource() {
+						super.hide();
+						AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+					}
+				};
+			}else{
+				AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+			}
+		}
+	}
 	/**
 	 * 
 	 * @function onhideBtnClicked 

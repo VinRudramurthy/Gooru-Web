@@ -25,7 +25,21 @@
 package org.ednovo.gooru.client.mvp.classpages.event;
 
 import com.google.gwt.event.shared.GwtEvent;
-
+/**
+ * 
+ * @fileName : UpdateClasspageImageEvent.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public class UpdateClasspageImageEvent extends GwtEvent<UpdateClasspageImageEventHandler> {
 
 	public static final Type<UpdateClasspageImageEventHandler> TYPE = new Type<UpdateClasspageImageEventHandler>();

@@ -24,10 +24,42 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.classpages.study;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
-
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
+/**
+ * 
+ * @fileName : ClassCodeUiHandlers.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public interface ClassCodeUiHandlers extends BaseUiHandlers {
-	
+	/**
+	 * 
+	 * @function gotoStudentsView 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param tbvalue
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	void gotoStudentsView(String tbvalue);
 
 }

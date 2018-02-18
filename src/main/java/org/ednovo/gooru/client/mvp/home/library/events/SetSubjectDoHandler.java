@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.events;
 
-import org.ednovo.gooru.shared.model.library.SubjectDo;
+import org.ednovo.gooru.application.shared.model.library.SubjectDo;
 
 import com.google.gwt.event.shared.EventHandler;
 

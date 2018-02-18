@@ -1,0 +1,74 @@
+.popupContent .popupMain {
+	width: 520px;
+	color: #515151;
+	margin: 30px auto;
+	position: relative;
+	font-family: arial;
+	font-size: 12px;
+	background: #fff;
+	border-radius: 0 0;
+	border: 1px solid #999;
+	padding: 3px 3px;
+}
+
+.popupContent .popupInner {
+	border: 1px solid #ddd;
+	position: relative;
+}
+
+.popupContent .popupHeader {
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#7ab075), to(#4e9746));
+	background: -webkit-linear-gradient(top, #7ab075, #4e9746);
+	background: -moz-linear-gradient(top, #7ab075, #4e9746);
+	background: -ms-linear-gradient(top, #7ab075, #4e9746);
+	background: -o-linear-gradient(top, #7ab075, #4e9746);
+	background: #4e9746;
+	color: white;
+	font-size: 16px;
+	padding: 10px 15px;
+}
+
+
+.popupContent .popupBody {
+	padding: 25px;
+}
+
+.popupModalContent .popupHeader {
+	background-color: #515151;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(#515151));
+	background: -webkit-linear-gradient(top, #666, #515151);
+	background: -moz-linear-gradient(top, #666, #515151);
+	background: -ms-linear-gradient(top, #666, #515151);
+	background: -o-linear-gradient(top, #666, #515151);
+	color: white;
+    font-size: 18px;
+    padding: 14px 15px;
+}
+
+.popupModalContent .closeContainer {
+	text-align: right;
+}
+
+.popupModalContent .closeButton {
+	background: url("${cdn.endpoint}/images/login/close-button.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	height: 17px;
+	width: 17px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+
+.playerAddToolTipGlassStyle {
+	z-index: 999999;
+	background-color: black;
+	opacity: 0.3;
+	filter: literal("alpha(opacity = 30)");
+}
+
+.loginPopupGlassStyle {
+	z-index: 99999;
+	background-color: black;
+	opacity: 0.3;
+	filter:literal(" alpha(opacity = 30)");
+}
+

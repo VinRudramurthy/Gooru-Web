@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="tagCourseOptions" ui:field="mainContainer">
+		<uc:PPanel>
+			<g:InlineLabel text="{i18n.GL3387}"></g:InlineLabel>
+		</uc:PPanel>
+		<g:HTMLPanel styleName="row">
+			<g:HTMLPanel styleName="col-md-6">
+				<g:HTMLPanel styleName="list-group" ui:field="listGroup">
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			<div class="clearfix"></div>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

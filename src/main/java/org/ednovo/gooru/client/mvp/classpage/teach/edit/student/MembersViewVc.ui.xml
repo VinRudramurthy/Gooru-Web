@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"  xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:gui="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src=""></ui:style>
+	<!-- <g:HTMLPanel ui:field="panelCollaboratorsListContainer" styleName="{members.css.membersListPanel}">
+		<gui:HTMLEventPanel styleName="{members.css.panelCollaborators}" c>			
+			<g:Image styleName="{members.css.radioButtonImg}" ui:field="imgProfileImage"/>
+			<g:Label styleName="{members.css.usernameCss}" ui:field="lblUserName" />
+			<g:Label styleName="{members.css.emailIdCss}" ui:field="lblEmailId" />
+			<g:Button styleName="secondary {members.css.btnRemove}" ui:field="btnRemove"/>
+		</gui:HTMLEventPanel>
+	</g:HTMLPanel> -->
+	<gui:HTMLEventPanel styleName="tablerow" ui:field="panelMembers">
+	   <g:HTMLPanel styleName="tablecell studentsImage" ui:field="imagePanel"><g:Image ui:field="imgProfileImage"></g:Image></g:HTMLPanel>
+	   <g:HTMLPanel styleName="tablecell studentsName" ui:field="namePanel">
+	      <uc:PPanel ui:field="lblUserName"></uc:PPanel>
+	      <uc:PPanel ui:field="lbllastandFirstName"></uc:PPanel>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="tablecell studentsID">
+	      <uc:PPanel ui:field="lblEmailId"></uc:PPanel>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="tablecell removeButton">
+	      <g:Button styleName="secondary" ui:field="btnRemove"></g:Button>
+	   </g:HTMLPanel>
+	</gui:HTMLEventPanel>
+</ui:UiBinder> 

@@ -1,51 +1,91 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:style field="WelcomePage" src="folderwelcomepage.css" />
-	<g:HTMLPanel>
-		<g:HTMLPanel styleName="{WelcomePage.welcomeToWorkspaceContainer}">
-		   <g:HTMLPanel styleName="{WelcomePage.welcomeToWorkspaceText}" ui:field="createLbl">
-		   </g:HTMLPanel>
-		   <g:HTMLPanel styleName="{WelcomePage.getStartedTextContainer}">
-		      <g:HTMLPanel styleName="{WelcomePage.getStartedText}" ui:field="gettingStartedLbl"></g:HTMLPanel>
-		      <g:Label styleName="{WelcomePage.getStartedCollection}" ui:field="newCollectionUIHandler"></g:Label>
-		   </g:HTMLPanel>
-		      	<g:HTMLPanel styleName="{WelcomePage.workspaceTextOptions}">
-					<g:HTMLPanel styleName="{WelcomePage.firstDiv}">
-						<g:HTMLPanel styleName="{WelcomePage.imgTextContainer}">
-							<g:Image styleName="{WelcomePage.imageCss}" height="35"
-								width="35" ui:field="roundedOneLbl"/>
-							<g:HTMLPanel styleName="{WelcomePage.workspaceTitleText}" ui:field="createTextLbl"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceCreateDesc}" ui:field="selectedLbl"></g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceThumbnail}">
-						    <g:Image styleName="{WelcomePage.workspaceImg}" ui:field="workSpaceLbl"/>
-						</g:HTMLPanel>
-					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{WelcomePage.secondDiv}">
-						<g:HTMLPanel styleName="{WelcomePage.imgTextContainerCustomize}">
-							<g:Image styleName="{WelcomePage.imageCss}" height="35"
-								width="35" ui:field="roundedTwoLbl"/>
-							<g:HTMLPanel styleName="{WelcomePage.workspaceTitleText}" ui:field="customizeLbl"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceDesc}" ui:field="guideStudentsLbl"></g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceThumbnail}"><g:Image styleName="{WelcomePage.customizeIma}" ui:field="narrationLbl"/></g:HTMLPanel>
-					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{WelcomePage.thirdDiv}">
-						<g:HTMLPanel styleName="{WelcomePage.imgTextContainer}">
-							<g:Image styleName="{WelcomePage.imageCss}" height="35"
-								width="35" ui:field="roundedThreeLbl" />
-							<g:HTMLPanel styleName="{WelcomePage.workspaceTitleText}" ui:field="shareLbl"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceShareDesc}" ui:field="assignLbl"></g:HTMLPanel>
-						<g:HTMLPanel styleName="{WelcomePage.workspaceThumbnail}"><g:Image styleName="{WelcomePage.shareImg}" ui:field="shareAssignLbl"/></g:HTMLPanel>
-					</g:HTMLPanel>
-				</g:HTMLPanel>
-		    <g:HTMLPanel styleName="{WelcomePage.workspaceTextSupport}">
-				<g:HTMLPanel styleName="{WelcomePage.needSomeMore}"><g:Label ui:field="needHelpLbl"></g:Label>
-				    <g:Anchor ui:field="supportCenterAnr" styleName="{WelcomePage.supportLink}" target="_blank"></g:Anchor>.
-				</g:HTMLPanel>
-			</g:HTMLPanel>
-		</g:HTMLPanel>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"  
+    xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+    xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+
+<g:HTMLPanel>
+	<g:HTMLPanel ui:field="myContentLoggedout">
+	   <section class="myContentBanner">
+	      <div class="contentBannerImage"> </div>
+	      <div class="container">
+	         <div class="row">
+	            <div class="contentBannerCaptions">
+	               <uc:H1Panel ui:field="educatePanel"></uc:H1Panel>        
+	               <uc:H3Panel ui:field="educateNotesPanel"></uc:H3Panel>
+	            </div>
+	            <div class="contentBannerButtonBlock">
+	               <g:Button styleName="primary" ui:field="createCourseBtn"></g:Button>
+	            </div>
+	         </div>
+	      </div>
+	   </section>
+	   <section class="resourcesCount">
+	      <div class="container">
+	         <div class="row">
+	            <div class="col-md-5 col-sm-5 wow fadeInLeft">
+	               <uc:H3Panel ui:field="resourceAdded"></uc:H3Panel>
+	               <uc:PPanel styleName="lead" ui:field="leadPanel"></uc:PPanel>
+	            </div>
+	            <div class="col-md-7 col-sm-7 resourcesCountScreen wow fadeInRight">
+	               <uc:H4Panel ui:field="resourceFormatPanel"></uc:H4Panel>
+	               <img src="../images/logout-page/ResourceCount.png" class="img-responsive"/> 
+	            </div>
+	            <div class="clearfix"></div>
+	         </div>
+	      </div>
+	   </section>
+	   <section class="collectionsCreated">
+	      <div class="container">
+	         <div class="row">
+	            <div class="col-md-7 col-sm-7 wow fadeInLeft"> <img src="../images/logout-page/CollectionsCreated.png" class="img-responsive"/> </div>
+	            <div class="col-md-5 col-sm-5 wow fadeInRight">
+	               <uc:H3Panel ui:field="subjectsPanel"></uc:H3Panel>
+	               <uc:PPanel styleName="lead" ui:field="subjectNotesPanel"></uc:PPanel>
+	            </div>
+	            <div class="clearfix"></div>
+	         </div>
+	      </div>
+	   </section>
+	   <section class="studentsBannerContainer">
+	      <div class="studentBannerImage">
+	         <img src="../images/logout-page/myclassesstudent21b.jpg" class="img-responsive"/>
+	      </div>
+	      <div class="studentBannerCaptions">
+	         <uc:H2Panel styleName="wow fadeInLeft" ui:field="sharePanel"></uc:H2Panel>
+	      </div>
+	   </section>
+	   <section class="studentsPreferences">
+	      <div class="container">
+	         <div class="row">
+	            <div class="preferencesInnerBlock">
+	               <uc:H2Panel ui:field="stdPrefePanel"></uc:H2Panel>
+	               <div class="col-md-5 col-sm-5 border-right-line wow fadeInLeft">
+	                  <uc:H3Panel ui:field="collCountPanel"></uc:H3Panel>
+	                  <uc:PPanel styleName="lead" ui:field="collTxtPanel"></uc:PPanel>
+	                  <img src="../images/logout-page/CollectionViews.png" class="img-responsive"/> 
+	               </div>
+	               <div class="col-md-7 col-sm-7 wow fadeInRight">
+	                  <div class="resourcesViewed">
+	                     <uc:H3Panel ui:field="resourceCount"></uc:H3Panel>
+	                     <uc:PPanel styleName="lead"  ui:field="resourceTxtPanel"></uc:PPanel>
+	                     <p class="lead"><img src="../images/logout-page/ResourceViews.png" class="img-responsive"/></p>
+	                  </div>
+	               </div>
+	               <div class="clearfix"></div>
+	            </div>
+	         </div>
+	      </div>
+	   </section>
+	   <section class="joinCommunity">
+	      <div class="container">
+	         <div class="row">
+	            <uc:H2Panel ui:field="joinPanel"></uc:H2Panel>
+	            <uc:PPanel styleName="lead" ui:field="shareExpPanel"></uc:PPanel>
+	            <p><g:Button styleName="primary" ui:field="loginBtn"></g:Button></p>
+	         </div>
+	      </div>
+	   </section>
 	</g:HTMLPanel>
+	<sg:LogoutFooter />
+</g:HTMLPanel>
 </ui:UiBinder> 

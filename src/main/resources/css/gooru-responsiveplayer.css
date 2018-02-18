@@ -1,0 +1,405 @@
+@charset "utf-8";
+/* CSS Document */
+	.resourcePlayer header {
+		background-color: #515151;
+		height: 50px;
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(#515151),
+			to(#333));
+		background: -webkit-linear-gradient(top, #515151, #333);
+		background: -moz-linear-gradient(top, #515151, #333);
+		background: -ms-linear-gradient(top, #515151, #333);
+		background: -o-linear-gradient(top, #515151, #333);
+		-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		width: 100%;
+		z-index: 98;
+		top: 0;
+		padding: 0 0;
+	}
+	
+	.bodyresourcePlayer {
+		padding-top: 48px !important;
+	}
+	
+	 .flagButtonOrange {
+		background-image: url("../images/player_sprite.png");
+		background-repeat: no-repeat;
+		background-color: transparent;
+		border: 0 none;
+		display: inline-block;
+		height: 50px;
+		margin: 0;
+		outline: 0 none;
+		padding: 0;
+		width: 55px;
+	}
+	
+	 .flagButtonNormal {
+		background-position: -275px -1px !important;
+	}
+	
+	 .add-button-normal {
+		background-position: 2px -1px !important;
+	}
+	
+	 .info-button-normal {
+		background-position: -92px -1px !important;
+	}
+	
+	.share-button-normal {
+		background-position: -46px -1px !important;
+	}
+	
+	.resourcePlayer .rPlayerMenu {
+		text-align: right;
+	}
+	
+	.resourcePlayer .rPlayerMenu button:hover {
+		background-color: #333333;
+	}
+	
+	.resourcePlayerInfoBlock {
+		background: #333333;
+		padding: 10px 0;
+	}
+	
+	.ResourceLeftBlock .inner {
+		background: none repeat scroll 0 0 #ffffff;
+		height: 200px;
+		overflow-y: auto;
+		padding: 20px;
+	}
+
+	.ResourceRightBlock .inner {
+	background: none repeat scroll 0 0 #ffffff;
+	height: 200px;
+	overflow-y: auto;
+	padding: 20px;
+	}
+
+	.dotDevider {
+	margin: 0 12px;
+	}
+
+	.ResourceLeftBlock .headborder {
+	font-weight: bold;
+	padding: 5px 0;
+	margin: 10px 0;
+	border-bottom: 1px solid #cccccc;
+	}
+
+	.ResourceRightBlock .head {
+	font-weight: bold;
+	margin-bottom: 8px;
+	}
+
+	.ResourceRightBlock .views {
+	display: inline-block;
+	}
+
+	.ResourceRightBlock .devider {
+	margin: 0 5px;
+	}
+
+	.noOfResources {
+	display: inline-block;
+	}
+
+	.noOfResources a {
+	color: #4e9746;
+	}
+
+	.collectionTxt .headBlue {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 268px;
+	}
+
+	.ResourceRightBlock .collectionTxt {
+	display: inline-block;
+	vertical-align: top;
+	width: 64%;
+	}
+
+	.whiteBG {
+	background: #ffffff;
+	}
+
+	.resourcePlayer .playerResourceTitle {
+	line-height: 45px;
+	}
+
+	.blocksmall {
+	background: #ffffff;
+	padding: 15px 0;
+	}
+
+	.tagsButton {
+	text-align: right;
+	}
+
+	.resourcePlayer .iframeBlock iframe {
+	height: 600px !important;
+	width: 100% !important;
+	}
+
+	.fixedDivMain {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	}
+
+	.resourcePlayer_close_button a{
+	background: url(${cdn.endpoint}/images/login/close-button.png) no-repeat;
+	height: 22px;
+	position: absolute;
+	right: 10px;
+	top: 14px;
+	width: 22px;
+	cursor: pointer;
+	}
+
+	.resourcePlayer {
+	display: block;
+	}
+
+	.resourcePlayer .playerResourceTitle {
+	color: white;
+	float: left;
+	font-size: 20px;
+	max-width: 58%;
+	min-width: 10%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+	.resourcePlayer .rPlayerMenu .tabsection{
+	
+	}
+@media ( min-width : 240px) and (max-width: 319px) {
+	.resourcePlayer header{
+		height:auto;
+	}
+	.resourcePlayer .rPlayerMenu{
+		background:#222;
+		text-align:center;
+	}
+	
+	.bodyresourcePlayer{
+		padding-top:0 !important;
+	}
+	.resourcePlayerInfoBlock{
+		padding:40px 0;
+	}
+	.ResourceLeftBlock{
+		margin-bottom:25px;
+	}
+	.head strong{
+		overflow:hidden;
+		 text-overflow: ellipsis;
+		 white-space:nowrap;
+	}
+	.collectionsblock{
+		text-align:center;
+	}
+	.collectionImg{
+		margin:0 auto;
+	}
+	.collectionTxt{
+		width:100%;
+	}
+	.collectionTxt .headBlue{
+		width:100%;
+	}
+	.ResourceRightBlock .head{
+		text-align:center;
+	}
+	.mainRightDisc{
+		text-align:center;
+	}
+	.ratingValue{
+		text-align:center;
+	}
+	.resourcePlayer .iframeBlock iframe {
+    height: auto !important;
+    width: 100% !important;
+	}
+	.fixedDivMain{
+		
+	}
+	.resourcePlayer .playerResourceTitle{
+		
+	}
+	.resourcePlayer .add-button-normal{
+		
+	}
+	.resourcePlayer .info-button-normal{
+		
+	}
+	.resourcePlayer_close_button{}
+ .flagButtonOrange{
+		background-position: -293px -52px !important;
+	}
+	.resourcePlayer .flagButtonNormal{
+		
+	}
+	.resourcePlayer{}
+	.resourcePlayer .rPlayerMenu .tabsection{}
+}
+
+@media ( min-width : 320px) and (max-width: 479px) {
+	.resourcePlayer header{
+		height:auto;
+	}
+	.resourcePlayer .rPlayerMenu{
+		background:#222;
+		text-align:center;
+	}
+	.bodyresourcePlayer{
+		padding-top:0 !important;
+	}
+	.resourcePlayerInfoBlock{
+		padding:40px 0;
+	}
+	.ResourceLeftBlock{
+		margin-bottom:25px;
+	}
+	.collectionsblock{
+		text-align:center;
+	}
+	.collectionImg{
+		margin:0 auto;
+	}
+	.collectionTxt{
+		width:100%;
+	}
+	.collectionTxt .headBlue{
+		width:100%;
+	}
+	.ResourceRightBlock .head{
+		text-align:center;
+	}
+	.mainRightDisc{
+		text-align:center;
+	}
+	.ratingValue{
+		text-align:center;
+	}
+	.resourcePlayer .iframeBlock iframe {
+    height: auto !important;
+    width: 100% !important;
+	}
+	.fixedDivMain{
+		
+	}
+	.resourcePlayer .playerResourceTitle{
+		
+	}
+	.resourcePlayer .add-button-normal{
+		
+	}
+	.resourcePlayer .info-button-normal{
+		
+	}
+	.resourcePlayer_close_button{}
+	 .flagButtonOrange{
+		background-position: -293px -52px !important;
+	}
+	.resourcePlayer .flagButtonNormal{}
+	.resourcePlayer{}
+	.resourcePlayer .rPlayerMenu .tabsection{}
+}
+@media (min-width: 480px) and (max-width: 767px){
+	
+	.resourcePlayer header{
+		height:auto;
+	}
+	.resourcePlayer .rPlayerMenu{
+		background:#222;
+		text-align:center;
+	}
+	
+	.bodyresourcePlayer{
+		padding-top:0 !important;
+	}
+	.resourcePlayerInfoBlock{
+		padding:40px 0;
+	}
+	.ResourceLeftBlock{
+		margin-bottom:25px;
+	}
+	
+	.mainRightDisc{
+		text-align:center;
+	}
+	.ratingValue{
+		text-align:center;
+	}
+	
+	.resourcePlayer .iframeBlock iframe {
+    height: auto !important;
+    width: 100% !important;
+	}
+	.fixedDivMain{
+		
+	}
+	.resourcePlayer .playerResourceTitle{
+		
+	}
+	.resourcePlayer .add-button-normal{
+		
+	}
+	.resourcePlayer .info-button-normal{
+		
+	}
+	 .flagButtonOrange{
+		background-position: -293px -52px !important;
+	}
+	.resourcePlayer_close_button{}
+	.resourcePlayer .flagButtonNormal{}
+	.resourcePlayer{}
+	.resourcePlayer .rPlayerMenu .tabsection{}
+}
+@media (min-width: 768px) and (max-width: 992px){
+	.ResourceRightBlock .inner{
+		padding:10px 10px;
+	}
+	.ResourceRightBlock .collectionTxt {
+	    display: inline-block;
+	    vertical-align: top;
+	    width: 54%;
+	}
+	.collectionTxt .headBlue{
+		width:100%;
+	}
+	.resourcePlayer_close_button a{
+	    right: 5px;
+	}
+	.resourcePlayer .rPlayerMenu .tabsection{
+		padding-right:25px;
+	}
+	.bodyresourcePlayer{
+		padding-top:0 !important;
+	}
+	.fixedDivMain{
+		
+	}
+	.resourcePlayer .playerResourceTitle{
+		
+	}
+	.resourcePlayer .add-button-normal{
+		
+	}
+	.resourcePlayer .info-button-normal{
+		
+	}
+	 .flagButtonOrange{
+		background-position: -293px -52px !important;
+	}
+	.resourcePlayer .flagButtonNormal{
+		
+	}
+	.resourcePlayer{}
+}

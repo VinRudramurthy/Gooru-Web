@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -27,12 +27,12 @@ package org.ednovo.gooru.client.mvp.authentication.uc;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.authentication.SignUpCBundle;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
@@ -43,12 +43,28 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
-
-public class LeaveRegistrationPopUpUc extends PopupPanel implements MessageProperties {
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
+/**
+ *
+ * @fileName : LeaveRegistrationPopUpUc.java
+ *
+ * @description :
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
+public class LeaveRegistrationPopUpUc extends PopupPanel{
 
 	private static LeaveRegistrationPopUpUcUiBinder uiBinder = GWT
 			.create(LeaveRegistrationPopUpUcUiBinder.class);
@@ -57,14 +73,19 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			UiBinder<Widget, LeaveRegistrationPopUpUc> {
 	}
 
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+
 	@UiField(provided = true)
 	SignUpCBundle res;
 	@UiField
-	Label lblCancel, lblTitle, lblHeading, lblSubHeading,quriesText;
+	Label lblTitle, lblHeading, lblSubHeading,quriesText;
+	@UiField
+    Anchor	lblCancel;
 	@UiField
 	Button btnLeave, btnContinue;
 	@UiField InlineLabel pleaseContactText;
 	@UiField Anchor supportLink;
+	@UiField HTMLPanel panelSignUp;
 	String accountType = "";
 	String childDob = "";
 	String parentEmailId = "";
@@ -81,37 +102,88 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 		childDob = dob;
 		this.setGlassEnabled(true);
 		this.center();
-		this.setSize("502px", "352px");
 		Window.enableScrolling(false);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(98, false));
+		//this.getElement().setAttribute("style", "width:502px;height:352px;z-index:98;visibility: visible;position: absolute;left: 0 !important;right: 0 !important;margin:auto;top:0 !important;bottom:0 !important;");
 		this.addStyleName(SignUpCBundle.INSTANCE.css().popupBackground());
 	    this.setGlassStyleName(SignUpCBundle.INSTANCE.css().signUpPopUpGlassCss());
-		
+
 		setUiAndIds();
 	}
-
+	/**
+	 *
+	 * @function setUiAndIds
+	 *
+	 * @created_date : 06-Dec-2014
+	 *
+	 * @description
+	 *
+	 *
+	 * @parm(s) :
+	 *
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 *
+	 *
+	 *
+	 */
 	public void setUiAndIds() {
-		lblTitle.setText(GL0480
-				+ GL_SPL_QUESTION);
-		lblHeading.setText(GL0477);
+		lblTitle.setText(i18n.GL0480()
+				+ i18n.GL_SPL_QUESTION());
+		lblTitle.getElement().setId("lblTitle");
+		lblTitle.getElement().setAttribute("alt",i18n.GL0480());
+		lblTitle.getElement().setAttribute("title",i18n.GL0480());
+
+		lblCancel.getElement().setId("lblCancel");
+
+		panelSignUp.getElement().setId("pnlSignUp");
+
+		lblHeading.setText(i18n.GL0477());
+		lblHeading.getElement().setId("lblHeading");
+		lblHeading.getElement().setAttribute("alt",i18n.GL0477());
+		lblHeading.getElement().setAttribute("title",i18n.GL0477());
 		lblHeading.getElement().setAttribute("style", "margin-bottom:0px");
-		lblSubHeading.setText(GL0478);
+
+		lblSubHeading.setText(i18n.GL0478());
+		lblSubHeading.getElement().setId("lblSubHeading");
+		lblSubHeading.getElement().setAttribute("alt",i18n.GL0478());
+		lblSubHeading.getElement().setAttribute("title",i18n.GL0478());
+
+		btnLeave.setText(i18n.GL0480());
 		btnLeave.getElement().setId("btnLeave");
+		btnLeave.getElement().setAttribute("alt",i18n.GL0480());
+		btnLeave.getElement().setAttribute("title",i18n.GL0480());
+
 		btnContinue.getElement().setId("btnContinue");
-		btnLeave.setText(GL0480);
-		btnContinue.setText(GL0479);
+		btnLeave.getElement().setAttribute("alt",i18n.GL0479());
+		btnLeave.getElement().setAttribute("title",i18n.GL0479());
+		btnContinue.setText(i18n.GL0479());
 		btnContinue.getElement().setAttribute("style", "margin-left: 20px");
-		quriesText.setText(GL1139+GL_GRR_COMMA);
-		pleaseContactText.setText(GL1145);
-		supportLink.setText(GL0299);
-		supportLink.setHref(GL1055);
+
+		quriesText.setText(i18n.GL1139()+i18n.GL_GRR_COMMA());
+		quriesText.getElement().setId("lblQuriesText");
+		quriesText.getElement().setAttribute("alt",i18n.GL1139());
+		quriesText.getElement().setAttribute("title",i18n.GL1139());
+
+		pleaseContactText.setText(i18n.GL1145());
+		pleaseContactText.getElement().setId("spnPleaseContactText");
+		pleaseContactText.getElement().setAttribute("alt",i18n.GL1145());
+		pleaseContactText.getElement().setAttribute("title",i18n.GL1145());
+
+		supportLink.setText(i18n.GL0299());
+		supportLink.getElement().setId("lnkSupportLink");
+		supportLink.getElement().setAttribute("alt",i18n.GL0299());
+		supportLink.getElement().setAttribute("title",i18n.GL0299());
+		supportLink.setHref(i18n.GL1055());
 	}
 
 	@UiHandler("lblCancel")
 	public void onClickLblCancel(ClickEvent event) {
 		MixpanelUtil.close_signUp();
 		if (AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.PREVIEW_PLAY)){
-			
+
 		}else{
 			Window.enableScrolling(true);
 			AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
@@ -129,7 +201,10 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			}
 			mapParms.remove("callback");
 			mapParms.remove("type");
-			AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), mapParms );
+			//AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), mapParms );
+			PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(AppClientFactory.getCurrentPlaceToken(), mapParms);
+			AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, false);
+
 		}
 		this.hide();
 	}
@@ -139,7 +214,7 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 		MixpanelUtil.close_signUp();
 		this.hide();
 		if (AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.PREVIEW_PLAY)){
-			
+
 		}else{
 			Window.enableScrolling(true);
 			AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
@@ -157,16 +232,18 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			}
 			mapParms.remove("callback");
 			mapParms.remove("type");
-			AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), mapParms );
+			//AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), mapParms );
+			PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(AppClientFactory.getCurrentPlaceToken(), mapParms);
+			AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, false);
+
 		}
 	}
 
 	@UiHandler("btnContinue")
 	public void onClickBtnContinue(ClickEvent event) {
 		MixpanelUtil.continue_registration();
-		if(accountType=="parent")
-		{
-			
+		if(accountType.equalsIgnoreCase("parent")){
+
 			Map<String, String> params = StringUtil.splitQuery(Window.Location.getHref());
 			if(params.containsKey("query"))
 			{
@@ -182,9 +259,7 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			params.put("callback", "signup");
 			AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), params );
 
-		}
-		if(accountType=="registerChild")
-		{
+		}else if(accountType.equalsIgnoreCase("registerChild")){
 			Map<String, String> params = new HashMap<String, String>();
 			if(params.containsKey("query"))
 			{
@@ -198,7 +273,7 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			}
 			params.put("callback", "registerChild");
 			params.put("type", "4");
-			
+
 			if (childDob != null) {
 				params.put("dob", childDob);
 			}
@@ -208,8 +283,10 @@ public class LeaveRegistrationPopUpUc extends PopupPanel implements MessagePrope
 			if(parentEmailId!=null){
 				params.put("emailId",parentEmailId);
 			}
-			AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), params );
-			
+			//AppClientFactory.getPlaceManager().revealPlace(AppClientFactory.getCurrentPlaceToken(), params );
+			PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(AppClientFactory.getCurrentPlaceToken(), params);
+			AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, false);
+
 		}
 		this.hide();
 	}

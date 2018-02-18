@@ -1,0 +1,180 @@
+.centuryPopupMain{
+	width:700px;
+	color:#515151;
+	margin: 30px auto;
+	position:relative;
+	font-family:arial;
+	font-size:12px;
+	background:#ffffff;
+	border-radius:0 0;
+	border:1px solid #999;
+	padding:3px 3px;
+}
+.skillsCategory{
+	background:#d8d8d8;
+	padding:10px 5px;
+
+}
+	.dividerHeader{	
+padding-top: 11px;
+margin: 0 auto;
+font-weight: bold;
+text-align: center;
+	}
+
+.skillsCategory ul{
+	margin:0 0;
+	padding:0 0;
+}
+.skillsCategory ul li{
+	display:inline-block;
+	margin:0 0;
+	padding:0 5px 0 0;
+	list-style:none;
+	vertical-align:middle;
+	line-height:13px;
+}
+
+.smallCircle{
+	width:13px;
+	height:13px;
+	border-radius:50% 50%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:5px;
+}
+
+.greenCircle{
+	background:#a6caa2;
+}
+
+.blueCircle{
+	background:#8791dd;
+}
+.yellowCircle{
+	background:#fcc46c;
+}
+
+.purpleCircle{
+	background:#eb8888;
+}
+
+.skillsCategoryList ul{
+	margin:15px 5px;
+	padding:0 0;
+}
+.skillsCategoryList ul li{
+	margin:8px 0;
+	padding:0 0 0 0;
+	list-style:none;
+}
+
+
+.skillsCategoryList ul li .smallCircle{
+	
+
+}
+
+.circlesBlock{
+	display:inline-block;
+	width:45px;
+	text-align:right;
+}
+.smallCircle{
+	/* margin-right:0; */
+}
+.circlesBlock .greenCircle, .circlesBlock .blueCircle, .circlesBlock .yellowCircle, .circlesBlock .purpleCircle{
+	margin-left:-7px;
+	margin-right:0;
+}
+
+.skillsCategoryList .listText{
+	display:inline-block;
+	vertical-align:top;
+	width:184px;
+}
+
+.devider{
+	border-right:1px solid #dddddd;
+	min-height: 405px;
+}
+
+.buttonGroup{
+	padding:12px 0;
+	border-top:1px solid #dddddd;
+	text-align:center;
+}
+
+@media (min-width: 240px) and (max-width: 319px){
+	
+	
+	.centuryPopupMain{
+		width:100%;
+	}
+	.skillsCategory{
+		text-align:center;
+	}
+	.skillsCategoryList .listText{
+		width:auto;
+	}
+	.skillsCategoryList ul{
+		margin:15px 0;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 479px){
+
+	.centuryPopupMain{
+		width:100%;
+	}	
+	.skillsCategory{
+		text-align:center;
+	}
+	.skillsCategoryList .listText{
+		width:100%;
+		text-align:center;
+	}
+	.circlesBlock {
+   	    text-align: center;
+    	width: 100%;
+	}
+	.skillsCategoryList ul{
+		margin:15px 0;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+	.centuryPopupMain{
+		width:100%;
+	}	
+	.skillsCategory{
+		text-align:center;
+	}
+	.skillsCategoryList .listText{
+		width:100%;
+		text-align:center;
+	}
+	.circlesBlock {
+   	 	text-align: center;
+    	width: 100%;
+	}
+	.skillsCategoryList ul{
+		margin:15px 0;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+	
+	.centuryPopupMain{
+		width:100%;
+	}
+	.skillsCategory{
+		text-align:center;
+	}
+	.skillsCategoryList .listText{
+	
+	}
+	.skillsCategoryList .listText{
+		width:70%;
+	}
+}

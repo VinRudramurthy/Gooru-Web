@@ -24,12 +24,12 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.register;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.AppPopUp;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
 import org.ednovo.gooru.client.uc.ErrorLabelUc;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
@@ -52,7 +52,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class ParentRegisterVc extends Composite implements MessageProperties {
+public class ParentRegisterVc extends Composite {
 
 	private static ParentRegisterVcUiBinder uiBinder = GWT.create(ParentRegisterVcUiBinder.class);
 
@@ -72,12 +72,14 @@ public class ParentRegisterVc extends Composite implements MessageProperties {
 
 	private AppPopUp appPopUp;
 	
-	private static final String REGISTER_GOORU_BETA_ACCOUNT = GL1197+GL_SPL_EXCLAMATION ;
+//	private static final String REGISTER_GOORU_BETA_ACCOUNT = i18n.GL1197+i18n.GL_SPL_EXCLAMATION ;
 	
 	private static final String EMAIL = "email";
 
 	interface ParentRegisterVcUiBinder extends UiBinder<Widget, ParentRegisterVc> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * Class constructor , creates popup for parent registration
@@ -85,20 +87,36 @@ public class ParentRegisterVc extends Composite implements MessageProperties {
 	public ParentRegisterVc() {
 		RegisterCBundle.INSTANCE.css().ensureInjected();
 		appPopUp = new AppPopUp();
-		appPopUp.setContent(REGISTER_GOORU_BETA_ACCOUNT, uiBinder.createAndBindUi(this));
+		appPopUp.setContent((i18n.GL1197()+i18n.GL_SPL_EXCLAMATION()), uiBinder.createAndBindUi(this));
 		appPopUp.show();
 		appPopUp.center();
-		setUpText.setText(GL1195);
-		emailtext.setText(GL1196);
-		almostDoneRegisterationUc.setText(GL0228);
-		guardianCancelAnr.setText(GL0142);
+		setUpText.setText(i18n.GL1195());
+		setUpText.getElement().setId("lblSetUpText");
+		setUpText.getElement().setAttribute("alt",i18n.GL1195());
+		setUpText.getElement().setAttribute("title",i18n.GL1195());
+		
+		emailtext.setText(i18n.GL1196());
+		emailtext.getElement().setId("lblEmailtext");
+		emailtext.getElement().setAttribute("alt",i18n.GL1196());
+		emailtext.getElement().setAttribute("title",i18n.GL1196());
+		
+		almostDoneRegisterationUc.setText(i18n.GL0228());
+		almostDoneRegisterationUc.getElement().setId("btnSend");
+		almostDoneRegisterationUc.getElement().setAttribute("alt",i18n.GL0228());
+		almostDoneRegisterationUc.getElement().setAttribute("title",i18n.GL0228());
+		
+		guardianCancelAnr.setText(i18n.GL0142());
+		guardianCancelAnr.getElement().setId("lnkCancel");
+		guardianCancelAnr.getElement().setAttribute("alt",i18n.GL0142());
+		guardianCancelAnr.getElement().setAttribute("title",i18n.GL0142());
+		
 		emailValidationUc.setVisible(false);
 		emailValidationUc.setStyleName(RegisterCBundle.INSTANCE.css().parentErrorLabel());
 		parentEmailIdTxtBox.addFocusHandler(new OnEmailFocus());
 		parentEmailIdTxtBox.addBlurHandler(new OnEmailBlur());
 		parentEmailIdTxtBox.getElement().setId("txtParentEmailId");
-		almostDoneRegisterationUc.getElement().setId("btnSend");
-		guardianCancelAnr.getElement().setId("lnkCancel");
+		StringUtil.setAttributes(parentEmailIdTxtBox, true);
+		emailValidationUc.getElement().setId("errlblEmailValidationUc");		
 	}
 	
 	/**
@@ -156,13 +174,17 @@ public class ParentRegisterVc extends Composite implements MessageProperties {
 		if (email == null || (email != null && email.isEmpty())) {
 			parentEmailIdTxtBox.addStyleName(RegisterCBundle.INSTANCE.css().guardianErrorEmail());
 			emailValidationUc.setVisible(true);
-			emailValidationUc.setText(StringUtil.generateMessage(GL0082, EMAIL));
+			emailValidationUc.setText(StringUtil.generateMessage(i18n.GL0082(), EMAIL));
+			emailValidationUc.getElement().setAttribute("alt",StringUtil.generateMessage(i18n.GL0082(), EMAIL));
+			emailValidationUc.getElement().setAttribute("title",StringUtil.generateMessage(i18n.GL0082(), EMAIL));
 			isValid = false;
 		}
 		if ((email != null && !email.isEmpty()) && !email.contains("@")) {
 			parentEmailIdTxtBox.addStyleName(RegisterCBundle.INSTANCE.css().guardianErrorEmail());
 			emailValidationUc.setVisible(true);
-			emailValidationUc.setText(StringUtil.generateMessage(GL0067, EMAIL));
+			emailValidationUc.setText(StringUtil.generateMessage(i18n.GL0067(), EMAIL));
+			emailValidationUc.getElement().setAttribute("alt",StringUtil.generateMessage(i18n.GL0067(), EMAIL));
+			emailValidationUc.getElement().setAttribute("title",StringUtil.generateMessage(i18n.GL0067(), EMAIL));
 			isValid = false;
 		}		
 		return isValid;

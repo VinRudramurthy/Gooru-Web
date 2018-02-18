@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<g:HTMLPanel ui:field="contentPanel">
+		
+		<g:Label ui:field="imageIcon"></g:Label>
+
+		<g:HTML ui:field="driveText"></g:HTML>
+		<g:HTMLPanel ui:field="folderContent"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

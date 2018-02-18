@@ -1,7 +1,6 @@
 package org.ednovo.gooru.client.mvp.shelf.event;
 
 import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.GwtEvent.Type;
 
 public class DragOverOpenFolderEvent extends GwtEvent<DragOverOpenFolderHandler> {
 	

@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header" xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+   <ui:style field="addToCollectionStyle" src="addcollection.css" />
+   <g:HTMLPanel styleName="{addToCollectionStyle.collectionPlayerAddResourcesContainer}" ui:field="addToCollectionWidgetContainer">
+      <g:HTMLPanel styleName="{addToCollectionStyle.collectionPlayerAddResourcesContent}" ui:field="collectionAddImageContainer">
+         	<g:HTMLPanel styleName="{addToCollectionStyle.collectionPlayerAddResourcesIconContainer}">
+             	<g:HTMLPanel styleName="{addToCollectionStyle.collectionPlayerAddResourcesText}" ui:field="addcollectionText"></g:HTMLPanel>
+             </g:HTMLPanel>
+             <g:HTMLPanel styleName="{addToCollectionStyle.addResourceInsteadContainer}" ui:field="addResourceInsteadLabelContainerInCollectionImage">
+             	<g:Label  styleName="{addToCollectionStyle.collectionPlayerAddResourcesInstead}" ui:field="addResourceInsteadLabel"></g:Label>
+         	 </g:HTMLPanel>
+      </g:HTMLPanel>
+       <g:FlowPanel styleName="{addToCollectionStyle.successMessageContainer}" ui:field="collectionAddedSuccessMessageContainer">
+	    	<g:Label styleName="{addToCollectionStyle.successMessageLabelText}" ui:field="successMessageLabelText"></g:Label>
+	    	<g:HTMLPanel styleName="{addToCollectionStyle.workSpaceLinkContainer}">
+	    		<g:Anchor styleName="{addToCollectionStyle.workSpaceLinkText}" ui:field="workSpaceLink"></g:Anchor>
+	    	</g:HTMLPanel>
+	    	<g:HTMLPanel styleName="{addToCollectionStyle.addCollectionInsteadLabelContainer}" ui:field="addCollectionInsteadLabelContainer">
+	    	</g:HTMLPanel>
+     </g:FlowPanel>
+      <g:HTMLPanel styleName="{addToCollectionStyle.collectionPlayerExistingCollectionContainer}">
+         <div class="{addToCollectionStyle.collectionPlayerExistingCollectionContent}">
+            <g:Label styleName="{addToCollectionStyle.collectionPlayerExistingCollectionText}" ui:field="renameText"></g:Label>
+            <div class="{addToCollectionStyle.collectionPlayerExistingCollectionInputContainer}">
+               <g:TextBox ui:field="collectionTitleInCoverPage" styleName="{addToCollectionStyle.inputTextBoxSyle}" />
+            </div>
+               <g:Button styleName="{addToCollectionStyle.collectionPlayerExistingAddButtonText}" ui:field="addToShelfCollectionButton"></g:Button>
+            <g:Label ui:field="addingLabel"  styleName="{addToCollectionStyle.collectionAddingStyles}"></g:Label>
+         </div>
+            <g:Label ui:field="addErrorLabel" styleName="{addToCollectionStyle.collectionErrorStyles}"/>
+      </g:HTMLPanel>
+         <uc:HTMLEventPanel styleName="{addToCollectionStyle.resource-info-bottomImageContainer}" ui:field="hideButton">
+      <g:Label styleName="{addToCollectionStyle.resource-info-hideImage}"/>
+      <g:Label styleName="{addToCollectionStyle.resource-info-hideText}" ui:field="hideText"></g:Label>
+ </uc:HTMLEventPanel>
+   </g:HTMLPanel>
+</ui:UiBinder>
+

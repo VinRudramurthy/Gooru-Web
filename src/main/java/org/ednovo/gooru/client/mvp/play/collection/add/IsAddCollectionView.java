@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.add;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
 
 import com.google.gwt.user.client.ui.Label;
 

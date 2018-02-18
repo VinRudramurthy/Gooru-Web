@@ -1,0 +1,1982 @@
+/* CSS Document */
+#gooruSearchMainContainer .subNavigation, #gooruSearchMainContainer .collectionDetails{
+	background:#ffffff;
+}
+#gooruSearchMainContainer .loadingText{
+	text-align: center;
+	font-size: 23px;
+	width: 100%;
+	clear: both;
+}
+#gooruSearchMainContainer .searchFilters{
+	display: inline-block;
+	/* width: 40%; */
+	margin-left: 20px;
+	margin-bottom: 5px;
+	margin-top: 3px;
+}
+#gooruSearchMainContainer .subNavigation{
+	background: #ffffff;
+	height: 50px;
+	box-shadow: 0px 1px 1px 0px #ccc;
+}
+#gooruSearchMainContainer .viewContainer{
+
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+	margin:0 0;
+	padding:0 0;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li{
+	margin:0 0;
+	padding:0 0;
+	list-style:none;
+	display:inline-block;
+	margin-bottom:-1px;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li:last-child a{
+	/* border-right: 1px solid #d1cfcf; */
+}
+
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > li > a{
+	text-align:left;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li a{
+    display:block;
+	color:#515151;
+	background:#dddddd;
+	border-left:1px solid #d1cfcf;
+	font-size:13px;
+	/* height: 57px; */
+	/* line-height: 23px; */
+	border-radius: 4px !important;
+
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li a:hover, #gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li a:focus{
+	opacity:0.75;
+	text-decoration:none;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li.active{
+	border-bottom:1px solid #ffffff;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background: none;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li.active a{
+	background:#ffffff;
+	border-bottom:1px solid #ffffff;
+}
+
+#gooruSearchMainContainer .subNavigation .seachRightNavigation{
+	font-size:13px;
+
+}
+
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul{
+	padding:0 0;
+	padding-top: 4px;
+	display:inline-block;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li{
+	padding:0 0;
+	margin:0 0;
+	list-style:none;
+	display:inline-block;
+
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li.active{
+	background:none !important;
+	border: none;
+}
+
+#gooruSearchMainContainer .collectionDetails  .seachRightNavigation  button.primary{
+	padding:7px 25px;
+}
+#gooruSearchMainContainer .collectionDetails  .seachRightNavigation{
+	margin:12px 0;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a{
+	display:block;
+	padding:10px 25px 10px 60px;
+	color:#515151;
+	border:2px solid #ffffff;
+	border-radius:3px 3px;
+	font-size:13px;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a:hover{
+	border:2px solid #87badd;
+	text-decoration:none;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li.active a{
+	border:2px solid #87badd;
+	text-decoration:none;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li.active{
+	box-shadow:none !important;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.collectionsIcon{
+	background:url(../images/folders/panel/collection-icon.png) no-repeat 18px 6px;
+}
+#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.assessmentIcon{
+	background:url(../images/folders/panel/assessment-type.png) no-repeat 18px 6px;
+}
+#gooruSearchMainContainer .seachRightNavigation{
+	text-align:left;
+	margin:15px 0 0;
+	display: table;
+	width: 100%;
+}
+#gooruSearchMainContainer .collectionDetails{
+	/* margin-bottom:7px; */
+}
+#gooruSearchMainContainer .btn-group{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 6px 6px 6px 6px;
+}
+#gooruSearchMainContainer .authorDetails{
+	display:inline-block;
+	vertical-align:middle;
+	padding:0 20px;
+	border-left:1px solid #cccccc;
+	font-size:13px;
+	min-height: 50px;
+	padding-top: 10px;
+}
+#gooruSearchMainContainer .authorDetails .input-group {
+
+}
+#gooruSearchMainContainer .authorDetails .input-group .form-control{
+	display:inline-block;
+	vertical-align:middle;
+	width:auto !important;
+	float:none;
+	border-radius: 4px;
+	height: 30px;
+}
+#gooruSearchMainContainer .authorDetails .input-group  span{
+	display:inline-block;
+	margin-right: 10px;
+}
+#gooruSearchMainContainer .no-gutter > [class*='col-md-']{
+	padding-left:0px;
+	padding-right:0px
+}
+
+#gooruSearchMainContainer .less-gutter > [class*='col-md-']{
+	padding-left:8px;
+	padding-right:8px
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .topicListEllipsis{
+	font-size:13px;
+	font-weight:bold;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .viewsBlock{
+	font-size:12px;
+	color:#999999;
+	text-align:right;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .collectionImg img{
+	width:160px;
+	height:120px;
+	padding-right:0;
+}
+#gooruSearchMainContainer .libraryMainContainerBlock .collectionImg a{
+	display:block;
+}
+#gooruSearchMainContainer .libraryMainContainerBlock .collectionImg a:hover {
+    opacity: 0.6;
+}
+
+
+#gooruSearchMainContainer .searchStandard{
+
+	/*
+	background: #dddddd;
+
+	Safari 4-5, Chrome 1-9
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666666), to(#515151));
+
+	Safari 5.1, Chrome 10+
+	background: -webkit-linear-gradient(top, #666666, #515151);
+
+	Firefox 3.6+
+	background: -moz-linear-gradient(top, #666666, #515151);
+
+	IE 10
+	background: -ms-linear-gradient(top, #666666, #515151);
+
+	Opera 11.10+
+	background: -o-linear-gradient(top, #666666, #515151); */
+
+	border-radius:3px 3px;
+	font-size:10px;
+	padding:3px 3px;
+	display:inline-block;
+	margin:8px 0;
+
+
+}
+
+
+#gooruSearchMainContainer .libraryMainContainerBlock .collectionTitle{
+	font-size:16px;
+	font-weight:400;
+	color:#0c74be;
+	margin-top:2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor:pointer;
+    max-height:42px;
+    overflow: hidden;
+    margin-left: 10px;
+	margin-top: 10px;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .collectionTitleincoll{
+	font-size:17px;
+	font-weight:400;
+	color:#0c74be;
+	margin-top:2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor:pointer;
+    max-height:20px;
+}
+#gooruSearchMainContainer .libraryMainContainerBlock .resourceAuthorDetails{
+	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	overflow: hidden;
+  	margin-left: 10px;
+}
+#gooruSearchMainContainer .userDetails img{
+	width:30px;
+	height:30px;
+	border-radius: 50px;
+	box-shadow: 0 0 0 2px #87badd;
+}
+#gooruSearchMainContainer .userDetails{
+	font-size:13px;
+	font-weight:600;
+	/* color:#0c74be; */
+	padding:6px 0;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .additionalCount{
+	color:#1076BA;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock  .collectionImg img {
+    border-left: 9px solid #1076bb;
+}
+
+
+#gooruSearchMainContainer .libraryMainContainerBlock .panel {
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-shadow:none;
+    margin-bottom: 20px;
+}
+
+#gooruSearchMainContainer .standerdContainer{
+	border-bottom: 1px solid #ddd;
+	max-height: 40px;
+	min-height: 40px;
+	padding-left: 10px;
+	box-sizing: content-box;
+}
+#gooruSearchMainContainer .resourcesInside {
+	padding:8px 8px;
+	min-height: 8.9547em;
+	height: 8.9547em;
+}
+#gooruSearchMainContainer .resourcesInside p {
+	margin-left: 2.5%;
+}
+#gooruSearchMainContainer .noResourcesText{
+	text-align: center;
+  	font-weight: bold;
+  	color: grey;
+ 	vertical-align: middle;
+ 	margin-top: 35px;
+  }
+#gooruSearchMainContainer .resourceImage {
+   display: inline-block;
+	height: 60px;
+	margin: 2% 2.5% 2% 2.5%;
+	position: relative;
+	width: 80px;
+	vertical-align:middle;
+}
+#gooruSearchMainContainer .resourceImage a:hover {
+    opacity: 0.6;
+}
+#gooruSearchMainContainer .resourceImage img {
+    height: 60px;
+    width: 80px;
+}
+#gooruSearchMainContainer .resourceName {
+    color: #fff;
+    font-size: 12px;
+    height: 61px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 81px;
+}
+#gooruSearchMainContainer .videoSmall {
+    background: url("../images/Video_1.png") no-repeat scroll 0 0 transparent;
+}
+#gooruSearchMainContainer .questionSmall {
+    background: url("../images/Question_1.png") no-repeat scroll 0 0 transparent;
+}
+
+#gooruSearchMainContainer .textSmall {
+    background: url("../images/Text_1.png") no-repeat scroll 0 0 transparent;
+}
+#gooruSearchMainContainer .webpageSmall {
+    background: url("../images/Website_1.png") no-repeat scroll 0 0 transparent;
+}
+#gooruSearchMainContainer .resourceImage a:hover .interactiveSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .imageSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .audioSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .videoSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .questionSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .textSmall{
+		display:none;
+}
+#gooruSearchMainContainer .resourceImage a:hover .webpageSmall{
+		display:none;
+}
+#gooruSearchMainContainer .libraryMainContainerBlock .panel-default > .panel-heading{
+		border-bottom: 1px solid #ddd;
+		background:none;
+		padding:5px 10px;
+}
+#gooruSearchMainContainer .remixButton button.primary{
+	padding:7px 30px;
+}
+#gooruSearchMainContainer .circleBlocks{
+	padding:0 0;
+}
+#gooruSearchMainContainer .circleBlocks ul{
+	margin:0 0;
+	padding:0 0;
+}
+#gooruSearchMainContainer .circleBlocks ul li{
+	margin:0 0;
+	padding:0 0;
+	width:30px;
+	height:30px;
+	border-radius:50% 50%;
+	border:1px solid #6daccf;
+	display:inline-block;
+}
+.viewMoreBtncss{
+	color:#669AC4;
+}
+
+#gooruSearchMainContainer .libraryMainContainerBlock .panel-body{
+	padding:0 0;
+}
+#gooruSearchMainContainer .libraryMainContainerBlock .panel-footer{
+	padding:10px 10px;
+	background:#dddddd;
+}
+
+#gooruSearchMainContainer .whitebg{
+	background:#ffffff;
+}
+
+#gooruSearchMainContainer .viewContainer{
+	margin:7px 0 6px 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+#gooruSearchMainContainer .viewContainer span{
+	font-size: 12px;
+	color:#515151;
+}
+#gooruSearchMainContainer .SmallWidthContainer{
+  margin: 0 auto;
+}
+#gooruSearchMainContainer .remixButton{
+	text-align:right;
+}
+#gooruSearchMainContainer .ratings{
+	margin:6px 0;
+	padding-right: 0;
+	padding-left: 0;
+}
+#gooruSearchMainContainer .fixedPosition{
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+}
+#gooruSearchMainContainer .borderBox{
+	padding:20px 8px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	/* background-color: #fff; */
+}
+.noSearchResultsTextContainer{
+	background-color: #fff;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#gooruSearchMainContainer .ratingsBlock .img-responsive{
+	display:inline-block;
+}
+
+#gooruSearchMainContainer .collectionImg{
+	width: 170px !important;
+}
+#gooruSearchMainContainer .collectionDesc{
+	width: 57% !important;
+}
+#gooruSearchMainContainer .searchQuestionMark {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#gooruSearchMainContainer .authorName{
+	display: inline-block;
+	vertical-align: middle;
+}
+#gooruSearchMainContainer .authorNameAddLeft{
+	margin-left: 4%;
+}
+
+#gooruSearchMainContainer .collectionDescription{
+	max-height: 44px;
+	overflow: hidden;
+}
+
+/*
+Back to top button
+*/
+#gooruSearchMainContainer  #back-top {
+	position: fixed;
+	bottom: 100px;
+	margin-left: 76%;
+}
+#gooruSearchMainContainer  #back-top a {
+	width: 85px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+	/* background color transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+
+}
+#gooruSearchMainContainer  #back-top a:hover {
+	color: #000;
+}
+/* arrow icon (span tag) */
+#gooruSearchMainContainer  #back-top span {
+	width: 60px;
+	height: 60px;
+	display: block;
+	margin-bottom: 7px;
+	background: #ffffff url(../images/up-arrow.png) no-repeat center center;
+	/* rounded corners */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 15px;
+	/* background color transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#gooruSearchMainContainer  #back-top a:hover span {
+	background-color: #ffffff;
+}
+#gooruSearchMainContainer .dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 33px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+#gooruSearchMainContainer .dropdown-menu .liPanelStyle {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 9pt;
+}
+#gooruSearchMainContainer .dropdown-menu .liPanelStylenonBold {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 9pt;
+    padding-bottom: 10px;
+}
+
+#gooruSearchMainContainer .dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  left: 34px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 263px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  left: 264px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}
+#gooruSearchMainContainer .seachRightNavigation li:hover {
+    background: none repeat scroll 0 0 #c3ddee;
+    margin: 0px;
+  	width: 100%;
+  	border: 0px;
+}
+
+
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu {
+	/* right: 0; */
+	top: 120%;
+	font-size: 12px;
+	min-width: 245px;
+	margin: 0 0;
+	padding: 0 0;
+}
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > span {
+	font-size: 12px;
+	text-align: left;
+	color: #515151;
+	padding: 8px 20px;
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > .active > a,#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > .active > a:hover,#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > .active > a:focus {
+	background: #87badd url(../images/checkmark.png) no-repeat 95% 5px;
+	color: #ffffff;
+}
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > li > a {
+	padding: 8px 20px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+	color: #515151;
+}
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > li > a {
+	text-align: left;
+}
+#gooruSearchMainContainer .searchResultsBox{
+	font-size: 14px;
+	vertical-align: middle;
+	margin-right: 12px;
+}
+#gooruSearchMainContainer .seachRightNavigation .btn-primary {
+	background-color: #87badd;
+	border-color: #7cb1d5;
+	color: #fff;
+	padding: 4px 6px;
+	font-size: 12px;
+}
+#gooruSearchMainContainer .seachRightNavigation .btn-primarysearch {
+	background-color: #87badd;
+	border-color: #7cb1d5;
+	color: #fff;
+	padding: 4px 6px;
+	font-size: 12px;
+}
+
+
+
+#gooruSearchMainContainer .grade ul{
+	margin:0 0 8px 0;
+	padding:0 0;
+	text-align:left;
+	display:block;
+}
+#gooruSearchMainContainer .grade ul li{
+	margin:0 0;
+	padding:0 0;
+	list-style:none;
+	display:inline-block;
+	background: none !important;
+}
+#gooruSearchMainContainer .standards ul li{
+	margin:0 0;
+	padding:0 0;
+	list-style:none;
+	display:inline-block;
+	width:100%;
+	padding-top: 5px;
+	cursor: pointer;
+}
+#gooruSearchMainContainer .grade ul li:hover{
+    background: none repeat scroll 0 0 #c3ddee;
+    width: 27px;
+}
+
+#gooruSearchMainContainer .grade ul li a{
+	width:23px;
+	height:23px;
+	border-radius:50% 50%;
+	text-align:center;
+	color:#ffffff;
+	font-size:12px;
+	background:#87badd;
+	display:block;
+	margin: 2px;
+	line-height:22px;
+}
+#gooruSearchMainContainer .grade ul li a:hover, #gooruSearchMainContainer  .grade ul li a:focus{
+	text-decoration:none;
+	outline:none;
+}
+#gooruSearchMainContainer .grade ul li.gradeTypes{
+	width:92px;
+}
+#gooruSearchMainContainer .grade ul li.gradeTypes a{
+	width:auto;
+	height:auto;
+	border-radius:2px 2px;
+
+}
+#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu{
+	min-width:300px;
+}
+#gooruSearchMainContainer .gradeHeader{
+	font-size:12px;
+	color:#515151;
+	text-align:left;
+	padding:10px 20px;
+}
+#gooruSearchMainContainer .gradesContainer{
+	background:#e8e7e7;
+	padding:20px 20px 10px 20px;
+}
+
+#morePeoplePopWrapper {
+	width: 600px;
+	margin: 0 auto;
+	padding: 3px 3px;
+	border: 1px solid #ddd;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.176);
+	background: #fff;
+}
+#morePeoplePopWrapper .popFooter {
+	background: #dddddd;
+	padding: 10px 0;
+}
+#morePeoplePopWrapper .popHeader {
+	padding: 10px 0;
+	background: #515151;
+	border-bottom: 1px solid #ddd;
+	color: #ffffff;
+	font-size: 16px;
+}
+#morePeoplePopWrapper .popBody h4{
+	font-size:15px;
+	margin:10px 8px;
+}
+#morePeoplePopWrapper .closeButton {
+	text-align:right;
+ 	background: url(../images/login/close-button.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+ 	height: 17px;
+ 	width: 17px;
+ 	display: inline-block;
+    cursor: pointer;
+    margin-left: 54px;
+}
+#morePeoplePopWrapper .peopleBlock {
+	border: 1px solid #dddddd;
+	padding: 15px 0;
+	margin: 0 8px;
+}
+
+#morePeoplePopWrapper  .peopleGroup{
+	margin-bottom:5px;
+}
+#morePeoplePopWrapper .peopleBlock a:hover, #morePeoplePopWrapper .peopleBlock a:focus{
+	text-decoration:none;
+}
+#morePeoplePopWrapper .userDetContainer img {
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #87badd;
+  width: 30px;
+  height: 30px;
+}
+#morePeoplePopWrapper .userDetContainer p {
+	margin-bottom: 0;
+	line-height: 15px;
+}
+#morePeoplePopWrapper .colleDetContaner .userNameforCollection{
+	margin-left: 5%;
+}
+
+#morePeoplePopWrapper .userDetContainer .userNameforCollection{
+	margin-left: 10%;
+}
+#morePeoplePopWrapper .userDetContainer .userGrades{
+	margin-left: 29%;
+margin-top: -5%;
+word-wrap: break-word;
+}
+#morePeoplePopWrapper .colleDetContaner img {
+  width: 40px;
+  height: 28px;
+  border-left: 3px solid #1076bb;
+}
+#morePeoplePopWrapper .addToNewButton {
+	text-align: right;
+}
+#morePeoplePopWrapper .scrollDiv {
+	height: 300px;
+	overflow-y: auto;
+}
+
+
+
+
+button#btnSearchType .caret {
+	margin-right: 5px;
+	margin-left: 13px;
+}
+
+
+.seachLeftNavigation .dropdown{
+	font-size: 13px !important;
+	color: rgb(81, 81, 81);
+	cursor: pointer !important;
+	text-decoration: none !important;
+  	width: 97%;
+	box-sizing: border-box;
+	background: rgb(255, 255, 255);
+	position: absolute;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.seachLeftNavigation .dropdown .dropdownItem{
+	font-size: 13px!important;
+	color: #515151;
+	cursor: pointer!important;
+	text-decoration: none!important;
+	padding: 4px 11px;
+	box-sizing: border-box;
+	background: rgb(255, 255, 255);
+	z-index: 90;
+	background-color: #fff;
+	background-clip: padding-box;
+}
+
+.seachLeftNavigation .dropdown .dropdownItem:hover{
+	background: #cfe3f1;
+}
+
+.no-gutter-col{
+	width: 115px !important;
+	margin-top: 3px;
+	padding-top: 5px;
+}
+
+#gooruSearchMainContainer .subFilters {
+	background: #F7F6F6;
+	padding-top: 39px;
+	clear: both;
+	min-height: 86px;
+}
+
+.subFilters .searchFiltersContainer{
+	width: 1000px;
+	margin: 0px auto;
+	float: none;
+}
+
+.seachRightNavigation .panelFilterOptions{
+	vertical-align: middle;
+	margin: 0% auto;
+	display: table-cell;
+	width: 31%;
+	border-right: 1px solid #ccc;
+}
+
+.overrideFilterColor{
+	background-color: #87badd !important;
+	background: -moz-linear-gradient(center top,#c3ddee,#c3ddee) repeat scroll 0 0 transparent !important;
+	background: -webkit-gradient(linear,0 0,0 100%,from(#87badd),to(#87badd)) !important;
+	background: -webkit-linear-gradient(top,#87badd,#87badd) !important;
+	background-image: -ms-linear-gradient(top,#87badd,#87badd) !important;
+	background: -o-linear-gradient(top,#87badd,#87badd) !important;
+	border-color: #7cb1d5 !important;
+}
+
+
+.borderBox .libraryMainContainerBlock{
+	border-radius: 5px;
+}
+
+.resourceViewsContainer{
+	text-align: right !important;
+}
+
+.usedDetails .viewContainer{
+	display: inline-block;
+	width: 72%;
+}
+
+.usedDetails .buttonAddResource{
+	display: inline-block;
+	width: 22%;
+  	text-align: right;
+}
+
+
+/* Add Resource Assessments View */
+.arav-addResource{
+	display:block;
+}
+/* End - Add Resource Assessments View */
+/* Social Share View */
+.ssv-facebookbtn{
+    background: #3b5996 url(../images/FTE.png) -15px -15px;
+    border-radius: 4px;
+	padding:8px 18px 8px 43px !important;
+	font-weight:bold;
+	display:block;
+	color:#ffffff !important;
+	transition:all 0.5s ease-in-out 0s;
+}
+.ssv-facebookbtn:hover{
+	background:#4b6baa url(../images/FTE.png) -20px -15px;
+}
+
+.ssv-twitterbtn{
+    background:#00acf0 url(../images/FTE.png) -15px -42px;
+    border-radius: 4px;
+	padding:8px 18px 8px 43px !important;
+	font-weight:bold;
+	display:block;
+	color:#ffffff !important;
+	transition:all 0.5s ease-in-out 0s;
+}
+.ssv-twitterbtn:hover{
+	background:#1ebaf8 url(../images/FTE.png) -20px -42px;
+}
+
+.ssv-emailbtn{
+    background: #1076bb url(../images/FTE.png) -15px -67px;
+    border-radius: 4px;
+	padding:8px 18px 8px 43px !important;
+	font-weight:bold;
+	display:block;
+	color:#ffffff !important;
+	transition:all 0.5s ease-in-out 0s;
+}
+.ssv-emailbtn:hover{
+	background:#1688d5 url(../images/FTE.png) -20px -67px;
+}
+/* End - Social Share View */
+
+/* Collection Image UC */
+.iu-resourceThumbnail{
+	display:inline-block;
+	vertical-align:top;
+	margin-right:10px;
+	margin-bottom:6px;
+	width:80px;
+	height:60px;
+	cursor: pointer;
+}
+
+.iu-resourceThumbnail a{
+	background:rgba(0,0,0,1);
+	display:block;
+}
+.iu-resourceThumbnail a:hover img{
+	opacity:0.9;
+}
+.iu-resourceThumbnail a:hover{
+	background:rgba(0,0,0,0.5);
+}
+
+/* End - Collection Image UC */
+
+@media (min-width: 240px) and (max-width: 319px){
+	#gooruSearchMainContainer .searchFilters{
+		min-height: 1px;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+	#morePeoplePopWrapper .peopleBlock {
+		width:100%;
+	}
+	#morePeoplePopWrapper .peopleBlock .viewMore{
+		width:50%;
+		float: left;
+	}
+	#morePeoplePopWrapper .closeButton {
+	    margin-left: 5%;
+	}
+	#gooruSearchMainContainer .collectionImg{
+		width:160px;
+		float:none;
+		margin:0 auto 20px;
+		text-align:center;
+	}
+	#gooruSearchMainContainer  #back-top {
+	margin-left: 81%;
+	}
+	#gooruSearchMainContainer .collectionDesc{
+		text-align:center;
+	}
+
+	#gooruSearchMainContainer .circleBlocks{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .collectionDescription{
+		padding:0 15px;
+	}
+	#gooruSearchMainContainer .standerdContainer{
+		text-align:center;
+	}
+
+	#gooruSearchMainContainer .remixButton button.primary{
+		padding:7px 10px;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li a{
+		padding:20px 40px;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation{
+		border-bottom:1px solid #979797;
+	}
+	#gooruSearchMainContainer .SmallWidthContainer{
+		width:auto;
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .btn{
+		padding:6px 4px;
+		font-size:12px;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+		background:#d8d8d8;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .btn-group > .btn + .dropdown-toggle{
+		padding-left:4px;
+		padding-right:4px;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a{
+		padding:10px 6px 10px 40px;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.assessmentIcon{
+		background:url("../images/folderIcon-sprite.png") no-repeat scroll 5px -36px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.collectionsIcon{
+		background:url("../images/folderIcon-sprite.png") no-repeat scroll 5px 9px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a{
+		font-size:12px;
+	}
+	#gooruSearchMainContainer .preHeader{
+		display:block;
+		width:100%;
+			margin-bottom:10px;
+	}
+	#gooruSearchMainContainer .remixButton{
+		text-align: right;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails .input-group{
+		width:100%;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachRightNavigation{
+		margin:10px 0;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+
+	    text-align: center;
+	}
+	#gooruSearchMainContainer .viewContainer span{
+		margin-right:3px;
+	}
+	#gooruSearchMainContainer .libraryMainContainerBlock .panel-default > .panel-heading{
+		padding:5px 5px;
+	}
+	#gooruSearchMainContainer .fixedPosition{
+		position: relative;
+		width: 100%;
+		z-index: 9 !important;
+    }
+    #morePeoplePopWrapper {
+	width: 100%;
+	background: #fff;
+	}
+.no-gutter-col {
+    margin: 3px auto;
+    padding-top: 5px;
+    width: 115px !important;
+}
+#gooruSearchMainContainer .subNavigation{
+	height:auto;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+	margin-bottom:5px;
+}
+
+
+
+#gooruSearchMainContainer  .subNavigation .container{
+	padding-left:0;
+	padding-right:0;
+}
+
+#gooruSearchMainContainer .subFilters {
+    background: #f7f6f6 none repeat scroll 0 0;
+    clear: both;
+    min-height:auto;
+    padding: 0;
+}
+
+
+#gooruSearchMainContainer .seachRightNavigation {
+
+    padding: 15px 0;
+
+}
+
+
+
+
+
+.subFilters .searchFiltersContainer{
+	width:100%;
+	margin:0 0;
+}
+
+
+
+
+
+#gooruSearchMainContainer .searchResultsBox {
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 21px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.borderBox .libraryMainContainerBlock{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation.resourceDropDown{
+	border-bottom:none !important;
+
+}
+.seachLeftNavigation.resourceDropDown .dropdown{
+	z-index:9999;
+}
+#gooruSearchMainContainer .authorDetails{
+	padding:10px 0 !important;
+	background:#f5f5f5;
+	border-top:1px solid #eaeaea;
+	border-left:none;
+}
+#gooruSearchMainContainer .authorDetails .input-group span{
+	margin-right:5px;
+
+}
+#gooruSearchMainContainer .subFilters {
+background: #f7f6f6 none repeat scroll 0 0;
+clear: both;
+min-height:inherit !important;
+padding-top: 0 !important;
+}
+.subFilters .searchFiltersContainer {
+width: 100% !important;
+margin: 0 0;
+float: none;
+padding: 0 0;
+text-align:center;
+min-height:inherit;
+}
+#gooruSearchMainContainer .seachRightNavigation{
+	margin:0 0;
+}
+.seachRightNavigation .panelFilterOptions {
+vertical-align: middle;
+margin: 0 0;
+display: block !important;
+width: 100% !important;
+border-right: none !important;
+text-align:center;
+}
+#gooruSearchMainContainer .searchFilters {
+display: inline-block;
+margin-left: 15px;
+margin-bottom: 5px;
+margin-top: 3px;
+width: auto;
+margin-right: 15px;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul.rating.playerrating{
+	background:transparent !important;
+	padding:0 0 !important;
+}
+#gooruSearchMainContainer .oerStyle{
+	border-left:none;
+}
+#gooruSearchMainContainer .ratingandGrid{
+	padding:5px 0;
+}
+#gooruSearchMainContainer .resourceDetails{
+	margin-bottom:0  !important;
+}
+#gooruSearchMainContainer .oerStyle div{
+	border: 2px solid transparent !important;
+}
+#gooruSearchMainContainer .resourceDropdown{
+	text-align:left !important;
+}
+#gooruSearchMainContainer .gridToggle .dropdown-menu {
+left: -200px !important;
+}
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:after{
+	content:none;
+}
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:before{
+	content:none;
+}
+}
+
+@media (min-width: 320px) and (max-width: 479px){
+	#gooruSearchMainContainer .searchFilters{
+		min-height: 1px;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+
+	#morePeoplePopWrapper .peopleBlock {
+		width:100%;
+	}
+	#gooruSearchMainContainer  #back-top {
+		margin-left: 81%;
+	}
+	#morePeoplePopWrapper .peopleBlock .viewMore{
+		width:50%;
+		float: left;
+	}
+	#morePeoplePopWrapper .peopleBlock .viewMore p{
+		margin-left: 21%;
+		margin-top: -2%;
+	}
+	#morePeoplePopWrapper .closeButton {
+	    margin-left: 7%;
+	}
+	#gooruSearchMainContainer .collectionImg{
+		width:100% !important;
+		float:none;
+		margin:20px auto 20px;
+		text-align:center;
+		display: inline-block;
+	}
+	#gooruSearchMainContainer .collectionDesc{
+		width:auto !important;
+	}
+
+	#gooruSearchMainContainer .collectionDesc{
+		text-align:center;
+	}
+
+	#gooruSearchMainContainer .circleBlocks{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .collectionDescription{
+		padding:0 15px;
+	}
+	#gooruSearchMainContainer .standerdContainer{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .remixButton button.primary{
+		padding:7px 10px;
+	}
+
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul li a{
+		padding:16px 40px;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation{
+		border-bottom:1px solid #979797;
+	}
+	#gooruSearchMainContainer .seachRightNavigation{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .SmallWidthContainer{
+		width:auto;
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .btn{
+		padding:6px 4px;
+		font-size:12px;
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .dropdown-menu > li > a{
+		text-align:left;
+			font-size:12px;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+		background:#ffffff;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .btn-group > .btn + .dropdown-toggle{
+		padding-left:4px;
+		padding-right:4px;
+	}
+
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a{
+		padding:10px 6px 10px 40px;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.assessmentIcon{
+		background:url("../images/folderIcon-sprite.png") no-repeat scroll 5px -36px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.collectionsIcon{
+		background:url("../images/folderIcon-sprite.png") no-repeat scroll 5px 9px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a{
+		font-size:12px;
+	}
+	#gooruSearchMainContainer .preHeader{
+		display:block;
+		width:100%;
+		margin-bottom:10px;
+	}
+
+	#gooruSearchMainContainer .remixButton{
+		text-align: right;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails .input-group{
+		width:100%;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachRightNavigation{
+		margin:10px 0;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+		background:#ffffff;
+	    text-align: center;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		background:#eaeaea;
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .viewContainer{
+
+		margin: 5px 0 5px 0;
+	}
+	#gooruSearchMainContainer .circleBlocks ul li {
+		width: 17px;
+		height: 17px;
+	}
+	#gooruSearchMainContainer .resourcesInside{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .viewContainer span{
+		margin-right:3px;
+	}
+	#gooruSearchMainContainer .libraryMainContainerBlock .panel-default > .panel-heading{
+		padding:5px 5px;
+	}
+	#gooruSearchMainContainer .resourceImage{
+		margin:0 3px 3px 0;
+	}
+	#gooruSearchMainContainer .resourceImage:last-child{
+		margin:0 3px 3px 0;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu:before {
+	  position: absolute;
+	  top: -7px;
+	  left: 55px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 7px solid transparent;
+	  border-bottom: 7px solid #ccc;
+	  border-left: 7px solid transparent;
+	  border-bottom-color: rgba(0, 0, 0, 0.2);
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu:after {
+	  position: absolute;
+	  top: -6px;
+	  left: 56px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 6px solid transparent;
+	  border-bottom: 6px solid #ffffff;
+	  border-left: 6px solid transparent;
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu{
+		right:auto;
+		top:120%;
+		font-size:12px;
+		min-width:282px;
+		margin:0 0;
+		padding:0 0;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .grade .gradesContainer{
+		padding:15px 15px;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .subject .dropdown-menu:before {
+	  position: absolute;
+	  top: -7px;
+	  left: 130px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 7px solid transparent;
+	  border-bottom: 7px solid #ccc;
+	  border-left: 7px solid transparent;
+	  border-bottom-color: rgba(0, 0, 0, 0.2);
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .subject .dropdown-menu:after {
+	  position: absolute;
+	  top: -6px;
+	  left: 131px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 6px solid transparent;
+	  border-bottom: 6px solid #ffffff;
+	  border-left: 6px solid transparent;
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .subject  .dropdown-menu{
+		left:-75px;
+		right:auto;
+		top:120%;
+		font-size:12px;
+		min-width:282px;
+		margin:0 0;
+		padding:0 0;
+	}
+	#gooruSearchMainContainer .fixedPosition{
+		position: relative;
+		width: 100%;
+		z-index: 9;
+    }
+    #morePeoplePopWrapper {
+		width: 100%;
+		background: #fff;
+	}
+	.no-gutter-col {
+    margin: 3px auto;
+    padding-top: 5px;
+    width: 115px !important;
+}
+#gooruSearchMainContainer .subNavigation{
+	height:auto;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+	margin-bottom:0;
+	padding:8px 0;
+}
+
+
+
+#gooruSearchMainContainer  .subNavigation .container{
+	padding-left:0;
+	padding-right:0;
+}
+
+#gooruSearchMainContainer .subFilters {
+    background: #f7f6f6 none repeat scroll 0 0;
+    clear: both;
+    min-height:auto;
+    padding: 0;
+}
+
+
+#gooruSearchMainContainer .seachRightNavigation {
+
+    padding: 0 0;
+
+}
+
+
+
+
+
+.subFilters .searchFiltersContainer{
+	width:100%;
+	margin:0 0;
+	verticle-align:top;
+	display:inline-block;
+}
+
+
+.seachRightNavigation .panelFilterOptions{
+	border-right:none;
+}
+
+
+#gooruSearchMainContainer .searchResultsBox {
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 21px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.borderBox .libraryMainContainerBlock{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation.resourceDropDown{
+	border-bottom:none !important;
+	display:inline-block;
+	margin:4px 0 8px 0;
+
+}
+.seachLeftNavigation.resourceDropDown .dropdown{
+	z-index:9999;
+}
+#gooruSearchMainContainer .subFilters{
+	padding-top:0;
+}
+.subFilters .searchFiltersContainer{
+	width:100% !important;
+}
+.seachRightNavigation .panelFilterOptions{
+	width:100% !important;
+	display: block!important;
+
+	margin:0 0;
+	border-right:none !important;
+
+}
+#gooruSearchMainContainer .subFilters{
+	min-height:inherit !important;
+	padding-top:0  !important;
+}
+#gooruSearchMainContainer .seachRightNavigation .dropdown-menu{
+	left:-100% !important;
+}
+#gooruSearchMainContainer .dropdown-menu:before, #gooruSearchMainContainer .dropdown-menu:after {
+	left:50% !important;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul.rating.playerrating{
+	background:transparent !important;
+	padding:0 0 !important;
+}
+#gooruSearchMainContainer .oerStyle{
+	border-left:none;
+}
+#gooruSearchMainContainer .ratingandGrid{
+	padding:5px 0;
+}
+
+#gooruSearchMainContainer .resourceDetails{
+	margin-bottom:0 !important;
+}
+#gooruSearchMainContainer .oerStyle div{
+	border: 2px solid transparent !important;
+}
+#gooruSearchMainContainer .resourceDropdown{
+	text-align:left !important;
+}
+#gooruSearchMainContainer .gridToggle .dropdown-menu {
+left: -210px !important;
+}
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:after{
+	content:none;
+}
+#gooruSearchMainContainer .ratingandGrid .dropdown-menu:before{
+	content:none;
+}
+
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+	#gooruSearchMainContainer .searchFilters{
+		min-height: 1px;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+
+	#morePeoplePopWrapper .peopleBlock {
+		width:100%;
+	}
+	#gooruSearchMainContainer  #back-top {
+	margin-left: 88%;
+	}
+	#morePeoplePopWrapper .peopleBlock .viewMore{
+		width:50%;
+		float: left;
+	}
+	#morePeoplePopWrapper .peopleBlock .viewMore p{
+		margin-left: 21%;
+		margin-top: -2%;
+	}
+	#gooruSearchMainContainer .fixedPosition{
+		position: relative;
+		width: 100%;
+		z-index: 9;
+    }
+	#gooruSearchMainContainer .collectionImg{
+	  	 width:170px !important;
+		vertical-align:top;
+		margin:0 0;
+		float:left;
+	}
+	#gooruSearchMainContainer .collectionDesc{
+		width:52% !important;
+		float:left;
+		vertical-align:top;
+		text-align:left;
+	}
+	#gooruSearchMainContainer .resourceImage{
+		margin:5px 1px 5px 1px;
+	}
+	#gooruSearchMainContainer .resourceImage:last-child{
+		margin:5px 0 5px 1px;
+	}
+
+	#gooruSearchMainContainer .circleBlocks{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .collectionDescription{
+
+
+	}
+	#gooruSearchMainContainer .standerdContainer{
+
+	}
+
+	#gooruSearchMainContainer .remixButton button.primary{
+		padding:7px 10px;
+	}
+
+	#gooruSearchMainContainer .SmallWidthContainer{
+		width:auto;
+	}
+	#gooruSearchMainContainer .remixButton{
+
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		width:100%;
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails .input-group{
+		width:100%;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachRightNavigation{
+		margin:10px 0;
+	}
+	#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul{
+		background:#d8d8d8;
+		border-bottom:1px solid #979797;
+	    text-align: center;
+	}
+	#gooruSearchMainContainer .subNavigation .seachRightNavigation{
+		text-align:center;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		background:#eaeaea;
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation{
+		text-align:center;
+		margin:0 0;
+		padding:15px 0;
+	}
+	#gooruSearchMainContainer .viewContainer{
+
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu:before {
+	  position: absolute;
+	  top: -7px;
+	  left: 75px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 7px solid transparent;
+	  border-bottom: 7px solid #ccc;
+	  border-left: 7px solid transparent;
+	  border-bottom-color: rgba(0, 0, 0, 0.2);
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu:after {
+	  position: absolute;
+	  top: -6px;
+	  left: 76px;
+	  right:auto;
+	  display: inline-block;
+	  border-right: 6px solid transparent;
+	  border-bottom: 6px solid #ffffff;
+	  border-left: 6px solid transparent;
+	  content: '';
+	}
+
+	#gooruSearchMainContainer .seachRightNavigation .grade .dropdown-menu{
+		left:0;
+		right:auto;
+		top:120%;
+		font-size:12px;
+		min-width:282px;
+		margin:0 0;
+		padding:0 0;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .grade .gradesContainer{
+		padding:15px 15px;
+	}
+	#morePeoplePopWrapper {
+	width: 100%;
+	background: #fff;
+	}
+
+	.seachLeftNavigation.resourceDropDown .dropdown{
+	z-index:9999;
+}
+#gooruSearchMainContainer .subFilters{
+	padding-top:0;
+}
+.subFilters .searchFiltersContainer{
+	width:100% !important;
+}
+.seachRightNavigation .panelFilterOptions{
+	width:100% !important;
+display:block !important;
+	margin:0 0;
+	border-right:none !important;
+
+}
+#gooruSearchMainContainer .subFilters{
+	min-height:inherit;
+	padding-top:0;
+}
+#gooruSearchMainContainer .subNavigation{
+	height:auto;
+	text-align
+}
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul {
+background: #ffffff;
+border-bottom:none;
+text-align: center;
+margin-bottom:15px;
+}
+.no-gutter-col{
+	margin:0 auto;
+}
+#gooruSearchMainContainer .subNavigation .container{
+	padding:0 0 !important;
+}
+#gooruSearchMainContainer .searchResultsBox {
+font-size: 14px;
+vertical-align: middle;
+margin-right: 0;
+padding: 20px 15px 0 15px;
+display: block;
+}
+
+#gooruSearchMainContainer .subNavigation .seachLeftNavigation ul.rating.playerrating{
+	background:transparent !important;
+	padding:0 0 !important;
+}
+#gooruSearchMainContainer .oerStyle{
+	border-left:none;
+}
+#gooruSearchMainContainer .ratingandGrid{
+	padding:5px 0;
+}
+#gooruSearchMainContainer .resourceDetails{
+	margin-bottom:0  !important;
+}
+#gooruSearchMainContainer .oerStyle div{
+	border: 2px solid transparent !important;
+}
+#gooruSearchMainContainer .resourceDropdown{
+	text-align:left !important;
+}
+#gooruSearchMainContainer .gridToggle .dropdown-menu {
+left: auto !important;
+}
+
+}
+
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 991px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+	 #gooruSearchMainContainer  .resourceImage{
+		  width:70px;
+		  height:60px;
+		  margin:2% 0 2% 0;
+	  }
+	  #gooruSearchMainContainer .resourceImage:last-child{
+		  margin:2% 0;
+	  }
+
+	  #gooruSearchMainContainer .subFilters {
+			background: #F7F6F6;
+			padding-top: 84px;
+			clear: both;
+			min-height: 86px;
+		}
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 991px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+	#gooruSearchMainContainer .resourceImage{
+		width:70px;
+		height:60px;
+		margin:2% 2.5% 2% 2.5%;
+	}
+	#gooruSearchMainContainer .resourceImage:last-child{
+		margin:2% 0 2% 2.5%;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#gooruSearchMainContainer .fixedPosition {
+		position: relative;
+		width: 100%;
+		z-index: 9;
+	}
+	#gooruSearchMainContainer  #back-top {
+		margin-left: 90%;
+	}
+	#gooruSearchMainContainer .resourcesInside{
+
+	}
+	#gooruSearchMainContainer .SmallWidthContainer{
+		width:auto;
+		margin-top: 0px;
+	}
+
+	#gooruSearchMainContainer .collectionDesc {
+	    width: 42% !important;
+	}
+
+	#gooruSearchMainContainer .collectionImg {
+	    width: 173px !important;
+	}
+	#gooruSearchMainContainer .seachRightNavigation .btn{
+		font-size:12px;
+		height:32px;
+	}
+	#gooruSearchMainContainer .authorDetails .input-group .form-control{
+		width:130px;
+	}
+	#gooruSearchMainContainer .authorDetails{
+		padding:10px 10px 0 10px;
+	}
+	#gooruSearchMainContainer .viewContainer{
+		text-align: left;
+	}
+	#gooruSearchMainContainer .resourceImage{
+		  width: 66px;
+  		  overflow: hidden;
+	}
+	#gooruSearchMainContainer .resourceImage img {
+	    height: 100%;
+	  	margin-left: -7px;
+	}
+	#gooruSearchMainContainer .videoSmall {
+	    background: url("../images/Video_1.png") no-repeat scroll center 0 transparent;
+	}
+	#gooruSearchMainContainer .questionSmall {
+	    background: url("../images/Question_1.png") no-repeat scroll center 0 transparent;
+	}
+
+	#gooruSearchMainContainer .textSmall {
+	    background: url("../images/Text_1.png") no-repeat scroll center 0 transparent;
+	}
+	#gooruSearchMainContainer .webpageSmall {
+	    background: url("../images/Website_1.png") no-repeat scroll center 0 transparent;
+	}
+	#gooruSearchMainContainer .resourceName{
+		width:100%;
+	}
+
+	#gooruSearchMainContainer .resourceImage{
+	    margin:2% 1.5% 2% 1.5%;
+	}
+	#gooruSearchMainContainer .resourceImage:last-child{
+	    margin:2% 0 2% 1.5%;
+	}
+	#gooruSearchMainContainer .videoSmall {
+	    background: url("../images/Video_1.png") no-repeat scroll center 0 transparent;
+	}
+	#gooruSearchMainContainer .libraryMainContainerBlock .collectionTitle {
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowarp;
+	    cursor: pointer;
+	    overflow: hidden;
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.assessmentIcon {
+	    background: url("../images/folderIcon-sprite.png") no-repeat scroll 8px -36px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a.collectionsIcon {
+	    background: url("../images/folderIcon-sprite.png") no-repeat scroll 8px 9px rgba(0, 0, 0, 0);
+	}
+	#gooruSearchMainContainer .collectionDetails .seachLeftNavigation ul li a {
+	    padding: 10px 25px 10px 44px;
+	}
+	#gooruSearchMainContainer .subNavigation, #gooruSearchMainContainer .collectionDetails{
+	display:inline-block;
+	}
+	.subFilters .searchFiltersContainer{
+	width:100% !important;
+	}
+	#gooruSearchMainContainer .subFilters{
+		padding:1px 0px !important;
+		min-height:inherit !important;
+	}
+	.seachRightNavigation .panelFilterOptions {
+		vertical-align: middle;
+		margin: 0 0;
+		display: inline-block;
+		width: auto;
+		border-right: 1px solid #ccc;
+		vertical-align:top;
+		padding-right: 20px;
+	}
+	#gooruSearchMainContainer .seachRightNavigation {
+		text-align: left;
+		margin: 12px 0;
+		display:block;
+		width: 100%;
+	}
+	#gooruSearchMainContainer .subNavigation {
+		width: 100%;
+	}
+	#gooruSearchMainContainer .subNavigation{
+		height:auto;
+	}
+	#gooruSearchMainContainer .resourceDropdown{
+		text-align:left !important;
+	}
+	#gooruSearchMainContainer .gridToggle .dropdown-menu {
+		left: 0;
+	}
+	#gooruSearchMainContainer .ratingandGrid .dropdown-menu:after{
+		content:none;
+	}
+	#gooruSearchMainContainer .ratingandGrid .dropdown-menu:before{
+		content:none;
+	}
+	#gooruSearchMainContainer .fixedPosition{
+		margin-top: 39px;
+	}
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	#gooruSearchMainContainer  #back-top {
+		margin-left: 902px;
+	}
+	#gooruSearchMainContainer .fixedPosition{
+		margin-top: 39px;
+	}
+	#gooruSearchMainContainer .subFilters {
+		padding-top: 84px !important;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1800px) {
+	#gooruSearchMainContainer .container{
+
+	}
+	#gooruSearchMainContainer  #back-top {
+	margin-left: 950px;
+	}
+}
+
+
+

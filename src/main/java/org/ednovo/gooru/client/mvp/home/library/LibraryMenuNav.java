@@ -30,9 +30,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.library.CourseDo;
+import org.ednovo.gooru.application.shared.model.library.LibraryUserDo;
+import org.ednovo.gooru.application.shared.model.library.StandardCourseDo;
+import org.ednovo.gooru.application.shared.model.library.StandardsDo;
+import org.ednovo.gooru.application.shared.model.library.SubjectDo;
+import org.ednovo.gooru.application.shared.model.library.UnitDo;
 import org.ednovo.gooru.client.SeoTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
 import org.ednovo.gooru.client.mvp.home.library.events.OpenSubjectCourseEvent;
 import org.ednovo.gooru.client.mvp.home.library.events.SetStandardDoEvent;
 import org.ednovo.gooru.client.mvp.home.library.events.SetSubjectDoEvent;
@@ -41,25 +49,22 @@ import org.ednovo.gooru.client.mvp.home.library.events.StandardPreferenceSetting
 import org.ednovo.gooru.client.uc.tooltip.GlobalToolTip;
 import org.ednovo.gooru.client.ui.HTMLEventPanel;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.library.CourseDo;
-import org.ednovo.gooru.shared.model.library.LibraryUserDo;
-import org.ednovo.gooru.shared.model.library.StandardCourseDo;
-import org.ednovo.gooru.shared.model.library.StandardsDo;
-import org.ednovo.gooru.shared.model.library.SubjectDo;
-import org.ednovo.gooru.shared.model.library.UnitDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Display;
+import com.google.gwt.dom.client.Style.TextAlign;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.MouseOutEvent;
 import com.google.gwt.event.dom.client.MouseOutHandler;
 import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
+import com.google.gwt.storage.client.Storage;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
@@ -67,11 +72,8 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.seanchenxi.gwt.storage.client.StorageExt;
-import com.seanchenxi.gwt.storage.client.StorageKey;
-import com.seanchenxi.gwt.storage.client.StorageKeyFactory;
 
-public class LibraryMenuNav extends Composite implements MessageProperties{
+public class LibraryMenuNav extends Composite{
 
 	@UiField HTMLPanel tabsInner, scienceCourses, mathCourses, socialCourses, elaCourses,standardData,partnerLibraries;
 	
@@ -83,7 +85,7 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	
 	@UiField Anchor aboutGooruAnr;
 	
-	private static final String SCIENCE = "science", MATH = "math", SOCIAL="social-sciences", LANGUAGE="language-arts", FEATURED = "featured", STANDARDS="standard";
+	private static final String SCIENCE = "Science", MATH = "Math", SOCIAL="Social Sciences", LANGUAGE="Language Arts", FEATURED = "featured", STANDARDS="standard";
 	
 	private static final String LIBRARY_PAGE = "page";
 	
@@ -97,10 +99,8 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	
 	private boolean isScienceHovered = false, isMathHovered = false, isSocialHovered = false, isLanguageHovered = false, isStandatdHover = false, isPartnerHovered = false;
 	
-    StorageExt localStorage = StorageExt.getLocalStorage();
-
-    StorageKey<HashMap<String, ArrayList<CourseDo>>> libraryStorageObject = StorageKeyFactory.objectKey("libraryStorageObject");
-
+	public boolean checkRefreshVal = false;
+	
 	Map<String,CourseDo> courseDoMap = new LinkedHashMap<String,CourseDo>();
 	
 	Map<String,UnitDo> unitsDoMap = new LinkedHashMap<String,UnitDo>();
@@ -117,39 +117,123 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	
 	private boolean isStandardToolTipShow=false;
 	
+	private Storage stockStore = Storage.getLocalStorageIfSupported();
+
+	HashMap<String, SubjectDo> courseMap = new HashMap<String, SubjectDo>();
+
     private static LibraryMenuNavUiBinder uiBinder = GWT.create(LibraryMenuNavUiBinder.class);
 
 	interface LibraryMenuNavUiBinder extends UiBinder<Widget, LibraryMenuNav> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	public LibraryMenuNav(String placeToken) {
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		dynamicContainer.setVisible(false);
-		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.HOME)||AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)||AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
 			setPlaceToken(placeToken);
 		} else {
-			setPlaceToken(PlaceTokens.HOME);
+			setPlaceToken(PlaceTokens.DISCOVER);
 		}
-		featuredCourses.setText(GL1009);
-		scienceText.setText(GL1000);
-		mathText.setText(GL1001);
-		socialSciencesText.setText(GL1002);
-		languageArtsText.setText(GL1003);
-		standardsText.setText(GL0575);
-		aboutGooruAnr.setText(GL1024);
-		aboutGooruAnr.setHref("http://about.goorulearning.org/");
+		partnerPanel.setVisible(false);
+		featuredCourses.setText(i18n.GL1009());
+		featuredCourses.getElement().setId("lblFeaturedCourses");
+		featuredCourses.getElement().setAttribute("alt",i18n.GL1009());
+		featuredCourses.getElement().setAttribute("title",i18n.GL1009());
+		
+		scienceText.setText(i18n.GL1000());
+		scienceText.getElement().setId("lblScienceText");
+		scienceText.getElement().setAttribute("alt",i18n.GL1000());
+		scienceText.getElement().setAttribute("title",i18n.GL1000());
+		
+		mathText.setText(i18n.GL1001());
+		mathText.getElement().setId("lblMathText");
+		mathText.getElement().setAttribute("alt",i18n.GL1001());
+		mathText.getElement().setAttribute("title",i18n.GL1001());
+		
+		socialSciencesText.setText(i18n.GL1002());
+		socialSciencesText.getElement().setId("lblSocialSciencesText");
+		socialSciencesText.getElement().setAttribute("alt",i18n.GL1002());
+		socialSciencesText.getElement().setAttribute("title",i18n.GL1002());
+		
+		languageArtsText.setText(i18n.GL1003());
+		languageArtsText.getElement().setId("lblLanguageArtsText");
+		languageArtsText.getElement().setAttribute("alt",i18n.GL1003());
+		languageArtsText.getElement().setAttribute("title",i18n.GL1003());
+		
+		standardsText.setText(i18n.GL0575());
+		standardsText.getElement().setId("lblStandardsText");
+		standardsText.getElement().setAttribute("alt",i18n.GL0575());
+		standardsText.getElement().setAttribute("title",i18n.GL0575());
+		
+		sciencePanel.getElement().setId("epnlSciencePanel");
+		scienceCourses.getElement().setId("pnlScienceCourses");
+		mathPanel.getElement().setId("epnlMathPanel");
+		mathCourses.getElement().setId("pnlMathCourses");
+		socialPanel.getElement().setId("epnlSocialPanel");
+		socialCourses.getElement().setId("pnlSocialCourses");
+		elaPanel.getElement().setId("epnlElaPanel");
+		elaCourses.getElement().setId("pnlElaCourses");
+		standardPanel.getElement().setId("epnlStandardPanel");
+		standardData.getElement().setId("pnlStandardData");
+		partnerPanel.getElement().setId("epnlPartnerPanel");
+		partnerLibraries.getElement().setId("pnlPartnerLibraries");
+		aboutGooruAnr.getElement().setId("lnkAboutGooruAnr");
+		dynamicContainer.getElement().setId("epnlDynamicContainer");
+		
+		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+			aboutGooruAnr.setText(i18n.GL1827());
+			aboutGooruAnr.getElement().setAttribute("alt",i18n.GL1827());
+			aboutGooruAnr.getElement().setAttribute("title",i18n.GL1827());
+			aboutGooruAnr.setHref(i18n.GL1828());
+		}if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.EPISD_LIBRARY)) {
+			aboutGooruAnr.setText(i18n.GL3503());
+			aboutGooruAnr.getElement().setAttribute("alt",i18n.GL3503());
+			aboutGooruAnr.getElement().setAttribute("title",i18n.GL3503());
+			aboutGooruAnr.setHref("");
+		} else if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+			aboutGooruAnr.setText(i18n.GL1899());
+			aboutGooruAnr.getElement().setAttribute("alt",i18n.GL1899());
+			aboutGooruAnr.getElement().setAttribute("title",i18n.GL1899());
+			aboutGooruAnr.setHref(i18n.GL1900());
+		} else if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.YCGL_LIBRARY)) {
+			aboutGooruAnr.setText("About Yuma");
+			aboutGooruAnr.getElement().setAttribute("alt",i18n.GL1899());
+			aboutGooruAnr.getElement().setAttribute("title",i18n.GL1899());
+			aboutGooruAnr.setHref("http://www.yumasupt.org");
+		}else {
+			aboutGooruAnr.setText(i18n.GL1024());
+			aboutGooruAnr.getElement().setAttribute("alt",i18n.GL1024());
+			aboutGooruAnr.getElement().setAttribute("title",i18n.GL1024());
+			aboutGooruAnr.setHref(i18n.GL1829());
+		}
 		aboutGooruAnr.setTarget("_blank");
 		aboutGooruAnr.addStyleName(libraryStyleUc.aboutGooruAnrPadding());
 		aboutGooruAnr.addClickHandler(new MixPanelEventClick());
 		featuredCourses.setVisible(false);
 		partnerPanel.addStyleName(libraryStyleUc.partnerMenuPadding());
-		partnerText.setText(GL1550);
+		partnerText.setText(i18n.GL1550());
+		partnerText.getElement().setId("lblPartnerText");
+		partnerText.getElement().setAttribute("alt",i18n.GL1550());
+		partnerText.getElement().setAttribute("title",i18n.GL1550());
+		
+		scienceText.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+		mathText.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+		socialSciencesText.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+		languageArtsText.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+		standardsText.getElement().getStyle().setTextAlign(TextAlign.CENTER);
+		aboutGooruAnr.getElement().getStyle().setTextAlign(TextAlign.CENTER);
 		
 		if(!AppClientFactory.isAnonymous()){
 			try {
-				getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
-			} catch (Exception e) {}
+				if(AppClientFactory.getLoggedInUser().getMeta() != null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference() != null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode() !=null){
+					getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
+				}
+			} catch (Exception e) {
+				AppClientFactory.printSevereLogger("LibraryMenuNav :::"+e);
+			}
 		}
 		
 		featuredCourses.addClickHandler(new ClickHandler() {
@@ -159,81 +243,58 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 			}
 		});
 		
-		if(!getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
-			sciencePanel.addMouseOverHandler(new MouseOverHandler() {
-				@Override
-				public void onMouseOver(MouseOverEvent event) {
-					if(!isScienceHovered) {
-						isScienceHovered = true;
-						String codeId = getSubjectIdBySubjectName(subjectIdList, SCIENCE);
-						getTaxonomyData(codeId,null);
-					}
+		sciencePanel.addMouseOverHandler(new MouseOverHandler() {
+			@Override
+			public void onMouseOver(MouseOverEvent event) {
+				if(!isScienceHovered) { 
+					isScienceHovered = true;
+					String codeId = getSubjectIdBySubjectName(subjectIdList, SCIENCE);
+					getTaxonomyData(SCIENCE,codeId,null);
 				}
-			});
-		} else {
-			sciencePanel.removeStyleName("courseScrollStyle");
-			sciencePanel.removeStyleName(libraryStyleUc.tabsLi());
-			sciencePanel.addStyleName(libraryStyleUc.tabsLiInactive());
-		}
-		
-//		if(!getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
-			mathPanel.addMouseOverHandler(new MouseOverHandler() {
-				@Override
-				public void onMouseOver(MouseOverEvent event) {
-					if(!isMathHovered) {
-						isMathHovered = true;
-						String codeId = getSubjectIdBySubjectName(subjectIdList, MATH);
-						getTaxonomyData(codeId,null);
-					}
-				}
-			});
-//		} else {
-//			mathPanel.removeStyleName("courseScrollStyle");
-//			mathPanel.removeStyleName(libraryStyleUc.tabsLi());
-//			mathPanel.addStyleName(libraryStyleUc.tabsLiInactive());
-//		}
+			}
+		});
 
-//		if(!getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
-			socialPanel.addMouseOverHandler(new MouseOverHandler() {
-				@Override
-				public void onMouseOver(MouseOverEvent event) {
-					if(!isSocialHovered) {
-						isSocialHovered = true;
-						String codeId = getSubjectIdBySubjectName(subjectIdList, SOCIAL);
-						getTaxonomyData(codeId,null);
-					}
+		mathPanel.addMouseOverHandler(new MouseOverHandler() {
+			@Override
+			public void onMouseOver(MouseOverEvent event) {
+				if(!isMathHovered) {
+					isMathHovered = true;
+					String codeId = getSubjectIdBySubjectName(subjectIdList, MATH);
+					getTaxonomyData(MATH,codeId,null);
 				}
-			});
-//		} else {
-//			socialPanel.removeStyleName("courseScrollStyle");
-//			socialPanel.removeStyleName(libraryStyleUc.tabsLi());
-//			socialPanel.addStyleName(libraryStyleUc.tabsLiInactive());
-//		}
-		
-//		if(!getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
-			elaPanel.addMouseOverHandler(new MouseOverHandler() {
-				@Override
-				public void onMouseOver(MouseOverEvent event) {
-					if(!isLanguageHovered) {
-						isLanguageHovered = true;
-						String codeId = getSubjectIdBySubjectName(subjectIdList, LANGUAGE);
-						getTaxonomyData(codeId,null);
-					}
+			}
+		});
+
+		socialPanel.addMouseOverHandler(new MouseOverHandler() {
+			@Override
+			public void onMouseOver(MouseOverEvent event) {
+				if(!isSocialHovered) {
+					isSocialHovered = true;
+					String codeId = getSubjectIdBySubjectName(subjectIdList, SOCIAL);
+					getTaxonomyData(SOCIAL,codeId,null);
 				}
-			});
-//		} else {
-//			elaPanel.removeStyleName("courseScrollStyle");
-//			elaPanel.removeStyleName(libraryStyleUc.tabsLi());
-//			elaPanel.addStyleName(libraryStyleUc.tabsLiInactive());
-//		}
-		if(!getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+			}
+		});
+
+		elaPanel.addMouseOverHandler(new MouseOverHandler() {
+			@Override
+			public void onMouseOver(MouseOverEvent event) {
+				if(!isLanguageHovered) {
+					isLanguageHovered = true;
+					String codeId = getSubjectIdBySubjectName(subjectIdList, LANGUAGE);
+					getTaxonomyData(LANGUAGE,codeId,null);
+				}
+			}
+		});
+
+		if(!(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)||getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY))) {
 			standardPanel.addMouseOverHandler(new MouseOverHandler() {
 				@Override
 				public void onMouseOver(MouseOverEvent event) {
 					if(!isStandardCode){
 						isStandardToolTipShow=false;
 						toolTipPopupPanel.clear();
-						toolTipPopupPanel.setWidget(new GlobalToolTip(GL1634));
+						toolTipPopupPanel.setWidget(new GlobalToolTip(i18n.GL1634()));
 						toolTipPopupPanel.setStyleName("");
 						toolTipPopupPanel.setPopupPosition(standardPanel.getElement().getAbsoluteLeft()+32, standardPanel.getElement().getAbsoluteTop()+30);
 						toolTipPopupPanel.show();
@@ -242,7 +303,8 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 					if(!isStandatdHover && isStandardCode){
 						isStandatdHover = true;
 						String codeId = STANDARDS;
-						getTaxonomyData(codeId,null);
+						String courseId = AppClientFactory.getPlaceManager().getRequestParameter("courseId");
+						getTaxonomyData(STANDARDS,codeId,courseId);
 					}
 				}
 			});
@@ -276,20 +338,27 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 		}
 		
 		AppClientFactory.getEventBus().addHandler(StandardPreferenceSettingEvent.TYPE, standardPreferenceSettingHandler);
+		tabsInner.getElement().setId("pnlTabsInner");
 	}
 	
 	StandardPreferenceSettingHandler standardPreferenceSettingHandler= new StandardPreferenceSettingHandler(){
 		@Override
 		public List<String> getCode(List<String> standPrefCode) {
 			try {
-				getStandardPrefCode(standPrefCode);
-			} catch (Exception e) {}
+				if(!AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+					getStandardPrefCode(standPrefCode);
+				}
+			} catch (Exception e) {
+				AppClientFactory.printSevereLogger("LibraryMenuNav getCode:::"+e);
+			}
 			return standPrefCode;
 			
 			}
 	};
 		
 	public void getStandardPrefCode(List<String> code){
+		try
+		{
 		if(!AppClientFactory.isAnonymous()) {
 			String taxonomyCode = "";
 			if(code!=null){
@@ -305,7 +374,7 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 					standardPanel.removeStyleName(libraryStyleUc.tabsLiInactive());
 					if(standardData.getWidgetCount()>0) {
 		 				if(taxonomyCode.contains("CCSS")&&(taxonomyCode.contains("TEXAS")||taxonomyCode.contains("TEKS"))) {
-		 					/** 1st parameter refers to "CCSS" and 2nd parameter refers to TEXAS or TEKS**/
+		 					/** 1st parameter refers to "CCSS" and 2nd parameter refers to TEKS**/
 		 					setStandardDataWidgetVisibility(true,true);
 						} else if (taxonomyCode.contains("CCSS")) {
 							/** 1st parameter refers to "CCSS" and 2nd parameter refers to TEXAS or TEKS**/
@@ -357,16 +426,28 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 			standardPanel.addStyleName(libraryStyleUc.tabsLi());
 			standardPanel.removeStyleName(libraryStyleUc.tabsLiInactive());
 			if(standardData.getWidgetCount()>0) {
-				standardData.getWidget(0).setVisible(true);
-				standardData.getWidget(1).setVisible(true);
+				setStandardDataWidgetVisibility(true,false);
 			}
+		}
+		}
+		catch(Exception ex)
+		{
+			AppClientFactory.printSevereLogger(ex.getMessage());
 		}
 	}
 		
 	private void setStandardDataWidgetVisibility(boolean isCCSSVisible, boolean isTEXASVisible) {
     /** 0th widget in "standardData" refers to CCSS widget and 1st widget refers to TEXAS widget **/
 		standardData.getWidget(0).setVisible(isCCSSVisible);
+		try
+		{
 		standardData.getWidget(1).setVisible(isTEXASVisible);
+		}
+		catch(Exception ex)
+		{
+			AppClientFactory.printSevereLogger(ex.getMessage());
+		}
+		
 	}
 
 	/**
@@ -385,59 +466,111 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
-	public void getTaxonomyData(final String subjectCode, final String courseId) {
+	public void getTaxonomyData(final String subjectName, final String subjectCode, final String courseId) {
 		
-	
 			if (subjectCode!=null){
-				if(subjectCode.equalsIgnoreCase(STANDARDS))
-				{
-					AppClientFactory.getInjector().getLibraryService().getSubjectsForStandards(subjectCode, getPlaceToken(), new AsyncCallback<HashMap<String, StandardsDo>>() {
+				if(subjectCode.equalsIgnoreCase(STANDARDS)){
 
-
+					AppClientFactory.getInjector().getLibraryService().getStandardLibraryMenuList(subjectCode, getPlaceToken(), new SimpleAsyncCallback<ArrayList<StandardCourseDo>>(){
 						@Override
-						public void onFailure(Throwable caught) {
-						}
-
-						@Override
-						public void onSuccess(
-							HashMap<String, StandardsDo> result) {
-							setSubjectPanelIdsForStandards(result);
-							AppClientFactory.fireEvent(new SetStandardDoEvent(STANDARDS,result.get(STANDARDS)));
+						public void onSuccess(ArrayList<StandardCourseDo> standardCourseList) {
+							setSubjectPanelIdsForStandardsCustomized(standardCourseList);
+							StandardsDo standardsDoObject = new StandardsDo();
+							standardsDoObject.setData(standardCourseList);
+							AppClientFactory.fireEvent(new SetStandardDoEvent(STANDARDS,standardsDoObject));
 							if(!getSubjectSelected(STANDARDS)) {
-								setTaxonomyDataforStandards(STANDARDS, subjectCode, courseId, result.get(STANDARDS).getData());
+								setTaxonomyDataforStandards(STANDARDS, subjectCode, courseId, standardCourseList);
 							}
 						}
 					});
 				}
 				else
 				{
-					AppClientFactory.getInjector().getLibraryService().getSubjects(subjectCode, getPlaceToken(), new AsyncCallback<HashMap<String, SubjectDo>>() {
-						@Override
-						public void onSuccess(HashMap<String, SubjectDo> subjectListDo) {
-					
-							if(subjectIdList.size()<=0) {
-								setSubjectPanelIds(subjectListDo);
-							}
-							String subjectName = getSubjectNameBySubjectId(subjectListDo, subjectCode);
-							AppClientFactory.fireEvent(new SetSubjectDoEvent(subjectName,subjectListDo.get(subjectName)));
-							if(!getSubjectSelected(subjectName)) {
-								setTaxonomyData(subjectName, subjectCode, courseId, subjectListDo.get(subjectName).getData());
-							}
+					final String libraryToken = StringUtil.getPublicLibraryName(getPlaceToken());
+					String map = null;
+					if(stockStore!=null&&stockStore.getItem(subjectCode)!=null){
+						map = stockStore.getItem(subjectCode);
+						AppClientFactory.fireEvent(new SetSubjectDoEvent(subjectName,courseMap.get(subjectName)));
+						setTaxonomyData(subjectName, subjectCode, courseId, courseMap.get(subjectName).getData());
+						
+						deserializeAndDisplay(subjectCode, subjectName, libraryToken, map, courseId);
+					} else {
+						
+						if(subjectName==null) {
+							AppClientFactory.getInjector().getLibraryService().getLibrarySubjectsJson(null, null, StringUtil.getPublicLibraryName(getPlaceToken()), new SimpleAsyncCallback<String>() {
+								@Override
+								public void onSuccess(String subjectDoList) {
+									if(stockStore!=null) {
+										stockStore.setItem(subjectCode, subjectDoList);
+									}
+									deserializeAndDisplay(subjectCode, subjectName, libraryToken, subjectDoList, courseId);
+								}
+							});
+						} else {
+							getSubjects(subjectCode, subjectName, courseId);
 						}
-
-						@Override
-						public void onFailure(Throwable caught) {
-						}
-					});
+					}
 				}
+			}
+	}
+	
+	/**
+	 * 
+	 * @function deserializeAndDisplay 
+	 * 
+	 * @created_date : 28-Apr-2015
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param featuredLabel
+	 * @parm(s) : @param isNotHomePage
+	 * @parm(s) : @param libraryToken
+	 * @parm(s) : @param jsonResponse
+	 * @parm(s) : @param onRefCourseId
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	void deserializeAndDisplay(final String subjectCode, final String subjectName, String libraryToken, String jsonResponse, final String onRefCourseId){
+		
+		AppClientFactory.getInjector().getLibraryService().deserializeLibrarySubjects(subjectName, onRefCourseId, libraryToken, jsonResponse, new SimpleAsyncCallback<HashMap<String,SubjectDo>>() {
+
+			@Override
+			public void onSuccess(
+					HashMap<String, SubjectDo> result) {
+				setSubjectPanelIds(result);
+				if(subjectIdList.size()<=0) {
+					setSubjectPanelIds(result);
+				}
+				getSubjects(subjectCode, subjectName, onRefCourseId);
+			}
+		});
+	}
+
+	public void getSubjects(final String subjectCode, final String subjectName, final String courseId) {
+		AppClientFactory.getInjector().getLibraryService().getLibraryCourses(subjectCode, StringUtil.getPublicLibraryName(getPlaceToken()), new AsyncCallback<ArrayList<CourseDo>>() {
+			@Override
+			public void onFailure(Throwable caught) {
 				
 			}
-/*			}
-		} catch (Exception e) {
-		      e.printStackTrace(); 
-		}
-*/	}
-
+			@Override
+			public void onSuccess(ArrayList<CourseDo> courseDoList) {
+				SubjectDo subjectDo = new SubjectDo();
+				subjectDo.setLabel(subjectName);
+				subjectDo.setSubjectCode(subjectCode);
+				subjectDo.setData(courseDoList);
+				AppClientFactory.fireEvent(new SetSubjectDoEvent(subjectName,subjectDo));
+				setTaxonomyData(subjectName, subjectCode, courseId, courseDoList);
+			}
+		});
+	}
+	
 	public boolean getSubjectSelected(String subjectName) {
 		boolean isSelected = false;
 		if(subjectName.equalsIgnoreCase(SCIENCE)&&scienceCourses.getWidgetCount()>0) {
@@ -471,17 +604,38 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	 * 
 	*/
 	protected void setTaxonomyData(String subjectname, final String subjectCode, String courseIdRefresh, ArrayList<CourseDo> courseDoList) {
+		final HTMLPanel elementaryCoursePanel = new HTMLPanel("");
+		Label elementaryLabel = new Label(i18n.GL2002());
+		elementaryLabel.setStyleName(libraryStyleUc.gradeOption());
+		elementaryCoursePanel.add(elementaryLabel);
+		
+		final HTMLPanel middleSchoolCoursePanel = new HTMLPanel("");
+		Label middleSchoolLabel = new Label(i18n.GL2003());
+		middleSchoolLabel.setStyleName(libraryStyleUc.gradeOption());
+		middleSchoolCoursePanel.add(middleSchoolLabel);
+		
+		final HTMLPanel highSchoolCoursePanel = new HTMLPanel("");
+		Label highSchoolLabel = new Label(i18n.GL2004());
+		highSchoolLabel.setStyleName(libraryStyleUc.gradeOption());
+		highSchoolCoursePanel.add(highSchoolLabel);
+		
+		if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+			elementaryCoursePanel.clear();
+			middleSchoolCoursePanel.clear();
+			highSchoolCoursePanel.clear();
+		}
+		
 		if (courseDoList != null) {
 			for (final CourseDo courseDo : courseDoList) {
-				if(courseDo.getUnit()!=null&&courseDo.getUnit().size()>0) {
+					Label courseTitle = new Label(courseDo.getLabel());
 					if(subjectname.equalsIgnoreCase(SCIENCE)) {
-						Label courseTitle = new Label(courseDo.getLabel());
 						courseTitle.setStyleName(libraryStyleUc.courseOption());
 						final String courseId = courseDo.getCodeId().toString();
 						courseDoMap.put(courseId, courseDo);
 						courseTitle.addClickHandler(new ClickHandler() {
 							@Override
 							public void onClick(ClickEvent event) {
+								Window.scrollTo(0, 0);
 								setHeaderBrowserTitle(courseDo.getLabel());
 								MixpanelUtil.mixpanelEvent("Library_"+SCIENCE+"_"+courseDo.getLabel());
 								Map<String,String> params = new HashMap<String, String>();
@@ -491,15 +645,14 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 								AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
 							}
 						});
-						scienceCourses.add(courseTitle);
 					} else if(subjectname.equalsIgnoreCase(MATH)) {
-						Label courseTitle = new Label(courseDo.getLabel());
 						courseTitle.setStyleName(libraryStyleUc.courseOption());
 						final String courseId = courseDo.getCodeId().toString();
 						courseDoMap.put(courseId, courseDo);
 						courseTitle.addClickHandler(new ClickHandler() {
 							@Override
 							public void onClick(ClickEvent event) {
+								Window.scrollTo(0, 0);
 								setHeaderBrowserTitle(courseDo.getLabel());
 								MixpanelUtil.mixpanelEvent("Library_"+MATH+"_"+courseDo.getLabel());
 								Map<String,String> params = new HashMap<String, String>();
@@ -509,17 +662,16 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 								AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
 							}
 						});
-						mathCourses.add(courseTitle);
 					} 
 								
 					else if(subjectname.equalsIgnoreCase(SOCIAL)) {
-						Label courseTitle = new Label(courseDo.getLabel());
 						courseTitle.setStyleName(libraryStyleUc.courseOption());
 						final String courseId = courseDo.getCodeId().toString();
 						courseDoMap.put(courseId, courseDo);
 						courseTitle.addClickHandler(new ClickHandler() {
 							@Override
 							public void onClick(ClickEvent event) {
+								Window.scrollTo(0, 0);
 								setHeaderBrowserTitle(courseDo.getLabel());
 								MixpanelUtil.mixpanelEvent("Library_"+SOCIAL+"_"+courseDo.getLabel());
 								Map<String,String> params = new HashMap<String, String>();
@@ -529,15 +681,14 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 								AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
 							}
 						});
-						socialCourses.add(courseTitle);
 					} else if(subjectname.equalsIgnoreCase(LANGUAGE)) {
-						Label courseTitle = new Label(courseDo.getLabel());
 						courseTitle.setStyleName(libraryStyleUc.courseOption());
 						final String courseId = courseDo.getCodeId().toString();
 						courseDoMap.put(courseId, courseDo);
 						courseTitle.addClickHandler(new ClickHandler() {
 							@Override
 							public void onClick(ClickEvent event) {
+								Window.scrollTo(0, 0);
 								setHeaderBrowserTitle(courseDo.getLabel());
 								MixpanelUtil.mixpanelEvent("Library_"+LANGUAGE+"_"+courseDo.getLabel());
 								Map<String,String> params = new HashMap<String, String>();
@@ -547,10 +698,18 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 								AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
 							}
 						});
-						elaCourses.add(courseTitle);
-					} 
-					
-				}
+					}
+					if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+						elementaryCoursePanel.add(courseTitle);
+					} else {
+						if(courseDo.getGrade()==null || courseDo.getGrade()<=5) {
+							elementaryCoursePanel.add(courseTitle);
+						} else if(courseDo.getGrade()>5 && courseDo.getGrade()<9 ) {
+							middleSchoolCoursePanel.add(courseTitle);
+						} else {
+							highSchoolCoursePanel.add(courseTitle);
+						}
+					}
 			}
 		}
 		if(courseIdRefresh!=null) {
@@ -567,11 +726,43 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 			}
 			
 			setTabSelection(subjectname);
-			AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectname, courseDoMap.get(courseIdRefresh)));
+			AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectCode, courseDoMap.get(courseIdRefresh)));
+		}
+		setLibraryGrades(subjectname, elementaryCoursePanel, middleSchoolCoursePanel, highSchoolCoursePanel);
+	}
+	
+	public void setLibraryGrades(String subjectname, HTMLPanel elementaryCoursePanel, HTMLPanel middleSchoolCoursePanel, HTMLPanel highSchoolCoursePanel) {
+		if(subjectname.equals(SCIENCE) && scienceCourses.getWidgetCount()<=0) {
+			scienceCourses.add(elementaryCoursePanel);
+			scienceCourses.add(middleSchoolCoursePanel);
+			scienceCourses.add(highSchoolCoursePanel);
+		} else if(subjectname.equals(MATH) && mathCourses.getWidgetCount()<=0) {
+			mathCourses.add(elementaryCoursePanel);
+			mathCourses.add(middleSchoolCoursePanel);
+			mathCourses.add(highSchoolCoursePanel);
+		} else if(subjectname.equals(SOCIAL) && socialCourses.getWidgetCount()<=0) {
+			socialCourses.add(elementaryCoursePanel);
+			socialCourses.add(middleSchoolCoursePanel);
+			socialCourses.add(highSchoolCoursePanel);
+		} else if(subjectname.equals(LANGUAGE) && elaCourses.getWidgetCount()<=0) {
+			elaCourses.add(elementaryCoursePanel);
+			elaCourses.add(middleSchoolCoursePanel);
+			elaCourses.add(highSchoolCoursePanel);
+		} else if(subjectname.equals(STANDARDS)) {
+			
+		}
+		if(elementaryCoursePanel.getWidgetCount()<=1) {
+			elementaryCoursePanel.setVisible(false);
+		}
+		if(middleSchoolCoursePanel.getWidgetCount()<=1) {
+			middleSchoolCoursePanel.setVisible(false);
+		}
+		if(highSchoolCoursePanel.getWidgetCount()<=1) {
+			highSchoolCoursePanel.setVisible(false);
 		}
 	}
 	
-	protected void setTaxonomyDataforStandards(String subjectname, final String subjectCode, String courseIdRefresh, ArrayList<StandardCourseDo> courseDoList) {
+	protected void setTaxonomyDataforStandards(final String subjectname, final String subjectCode, final String courseIdRefresh, ArrayList<StandardCourseDo> courseDoList) {
 		if (courseDoList != null) {
 			for (final StandardCourseDo standardsCourseDo : courseDoList) {
 	
@@ -580,6 +771,7 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 						final Label courseTitle = new Label(standardsCourseDo.getLabel());		
 						courseTitle.setStyleName(libraryStyleUc.courseOption());
 						courseTitle.getElement().setAttribute("style", "width: 50%;");
+					
 						final String standardsId = standardsCourseDo.getCodeId().toString();
 
 						dynamicContainer.add(courseTitle);
@@ -600,10 +792,12 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 								
 								@Override
 								public void onClick(ClickEvent event) {
+									Window.enableScrolling(true);
+									Window.scrollTo(0, 0);
 									setHeaderBrowserTitle(standardsCourseDo.getLabel());
 									//MixpanelUtil.mixpanelEvent("Library_"+STANDARDS+"_"+standardsCourseDo.getLabel());
 									MixpanelUtil.mixpanelEvent("standardlibrary_select_course");
-									Map<String,String> params = new HashMap<String, String>();
+									final Map<String,String> params = new HashMap<String, String>();
 									params.put(LIBRARY_PAGE, "course-page");
 									params.put(SUBJECT, STANDARDS);
 									params.put("courseId", courseId);
@@ -611,7 +805,44 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 									if(courseTitle.getText().contains("Texas")) {
 										params.put("libtype", "TEKS");
 									}
+									
 									AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
+									
+									AppClientFactory.getInjector().getLibraryService().getSubjectsForStandards(subjectCode, subjectname, new SimpleAsyncCallback<HashMap<String, StandardsDo>>() {
+
+										@Override
+										public void onSuccess(HashMap<String, StandardsDo> result) {
+											
+											setHeaderBrowserTitle(standardsCourseDo.getLabel());
+											//MixpanelUtil.mixpanelEvent("Library_"+STANDARDS+"_"+standardsCourseDo.getLabel());
+											MixpanelUtil.mixpanelEvent("standardlibrary_select_course");
+											final Map<String,String> params = new HashMap<String, String>();
+											params.put(LIBRARY_PAGE, "course-page");
+											params.put(SUBJECT, STANDARDS);
+											params.put("courseId", courseId);
+											params.put("standardId", standardsId);
+											if(courseTitle.getText().contains("Texas")) {
+												params.put("libtype", "TEKS");
+											}
+											
+							
+											
+											AppClientFactory.getPlaceManager().revealPlace(getPlaceToken(),params);
+											
+											
+											
+											setSubjectPanelIdsForStandards(result);
+											AppClientFactory.fireEvent(new SetStandardDoEvent(STANDARDS,result.get(STANDARDS)));
+											if(!getSubjectSelected(STANDARDS)) {
+												AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectname, courseDoMap.get(courseIdRefresh)));
+												//setTaxonomyDataforStandards(STANDARDS, subjectCode, courseId, result.get(STANDARDS).getData());
+											}
+											
+						
+											
+										}
+									});
+									
 									
 								}
 							});
@@ -646,10 +877,14 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 			}
 			if(!AppClientFactory.isAnonymous()){
 				try {
-					getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
+					if(AppClientFactory.getLoggedInUser().getMeta() != null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference() != null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode() != null){
+						getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
+					}
 				} catch (Exception e) {
-					e.printStackTrace();
+					AppClientFactory.printSevereLogger("LibraryMenuNav setTaxonomyDataforStandards::::"+e);
 				}
+			} else {
+				getStandardPrefCode(null);
 			}
 		}
 		if(courseIdRefresh!=null) {
@@ -666,7 +901,16 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 			}
 			
 			setTabSelection(subjectname);
-			AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectname, courseDoMap.get(courseIdRefresh)));
+
+			String subjectNameonRefresh = AppClientFactory.getPlaceManager().getRequestParameter("subject");
+			if(!subjectname.equalsIgnoreCase(STANDARDS))
+			{
+				AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectname, courseDoMap.get(courseIdRefresh)));
+			}
+			if(subjectNameonRefresh.equalsIgnoreCase(STANDARDS))
+			{
+				AppClientFactory.fireEvent(new OpenSubjectCourseEvent(subjectname, courseDoMap.get(courseIdRefresh)));
+			}
 		}
 	}
 	
@@ -707,27 +951,41 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	 */
 	public void setSubjectPanelIds(HashMap<String, SubjectDo> subjectList) {
 		for (Map.Entry<String, SubjectDo> entry : subjectList.entrySet()) {
-			subjectIdList.put(entry.getKey(), entry.getValue().getCode()+"");
-			/*if(entry.getKey().equals(SCIENCE)) {
-				sciencePanel.getElement().setAttribute(CODE_ID, entry.getValue().getCode());
-				sciencePanel.getElement().setAttribute(SUBJECT, entry.getKey());
-			} else if(entry.getKey().equals(MATH)) {
-				mathPanel.getElement().setAttribute(CODE_ID, entry.getValue().getCode());
-				mathPanel.getElement().setAttribute(SUBJECT, entry.getKey());
-			} else if(entry.getKey().equals(SOCIAL)) {
-				socialPanel.getElement().setAttribute(CODE_ID, entry.getValue().getCode());
-				socialPanel.getElement().setAttribute(SUBJECT, entry.getKey());
-			} else if(entry.getKey().equals(LANGUAGE)) {
-				elaPanel.getElement().setAttribute(CODE_ID, entry.getValue().getCode());
-				elaPanel.getElement().setAttribute(SUBJECT, entry.getKey());				
-			}
-			tabsInner.getElement().setId(TABS_INNER);*/
+			subjectIdList.put(entry.getKey(), entry.getValue().getSubjectCode()+"");
 		}
+		Timer timer = new Timer(){
+            @Override
+            public void run() {
+            	if(!isScienceHovered) {
+                	isScienceHovered = true;
+                	getTaxonomyData(SCIENCE,getSubjectIdBySubjectName(subjectIdList, SCIENCE),null);
+            	}
+            	if(!isMathHovered) {
+                	isMathHovered = true;
+                	getTaxonomyData(MATH,getSubjectIdBySubjectName(subjectIdList, MATH),null);
+            	}
+            	if(!isSocialHovered) {
+                	isSocialHovered = true;
+                	getTaxonomyData(SOCIAL,getSubjectIdBySubjectName(subjectIdList, SOCIAL),null);
+            	}
+            	if(!isLanguageHovered) {
+                	isLanguageHovered = true;
+                	getTaxonomyData(LANGUAGE,getSubjectIdBySubjectName(subjectIdList, LANGUAGE),null);
+            	}
+            }
+        };
+        timer.schedule(5000);
 	}
 	
 	public void setSubjectPanelIdsForStandards(HashMap<String, StandardsDo> subjectList) {
 		for (Map.Entry<String, StandardsDo> entry : subjectList.entrySet()) {
 			subjectIdList.put(entry.getKey(), entry.getValue().getCode()+"");
+		}
+	}
+	
+	public void setSubjectPanelIdsForStandardsCustomized(ArrayList<StandardCourseDo> subjectList) {
+		for (int k=0;k<subjectList.size();k++) {
+			subjectIdList.put(subjectList.get(k).getCodeId().toString(), subjectList.get(k).getCode()+"");
 		}
 	}
 	
@@ -750,7 +1008,7 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	 */
 	public String getSubjectNameBySubjectId(HashMap<String, SubjectDo> subjectList, String subjectId) {
 		for (Map.Entry<String, SubjectDo> entry : subjectList.entrySet()) {
-			if(entry.getValue().getCode().equals(subjectId)) {
+			if(entry.getValue().getSubjectCode().equals(subjectId)) {
 				return entry.getKey();
 			}
 		}
@@ -784,7 +1042,7 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	 */
 	public String getSubjectIdBySubjectName(Map<String,String> subjectList, String subject) {
 		for (Map.Entry<String, String> entry : subjectList.entrySet()) {
-			if(entry.getKey().equalsIgnoreCase(subject)) {
+			if(entry.getKey().trim().equalsIgnoreCase(subject)) {
 				return entry.getValue();
 			}
 		}
@@ -859,15 +1117,12 @@ public class LibraryMenuNav extends Composite implements MessageProperties{
 	}
 	
 	public void getPartners() {
-		AppClientFactory.getInjector().getLibraryService().getPartners(new AsyncCallback<ArrayList<LibraryUserDo>>() {
+		AppClientFactory.getInjector().getLibraryService().getPartners(new SimpleAsyncCallback<ArrayList<LibraryUserDo>>() {
 			@Override
 			public void onSuccess(ArrayList<LibraryUserDo> partnersList) {
 				setPartners(partnersList);
 				setTabSelection(AppClientFactory.getCurrentPlaceToken());
 			}
-
-			@Override
-			public void onFailure(Throwable caught) {}
 		});
 	}
 	

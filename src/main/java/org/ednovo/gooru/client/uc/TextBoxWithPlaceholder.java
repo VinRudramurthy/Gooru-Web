@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,7 +23,7 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.ednovo.gooru.client.uc;
 
@@ -41,7 +41,7 @@ import com.google.gwt.user.client.ui.TextBox;
 
 /**
  * @author SearchTeam
- * 
+ *
  */
 public class TextBoxWithPlaceholder extends TextBox {
 
@@ -61,6 +61,7 @@ public class TextBoxWithPlaceholder extends TextBox {
 		TextBoxWithPlaceholder textBox = new TextBoxWithPlaceholder(element);
 		// Mark it attached and remember it for cleanup.
 		textBox.onAttach();
+		textBox.getElement().setAttribute("spellcheck", "true");
 		RootPanel.detachOnWindowClose(textBox);
 
 		return textBox;
@@ -71,20 +72,22 @@ public class TextBoxWithPlaceholder extends TextBox {
 	 */
 	public TextBoxWithPlaceholder() {
 		this(DOM.createInputText());
-		setStyleName(UcCBundle.INSTANCE.css().textBoxWithPlaceholder());
+		setStyleName("Uc-textBoxWithPlaceholder");
+		this.getElement().setAttribute("spellcheck", "true");
 	}
 
 	/**
 	 * This constructor may be used by subclasses to explicitly use an existing
 	 * element. This element must be an &lt;input&gt; element whose type is
 	 * 'text'.
-	 * 
+	 *
 	 * @param element
 	 *            the element to be used
 	 */
 	protected TextBoxWithPlaceholder(Element element) {
 		super(element);
 		setupHandlers();
+		this.getElement().setAttribute("spellcheck", "true");
 	}
 
 	@Override
@@ -138,7 +141,7 @@ public class TextBoxWithPlaceholder extends TextBox {
 
 	private void showPlaceholder() {
 		if (super.getText().equals("") && getPlaceholder() != null) {
-			addStyleName(UcCBundle.INSTANCE.css().textBoxWithPlaceholderText());
+			addStyleName("Uc-textBoxWithPlaceholderText");
 			super.setText(getPlaceholder());
 			isPlaceHolderVisible = true;
 			if(isPassword()) {
@@ -149,7 +152,7 @@ public class TextBoxWithPlaceholder extends TextBox {
 
 	private void hidePlaceholder(String newText) {
 		if (isPlaceHolderVisible) {
-			removeStyleName(UcCBundle.INSTANCE.css().textBoxWithPlaceholderText());
+			removeStyleName("Uc-textBoxWithPlaceholderText");
 			super.setText(newText);
 			isPlaceHolderVisible = false;
 			if(isPassword()) {
@@ -161,14 +164,14 @@ public class TextBoxWithPlaceholder extends TextBox {
 	private void hidePlaceholder() {
 		hidePlaceholder("");
 	}
-	
+
 	/**
 	 * @return the isPassword
 	 */
 	public boolean isPassword() {
 		return isPassword;
 	}
-	
+
 	/**
 	 * @param isPassword the isPassword to set
 	 */
@@ -182,7 +185,7 @@ public class TextBoxWithPlaceholder extends TextBox {
 				if(isSetFocus){
 					setText(null);
 				}
-				
+
 			}
 		});
 	}
@@ -194,6 +197,6 @@ public class TextBoxWithPlaceholder extends TextBox {
 	public void setSetFocus(boolean isSetFocus) {
 		this.isSetFocus = isSetFocus;
 	}
-	
+
 
 }

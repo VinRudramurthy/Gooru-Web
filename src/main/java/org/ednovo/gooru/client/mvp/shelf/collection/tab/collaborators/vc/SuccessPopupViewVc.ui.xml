@@ -4,10 +4,18 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators.CollectionCollaboratorsCBundle"
 		field="collaborators" />
-	<g:HTMLPanel styleName="{collaborators.css.popup}">
-		<g:HTMLPanel styleName="{collaborators.css.popupInner}">
-			<g:Label styleName="{collaborators.css.popupHeader}"
-				ui:field="lblTitle" />
+	<g:HTMLPanel styleName="PopupMainVVSmall">
+		<g:HTMLPanel styleName="popupInnerGrey">
+		    <g:HTMLPanel styleName="popupgreyHeader">
+		        <g:HTMLPanel styleName="row">
+		        	<g:HTMLPanel styleName="col-md-12 col-xs-12">
+		        		<g:Label ui:field="lblTitle" />
+		        		<g:Label styleName="{collaborators.css.tag}" ui:field="tagImageForTagging"></g:Label>
+		    	   	</g:HTMLPanel>
+
+		        </g:HTMLPanel>
+		        <g:HTMLPanel styleName="clearfix"/>
+		    </g:HTMLPanel>
 			<g:HTMLPanel styleName="{collaborators.css.popupContent}">
 				<g:HTMLPanel styleName="{collaborators.css.icon} {collaborators.css.complete}"
 					ui:field="imgSuccessIcon"></g:HTMLPanel>

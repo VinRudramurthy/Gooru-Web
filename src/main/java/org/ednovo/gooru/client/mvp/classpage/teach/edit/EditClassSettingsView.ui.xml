@@ -1,0 +1,70 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<ui:style src=""></ui:style>
+	<g:HTMLPanel styleName="geryBackgroundBody paddingBlock">
+	<g:HTMLPanel styleName="classSettingsContainer">
+			<g:HTMLPanel styleName="col-md-6 col-sm-6">
+				<g:HTMLPanel styleName="classSettingsInner">
+					<uc:PPanel ui:field="classTitleLbl"></uc:PPanel>
+					<p><g:TextBox styleName="form-control" ui:field="classTitleTextLbl"></g:TextBox></p>
+					<p><g:Label styleName="errorMessage" ui:field="errorLbl"></g:Label></p>
+					<uc:PPanel ui:field="gradePanel"></uc:PPanel>
+					<g:HTMLPanel styleName="gradesContainer" ui:field="gradeWidget">
+					    <g:HTMLPanel styleName="grade" ui:field="gradeBlock"></g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="uploadImage">
+						<uc:PPanel ui:field="bannerImagePanel"></uc:PPanel>
+						<g:Image styleName="thumbImageUrl" ui:field="classImage"></g:Image>
+						<g:Button styleName="btn btn-default btn-file" ui:field="uploadImagePanel"></g:Button>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+	<g:HTMLPanel styleName="col-md-6 col-sm-6">
+		<g:HTMLPanel styleName="classSettingsInner">
+		<uc:PPanel ui:field="classCodePanel"></uc:PPanel>
+		<g:HTMLPanel styleName="rightWhiteBox"><uc:SpanPanel ui:field="classCodeTxtPanel"></uc:SpanPanel></g:HTMLPanel>
+		<uc:PPanel ui:field="sharePanel"></uc:PPanel>
+		<g:TextBox styleName="form-control" ui:field="shareUrlTxtLbl"></g:TextBox>
+		<g:TextBox ui:field="fullTxtBox" styleName="form-control"></g:TextBox>
+			<g:HTMLPanel styleName="visibilityBlock">
+			 <uc:PPanel  ui:field="visiblityPanel"></uc:PPanel>
+				 <g:HTMLPanel styleName="row less-gutter headerpadding">
+				 	 <g:HTMLPanel styleName="col-md-6 col-sm-6">
+						   <panel:HTMLEventPanel styleName="anchorCls" ui:field="publicPanel">
+						     <strong class="visiblityHeader"><g:Label ui:field="anyonwwithLink"></g:Label></strong>
+						     <g:Label ui:field="anyonwwithLinkTxt"></g:Label>
+						   </panel:HTMLEventPanel>
+				 	</g:HTMLPanel>
+				    <g:HTMLPanel styleName="col-md-6 col-sm-6">
+				  		  <panel:HTMLEventPanel styleName="anchorCls" ui:field="privatePanel">
+				   		   <strong class="visiblityHeader"><g:Label ui:field="privateLbl"></g:Label></strong>
+				   		   <g:Label ui:field="privateLblTxt"></g:Label>
+				  		   </panel:HTMLEventPanel>
+					</g:HTMLPanel>
+				 	 <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				  </g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+	<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	<g:HTMLPanel styleName="actionButtons">
+		<g:Button styleName="primary" ui:field="saveBtn"></g:Button>
+		<g:Label ui:field="saveLbl"></g:Label>
+	</g:HTMLPanel>
+	<g:HTMLPanel styleName="actionButtons">
+	    <g:HTMLPanel styleName="editClassDeleteBtnHover" ui:field="editClassDeleteBtnHover">
+			<g:Button styleName="btn btn-default btn-file" ui:field="deleteBtn"></g:Button>
+			<g:HTMLPanel styleName="deleteBtnMessagePopup" ui:field="deleteBtnMessagePopup">
+				<g:HTMLPanel styleName="bubble-arrow-style"></g:HTMLPanel>
+				<g:HTML styleName="standards-inner standards-Popup" ui:field="profileVisiblityMessage" text="{i18n.GL3586}"></g:HTML>
+			</g:HTMLPanel>
+	    </g:HTMLPanel>
+	</g:HTMLPanel>
+	</g:HTMLPanel>
+</g:HTMLPanel>
+</ui:UiBinder> 
+

@@ -24,10 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.resource.flag;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ContentReportDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ContentReportDo;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 
 import com.google.gwt.user.client.ui.Button;
 import com.gwtplatform.mvp.client.PopupView;

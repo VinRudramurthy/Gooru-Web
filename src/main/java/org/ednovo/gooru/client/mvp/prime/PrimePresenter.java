@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.prime;
 
-import org.ednovo.gooru.client.gin.BasePresenter;
+import org.ednovo.gooru.application.client.gin.BasePresenter;
 import org.ednovo.gooru.client.mvp.prime.PrimePresenter.IsPrimeProxy;
 
 import com.google.gwt.event.shared.GwtEvent.Type;

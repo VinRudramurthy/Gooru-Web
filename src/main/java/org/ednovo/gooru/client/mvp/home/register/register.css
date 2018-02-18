@@ -266,7 +266,6 @@ float: left;
 
 .errorBoxStyle {
 	border: 1px solid #ccc;
-	padding: 5px;
 	width: 258px;
 	/* background-color: #FFFFCC; */
 }
@@ -319,11 +318,16 @@ float: left;
 }
 
 .userRegistrationError {
-	background: none repeat scroll 0 0 #FFFFFF;
-	border: 1px solid #CCCCCC;
-	width: 200px;
-	/* background-color: #FFFFCC; */
-	height: 25px;
+	font: 10px arial;
+/* margin-left: 126px; */
+color: #fab03a;
+/* margin-top: 3px; */
+padding: 3px;
+/* width: 207px; */
+clear: both;
+margin: 10px;
+width: 100%;
+text-align: center;
 }
 
 .userErrorLabel {
@@ -344,7 +348,7 @@ float: left;
 	color: #fab03a;
 	margin-top: 3px;
 	padding: 3px;
-	width: 207px;
+/* 	width: 207px; */
 	clear: both;
 }
 

@@ -62,7 +62,8 @@
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4c98cc,endColorstr=#ff1076bb,GradientType=0)";
- filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4c98cc, endColorstr=#ff1076bb, GradientType=0);
+ /* filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4c98cc, endColorstr=#ff1076bb, GradientType=0); */
+ filter: progid \:DXImageTransform \.Microsoft \.gradient(startColorstr \='#ff4c98cc', endColorstr \='#ff1076bb',GradientType \=0 ); /* IE6-8 */
 }
 .classPageSearchButtonText {
 	font-family: Arial, Helvetica, sans-serif;
@@ -87,4 +88,197 @@
 	width: 39%;
 	margin: 0 auto;
 	word-wrap: break-word;
+}
+
+
+/* New Css */
+
+.container {
+	width: 1000px;
+	margin: auto;
+	background: #fff;
+	min-height: 100%;
+	padding: 20px;
+	padding-top: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.h1 {
+	font-weight: normal;
+	font-size: 20px;
+}
+.h2, .h3 {
+	margin-bottom: 10px;
+}
+
+.startsection {
+	float: left;
+	padding: 20px;
+	min-height: 100px;
+}
+.fright {
+	float: right;
+}
+.title {
+	font-family: 'Arvo', serif !important;
+	font-weight: bold;
+	font-size: 29px;
+	padding: 10px 0px;
+}
+.subtitle {
+	font-size: 16px;
+	width: 420px
+}
+#createClass {
+	font-size: 14px;
+	padding: 10px 12px;
+}
+.codeBg {
+	width: 300px;
+	text-align: center;
+	min-height: 100px;
+	background: #f1efef;
+}
+.codeTitle {
+	font-family: 'Arvo', serif !important;
+	font-size: 20px;
+	line-height: 200%;
+	font-weight: bold;
+}
+.classCodeTxtBox {
+	color: #515151;
+	outline: 0;
+	font-size: 14px;
+	padding: 6px;
+	border: 1px #E3E3E3 solid;
+	display: inline-block;
+	background-color: #f9f9f9;
+}
+.clearfix {
+	clear: both;
+	margin-bottom: 10px;
+}
+.leftPanel {
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+	padding: 0px 10px 10px 10px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	min-height: 200px;
+}
+.navBox {
+	position: relative;
+	display: block;
+	padding: 30px 10px 30px 30px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	min-height: 200px;
+	margin-bottom: 20px;
+	background: #f1efef;
+	border: 1px solid #ddd;
+}
+.navBox .h3 {
+	font-size: 20px;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'Arvo', serif !important;
+}
+.navBox .desc {
+	font-size: 16px;
+	text-align: left;
+	padding-top: 0px;
+}
+.hoverCircle {
+	position: absolute;
+	top: -12px;
+	left: -15px;
+	width: 40px;
+	height: 40px;
+	/*cursor: pointer;*/
+	background: #fbb03b;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+}
+.circleTitle {
+	color: #fff;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.rightPanel {
+	display: inline-block;
+	vertical-align: top;
+}
+#img {
+	padding-left: 10px;
+}
+.resourceImg {
+	width: 140px;
+	line-height: 30px;
+	text-align: left;
+	display: inline-block;
+	padding-top: 5px;
+}
+.navLink {
+	cursor: pointer;
+	color: #1076bb;
+	position: relative;
+	top: 17px;
+}
+.classSection {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	margin-top: 30px;
+	background: #fff;
+	min-height: 100px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.classContent {
+	text-align: center;
+	padding: 20px;
+}
+.classSection .h5 {
+	font-size: 29px;
+	text-align: center;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-family: 'Arvo', serif !important;
+}
+.hoverTitle {
+	position: relative;
+	top: -80px;
+	color: #FFF;
+	font-size: 22px;
+	text-align: center;
+}
+.imgBlock {
+	margin: 0px 30px;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 160px;
+	height: 134px;
+	cursor: pointer;
+}
+
+.imgBlock:hover{
+	opacity:0.6;	
+}
+
+.textTransform{
+	text-transform: uppercase;
+}
+
+.hoverTitleTwoLine {
+	position: relative;
+	top: -92px;
+	color: #FFF;
+	font-size: 22px;
+	text-align: center;
 }

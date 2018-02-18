@@ -32,8 +32,19 @@ import org.ednovo.gooru.client.util.MixpanelUtil;
 import com.google.gwt.event.shared.GwtEvent;
 
 /**
- * @author Search Team
  * 
+ * @fileName : InvokeLoginEvent.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class InvokeLoginEvent extends GwtEvent<InvokeLoginHandler> {
 

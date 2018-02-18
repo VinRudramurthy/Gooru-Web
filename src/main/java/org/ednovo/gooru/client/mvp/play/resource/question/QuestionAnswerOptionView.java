@@ -28,10 +28,9 @@ package org.ednovo.gooru.client.mvp.play.resource.question;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.Widget;
@@ -44,26 +43,32 @@ public class QuestionAnswerOptionView extends Composite{
 	@UiField public Label answerChoiceResult,radioButton;
 	@UiField HTML answerOptionText;
 	@UiField public RadioButton answerOptionRadioButton;
-	//@UiField public CheckBox answerOptionCheckBoxButton;
+	@UiField FlowPanel questionsMainPanel;
 	private int answerId;
 	private boolean isAnswerCorrect;
+	private String answerText="";
+	boolean isChecked;
 	public static QuestionAnswerOptionViewUiBinder questionAnswerOptionViewUiBinder=GWT.create(QuestionAnswerOptionViewUiBinder.class);
 	
-	public QuestionAnswerOptionView(String questionText,String questionSerialNum){
+	public QuestionAnswerOptionView(String questionText,String questionSerialNum){ 
 		initWidget(questionAnswerOptionViewUiBinder.createAndBindUi(this));
-		//optionAlpahabeticSerialNo.setText(questionSerialNum);
-		answerOptionText.setHTML(questionSerialNum+" "+removeHtmlTags(questionText));
-	}
-	private HTML getHTML(String html){
-		html = html.replaceAll("</p>", " ").replaceAll("<p>", "").replaceAll("<br data-mce-bogus=\"1\">", "").replaceAll("<br>", "").replaceAll("</br>", "");
-		HTML contentHtml=new HTML(html);
-		contentHtml.setStyleName("");
-		return contentHtml;
+		this.answerText=questionText;
+		questionsMainPanel.getElement().setId("fpnlQuestionContainer");
+		answerOptionText.setHTML(questionSerialNum+" "+removeHtmlTags(questionText!=null?questionText:""));
+		answerChoiceResult.getElement().setId("lblAnswerChoiceResult");
+		radioButton.getElement().setId("lblRadioButton");
+		answerOptionText.getElement().setId("htmlAnswerOptionText");
+		answerOptionRadioButton.getElement().setId("rdAnswerOptionRadioButton");
 	}
 	private String removeHtmlTags(String text){
+		/**
+		 * Commented the following line to fix issue with displaying math symbols. 
+		 */
 		text=text.replaceAll("</p>", " ").replaceAll("<p>", "").replaceAll("<br data-mce-bogus=\"1\">", "").replaceAll("<br>", "").replaceAll("</br>", "");
 		return text;
 	}
+	
+	
 	public int getAnswerId() {
 		return answerId;
 	}
@@ -75,6 +80,12 @@ public class QuestionAnswerOptionView extends Composite{
 	}
 	public void setAnswerCorrect(boolean isAnswerCorrect) {
 		this.isAnswerCorrect = isAnswerCorrect;
+	}
+	public String getAnswerText() {
+		return answerText;
+	}
+	public void setAnswerText(String answerText) {
+		this.answerText = answerText;
 	}
 	
 }

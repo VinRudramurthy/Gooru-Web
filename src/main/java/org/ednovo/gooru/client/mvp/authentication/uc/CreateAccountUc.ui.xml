@@ -5,25 +5,27 @@
 	xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:gui="urn:import:org.ednovo.gooru.client.ui">
 	<ui:with type="org.ednovo.gooru.client.mvp.authentication.SignUpCBundle"
 		field="res" />
-	<g:HTMLPanel styleName="{res.css.popupContent}">
-		<g:Label styleName="{res.css.subheader}" ui:field="lblPleaseFill"/>
-		<g:HTMLPanel styleName="{res.css.userInfoContainer} {res.css.emailReg}">
-			<g:HTMLPanel styleName="{res.css.chooseUsername}">
-				<g:HTMLPanel styleName="{res.css.inputRow}">
-					<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer}"
-						ui:field="panelUserNamePopUp">
+	<g:HTMLPanel styleName="LoginpopupContent" ui:field="mainContainer">
+		<g:Label styleName="subheader" ui:field="lblPleaseFill"/>
+		<g:HTMLPanel styleName="userInfoContainer" ui:field="popupbody">
+			<g:HTMLPanel>
+				<g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer} hidden-xs"	ui:field="panelUserNamePopUp">
 						<g:Label styleName="{res.css.tooltipContent}" ui:field="lblPickWisely"/>
 						<g:HTMLPanel styleName="{res.css.horizontalArrow}">
 							<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
-					<gg:TextBoxWithPlaceholder ui:field="txtChooseUsername"
-							styleName="{res.css.halfSize} {res.css.userNameTxtBox}" />
-					<g:SimplePanel ui:field="sPanelDateOfBirth" styleName="{res.css.dob}"/>
-					<g:HTMLPanel styleName="{res.css.questionHoverContainer}">
-						<g:Label styleName="{res.css.questionHover}" ui:field="lblQuestionMark"/>
-						<g:HTMLPanel styleName="{res.css.tooltipContainer}">
+					<g:HTMLPanel ui:field="userDetailscontainer">
+					<g:HTMLPanel styleName="col-md-6 col-sm-6 inputGroup">
+						<gg:TextBoxWithPlaceholder ui:field="txtChooseUsername" styleName="form-control"/>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-6 col-sm-6 inputGroup">
+						<g:SimplePanel ui:field="sPanelDateOfBirth" styleName="form-control"/>
+						<g:HTMLPanel styleName="questionHover hidden-xs">
+						<g:Label  ui:field="lblQuestionMark"/>
+						<g:HTMLPanel styleName="{res.css.tooltipContainer}" ui:field="toolTip">
 							<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.tooltipContent}">
@@ -34,17 +36,20 @@
 					</g:HTMLPanel >
 					<gui:HTMLEventPanel ui:field="panelDataOfBirth">
 					</gui:HTMLEventPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				</g:HTMLPanel>
 				</g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.errorRow}">
 					<g:Label ui:field="errorLblForUsername"></g:Label>
 					<gg:ErrorLabelUc ui:field="userNameValidUc" />
-					<gg:ErrorLabelUc ui:field="dateValidationUc" styleName="{res.css.error}"/>				    
+					<gg:ErrorLabelUc ui:field="dateValidationUc" styleName="{res.css.error}"/>
 				</g:HTMLPanel>
-				<g:HTMLPanel ui:field="panelBelowThirteen" styleName="{res.css.belowThirteenPanel}">
-				    <g:Label ui:field="lblNeedParentsAccount" styleName="{res.css.parentsAccount}" />
-				    <g:HTMLPanel styleName="{res.css.questionHoverContainerParentAccount}">
-						<g:Label styleName="{res.css.questionHover}" ui:field="lblQuestionMarkNeedParentAccount"/>
-						<g:HTMLPanel styleName="{res.css.tooltipContainer}" ui:field="tootltipContainer">
+				<g:HTMLPanel ui:field="panelBelowThirteen" styleName="childInputGroup">
+				    <g:Label ui:field="lblNeedParentsAccount" styleName="parentsAccount" />
+				 		<g:Label styleName="hidden-xs hidden-sm questionHover" ui:field="lblQuestionMarkNeedParentAccount"/>
+						<g:HTMLPanel styleName="hidden-xs hidden-sm {res.css.tooltipContainer}" ui:field="tootltipContainer">
 							<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.tooltipContent}">
@@ -52,67 +57,58 @@
 								<g:Label ui:field="lblWhyNeedParentDesc"/>
 							</g:HTMLPanel>
 						</g:HTMLPanel>
-					</g:HTMLPanel>
-				    <g:Label ui:field="lblMyParentHasGooruAccount" />
-				    <g:HTMLPanel styleName="{res.css.parentEmailContainer}">
-				    <gg:TextBoxWithPlaceholder ui:field="txtParentEmailId"></gg:TextBoxWithPlaceholder>
+					<g:Label styleName="contentDescr" ui:field="lblMyParentHasGooruAccount" />
+				    <g:HTMLPanel>
+				    <gg:TextBoxWithPlaceholder ui:field="txtParentEmailId" styleName="form-control form_control"></gg:TextBoxWithPlaceholder>
 				    <g:Label ui:field="lblGetCorrectEmail" styleName="{res.css.rightIconImage}"/>
 				    <gg:ErrorLabelUc ui:field="parentEmailValidUc" />
 				    </g:HTMLPanel>
-				    <g:HTMLPanel styleName="{res.css.orBoderLeftSide}"/>
-				     <g:HTMLPanel styleName="{res.css.orBoderRightSide}"/>
-				     <g:Label ui:field="lblOr" styleName="{res.css.orBoder}" />
-				   <g:HTMLPanel styleName="{res.css.orContainerDown}">
-				    <g:Label ui:field="lblMyParentDontHaveAccount" />
-				    <g:Anchor ui:field="ancParentRegister" /> 
+				    <g:HTMLPanel styleName="divider">
+						<g:Label styleName="dividerText" ui:field="lblOr">	</g:Label>
+					</g:HTMLPanel>
+				    <g:HTMLPanel styleName="orContainerDown">
+				    <g:Label styleName="contentDescr" ui:field="lblMyParentDontHaveAccount" />
+				    <g:Anchor ui:field="ancParentRegister" />
 				    </g:HTMLPanel>
 				</g:HTMLPanel>
 				<g:HTMLPanel ui:field="panelAboveThirteen">
-					<g:HTMLPanel styleName="{res.css.inputRow}">
-						<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer}"
-							ui:field="panelPublic">
+					 <g:HTMLPanel styleName="{res.css.horizontalTooltipContainer} hidden-xs"	ui:field="panelPublic">
 							<g:Label styleName="{res.css.tooltipContent}" ui:field="lblNameTooltipContent"/>
 							<g:HTMLPanel styleName="{res.css.horizontalArrow}">
 								<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
 								<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							</g:HTMLPanel>
 						</g:HTMLPanel>
-						
-						<g:HTMLPanel styleName="{res.css.inputRowWidth}">
-						<gg:TextBoxWithPlaceholder ui:field="txtFirstName"
-							styleName="{res.css.halfSize}" />
-								<g:HTMLPanel styleName="{res.css.errorRow}">
+						<g:HTMLPanel styleName="col-md-6 col-xs-6 col-sm-6 inputGroup">
+						  <gg:TextBoxWithPlaceholder ui:field="txtFirstName" styleName="form-control" />
+							<g:HTMLPanel styleName="{res.css.errorRow}">
 								<g:Label ui:field="errorLblForFirstName"></g:Label>
 									<gg:ErrorLabelUc ui:field="firstNameValidUc" />
 								</g:HTMLPanel>
 						</g:HTMLPanel>
-						
-						<g:HTMLPanel styleName="{res.css.inputRowWidthRight}">
-						<gg:TextBoxWithPlaceholder ui:field="txtLastName"
-							styleName="{res.css.halfSize}" />
+						<g:HTMLPanel styleName="col-md-6 col-xs-6 col-sm-6 inputGroup">
+						<gg:TextBoxWithPlaceholder ui:field="txtLastName"	styleName="form-control" />
 						<g:HTMLPanel styleName="{res.css.errorRow}">
-							
-							<g:Label ui:field="errorLblForLastName"></g:Label>
-						
-							<gg:ErrorLabelUc ui:field="lastNameValidUc" styleName="{res.css.error}"/>				    
+						<g:Label ui:field="errorLblForLastName"></g:Label>
+							<gg:ErrorLabelUc ui:field="lastNameValidUc" styleName="{res.css.error}"/>
 						</g:HTMLPanel>
 						</g:HTMLPanel>
-						
-					</g:HTMLPanel>
-					<g:HTMLPanel ui:field="emailFieldContainer" styleName="{res.css.inputRow}">
-						<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer}"
-							ui:field="panelEmail">
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+						<g:HTMLPanel ui:field="emailFieldContainer" styleName="col-md-12 col-xs-12 col-sm-12 inputGroup">
+						<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer} hidden-xs"			ui:field="panelEmail">
 							<g:Label styleName="{res.css.tooltipContent}" ui:field="lblEmailTooltipContent"/>
 							<g:HTMLPanel styleName="{res.css.horizontalArrow}">
 								<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
 								<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							</g:HTMLPanel>
 						</g:HTMLPanel>
-						<gg:TextBoxWithPlaceholder ui:field="txtChooseEmail" />
+						<gg:TextBoxWithPlaceholder ui:field="txtChooseEmail"  styleName="form-control"/>
 					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 					<gg:ErrorLabelUc ui:field="emailValidUc" />
-					<g:HTMLPanel styleName="{res.css.inputRow}">
-						<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer}"
+					<!-- <g:Label ui:field="piiLbl">We will never share or sell your email address, your privacy is important to us.</g:Label> -->
+					<g:HTMLPanel styleName="col-md-12 col-xs-12 col-sm-12 inputGroup">
+						<g:HTMLPanel styleName="{res.css.horizontalTooltipContainer}  hidden-xs"
 							ui:field="panelPassword">
 							<g:Label styleName="{res.css.tooltipContent}" ui:field="lblPasswordTooltipContent"/>
 							<g:HTMLPanel styleName="{res.css.horizontalArrow}">
@@ -120,50 +116,53 @@
 								<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							</g:HTMLPanel>
 						</g:HTMLPanel>
-						<gg:TextBoxWithPlaceholder ui:field="txtChoosePassword"
-							password="true" />
+						<gg:TextBoxWithPlaceholder ui:field="txtChoosePassword"	password="true" styleName="form-control" />
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.inputRow}">
-						<gg:TextBoxWithPlaceholder ui:field="txtConfirmPassword"
-							password="true" />
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-12 col-xs-12 col-sm-12 inputGroup">
+						<gg:TextBoxWithPlaceholder ui:field="txtConfirmPassword"	password="true" styleName="form-control" />
 						<gg:ErrorLabelUc ui:field="passwordValidUc" />
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.role}">
-						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.teacherRole}" ui:field="panelTeacher">
-							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
-							<g:Label styleName="{res.css.roleLabel}" ui:field="lblTeacher"></g:Label>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-3 col-xs-3 col-sm-3 roleOption teacherRole" ui:field="panelTeacher">
+							<g:HTMLPanel styleName="roleOptionImage"></g:HTMLPanel>
+							<g:Label styleName="roleLabel" ui:field="lblTeacher"></g:Label>
 							<g:HTMLPanel ui:field="rdTeacher" />
 						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.studentRole}" ui:field="panelStudent">
-							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
-							<g:Label styleName="{res.css.roleLabel}" ui:field="lblStudent"></g:Label>
+						<g:HTMLPanel styleName="col-md-3 col-xs-3 col-sm-3 roleOption studentRole" ui:field="panelStudent">
+							<g:HTMLPanel styleName="roleOptionImage"></g:HTMLPanel>
+							<g:Label styleName="roleLabel" ui:field="lblStudent"></g:Label>
 							<g:HTMLPanel ui:field="rdStudent" />
 						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.parentRole}" ui:field="panelParent">
-							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
-							<g:Label styleName="{res.css.roleLabel}" ui:field="lblParent"></g:Label>
+						<g:HTMLPanel styleName="col-md-3 col-xs-3 col-sm-3 roleOption parentRole" ui:field="panelParent">
+							<g:HTMLPanel styleName="roleOptionImage"></g:HTMLPanel>
+							<g:Label styleName="roleLabel" ui:field="lblParent"></g:Label>
 							<g:HTMLPanel ui:field="rdParent" />
 						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.otherRole}" ui:field="panelOther">
-							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
-							<g:Label styleName="{res.css.roleLabel}" ui:field="lblOther"></g:Label>
+						<g:HTMLPanel styleName="col-md-3 col-xs-3 col-sm-3 roleOption otherRole" ui:field="panelOther">
+							<g:HTMLPanel styleName="roleOptionImage"></g:HTMLPanel>
+							<g:Label styleName="roleLabel" ui:field="lblOther"></g:Label>
 							<g:HTMLPanel ui:field="rdOther" />
 						</g:HTMLPanel>
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 						<gg:ErrorLabelUc ui:field="lblSelectRole"></gg:ErrorLabelUc>
-					</g:HTMLPanel>
+
 				</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.agreeToPolicies}">
-		    <g:HTMLPanel>
+		<g:HTMLPanel styleName="haveAccountContainer">
+		    <gg:PPanel>
 			<g:InlineLabel ui:field="lblAgree"></g:InlineLabel>
 			<g:Anchor ui:field="ancCopyRight" styleName="{res.css.termsAlignStyle}"></g:Anchor>
 			<g:Anchor ui:field="ancTermsAndPrivacy" styleName="{res.css.termsAlignStyle}"></g:Anchor>
 			<g:InlineLabel ui:field="andText"></g:InlineLabel>
 			<g:Anchor ui:field="ancPrivacy" styleName="{res.css.termsAlignStyle}"></g:Anchor>
-				
-			</g:HTMLPanel>
-			<g:Button ui:field="btnSignUp" styleName="primary"></g:Button>
+
+			</gg:PPanel>
+			<gg:PPanel styleName="">
+				<g:Button ui:field="btnSignUp" styleName="primary"></g:Button>
+			</gg:PPanel>
+
 			<g:Label styleName="{res.css.pleaseWait}" ui:field="lblPleaseWait" />
 		</g:HTMLPanel>
 

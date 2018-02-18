@@ -1,20 +1,19 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
     xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
     <g:HTMLPanel>
-    <g:FocusPanel ui:field="focusPanel" styleName="{res.css.editableField}">
+    <g:FocusPanel ui:field="focusPanel" styleName="Uc-editableField">
         <g:HTMLPanel>
 	        <g:DeckPanel ui:field="deckPanel">
 	            <g:HTML ui:field="html"/>
 	            <g:TextArea styleName="edit" ui:field="textArea"/>
 	        </g:DeckPanel>
-	        <g:Label ui:field="lblErrorMessage" styleName="{res.css.errorValidationClassPage}"/>
+	        <g:Label ui:field="lblErrorMessage" styleName="Uc-errorValidationClassPage"/>
         </g:HTMLPanel>
     </g:FocusPanel>
     <g:HTMLPanel ui:field="duplicateTinyMce">
-        <g:HTMLPanel styleName="{res.css.displayNone}" ui:field="fakeContent"></g:HTMLPanel>
-    	<tinyMce:TinyMCE styleName="{res.css.displayNone}" characterLimit="0"></tinyMce:TinyMCE>
+        <g:HTMLPanel styleName="Uc-displayNone" ui:field="fakeContent"></g:HTMLPanel>
+    	<tinyMce:TinyMCE styleName="Uc-displayNone" characterLimit="0"></tinyMce:TinyMCE>
     </g:HTMLPanel>
     </g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

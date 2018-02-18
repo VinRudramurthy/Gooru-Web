@@ -1,0 +1,16 @@
+[
+	{
+		"label": "Common Core State Standards - Math",
+		"courseId":41895,
+		"subjectId":24146,
+		"link": "#community&page=course-page&subject=standard&courseId={0}&standardId={1}",
+		"extraParms": null
+	},
+	{
+		"label": "Texas Essential Knowledge and Skills",
+		"courseId":72329,
+		"subjectId":72168,
+		"link": "#community&page=course-page&subject=standard&courseId={0}&standardId={1}",
+		"extraParms": "libtype=TEKS"
+	}
+]

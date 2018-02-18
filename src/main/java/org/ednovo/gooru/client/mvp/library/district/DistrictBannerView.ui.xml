@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="districtStyleUc" src="district.css" type="org.ednovo.gooru.client.mvp.library.district.DistrictStyleBundle" />
+	<g:HTMLPanel ui:field="landingBannerInner">
+	    <g:HTMLPanel styleName="{districtStyleUc.headerPanel}">
+		    <g:HTMLPanel ui:field="partnerLogo"/>
+			<g:Label styleName="{districtStyleUc.header}" ui:field="headerTag"></g:Label>
+			<g:Label styleName="{districtStyleUc.subheader}" ui:field="subHeaderTag"></g:Label>
+			<g:Label styleName="{districtStyleUc.subTag}" ui:field="subTag"></g:Label>
+	    </g:HTMLPanel>
+		<g:HTMLPanel styleName="{districtStyleUc.banner-container}" ui:field="bannerContainer">
+			<g:HTMLPanel styleName="{districtStyleUc.banner-tabs}" ui:field="bannerTabs">
+			    <g:HTMLPanel styleName="{districtStyleUc.box-inner}">
+					<g:HTMLPanel styleName="{districtStyleUc.box} {districtStyleUc.first}" ui:field="firstBox">
+					    <g:Label styleName="{districtStyleUc.large-Title}" ui:field="title1"></g:Label>
+					    <g:Label ui:field="title2"></g:Label>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{districtStyleUc.box-inner}">
+					<g:Label styleName="{districtStyleUc.box}" ui:field="info1"> </g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{districtStyleUc.box-inner}">
+					<g:Label styleName="{districtStyleUc.box}" ui:field="info2"> </g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{districtStyleUc.box-inner}">
+					<g:Label styleName="{districtStyleUc.box}" ui:field="info3"> </g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{districtStyleUc.box-inner}">
+					<g:Label styleName="{districtStyleUc.box} {districtStyleUc.last}" ui:field="info4"></g:Label>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

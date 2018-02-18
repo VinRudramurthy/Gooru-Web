@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""/>
+	<g:HTMLPanel styleName="emptyStudentClass">
+	   <g:HTMLPanel styleName="planViewProgress">
+	      <ul>
+	         <li class="green"></li>
+	         <li class="blue"></li>
+	         <li></li>
+	         <li class="blue"></li>
+	         <li class="green"></li>
+	      </ul>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="emptyStudentClassIndication">
+	      <span:PPanel ui:field="errorLbl"></span:PPanel>
+	      <span:PPanel ui:field="recoverLbl"></span:PPanel>
+	   </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

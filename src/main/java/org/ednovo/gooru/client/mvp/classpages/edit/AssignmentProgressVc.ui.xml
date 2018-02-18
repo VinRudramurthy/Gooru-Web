@@ -1,0 +1,53 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"  xmlns:panel="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with type="org.ednovo.gooru.client.mvp.classpages.edit.AssignmentProgressCBundle" field="res" />
+		<g:FlowPanel ui:field="panelMainContainer" styleName="{res.css.container}">
+		    <g:HTMLPanel styleName="{res.css.circleContainer}">
+		        <g:Label styleName="{res.css.line}" ui:field="lblLineStart"/>
+	 			<g:HTMLPanel styleName="{res.css.circle}" ui:field="panelCircle">
+	 			    <g:Label styleName="{res.css.assignmentNumbers}" ui:field="lblAssignmentNo"/>
+			        <g:HTMLPanel styleName="{res.css.profileVisiblityPopup}" ui:field="moveAssignmentPopup">
+			          	<g:HTMLPanel styleName="{res.css.bubblearrowstyle}"></g:HTMLPanel>
+			          	<g:HTMLPanel styleName=" {res.css.standardsinner} {res.css.standardsPopup}">
+							<g:HTML styleName="{res.css.title}" ui:field="htmlCollectiontitle"></g:HTML>
+							<g:HTMLPanel styleName="{res.css.moveContainer}">
+								<g:Label styleName="{res.css.move}" ui:field="lblMoveTo"></g:Label>
+								<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDiv}">			
+									<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryInputDiv}" ui:field="panelComboList">
+											<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDivText}">
+												<g:HTMLPanel>
+													<g:Label styleName="{res.css.resourceCategoryLabel}"  ui:field="resourceCategoryLabel" />
+												</g:HTMLPanel>
+											</g:HTMLPanel>
+											<g:HTMLPanel styleName="{res.css.myFolderCollectionArrowleftContainer}">
+												<g:Label ui:field="resoureDropDownLbl"	styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionArrowleft}"></g:Label>
+											</g:HTMLPanel>
+										</g:HTMLPanel>	
+										<g:HTMLPanel styleName="{res.css.reorderLabelContainer}" ui:field="resourceTypePanel">
+										</g:HTMLPanel>							
+						        </g:HTMLPanel>
+						        
+					        </g:HTMLPanel>					        
+			         	</g:HTMLPanel>
+			        </g:HTMLPanel>
+			          <g:FlowPanel styleName="{res.css.assignmentStudyPopup}" ui:field="assignmentInfoPopup">
+			          	<g:HTMLPanel styleName="{res.css.assignmentStudyPopupArrow}"></g:HTMLPanel>
+			          	<g:HTMLPanel styleName=" {res.css.standardsinner} {res.css.studyPopup}">
+			          	    <g:HTMLPanel styleName="{res.css.circleInside}" ui:field="panelCicle1">
+			          	    	<g:Label styleName="{res.css.assignmentNumbers}" ui:field="lblCircle1"></g:Label>
+			          	    </g:HTMLPanel>
+							<g:HTML styleName="{res.css.assignmentCollectionTitle}" ui:field="assignmentCollectiontitle"></g:HTML>
+							<g:Button styleName="{res.css.studyPlay}" ui:field="studyButtonText"></g:Button>
+							<g:HTMLPanel styleName="{res.css.headerLeft}" ui:field="dueDateContainer">
+							
+					        </g:HTMLPanel>					        
+			         	</g:HTMLPanel>
+			        </g:FlowPanel>
+	 			</g:HTMLPanel>
+	 			<g:Label styleName="{res.css.line}" ui:field="lblLineEnd"/>
+ 			</g:HTMLPanel>
+ 			
+ 			
+		</g:FlowPanel>
+</ui:UiBinder> 

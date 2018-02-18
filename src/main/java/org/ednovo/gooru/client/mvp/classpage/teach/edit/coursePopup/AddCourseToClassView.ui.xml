@@ -1,0 +1,59 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.classpages.assignments.AddAssignmentContainerCBundle"
+		field="res"></ui:with>
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+<g:HTMLPanel ui:field="popupContainer">
+   <!-- Modal -->
+  <!--  <div class="modal"> -->
+      <div class="modal-dialog" >
+         <div class="modal-content">
+            <div class="modal-header">
+               <g:Button styleName="close" ui:field="cancelResourcePopupBtnLbl" ><span aria-hidden="true">×</span></g:Button>
+               <uc:H4Panel styleName="modal-title"  ui:field="addtocollHeaderText"></uc:H4Panel>
+            </div>
+            <div class="modal-body">
+               <g:HTML styleName="indications" ui:field="addingTextLbl"></g:HTML>
+               <g:HTMLPanel styleName="assignCourseBlock" ui:field="emptyCourseBlockContainer">
+                  <uc:H3Panel ui:field="createCourseHeader"></uc:H3Panel>
+                  <ul>
+                     <div class="createCourseImage"></div>
+                     <li><em><g:InlineLabel ui:field="courseNotesLbl"></g:InlineLabel></em></li>
+                  </ul>
+                  <g:HTMLPanel styleName="mycontent">
+                       <g:Button styleName="primary" text="Go to My Content" title="Go to My Content" ui:field="gotoMyContent"/>
+                  </g:HTMLPanel>
+              </g:HTMLPanel> 
+               <g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="dropdownListClassContainerScrollPanel">
+			          <g:HTMLPanel ui:field="floderTreeContainer" styleName="popBody"/>
+				</g:ScrollPanel>
+			  <g:Label ui:field="lblEmptyErrorMessage" styleName="noTextMessage"/>
+              <g:HTMLPanel styleName="assignCourseBlock" ui:field="assignCourseBlockContainer">
+                  <uc:H3Panel ui:field="assginCourse"></uc:H3Panel>
+                  <ul>
+                     <li><span class="bluedot"></span> <em><g:InlineLabel ui:field="bluedotLbl"></g:InlineLabel></em></li>
+                     <li><span class="greendot"></span> <em><g:InlineLabel ui:field="greenLbl"></g:InlineLabel></em></li>
+                     <li><span class="orgdot"></span> <em><g:InlineLabel ui:field="orangeLbl"></g:InlineLabel></em></li>
+                  </ul>
+              </g:HTMLPanel> 
+            </div>
+            <g:HTMLPanel styleName="modal-footer" ui:field="footerPanel">
+               <g:Label styleName="addNewCollectionErrorStyle" ui:field="lblError" text="{i18n.GL3429}" title="{i18n.GL3429}"/>
+               <g:Anchor styleName="addNewCollectionStyle" ui:field="btnAddNew" text="{i18n.GL3430}" title="{i18n.GL3430}"/>
+               <g:Button styleName="primary" ui:field="btnAddExisting" text="{i18n.GL3438}" title="{i18n.GL3438}"/>
+               <g:Button styleName="secondary" ui:field="cancel" text="{i18n.GL0142}" title="{i18n.GL0142}"></g:Button>
+               <g:Button styleName="primary" ui:field="assignBtn" text="{i18n.GL0104}" title="{i18n.GL0104}"/>
+               
+              <!--  <button type="button" class="secondary" data-dismiss="modal">Cancle</button>
+               <button type="button" class="primary" data-dismiss="modal">Assign</button> -->
+            </g:HTMLPanel>
+         </div>
+      </div>
+  <!--  </div> -->
+</g:HTMLPanel>
+</ui:UiBinder>
+
+

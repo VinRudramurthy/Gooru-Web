@@ -1,0 +1,8 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" >
+	<g:HTMLPanel styleName="courseGroupRight">
+		<panel:UlPanel ui:field="ulGradePanel">
+		</panel:UlPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

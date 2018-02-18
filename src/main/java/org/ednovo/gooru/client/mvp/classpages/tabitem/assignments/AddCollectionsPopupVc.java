@@ -26,11 +26,11 @@ package org.ednovo.gooru.client.mvp.classpages.tabitem.assignments;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.AppPopUp;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -61,7 +61,7 @@ import com.google.gwt.user.client.ui.Widget;
  * 
  * @Reviewer:
  */
-public abstract class AddCollectionsPopupVc extends AppPopUp implements MessageProperties {
+public abstract class AddCollectionsPopupVc extends AppPopUp {
 
 	@UiField
 	Label btnAdd;
@@ -123,6 +123,8 @@ public abstract class AddCollectionsPopupVc extends AppPopUp implements MessageP
 
 	private static AddCollectionsPopupVcUiBinder uiBinder = GWT
 			.create(AddCollectionsPopupVcUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface AddCollectionsPopupVcUiBinder extends
 			UiBinder<Widget, AddCollectionsPopupVc> {
@@ -135,13 +137,38 @@ public abstract class AddCollectionsPopupVc extends AppPopUp implements MessageP
 		super();
 		this.getElement().getStyle().setWidth(400, Unit.PX);
 		this.getElement().getStyle().setHeight(231, Unit.PX);
-		setContent(GL1410, uiBinder.createAndBindUi(this));
-		chooseCollectionsLbl.getElement().setInnerText(GL1411+GL_SPL_STAR);
-		nocollectionMsgLabel.setText(GL0995);
-		btnAdd.setText(GL0590);
-		btnCancel.setText(GL0142);
-		loadingLbl.setText(GL0110+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP);
-		cannotFindLbl.getElement().setInnerText(GL1412);
+		setContent(i18n.GL1410(), uiBinder.createAndBindUi(this));
+		
+		chooseCollectionsLbl.getElement().setInnerText(i18n.GL1411()+i18n.GL_SPL_STAR());
+		chooseCollectionsLbl.getElement().setId("lblChooseCollections");
+		chooseCollectionsLbl.getElement().setAttribute("alt",i18n.GL1411());
+		chooseCollectionsLbl.getElement().setAttribute("title",i18n.GL1411());
+		
+		nocollectionMsgLabel.setText(i18n.GL0995());
+		nocollectionMsgLabel.getElement().setId("lblNoCollectionMsg");
+		nocollectionMsgLabel.getElement().setAttribute("alt",i18n.GL0995());
+		nocollectionMsgLabel.getElement().setAttribute("title",i18n.GL0995());
+		
+		btnAdd.setText(i18n.GL0590());
+		btnAdd.getElement().setId("btnAdd");
+		btnAdd.getElement().setAttribute("alt",i18n.GL0590());
+		btnAdd.getElement().setAttribute("title",i18n.GL0590());
+		
+		btnCancel.setText(i18n.GL0142());
+		btnCancel.getElement().setId("lblCancel");
+		btnCancel.getElement().setAttribute("alt",i18n.GL0142());
+		btnCancel.getElement().setAttribute("title",i18n.GL0142());
+		
+		loadingLbl.setText(i18n.GL0110()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		loadingLbl.getElement().setId("lblLoading");
+		loadingLbl.getElement().setAttribute("alt",i18n.GL0110()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		loadingLbl.getElement().setAttribute("title",i18n.GL0110()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		
+		cannotFindLbl.getElement().setInnerText(i18n.GL1412());
+		cannotFindLbl.getElement().setId("lblCannotFind");
+		cannotFindLbl.getElement().setAttribute("alt",i18n.GL1412());
+		cannotFindLbl.getElement().setAttribute("title",i18n.GL1412());
+		
 		//
 		nocollectionMsgLabel.setVisible(false);
 		setModal(true);
@@ -151,16 +178,28 @@ public abstract class AddCollectionsPopupVc extends AppPopUp implements MessageP
 		center();
 		populateUserCollections();
 		addLabel.setVisible(false);
+		addLabel.getElement().setId("lblAdd");
+		
 		btnCancel.setVisible(false);
 		loadingPanel.setVisible(true);
-		btnAdd.getElement().setId("btnAdd");
-		btnCancel.getElement().setId("lblCancel");
+		
+		
 		copyPopUpResourceListImage.getElement().removeAttribute("tabindex");
 		copyPopUpScrollHtmlPanel.getElement().getStyle()
 				.setVisibility(Visibility.HIDDEN);
 		collectionFirstElement.getElement().setAttribute("style",
 				"padding-left:5px");
-		collectionFirstElement.setText(GL1377+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP);
+		collectionFirstElement.setText(i18n.GL1377()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		collectionFirstElement.getElement().setId("lblCollectionFirstElement");
+		collectionFirstElement.getElement().setAttribute("alt",i18n.GL1377()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		collectionFirstElement.getElement().setAttribute("title",i18n.GL1377()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP()+i18n.GL_SPL_FULLSTOP());
+		
+		copyPopUpResourceListImage.getElement().setId("pnlCopyPopUpResourceListImage");
+		copyPopUpScrollHtmlPanel.getElement().setId("spnlCopyPopUpScrollHtmlPanel");
+		htmlScrollPanel.getElement().setId("pnlHtmlScroll");
+		mandatorySelectCollectionLbl.getElement().setId("lblMandatorySelectCollection");
+		collectionListContainer.getElement().setId("pnlCollectionListContainer");
+		
 		collectionFirstElement.getElement().setAttribute("style", "color:#999");
 		/**
 		 * on click for display list of collection in listbox

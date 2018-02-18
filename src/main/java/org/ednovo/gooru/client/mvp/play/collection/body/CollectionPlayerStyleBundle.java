@@ -45,4 +45,15 @@ public interface CollectionPlayerStyleBundle extends CssResource {
 	String conceptTitle();
 	String userImage();
 	String insightsFrameContent();
+	String clearBoth();
+	String timeTextBig();
+	String timeTextSmall();
+	String depthofKnow();
+	String reactionCanExplain();
+	String reactionCanUnderstand();
+	String reactionDonotUnderstand();
+	String reactionMeh();
+	String reactionNeedHelp();
+	String mutedText();
+	String errorMessageCommentsSection();
 }

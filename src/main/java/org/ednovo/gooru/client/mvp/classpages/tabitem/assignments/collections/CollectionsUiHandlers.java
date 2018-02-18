@@ -27,7 +27,7 @@
 */
 package org.ednovo.gooru.client.mvp.classpages.tabitem.assignments.collections;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 
 
 /**

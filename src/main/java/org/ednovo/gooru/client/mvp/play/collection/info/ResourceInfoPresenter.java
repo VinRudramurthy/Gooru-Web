@@ -25,12 +25,19 @@
 package org.ednovo.gooru.client.mvp.play.collection.info;
 
 
+import java.util.List;
+import java.util.Map;
+
+import org.ednovo.gooru.application.client.service.PlayerAppServiceAsync;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ResoruceCollectionDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.service.PlayerAppServiceAsync;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ResoruceCollectionDo;
+import org.ednovo.gooru.client.mvp.gshelf.util.LiPanelWithClose;
+import org.ednovo.gooru.client.mvp.play.collection.CollectionPlayerPresenter;
+import org.ednovo.gooru.client.mvp.standards.StandardsPopupPresenter;
 
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Window;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
 
@@ -38,12 +45,19 @@ public class ResourceInfoPresenter extends PresenterWidget<IsResourceInfoView> i
 
 	private CollectionItemDo collectionItemDo=null;
 	
+	private CollectionPlayerPresenter collectionPlayerPresenter;
+	
+	StandardsPopupPresenter standardsPopupPresenter;
+	
+	public String mycollectionTitle;
+	
 	@Inject
 	private PlayerAppServiceAsync playerAppService;
 	
 	@Inject
-	public ResourceInfoPresenter(EventBus eventBus, IsResourceInfoView view) {
+	public ResourceInfoPresenter(EventBus eventBus, IsResourceInfoView view,StandardsPopupPresenter standardsPopupPresenter) {
 		super(eventBus, view);
+		this.standardsPopupPresenter = standardsPopupPresenter;
 		getView().setUiHandlers(this);
 	}
 	
@@ -53,13 +67,19 @@ public class ResourceInfoPresenter extends PresenterWidget<IsResourceInfoView> i
 				return;
 			}else{
 				this.collectionItemDo=collectionItemDo;
+				getView().setCollectionTitle(mycollectionTitle);
 				getView().setResourceMedaDataInfo(collectionItemDo);
 			}		
 		}
 		else{
 			this.collectionItemDo=collectionItemDo;
+			getView().setCollectionTitle(mycollectionTitle);
 			getView().setResourceMedaDataInfo(collectionItemDo);
 		}
+	}
+	
+	public void setCollectionType(String collectionType){
+		getView().setCollectionType(collectionType);
 	}
 	
 	public void updateViewsCount(String viewCount){
@@ -67,7 +87,6 @@ public class ResourceInfoPresenter extends PresenterWidget<IsResourceInfoView> i
 	}
 	
 	public void updateLikesCount(int likesCount){
-		//getView().setResourceLikesCount(likesCount);
 	}
 
 	@Override
@@ -83,5 +102,46 @@ public class ResourceInfoPresenter extends PresenterWidget<IsResourceInfoView> i
 	public void resetResourceInfo(){
 		collectionItemDo=null;
 	}
+
+	public void setMycollectionTitle(String mycollectionTitle) {
+		this.mycollectionTitle = mycollectionTitle;
+	}
+	
+	public String getMycollectionTitle() {
+		return mycollectionTitle;
+	}
+
+	@Override
+	public void getAddedResourceTags(String resourceId) {
+		if(collectionPlayerPresenter!=null){
+			collectionPlayerPresenter.getResourceTagsToDisplay(resourceId);
+		}
+		
+	}
+
+	public CollectionPlayerPresenter getCollectionPlayerPresenter() {
+		return collectionPlayerPresenter;
+	}
+
+	public void setCollectionPlayerPresenter(CollectionPlayerPresenter collectionPlayerPresenter) {
+		this.collectionPlayerPresenter = collectionPlayerPresenter;
+	}
+	public void insertHideButtonAtLast(){
+		getView().insertHideButtonAtLast();
+	}
+
+	@Override
+	public void showStandardsPopup(String standardVal, String standardsDesc,
+			List<LiPanelWithClose> collectionLiPanelWithCloseArray) {
+		Window.enableScrolling(false);
+		standardsPopupPresenter.callStandardsBasedonTypeService(standardVal,standardsDesc);
+		standardsPopupPresenter.setResourceInfoPresenter(this);
+		standardsPopupPresenter.setAlreadySelectedItems(collectionLiPanelWithCloseArray);
+		addToPopupSlot(standardsPopupPresenter);
+		
+	}
+	public void setSelectedStandards(List<Map<String,String>> standListArray){
+   		getView().displaySelectedStandards(standListArray);
+   	}
 
 }

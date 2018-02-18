@@ -1,0 +1,77 @@
+.audiencePadding {
+	padding: 10px 0;
+}
+
+#audeince p {
+	margin: 0 0 10px;
+}
+
+.openHideBlocks {
+	padding: 15px 0;
+}
+
+.openHideBlocks h4 {
+	clear: both;
+	font-size: 16px;
+	color: #515151;
+	margin: 0 0 5px 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.openHideBlocks p {
+	color: #515151;
+	margin: 0 0 10px;
+}
+
+.checkboxMainContainer span>label {
+	padding-top: 3px;
+	font-weight: 100;
+}
+
+.textAreaErrorMessage {
+	border: 1px solid #fbb03b !important;
+}
+
+.videostart div,.videostart input[type=text],.videostart span {
+	display: inline-block;
+}
+
+.videostart span {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.videostart input[type=text] {
+	width: 23px;
+}
+
+.videostartHeader {
+	font-wieght: bold;
+	margin-right: 6px;
+}
+
+.dropdownBorder {
+	width: 100%;
+	float: left;
+	padding: 5px;
+	color: #ccc;
+	font-size: 12px;
+}
+
+.dropdownScroll {
+	height: 150px;
+	overflow: auto;
+	position: relative;
+	width: 100%;
+}
+
+.educationUseText{
+  font-size: 12px;
+  line-height: 120%;
+  color: #999;
+}
+.accessHazardLbl{
+	display: inline-block;
+   margin-right: 5px;
+}

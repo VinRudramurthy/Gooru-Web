@@ -21,7 +21,7 @@
 		}
 
 		.resourceName {
-			background:url(http://www.goorulearning.org/images/Collection-Search/icon-sprite.png) no-repeat transparent;
+			background:url(images/Collection-Search/icon-sprite.png) no-repeat transparent;
 			color: #fff;
 			font-size: 12px;
 			height: 20px;
@@ -50,7 +50,7 @@
 		}
 		.resourceTitle span.AM img {
 		max-height: 25px !important;
-		}		
+		}
 	.resourceCategory {
 			padding-bottom: 3px;
 		}
@@ -68,4 +68,4 @@
 			</g:HTMLPanel>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

@@ -1,0 +1,29 @@
+.contriburotsListContainer {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.profileImage {
+	border-radius: 50px;
+	box-shadow: 0 0 0 2px #87badd;
+	width: 56px !important;
+	height: 56px !important;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+
+.panelFeaturedContributors {
+	/* line-height: 58px; */
+
+}
+
+.viewMore {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.loading{
+	display: inline-block;
+	vertical-align: middle;
+}

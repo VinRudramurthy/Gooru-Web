@@ -28,9 +28,42 @@
 package org.ednovo.gooru.client.mvp.classpages.event;
 
 import com.google.gwt.event.shared.EventHandler;
+/**
+ * 
+ * @fileName : UpdateClasspageImageEventHandler.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public interface UpdateClasspageImageEventHandler extends EventHandler {
 
-	
+	/**
+	 * 
+	 * @function setUploadedImageToClassPage 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param imageUrl
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	void setUploadedImageToClassPage(String imageUrl);
 
 }

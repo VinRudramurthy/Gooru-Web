@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+
+	<ui:style field="toolTip" src="ToolTip.css" />
+
+	<panel:HTMLEventPanel styleName="{toolTip.resourceRightsPopupContainer}"
+		ui:field="confirmationPanel">
+		<g:HTMLPanel styleName="{toolTip.arrow}" ui:field="panelArrow"></g:HTMLPanel>
+		<g:HTMLPanel styleName="{toolTip.resourceRightsInnerPopup}">
+			<!-- <g:HTMLPanel ui:field="htmlContentRightsDesc"></g:HTMLPanel> -->
+			<g:HTMLPanel ui:field="descPanel">
+				<g:Label ui:field="desLbl"></g:Label>
+				<g:Anchor ui:field="anchorLbl"></g:Anchor>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</panel:HTMLEventPanel>
+</ui:UiBinder>

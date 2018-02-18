@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style field="driveStyle" src="driveStyle.css" type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add.drive.GoogleDriveFilesStyleBundle"/> 
+	<g:ScrollPanel styleName="{driveStyle.filesConatiner}" ui:field="driveScrollContainer">
+		<g:FlowPanel styleName="">
+			<g:FlowPanel ui:field="panelDriveBreadCrums" styleName="{driveStyle.breadCrumbsContainer}"></g:FlowPanel>
+			<g:FlowPanel ui:field="panelFileList">
+			</g:FlowPanel>
+		</g:FlowPanel>
+	</g:ScrollPanel>
+</ui:UiBinder>

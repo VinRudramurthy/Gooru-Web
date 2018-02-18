@@ -24,8 +24,9 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.share;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 
 public interface CollectionShareUiHandlers extends BaseUiHandlers{
 	public void sendEmail(String fromEmail, String toEmail,String copyEmail, String subject, String message); 
+	public void triggerShareDatalogEvent(String resourceGooruOid,String collectionItemId,String itemType,String shareType,boolean confirmStatus);
 }

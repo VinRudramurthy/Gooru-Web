@@ -53,12 +53,14 @@ public class CollectionCourseView extends Composite implements HasClickHandlers{
 	public CollectionCourseView(){
 		initWidget(uiBinder.createAndBindUi(this));
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
+		courseContainer.getElement().setId("fpnlCourseContainer");
 	}
 	
 	@UiConstructor
 	public CollectionCourseView(List<String> coursesList){
 		initWidget(uiBinder.createAndBindUi(this));
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
+		courseContainer.getElement().setId("fpnlCourseContainer");
 		renderCousers(coursesList);
 	}
 	public void renderCousers(List<String> coursesList){

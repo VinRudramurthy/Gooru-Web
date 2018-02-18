@@ -102,8 +102,36 @@ public class BrowserAgent {
 		}
 		$doc.getElementsByTagName('head')[0].appendChild( style );
 	}-*/;
-	
-//	public static native void consoleLog(String message) /*-{
-//		console.log(message );
-//	}-*/;
+	/**
+	 * 
+	 * @function isDevice 
+	 * 
+	 * @created_date : 26-Feb-2015
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @return
+	 * 
+	 * @return : boolean
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+
+	public static native boolean isDevice() /*-{
+	  	var ua = navigator.userAgent.toLowerCase();
+	  	var returnValue=false;
+	  	if (ua.indexOf("iphone") != -1 || ua.indexOf("ipod") != -1) {
+	    	returnValue = true;
+	  	} else if (ua.indexOf("ipad") != -1) {
+	    	returnValue = true;
+	  	} else if (ua.indexOf("android") != -1 || ua.indexOf("mobile") != -1) {
+	  		returnValue = true;
+	  	}
+	  	return returnValue;
+	}-*/;
 }

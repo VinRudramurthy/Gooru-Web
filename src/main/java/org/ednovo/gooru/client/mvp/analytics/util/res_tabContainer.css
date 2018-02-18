@@ -1,0 +1,68 @@
+.buttonsPanel {
+	width: auto;
+	margin: 0 10px;
+	white-space: normal;
+}
+
+.addButonStyle {
+	padding: 10px 20px;
+	width: 100%;
+}
+
+.collectionsGroupBtns {
+	text-align: center;
+}
+
+.collectionsGroupBtns div button.addButonStyle {
+	width: 100%;
+}
+
+.collectionsGroupBtns div .buttonsPanel {
+	margin-bottom: 15px;
+	margin-top:10px;
+}
+
+.tabs_teacher_Summary {
+	
+}
+
+.printSaveContainer {
+	
+}
+
+.addButonStyle {
+	
+}
+
+.mail_icon_image {
+	
+}
+
+.addButonStyleActive {
+	
+}
+
+.collectionsGroupBtns {
+	
+}
+
+.print_icon_image {
+	
+}
+
+.save_icon_image {
+	
+}
+.no-gutter .col-md-1, .no-gutter .col-md-2, .no-gutter .col-md-3, .no-gutter .col-md-4, .no-gutter .col-md-5
+, .no-gutter .col-md-6, .no-gutter .col-md-7, .no-gutter .col-md-8, .no-gutter .col-md-9, .no-gutter .col-md-10
+, .no-gutter .col-md-11, .no-gutter .col-md-12{ 
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+
+
+.completeBtn button {
+	font-size: 10.5px;
+	padding: 7px;
+}
+.analyticsPrintSave{}

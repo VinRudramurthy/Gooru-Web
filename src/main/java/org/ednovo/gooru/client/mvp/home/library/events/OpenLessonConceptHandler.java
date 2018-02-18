@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.events;
 
-import org.ednovo.gooru.shared.model.library.ConceptDo;
+import org.ednovo.gooru.application.shared.model.library.ConceptDo;
 
 import com.google.gwt.event.shared.EventHandler;
 /**
@@ -58,6 +58,6 @@ public interface OpenLessonConceptHandler extends EventHandler {
 	 * @throws : <Mentioned if any exceptions>
 	*/
 	
-	void openLessonConcept(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode);
+	void openLessonConcept(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode,String libraryGooruOid);
 
 }

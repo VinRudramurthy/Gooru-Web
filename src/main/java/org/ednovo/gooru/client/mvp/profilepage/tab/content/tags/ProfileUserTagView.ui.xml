@@ -1,0 +1,24 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="ProfilePageTagStyle" src="profile-page-Tag-style.css"></ui:style>
+	<g:HTMLPanel>
+		<!-- <g:Label ui:field="TagTextMessage"
+			styleName="{ProfilePageTagStyle.profilepageFollwoingContentText}"></g:Label> -->
+		<g:HTMLPanel styleName="{ProfilePageTagStyle.profilepageFollwoingContentText}">
+	   		 <g:InlineLabel styleName="{ProfilePageTagStyle.inlineStyle}" ui:field="TagTextMessage"/>
+	   </g:HTMLPanel>
+		<g:HTMLPanel styleName="{ProfilePageTagStyle.content-innerTag}">
+			<g:HTMLPanel styleName="{ProfilePageTagStyle.normalTxt}"
+				ui:field="tagTextMessage" />
+			<g:ScrollPanel ui:field="userTagScrollPanel"
+				styleName="">
+				<g:HTMLPanel styleName="{ProfilePageTagStyle.content-inner}"
+					ui:field="userTagsConatiner">
+
+				</g:HTMLPanel>
+			</g:ScrollPanel>
+
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

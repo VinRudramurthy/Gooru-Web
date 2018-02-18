@@ -59,6 +59,10 @@ public interface SearchResultWrapperCBundle extends ClientBundle {
 		String moreInfoActive();
 
 		String moreInfo();
+		
+		String infoLblActive();
+
+		String infoLbl();
 
 		String disclosurePanel();
 		
@@ -90,6 +94,15 @@ public interface SearchResultWrapperCBundle extends ClientBundle {
 		String embed();
 		
 		String embedActive();
+		
+		String ratingWidgetPanel();
+		
+		String addLblActive();
+		String tagsLblActive();
+		String tabActive();
+		
+		String analyticsLblActive();
+		String setFont();
 	}
 
 	@Source("SearchResultWrapper.css")

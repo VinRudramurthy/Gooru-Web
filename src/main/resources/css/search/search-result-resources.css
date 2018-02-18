@@ -1,0 +1,690 @@
+@charset "utf-8";
+/* CSS Document */
+
+#gooruSearchMainContainer .resourceDetails{
+    background:#ffffff;
+	margin-bottom:10px;
+}
+
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes {
+	display: inline-block;
+	margin: 7px 0;
+	padding: 0;
+}
+#gooruSearchMainContainer .resourceDetails .seachRightNavigation {
+	text-align: right;
+	margin: 12px 0;
+}
+#pnlStandards{
+	padding-left:10px;
+}
+#pnlStandards .blueLink{
+	display: inline-block;
+	float: left;
+	padding-left: 2px;
+	color: rgb(12, 116, 190);
+	padding-top: 4px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li.active {
+    background:none !important;
+    box-shadow: none !important;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li.active a {
+  border: 2px solid #87badd !important;
+  text-decoration: none;
+}
+#gooruSearchMainContainer .gliphIconImage {
+    background: url("../images/gridicon.png") no-repeat scroll 0 0 transparent;
+    width:11px;
+    height:14px;
+}
+.resourceDropdown input[type="checkbox"]
+{
+margin:0 0 0 -20px !important;
+}
+
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a {
+    border: 2px solid #ffffff !important;
+    border-radius: 3px;
+    color: #515151;
+    display: block;
+    font-size: 13px;
+	padding:8px 8px;
+}
+
+#gooruSearchMainContainer .resourceCollectionImage {
+	cursor:pointer;
+}
+
+#gooruSearchMainContainer  .resourceDetails .seachLeftNavigation ul.resourceTypes li a.videos {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px 7px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.interactives {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px -22px;
+	    padding: 8px 6px 8px 35px;
+}
+
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.webpage {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px -217px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.questions {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px -133px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.images {
+     background: url("../images/resource-type-icons.png") no-repeat scroll 4px -245px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.texts {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px -49px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a.audio {
+    background: url("../images/resource-type-icons.png") no-repeat scroll 4px -272px;
+	    padding: 8px 6px 8px 35px;
+}
+#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes li a:hover {
+    border: 2px solid #87badd;
+    text-decoration: none;
+}
+#gooruSearchMainContainer .ratingDetails {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    display: inline-block;
+    font-size: 13px;
+    min-height: 40px;
+    padding: 7px 2px;
+}
+#gooruSearchMainContainer .gridToggle{
+  display: inline-block;
+  min-height: 40px;
+  padding: 3px 2px;
+  position: relative;
+  vertical-align: top;
+}
+#gooruSearchMainContainer .gridToggle .dropdown-menu {
+	left: auto;
+	right: 0;
+	top: 120%;
+	font-size: 12px;
+	min-width: 245px;
+	margin: 0 0;
+	padding: 0 0;
+}
+#gooruSearchMainContainer .gridToggle .btn-primary {
+	color: #fff;
+	background-color: #999999;
+	border-color: #999999;
+	margin-right: -20%;
+	padding: 6px 7px;
+	border:none;
+	outline: 0;
+}
+#gooruSearchMainContainer .gridToggle .btn-primary:hover,#gooruSearchMainContainer  .gridToggle .btn-primary:focus,#gooruSearchMainContainer  .gridToggle .btn-primary:active,#gooruSearchMainContainer  .gridToggle .btn-primary.active,#gooruSearchMainContainer  .gridToggle .open .dropdown-toggle.btn-primary {
+	color: #fff;
+}
+#gooruSearchMainContainer .noResultsContainer .mainHeadingBlock .h2 {
+    display: inline-block;
+    font-size: 24px;
+    margin: 8px 10px;
+}
+#gooruSearchMainContainer .resultRating,#gooruSearchMainContainer .addthis{
+	display:inline-block;
+	vertical-align:middle;
+}
+#gooruSearchMainContainer .addthis{
+	margin-left:15px;
+}
+#gooruSearchMainContainer .plus{
+	font-size: 30px;
+	color: #999999;
+	line-height: 17px;
+	vertical-align: middle;
+	display:inline-block;
+}
+#gooruSearchMainContainer .resourceImgContainer{
+    width: 80px !important;
+	margin-right:10px;
+}
+#gooruSearchMainContainer .resourceImgContainer img {
+	height: 60px;
+	width: 80px;
+}
+#gooruSearchMainContainer .resourceImgContainer a:hover {
+	opacity: 0.6;
+}
+#gooruSearchMainContainer .resourceImgContainer a:hover .videoSmall {
+    display: none;
+}
+#gooruSearchMainContainer .resourceDesc {
+    width: 57%;
+}
+#gooruSearchMainContainer .resourceDesc1 {
+    width: 63%;
+    max-height:60px;
+}
+#gooruSearchMainContainer .resourceDesc .collectionTitle {
+	font-size: 17px;
+	font-weight: 400;
+	color: #0c74be;
+	margin-top: 4px;
+	line-height: 17px;
+	cursor: pointer;
+}
+#gooruSearchMainContainer .resourceDesc .resourceAuthorDetails{
+	color: #0c74be;
+	margin-top: 4px;
+	overflow: hidden;
+	height: 17px;
+}
+#gooruSearchMainContainer .resourceDescription{
+	padding:10px 10px;
+	height:70px;
+	overflow: hidden;
+}
+#gooruSearchMainContainer .resourcesStanders{
+	text-align:center;
+	padding:0 0 10px 0;
+}
+#gooruSearchMainContainer .resourcesStanders .searchStandard{
+	width:47%;
+	font-size:12px;
+}
+#gooruSearchMainContainer .resourcesStanders .additionalCount{
+	text-align:right;
+	display:block;
+	margin-right:10px;
+}
+#gooruSearchMainContainer .usedDetails{
+	padding:5px 0 5px 10px;
+	font-size:13px;
+	min-height: 36px;
+}
+
+#gooruSearchMainContainer .panel-heading .addResource{
+	width: 80px;
+  	/* margin-left: 8px; */
+}
+
+#gooruSearchMainContainer .usedDetails a:hover{
+	text-decoration:none;
+	opacity:0.75;
+}
+#gooruSearchMainContainer .userDetailsResources{
+	padding: 11px 9px;
+	background: #ccc;
+	border-radius: 0px 0px 3px 3px;
+	min-height: 49px;
+	max-height: 49px;
+}
+#gooruSearchMainContainer .userDetailsResources  .user{
+	font-size:13px;
+	color: #0c74be;
+	text-align: right;
+}
+#gooruSearchMainContainer .userDetailsResources .user .collectionTitle{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	height: 32px;
+	display: inline-block;
+	width: 80%;
+	font-size: 13px;
+	padding-left: 7px;
+}
+#gooruSearchMainContainer .userDetailsResources .collectionResources .collectionTitleforResource{
+	font-size: 13px;
+	color:#0C74BE;
+	cursor:pointer;
+}
+
+#gooruSearchMainContainer .userDetailsResources .collectionResources .collectionTitleNoCollection{
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 13px;
+	padding: 3px 8px;
+	text-align:center;
+	color:grey;
+	width:142%;
+	margin-left:-3%;
+	margin-top: 0px;
+	min-height: 27px;
+	line-height: 21px;
+	vertical-align: middle;
+}
+#gooruSearchMainContainer .userDetailsResources .user img{
+	border-radius: 50px;
+	box-shadow: 0 0 0 2px #87badd;
+	width: 30px;
+	height: 30px;
+}
+#gooruSearchMainContainer .collectionResources {
+	text-align:left;
+	/* min-height: 40px; */
+}
+#gooruSearchMainContainer .collectionResources .collectionTitle{
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #0c74be;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 66%;
+	margin-top: 0;
+}
+#gooruSearchMainContainer .collectionResources img{
+	width:40px;
+	height:28px;
+	border-left:3px solid #1076bb;
+}
+#gooruSearchMainContainer .collectionResources a{
+	display:block;
+}
+#gooruSearchMainContainer .collectionResources a:hover img{
+	opacity:0.75;
+}
+#gooruSearchMainContainer .ratingandGrid{
+	display:inline-block;
+	vertical-align:middle;
+}
+#gooruSearchMainContainer .gridToggle .dropdown-menu {
+    min-width: 300px;
+}
+#gooruSearchMainContainer .resourceDropdown{
+	padding:20px;
+}
+#gooruSearchMainContainer  .paddingBlock{
+
+}
+
+#gooruSearchMainContainer .resourceDetails .gridToggle .resourceDropdown .paddingBlock{
+	padding: 0 0;
+}
+
+#gooruSearchMainContainer .resourceDropdown P{
+	margin-bottom:10px;
+}
+
+#gooruSearchMainContainer .resourceDropdown .form-control{
+	height:26px;
+	border-radius:0 0;
+}
+#gooruSearchMainContainer .accessStyle{
+  display: inline-block;
+  width: 100%;
+}
+
+#gooruSearchMainContainer .accessStyle span{
+  width: 47%;
+  display: inline-block;
+  display: inline-block;
+
+}
+#gooruSearchMainContainer .oerStyle{
+  display: inline-block;
+  border-left: 1px solid #cccccc;
+  min-height: 40px;
+  font-size: 14px;
+  color:green;
+  padding: 0px 4px;
+  vertical-align: top;
+  cursor:pointer;
+  line-height: 36px;
+}
+#gooruSearchMainContainer .oerStyle div{
+	border: 2px solid #fff;
+}
+#gooruSearchMainContainer .oerStyle div:hover{
+  border: 2px solid #87badd;
+  text-decoration: none;
+}
+#gooruSearchMainContainer .oerStyle div.active{
+  border: 2px solid #87badd;
+  text-decoration: none;
+  box-shadow: none !important;
+  background: none;
+}
+#gooruSearchMainContainer .playerrating .star{
+	font-size:25px !important;
+    color:#4e9746;
+}
+
+@media (min-width: 240px) and (max-width: 319px){
+	#gooruSearchMainContainer .resourceDetails .seachRightNavigation {
+		text-align: center;
+	}
+	#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes
+		{
+		text-align: center;
+	}
+	#gooruSearchMainContainer .ratingandGrid {
+		text-align: center;
+		background: #eaeaea;
+		border-left: 1px solid #cccccc;
+		border-right: 1px solid #cccccc;
+		padding: 5px 0 0 0;
+		display: block;
+	}
+	#gooruSearchMainContainer .ratingandGrid .dropdown-menu>li>a {
+		text-align: left;
+	}
+	#gooruSearchMainContainer .ratingandGrid .ratingDetails,#gooruSearchMainContainer  .ratingandGrid .gridToggle
+		{
+		border-left: none;
+		border-right: none;
+	}
+	#gooruSearchMainContainer .resourceDesc,.resourceImgContainer {
+		float: left;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 479px){
+	#gooruSearchMainContainer .resourceDetails .seachRightNavigation {
+		text-align: center;
+	}
+	#gooruSearchMainContainer .resourceDesc1 {
+		    width: 98%;
+		    max-height:60px;
+		}
+	#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes
+		{
+		text-align: center;
+	}
+	#gooruSearchMainContainer .ratingandGrid {
+		text-align: center;
+		background: #eaeaea;
+		border-left: 1px solid #cccccc;
+		border-right: 1px solid #cccccc;
+		padding: 5px 0 0 0;
+		display: block;
+	}
+	#gooruSearchMainContainer .ratingandGrid .dropdown-menu>li>a {
+		text-align: left;
+	}
+	#gooruSearchMainContainer .ratingandGrid .ratingDetails,#gooruSearchMainContainer .ratingandGrid .gridToggle
+		{
+		border-left: none;
+		border-right: none;
+	}
+	#gooruSearchMainContainer .resourceDesc,#gooruSearchMainContainer .resourceImgContainer
+		{
+		float: left;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+
+	    #gooruSearchMainContainer .resourceDesc1 {
+		    width: 95%;
+		    max-height:60px;
+		}
+
+		#gooruSearchMainContainer .resourceDetails .seachRightNavigation{
+			text-align:center;
+		}
+		#gooruSearchMainContainer .resourceDetails .seachLeftNavigation ul.resourceTypes{
+			text-align:center;
+		}
+		#gooruSearchMainContainer .ratingandGrid{
+			text-align:center;
+			background:#eaeaea;
+			border-left:1px solid #cccccc;
+			border-right:1px solid #cccccc;
+			padding:5px 0 0 0;
+			display:block;
+		}
+		#gooruSearchMainContainer .ratingandGrid .dropdown-menu > li > a{
+			text-align:left;
+		}
+		#gooruSearchMainContainer .ratingandGrid .ratingDetails,#gooruSearchMainContainer .ratingandGrid .gridToggle{
+			border-left:none;
+			border-right:none;
+		}
+		#gooruSearchMainContainer .resourceDesc,#gooruSearchMainContainer .resourceImgContainer{
+			float:left;
+		}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#gooruSearchMainContainer .resourceDesc1{
+		width: 50%;
+		max-height: 60px;
+	}
+	#gooruSearchMainContainer .ratings {
+		margin: 6px 0;
+		width: 100%;
+	}
+	#gooruSearchMainContainer .userDetailsResources .collectionResources .collectionTitleNoCollection{
+		display: inline-block;
+		font-size: 13px;
+		padding: 0;
+		text-align: center;
+		color: grey;
+		width: 100%;
+		white-space: normal;
+		height: 31px;
+		margin-left: 10%;
+		margin-top: -4px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/*Resource search end*/
+
+
+
+/*Add Resource to collection popup start*/
+
+#addCollectionPopup{
+	width:395px;
+	margin:0 auto;
+	border:1px solid #ddd;
+	background-color: #fff;
+	padding: 3px 3px;
+}
+#addCollectionPopup .popFooter{
+	background:#dddddd;
+	padding:8px 10px;
+}
+#addCollectionPopup .noTextMessage{
+	text-align: center;
+	padding: 62px;
+	font-weight: bold;
+}
+#addCollectionPopup .popHeader{
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+
+}
+#addCollectionPopup .closeButton{
+	text-align:right;
+ 	background: url(../images/login/close-button.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+ 	height: 17px;
+ 	width: 17px;
+ 	display: inline-block;
+    cursor: pointer;
+    margin-left: 27px;
+}
+#addCollectionPopup .foldermenuHeader{
+  	background: url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 14px 8px rgba(0, 0, 0, 0);
+    padding: 10px 50px;
+	border-bottom:1px solid #dddddd;
+	border:1px solid #dddddd;
+	cursor:pointer;
+}
+#addCollectionPopup .remixMenuTitle{
+  	background-color: #ddd;
+	padding: 13px 29px;
+	border-bottom: 1px solid #ddd;
+ }
+#addCollectionPopup .foldermenuLevel{
+	background: url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 32px 8px;
+    padding:10px 50px 10px 66px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldermenuLevel:hover{
+	background:#e3eff7  url("../images/folders/panel/folder-small-icon.png")  no-repeat scroll 32px 8px ;
+}
+#addCollectionPopup .foldermenuLevel1{
+	background: url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 50px 8px rgba(0, 0, 0, 0);
+    padding:10px 50px 10px 83px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldermenuLevel1:hover{
+	background:#e3eff7  url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 50px 8px;
+}
+#addCollectionPopup .foldermenuLevel2{
+	 background: url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 71px 8px rgba(0, 0, 0, 0);
+    padding:10px 50px 10px 105px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldermenuLevel2:hover{
+	background:#e3eff7  url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 71px 8px;
+}
+#addCollectionPopup .foldermenuLevel3{
+	  background: url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 126px 8px rgba(0, 0, 0, 0);
+    padding:10px 50px 10px 163px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldermenuLevel3:hover{
+	background:#e3eff7  url("../images/folders/panel/folder-small-icon.png") no-repeat scroll 126px 8px;
+}
+
+#addCollectionPopup .foldercollection{
+	 background: url(../images/folders/panel/collection-small-icon.png) no-repeat 32px 8px;
+    padding:10px 50px 10px 66px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldercollection.parent{
+	background: url(../images/folders/panel/collection-small-icon.png) no-repeat 50px 8px;
+    padding:10px 50px 10px 83px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldercollection.child{
+	background: url(../images/folders/panel/collection-small-icon.png) no-repeat 71px 8px;
+    padding:10px 50px 10px 105px;
+	border-bottom:1px solid #dddddd;
+}
+#addCollectionPopup .foldercollection.innerchild{
+	background: url(../images/folders/panel/collection-small-icon.png) no-repeat 96px 8px;
+    padding:10px 50px 10px 133px;
+	border-bottom:1px solid #dddddd;
+}
+.folderAssessment { /* grandparent level - default */
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 33px 8px;
+    background-size: 22px 18px;
+    padding:10px 50px 10px 66px;
+	border-bottom:1px solid #dddddd;
+}
+
+#addCollectionPopup .folderAssessment.parent {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 50px 8px;
+    padding:10px 50px 10px 83px;
+    background-size: 22px 18px;
+}
+
+#addCollectionPopup .folderAssessment.child {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 71px 8px;
+    padding:10px 50px 10px 105px;
+    background-size: 22px 18px;
+}
+#addCollectionPopup .folderAssessment.innerchild {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 96px 8px;
+    background-size: 22px 18px;
+    padding:10px 50px 10px 133px;
+}
+#addCollectionPopup .addButton{
+	display: inline-block;
+}
+#addCollectionPopup .leftAlign{
+	text-align:left !important;
+	width: 50%
+}
+#addCollectionPopup .rightAlign{
+	text-align:right !important;
+	width: 49%;
+}
+/* #addCollectionPopup .rightAlign button.primary{
+	padding: 7px 30px;
+} */
+#addCollectionPopup .dropdownListContainerScrollPanel{
+	border: 1px solid #ddd;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 9999;
+	height: 275px;
+	overflow-x:hidden !important;
+}
+#addCollectionPopup .dropdownListClassContainerScrollPanel{
+	/* border: 1px solid #ddd; */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 9999;
+	height: 275px;
+	overflow-x:hidden !important;
+}
+#addResourcefolderTreePanel table{
+	width:100%;
+}
+#addResourcefolderTreePanel .open{
+	background-image: url(../images/folder-open-icon.png);
+	background-size: 24px 18px;
+}
+#addResourcefolderTreePanel .selected{
+	background-color: #cfe3f1 !important;
+}
+#addCollectionPopup .lblSuccessText{
+	text-align: center;
+	height: 83px;
+	font-size: 18px;
+}
+#addCollectionPopup .lblSuccessImage{
+	background: url(../images/folders/panel/checkmark.png) no-repeat center;
+	height: 152px;
+}
+
+#addCollectionPopup .addNewCollectionStyle{
+	color: #1076bb;
+	margin-left: 10px;
+}
+#addCollectionPopup .addNewCollectionErrorStyle{
+	font-weight: bold;
+	height: 10px;
+	color: #fab03a;
+	font: 12px arial;
+}
+
+#gooruSearchMainContainer .viewContainer a{
+	font-size: 12px;
+}
+
+/*Add Resource to collection popup end*/

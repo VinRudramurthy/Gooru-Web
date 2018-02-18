@@ -1,23 +1,24 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
-<ui:with type="org.ednovo.gooru.client.mvp.shelf.ShelfCBundle" field="res" />
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
 	<g:HTMLPanel>
-		<g:FlowPanel styleName="{res.css.deletePopupContainer}">
-			<g:FlowPanel styleName="{res.css.confirmMessageContainer}" ui:field="msgFlowPanel">
-			 <g:HTMLPanel styleName="{res.css.deleteIcon}"/>
-			<g:FlowPanel styleName="{res.css.confirmMessageTitle}">
-				<g:HTML styleName="{res.css.confirmMessages}" ui:field="confirmMessagesText"/>
-				<g:Label styleName="{res.css.resourceIndex}" ui:field="entityLbl" />
+		<g:FlowPanel styleName="dcp-deletePopupContainer">
+			<g:FlowPanel styleName="dcp-confirmMessageContainer"
+				ui:field="msgFlowPanel">
+				<g:HTMLPanel styleName="dcp-deleteIcon" />
+				<g:FlowPanel styleName="dcp-confirmMessageTitle">
+					<g:HTML styleName="dcp-confirmMessages" ui:field="confirmMessagesText" />
+					<g:Label styleName="dcp-resourceIndex" ui:field="entityLbl" />
+				</g:FlowPanel>
+				<g:Label styleName="dcp-confirmMessageDelete" ui:field="permenantText" />
+				<g:Label styleName="dcp-confirmMessageOk" ui:field="typeDeleteText" />
+				<g:TextBox styleName="dcp-inputText" ui:field="inlineTxtBox" />
 			</g:FlowPanel>
-				<g:Label styleName="{res.css.confirmMessageDelete}" ui:field="permenantText"/>
-				<g:Label styleName="{res.css.confirmMessageOk}" ui:field="typeDeleteText"/>
-				<g:TextBox styleName="{res.css.inputText}" ui:field="inlineTxtBox" />
-			</g:FlowPanel>
-			<g:FlowPanel styleName="{res.css.actionField}" ui:field="buttonContainer">
-				<g:Button ui:field="cancelAnr" styleName="secondary {res.css.deleteOkayButton}"/>
+			<g:FlowPanel styleName="dcp-actionField" ui:field="buttonContainer">
+				<g:Button ui:field="cancelAnr" styleName="secondary dcp-deleteOkayButton" />
 				<g:Button ui:field="okButtonUc" styleName="deleteCollectionDisabledButton" />
 			</g:FlowPanel>
-			<g:Label styleName="{res.css.actionField}" ui:field="loadingTextLbl"></g:Label>
+			<g:Label styleName="dcp-actionField" ui:field="loadingTextLbl"></g:Label>
 		</g:FlowPanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

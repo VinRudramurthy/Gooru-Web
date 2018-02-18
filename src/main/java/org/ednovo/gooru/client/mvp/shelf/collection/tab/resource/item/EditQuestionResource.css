@@ -118,8 +118,8 @@
 	box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.2);
 	-ms-filter:
 		"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ffffffff,GradientType=0)";
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,
-		endColorstr=#ffffffff, GradientType=0);
+	
+		
 }
 
 .addResourceUrlbg:hover {
@@ -141,8 +141,8 @@
 	box-shadow: inset -2px 1px 4px rgba(0, 0, 0, 0.2);
 	-ms-filter:
 		"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ffffffff,GradientType=0)";
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,
-		endColorstr=#ffffffff, GradientType=0);
+	
+		
 }
 
 .addResourceUrlbgTitle {
@@ -844,8 +844,8 @@
 	border-radius: 4px;
 	-ms-filter:
 		"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ff999999,GradientType=0)";
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,
-		endColorstr=#ff999999, GradientType=0);
+	
+		
 }
 
 .editQuestionPopupContainer {
@@ -879,8 +879,8 @@
 	padding: 10px;
 	cursor: default;
 	border-bottom: 1px solid #ddd;
-	filter: progid:  DXImageTransform.Microsoft.gradient(  startColorstr= 
-		'#ddd', endColorstr=  '#f5f5f5');
+	
+		
 }
 
 .buttonDeSelected {
@@ -894,8 +894,8 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#FDFDFD),
 		to(#EDEDED));
 	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
-	filter: progid:  DXImageTransform.Microsoft.gradient(  startColorstr= 
-		'#FDFDFD', endColorstr=  '#EDEDED');
+	
+		
 }
 
 .buttonDeSelected:hover {

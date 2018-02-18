@@ -24,36 +24,47 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.uc;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
 /**
  * @author Search Team
  *
  */
-public class AlertContentUc extends Composite implements MessageProperties {
+public class AlertContentUc extends Composite {
 
 	private static AlertContentUcUiBinder uiBinder = GWT.create(AlertContentUcUiBinder.class);
 
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	@UiField
 	Button okButton;
 
 	@UiField
-	Label alertMessageField;
+	HTML alertMessageField;
 
 	AlertBoxUc alertBoxUc;
 
 	@UiField
 	Label alertMessageHeaderField;
+	
+	@UiField 
+	FlowPanel headerPanel;
 
 	interface AlertContentUcUiBinder extends UiBinder<Widget, AlertContentUc> {
 	}
@@ -66,12 +77,29 @@ public class AlertContentUc extends Composite implements MessageProperties {
 	public AlertContentUc(String messageHeader, String messageContent) {
 		alertBoxUc = new AlertBoxUc();
 		alertBoxUc.setContent(uiBinder.createAndBindUi(this));
-		alertMessageField.setText(messageContent);
+		
+		alertMessageField.setHTML(messageContent);
+		alertMessageField.getElement().setId("pnlAlertMessageField");
+		alertMessageField.getElement().setAttribute("alt",messageContent);
+		alertMessageField.getElement().setAttribute("title",messageContent);
+		
 		alertMessageHeaderField.setText(messageHeader);
-		alertBoxUc.show();
+		alertMessageHeaderField.getElement().setId("lblAlertMessageHeaderField");
+		alertMessageHeaderField.getElement().setAttribute("alt",messageHeader);
+		alertMessageHeaderField.getElement().setAttribute("title",messageHeader);
+		
 		alertBoxUc.center();
-		okButton.setText(GL0190);
+		alertBoxUc.show();
+		
+		
+		okButton.setText(i18n.GL0190());
+		okButton.getElement().setId("btnOkButton");
+		okButton.getElement().setAttribute("alt",i18n.GL0190());
+		okButton.getElement().setAttribute("title",i18n.GL0190());
+		
 		alertBoxUc.getElement().getStyle().setZIndex(999999);
+		
+		headerPanel.getElement().setId("fpnlHeaderPanel");
 	}
 
 	/**
@@ -79,6 +107,9 @@ public class AlertContentUc extends Composite implements MessageProperties {
 	 */
 	public void setAlertMessage(String messageContent) {
 		alertMessageField.setText(messageContent);
+		alertMessageField.getElement().setAttribute("alt",messageContent);
+		alertMessageField.getElement().setAttribute("title",messageContent);
+		
 	}
 
 	/**
@@ -86,6 +117,8 @@ public class AlertContentUc extends Composite implements MessageProperties {
 	 */
 	public void setAlertHeaderMessage(String messageHeader) {
 		alertMessageHeaderField.setText(messageHeader);
+		alertMessageHeaderField.getElement().setAttribute("alt",messageHeader);
+		alertMessageHeaderField.getElement().setAttribute("title",messageHeader);
 	}
 
 	/**
@@ -95,6 +128,10 @@ public class AlertContentUc extends Composite implements MessageProperties {
 	@UiHandler("okButton")
 	public void onOkClick(ClickEvent clickEvent) {
 		alertBoxUc.hide();
+		PlaceRequest placeRequest=AppClientFactory.getPlaceManager().getCurrentPlaceRequest();
+		if(placeRequest.getNameToken().equals(PlaceTokens.SEARCH_RESOURCE)||placeRequest.getNameToken().equals(PlaceTokens.MYCONTENT)){
+			Window.enableScrolling(true);
+		}
 	}
 
 	/**

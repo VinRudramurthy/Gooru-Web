@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field= "addWebResourceStyle" src="addResource.css" type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add.AddResourceBundle"/>
+	
+	<g:HTMLPanel>
+	     <g:Label ui:field="answerHeadLbl" styleName="answerHeadLbl"></g:Label>
+	     <g:FlowPanel  ui:field="answerHeadContainer">
+	         <g:Label  ui:field="answerHeadingTypeLbl" styleName="htQAnswerHeadings htQAnswerTypeLbl"></g:Label>
+	          <g:RadioButton ui:field="wordRDButton" styleName="htQAnswerHeadings" name="ansFormat"></g:RadioButton>
+	           <g:RadioButton ui:field="sentenceRDButton" styleName="htQAnswerHeadings" name="ansFormat"></g:RadioButton>
+	     </g:FlowPanel>
+	<g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerContainer} htQanswerContainer">
+	     <tinyMce:TinyMCE ui:field="highlightTextArea" characterLimit="500" styleName="tinyMCETable htQhighlightTextArea"></tinyMce:TinyMCE>
+              <g:Label styleName="htQLabelNum" ui:field="labelChoice"></g:Label>
+              <g:HTMLPanel styleName="htQAnswerInputControl answerChoiceAndHintsTextcontainer" ui:field="tinyOrTextBoxConatiner">
+	              <tinyMce:TinyMCE ui:field="answerTextBox" characterLimit="500"></tinyMce:TinyMCE>
+	              <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerDeletebg}" ui:field="deleteButtonContainer"></g:HTMLPanel>
+              </g:HTMLPanel>
+              <g:Label text="" ui:field="errorMessageforAnswerChoice" styleName="{addWebResourceStyle.addResourceFormInputBottomText} errorMessage"/>
+       </g:HTMLPanel>
+       </g:HTMLPanel>
+</ui:UiBinder>

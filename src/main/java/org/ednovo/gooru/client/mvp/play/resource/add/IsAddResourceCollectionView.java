@@ -26,10 +26,10 @@ package org.ednovo.gooru.client.mvp.play.resource.add;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemsList;
-import org.ednovo.gooru.shared.model.folder.FolderListDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemsList;
+import org.ednovo.gooru.application.shared.model.folder.FolderListDo;
 
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TreeItem;

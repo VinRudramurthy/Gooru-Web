@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="ProfilePageTagStyle" src="profile-page-Tag-style.css"></ui:style>
+	<g:HTMLPanel styleName="{ProfilePageTagStyle.resultInner}">
+		<g:HTMLPanel styleName="{ProfilePageTagStyle.tagthumbnail}">
+			<g:Image ui:field="resourceImage" />
+			<g:HTMLPanel styleName="{ProfilePageTagStyle.tagType}">
+				<g:Image ui:field="resourceTypeIcon" />
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="{ProfilePageTagStyle.resultsection}">
+			<g:HTML styleName="{ProfilePageTagStyle.titleBold}" ui:field="resourceTitle"></g:HTML>
+			<g:Label ui:field="resourceType"></g:Label>
+			<g:Label styleName="{ProfilePageTagStyle.resourceSource}" ui:field="resourceSource"></g:Label>
+			<g:HTMLPanel styleName="{ProfilePageTagStyle.ratingContainer}"
+				ui:field="ratingContainer"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+
+
+</ui:UiBinder> 

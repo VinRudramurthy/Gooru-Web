@@ -1,0 +1,139 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:ppanel="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:standpanel="urn:import:org.ednovo.gooru.client.mvp.gshelf.collectiondetails"
+	xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:w="urn:import:org.ednovo.gooru.client.mvp.gshelf.collectiondetails.widgets">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="collectionInfo">
+		<div class="collectionTitleDetails">
+			<ppanel:PPanel ui:field="colltitle"></ppanel:PPanel>
+			<p>
+				<g:TextBox styleName="form-control" ui:field="collectionTitle"
+					maxLength="50" />
+				<g:Label ui:field="lblErrorMessage" styleName="errorMessage text-right"></g:Label>
+			</p>
+		</div>
+		<div class="collectionImageDetails">
+			<g:HTMLPanel ui:field="thumbnailImageContainer"
+				styleName="collectionThumbnail">
+				<ppanel:PPanel ui:field="collimagetitle"></ppanel:PPanel>
+				<div class="thimbnailImage">
+					<g:Image ui:field="collThumbnail"/>
+					<span class="thunailHover">
+						<g:Button styleName="secondary btn-block" ui:field="uploadImageLbl"></g:Button>
+					</span>
+				</div>
+			</g:HTMLPanel>
+			<div class="learningObjective">
+				<ppanel:PPanel ui:field="learningObjPpanel"></ppanel:PPanel>
+				<p>
+					<g:TextArea styleName="form-control" ui:field="learningObjective" />
+					<g:Label ui:field="lblErrorMessageForLO" styleName="errorMessage text-right"></g:Label>
+				</p>
+			</div>
+		</div>
+		<div class="collectionCoverBlock">
+			<div class="unitCoverHeader">
+
+				<div class="col-md-12 col-sm-12">
+					<ppanel:PPanel styleName="tagcollection" ui:field="tagcollectiontitle"></ppanel:PPanel>
+
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="fractionDetailsTable">
+				<div class="">
+					<div class="no-gutter">
+						<div class="col-md-4">
+							<h3></h3>
+						</div>
+						<div class="col-md-8">
+							<div class="dropDownRight">
+								<div class="btn-group">
+									<g:Button styleName="btn btn-primary" ui:field="taxonomyBtn"
+										text="{i18n.GL3480}"></g:Button>
+									<panel:HTMLEventPanel styleName="btn btn-primary dropdown-toggle"
+										ui:field="taxonomyToggleBtn">
+										<g:InlineLabel styleName="glyphicon gliphIconImage"></g:InlineLabel>
+										<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+									</panel:HTMLEventPanel>
+									<ul role="menu" class="dropdown-menu">
+										<li>
+											<a href="#">My Folders</a>
+										</li>
+										<li>
+											<a href="#">My Collections</a>
+										</li>
+
+									</ul>
+								</div>
+
+
+								<panel:HTMLEventPanel styleName="btn-group"
+									ui:field="btnStandardsBrowse">
+									<g:Button styleName="btn btn-primary" text="{i18n.GL3479}"
+										title="{i18n.GL3479}" />
+									<g:HTMLPanel styleName="btn btn-primary dropdown-toggle">
+										<g:InlineLabel styleName="caret"></g:InlineLabel>
+										<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+									</g:HTMLPanel>
+								</panel:HTMLEventPanel>
+
+								<ppanel:UlPanel styleName="dropdown-menu"
+									ui:field="standardsDropListValues"></ppanel:UlPanel>
+							</div>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+
+				<g:HTMLPanel styleName="lessonCover" ui:field="pnlStandards">
+					<div class="panel panel-default">
+						<g:HTMLPanel ui:field="standardsUI" styleName="panel-body" />
+					</div>
+				</g:HTMLPanel>
+			</div>
+		</div>
+
+		<div class="tagCoursePanelFooter">
+			<div class="filterTags">
+				<uc:UlPanel ui:field="ulSelectedItems" />
+			</div>
+			<g:Label styleName="col-sm-12 errorMessage"	ui:field="lblGradeErrorMsg" />
+		</div>
+		<w:AudienceView ui:field="audienceContainer"></w:AudienceView>
+		<g:HTMLPanel styleName="addOptions">
+			<g:Anchor ui:field="dok" text="{i18n.GL_SPL_PLUS} {i18n.GL3376}">
+			</g:Anchor>
+			<g:Anchor ui:field="centurySkills" text="{i18n.GL_SPL_PLUS} {i18n.GL3377}">
+			</g:Anchor>
+			<g:Anchor ui:field="languageObj" text="{i18n.GL_SPL_PLUS} {i18n.GL3378}">
+			</g:Anchor>
+			<w:DepthKnowledgeView ui:field="depthOfKnowledgeContainer"></w:DepthKnowledgeView>
+			<g:HTMLPanel ui:field="centurySkillContainer"></g:HTMLPanel>
+			<w:LanguageView ui:field="languageObjectiveContainer"></w:LanguageView>
+		</g:HTMLPanel>
+
+		<g:HTMLPanel styleName="standardDiv" ui:field="newdok">
+			<g:Label styleName="title" ui:field="newlbl"></g:Label>
+			<g:HTMLPanel styleName="normal" ui:field="newtype"></g:HTMLPanel>
+		</g:HTMLPanel>
+		<div class="stepsButtonGroup">
+			<g:Button styleName="primary" ui:field="saveCollectionBtn"
+				text="{i18n.GL3368}" />
+		</div>
+		
+		<g:HTMLPanel ui:field="spinnerIconContainer" styleName="spinnerContainer" visible="false">
+			<g:HTMLPanel styleName="loadingImage spinnerDisplayPosition"></g:HTMLPanel>
+		</g:HTMLPanel>
+		
+		<div class="clearfix"></div>
+	</g:HTMLPanel>
+</ui:UiBinder>

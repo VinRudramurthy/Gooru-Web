@@ -1,0 +1,1387 @@
+#pnlMainFlow .userShelfViewContainer {
+	float: left;
+}
+
+#pnlMainFlow .floatShelfTabLeft {
+	float: right;
+	min-height: 759px;
+	position: relative;
+	width: 311px;
+}
+
+#pnlMainFlow .userShelfViewList {
+	position: relative;
+	top: -51px;
+}
+
+#pnlMainFlow .newMockLeftAlignController {
+	margin: 0px auto;
+	/* float: left; */
+	width: 1000px;
+	max-width: 1000px;
+	/* border-right: 1px solid #dddddd; */
+	height: 100%;
+	min-height: 500px;
+	/* left: 188px; */
+	position: relative;
+	/* margin-top: -26px; */
+	/* top: 36px; */
+}
+
+#pnlMainFlow .howToUseThisPageBlue {
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 10px 11px 0px 0px;
+	color: #1076BB;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#pnlMainFlow .myCollectionShareStudentContainer {
+	position: relative;
+	width: 1000px;
+	min-width: 1000px;
+	background-color: gray;
+	height: 180px;
+}
+
+#pnlMainFlow .myCollectionShareStudentContainer > .headerContainer{
+	height:180px;
+}
+
+#pnlMainFlow .myClasspageWrapperTwoChapterTextNoWelcome {
+	float: left;
+	width: 83%;
+	height: 37px;
+	margin: 0px 0px 21px 23px;
+	font-size: 20px;
+	color: #515151;
+}
+
+#pnlMainFlow .myClasspageWrapperTwoChapterText {
+	float: left; /*width:257px;*/
+	height: 28px;
+	margin: 17px;
+	font-size: 20px;
+	color: white;
+}
+
+#pnlMainFlow .myClassPageTitle {
+	float: left;
+	height: 39px;
+	text-align: left;
+	font-size: 32px;
+	font-weight: bold;
+	/* margin-right: 17px; */
+}
+
+#pnlMainFlow .blueButtonView:hover {
+	color: white;
+	background: #1076BB;
+	cursor: pointer;
+	float: right;
+}
+
+#pnlMainFlow .blueButtonView {
+	color: white;
+	background-color: #1076bb;
+	border-radius: 4px;
+	padding: 8px 9px;
+	border: none;
+	font-weight: bold;
+	margin: 10px 23px;
+	font-family: Arial, sans-serif;
+	display: inline-block;
+	margin: 32px 23px 2px 0px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
+		to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	cursor: pointer;
+	float: right;
+	font-size: 12px;
+}
+
+#pnlMainFlow .blueButtonView:hover {
+	color: white;
+	background: #1076BB;
+	cursor: pointer;
+	float: right;
+}
+
+#pnlMainFlow .tabs {
+	clear: both;
+	background: rgb(239, 239, 239);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD),
+		to(#EDEDED));
+	background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
+	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
+	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
+	border: 1px solid #ddd;
+	margin: 0px 21px 0px 26px;
+}
+
+#pnlMainFlow .tabsli {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 0px -2px;
+}
+
+#pnlMainFlow .tabsliactive:hover {
+	-moz-box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	background: rgb(239, 239, 239);
+	background: -moz-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(239,
+		239, 239, 1)), color-stop(32%, rgba(247, 247, 247, 1)),
+		color-stop(100%, rgba(239, 239, 239, 1)));
+	background: -webkit-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -o-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: linear-gradient(to bottom, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+}
+
+#pnlMainFlow .tabsli:hover {
+	/*background: #f0f0f0;*/
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	cursor: pointer;
+	background-color: #efefef;
+}
+
+#pnlMainFlow .active {
+	-moz-box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 5px 16px 0px rgba(0, 0, 0, .1);
+	background: rgb(216, 216, 216);
+	background: -moz-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(239,
+		239, 239, 1)), color-stop(32%, rgba(247, 247, 247, 1)),
+		color-stop(100%, rgba(239, 239, 239, 1)));
+	background: -webkit-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -o-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+	background: linear-gradient(to bottom, rgba(239, 239, 239, 1) 0%,
+		rgba(247, 247, 247, 1) 32%, rgba(239, 239, 239, 1) 100%);
+}
+
+#pnlMainFlow .addAsAnAssignmentMarginBlue {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #1076BB;
+	margin: 10px 0 0px 23px;
+	clear: both;
+	cursor: pointer;
+	width: 25%;
+}
+
+#pnlMainFlow .noAssignmentMsg{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:24px;
+	line-height:120%;
+	color:#515151;
+	text-align:center;
+	/* width: 350px; */
+	top: 100px;
+	/* position: relative; */
+	margin: 0 auto;
+}
+#pnlMainFlow .loadingpanelImage{
+	background: url(../images/core/B-Dot.gif) no-repeat;
+	height: 170px;
+	width: 233px;
+	color: #999;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	margin-left: 400px;
+}
+#pnlMainFlow .myClassPageTitleButtonContainer {
+	float: right;
+	width: 100%;
+	margin-top: -18px;
+	background-color: wheat;
+}
+#pnlMainFlow .editTitleButton {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1076BB;
+	cursor: pointer;
+	margin: 72px 10px 10px 0px;
+	width: 80%;
+}
+
+#pnlMainFlow .editTitleButton:hover {
+	color: #87BADD;
+	cursor: pointer;
+}
+
+#pnlMainFlow .searchResultContainer {
+	width: 100%;
+	float: left;
+	margin-top:-7px;
+}
+
+#pnlMainFlow .paginationContainer {
+	float:right;
+	margin-top:7px;
+	text-align:right;
+}
+
+#pnlMainFlow .paginationPanel {
+	text-align: center;
+	width: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 351px;
+	color: #1076BB;
+}
+#pnlMainFlow .paginationPanel:hover{
+	cursor:pointer;
+	color: #87BADD;
+}
+
+#pnlMainFlow .classPageEditArrContainer {
+	padding: 5px 0 0 0;
+	position: absolute;
+	cursor: pointer;
+	margin-left: -40px;
+	margin-top: 11px;
+}
+
+#pnlMainFlow .classPageEditArrOuterDiv {
+	float: left;
+	/* padding: 5px 0px 0px 0px; */
+	position: relative;
+}
+
+#pnlMainFlow .classPageEditArrIcon {
+	background-position: -52px 100px;
+	width: 10px;
+	height: 25px;
+}
+
+#pnlMainFlow .classPageEditArrText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	font-weight: bold;
+	color: #1076b8;
+	text-align: left;
+	position: absolute;
+	top: 12px;
+	float: left;
+	left: 123px;
+}
+
+#pnlMainFlow .classPageEditArrImg{
+	position: absolute;
+	/* top: 51px; */
+	float: left;
+	left: 109px;
+}
+
+#pnlMainFlow .simplePencil {
+	height: 64px;
+	min-width: 50px;
+}
+
+#pnlMainFlow .collectionEditImage {
+	background: url("../images/Collection-Search/icon-sprite.png") repeat
+		scroll -71px -169px transparent;
+	float: right;
+	height: 18px;
+	width: 14px;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+#pnlMainFlow .userCollectionInfo {
+	position: absolute;
+	bottom: 0;
+	float: left;
+	margin: 10px 0px 0px 0px;
+	width: 100%;
+	background-color: rgba(16,118,187,0.5);
+}
+
+#pnlMainFlow .collectionTitle {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	width: auto;
+}
+
+#pnlMainFlow .titleAlertContainer {
+	float: left;
+	width: 80%;
+}
+
+#pnlMainFlow .titleAlertMessage {
+	display: none;
+	color: #f9b039;
+	float: right;
+	font-size: 12px;
+	margin-top: -9px;
+
+}
+
+#pnlMainFlow .collectionDescriptionTitle {
+	color: #999999;
+	clear: both;
+	float: left;
+	font-size: 12px;
+}
+
+#pnlMainFlow .collectionDescription {
+	border: none !important;
+	clear: both;
+	float: left;
+	height: 60px;
+	width: 550px;
+	font-style: italic;
+}
+
+#pnlMainFlow .descriptionAlertMessage {
+	color: #fbb03b;
+	float: right;
+	font-size: 12px;
+	font-style: italic;
+	position: relative;
+	right: 20px;
+	top: 3px;
+	display: none;
+}
+
+
+#pnlMainFlow .collectionDescriptionTxtArea,#pnlMainFlow .collectionDescriptionHtml {
+	border: 1px solid #DDDDDD;
+	float: left;
+	height: 60px !important;
+	width: 550px !important;
+	font-size: 12px !important;
+	padding: 1px;
+	overflow: auto;
+	word-wrap: break-word;
+	white-space: pre-line;
+}
+#pnlMainFlow .classPagebuttonContainer {
+	float: right;
+	margin-top: -43px;
+	margin-right: 210px;
+}
+#pnlMainFlow .classPageEditTitleCancelButton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	line-height: 120%;
+	color: rgb(16, 118, 185);
+	margin: 5px 0px 10px 4px;
+	float: right;
+	}
+#pnlMainFlow .cursor {
+	cursor: pointer;
+}
+
+
+#pnlMainFlow .classPageEditTitleSaveButton {
+	width: 50px;
+	height: 23px;
+	margin: 0px 0px 5px 50px;
+	float: right;
+	/* Firefox v3.6+ */
+	background-image: -moz-linear-gradient(50% 0% -90deg, rgb(76, 152, 204)
+		0%, rgb(16, 118, 187) 99%);
+	/* safari v4.0+ and by Chrome v3.0+ */
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0, rgb(76, 152,
+		204)), color-stop(0.99, rgb(16, 118, 187)));
+	/* Chrome v10.0+ and by safari nightly build*/
+	background-image: -webkit-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 99%);
+	/* Opera v11.10+ */
+	background-image: -o-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 99%);
+	/* IE v10+ */
+	background-image: -ms-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 99%);
+	background-image: linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 99%);
+	/* Firefox v1.0+ */
+	-moz-border-radius: 4px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius: 4px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius: 4px;
+	background: #1076bb;
+}
+#pnlMainFlow .classPageEditTitle {
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	padding: 4px 2px 2px 2px;
+}
+
+
+#pnlMainFlow .classpageHoverButton {
+	position: relative;
+	top: -147px;
+	right: 20px;
+	float:right
+}
+#pnlMainFlow .classpageHoverButton:hover{
+	color: white;
+	cursor: pointer;
+	background: #1076BB;
+}
+
+#pnlMainFlow .monitorButton {
+	position: relative;
+	right: -94px;
+	float:right;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+#pnlMainFlow .monitorButton:hover{
+	color: white;
+	cursor: pointer;
+	background: #1076BB;
+}
+
+#pnlMainFlow .classpageEditButton {
+	position: relative;
+	margin: 0px auto;
+	left: 478px;
+	top: -120px;
+	visibility: hidden;
+}
+
+#pnlMainFlow .classpageDeleteButton {
+	margin: 20px;
+}
+#pnlMainFlow .classpageEditButton:hover, #pnlMainFlow .classpageDeleteButton:hover{
+	background: #eee;
+	cursor: pointer;
+}
+
+#pnlMainFlow .classpageTitleSave{
+	float: left;
+	margin-left: 5px;
+}
+
+
+#pnlMainFlow .classpageTitleSave:hover{
+	color: white;
+	cursor: pointer;
+	background: #1076BB;
+}
+
+
+#pnlMainFlow .classpageTitleCancel{
+	float:left;
+	margin-left: 10px;
+}
+
+#pnlMainFlow .classpageClasscode {
+	width: 725px;
+	margin: 0 auto;
+	background-color: rgba(221,221,221,0.5);
+	padding-left: 30px;
+	height: 55px;
+	border: 1px solid rgba(153,153,153,0.5);
+	border-top: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-top-right-radius: 0px;
+}
+
+#pnlMainFlow .classpageCodeDesc {
+	float: left;
+	padding: 15px 0px 0px 0px;
+	position: absolute;
+}
+#pnlMainFlow .classpageCodeShare {
+	float: left;
+	padding: 6px 7px 0px 0px;
+	font-weight: bold;
+}
+#pnlMainFlow .classpageCodeShareOr {
+	float: left;
+	padding: 6px 7px 0px 0px;
+}
+#pnlMainFlow .classpageCodeShareInput {
+	float: left;
+}
+
+
+#pnlMainFlow .classpageCodeHelp:hover {
+	cursor: pointer;
+}
+
+#pnlMainFlow .classpageShareCodeInput{
+	margin-top: 2px;
+	color: #515151;
+	padding: 4px 2px;
+	font-size: 12px;
+	background-color: rgb(255,255,255);
+	border: 1px solid rgb(221,221,221);
+	width: 70px;
+	font-family: Tahoma, sans-serif !important;
+	text-transform:uppercase;
+
+}
+
+#pnlMainFlow .classpageShareLinkInput{
+	width:140px;
+	margin-top: 2px;
+	color: #515151;
+	padding: 4px 9px;
+	font-size: 12px;
+	background-color: rgb(255,255,255);
+	border: 1px solid rgb(221,221,221);
+}
+
+#pnlMainFlow .classpageTopLine{
+	border-top: 1px solid #D0D0D0;
+	width: 100%;
+	margin: 0px auto;
+	float:left;
+	text-align: center;
+	margin-top:30px;
+}
+
+#pnlMainFlow .addAssignment{
+	margin-top: -50px;
+	margin-left:0px !important;
+}
+
+#pnlMainFlow .addAssignmentStyle{
+	margin-top: 20px;
+	margin-left:0px !important;
+}
+
+#pnlMainFlow .addAssignment:hover{
+	background: url("../images/Classpage/plus_blue.png") 11px 11px no-repeat, #eee;
+	cursor: pointer;
+}
+
+#pnlMainFlow .assignmentsContainer{
+	overflow: hidden;
+margin-left:-1px;
+}
+#pnlMainFlow .assignmentsContainerHead{
+	margin-top:44px;
+}
+
+#pnlMainFlow .classpageCodeInnerPopup {
+	clear: both;
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 15px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#pnlMainFlow .classpageCodePopupTitle {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+
+#pnlMainFlow .arrowShadow {
+    background-color: transparent;
+	width: 6px;
+	height: 17px;
+	position: absolute;
+	top: -7px;
+	left: 193px;
+	z-index: -10;
+	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+#pnlMainFlow .arrowBorder {
+    width: 0px;
+    height: 0px;
+    border: 10px solid;
+    border-color: transparent transparent #DDD transparent;
+    position:absolute;
+    top: -10px;
+	left: 201px;
+	border-top: none;
+}
+
+#pnlMainFlow .arrow {
+    width: 0px;
+    height: 0px;
+    border: 10px solid;
+    border-color: transparent transparent white transparent;
+    position:absolute;
+    left: 201px;
+    top: -9px;
+    border-top: none;
+}
+
+#pnlMainFlow .codePopupContainer{
+	width: 227px;
+	position: absolute;
+	top: 50px;
+	left: 188px;
+	z-index:99;
+}
+
+#pnlMainFlow .webLinkPopupContainer{
+	width: 227px;
+	position: absolute;
+	top: 50px;
+	left: 475px;
+	z-index:99;
+}
+#pnlMainFlow .classpageImage{
+	width:1000px;
+	height:180px;
+}
+/*New CSS for 6.1 teach  */
+#pnlMainFlow .teachContainer {
+       width: 1002px;
+       margin: 0 auto;
+       overflow: visible;
+}
+#pnlMainFlow .teachTab {
+       text-align: center;
+       padding-bottom: 20px;
+       margin: 20px auto;
+       width: 62%;
+       /* margin-left:122px; */
+}
+#pnlMainFlow .teachTab .select {
+       color: #fff;
+       cursor: pointer;
+       padding: 10px 60px;
+       background-image: -moz-linear-gradient(#1076BB 0%, #579ECF 100%);
+       background-image: -webkit-gradient(linear, color-stop(0, #1076BB), color-stop(1, #579ECF));
+       background-image: -webkit-linear-gradient(#1076BB 0%, #579ECF 100%);
+       background-image: -o-linear-gradient(#1076BB 0%, #579ECF 100%);
+       background-image: -ms-linear-gradient(#1076BB 0%, #579ECF 100%);
+       border: 1px solid #1076BB;
+       -moz-box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+       -webkit-box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+       box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+}
+/* .teachTab .selected {
+       position: relative;
+       left: 7px;
+       border-radius: 5px 0px 0px 5px;
+} */
+#pnlMainFlow .teachTab .selectd {
+       position: relative;
+       right: 7px;
+       border-radius: 0px 5px 5px 0px;
+}
+#pnlMainFlow .teachTab .deselect {
+       color: #515151;
+       cursor: pointer;
+       padding: 10px 60px;
+       background-image: -moz-linear-gradient(3% 0% -90deg, rgb(255,255,255) 0%, rgb(221,221,221) 100%);
+       background-image: -webkit-gradient(linear, 3% 0%, 3% 114%, color-stop(0, rgb(255,255,255)), color-stop(1, rgb(221,221,221)));
+       background-image: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0%, rgb(221,221,221) 100%);
+       background-image: -o-linear-gradient(-90deg, rgb(255,255,255) 0%, rgb(221,221,221) 100%);
+       background-image: -ms-linear-gradient(-90deg, rgb(255,255,255) 0%, rgb(221,221,221) 100%);
+       border: 1px solid #ccc;
+       border-radius: 5px;
+}
+#pnlMainFlow .teachContent {
+       padding: 30px;
+       min-height: 500px;
+       border-radius: 4px;
+       -moz-border-radius: 4px;
+       -ms-border-radius: 4px;
+       border: 1px solid #eaeaea;
+       background: #fff;
+}
+#pnlMainFlow .teachTitle {
+       display: inline-block;
+       vertical-align: top;
+       font-size: 16px;
+       font-weight: bold;
+       padding-bottom: 30px;
+   padding-top:8px;
+}
+#pnlMainFlow .classpageHover {
+	width: 1002px;
+    height:523px;
+	margin: 0 auto;
+    border-radius:4px;
+    margin-top:46px;
+    /* -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1); */
+}
+#pnlMainFlow .classpageHoverTitle {
+	font-size: 24px;
+	color: #999;
+    padding: 100px 180px 0px 180px;
+	text-align: center;
+}
+
+
+#pnlMainFlow .teachTab button:first-child{
+	color: #515151;
+	cursor: pointer;
+	padding: 10px 60px;
+	background: -moz-linear-gradient(3% 0 -90deg, #fff 0, #ddd 100%);
+	background: -webkit-gradient(linear, 3% 0, 3% 114%, color-stop(0, #fff), color-stop(1, #ddd));
+	background: -webkit-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -o-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -ms-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -linear-gradient(#fff 0, #ddd 100%) !important;
+	border: 1px solid #ccc;
+	border-radius: 5px 0px 0px 5px;
+}
+
+#pnlMainFlow .teachTab button{
+	margin-left: -4px;
+	color: #515151;
+	cursor: pointer;
+	padding: 10px 60px;
+	background: -moz-linear-gradient(3% 0 -90deg, #fff 0, #ddd 100%);
+	background: -webkit-gradient(linear, 3% 0, 3% 114%, color-stop(0, #fff), color-stop(1, #ddd));
+	background: -webkit-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -o-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -ms-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -linear-gradient(#fff 0, #ddd 100%) !important;
+	border: 1px solid #ccc;
+	/* border-radius: 0px 5px 5px 0px; */
+
+}
+#pnlMainFlow .teachTab button:last-child{
+	margin-left: -4px;
+	color: #515151;
+	cursor: pointer;
+	padding: 10px 60px;
+	background: -moz-linear-gradient(3% 0 -90deg, #fff 0, #ddd 100%);
+	background: -webkit-gradient(linear, 3% 0, 3% 114%, color-stop(0, #fff), color-stop(1, #ddd));
+	background: -webkit-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -o-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -ms-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -linear-gradient(#fff 0, #ddd 100%) !important;
+	border: 1px solid #ccc;
+	border-radius: 0px 5px 5px 0px;
+
+}
+#pnlMainFlow .teachTab button:nth-last-child(2){
+	margin-left: -4px;
+	color: #515151;
+	cursor: pointer;
+	padding: 10px 60px;
+	background: -moz-linear-gradient(3% 0 -90deg, #fff 0, #ddd 100%);
+	background: -webkit-gradient(linear, 3% 0, 3% 114%, color-stop(0, #fff), color-stop(1, #ddd));
+	background: -webkit-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -o-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -ms-linear-gradient(-90deg, #fff 0, #ddd 100%);
+	background: -linear-gradient(#fff 0, #ddd 100%) !important;
+	border: 1px solid #ccc;
+	border-radius: 0px 5px 5px 0px;
+
+}
+
+#pnlMainFlow .teachTab > .selected{
+    color: #FFF !important;
+    background: #1076BB;
+    background: -moz-linear-gradient(3% 0 -90deg, #1076bb 0, #579ecf 100%) !important;
+    background: -webkit-gradient(linear, color-stop(0, #1076bb), color-stop(1, #579ecf)) !important;
+	background: -webkit-linear-gradient(#1076bb 0, #579ecf 100%) !important;
+	background: -o-linear-gradient(#1076bb 0, #579ecf 100%) !important;
+	background: -ms-linear-gradient(#1076bb 0, #579ecf 100%) !important;
+	background: -linear-gradient(#1076bb 0, #579ecf 100%) !important;
+	border: 1px solid #1076bb !important;
+	-moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15) !important;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15) !important;
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15) !important;
+}
+#pnlMainFlow .iframeBorder{
+	border:none;
+	width: 1000px !important;
+	height: 1000px !important;
+	background-color: #e7e7e7;
+	position: relative;
+}
+#pnlMainFlow .backArrowButton{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#pnlMainFlow .labelCenterAlign{
+	text-align:center;
+	font-size : 18px;
+	margin-top: 14px;
+margin-bottom: -10px;
+}
+#pnlMainFlow .labelCenterAlignText{
+	text-align:center;
+	font-size:20px;
+
+}
+
+#pnlMainFlow .assignmentPath{
+
+}
+#pnlMainFlow .assignmentPathContainer{
+	margin-bottom: 10px;
+	/* background-color:rgb(255,255,255); */
+	height:70px;
+	/* Firefox v1.0+ */
+	-moz-border-radius:8px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius:8px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius:8px;
+	padding : 5px;
+	width: 94%;
+	margin: 0px auto;
+	float: left;
+	margin-top:-20px;
+}
+
+#pnlMainFlow .assignmentProgress{
+	text-align: center;
+	font-size: 12px;
+/*	font-weight: bold;	*/
+	margin:15px;
+	margin-bottom: 19px;
+	border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+#pnlMainFlow .assignmentProgressStudent{
+	text-align: center;
+	font-size: 12px;
+/*	font-weight: bold;	*/
+	margin:15px;
+	margin-bottom: 19px;
+	border-bottom: 1px solid #ccc;
+  padding-top: 15px;
+    padding-bottom: 12px;
+}
+
+#pnlMainFlow .assignmentPath{
+	height: 15px;
+}
+
+#pnlMainFlow .line{
+	height: 3px;
+	background: #515151 2px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-left: 7px;
+	width: 10px;
+	float: left;
+}
+
+#pnlMainFlow .squre {
+	width: 15px;
+	height: 15px;
+	background: #009E0F;
+	vertical-align: top;
+	float: left;
+	border: 1px black solid;
+}
+
+#pnlMainFlow .path{
+	margin-top: 15px;
+	margin-left: 8px;
+}
+#pnlMainFlow .classcodeStyles{
+	display: block;
+	width: 75px !important;
+	height: 30px !important;
+	border: 1px solid #ccc;
+	font-size: 12px !important;
+	/* font-weight: bold; */
+	padding: 0 5px;
+	position: absolute;
+	left: 89%;
+	margin-top: -44px;
+	text-align: center;
+}
+
+#pnlMainFlow .classcodeContainer{
+	float: left;
+
+}
+
+#pnlMainFlow .containerProgress{
+	margin: 0px auto;
+	height: 115px;
+}
+
+#pnlMainFlow .next,#pnlMainFlow .previous{
+	margin: 20px auto;
+	width: 2%;
+	float: left;
+	height: 5px;
+	margin-bottom:0px;
+}
+#pnlMainFlow .nextStudent,#pnlMainFlow .previousStudent{
+	margin: 78px auto;
+	width: 2%;
+	float: left;
+	height: 5px;
+	margin-bottom:0px;
+}
+
+#pnlMainFlow .rightArrow {
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-left: 15px solid #999;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: -15px;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-top:-28px;
+}
+
+#pnlMainFlow .leftArrow {
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right: 15px solid #999;
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: -15px;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-top:-28px;
+}
+
+#pnlMainFlow .dropdowncontainer {
+	width: 130px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 42px;
+	margin-bottom: 15px;
+}
+#pnlMainFlow .dropdowncontainerStudent {
+/* 	width: 140px;
+	margin-right: 10px;
+	margin-left: 13.5%;
+	margin-top: 24px; */
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: -10px;
+	/* top: 24px; */
+	left: 36px;
+	position: relative;
+}
+
+#pnlMainFlow .dropdownPlaceHolder {
+	background: url(../images/dropdownMenuArrow.png) no-repeat;
+	background-color: white;
+	background-position: right center;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #ddd;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	display: block;
+	width: 158px;
+	height: auto;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+}
+#pnlMainFlow .dropdownPlaceHolderStudent {
+	background: url(../images/dropdownMenuArrow.png) no-repeat;
+	background-color: white;
+	background-position: right center;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #ddd;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	display: block;
+	width: 125px;
+	height: auto;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+}
+#pnlMainFlow .dropdownListContainerScrollPanel {
+	border: 1px solid #ddd;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 9999;
+	width: 158px;
+	position:absolute;
+	background-color: #ffffff;
+}
+#pnlMainFlow .dropdownListContainerScrollPanelStudent {
+	border: 1px solid #ddd;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 9999;
+	width: 156px;
+	position:absolute;
+	background-color: #ffffff;
+}
+#pnlMainFlow .dropdownTextLabel{
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: #999;
+	text-align: left;
+	position: relative;
+	background-color: #fff;
+	z-index: 1;
+	width: 100%;
+	padding: 5px 8px 5px 7px;
+}
+#pnlMainFlow .dropdownTextLabel:hover{
+	background-color: #cfe3f1;
+	cursor: pointer;
+}
+#pnlMainFlow .dropdownContainerInstructional{
+	background-color:rgb(255,255,255);
+	width:145px;
+	height:28px;
+	border-color:rgb(221,221,221);
+	border-width:1px;
+	/* Firefox v1.0+ */
+	-moz-border-radius:1px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius:1px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius:1px;
+	border-style:solid;
+	position: absolute;
+	margin-top:11px;
+}
+#pnlMainFlow .placeHolderText{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:120%;
+	color:rgb(153,153,153);
+	text-align:left;
+	padding-top: 8px;
+	padding-left: 5px;
+	float: left;
+	cursor: pointer;
+	width: 90%;
+}
+#pnlMainFlow .arrowInstructional {
+    width: 0;
+	height: 0;
+	border: 8px solid;
+	border-color: rgb(153,153,153) transparent transparent transparent;
+	left: 130px;
+	float: right;
+	margin-top: -11px;
+	margin-right: 7px;
+	border-bottom: none;
+	cursor: pointer;
+}
+#pnlMainFlow .scrollPanelContainerInstructional{
+	background-color:rgb(255,255,255);
+	width:145px;
+	height:82px;
+	border-color:rgb(221,221,221);
+	border-width:1px;
+	/* Firefox v1.0+ */
+	-moz-border-radius:1px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius:1px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius:1px;
+	border-style:solid;
+	top: 7px;
+	left: -1px;
+	z-index: 9;
+	overflow-x:hidden !important;
+}
+
+#pnlMainFlow .btnContainer{
+	text-align : center;
+	border-bottom: 1px solid #EBEAEA;
+}
+
+#pnlMainFlow .btnContainerStyle{
+	text-align : center;
+	/* border-top: 1px solid #CCC;	 */
+	margin-top: 38px;
+}
+#pnlMainFlow .btnContainerClasswithBG{
+	background: white;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	height: 100px;
+	margin-bottom: -24px;
+}
+
+#pnlMainFlow .section2Div{
+	background: white;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+
+}
+#pnlMainFlow .section3Div{
+	background: white;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin-top:20px !important;
+}
+
+
+/* Empty page css */
+#pnlMainFlow .subtitle {
+	font-size: 16px;
+	width: 420px
+}
+#pnlMainFlow .contentBox {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	min-height: 200px;
+	text-align: center;
+}
+#pnlMainFlow .h3 {
+	font-size: 18px;
+	text-align: center;
+	padding: 30px 0px;
+}
+#pnlMainFlow .collectionView {
+	display: block;
+	min-height: 168px;
+	padding: 23px;
+    box-sizing: border-box;
+}
+#pnlMainFlow .circleBlock {
+	display: inline-block;
+	vertical-align: top;
+}
+#pnlMainFlow .circleBg {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: #fbb03b;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+}
+#pnlMainFlow .circleTitle {
+	color: #fff;
+	font-weight:bold;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+#pnlMainFlow .desHtml{
+	width: 252px;
+	float: left;
+}
+#pnlMainFlow .desHeader{
+	font-size: 18px;
+	float: left;
+}
+#pnlMainFlow .desc {
+	display: inline-block;
+	color: #515151;
+	vertical-align: top;
+	font-size: 14px;
+	text-align: left;
+	/* padding-left: 10px; */
+	height: 40px;
+	/* line-height: 40px; */
+	margin-top: 14px;
+}
+#pnlMainFlow .collectionView,#pnlMainFlow .img {
+	width: 60%;
+	margin: 0 auto;
+}
+#pnlMainFlow .imgStyle{
+	width: 50%;
+	float: left;
+}
+#pnlMainFlow .imgStyleDiv{
+	max-width: 100%;
+}
+#pnlMainFlow .btn {
+	margin-left: 10px;
+}
+#pnlMainFlow .assignText{
+	color: #1076bb;
+}
+
+#pnlMainFlow .containerProgressWidth{
+	width:1000px;
+}
+#pnlMainFlow .assignementOrderHeader{
+	margin: 20px auto;
+	text-align: center;
+}
+#pnlMainFlow .errorMessage{
+	height: 170px;
+	width: 450px;
+	color: #999;
+	position: relative;
+	display: inline-block;
+	margin-left: 282px;
+	font-style: italic;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+#pnlMainFlow .studentStyle{
+	float: right;
+    position: relative;
+	width: 176px;
+	top: 32%;
+}
+
+#pnlMainFlow .techerStyle{
+	float: left;
+    position: relative;
+	width: 218px;
+	top: 29%;
+}
+#pnlMainFlow .switchContainer {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	/* left: 0; */
+	width: 216px;
+	/* height: 21px;
+	padding: 3px;*/
+	vertical-align: middle;
+	background-color: white;
+	cursor: pointer;
+	border: 2px solid #1076BB;
+	border-radius: 4px;
+	right: -94px;
+	float: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#pnlMainFlow .toggleContainer{
+	float: right;
+	/* position: relative; */
+	display: inline-block;
+	top: 0;
+}
+#pnlMainFlow .assignementOrderHeaderText{
+  margin: 20px auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.editClassDeleteBtnHover {
+	position: relative;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.editClassDeleteBtnHover .deleteBtnMessagePopup {
+	position: absolute;
+	top: 14px;
+	display: none;
+	text-align: left;
+	z-index: 999;
+}
+
+.editClassDeleteBtnHover:hover .deleteBtnMessagePopup {
+	display: block;
+}
+
+.editClassDeleteBtnHover .bubble-arrow-style {
+	width: 0;
+	left: -123px;
+	top: -4px;
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	height: 0;
+	border: 15px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	margin: auto;
+	border-top: 0;
+	z-index: 100000;
+}
+
+.editClassDeleteBtnHover .standards-inner {
+	color: #515151;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	font-size: 12px;
+	padding: 30px;
+	width: 369px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.editClassDeleteBtnHover .standards li div.standards-inner {
+	color:#515151;
+	background-color:white;
+	border: 1px solid #ddd;
+	font-size:12px;
+	padding:10px;
+	-moz-box-shadow:     0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow:  0 0 10px rgba(0,0,0,.2);
+	box-shadow:          0 0 10px rgba(0,0,0,.2);
+	border-radius: 4px;
+}
+
+.editClassDeleteBtnHover .standards li:hover div.standard-popup {
+	display:block;
+}
+
+.editClassDeleteBtnHover .standards li div.standard-popup {
+	display:none;
+	position:absolute;
+	left:-50px;
+	top:20px;
+	width: 150px;
+}
+
+.editClassDeleteBtnHover .standards-Popup {
+	width: 350px;
+	padding: 20px;
+	margin-left: 111px;
+	margin-top: -53px;
+}
+.editClassDeletePopupNotes {
+	width: 300px;
+	margin: 0 auto;
+}
+.editClassDeletePopupVisibility {
+	display: none;
+}

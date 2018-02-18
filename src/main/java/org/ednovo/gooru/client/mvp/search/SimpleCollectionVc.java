@@ -30,18 +30,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.search.CollectionSearchResultDo;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggable;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggableMirage;
 import org.ednovo.gooru.client.mvp.resource.dnd.ResourceDragWithImgUc;
 import org.ednovo.gooru.client.uc.CollectionImageUc;
+import org.ednovo.gooru.client.uc.SeparatorUc;
 import org.ednovo.gooru.client.uc.UserProfileUc;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.search.CollectionSearchResultDo;
-import org.ednovo.gooru.shared.model.user.ProfileDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
@@ -67,9 +68,11 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class SimpleCollectionVc extends Composite implements IsDraggable,MessageProperties {
+public class SimpleCollectionVc extends Composite implements IsDraggable {
 
 	private static SimpleCollectionVcUiBinder uiBinder = GWT.create(SimpleCollectionVcUiBinder.class);
+	
+	private static MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface SimpleCollectionVcUiBinder extends UiBinder<Widget, SimpleCollectionVc> {
 	}
@@ -81,7 +84,7 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 	Label creatorNameLbl,creatorNameLblValue,gradesLblValue;
 
 	@UiField
-	Label resourceCountLbl;
+	Label resourceCountLbl, questionCountLbl;
 
 	@UiField
 	CollectionImageUc collectionImageUc;
@@ -90,20 +93,24 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 	FlowPanel metaDataFloPanel,internalPanel1, standardsDataPanel,collectionTitlePanel,collectionGradePanel;
 	
 	@UiField
-	HTMLPanel containerPanel;
+	HTMLPanel containerPanel,mainContainer;
 	
 	
 	//@UiField SearchMoreInfoVcCBundle res;
 
-	private static final String ALL_GRADES = GL1467.toUpperCase();
+	private static final String ALL_GRADES = i18n.GL1467().toUpperCase();
 	
 	private CollectionSearchResultDo collectionSearchResultDo;
 	
-	private static final String VIEWS= " "+GL0934;
+	private static final String VIEWS= " "+i18n.GL0934();
 	
-	private static final String RESOURCES = " "+GL0174.toLowerCase();
+	private static final String RESOURCES = " "+i18n.GL0174().toLowerCase();
 	
-	private static final String RESOURCE = " "+GL1110.toLowerCase();
+	private static final String RESOURCE = " "+i18n.GL1110().toLowerCase();
+	
+	private static final String QUESTIONS = " "+i18n.GL1042().toLowerCase();
+	
+	private static final String QUESTION = " "+i18n.GL0308().toLowerCase();
 	
 	private static final String USER_META_ACTIVE_FLAG = "0";
 	/**
@@ -113,10 +120,12 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 	public SimpleCollectionVc(CollectionSearchResultDo collectionSearchResultDo) {
 		initWidget(uiBinder.createAndBindUi(this));
 		setData(collectionSearchResultDo);
+		
 		SearchMoreInfoVcCBundle.INSTANCE.css().ensureInjected();
+		mainContainer.getElement().getStyle().setPaddingBottom(10, Unit.PX);
 		if(AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
 			internalPanel1.setStyleName(SearchMoreInfoVcCBundle.INSTANCE.css().resourceCollectionThumbnailPanel());
-			collectionTitlePanel.setStyleName(SearchMoreInfoVcCBundle.INSTANCE.css().resourceCollectionTitlePanel());
+		//	collectionTitlePanel.setStyleName(SearchMoreInfoVcCBundle.INSTANCE.css().resourceCollectionTitlePanel());
 			collectionTitleLbl.getElement().getStyle().setColor("#1076BB");
 			/*internalPanel1.getElement().getStyle().setPaddingTop(10, Unit.PX); 
 			internalPanel1.getElement().getStyle().setPaddingBottom(10, Unit.PX);
@@ -126,7 +135,16 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 			internalPanel1.getElement().getStyle().setBorderColor("#515151");
 			internalPanel1.getElement().getStyle().setWidth(497, Unit.PX);*/
 		}
-		
+		internalPanel1.getElement().setId("fpnlInternalPanel1");
+		collectionTitlePanel.getElement().setId("fpnlCollectionTitlePanel");
+		containerPanel.getElement().setId("pnlContainerPanel");
+		metaDataFloPanel.getElement().setId("fpnlMetaDataFloPanel");
+		standardsDataPanel.getElement().setId("fpnlStandardsDataPanel");
+		standardsDataPanel.getElement().getStyle().setClear(com.google.gwt.dom.client.Style.Clear.BOTH);
+		resourceCountLbl.getElement().setId("lblResourceCountLbl");
+		questionCountLbl.getElement().setId("lblQuestionCountLbl");
+		collectionGradePanel.getElement().setId("fpnlCollectionGradePanel");
+		gradesLblValue.getElement().setId("lblGradesLblValue");
 	}
 
 	/**
@@ -137,8 +155,20 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 		this.collectionSearchResultDo = collectionSearchResultDo;
 		//collectionTitleLbl.setText(StringUtil.truncateText(collectionSearchResultDo.getResourceTitle(), 30));
 		collectionTitleLbl.setHTML(StringUtil.truncateText(collectionSearchResultDo.getResourceTitle(), 30));
-		creatorNameLbl.setText(GL0622);
+		collectionTitleLbl.getElement().setId("htmlCollectionTitleLbl");
+		collectionTitleLbl.getElement().setAttribute("alt",StringUtil.truncateText(collectionSearchResultDo.getResourceTitle(), 30));
+		collectionTitleLbl.getElement().setAttribute("title",StringUtil.truncateText(collectionSearchResultDo.getResourceTitle(), 30));
+		
+		creatorNameLbl.setText(i18n.GL0622());
+		creatorNameLbl.getElement().setId("lblCreatorNameLbl");
+		creatorNameLbl.getElement().setAttribute("alt",i18n.GL0622());
+		creatorNameLbl.getElement().setAttribute("title",i18n.GL0622());
+		
 		creatorNameLblValue.setText(collectionSearchResultDo.getOwner().getUsername());
+		creatorNameLblValue.getElement().setId("lblCreatorNameLblValue");
+		creatorNameLblValue.getElement().setAttribute("alt",collectionSearchResultDo.getOwner().getUsername());
+		creatorNameLblValue.getElement().setAttribute("title",collectionSearchResultDo.getOwner().getUsername());
+		
 		if(AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
 			String grade =collectionSearchResultDo.getGrade();
 			if (grade != null) {
@@ -171,7 +201,7 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 				
 				
 				List<Integer> gradeListInt = new ArrayList<Integer>();
-				finalGradeStringB.append(gradeListSize > 1 ? GL1320_1+GL_SPL_SEMICOLON+" " : GL0325+GL_SPL_SEMICOLON+" ");
+				finalGradeStringB.append(gradeListSize > 1 ? i18n.GL1320_1()+i18n.GL_SPL_SEMICOLON()+" " : i18n.GL0325()+i18n.GL_SPL_SEMICOLON()+" ");
 				
 				/*if(gradeListInt.size()!=12){
 					if (isKindergarten) {
@@ -195,7 +225,7 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 						} 
 						catch (Exception e) 
 						{
-							e.printStackTrace();
+							AppClientFactory.printSevereLogger("SimpleCollectionVc setData:::"+e);
 						}
 					}
 				}
@@ -221,66 +251,111 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 				
 			
 				gradesLblValue.setText(finalGradeStringB.toString());
+				gradesLblValue.getElement().setAttribute("alt",finalGradeStringB.toString());
+				gradesLblValue.getElement().setAttribute("title",finalGradeStringB.toString());
 				collectionGradePanel.add(gradesLblValue);
 			}
 			else {
 				gradesLblValue.setText(null);
+				gradesLblValue.getElement().setAttribute("alt",null);
+				gradesLblValue.getElement().setAttribute("title",null);
 			}
 		}
-		if(StringUtil.isPartnerUser(collectionSearchResultDo.getOwner().getUsername())) {
-			if ((collectionSearchResultDo.getOwner().isProfileUserVisibility())){
-			creatorNameLblValue.getElement().getStyle().setColor("#1076bb");
-			creatorNameLblValue.getElement().getStyle().setCursor(Cursor.POINTER);
-			creatorNameLblValue.getElement().getStyle().setFloat(Float.LEFT);
-			
-			creatorNameLblValue.addClickHandler(new ClickHandler() {
-				
-				@Override
-				public void onClick(ClickEvent event) {
-					MixpanelUtil.Click_Resource_Username();
-					AppClientFactory.getPlaceManager().revealPlace(collectionSearchResultDo.getOwner().getUsername());
-				}
-			});
-			
-			creatorNameLblValue.addMouseOverHandler(new MouseOverHandler() {
-
-				@Override
-				public void onMouseOver(MouseOverEvent event) {
-					AppClientFactory.getInjector().getUserService().getUserProfileV2Details(collectionSearchResultDo.getOwner().getGooruUId(), USER_META_ACTIVE_FLAG, new SimpleAsyncCallback<ProfileDo>(){
-
-						@Override
-						public void onSuccess(ProfileDo result) {
-							String username=result.getUser().getUsernameDisplay();
-							String aboutMe=result.getAboutMe();
-							UserProfileUc userProfieVc = new UserProfileUc(username,aboutMe, result.getUser().getProfileImageUrl());
-							containerPanel.add(userProfieVc);
-						}
-						
-					});
-				}
-			});
-
-		  creatorNameLblValue.addMouseOutHandler(new MouseOutHandler() {
-
-				@Override
-				public void onMouseOut(MouseOutEvent event) {
-					containerPanel.clear();
-				}
-			});
-		}
 		
-	}
+		if ((collectionSearchResultDo.getOwner().isProfileUserVisibility())){
+			if(StringUtil.isPartnerUser(collectionSearchResultDo.getOwner().getUsername())) {
+				creatorNameLblValue.getElement().getStyle().setColor("#1076bb");
+				creatorNameLblValue.getElement().getStyle().setCursor(Cursor.POINTER);
+				creatorNameLblValue.getElement().getStyle().setFloat(Float.LEFT);
+
+				creatorNameLblValue.addClickHandler(new ClickHandler() {
+
+					@Override
+					public void onClick(ClickEvent event) {
+						MixpanelUtil.Click_Resource_Username();
+						AppClientFactory.getPlaceManager().revealPlace(collectionSearchResultDo.getOwner().getUsername());
+					}
+				});
+
+				creatorNameLblValue.addMouseOverHandler(new MouseOverHandler() {
+
+					@Override
+					public void onMouseOver(MouseOverEvent event) {
+						AppClientFactory.getInjector().getUserService().getUserProfileV2Details(collectionSearchResultDo.getOwner().getGooruUId(), USER_META_ACTIVE_FLAG, new SimpleAsyncCallback<ProfileDo>(){
+
+							@Override
+							public void onSuccess(ProfileDo result) {
+								String username=result.getUser().getUsernameDisplay();
+								String aboutMe=result.getAboutMe();
+								UserProfileUc userProfieVc = new UserProfileUc(username,aboutMe, result.getUser().getProfileImageUrl());
+								containerPanel.add(userProfieVc);
+							}
+
+						});
+					}
+				});
+
+				creatorNameLblValue.addMouseOutHandler(new MouseOutHandler() {
+
+					@Override
+					public void onMouseOut(MouseOutEvent event) {
+						containerPanel.clear();
+					}
+				});
+			}else{
+				creatorNameLblValue.getElement().getStyle().setColor("#1076bb");
+				creatorNameLblValue.getElement().getStyle().setCursor(Cursor.POINTER);
+				creatorNameLblValue.getElement().getStyle().setFloat(Float.LEFT);
+
+				creatorNameLblValue.addClickHandler(new ClickHandler() {
+
+					@Override
+					public void onClick(ClickEvent event) {
+						MixpanelUtil.Click_Resource_Username();
+						Map<String, String> params = new HashMap<String, String>();
+						params.put("id", collectionSearchResultDo.getOwner().getGooruUId());
+						params.put("user", collectionSearchResultDo.getOwner().getUsername());
+						AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.PROFILE_PAGE,params);
+					}
+				});
+			}
+
+		}
 		SearchUiUtil.renderMetaData(metaDataFloPanel, collectionSearchResultDo.getCourseNames(), 30);
 		SearchUiUtil.renderMetaData(metaDataFloPanel, collectionSearchResultDo.getTotalViews() + "", VIEWS);
 		
-		if (collectionSearchResultDo.getResourceCount()>1){
-			resourceCountLbl.setText(collectionSearchResultDo.getResourceCount() + RESOURCES);
-		}else{
-			resourceCountLbl.setText(collectionSearchResultDo.getResourceCount() + RESOURCE);
+		int resourceCount = collectionSearchResultDo.getOnlyResourceCount();
+		int questionCount = collectionSearchResultDo.getQuestionCount();
+		
+		if (resourceCount>1){
+			resourceCountLbl.setText(resourceCount + RESOURCES);
+			resourceCountLbl.getElement().setAttribute("alt",resourceCount + RESOURCES);
+			resourceCountLbl.getElement().setAttribute("title",resourceCount + RESOURCES);
+		} else if(resourceCount==0&&questionCount==0){
+			resourceCountLbl.setText(resourceCount + RESOURCE);
+			resourceCountLbl.getElement().setAttribute("alt",resourceCount + RESOURCE);
+			resourceCountLbl.getElement().setAttribute("title",resourceCount + RESOURCE);
 		}
+		
+		if (questionCount>1){
+			questionCountLbl.setText(questionCount + QUESTIONS);
+			questionCountLbl.getElement().setAttribute("alt",questionCount + QUESTIONS);
+			questionCountLbl.getElement().setAttribute("title",questionCount + QUESTIONS);
+		} else if (questionCount==1) {
+			questionCountLbl.setText(questionCount + QUESTION);
+			questionCountLbl.getElement().setAttribute("alt",questionCount + QUESTION);
+			questionCountLbl.getElement().setAttribute("title",questionCount + QUESTION);
+		}
+		
 		if(AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
-			resourceCountLbl.getElement().getStyle().setMarginLeft(10, Unit.PX);
-			metaDataFloPanel.add(resourceCountLbl);
+			if(!resourceCountLbl.getText().isEmpty()) {
+				metaDataFloPanel.add(new SeparatorUc());
+				metaDataFloPanel.add(resourceCountLbl);
+			}
+			if(!questionCountLbl.getText().isEmpty()) {
+				metaDataFloPanel.add(new SeparatorUc());
+				metaDataFloPanel.add(questionCountLbl);
+			}
 		}
 		SearchUiUtil.renderStandards(standardsDataPanel, collectionSearchResultDo);
 		collectionImageUc.setUrl(collectionSearchResultDo.getUrl(), collectionSearchResultDo.getResourceTitle());
@@ -366,6 +441,7 @@ public class SimpleCollectionVc extends Composite implements IsDraggable,Message
 
 		} 
 		catch (Exception e) {
+			AppClientFactory.printSevereLogger("SimpleCollectionVc formatGrades:::"+e);
 		}
 		return grade.toString();
 	}

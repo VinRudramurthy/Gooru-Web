@@ -24,14 +24,18 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators.vc;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators.CollectionCollaboratorsCBundle;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.BlurEvent;
+import com.google.gwt.event.dom.client.BlurHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
@@ -42,6 +46,7 @@ import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.TextBox;
@@ -51,8 +56,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author BLR Team
  * 
  */
-public abstract class DeletePopupViewVc extends PopupPanel implements
-		MessageProperties {
+public abstract class DeletePopupViewVc extends PopupPanel {
 
 	@UiField(provided = true)
 	CollectionCollaboratorsCBundle collaborators;
@@ -60,12 +64,15 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	@UiField
 	Button btnNegitive, btnPositive;
 	
-	@UiField Label lblTitle, lblRemoving;
+	@UiField Label lblTitle, lblRemoving,lblDeleteText;
 	
 	@UiField HTML htmlNotes, htmlDescription;
 	
 	@UiField TextBox txtConfirmAction;
 	
+	@UiField HTMLPanel imgDeleteIcon;
+	
+		
 	boolean isValidate=false;
 
 	private String deleteCode=null;
@@ -76,6 +83,7 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	}
 
 	private static final Binder binder = GWT.create(Binder.class);
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * 
@@ -91,16 +99,53 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 		lblRemoving.setVisible(false);
 		lblRemoving.getElement().getStyle().setMargin(26, Unit.PX);
 		txtConfirmAction.setVisible(false);
+		lblDeleteText.setVisible(false);
 		setButtonVisibility(true);
 		setElementId();
 		
 		txtConfirmAction.addKeyUpHandler(new ValidateConfirmText());
-		txtConfirmAction.getElement().setAttribute("placeholder", GL1175);
-
+		txtConfirmAction.getElement().getStyle().setColor("#515151");
+		txtConfirmAction.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				if(!txtConfirmAction.getText().isEmpty())
+				{
+				if(txtConfirmAction.getText().toLowerCase().equalsIgnoreCase(i18n.GL1175().toLowerCase()))
+				{
+					txtConfirmAction.setText("");
+					txtConfirmAction.getElement().getStyle().setColor("#000000");
+				}
+				}
+				
+			}
+		});
+		txtConfirmAction.addBlurHandler(new BlurHandler() {
+			
+			@Override
+			public void onBlur(BlurEvent event) {
+				if(txtConfirmAction.getText().isEmpty())
+				{
+					txtConfirmAction.getElement().getStyle().setColor("#515151");
+				}
+				
+			}
+		});
+		StringUtil.setAttributes(txtConfirmAction, true);
+		btnNegitive.setText(StringUtil.generateMessage(i18n.GL0142()));
+		btnNegitive.getElement().setAttribute("alt",StringUtil.generateMessage(i18n.GL0142()));
+		btnNegitive.getElement().setAttribute("title",StringUtil.generateMessage(i18n.GL0142()));
+		
+		btnPositive.setText(StringUtil.generateMessage(i18n.GL0190()));
+		btnPositive.getElement().setAttribute("alt",StringUtil.generateMessage(i18n.GL0190()));
+		btnPositive.getElement().setAttribute("title",StringUtil.generateMessage(i18n.GL0190()));
+		
+		lblDeleteText.setText(i18n.GL2189());
+		StringUtil.setAttributes(lblDeleteText.getElement(), "lblDeleteText", null, "lblDeleteText");
+		
 		Window.enableScrolling(false);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(98, false));
 		this.center();
-//		this.show();
 	}
 	
 
@@ -125,6 +170,12 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	private void setElementId() {
 		btnPositive.getElement().setId("btnPositive");
 		btnNegitive.getElement().setId("btnNegitive");
+		lblTitle.getElement().setId("lblTitle");
+		imgDeleteIcon.getElement().setId("pnlImgDeleteIcon");
+		htmlNotes.getElement().setId("htmlNotes");
+		htmlDescription.getElement().setId("htmlDescription");
+		txtConfirmAction.getElement().setId("txtConfirmAction");
+		lblRemoving.getElement().setId("lblRemoving");
 	}
 
 	/* Setters */
@@ -149,6 +200,8 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	 */
 	public void setPositiveButtonText(String text) {
 		btnPositive.setText(text);
+		btnPositive.getElement().setAttribute("alt",text);
+		btnPositive.getElement().setAttribute("title",text);
 	}
 	/**
 	 * 
@@ -171,6 +224,8 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	 */
 	public void setNegitiveButtonText(String text) {
 		btnNegitive.setText(text);
+		btnNegitive.getElement().setAttribute("alt",text);
+		btnNegitive.getElement().setAttribute("title",text);
 	}
 	/**
 	 * 
@@ -193,6 +248,8 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	 */
 	public void setPleaseWaitText(String text){
 		lblRemoving.setText(text);
+		lblRemoving.getElement().setAttribute("alt",text);
+		lblRemoving.getElement().setAttribute("title",text);
 	}
 	/**
 	 * 
@@ -215,6 +272,8 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	 */
 	public void setPopupTitle(String title) {
 		lblTitle.setText(title);
+		lblTitle.getElement().setAttribute("alt",title);
+		lblTitle.getElement().setAttribute("title",title);
 	}
 	/**
 	 * 
@@ -315,6 +374,7 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 		this.deleteCode = deleteCode;
 		
 		txtConfirmAction.setVisible(true);
+		lblDeleteText.setVisible(true);
 		
 		btnPositive.setEnabled(false);
 		btnPositive.getElement().addClassName("disabled");
@@ -365,6 +425,10 @@ public abstract class DeletePopupViewVc extends PopupPanel implements
 	@UiHandler("btnNegitive")
 	public void onNegitiveClickEvent(ClickEvent event){
 		onClickNegitiveButton(event);
+	}
+	
+	public HTML getNotes() {
+		return htmlDescription;
 	}
 	
 	/* Abstract methods to handle button events*/

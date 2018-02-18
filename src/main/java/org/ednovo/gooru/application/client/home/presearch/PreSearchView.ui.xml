@@ -1,0 +1,223 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:tbp="urn:import:org.ednovo.gooru.client.uc" xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="gradeContainer">
+			<section class="focusBlock">
+				<div class="container">
+					<div class="row">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<tbp:H3Panel styleName="panel-title" text="{i18n.GL3287}"></tbp:H3Panel>
+							</div>
+							<div class="panel-body no-gutter">
+								<g:HTMLPanel styleName="col-md-7 col-sm-7" ui:field="buttonGroup">
+								    <div class="gradePanel">
+								        <span class="blocksSearch grade">
+											<tbp:PPanel text="{i18n.GL3288}"></tbp:PPanel>
+											<g:HTMLPanel styleName="btn-group" ui:field="panelGradeGroup">
+												<g:Button ui:field="btnGrades" styleName="btn btn-primary ellipsis" text="{i18n.GL3289}"></g:Button>
+												<g:Button
+													styleName="btn btn-primary dropdown-toggle" ui:field="btnGradesCaret">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</g:Button>
+											    <g:HTMLPanel styleName="dropdown-menu panelGrade" ui:field="panelGrades">
+											    </g:HTMLPanel>
+											</g:HTMLPanel>
+										</span>
+								        <span class="blocksSearch subjectContainer">
+											<tbp:PPanel text="{i18n.GL3290}"></tbp:PPanel>
+											<g:HTMLPanel styleName="btn-group subject" ui:field="panelSubjectGroup">
+												<g:Button ui:field="btnSubjects" styleName="btn btn-primary ellipsis" text="{i18n.GL3291}"></g:Button>
+												<g:Button ui:field="btnSubjectCaret"
+													styleName="btn btn-primary dropdown-toggle">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</g:Button>
+												<tbp:UlPanel styleName="dropdown-menu" ui:field="ulSubjectPanel"/>
+											</g:HTMLPanel>
+										</span>
+								    </div>
+
+									<g:Label ui:field="lblErrorMessage" styleName="errorMessage errorDisplay"></g:Label>
+
+								</g:HTMLPanel>
+								<div class="col-md-2 browseContentBtn">
+								    <g:Button ui:field="btnBrowseContent" styleName="btn btn-primary primary" text="{i18n.GL3293}"></g:Button>
+								</div>
+								<div class="col-md-2 standards">
+									<span class="blocksSearch subjectContainer">
+									    <g:Button ui:field="btnBrowseStandard" styleName="btn btn-primary primary" text="{i18n.GL3294}"></g:Button>
+									    <tbp:UlPanel styleName="dropdown-menu" ui:field="standardsDropListValues"/>
+									</span>
+
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<g:HTMLPanel styleName="panel-footer" ui:field="panelAlreadyHave">
+								<g:InlineLabel text="{i18n.GL3316}"></g:InlineLabel>
+								<g:Anchor ui:field="ancLogin" text="{i18n.GL1185}"></g:Anchor>
+								<g:InlineLabel text="{i18n.GL3317}"></g:InlineLabel>
+							</g:HTMLPanel>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="categoriesBlock">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="categoryPanel">
+								<g:Label styleName="catHeading colorOpt1" text="{i18n.GL3295}"></g:Label>
+								<div class="catBody">
+									<g:Label styleName="contentPane" text="{i18n.GL3296}"></g:Label>
+									<div class="callToAction">
+										<g:Anchor href="http://about.gooru.org/educators/stories/" target="_blank" styleName="primary" ui:field="ancSeeStories" text="{i18n.GL3328}"></g:Anchor>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="categoryPanel">
+								<g:Label styleName="catHeading colorOpt2" text="{i18n.GL3297}">
+								</g:Label>
+								<div class="catBody">
+									<g:Label styleName="contentPane" text="{i18n.GL3298}" />
+									<div class="callToAction">
+										<!-- <g:Button styleName="primary" ui:field="btnStudentSignUp"></g:Button> -->
+										<g:TextBox ui:field="classCodeTxtBox" styleName="classCodeTxtBoxStyle" />
+										<g:Button styleName="primary" ui:field="enterLbl"></g:Button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="categoryPanel">
+								<g:Label styleName="catHeading colorOpt3" text="{i18n.GL3299}" />
+								<div class="catBody">
+									<g:Label styleName="contentPane" text="{i18n.GL3300}"></g:Label>
+									<div class="callToAction">
+										<g:Anchor href="http://about.gooru.org/mission/impact/" text="{i18n.GL3301}" target="_blank" styleName="primary" ui:field="ancSeeOurImpact"></g:Anchor>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="categoryPanel">
+								<g:Label styleName="catHeading colorOpt4" text="{i18n.GL3302}" />
+								<div class="catBody">
+									<g:Label styleName="contentPane" text="{i18n.GL3303}" />
+									<div class="callToAction">
+									    <g:Anchor href="http://about.gooru.org/partners/" text="{i18n.GL3304}" target="_blank" styleName="primary" ui:field="ancLearnMore"></g:Anchor>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</section>
+			<section class="gettingStarted no-gutter">
+				<div class="col-md-5 col-sm-6 gettingStartedBanner">
+					<img src="images/newlandingpage/getting-started-banner.jpg" class="img-responsive" />
+				</div>
+				<div class="col-md-7 col-sm-6">
+					<div class="gettingContentPane">
+						<tbp:H2Panel text="{i18n.GL3305}"/>
+						<div class="blocks">
+						    <h3>
+						    <g:Anchor styleName="h3" target="_blank" href="http://about.gooru.org/educators/get-started/" text="{i18n.GL2134}" />
+						    </h3>
+							<tbp:PPanel text="{i18n.GL3307}" />
+						</div>
+						<div class="blocks">
+						    <h3>
+								<g:Anchor styleName="h3" target="_blank" href="http://about.gooru.org/educators/stories/" text="{i18n.GL2144}" />
+							</h3>
+							<tbp:PPanel text="{i18n.GL2146}" />
+						</div>
+						<div class="blocks eventsContainer">
+						    <div class="spriteLandingPage spriteLandingPageMonitorIco eventsIco">
+						    </div>
+						    <div class="events">
+						        <h3>
+									<g:Anchor target="_blank" styleName="h3" href="http://about.gooru.org/community/events" text="{i18n.GL2143}" />
+								</h3>
+								<tbp:PPanel text="{i18n.GL2142}" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</section>
+			<section class="remixBlock">
+				<div class="container">
+					<div class="row">
+					    <g:Label styleName="empower" text="{i18n.GL3318}"></g:Label>
+						<div class="col-md-3 col-sm-6">
+							<tbp:H2Panel text="{i18n.GL0524}" />
+							<div class="finMainwrapper animation">
+								<div class="newSprite findImage">
+								</div>
+							</div>
+							<tbp:PPanel text="{i18n.GL2122}" />
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<tbp:H2Panel text="{i18n.GL2037}" />
+							<div class="finMainwrapper animation">
+								<div class="newSprite remixImage">
+								</div>
+							</div>
+							<tbp:PPanel text="{i18n.GL2123}" />
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<tbp:H2Panel text="{i18n.GL0526}" />
+
+							<div class="finMainwrapper animation">
+								<div class="newSprite shareImage">
+								</div>
+							</div>
+							<tbp:PPanel text="{i18n.GL2124}" />
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<tbp:H2Panel text="{i18n.GL2126}" />
+							<div class="finMainwrapper animation">
+								<div class="newSprite monitorImage">
+								</div>
+							</div>
+							<tbp:PPanel text="{i18n.GL2127}" />
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</section>
+			<section class="freeToOpenBlock">
+				<div class="focusBannerAlwys">
+					<img src="images/newlandingpage/free-to-open-banner.jpg" class="img-responsive" />
+				</div>
+				<div class="focusTextAlwys">
+					<div class="container">
+						<div class="col-md-5 col-sm-6">
+							<h2>
+								<g:InlineLabel text="{i18n.GL3312}"></g:InlineLabel>
+								<g:InlineLabel text="{i18n.GL3313}"></g:InlineLabel>
+							</h2>
+						</div>
+						<div class="col-md-7 col-sm-6">
+							<div class="BlueBg">
+							    <tbp:PPanel text="{i18n.GL3314}"></tbp:PPanel>
+							</div>
+							<div class="callToAction">
+								<g:Anchor href="http://about.gooru.org/mission/approach/" target="_blank" ui:field="btnLearnAboutApproach" styleName="primary aboutApproach" text="{i18n.GL3315}"></g:Anchor>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</section>
+			<sg:LogoutFooter />
+		<g:HTMLPanel ui:field="flexTable">
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

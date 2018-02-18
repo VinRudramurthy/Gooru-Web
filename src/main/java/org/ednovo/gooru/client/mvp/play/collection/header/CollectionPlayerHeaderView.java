@@ -25,9 +25,10 @@
 package org.ednovo.gooru.client.mvp.play.collection.header;
 
 
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.uc.PlayerBundle;
 import org.ednovo.gooru.client.uc.tooltip.GlobalToolTip;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.ClientConstants;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -47,16 +48,15 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class CollectionPlayerHeaderView extends Composite implements MessageProperties{
+public class CollectionPlayerHeaderView extends Composite implements ClientConstants{
 	
 	@UiField HTML resourceTitle;
 	
 	@UiField Button infoButton,shareButton,narrationButton,navigationButton,addButton,flagButton;
 	
-	@UiField Label closeButtonForCollection/*,thumbsDownButton,thumbsUpButton*/;
+	@UiField Label closeButtonForCollection;
 	
 	@UiField Anchor studentViewButton;
-	
 	
 	private boolean isInfoButtonEnabled=false;
 	private boolean isShareButtonEnabled=false;
@@ -66,23 +66,33 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	private boolean isFlagButtonEnabled=false;
 	private PopupPanel toolTipPopupPanel=new PopupPanel();
 	
-	
 	private static CollectionPlayerHeaderViewUiBinder uiBinder = GWT.create(CollectionPlayerHeaderViewUiBinder.class);
 
 	interface CollectionPlayerHeaderViewUiBinder extends UiBinder<Widget, CollectionPlayerHeaderView> {
 	}
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 	public CollectionPlayerHeaderView(){
 		initWidget(uiBinder.createAndBindUi(this));
 		navigationButton.getElement().setId("navigationButton");
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
-		studentViewButton.setText(GL0139);
+		studentViewButton.setText(i18n.GL0139());
+		studentViewButton.getElement().setId("lnkStudentViewButton");
+		studentViewButton.getElement().setAttribute("alt",i18n.GL0139());
+		studentViewButton.getElement().setAttribute("title",i18n.GL0139());
+		  
 		studentViewButton.addMouseOverHandler(new OnStudentViewButtonMouseOver());
 		studentViewButton.addMouseOutHandler(new OnStudentViewButtonMouseOut());
 		shareButton.addMouseOverHandler(new ShareButtonMouseOver());
 		shareButton.addMouseOutHandler(new ShareButtonMouseOut());
 		addButton.getElement().setId("addButton");
-		
+		flagButton.getElement().setId("btnFlagButton");
+		infoButton.getElement().setId("btnInfoButton");
+		shareButton.getElement().setId("btnShareButton");
+		narrationButton.getElement().setId("btnNarrationButton");
+		navigationButton.getElement().setId("btnNavigationButton");
+		closeButtonForCollection.getElement().setId("lblCloseButtonForCollection");
+		resourceTitle.getElement().setId("htmlResourceTitle");
 	}
 	
 	public void setResourceTitle(String title){
@@ -110,15 +120,6 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	public Anchor getStudentViewButton() {
 		return studentViewButton;
 	}
-	
-	
-	/*public Label getThumbsDownButton(){
-		return thumbsDownButton;
-	}
-	
-	public Label getThumbsUpButton(){
-		return thumbsUpButton;
-	}*/
 	
 	public void makeButtonActive(boolean makeAddButtonActive,boolean makeInfoButtionActive, boolean  makeShareButtonActive, boolean makeNarrationButtonActive, boolean makeNavigationButtonActive,boolean makeFlagButtonActive){
 		if(makeAddButtonActive){
@@ -234,7 +235,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void makeAddButtonActive(){
 		String button=getAddButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getAddButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonActive());
 			getAddButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonNormal());
 			getAddButton().getElement().removeAttribute("button");
@@ -247,7 +248,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	
 	public void makeInfoButtonActive(){
 		String button=getInfoButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getInfoButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonActive());
 			getInfoButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonNormal());
 			getInfoButton().getElement().removeAttribute("button");
@@ -259,7 +260,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void makeShareButtonActive(){
 		String button=getShareButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getShareButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonActive());
 			getShareButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonNormal());
 			getShareButton().getElement().removeAttribute("button");
@@ -271,7 +272,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void makeNarrationButtonActive(){
 		String button=getNarrationButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getNarrationButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().narrationButtonActive());
 			getNarrationButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().narrationButtonNormal());
 			getNarrationButton().getElement().removeAttribute("button");
@@ -283,7 +284,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void makeNavigationButtonActive(){
 		String button=getNavigationButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getNavigationButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().navigationButtonActive());
 			getNavigationButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().navigationButtonNormal());
 			getNavigationButton().getElement().removeAttribute("button");
@@ -295,7 +296,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void makeFlagButtonActive(){
 		String button=getFlagButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			if(getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive())){
 				getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive());
 				getFlagButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrange());
@@ -343,7 +344,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void deselectAddButton(){
 		String button=getAddButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")&&isAddButtonEnabled()){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)&&isAddButtonEnabled()){
 			getAddButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonActive());
 			getAddButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonNormal());
 			getAddButton().getElement().removeAttribute("button");
@@ -352,7 +353,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	
 	public void deselectInfoButton(){
 		String button=getInfoButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")&&isInfoButtonEnabled()){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)&&isInfoButtonEnabled()){
 			getInfoButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonActive());
 			getInfoButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonNormal());
 			getInfoButton().getElement().removeAttribute("button");
@@ -360,7 +361,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void deselectShareButton(){
 		String shareButtonVal=getShareButton().getElement().getAttribute("button");
-		if(shareButtonVal!=null&&shareButtonVal.equalsIgnoreCase("active")&&isShareButtonEnabled()){
+		if(shareButtonVal!=null&&ACTIVE.equalsIgnoreCase(shareButtonVal)&&isShareButtonEnabled()){
 			getShareButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonActive());
 			getShareButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonNormal());
 			getShareButton().getElement().removeAttribute("button");
@@ -368,7 +369,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void deselectNarrationButton(){
 		String narrtionButtonVal=getNarrationButton().getElement().getAttribute("button");
-		if(narrtionButtonVal!=null&&narrtionButtonVal.equalsIgnoreCase("active")&&isNarrationButtonEnabled){
+		if(narrtionButtonVal!=null&&ACTIVE.equalsIgnoreCase(narrtionButtonVal)&&isNarrationButtonEnabled){
 			getNarrationButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().narrationButtonActive());
 			getNarrationButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().narrationButtonNormal());
 			getNarrationButton().getElement().removeAttribute("button");
@@ -376,7 +377,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void deselectNavigationButton(){
 		String navigationButtonVal=getNavigationButton().getElement().getAttribute("button");
-		if(navigationButtonVal!=null&&navigationButtonVal.equalsIgnoreCase("active")&&isNavigationButtonEnabled()){
+		if(navigationButtonVal!=null&&ACTIVE.equalsIgnoreCase(navigationButtonVal)&&isNavigationButtonEnabled()){
 			getNavigationButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().navigationButtonActive());
 			getNavigationButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().navigationButtonNormal());
 			getNavigationButton().getElement().removeAttribute("button");
@@ -385,7 +386,7 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	public void deselectFlagButton(){
 		String flagButtonVal=getFlagButton().getElement().getAttribute("button");
-		if(flagButtonVal!=null&&flagButtonVal.equalsIgnoreCase("active")&&isFlagButtonEnabled()){
+		if(flagButtonVal!=null&&ACTIVE.equalsIgnoreCase(flagButtonVal)&&isFlagButtonEnabled()){
 			if(getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive())||
 				getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrange())){
 				getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive());
@@ -405,7 +406,6 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	 */
 	@UiHandler("studentViewButton")
 	public void collectionPlay(ClickEvent event) {
-	//MixpanelUtil.Preview_Collection_From_CollectionEdit();
 	}
 	public boolean isInfoButtonEnabled() {
 		return isInfoButtonEnabled;
@@ -464,37 +464,30 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 	}
 	
 	public class OnStudentViewButtonMouseOver implements MouseOverHandler{
-
 		@Override
 		public void onMouseOver(MouseOverEvent event) {
 			toolTipPopupPanel.clear();
-			toolTipPopupPanel.setWidget(new GlobalToolTip(GL0668,true));
+			toolTipPopupPanel.setWidget(new GlobalToolTip(i18n.GL0668(),true));
 			toolTipPopupPanel.setStyleName("");
 			toolTipPopupPanel.setPopupPosition(studentViewButton.getElement().getAbsoluteLeft()-35, studentViewButton.getElement().getAbsoluteTop()+4);
 			toolTipPopupPanel.getElement().getStyle().setZIndex(999999);
 			toolTipPopupPanel.show();
 			toolTipPopupPanel.getElement().getStyle().setMarginLeft(57, Unit.PX);
 		}
-		
 	}
 	
 	public class OnStudentViewButtonMouseOut implements MouseOutHandler{
-
 		@Override
 		public void onMouseOut(MouseOutEvent event) {
 			toolTipPopupPanel.hide();
 		}
-
-		
-		
 	}
 	public class ShareButtonMouseOver implements MouseOverHandler{
-
 		@Override
 		public void onMouseOver(MouseOverEvent event) {
 			if(!isShareButtonEnabled){
 			toolTipPopupPanel.clear();
-			toolTipPopupPanel.setWidget(new GlobalToolTip(GL0679));
+			toolTipPopupPanel.setWidget(new GlobalToolTip(i18n.GL0679()));
 			toolTipPopupPanel.setStyleName("");
 			toolTipPopupPanel.setPopupPosition(shareButton.getElement().getAbsoluteLeft()+7, shareButton.getElement().getAbsoluteTop()+21);
 			toolTipPopupPanel.getElement().getStyle().clearMarginLeft();
@@ -502,18 +495,13 @@ public class CollectionPlayerHeaderView extends Composite implements MessageProp
 			toolTipPopupPanel.show();
 			}
 		}
-		
 	}
 	
 	public class ShareButtonMouseOut implements MouseOutHandler{
-
 		@Override
 		public void onMouseOut(MouseOutEvent event) {
 			toolTipPopupPanel.hide();
 		}
-
-		
-		
 	}
 	
 }

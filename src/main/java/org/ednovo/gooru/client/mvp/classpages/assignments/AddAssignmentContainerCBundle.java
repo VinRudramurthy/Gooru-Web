@@ -28,7 +28,21 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 
-
+/**
+ * 
+ * @fileName : AddAssignmentContainerCBundle.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public interface AddAssignmentContainerCBundle extends ClientBundle {
 	static final AddAssignmentContainerCBundle INSTANCE = GWT.create(AddAssignmentContainerCBundle.class);
 	
@@ -43,6 +57,8 @@ public interface AddAssignmentContainerCBundle extends ClientBundle {
 		String assessmentAddContainer();
 		
 		String assignmentButtonsContainer();
+		
+		String navigateButtonsContainer();
 		
 		String assignmentMainContainer();
 
@@ -125,7 +141,6 @@ public interface AddAssignmentContainerCBundle extends ClientBundle {
 		String dropdownPlaceHolder();
 		String dropdownListContainerScrollPanel();
 		String assignmentsystemMessage();
-		String successImage();
 		String successText();
 		String successPopupContainer();
 		String assignmentErrorMessage();
@@ -134,6 +149,18 @@ public interface AddAssignmentContainerCBundle extends ClientBundle {
 		String loadingText();
 		String assignButton();
 		
+		String folderAssessment();
+		
+		String assignmentTitleLabelForOe();
+		String primaryButton();
+		String noCollectionMsgContainer();
+		String noCollectionMsgOuterContainer();
+		String emptyCollMsg();
+		String subHeadingCollMsg();
+		String selectionCountLabel();
+		String assignmentButtonsContainerCopy();
+		String copyResourcePopupContainerShelf();
+		String navigateButtonContainer();
 	}
 	@Source("assignmentpopup.css")
 	NewAssignmentPopupCss css();

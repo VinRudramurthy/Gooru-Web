@@ -27,6 +27,8 @@
  */
 package org.ednovo.gooru.client.mvp.shelf.event;
 
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+
 import com.google.gwt.event.shared.EventHandler;
 
 /**
@@ -46,6 +48,6 @@ import com.google.gwt.event.shared.EventHandler;
  */
 public interface CollectionAssignShareHandler extends EventHandler {
 	
-	void updateShareType(String shareType);
+	void updateShareType(String shareType, String publishStatus, boolean isPublish,CollectionDo collectiondo);
 
 }

@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+  <ui:style field="unitStyle" src="tabContainer.css" />
+  <uc:UlPanel styleName="list-unstyled {unitStyle.list_inline}">
+  <!--  <g:Image ui:field="userImage" styleName="{unitStyle.defaultUserImage}"></g:Image> -->
+   <g:Label ui:field="namelbl"></g:Label>
+   <g:Label ui:field="scorelbl"></g:Label>
+   <g:Label ui:field="timelbl"></g:Label>
+   <!-- <g:HTMLPanel ui:field="reactionlbl"></g:HTMLPanel> -->
+  </uc:UlPanel>  
+</ui:UiBinder> 

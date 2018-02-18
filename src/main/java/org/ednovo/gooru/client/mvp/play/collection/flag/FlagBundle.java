@@ -3,8 +3,8 @@ package org.ednovo.gooru.client.mvp.play.collection.flag;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.CssResource.NotStrict;
 import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.resources.client.ClientBundle.Source;
 import com.google.gwt.resources.client.ImageResource.ImageOptions;
 import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
@@ -13,15 +13,16 @@ public interface FlagBundle extends ClientBundle{
 	
 	public static final FlagBundle IMAGEBUNDLEINSTANCE =  GWT.create(FlagBundle.class);
 	
-	@Source("org/ednovo/gooru/player/collection/client/view/collectionoverview/images/flag-header-close-btn.png")
+	@Source("flag-header-close-btn.png")
 	@ImageOptions(repeatStyle=RepeatStyle.None)
 	ImageResource closeFlagPopUpImages();
 	
-	@Source("org/ednovo/gooru/player/collection/client/view/collectionoverview/images/dropdownMenuArrow.png")
+	@Source("dropdownMenuArrow.png")
 	@ImageOptions(repeatStyle=RepeatStyle.None)
 	ImageResource dropdownMenuArrow();
 	
-	@Source("org/ednovo/gooru/player/collection/client/view/add/tooltip/player-flag-popup.css")
+	@NotStrict
+	@Source("org/ednovo/gooru/client/mvp/play/collection/flag/player-flag-popup.css")
 	FlagStyles flagstyle();
 	
 	public interface FlagStyles extends CssResource{

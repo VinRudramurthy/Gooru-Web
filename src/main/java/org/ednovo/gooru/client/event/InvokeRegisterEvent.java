@@ -26,8 +26,19 @@ package org.ednovo.gooru.client.event;
 
 import com.google.gwt.event.shared.GwtEvent;
 /**
- * @author Search Team
  * 
+ * @fileName : InvokeRegisterEvent.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class InvokeRegisterEvent extends GwtEvent<InvokeRegisterHandler>{
 	

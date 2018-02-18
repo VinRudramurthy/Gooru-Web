@@ -1,0 +1,95 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tbp="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<ui:style src=""/>
+	<g:HTMLPanel>
+	    <footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-12 footerLogo">
+							<p>
+								<img src="images/newlandingpage/footer-logo.png" class="img-responsive" />
+							</p>
+							<tbp:PPanel text="{i18n.GL3326}"></tbp:PPanel>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-6">
+							<tbp:H4Panel text="{i18n.GL2161}"></tbp:H4Panel>
+							<ul class="list-unstyled">
+								<li>
+									<g:Anchor href="http://about.gooru.org/" target="_blank" text="{i18n.GL1024}" />
+								</li>
+								<li>
+								    <g:Anchor href="http://about.gooru.org/about/careers/" target="_blank" text="{i18n.GL1244}" />
+								</li>
+								<li>
+								    <g:Anchor href="http://support.gooru.org/hc/en-us" target="_blank" text="{i18n.GL1307}" />
+								</li>
+								<li>
+								    <g:Anchor href="http://about.gooru.org/contact/" target="_blank" text="{i18n.GL1245}" />
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-6">
+							<tbp:H4Panel text="{i18n.GL1243}"></tbp:H4Panel>
+							<ul class="list-unstyled">
+								<li>
+								    <g:Anchor href="http://partners.gooru.org/school/partner-with-us" target="_blank" text="{i18n.GL2148}" />
+								</li>
+								<li>
+								    <g:Anchor href="http://partners.gooru.org/" target="_blank" text="{i18n.Gl2151}" />
+								</li>
+								<li>
+								    <g:Anchor href="http://about.gooru.org/educators/coach-program/" target="_blank" text="{i18n.GL3327}" />
+								</li>
+								<!-- <li>
+								    <g:Anchor href="http://developers.gooru.org/" target="_blank" text="{i18n.GL2154}" />
+								</li> -->
+								<li>
+								    <g:Anchor href="http://about.gooru.org/community/events" target="_blank" text="{i18n.GL2166}" />
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-6">
+							<tbp:H4Panel text="{i18n.GL2168}"></tbp:H4Panel>
+							<ul class="list-unstyled">
+								<li>
+								    <g:Anchor ui:field="achTerms" text="{i18n.GL0872}"/>
+								</li>
+								<li>
+								    <g:Anchor ui:field="achPrivacy" text="{i18n.GL0873}"/>
+								</li>
+								<li>
+								    <g:Anchor ui:field="achCopyright" text="{i18n.GL0875}"/>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-6">
+							<h4>Connect</h4>
+							<ul class="list-unstyled list-inline">
+								<li class="">
+									<a class="facebook newSprite" target="_blank"
+										href="https://www.facebook.com/gooru">
+									</a>
+								</li>
+								<li>
+									<a class="twitter newSprite" target="_blank" href="https://www.twitter.com/gooru">
+									</a>
+								</li>
+								<li>
+									<a class="youtube newSprite" target="_blank" href="https://www.youtube.com/gooru">
+									</a>
+								</li>
+								<li>
+									<a class="google newSprite" target="_blank"
+										href="https://plus.google.com/105874563188592272186/posts">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+		</footer>
+	</g:HTMLPanel>
+</ui:UiBinder>

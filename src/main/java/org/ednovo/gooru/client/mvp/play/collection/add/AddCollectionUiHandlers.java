@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.add;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 
 public interface AddCollectionUiHandlers extends BaseUiHandlers{
 	public void copyCollection(String collectionId,String collectionTile);

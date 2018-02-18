@@ -26,9 +26,13 @@ package org.ednovo.gooru.client.mvp.play.collection.preview.home;
 
 
 
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.mvp.authentication.SignUpPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.CollectionPlayerPresenter;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
+import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
+import org.ednovo.gooru.client.mvp.rating.RatingAndReviewPopupPresenter;
+import org.ednovo.gooru.client.mvp.rating.events.OpenReviewPopUpEvent;
+
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.Button;
 import com.google.inject.Inject;
@@ -41,17 +45,28 @@ public class PreviewHomePresenter extends PresenterWidget<IsPreviewHomeView> imp
 	SignUpPresenter signUpViewPresenter = null;
 	
 	private CollectionPlayerPresenter collectionPlayerPresenter=null;
-	
-	
+	private PreviewPlayerPresenter previewPlayerPresenter=null;
+	private RatingAndReviewPopupPresenter ratingAndReviewPopup;
+	CollectionDo collectionDo= null;
 	@Inject
-	public PreviewHomePresenter(EventBus eventBus, IsPreviewHomeView view, SignUpPresenter signUpViewPresenter) {
+	public PreviewHomePresenter(EventBus eventBus, IsPreviewHomeView view, SignUpPresenter signUpViewPresenter, RatingAndReviewPopupPresenter ratingAndReviewPopup) {
 		super(eventBus, view);
 		this.signUpViewPresenter = signUpViewPresenter;
+		this.ratingAndReviewPopup = ratingAndReviewPopup;
 		getView().setUiHandlers(this);
+		addRegisteredHandler(OpenReviewPopUpEvent.TYPE, this);
 	}
 	public void setCollectionMetadata(CollectionDo collectionDo){
+		this.collectionDo = collectionDo;
 		getView().setCollectionMetadata(collectionDo);
 		setCollectionResources(collectionDo);
+	}
+	
+	public PreviewPlayerPresenter getPreviewPlayerPresenter() {
+		return previewPlayerPresenter;
+	}
+	public void setPreviewPlayerPresenter(PreviewPlayerPresenter previewPlayerPresenter) {
+		this.previewPlayerPresenter = previewPlayerPresenter;
 	}
 	
 	public void setCollectionResources(CollectionDo collectionDo){
@@ -92,6 +107,26 @@ public class PreviewHomePresenter extends PresenterWidget<IsPreviewHomeView> imp
 		if(collectionPlayerPresenter!=null){
 			collectionPlayerPresenter.resetcollectionActivityEventId();
 		}
+	}
+	
+	@Override
+	public void openReviewPopUp(String assocGooruOId, String title,
+			String createrName) {
+	}
+	/* (non-Javadoc)
+	 * @see org.ednovo.gooru.client.mvp.play.collection.preview.home.PreviewHomeUiHandlers#openReviewPopUp(java.lang.String, java.lang.String)
+	 */
+	@Override
+	public void openReviewPopUp(String assocGooruOId, String title) {
+		throw new RuntimeException("Not implemented");
+	}
+	@Override
+	public void triggerCollectionShareDataEvent(String collectionId,
+			String itemType, String shareType, boolean confirmStatus) {
+		if(previewPlayerPresenter!=null){
+			previewPlayerPresenter.triggerCollectionShareDataEvent( collectionId, itemType,  shareType,  confirmStatus);
+		}
+		
 	}
 
 }

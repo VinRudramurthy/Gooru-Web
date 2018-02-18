@@ -26,16 +26,16 @@ package org.ednovo.gooru.client.mvp.classpages.tabitem.assignments;
 
 import java.util.List;
 
+import org.ednovo.gooru.application.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.ClasspageService;
+import org.ednovo.gooru.application.client.service.ResourceServiceAsync;
+import org.ednovo.gooru.application.shared.model.content.AssignmentDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.ResourceDo;
+import org.ednovo.gooru.application.shared.model.content.TaskDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.child.ChildPresenter;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.classpages.event.RefreshAssignmentsListEvent;
-import org.ednovo.gooru.client.service.ClasspageService;
-import org.ednovo.gooru.client.service.ResourceServiceAsync;
-import org.ednovo.gooru.shared.model.content.AssignmentDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.ResourceDo;
-import org.ednovo.gooru.shared.model.content.TaskDo;
 
 /*
  * 
@@ -123,12 +123,6 @@ public class AssignmentsTabPresenter extends ChildPresenter<AssignmentsTabPresen
 	private void onLoad() {
 		throw new RuntimeException("Not implemented");
 	}
-	/*//to retrive all users collections and display
-	public void getUserCollections() {
-		getResourceService().getUserCollection(getUserCollectionsAsyncCallback());
-	}*/
-	
-	// Getter for ResourceService Async class
 	
 	public ResourceServiceAsync getResourceService() {
 		

@@ -24,11 +24,12 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -37,11 +38,14 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class ShareTabToolTipVc extends PopupPanel implements MessageProperties{
+public class ShareTabToolTipVc extends PopupPanel {
 
 	@UiField Label tooltipText;
+	@UiField FlowPanel logPanel;
 	private static ShareTabToolTipVcUiBinder uiBinder = GWT
 			.create(ShareTabToolTipVcUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface ShareTabToolTipVcUiBinder extends
 			UiBinder<Widget, ShareTabToolTipVc> {
@@ -53,6 +57,10 @@ public class ShareTabToolTipVc extends PopupPanel implements MessageProperties{
 	public ShareTabToolTipVc() {
 		super(true);
 		setWidget(uiBinder.createAndBindUi(this));
-		tooltipText.setText(GL0845);
+		tooltipText.setText(i18n.GL0845());
+		tooltipText.getElement().setId("lblTooltipText");
+		tooltipText.getElement().setAttribute("alt",i18n.GL0845());
+		tooltipText.getElement().setAttribute("title",i18n.GL0845());
+		logPanel.getElement().setId("fpnlLogPanel");
 	}
 }

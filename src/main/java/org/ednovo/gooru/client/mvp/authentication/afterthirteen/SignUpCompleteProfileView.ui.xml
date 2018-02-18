@@ -3,16 +3,23 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
 	<ui:with type="org.ednovo.gooru.client.mvp.authentication.SignUpCBundle"
 		field="res" />
-	<g:HTMLPanel styleName="{res.css.popup} {res.css.imgBGprofile}">
-		<g:HTMLPanel styleName="{res.css.popupInner}">
-			<g:Label styleName="{res.css.popupHeader}" ui:field="lblTitle" />
-			<g:Label styleName="{res.css.closeButton}" ui:field="lblCancel"></g:Label>
-			<g:HTMLPanel ui:field="panelSignUp">
-				<g:HTMLPanel styleName="{res.css.popupContentProfilePage}">
-					<g:Label styleName="{res.css.h1} {res.css.green}" ui:field="lblHeading" />
-					<g:Label styleName="{res.css.subheaderprofile}" ui:field="lblSubHeading" />
+	<g:HTMLPanel styleName="LoginpopupMain">
+		<g:HTMLPanel styleName="popupInnerLeaveReg">
+		    <g:HTMLPanel styleName="LoginpopupHeader">
+		        <g:HTMLPanel styleName="row">
+		            <g:HTMLPanel styleName="col-md-9 col-xs-9">
+		            	<g:Label  ui:field="lblTitle" />
+		            </g:HTMLPanel>
+		    		<g:HTMLPanel styleName="col-md-3 col-xs-3 closeContainer">
+		    			<g:Anchor styleName="closeButton" ui:field="lblCancel"></g:Anchor>
+		    		</g:HTMLPanel>
 
-
+		     	</g:HTMLPanel>
+		     </g:HTMLPanel>
+			<g:HTMLPanel ui:field="panelSignUp" styleName="popupContentLeaveRegistration">
+				<g:HTMLPanel>
+					<g:Label styleName="SignUp-green-h1" ui:field="lblHeading" />
+					<g:Label styleName="SignUp-h2" ui:field="lblSubHeading" />
 					<g:HTMLPanel styleName="{res.css.popupcornerBg}">
 
 						<g:HTMLPanel styleName="{res.css.userWhiteBg}">
@@ -26,8 +33,6 @@
 						<g:HTMLPanel styleName="{res.css.usersRight}">
 							<gg:TextBoxWithPlaceholder styleName="{res.css.inputTextStyle}"
 								ui:field="txtFirstName" />
-
-
 							<gg:TextBoxWithPlaceholder styleName="{res.css.inputTextStyle}"
 								ui:field="txtlastName" />
 
@@ -60,17 +65,17 @@
 				</g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.popupFooter}">
 					<g:HTMLPanel styleName="{res.css.popupFooterText}">
-						
+
 						<g:Label ui:field="quriesText"></g:Label>
-						<div>						
+						<div>
 							<g:Label ui:field="pleaseContactText"></g:Label>
-							<g:Anchor ui:field="supportLink" 
+							<g:Anchor ui:field="supportLink"
 							target="_blank"></g:Anchor>
 						</div>
-							
+
 					</g:HTMLPanel>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

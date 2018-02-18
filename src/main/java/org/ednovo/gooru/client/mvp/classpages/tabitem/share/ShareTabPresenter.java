@@ -27,8 +27,8 @@ package org.ednovo.gooru.client.mvp.classpages.tabitem.share;
 /**
  * 
  */
-import org.ednovo.gooru.client.child.ChildPresenter;
-import org.ednovo.gooru.client.service.ClasspageService;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.service.ClasspageService;
 
 /**
  * 

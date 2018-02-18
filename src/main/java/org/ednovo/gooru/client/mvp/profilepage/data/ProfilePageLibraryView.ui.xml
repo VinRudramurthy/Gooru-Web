@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field="style" src="ProfilePageLibraryStyle.css"
+		type="org.ednovo.gooru.client.mvp.profilepage.data.ProfilePageLibraryStyleBundle" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+
+	<g:HTMLPanel styleName="{style.container}">
+		<g:HTMLPanel ui:field="emptyContainer" styleName="{style.emptyContainer}">
+			<g:Label ui:field="noCollectionsMsg" styleName="{style.noCollectionsMsg}"></g:Label>
+			<g:Label ui:field="collectionsRedirectionMsg" styleName="{style.collectionsRedirectionMsg}"></g:Label>
+			<g:Button ui:field="myCollectionsBtn" styleName="secondary"></g:Button>
+		</g:HTMLPanel>
+		<!-- <g:Label styleName="{style.topicTitle} {style.folderLevel} {style.open}"
+			/> <g:Label styleName="{style.libraryTopicTitle}" /> <g:Button styleName="secondary"
+			ui:field="viewAllBtn" text="{i18n.GL1946}" title="{i18n.GL1946}"></g:Button> -->
+		<g:HTMLPanel styleName="{style.leftNav}" ui:field="leftNav" />
+		<g:HTMLPanel styleName="{style.topicTitle} {style.folderTitleStyle} folderLevel open" ui:field="folderListPanel">
+			<g:Label ui:field="folderTopicTitleLbl" />
+			<g:Button styleName="secondary" ui:field="listAllBtn" text="{i18n.GL1946}"
+				title="{i18n.GL1946}"></g:Button>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="loadingIconPanel" styleName="loadingImage {style.loadingImageStyle}"></g:HTMLPanel>
+		<g:HTMLPanel styleName="{style.contentScroll}" ui:field="contentScroll">
+
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

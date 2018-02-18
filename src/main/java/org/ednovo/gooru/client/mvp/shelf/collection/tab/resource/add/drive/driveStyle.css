@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.filesConatiner{
+	float: left;
+	padding: 0px 1px;
+	width: 100%;
+	border-left: 1px solid #ddd;
+	background-color: white;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	height: 500px;
+}
+
+.googleDriveFolderStyle{
+	background: url(../images/drive/drive-folder-icon.png) 15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height: 30px;
+}
+.googleDriveWordStyle{
+	background: url(../images/drive/drive-word-icon.png)  15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height:30px;
+}
+.googleDriveExcelStyle{
+	background: url(../images/drive/drive-excel-icon.png)  15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height:30px;
+}
+.googleDrivePptStyle{
+	background: url(../images/drive/drive-ppt-icon.png)  15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height:30px;
+}
+.googleDriveFormStyle{
+	background: url(../images/drive/drive-form-icon.png)  15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height:30px;
+}
+	
+.googleDriveDrawingStyle{
+	background: url(../images/drive/drive-drawing-icon.png)  15px 0px no-repeat;
+	padding-left: 53px;
+	line-height: 35px;
+	height:30px;
+}
+.googleDriveFolderStyle,.googleDriveWordStyle,.googleDriveExcelStyle,
+.googleDrivePptStyle,.googleDriveFormStyle,.googleDriveDrawingStyle{
+	width: 100%;
+}
+.googleDriveFolderStyle:hover,.googleDriveWordStyle:hover,.googleDriveExcelStyle:hover,
+.googleDrivePptStyle:hover,.googleDriveFormStyle:hover,.googleDriveDrawingStyle:hover{
+	background-color: #cfe3f1;
+	cursor: pointer;
+}
+
+.breadCrumbsContainer{
+	width: 100%;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 0px 10px 0px;
+}
+.breadCrumbsText{
+	
+}
+.breadCrumbsText:hover{
+	cursor: pointer;
+	opacity:0.6;
+}
+.breadCrumbsArrow{
+	padding: 0px 3px 0px 3px;
+	font-weight: normal;
+}
+.loadingText {
+	background: url("images/core/B-Dot.gif");
+	width: 200px;
+	height: 175px;
+	margin: 0 auto;
+	z-index: 5;
+}
+
+.errorHeading{
+	font-size: 18px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.pannelError{
+	text-align: center;
+	width: 100%;
+	margin-top: 170px;
+}

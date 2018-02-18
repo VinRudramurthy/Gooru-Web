@@ -24,11 +24,11 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.register;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.AppPopUp;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -44,7 +44,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class RegistrationConfirmationVc extends Composite implements MessageProperties{
+public class RegistrationConfirmationVc extends Composite{
 	@UiField
 	BlueButtonUc confirmRegisterUc;
 	
@@ -60,6 +60,8 @@ public class RegistrationConfirmationVc extends Composite implements MessageProp
 	interface RegistrationConfirmationUiBinder extends
 			UiBinder<Widget, RegistrationConfirmationVc> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * Class constructor, creates popup after register and tells to update the details by clicking mail which entered   
@@ -70,13 +72,36 @@ public class RegistrationConfirmationVc extends Composite implements MessageProp
 		appPopUp.setContent(REGISTRATION_RECEIVED, uiBinder.createAndBindUi(this));
 		appPopUp.show();
 		appPopUp.center();
+		
+		almostHereText.setText(i18n.GL1191());
+		almostHereText.getElement().setId("lblAlmostHereText");
+		almostHereText.getElement().setAttribute("alt",i18n.GL1191());
+		almostHereText.getElement().setAttribute("title",i18n.GL1191());
+		
+		sentConformationText.setText(i18n.GL1192());
+		sentConformationText.getElement().setId("lblSentConformationText");
+		sentConformationText.getElement().setAttribute("alt",i18n.GL1192());
+		sentConformationText.getElement().setAttribute("title",i18n.GL1192());
+		
+		contactText.setText(i18n.GL1193());
+		contactText.getElement().setId("lblContactText");
+		contactText.getElement().setAttribute("alt",i18n.GL1193());
+		contactText.getElement().setAttribute("title",i18n.GL1193());
+		
+		supportText.setText("  "+i18n.GL0299());
+		supportText.getElement().setId("lblSupportText");
+		supportText.getElement().setAttribute("alt","  "+i18n.GL0299());
+		supportText.getElement().setAttribute("title","  "+i18n.GL0299());
+		
+		confirmRegisterUc.setText(i18n.GL0190());
 		confirmRegisterUc.getElement().setId("btnConfirmRegister");
-		almostHereText.setText(GL1191);
-		sentConformationText.setText(GL1192);
-		contactText.setText(GL1193);
-		supportText.setText("  "+GL0299);
-		confirmRegisterUc.setText(GL0190);
-		didnotReceiveText.setText(GL1194+GL_SPL_QUESTION);
+		confirmRegisterUc.getElement().setAttribute("alt",i18n.GL0190());
+		confirmRegisterUc.getElement().setAttribute("title",i18n.GL0190());
+		
+		didnotReceiveText.setText(i18n.GL1194()+i18n.GL_SPL_QUESTION());
+		didnotReceiveText.getElement().setId("lblDidnotReceiveText");
+		didnotReceiveText.getElement().setAttribute("alt",i18n.GL1194());
+		didnotReceiveText.getElement().setAttribute("title",i18n.GL1194());
 	}
 	
 	/**

@@ -3,7 +3,7 @@
 	background-color: white;
 	width: 204px !important;
 	height: auto;
-	max-height: 246px !important;
+	max-height: 265px !important;
 	border: 1px solid #999999;
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
 	text-align: left;
 	float: left;
 	text-decoration: none !important;
-	padding: 9px 5px 8px 32px;
+	padding: 9px 5px 8px 32px !important;
 	color: #515151;
 	font-size: 12px;
 	cursor: pointer;
@@ -40,6 +40,7 @@
 	background-color: #cfe3f1 !important;
 	color: #515151;
 	opacity: 1;
+	width:100%;
 }
 .classpageListTitle{
 	float: left;
@@ -123,7 +124,7 @@
 	white-space: nowrap !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 95%;
+	width: 184px;
 }
 .classpageTitleHeaderActive {
 	font-weight: bold;
@@ -149,4 +150,26 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	width: 90%;
+}
+
+.inputContainer{
+	padding: 8px;
+	padding-top:12px;
+}
+
+.tooltipContentTitle {
+	padding-bottom: 10px;
+}
+
+.classCodeTxtBox {
+	width: 118px;
+	border: 1px #E3E3E3 solid !important;
+	background-color: #FFF !important;
+	font-size: 12px !important;
+	outline: 0;
+	display: inline-block;
+	padding: 6px;
+	font-family: Tahoma, sans-serif !important;
+	text-transform: uppercase;
+	
 }

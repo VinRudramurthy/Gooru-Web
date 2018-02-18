@@ -28,21 +28,33 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeSet;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.code.CodeDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionQuestionItemDo;
+import org.ednovo.gooru.application.shared.model.content.QuestionAnswerDo;
+import org.ednovo.gooru.application.shared.model.content.QuestionHintsDo;
+import org.ednovo.gooru.application.shared.model.search.SearchDo;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
+import org.ednovo.gooru.client.effects.FadeInAndOut;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
+import org.ednovo.gooru.client.mvp.shelf.collection.CollectionCBundle;
 import org.ednovo.gooru.client.mvp.shelf.event.GetEditPageHeightEvent;
+import org.ednovo.gooru.client.uc.AppMultiWordSuggestOracle;
 import org.ednovo.gooru.client.uc.AppPopUp;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
+import org.ednovo.gooru.client.uc.AppSuggestBox;
+import org.ednovo.gooru.client.uc.CloseLabel;
+import org.ednovo.gooru.client.uc.DownToolTipWidgetUc;
 import org.ednovo.gooru.client.uc.RemoveToolTipUc;
+import org.ednovo.gooru.client.uc.StandardsPreferenceOrganizeToolTip;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 import org.ednovo.gooru.client.ui.TinyMCE;
 import org.ednovo.gooru.client.util.ImageUtil;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionQuestionItemDo;
-import org.ednovo.gooru.shared.model.content.QuestionAnswerDo;
-import org.ednovo.gooru.shared.model.content.QuestionHintsDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.util.MixpanelUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
@@ -52,54 +64,83 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.MouseOutEvent;
 import com.google.gwt.event.dom.client.MouseOutHandler;
 import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
+import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.event.logical.shared.SelectionHandler;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RadioButton;
+import com.google.gwt.user.client.ui.SuggestOracle;
+import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class EditQuestionPopupVc extends AppPopUp implements MessageProperties{
+public abstract class EditQuestionPopupVc extends AppPopUp implements SelectionHandler<SuggestOracle.Suggestion>{
 
 	@UiField
 	ListBox questionTypeListBox;
-
-	// @UiField TinyMCE resourceQuestion,explainationTextArea;
 
 	private TinyMCE resourceQuestion = null;
 	private TinyMCE explainationTextArea = null;
 
 	@UiField
-	HTMLEventPanel questionTabButton,trueOrFlaseButton,openEndedButton;
+	HTMLEventPanel questionTabButton,trueOrFlaseButton,openEndedButton,
+	activityPanel,handoutPanel,homeworkPanel,gamePanel,presentationPanel,referenceMaterialPanel,quizPanel,curriculumPlanPanel,
+	lessonPlanPanel,unitPlanPanel,projectPlanPanel,readingPanel,textbookPanel,articlePanel,bookPanel;
 	
 	@UiField
 	HTMLPanel addQuestionHintsContainer, questionTextRichTextboxContainer,
-			questionExplantionRichTextboxContainer, listQuestionType, answerchoiceTitleContainer, panelPleaseWait,panelControls,typeLbl;
+			questionExplantionRichTextboxContainer, listQuestionType, answerchoiceTitleContainer, panelPleaseWait,panelControls,typeLbl,educationalTitle,educationalpanel,
+			activityText,handoutText,homeworkText,gameText,presentationText,referenceMaterialText,quizText,
+			curriculumPlanText,lessonPlanText,unitPlanText,projectPlanText,readingText,textbookText,articleText,bookText;
 
 	@UiField
-	Button btnSave, btnCancel;
+	Button btnSave, btnCancel,browseStandards;
 	
 	@UiField
-	Label lblEditQuestionTitle, lblQuestion, lblPleaseWait;
+	Label mandatoryEducationalLbl,resourceEducationalLabel,standardMaxMsg,depthOfKnowledgeHeader,lblEditQuestionTitle, lblQuestion, lblPleaseWait,depthOfKnowledgeTitle,educationalDropDownLbl,
+	standardsDefaultText;
+	
+	@UiField 
+	CheckBox chkLevelRecall,chkLevelSkillConcept,chkLevelStrategicThinking,chkLevelExtendedThinking;
 	
 	@UiField Anchor ancMultipleChoice, ancTrueOfFalse,ancOpenEnded;
 	
 	@UiField
 	Label lblAddHints, lblChoices, lblCorrect, lblAddAnswerChoice,lblExplanation,
 			lblAddQuestion, lblErrorMessageForExplanation;
+	
+	@UiField RadioButton multipleChoiceRadioButton,trueOrFalseRadioButton,openEndedRadioButton;
+	
+	@UiField FlowPanel standardContainer;
 
 	RemoveToolTipUc removeToolTip = null;
-	boolean isSaveButtonClicked = false;
+	boolean isSaveButtonClicked = false,educationalDropDownLblOpen=false;
 
+	@UiField(provided = true)
+	AppSuggestBox standardSgstBox;
+	
+	@UiField FlowPanel standardsPanel;
+	private AppMultiWordSuggestOracle standardSuggestOracle;
+	private SearchDo<CodeDo> standardSearchDo = new SearchDo<CodeDo>();
+	private static final String FLT_CODE_ID = "id";
+	List<String> standardPreflist=new ArrayList<String>();
+	private Map<String, String> standardCodesMap = new HashMap<String, String>();
+	String courseCode="";
+	
 	public Label getAddQuestion() {
 		return lblAddQuestion;
 	}
@@ -109,7 +150,7 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	}
 
 	@UiField
-	HTMLPanel questionImageContainer;
+	HTMLPanel educationalUsePanel,questionImageContainer;
 
 	@UiField
 	UpdateQuestionImageView updateQuestionImageView;
@@ -140,35 +181,15 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	HTMLPanel questionAnswerChoiceContainer;
 	CollectionItemDo collectionItemDo;
 	String[] anserChoiceArray = new String[] { "A", "B", "C", "D", "E" };
-
-//	String[] hintsChoiceArray = new String[] { "1", "2", "3", "4", "5" };
-
-	private static final String ERROR_MSG_QUESTION = GL0310;
-
-	private static final String ERROR_MSG_ANSWER = GL0311;
-
-	private static final String ERROR_MSG_ANSWER_SELECTED = GL0312;
-
-//	private static final String ERROR_MSG_HINTS_LENGTH = MessageProperties.GL0143;
-
-//	private static final String ERROR_MSG_ANSWER_LENGTH = MessageProperties.GL0143;
-
-//	private static final String ERROR_MSG_EXPLAINATION_LENGTH = MessageProperties.GL0143;
-
-//	private static final String ERROR_MSG_QUESTION_LENGTH = MessageProperties.GL0143;
-
-	private static final String ERROR_MSG_CHAR_LIMIT = GL0143;
-
-//	private static final int ANSWER_CHOICE_HINTS_TEXT_LENGTH = 150;
-
-//	private static final int QUESTION_TEXT_LENGTH = 500;
-
 	private static final int EXPLAINATION_TEXT_LENGTH = 400;
 
 	private static final String DEFULT_IMAGE_PREFIX = "images/default-";
 	private static final String PNG = ".png";
 
 	private List<Widget> answerChoicesList = new ArrayList<Widget>();
+	
+	private boolean isQuestion = false;
+	private boolean isUserResource = false;
 
 	private static EditQuestionPopupVcUiBinder uiBinder = GWT
 			.create(EditQuestionPopupVcUiBinder.class);
@@ -176,25 +197,188 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	interface EditQuestionPopupVcUiBinder extends
 			UiBinder<Widget, EditQuestionPopupVc> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	public EditQuestionPopupVc(CollectionItemDo collectionItemDo) {
 		super();
+		standardSuggestOracle = new AppMultiWordSuggestOracle(true);
+		standardSearchDo.setPageSize(10);
+		standardSgstBox = new AppSuggestBox(standardSuggestOracle) {
+			final StandardsPreferenceOrganizeToolTip standardsPreferenceOrganizeToolTip=new StandardsPreferenceOrganizeToolTip();
+			@Override
+			public void keyAction(String text,KeyUpEvent event) {
+				text=text.toUpperCase();
+				standardsPreferenceOrganizeToolTip.hide();
+				standardSearchDo.setSearchResults(null);
+				boolean standardsPrefDisplayPopup = false;
+				if(!courseCode.isEmpty()) {
+					Map<String,String> filters = new HashMap<String, String>();
+					filters.put(FLT_CODE_ID,courseCode);
+					standardSearchDo.setFilters(filters);
+				}
+				standardSearchDo.setQuery(text);
+				if (text != null && text.trim().length() > 0) {
+					standardsPreferenceOrganizeToolTip.hide();
+					if(standardPreflist!=null){
+						for(int count=0; count<standardPreflist.size();count++) {
+							if(text.contains(standardPreflist.get(count))) {
+								standardsPrefDisplayPopup = true;
+								break;
+							} else {
+								standardsPrefDisplayPopup = false;
+							}
+						}						
+					}
+					
+						standardsPreferenceOrganizeToolTip.hide();
+						AppClientFactory.getInjector().getSearchService().getSuggestStandardByFilterCourseId(standardSearchDo, new SimpleAsyncCallback<SearchDo<CodeDo>>() {
+							
+							@Override
+							public void onSuccess(SearchDo<CodeDo> result) {
+								setStandardSuggestions(result);
+								
+							}							
+						});
+
+					}
+					
+				
+			}
+
+			@Override
+			public HandlerRegistration addClickHandler(ClickHandler handler) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		};
+		
+		standardSgstBox.addSelectionHandler(this);
 		this.getElement().getStyle().setWidth(640, Unit.PX);
 		this.collectionItemDo = collectionItemDo;
 		setWidget(uiBinder.createAndBindUi(this));
-		// resourceQuestion.getElement().setAttribute("maxlength", "500");
-		// explainationTextArea.getElement().setAttribute("maxlength", "400");
-		// setModal(true);
-		// Window.enableScrolling(true);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(99, false));
-
 		show();
 		center();
 		 this.getElement().getStyle().setTop(100, Unit.PX);
 		 displayQuestionResource();
-
+		 
+		 lblEditQuestionTitle.getElement().setId("lblLblEditQuestionTitle");
+		 questionTabButton.getElement().setId("epnlQuestionTabButton");
+		 multipleChoiceRadioButton.getElement().setId("rdMultipleChoiceRadioButton");
+		 trueOrFalseRadioButton.getElement().setId("rdTrueOrFalseRadioButton");
+		 ancMultipleChoice.getElement().setId("lnkAncMultipleChoice");
+		 trueOrFlaseButton.getElement().setId("epnlTrueOrFlaseButton");
+		 ancTrueOfFalse.getElement().setId("lnkAncTrueOfFalse");
+		 openEndedButton.getElement().setId("epnlOpenEndedButton");
+		 openEndedRadioButton.getElement().setId("rdOpenEndedRadioButton");
+		 ancOpenEnded.getElement().setId("lnkAncOpenEnded");
+		 listQuestionType.getElement().setId("pnlListQuestionType");
+		 typeLbl.getElement().setId("pnlTypeLbl");
+		 questionTypeListBox.getElement().setId("lbQuestionTypeListBox");
+		 lblQuestion.getElement().setId("lblLblQuestion");
+		 questionTextRichTextboxContainer.getElement().setId("pnlQuestionTextRichTextboxContainer");
+		 lblAddQuestion.getElement().setId("lblLblAddQuestion");
+		 errorMessageForQuestion.getElement().setId("errlblErrorMessageForQuestion");
+		 questionImageContainer.getElement().setId("pnlQuestionImageContainer");
+		 updateQuestionImageView.getElement().setId("UpdateQuestionImageView");
+		 answerchoiceTitleContainer.getElement().setId("pnlAnswerchoiceTitleContainer");
+		 lblChoices.getElement().setId("lblLblChoices");
+		 lblCorrect.getElement().setId("lblLblCorrect");
+		 questionAnswerChoiceContainer.getElement().setId("pnlQuestionAnswerChoiceContainer");
+		 lblAddAnswerChoice.getElement().setId("lblLblAddAnswerChoice");
+		 errorMessageForAnsCheck.getElement().setId("errlblErrorMessageForAnsCheck");
+		 ansChoiceErrMsg.getElement().setId("lblAnsChoiceErrMsg");
+		 lblExplanation.getElement().setId("lblLblExplanation");
+		 questionExplantionRichTextboxContainer.getElement().setId("pnlQuestionExplantionRichTextboxContainer");
+		 lblErrorMessageForExplanation.getElement().setId("lblLblErrorMessageForExplanation");
+		 addQuestionHintsContainer.getElement().setId("pnlAddQuestionHintsContainer");
+		 lblAddHints.getElement().setId("lblLblAddHints");
+		 errorMessageForHintsCheck.getElement().setId("errlblErrorMessageForHintsCheck");
+		 depthOfKnowledgeTitle.getElement().setId("lblDepthOfKnowledgeTitle");
+		 
+		 depthOfKnowledgeHeader.setText(i18n.GL1643());
+		 depthOfKnowledgeHeader.getElement().setId("lblDepthOfKnowledgeHeader");
+		 depthOfKnowledgeHeader.getElement().setAttribute("alt", i18n.GL1643());
+		 depthOfKnowledgeHeader.getElement().setAttribute("title", i18n.GL1643());
+		 chkLevelRecall.setText(i18n.GL1645());
+		 chkLevelRecall.getElement().setId("chkChkLevelRecall");
+		 chkLevelRecall.getElement().setAttribute("alt", i18n.GL1645());
+		 chkLevelRecall.getElement().setAttribute("title", i18n.GL1645());
+		 chkLevelSkillConcept.setText(i18n.GL1646());
+		 chkLevelSkillConcept.getElement().setId("chkChkLevelSkillConcept");
+		 chkLevelSkillConcept.getElement().setAttribute("alt", i18n.GL1646());
+		 chkLevelSkillConcept.getElement().setAttribute("title", i18n.GL1646());
+	 
+		 chkLevelStrategicThinking.setText(i18n.GL1647());
+		 chkLevelStrategicThinking.getElement().setId("chkChkLevelStrategicThinking");
+		 chkLevelStrategicThinking.getElement().setAttribute("alt", i18n.GL1647());
+		 chkLevelStrategicThinking.getElement().setAttribute("title", i18n.GL1647());
+		 chkLevelExtendedThinking.setText(i18n.GL1648());
+		 chkLevelExtendedThinking.getElement().setId("chkChkLevelExtendedThinking");
+		 chkLevelExtendedThinking.getElement().setAttribute("alt", i18n.GL1648());
+		 chkLevelExtendedThinking.getElement().setAttribute("title", i18n.GL1648());
+		 educationalTitle.getElement().setId("pnlEducationalTitle");
+		 educationalpanel.getElement().setId("pnlEducationalpanel");
+		 resourceEducationalLabel.getElement().setId("lblResourceEducationalLabel");
+		 educationalDropDownLbl.getElement().setId("lblEducationalDropDownLbl");
+		 mandatoryEducationalLbl.getElement().setId("lblMandatoryEducationalLbl");
+		 educationalUsePanel.getElement().setId("pnlEducationalUsePanel");
+		 activityPanel.getElement().setId("epnlActivityPanel");
+		 activityText.getElement().setId("pnlActivityText");
+		 handoutPanel.getElement().setId("epnlHandoutPanel");
+		 handoutText.getElement().setId("pnlHandoutText");
+		 homeworkPanel.getElement().setId("epnlHomeworkPanel");
+		 homeworkText.getElement().setId("pnlHomeworkText");
+		 gamePanel.getElement().setId("epnlGamePanel");
+		 gameText.getElement().setId("pnlGameText");
+		 presentationPanel.getElement().setId("epnlPresentationPanel");
+		 presentationText.getElement().setId("pnlPresentationText");
+		 referenceMaterialPanel.getElement().setId("epnlReferenceMaterialPanel");
+		 referenceMaterialText.getElement().setId("pnlReferenceMaterialText");
+		 quizPanel.getElement().setId("epnlQuizPanel");
+		 quizText.getElement().setId("pnlQuizText");
+		 curriculumPlanPanel.getElement().setId("epnlCurriculumPlanPanel");
+		 curriculumPlanText.getElement().setId("pnlCurriculumPlanText");
+		 lessonPlanPanel.getElement().setId("epnlLessonPlanPanel");
+		 lessonPlanText.getElement().setId("pnlLessonPlanText");
+		 unitPlanPanel.getElement().setId("epnlUnitPlanPanel");
+		 unitPlanText.getElement().setId("pnlUnitPlanText");
+		 projectPlanPanel.getElement().setId("epnlProjectPlanPanel");
+		 projectPlanText.getElement().setId("pnlProjectPlanText");
+		 readingPanel.getElement().setId("epnlReadingPanel");
+		 readingText.getElement().setId("pnlReadingText");
+		 textbookPanel.getElement().setId("epnlTextbookPanel");
+		 textbookText.getElement().setId("pnlTextbookText");
+		 articlePanel.getElement().setId("epnlArticlePanel");
+		 articleText.getElement().setId("pnlArticleText");
+		 bookPanel.getElement().setId("epnlBookPanel");
+		 bookText.getElement().setId("pnlBookText");
+		 standardContainer.getElement().setId("fpnlStandardContainer");
+		 standardsDefaultText.getElement().setId("lblStandardsDefaultText");
+		 standardSgstBox.getElement().setId("standardSgstBox");
+		 standardMaxMsg.getElement().setId("lblStandardMaxMsg");
+		 standardsPanel.getElement().setId("fpnlStandardsPanel");
+		 panelPleaseWait.getElement().setId("pnlPanelPleaseWait");
+		 lblPleaseWait.getElement().setId("lblLblPleaseWait");
+		 panelControls.getElement().setId("pnlPanelControls");
+		 btnCancel.getElement().setAttribute("style", "margin-left:10px");
+		 browseStandards.addClickHandler(new callBrowseStandards());
 	}
 
+	public abstract void callBrowseStandardsInfo(boolean val,boolean userResource);
+	
+	private class callBrowseStandards implements ClickHandler{
+
+		@Override
+		public void onClick(ClickEvent event) {
+			isQuestion = true;
+			isUserResource = false;
+			callBrowseStandardsInfo(isQuestion,isUserResource);
+		}
+		
+	}
+	
 	@Override
 	public void onLoad() {
 		super.onLoad();
@@ -213,9 +397,93 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 		});
 
 	}
+	@Override
+	public void onSelection(SelectionEvent<Suggestion> event) {
+		addStandard(standardSgstBox.getValue(), getCodeIdByCode(standardSgstBox.getValue(), standardSearchDo.getSearchResults()));
+		standardSgstBox.setText("");
+		standardSuggestOracle.clear();
+	}
+	private static String getCodeIdByCode(String code, List<CodeDo> codes) {
+		if (codes != null) {
+			for (CodeDo codeDo : codes) {
+				if (code.equals(codeDo.getCode())) {
+					return codeDo.getCodeId() + "";
+				}
+			}
+		}
+		return null;
+	}
+	/**
+	 * Adding new standard for the collection , will check it has more than
+	 * fifteen standards
+	 * 
+	 * @param standard
+	 *            which to be added for the collection
+	 */
+	public void addStandard(String standard, String id) {
+		if (standardsPanel.getWidgetCount() <5) {
+			if (standard != null && !standard.isEmpty()) {
+				standardsPanel.add(createStandardLabel(standard, id, standardCodesMap.get(id)));
+			}
+		} else {
+			standardMaxShow();
+			standardSgstBox.setText("");
+		}
+	}
+	/**
+	 * new label is created for the standard which needs to be added
+	 * 
+	 * @param standardCode
+	 *            update standard code
+	 * @return instance of {@link DownToolTipWidgetUc}
+	 */
+	public DownToolTipWidgetUc createStandardLabel(final String standardCode, final String id, String description) {
+		CloseLabel closeLabel = new CloseLabel(standardCode) {
 
+			@Override
+			public void onCloseLabelClick(ClickEvent event) {
+				this.getParent().removeFromParent();
+			}
+		};
+		return new DownToolTipWidgetUc(closeLabel, description);
+	}
+	public void standardMaxShow() {
+		standardSgstBox.addStyleName(CollectionCBundle.INSTANCE.css().standardTxtBox());
+		standardMaxMsg.setStyleName(CollectionCBundle.INSTANCE.css().standardMax());
+		standardsPanel.addStyleName(CollectionCBundle.INSTANCE.css().floatLeftNeeded());
+		new FadeInAndOut(standardMaxMsg.getElement(), 5000, 5000);
+	}
+	public void setStandardSuggestions(SearchDo<CodeDo> standardSearchDo) {
+		standardSuggestOracle.clear();
+		this.standardSearchDo = standardSearchDo;
+		if (this.standardSearchDo.getSearchResults() != null) {
+			List<String> sources = getAddedStandards(standardsPanel);
+			for (CodeDo code : standardSearchDo.getSearchResults()) {
+				if (!sources.contains(code.getCode())) {
+					standardSuggestOracle.add(code.getCode());
+				}
+				standardCodesMap.put(code.getCodeId() + "", code.getLabel());
+			}
+		}
+		standardSgstBox.showSuggestionList();
+	}
+	/**
+	 * get the standards are added for collection
+	 * 
+	 * @param flowPanel
+	 *            having all added standards label
+	 * @return standards text in list which are added for the collection
+	 */
+	private List<String> getAddedStandards(FlowPanel flowPanel) {
+		List<String> suggestions = new ArrayList<String>();
+		for (Widget widget : flowPanel) {
+			if (widget instanceof DownToolTipWidgetUc) {
+				suggestions.add(((CloseLabel) ((DownToolTipWidgetUc) widget).getWidget()).getSourceText());
+			}
+		}
+		return suggestions;
+	}
 	public void displayQuestionResource() {
-
 		String tumbnailUrl;
 		String category = collectionItemDo.getResource().getCategory();
 		final String categoryString = category == null
@@ -238,16 +506,14 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 		try {
 			resourceQuestion.setText(collectionItemDo.getResource().getTitle());
 		} catch (Exception e) {
-			e.printStackTrace();
+			AppClientFactory.printSevereLogger("EditQuestionPopupVc displayQuestionResource title:::"+e);
 		}
 		try {
 			explainationTextArea.setText(collectionItemDo.getResource()
 					.getExplanation());
 		} catch (Exception e) {
-			e.printStackTrace();
+			AppClientFactory.printSevereLogger("EditQuestionPopupVc displayQuestionResource explanation:::"+e);
 		}
-
-		//Hide this not used any more.
 		listQuestionType.getElement().getStyle().setDisplay(Display.NONE);
 		
 		setLabelAndIds();
@@ -274,7 +540,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 				final UpdateQuestionHints updateQuestionHints = new UpdateQuestionHints(
 						widgetCount + 1, hints.getHintText());
 				addQuestionHintsContainer.add(updateQuestionHints);
-				// updateQuestionHints.hintsTextBox.setText(hints.getHintText());
 				addEventsToHints(updateQuestionHints);
 				showRemoveToolTip(updateQuestionHints.hintDelLbl);
 				if (addQuestionHintsContainer.getWidgetCount() >= 5) {
@@ -289,23 +554,56 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	}
 	
 	public void setLabelAndIds(){
-		typeLbl.getElement().setInnerText(GL1499);
-		btnSave.setText(GL0141);
-		btnCancel.setText(GL0142);
+		typeLbl.getElement().setInnerText(i18n.GL1499());
+		typeLbl.getElement().setAttribute("alt", i18n.GL1499());
+		typeLbl.getElement().setAttribute("title", i18n.GL1499());
+		btnSave.setText(i18n.GL0590());
+		btnSave.getElement().setAttribute("alt", i18n.GL0141());
+		btnSave.getElement().setAttribute("title", i18n.GL0141());
+		btnCancel.setText(i18n.GL0142());
+		btnCancel.getElement().setAttribute("alt", i18n.GL0142());
+		btnCancel.getElement().setAttribute("title", i18n.GL0142());
+		btnCancel.getElement().setAttribute("style", "margin-left:10px");
+		lblEditQuestionTitle.setText(i18n.GL0304());
+		lblEditQuestionTitle.getElement().setAttribute("alt", i18n.GL0304());
+		lblEditQuestionTitle.getElement().setAttribute("title", i18n.GL0304());
+		ancMultipleChoice.setText(i18n.GL0305());
+		ancMultipleChoice.getElement().setAttribute("alt", i18n.GL0305());
+		ancMultipleChoice.getElement().setAttribute("title", i18n.GL0305());
+		ancTrueOfFalse.setText(i18n.GL0306());
+		ancTrueOfFalse.getElement().setAttribute("alt", i18n.GL0306());
+		ancTrueOfFalse.getElement().setAttribute("title", i18n.GL0306());
+		ancOpenEnded.setText(i18n.GL0307());
+		ancOpenEnded.getElement().setAttribute("alt", i18n.GL0307());
+		ancOpenEnded.getElement().setAttribute("title", i18n.GL0307());
+		lblQuestion.setText(i18n.GL0308() + i18n.GL_SPL_STAR());
+		lblQuestion.getElement().setAttribute("alt", i18n.GL0308() + i18n.GL_SPL_STAR());
+		lblQuestion.getElement().setAttribute("title", i18n.GL0308() + i18n.GL_SPL_STAR());
+		lblAddQuestion.setText(i18n.GL_SPL_PLUS() + " " + i18n.GL0309());
+		lblAddQuestion.getElement().setAttribute("alt", i18n.GL_SPL_PLUS() + " " + i18n.GL0309());
+		lblAddQuestion.getElement().setAttribute("title", i18n.GL_SPL_PLUS() + " " + i18n.GL0309());
+		lblChoices.setText(i18n.GL0313() + i18n.GL_SPL_STAR());
+		lblChoices.getElement().setAttribute("alt", i18n.GL0313() + i18n.GL_SPL_STAR());
+		lblChoices.getElement().setAttribute("title", i18n.GL0313() + i18n.GL_SPL_STAR());
+		lblCorrect.setText(i18n.GL0314());
+		lblCorrect.getElement().setAttribute("alt", i18n.GL0314());
+		lblCorrect.getElement().setAttribute("title", i18n.GL0314());
+		lblAddAnswerChoice.setText(i18n.GL_SPL_PLUS() + " " +i18n.GL0315());
+		lblAddAnswerChoice.getElement().setAttribute("alt", i18n.GL_SPL_PLUS() + " " +i18n.GL0315());
+		lblAddAnswerChoice.getElement().setAttribute("title", i18n.GL_SPL_PLUS() + " " +i18n.GL0315());
 		
-		lblEditQuestionTitle.setText(GL0304);
-		ancMultipleChoice.setText(GL0305);
-		ancTrueOfFalse.setText(GL0306);
-		ancOpenEnded.setText(GL0307);
-		lblQuestion.setText(GL0308 + GL_SPL_STAR);
-		lblAddQuestion.setText(GL_SPL_PLUS + " " + GL0309);
-		lblChoices.setText(GL0313 + GL_SPL_STAR);
-		lblCorrect.setText(GL0314);
-		lblAddAnswerChoice.setText(GL_SPL_PLUS + " " +GL0315);
-		lblExplanation.setText(GL0316);
-		lblAddHints.setText(GL_SPL_PLUS + " " + GL0317);
+		lblExplanation.setText(i18n.GL0316());
+		lblExplanation.getElement().setAttribute("alt", i18n.GL0316());
+		lblExplanation.getElement().setAttribute("title", i18n.GL0316());
 		
-		lblPleaseWait.setText(GL0339);
+		lblAddHints.setText(i18n.GL_SPL_PLUS() + " " + i18n.GL0317());
+		lblAddHints.getElement().setAttribute("alt", i18n.GL_SPL_PLUS() + " " + i18n.GL0317());
+		lblAddHints.getElement().setAttribute("title", i18n.GL_SPL_PLUS() + " " + i18n.GL0317());
+		
+		lblPleaseWait.setText(i18n.GL0339());
+		lblPleaseWait.getElement().setAttribute("alt", i18n.GL0339());
+		lblPleaseWait.getElement().setAttribute("title", i18n.GL0339());
+		
 		panelPleaseWait.setVisible(false);
 		panelControls.setVisible(true);
 		
@@ -387,43 +685,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 		}
 	}
 
-	// public void resetToMultipleChoice(){
-	// for(int i=0;i<questionAnswerChoiceContainer.getWidgetCount();i++){
-	// UpdateQuestionAnswerChoice
-	// updateQuestionAnswerChoice=(UpdateQuestionAnswerChoice)questionAnswerChoiceContainer.getWidget(i);
-	// //updateQuestionAnswerChoice.answerTextBox.setReadOnly(false);
-	// updateQuestionAnswerChoice.answerTextBox.setText("");
-	// updateQuestionAnswerChoice.optionSelectedButton.setStyleName(editQuestionStyle.answerDeselected());
-	// }
-	// addAnswerChoice.getElement().getStyle().setDisplay(Display.BLOCK);
-	// }
-	// public void resetAllFields(){
-	// int widgetsCount=questionAnswerChoiceContainer.getWidgetCount();
-	// addAnswerChoice.getElement().getStyle().setDisplay(Display.NONE);
-	// for(int i=0; i< widgetsCount;){
-	// UpdateQuestionAnswerChoice
-	// updateQuestionAnswerChoice=(UpdateQuestionAnswerChoice)questionAnswerChoiceContainer.getWidget(i);
-	// if(i<2){
-	// if(i==0){
-	// //updateQuestionAnswerChoice.answerTextBox.setReadOnly(true);
-	// updateQuestionAnswerChoice.answerTextBox.setText("True");
-	// updateQuestionAnswerChoice.optionSelectedButton.setStyleName(editQuestionStyle.answerDeselected());
-	// }else{
-	// //updateQuestionAnswerChoice.answerTextBox.setReadOnly(true);
-	// updateQuestionAnswerChoice.answerTextBox.setText("False");
-	// updateQuestionAnswerChoice.optionSelectedButton.setStyleName(editQuestionStyle.answerDeselected());
-	// }
-	// i++;
-	// }
-	// else{
-	// updateQuestionAnswerChoice.removeFromParent();
-	// widgetsCount=questionAnswerChoiceContainer.getWidgetCount();
-	// }
-	//
-	// }
-	//
-	// }
-
 	public void clearErrorMessages() {
 		errorMessageForQuestion.setText("");
 		lblErrorMessageForExplanation.setText("");
@@ -447,7 +708,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 					i, answer.getAnswerText(), collectionItemDo.getResource()
 							.getType());
 			if (collectionItemDo.getResource().getType() == 3) {
-				// updateQuestionAnswerChoice.answerTextBox.setReadOnly(true);
 				updateQuestionAnswerChoice.answerTextBoxContainer.clear();
 
 				updateQuestionAnswerChoice.fieldValue = answer.getAnswerText();
@@ -463,7 +723,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 						.setStyleName(editQuestionStyle.answerSelected());
 			}
 			questionAnswerChoiceContainer.add(updateQuestionAnswerChoice);
-			// updateQuestionAnswerChoice.answerTextBox.setText(answer.getAnswerText());
 			updateQuestionAnswerChoice.optionSelectedButton
 					.addClickHandler(new ClickHandler() {
 						@Override
@@ -548,34 +807,7 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	public void cancelPopUp(ClickEvent clickEvent) {
 		AppClientFactory.fireEvent(new GetEditPageHeightEvent(this, true));
 		hide();
-
-		Window.enableScrolling(true);
-		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
-
 	}
-
-	// @UiHandler("resourceQuestion")
-	// public void keyDownOnQuestionTypeTextArea(KeyDownEvent event){
-	// String questionName=resourceQuestion.getText();
-	// errorMessageForQuestion.setText("");
-	// if(questionName.length()>0){
-	// errorMessageForQuestion.setText("");
-	// }
-	// if(questionName.length()>=500){
-	// errorMessageForQuestion.setText(ERROR_MSG_QUESTION_LENGTH);
-	// }
-	// }
-	//
-	// @UiHandler("explainationTextArea")
-	// public void keyDownOnExplnationTypeTextArea(KeyDownEvent event){
-	// String explnationText=explainationTextArea.getText();
-	// errorMessageForExplanation.setText("");
-	// if(explnationText.length()>=400){
-	// errorMessageForExplanation.setText(ERROR_MSG_EXPLAINATION_LENGTH);
-	// }
-	//
-	// }
-
 	@UiHandler("lblAddHints")
 	public void addHints(ClickEvent clickEvent) {
 
@@ -647,10 +879,14 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 		errorMessageForQuestion.setText("");
 		if (resourceQuestion.getText() == null
 				|| resourceQuestion.getText().trim().equals("")) {
-			errorMessageForQuestion.setText(ERROR_MSG_QUESTION);
+			errorMessageForQuestion.setText(i18n.GL0310());
+			errorMessageForQuestion.getElement().setAttribute("alt", i18n.GL0310());
+			errorMessageForQuestion.getElement().setAttribute("title", i18n.GL0310());
 			fieldValidationStaus = false;
 		} else if (resourceQuestion.getText().length() > 500) {
-			errorMessageForQuestion.setText(ERROR_MSG_CHAR_LIMIT);
+			errorMessageForQuestion.setText(i18n.GL0143());
+			errorMessageForQuestion.getElement().setAttribute("alt", i18n.GL0143());
+			errorMessageForQuestion.getElement().setAttribute("title", i18n.GL0143());
 			fieldValidationStaus = false;
 		}
 		ansChoiceErrMsg.setText("");
@@ -660,14 +896,18 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 				fieldValidationStaus = false;
 			}
 			if (!isAnswerChoiceSelected()) {
-				ansChoiceErrMsg.setText(ERROR_MSG_ANSWER_SELECTED);
+				ansChoiceErrMsg.setText(i18n.GL0312());
+				ansChoiceErrMsg.getElement().setAttribute("alt", i18n.GL0312());
+				ansChoiceErrMsg.getElement().setAttribute("title", i18n.GL0312());
 				fieldValidationStaus = false;
 			}
 		}
 		lblErrorMessageForExplanation.setText("");
 
 		if (explainationTextArea.getText().trim().length() > EXPLAINATION_TEXT_LENGTH) {
-			lblErrorMessageForExplanation.setText(ERROR_MSG_CHAR_LIMIT);
+			lblErrorMessageForExplanation.setText(i18n.GL0143());
+			lblErrorMessageForExplanation.getElement().setAttribute("alt", i18n.GL0143());
+			lblErrorMessageForExplanation.getElement().setAttribute("title", i18n.GL0143());
 			fieldValidationStaus = false;
 		}
 		if (fieldValidationStaus) {
@@ -738,8 +978,7 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 
 			if (!isSaveButtonClicked) {
 				isSaveButtonClicked = true;
-				updateQuestionResource(collectionItemDo.getResource()
-						.getGooruOid(), collectionQuestionItemDo);
+				updateQuestionResource(collectionItemDo.getResource().getGooruOid(), collectionQuestionItemDo);
 			}
 			panelPleaseWait.setVisible(true);
 			panelControls.setVisible(false);
@@ -783,7 +1022,7 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 						|| answerChoiceValue.trim().equals("")) {
 					isAnswerChoiceSelected = true;
 					updateQuestionAnswerChoice.errorMessageforAnswerChoice
-							.setText(ERROR_MSG_ANSWER);
+							.setText(i18n.GL0311());
 				}
 
 			}
@@ -856,24 +1095,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 			}
 		});
 	}
-
-//	/**
-//	 * Gets the name of the used browser.
-//	 */
-//	public static native String getBrowserName() /*-{
-//													return navigator.userAgent.toLowerCase();
-//													}-*/;
-//
-//	/*
-//     */
-//	public static boolean isFirefoxBrowser() {
-//		return getBrowserName().toLowerCase().contains("firefox");
-//	}
-//
-//	public static boolean isIEBrowser() {
-//		return getBrowserName().toLowerCase().contains("msie");
-//	}
-
 	public void showMulipleAnswerChoice(){
 		questionAnswerChoiceContainer.getElement().getStyle().setDisplay(Display.BLOCK);
 		lblAddAnswerChoice.getElement().getStyle().setDisplay(Display.BLOCK);
@@ -888,7 +1109,6 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 		if (collectionItemDo.getResource().getType() == 1) {
 			addAnswerChoices();
 		} else {
-			// resetToMultipleChoice();
 			setMultipleChoiceAnswerFields();
 			clearErrorMessages();
 		}		
@@ -938,5 +1158,178 @@ public abstract class EditQuestionPopupVc extends AppPopUp implements MessagePro
 	public void showOpenEnded(ClickEvent event){
 		showOpenEndedQuestion();
 	}
+	@UiHandler("activityPanel")
+	void activityPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_activity_selected");
+		resourceEducationalLabel.setText(i18n.GL1665());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1665());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1665());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("handoutPanel")
+	void handoutPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_handout_selected");
+		resourceEducationalLabel.setText(i18n.GL0907());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL0907());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL0907());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("homeworkPanel")
+	void homeworkPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_homework_selected");
+		resourceEducationalLabel.setText(i18n.GL1666());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1666());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1666());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("gamePanel")
+	void gamePanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_game_selected");
+		resourceEducationalLabel.setText(i18n.GL1667());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1667());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1667());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("presentationPanel")
+	void presentationPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_presentation_selected");
+		resourceEducationalLabel.setText(i18n.GL1668());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1668());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1668());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("referenceMaterialPanel")
+	void referenceMaterialPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_reference_material_selected");
+		resourceEducationalLabel.setText(i18n.GL1669());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1669());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1669());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("quizPanel")
+	void quizPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_quiz_selected");
+		resourceEducationalLabel.setText(i18n.GL1670());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1670());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1670());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("curriculumPlanPanel")
+	void curriculumPlanPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_curriculum_plan_selected");
+		resourceEducationalLabel.setText(i18n.GL1671());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1671());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1671());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("lessonPlanPanel")
+	void lessonPlanPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_lesson_plan_selected");
+		resourceEducationalLabel.setText(i18n.GL1672());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1672());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1672());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("unitPlanPanel")
+	void unitPlanPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_unit_plan_selected");
+		resourceEducationalLabel.setText(i18n.GL1673());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1673());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1673());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("projectPlanPanel")
+	void projectPlanPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_project_plan_selected");
+		resourceEducationalLabel.setText(i18n.GL1674());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1674());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1674());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("readingPanel")
+	void readingPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_reading_selected");
+		resourceEducationalLabel.setText(i18n.GL1675());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1675());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1675());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("textbookPanel")
+	void textbookPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_textbook_selected");
+		resourceEducationalLabel.setText(i18n.GL0909());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL0909());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL0909());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("articlePanel")
+	void articlePanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_article_selected");
+		resourceEducationalLabel.setText(i18n.GL1676());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1676());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1676());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
+	@UiHandler("bookPanel")
+	void bookPanel(ClickEvent event) {
+		MixpanelUtil.mixpanelEvent("organize_add_resource_book_selected");
+		resourceEducationalLabel.setText(i18n.GL1677());
+		resourceEducationalLabel.getElement().setAttribute("alt", i18n.GL1677());
+		resourceEducationalLabel.getElement().setAttribute("title", i18n.GL1677());
+		educationalUsePanel.setVisible(false);
+		educationalDropDownLblOpen = false;
+		mandatoryEducationalLbl.setVisible(false);
+	}
 	
+	@UiHandler("educationalDropDownLbl")
+	public void educationalDropDownClick(ClickEvent event) {
+		if (educationalDropDownLblOpen == false) {
+			educationalUsePanel.setVisible(true);
+			educationalDropDownLblOpen = true;
+		} else {
+			educationalUsePanel.setVisible(false);
+			educationalDropDownLblOpen = false;
+		}
+	}
+	public abstract void closeBrowseStandardsPopup();
+	
+	public void setUpdatedBrowseStandards(String setStandardsVal,Integer codeId, String setStandardDesc) {
+		if (standardsPanel.getWidgetCount() <5) {
+			if (setStandardsVal != null && !setStandardsVal.isEmpty()) {
+				standardsPanel.add(createStandardLabel(setStandardsVal, Integer.toString(codeId), setStandardDesc));
+			}
+		} else {
+			standardMaxShow();
+			standardSgstBox.setText("");
+		}
+		closeBrowseStandardsPopup();
+	}
 }

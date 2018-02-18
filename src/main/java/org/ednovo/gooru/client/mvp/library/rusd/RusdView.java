@@ -1,9 +1,8 @@
 package org.ednovo.gooru.client.mvp.library.rusd;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.BaseViewWithHandlers;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.BaseViewWithHandlers;
 import org.ednovo.gooru.client.mvp.home.library.LibraryView;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -15,7 +14,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
 ` * 
  */
-public class RusdView extends BaseViewWithHandlers<RusdUiHandlers> implements IsRusdView, MessageProperties {
+public class RusdView extends BaseViewWithHandlers<RusdUiHandlers> implements IsRusdView {
 
 	@UiField HTMLPanel rusdPanel;
 	
@@ -34,6 +33,7 @@ public class RusdView extends BaseViewWithHandlers<RusdUiHandlers> implements Is
 		setWidget(uiBinder.createAndBindUi(this));
 		libraryView = new LibraryView(PlaceTokens.RUSD_LIBRARY);
 		rusdPanel.add(libraryView);
+		rusdPanel.getElement().setId("pnlPartnerPanel");
 	}
 
 	@Override

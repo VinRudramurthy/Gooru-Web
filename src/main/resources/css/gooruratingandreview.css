@@ -1,0 +1,615 @@
+#epnlReviewContainer .ratingVisualizations {
+	overflow: hidden;
+}
+
+#epnlReviewContainer .rating {
+	margin: 3px 10px 3px 0px;
+	font-size: 12px;
+	vertical-align: middle;
+	line-height: 1.4em;
+	height: 32px;
+}
+
+#epnlReviewContainer .ratingValue {
+	text-align: left;
+	margin-left: 15px;
+	margin-bottom: 2px;
+	font-style: italic;
+}
+
+#epnlReviewContainer .ratingValuemouseover{
+	text-align: left;
+	margin-bottom: 2px;
+	font-style: italic;
+	display:inline-block;
+}
+
+#epnlReviewContainer .rating .star,#epnlReviewContainer .userRating .star {
+	font-size: 14px;
+	color: #999;
+}
+
+#epnlReviewContainer .rating .star.filled {
+	color: #4e9746;
+}
+
+/* //.rating .star:before, .userRating .star:before {content:'\2606';}
+//.rating .star.filled:before, .userRating .star.filled:before {content:'\2605';}
+ */
+#epnlReviewContainer .star:before {
+	display: inline-block;
+/* 	font-family: FontAwesome; */
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\2606';
+	cursor: pointer;
+}
+
+#epnlReviewContainer .star.filled:before {
+	content: "\2605";
+	cursor: pointer;
+}
+
+#epnlReviewContainer .userRating .star.filled {
+	color: #1076BB;
+	cursor: pointer;
+}
+
+/*//////////////////////////////////////////////////// popups ////////////////*/
+body.popupBG {
+	background-color: rgba(0, 0, 0, .6);
+}
+
+#epnlReviewContainer .popup {
+	background-color: white;
+	width: 460px;
+}
+
+#epnlReviewContainer .popupInner {
+	border: 1px solid #DDD;
+}
+
+#epnlReviewContainer .popupHeader {
+	position: relative;
+	padding: 10px 15px;
+	color: white;
+	background-color: #515151;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666),
+		to(#515151));
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+	/* IE 6-9 */
+
+
+}
+
+#epnlReviewContainer .popupHeader h1 {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#epnlReviewContainer .popupContent {
+	padding: 12px;
+	height: 400px;
+/* 	overflow: auto; */
+	width: 94%;
+}
+
+#epnlReviewContainer .closeButton {
+	width: 17px;
+	height: 17px;
+	background: url("../images/login/close-button.png") no-repeat;
+	position: absolute;
+	right: 10px;
+}
+
+#epnlReviewContainer .closeButton:hover {
+	opacity: .6;
+	cursor: pointer;
+}
+
+/*//////////////////////////////// distribution graph////////////*/
+#epnlReviewContainer .distribution {
+	float: left;
+	/* width: 120px; */
+	white-space: nowrap;
+	vertical-align: middle;
+	margin-right: 50px;
+}
+
+#epnlReviewContainer .average {
+	float: left;
+	width: 150px;
+}
+
+#epnlReviewContainer h3 {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#epnlReviewContainer .barGraph .label {
+	display: inline-block;
+	width: 60px;
+	line-height: 12px;
+	text-align: right;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+#epnlReviewContainer .barGraph .bar {
+	display: inline-block;
+	width: 0px; /* this is the max width for the bars */
+}
+
+#epnlReviewContainer .bar {
+	height: 10px;
+	background-color: #8CC63E;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#epnlReviewContainer .data-two {
+	background-color: #57B53B;
+}
+
+#epnlReviewContainer .data-three {
+	background-color: #4E9746;
+}
+
+#epnlReviewContainer .data-four {
+	background-color: #45843E;
+}
+
+#epnlReviewContainer .data-five {
+	background-color: #0F7A42;
+}
+
+#epnlReviewContainer .count {
+	display: inline-block;
+	font-size: 11px;
+}
+
+/*//////////////////// ratings and reviews ////////*/
+#epnlReviewContainer .userRating {
+	clear: both;
+	background: #f0f0f0;
+	padding: 10px 15px;
+	margin: 15px 0px;
+	height: 33px;
+}
+
+#epnlReviewContainer .userRating.reviewContainer {
+	line-height: 1.2em;
+	padding: 15px;
+	position: relative;
+}
+
+#epnlReviewContainer .userRating.editContainer {
+	line-height: 1.2em;
+	padding: 15px;
+}
+
+#epnlReviewContainer .userRatingPreviewBtn {
+	float: right;
+	margin-right: 11px;
+	margin-top: -34px;
+	width: 168px;
+}
+
+#epnlReviewContainer .reviewContainer:hover .editReview {
+	visibility: visible;
+	opacity: 1;
+}
+
+#epnlReviewContainer .userRating.reviewContainer .username,#epnlReviewContainer .userRating.reviewContainer .timestamp,#epnlReviewContainer .userRating.reviewContainer .rating,#epnlReviewContainer .userRating.reviewContainer .review
+	{
+	opacity: 1;
+	transition: opacity .2s;
+}
+
+#epnlReviewContainer .userRating.reviewContainer:hover .username,#epnlReviewContainer .userRating.reviewContainer:hover .timestamp,#epnlReviewContainer .userRating.reviewContainer:hover .rating,#epnlReviewContainer .userRating.reviewContainer:hover .review
+	{
+	opacity: .4;
+}
+
+#epnlReviewContainer .userRating.reviewContainer {
+	background: #f0f0f0;
+	transition: background .2s;
+}
+
+#epnlReviewContainer .userRating.reviewContainer:hover {
+	background: #f6f6f6;
+	cursor: default;
+}
+
+#epnlReviewContainer .reviewContainer {
+	position: relative;
+	padding: 15px;
+}
+
+#epnlReviewContainer .reviewContainer .username,#epnlReviewContainer .editContainer .username {
+	width: 200px;
+	float: left;
+}
+
+#epnlReviewContainer .reviewContainer .timestamp,#epnlReviewContainer .editContainer .timestamp {
+	float: right;
+}
+
+#epnlReviewContainer .reviewContainer hr,#epnlReviewContainer .editContainer hr {
+	clear: both;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	margin: 3px 0px;
+}
+
+#epnlReviewContainer .rating:not (:checked ) >input {
+	position: absolute;
+	top: -9999px;
+	clip: rect(0, 0, 0, 0);
+}
+
+#epnlReviewContainer .rating:not (:checked ) >label {
+	float: right;
+	width: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	line-height: 1.2;
+	color: #999;
+	font-size: 16px;
+	transition: color .2s;
+}
+
+#epnlReviewContainer .rating:not (:checked ) >label:before {
+	line-height: 1;
+	display: inline-block;
+	text-decoration: inherit;
+	display: inline-block;
+	/* font-family: FontAwesome; */
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\2606';
+}
+
+#epnlReviewContainer .rating>input:checked  ~ label:before,#epnlReviewContainer .rating:not (:checked ) >label:hover:before,#epnlReviewContainer .rating:not
+	(:checked ) >label:hover  ~ label:before {
+	display: inline-block;
+	/* font-family: FontAwesome; */
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\2605';
+}
+
+#epnlReviewContainer .rating>input:checked  ~ label {
+	color: #579ECF;
+}
+
+#epnlReviewContainer .rating:not (:checked ) >label:hover,#epnlReviewContainer .rating:not (:checked ) >label:hover
+	~ label {
+	color: #1076BB;
+}
+
+#epnlReviewContainer .rating>input:checked+label:hover,#epnlReviewContainer .rating>input:checked+label:hover  ~
+	label,#epnlReviewContainer .rating>input:checked  ~ label:hover,#epnlReviewContainer .rating>input:checked  ~
+	label:hover  ~ label,#epnlReviewContainer .rating>label:hover  ~ input:checked  ~ label {
+	color: #1076BB;
+}
+
+fieldset {
+	border: none;
+	display: inline-block;
+}
+
+#epnlReviewContainer .ratingContainer {
+	height: 60px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased !important;
+	margin: 10px;
+	position: relative;
+}
+
+#epnlReviewContainer .editRatingContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+#epnlReviewContainer .userRating .editRatingContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+#epnlReviewContainer .editRatingContainer {
+	background: none;
+	transition: background .2s;
+}
+
+#epnlReviewContainer .editRatingContainer:hover {
+	background: rgba(255, 255, 255, .6);
+}
+
+#epnlReviewContainer .userRating .editRatingContainer {
+	background: none;
+}
+
+#epnlReviewContainer .userRating:hover .editRatingContainer {
+	background: none;
+}
+
+#epnlReviewContainer .editRating {
+	margin: 44px auto 0px auto;
+}
+
+#epnlReviewContainer .editContainer textarea {
+	width: 100%;
+	height: 72px;
+	display: block;
+	display: block;
+	resize: none;
+	padding: 5px;
+	border: 1px solid #DDD;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+#epnlReviewContainer .saveCancelContainer {
+	text-align: center;
+}
+
+#epnlReviewContainer .saveCancelContainer button {
+	float: none;
+	margin: 10px 2px 0px 2px;
+}
+
+#epnlReviewContainer .timestamp .edited {
+	color: #999;
+}
+
+#epnlReviewContainer .editRatingContainer {
+	text-align: center;
+}
+
+#epnlReviewContainer .editRatingContainer button {
+	text-align: center;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+#epnlReviewContainer .userRating .editRatingContainer button {
+	margin-top: 25px;
+}
+
+#epnlReviewContainer .editRatingContainer .dropdownButtonContainer {
+	margin: 25px auto;
+	display: block;
+	width: 150px;
+	position: relative;
+}
+
+#epnlReviewContainer .userRating .editRatingContainer .dropdownButtonContainer {
+	margin: 0px auto;
+}
+
+#epnlReviewContainer .editRatingContainer .dropdownButtonContainer .dropdown {
+	width: 150px;
+	position: absolute;
+	right: 0px;
+	text-align: left;
+}
+
+#epnlReviewContainer .userRating.deleting {
+	text-align: center;
+	color: #999;
+	padding: 30px;
+}
+
+#epnlReviewContainer .ratingConfirmationContainer {
+	padding: 20px;
+	border: 1px solid #ddd;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	width: 300px;
+	text-align: center;
+	border-radius: 4px;
+	position: absolute;
+	top: 0px;
+	left: 115px;
+	white-space: normal;
+}
+
+#epnlReviewContainer .ratingConfirmationContainer h1 {
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+#epnlReviewContainer .ratingConfirmationContainer .rating {
+	margin-bottom: 20px;
+}
+
+#epnlReviewContainer .ratingConfirmationContainer label {
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	margin: 5px 0px;
+}
+
+#epnlReviewContainer .ratingConfirmationContainer textarea {
+	width: 100%;
+	height: 150px;
+	display: block;
+	display: block;
+	resize: none;
+	padding: 5px;
+	border: 1px solid #DDD;
+	box-sizing: border-box;
+}
+
+#epnlReviewContainer .arrowBorder {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-style: inset solid inset none;
+	border-color: transparent #DDD transparent transparent;
+	position: absolute;
+	top: 15px;
+	margin: auto;
+	border-left: none;
+	left: -10px;
+}
+
+#epnlReviewContainer .arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-style: inset solid inset none;
+	border-color: transparent white transparent transparent;
+	position: absolute;
+	margin: auto;
+	top: 15px;
+	border-left: none;
+	z-index: 100;
+	left: -9px;
+}
+
+#epnlReviewContainer .confirmationIcon {
+	width: 55px;
+	height: 55px;
+	margin: 0px auto 20px auto;
+	background: url('../_images/checkmark.png') center no-repeat;
+}
+
+#epnlReviewContainer .ratingCountLabel {
+	cursor: none !important;
+	text-decoration: none !important;
+	color: grey;
+	/* padding: 0px 5px; */
+}
+
+#epnlReviewContainer .ratingCountLabelHighlighted {
+	cursor: pointer;
+	text-decoration: none !important;
+	color: #1076bb;
+}
+
+#epnlReviewContainer .userNameLbl {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#epnlReviewContainer .creatorReviewPanel {
+	background: #f0f0f0;
+	margin-top: 15px;
+	width: 391px;
+}
+
+#epnlReviewContainer .rateMsg {
+	float: left;
+	margin-top: 10px;
+}
+
+#epnlReviewContainer .floatRight {
+	float: right;
+	margin-top: -41px;
+	margin-right: 29px;
+}
+
+#epnlReviewContainer .textAreaReviewEdit {
+	width: 96%;
+	resize: none;
+	height: 50px;
+	border: 1px solid #CCC;
+	margin-bottom: 6px;
+}
+
+#epnlReviewContainer .truncate {
+	width: 390px;
+	white-space: nowrap;
+	max-height: 23px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#epnlReviewContainer .deleteButtonAlign{
+	float: right;
+	margin-right: 30px;
+}
+#epnlReviewContainer .deletePanel{
+	height:80px;
+	float: left;
+	/* margin-left: 101px;
+	margin-top:25px; */
+	background: #f0f0f0;
+	width: 396px;
+}
+#epnlReviewContainer .hrline
+{
+	clear: both;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	margin: 3px 0px;
+}
+#epnlReviewContainer .lbldeleteMsg{
+ 	margin-left: 101px;
+	margin-top:25px;
+}
+
+#epnlReviewContainer .errorLblBottomText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(250,176,58);
+	text-align: right;
+	/* margin-right: 72px;
+	float: right;
+	width:230px; */
+	margin-right: 13px;
+	float: right;
+}
+
+#epnlReviewContainer .editReviewBtn{
+	position: absolute;
+	left: 179px;
+	top: 23px;
+}
+
+#epnlReviewContainer .panelRatingLabels{
+	float: left;
+}
+
+#epnlReviewContainer .panelRatingValues{
+	border-left: #ccc 1px solid;
+	float: left;
+	width: 135px;
+}
+
+#epnlReviewContainer .posValue{
+	margin-left: 10px;
+}
+#epnlReviewContainer .displayInlineBLock{
+	display:inline-block;
+}

@@ -37,7 +37,7 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.exists;
 * @Reviewer 
 *
 */
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 import org.ednovo.gooru.client.mvp.shelf.event.AddResourceImageHandler;
 
 import com.google.gwt.event.shared.EventHandler;

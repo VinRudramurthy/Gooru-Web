@@ -29,8 +29,8 @@ package org.ednovo.gooru.client.mvp.search.event;
 
 import java.util.List;
 
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.folder.FolderDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.folder.FolderDo;
 
 import com.google.gwt.event.shared.EventHandler;
 

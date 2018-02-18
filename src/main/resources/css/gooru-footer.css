@@ -1,0 +1,40 @@
+footer h4 {
+	font-family: 'Arvo', serif !important;
+	color: #ffffff;
+	font-size: 15px;
+}
+
+footer {
+	padding: 25px 0;
+	background: #444444;
+	width: 100%;
+}
+
+footer ul li a {
+	color: #eeeeee !important;
+	font-size: 12px;
+	transition: all 0.5s ease-in-out 0s;
+}
+
+footer ul li a:hover {
+	color: #ffffff;
+}
+
+footer p {
+	color: #eeeeee;
+}
+
+footer .col-md-2 {
+	border-right: 1px solid #616161;
+	min-height: 132px;
+	padding-left: 50px;
+}
+
+footer .col-md-2:last-child {
+	border-right: none;
+}
+
+footer .col-md-4 {
+	border-right: 1px solid #616161;
+	min-height: 130px;
+}

@@ -1,7 +1,6 @@
 package org.ednovo.gooru.client.mvp.shelf.collection.folders.events;
 
 import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.GwtEvent.Type;
 
 public class RemoveMovedCollectionFolderEvent extends GwtEvent<RemoveMovedCollectionFolderHandler> {
 

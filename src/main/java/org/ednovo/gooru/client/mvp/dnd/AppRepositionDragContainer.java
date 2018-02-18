@@ -83,6 +83,14 @@ public abstract class AppRepositionDragContainer extends VerticalPanel implement
 
 	public void addDraggable(IsDraggable w, int beforeIndex) {
 		Draggable draggable = createDraggable(w);
+		draggable.getElement().setId(String.valueOf(beforeIndex));
+		dragController.makeDraggable(draggable);
+		insert(draggable, beforeIndex);
+	}
+	
+	public void addDraggable(IsDraggable w, int beforeIndex,int sequence) {
+		Draggable draggable = createDraggable(w);
+		draggable.getElement().setId(String.valueOf(sequence));
 		dragController.makeDraggable(draggable);
 		insert(draggable, beforeIndex);
 	}

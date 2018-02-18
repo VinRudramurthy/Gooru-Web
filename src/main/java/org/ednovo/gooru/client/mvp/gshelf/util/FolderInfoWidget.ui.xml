@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:ppanel="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style>
+	
+	</ui:style>
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="folderInfo">
+	    <g:HTMLPanel styleName="collectionTitleDetails" ui:field="titleDetailsPnl">
+			<ppanel:PPanel text="{i18n.GL1262}"></ppanel:PPanel>
+			<p>
+				<g:TextBox styleName="form-control" ui:field="folderTitleTxtBox"
+					text="{i18n.GL3394}" title="{i18n.GL3394}" />
+				<g:Label styleName="errorMessage" ui:field="lblErrorMessage" visible="false"></g:Label>
+			</p>
+		</g:HTMLPanel>
+		<div class="stepsButtonGroup">
+			<g:Button styleName="secondary" ui:field="saveFolderBtn"
+				text="{i18n.GL3395}" />
+		</div>
+		<div class="clearfix"></div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

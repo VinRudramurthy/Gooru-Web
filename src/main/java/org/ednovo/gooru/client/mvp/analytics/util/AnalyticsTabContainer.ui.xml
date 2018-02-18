@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with type="org.ednovo.gooru.client.mvp.analytics.util.AnalyticsTabCBundle"	field="unitStyle" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel>
+		<div class="collection_teacher_tab_container">
+				<g:HTMLPanel styleName="{unitStyle.css.tabs_teacher_Summary} {unitStyle.css.collectionsGroupBtns}">
+					<g:HTMLPanel styleName="row">
+						<g:HTMLPanel styleName="col-md-8 col-sm-10">
+								<g:HTMLPanel styleName="{unitStyle.css.buttonsPanel}">
+									  <g:Button ui:field="btnCollectionBreakDown" styleName="primary {unitStyle.css.addButonStyle} {unitStyle.css.addButonStyleActive}" text="{i18n.GL2284}" title="{i18n.GL2284}"></g:Button>
+									  <g:Button ui:field="btnScoredQuestions" styleName="primary {unitStyle.css.addButonStyle}"  text="{i18n.GL2282}" title="{i18n.GL2282}"></g:Button>
+									  <g:Button ui:field="btnOpenEndedQuestions" styleName="primary {unitStyle.css.addButonStyle}" text="{i18n.GL2283}" title="{i18n.GL2283}"></g:Button>
+								</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="{unitStyle.css.analyticsPrintSave}">
+									  <g:Button styleName="{unitStyle.css.print_icon_image}" ui:field="btnPtint"></g:Button>
+									  <g:Button styleName="{unitStyle.css.mail_icon_image}" ui:field="btnEmail"></g:Button>
+								      <g:Button styleName="{unitStyle.css.save_icon_image}" ui:field="btnSave"></g:Button>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="clearfix"> 	</g:HTMLPanel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

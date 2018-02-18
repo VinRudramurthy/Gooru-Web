@@ -6,6 +6,19 @@
 			font-size: 12px;
 			width: 350px;
 			border: 1px solid #ccc;
+			background: white;
+		}
+		.PopupMainVSmall{
+			width:550px;
+			color:#515151;
+			position:relative;
+			font-family:arial;
+			font-size:12px;
+			background:#ffffff;
+			border-radius:0 0;
+			border:1px solid #999;
+			padding:3px 3px;
+			z-index:999;
 		}
 		.alertHeaderStyle {
 			background: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(#515151));
@@ -65,7 +78,7 @@
 		}
 
 	</ui:style>
-	<g:HTMLPanel styleName="{style.shareAlertPopup}" ui:field="shareAlertPopup">
+	<g:HTMLPanel styleName="{style.PopupMainVSmall}" ui:field="shareAlertPopup">
 	   <g:HTMLPanel styleName="{style.alertHeaderStyle}">
 	      <g:Label styleName="{style.alertHeaderTxtStyle}" ui:field="shareMsgTitle"/>
 	   </g:HTMLPanel>

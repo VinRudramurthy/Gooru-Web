@@ -1,0 +1,350 @@
+.header {
+	background-color:#515151;
+	position:fixed;
+	width:100%;
+	min-width : 1020px;
+	height:50px;
+	top:0px;
+	z-index: 99;
+
+	-moz-box-shadow:     0 0 10px rgba(0,0,0,.3);
+	-webkit-box-shadow:  0 0 10px rgba(0,0,0,.3);
+	box-shadow:          0 0 10px rgba(0,0,0,.3);
+
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151), to(#333));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #515151, #333);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #515151, #333);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #515151, #333);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #515151, #333);
+
+
+
+
+}
+
+
+.header-inner {
+	width: 940px;
+	margin: auto;
+}
+.player-resource-title {
+	color: white;
+	float: left;
+	font-size: 20px;
+	max-width: 58%;
+	min-width: 10%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dislike-button {
+	background-image: url("../_images/_player/dislike-button.png");
+	margin-left: 20px;
+}
+
+.like-button {
+	background-image: url("../_images/_player/like-button.png");
+}
+
+.tabs {
+	background-color: #515151;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151), to(#333));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #515151, #333);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #515151, #333);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #515151, #333);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #515151, #333);
+
+
+
+}
+.player_buttons{
+	float: right;
+	border: none;
+	height:50px;
+	margin-right: 8px;
+}
+
+.player_buttons button{
+	background-color: transparent;
+}
+
+
+
+.player-studentview-button{
+	float: right;
+	margin-top: 10px;
+	line-height: 12px;
+	font-size: 12px;
+	color: white !important;
+	background-color: #1076BB;
+	border-radius: 4px;
+	padding: 7px 9px;
+	border: 1px solid #1076BB;
+	font-family: Arial, sans-serif;
+	display: inline-block;
+	background: #1076BB;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	text-decoration: none;
+}
+.player-studentview-button:hover{
+	color: white !important;
+	background: #1076BB !important;
+	opacity: 1 !important;
+	cursor: pointer;
+}
+
+/* study player*/
+.headerbar{
+	background-color: #515151;
+	color: white;
+	position:fixed;
+	width:100%;
+	height:50px;
+	top:0px;
+	z-index: 99;
+	min-width: 1010px;
+	height: 50px;
+	overflow: hidden;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	background: #4E9746;
+}
+.loginStatus {
+	display: inline-block;
+    background-color: #d68f20;
+	border: 1px solid #c28018;
+	border-radius: 20px;
+	box-shadow: 0 0 6px #d68f20 inset;
+	float: right;
+	line-height: 12px;
+	margin-right: 35px;
+	position: relative;
+	padding: 7px 15px;
+	color: #ffffff;
+}
+
+ .loginStatus span {
+    vertical-align:middle;
+}
+
+ .loginStatus.loggedOut span {
+    vertical-align:middle;
+    opacity:.6;
+}
+
+ .loginStatus .username {
+    max-width:140px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    display:inline-block;
+    float:left;
+}
+
+ .loginStatus .tooltipContainer {
+	width: 150px;
+	position: absolute;
+	left:-80px;
+	z-index:9999;
+	margin-top: 0px;
+}
+
+ .loginStatus .arrowBorder {
+ 	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent #DDD transparent;
+	position: relative;
+	top: 0px;
+	margin:auto;
+	border-top: none;
+}
+
+ .loginStatus .arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	margin: auto;
+	top: -9px;
+	border-top: none;
+	z-index: 100;
+}
+.loggedIn{
+
+}
+.loggedIn:hover .toolTip{
+	visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+}
+.loggedOut{
+	cursor:pointer;
+}
+ .loginStatus .loggedIn .tooltipContent {
+	text-align:left;
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 15px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	position: relative;
+	top: -10px;
+	width: 180px;
+	float:left;
+}
+.loginStatus .loggingIcon {
+    /* width:20px; */
+    height:20px;
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    margin-right:5px;
+    margin-left:-5px;
+}
+
+.loginStatus.loggedOut .loggingIcon {
+    opacity:.6;
+}
+
+.loginStatus .loggingIcon .progress {
+    background-color: white;
+    border-radius:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    dispaly:none;
+}
+
+.loginStatus .loggingIcon .remainingTrack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    clip: rect(0px, 10px, 20px, 0px);
+}
+
+.loginStatus .loggingIcon .trackInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color:#46873F;
+    opacity:.8;
+    clip: rect(0px, 10px, 10px, 0px);
+}
+
+.loginStatus.loggedOut .loggingIcon .remainingTrack {
+    display:none;
+}
+
+.loginStatus .loggingIcon .innerDot {
+    border:5px solid #46873F;
+    background-color:white;
+   /*  width:6px; */
+    height:6px;
+    position:absolute;
+    top:2px;
+    right:2px;
+    border-radius:100%;
+}
+
+.studyPlayer .tabs{
+	background: #fbb03b;
+}
+.studyPlayer{
+	background: #fbb03b;
+	padding: 7px 0;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	width: 100%;
+	min-height:50px;
+}
+
+.toolTip{
+	 background:white;
+    border:1px solid #ddd;
+    width:300px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    padding:10px;
+    line-height:1.4em;
+    white-space:normal;
+    border-radius:4px;
+    position:absolute;
+    margin:-45px 0px 0px 15px;
+    visibility:hidden;
+    transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+    opacity:0;
+    z-index:100;
+    margin-top: 21px;
+	margin-left: -47px;
+	position: fixed;
+}
+
+.tooltipText{
+	font-size:12px;
+	color:#515151;
+}
+.close-button{
+	background:url("images/player/close-button.png") no-repeat;
+	/* background-position: -398px -65px; */
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.fullScreenContainer{
+	float:right;
+	width: 12%;
+	cursor: pointer;
+}
+.fullScreenImage{
+	float:left;
+}
+.fullScreenText{
+	margin-left: 10px;
+	margin-top: 9px;
+	color: white;
+	width:100%;
+}

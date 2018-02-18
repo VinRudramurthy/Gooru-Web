@@ -21,7 +21,9 @@ public interface FolderStyleBundle extends CssResource {
 	String dropbox();
 	String open();
 	String publicIcon();
+	String assesstpublicIcon();
 	String collection();
+	String assessment();
 	String active();
 	String arrow();
 	String parent();
@@ -39,4 +41,5 @@ public interface FolderStyleBundle extends CssResource {
 	String shelfFolderItemTitle();
 	String shelfFolderPanel();
 	String folderTitleElipses();
+	String assessmentContainer();
 }

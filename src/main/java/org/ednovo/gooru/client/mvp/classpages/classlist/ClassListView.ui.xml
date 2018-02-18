@@ -8,32 +8,56 @@
 	<g:FlowPanel styleName="{res.css.teachContainer}">
 		<g:HTMLPanel styleName="{res.css.teachContent}">
 			<g:HTMLPanel styleName="{res.css.teachTitle}" ui:field="assignHeader"></g:HTMLPanel>
-			<g:HTMLPanel styleName="toggle {res.css.publicPrivate}">
-				<g:SimpleCheckBox ui:field="checkbox" styleName="{res.css.checkboxStyle}"></g:SimpleCheckBox>
-				<g:HTMLPanel styleName="toggleSpanMainDiv">
-					<g:Label styleName="" ui:field="inviteOnlyTxt"></g:Label>
-					<g:Label styleName="" ui:field="publicTitleTxt"></g:Label>
-				</g:HTMLPanel>
-				<g:Anchor></g:Anchor>
-			</g:HTMLPanel>
 			<g:HTMLPanel styleName="{res.css.teachDesc}" ui:field="privateMsgPanel">
-					<g:InlineHTML ui:field="privateMsgDesc"></g:InlineHTML>
-				<g:HTMLPanel styleName="{res.css.teachItalic}" ui:field="invite"></g:HTMLPanel>
-				<g:InlineHTML ui:field="inviteTextDesc"></g:InlineHTML>
 				<g:HTMLPanel styleName="{res.css.teachBold}" ui:field="publicClassTxt"></g:HTMLPanel>
 				<g:InlineHTML ui:field="publicDescTxt"></g:InlineHTML>
 			</g:HTMLPanel>
 			<g:HTMLPanel styleName="{res.css.teachDesc}" ui:field="publicMsgPanel">
-				<g:InlineHTML ui:field="publicTxtDesc"></g:InlineHTML>
-					<g:HTMLPanel styleName="{res.css.teachBold}" ui:field="publicTxt"></g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.teachItalic}" ui:field="inviteTxt"></g:HTMLPanel>
-				<g:InlineHTML ui:field="inviteDesc"></g:InlineHTML>
 			</g:HTMLPanel>
+			
+			
+			<g:HTMLPanel styleName="{res.css.assignDiv} {res.css.visibilityDivContainer}">
+				<g:HTMLPanel styleName="{res.css.subBody}">
+				<g:Label styleName="{res.css.subTitle}" ui:field="visibilityTitle"></g:Label>
+				<g:HTMLPanel>
+				<g:RadioButton name="visibility" ui:field="visibilityRadioOpen" styleName="{res.css.regularRadioButton}"></g:RadioButton>
+				<g:Label ui:field="openClassLabelTitle" styleName="{res.css.assignSecTitleheader}"></g:Label>
+				<g:Label ui:field="openClassLabelDesc"></g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{res.css.radioBtnVisiblitySecondContainer}">
+				<g:RadioButton name="visibility" ui:field="visibilityRadioInviteOnly" styleName="{res.css.regularRadioButton}"></g:RadioButton>
+				<g:Label ui:field="openClosedLabelTitle" styleName="{res.css.assignSecTitleheader}"></g:Label>
+				<g:Label ui:field="openClosedLabelDesc"></g:Label>
+				</g:HTMLPanel>
+				</g:HTMLPanel>
+				</g:HTMLPanel>
 
-			<g:HTMLPanel styleName="{res.css.assignDiv}">
-                 <g:Button styleName="{res.css.emailButton} {res.css.emailStyle}" ui:field="emailShareBtn"></g:Button>
-				<g:HTMLPanel styleName="{res.css.assignTitle}" ui:field="assignSubHeader"></g:HTMLPanel>
-				<g:HTMLPanel ui:field="privateAssignContainer" styleName="{res.css.subBody}">
+			<g:HTMLPanel styleName="{res.css.assignDiv} {res.css.inviteDivContainer}">
+				<g:HTMLPanel ui:field="privateAssignContainer" styleName="{res.css.subBodyInviteContainer}">
+				
+				<g:HTMLPanel ui:field="publicAssignContainer" styleName="{res.css.leftInviteContainer}">
+					<g:HTMLPanel styleName="{res.css.assignSec}">
+						<g:HTMLPanel styleName="{res.css.assignSecTitle}" ui:field="shareTxt"></g:HTMLPanel>
+						<g:HTMLPanel ui:field="questionMarkPanel"></g:HTMLPanel>
+			
+						<g:TextBox styleName="{res.css.input1} {res.css.shareTextboxLink}"
+							ui:field="txtClasspageCodeShare" />
+						<!-- <g:Button styleName="secondary" ui:field="classCodeBtn">Send via E-mail</g:Button> -->
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.assignSec}">
+						<g:HTMLPanel styleName="{res.css.assignSecTitle}" ui:field="shareTitle"></g:HTMLPanel>
+							<g:HTMLPanel ui:field="questionMarkPanel1"></g:HTMLPanel>
+	
+						<g:TextBox
+							styleName="{res.css.input1} {res.css.inputWidth} {res.css.shareTextboxLink}"
+							ui:field="txtClasspageLinkShare" />
+						<!-- <g:Button styleName="secondary" ui:field="webLinkBtn">Send
+							via E-mail</g:Button> -->
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				
+				<g:HTMLPanel styleName="{res.css.rightInviteContainer}">
 					<g:HTMLPanel styleName="{res.css.subTitle}" ui:field="titleTxt"></g:HTMLPanel>
 					<g:HTMLPanel styleName="{res.css.titleBold}" ui:field="emailTxt"></g:HTMLPanel>
 					<g:HTMLPanel styleName="{res.css.buttonContainer}">
@@ -51,25 +75,14 @@
 						</g:HTMLPanel>
 					</g:HTMLPanel>
 					<g:Label ui:field="lblErrorMessage" styleName="errorMessage {res.css.error}" />
-				</g:HTMLPanel>
-				<g:HTMLPanel ui:field="publicAssignContainer">
-					<g:HTMLPanel styleName="{res.css.assignSec}">
-						<g:HTMLPanel styleName="{res.css.assignSecTitle}" ui:field="shareTxt"></g:HTMLPanel>
-						<g:InlineHTML ui:field="shareTxtDesc"></g:InlineHTML>
-						<g:TextBox styleName="{res.css.input1} {res.css.shareTextboxLink}"
-							ui:field="txtClasspageCodeShare" />
-						<!-- <g:Button styleName="secondary" ui:field="classCodeBtn">Send via E-mail</g:Button> -->
-					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.assignSec}">
-						<g:HTMLPanel styleName="{res.css.assignSecTitle}" ui:field="shareTitle"></g:HTMLPanel>
-						<g:InlineHTML ui:field="shareDesc"></g:InlineHTML>
-						<g:TextBox
-							styleName="{res.css.input1} {res.css.inputWidth} {res.css.shareTextboxLink}"
-							ui:field="txtClasspageLinkShare" />
-						<!-- <g:Button styleName="secondary" ui:field="webLinkBtn">Send
-							via E-mail</g:Button> -->
+					<g:HTMLPanel ui:field="privacyPolicyPanel">
+						<g:InlineLabel ui:field="lblPii"></g:InlineLabel>
+						<g:Anchor ui:field="ancprivacy" styleName="{res.css.privacyAlignStyle}"></g:Anchor>
+						<g:InlineLabel ui:field="toUsText"></g:InlineLabel>
 					</g:HTMLPanel>
 				</g:HTMLPanel>
+				</g:HTMLPanel>
+				
 				<!-- Loading -->
 				<g:HTMLPanel ui:field="panelLoading">
 					<g:Label styleName="loadingpanelImage" />
@@ -80,9 +93,19 @@
 					ui:field="panelNoMembers">
 					<g:HTMLPanel styleName="{res.css.title}" ui:field="joinTxt"></g:HTMLPanel>
 					<g:HTMLPanel styleName="{res.css.twoActions}">
-						<g:HTMLPanel styleName="{res.css.manage}" ui:field="manageTxt">  </g:HTMLPanel>
-						<g:HTMLPanel styleName="{res.css.progress}" ui:field="trackTxt">
-					
+						<g:HTMLPanel styleName="{res.css.manageStudents}"> 
+						    <g:HTMLPanel styleName="{res.css.manage}"></g:HTMLPanel>
+						    <g:HTMLPanel styleName="{res.css.progressStudents}">
+						    <g:Label styleName="{res.css.manageText}" ui:field="manageHeader"></g:Label>
+						    <g:Label styleName="{res.css.manageDes}" ui:field="manageTxt"></g:Label>
+						    </g:HTMLPanel>
+					    </g:HTMLPanel>
+						<g:HTMLPanel styleName="{res.css.manageProgressStudents}">
+					       <g:HTMLPanel styleName="{res.css.progress}"></g:HTMLPanel>
+						    <g:HTMLPanel styleName="{res.css.progressStudents}">
+						   		 <g:Label styleName="{res.css.manageText}" ui:field="trackTxt"></g:Label>
+						   		 <g:Label styleName="{res.css.manageDes}" ui:field="lblMonitorDes"/>
+						    </g:HTMLPanel>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
 				</g:HTMLPanel>
@@ -90,6 +113,7 @@
 			<g:HTMLPanel styleName="{res.css.membersList}" ui:field="panelMembersList">
 				<g:HTMLPanel styleName="{res.css.pendingContainer}" ui:field="panelPendingMembersContainer">
 					<g:Label styleName="{res.css.pendingMembers}" ui:field="lblPendingMembers"></g:Label>
+					<g:HTMLPanel ui:field="questionMarkPanel2"></g:HTMLPanel>
 					<g:VerticalPanel styleName="" ui:field="panelPendingMembersList">
 
 					</g:VerticalPanel>

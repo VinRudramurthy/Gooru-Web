@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="LanguageObjectives openHideBlocks"
+		ui:field="mainContainer">
+		<uc:H4Panel>
+			<g:InlineLabel text="{i18n.GL1642}"></g:InlineLabel>
+		</uc:H4Panel>
+		<uc:PPanel styleName="text-right">
+			<g:InlineLabel text="{i18n.GL3389}"></g:InlineLabel>
+		</uc:PPanel>
+		<g:TextArea styleName="form-control" ui:field="languegeObjective"></g:TextArea>
+		<uc:PPanel styleName="text-right" ui:field="errorPanel">
+			<g:InlineLabel text="{i18n.GL0567}" styleName="errorMessage"></g:InlineLabel>
+		</uc:PPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

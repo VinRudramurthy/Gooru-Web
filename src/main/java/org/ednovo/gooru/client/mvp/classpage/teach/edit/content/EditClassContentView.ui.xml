@@ -1,0 +1,70 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""></ui:style>
+<g:HTMLPanel>
+   <div class="setScoreContainer">
+      <div class="col-md-6 col-sm-6">
+         <div class="AssignedCourseBlock">
+            <uc:H4Panel ui:field="assignedCourse"></uc:H4Panel>
+            <uc:PPanel ui:field="courseAssigned"></uc:PPanel>
+            <uc:PPanel styleName="help-block" ui:field="studentsNotes"></uc:PPanel>
+            <div class="selectCourseButton">
+               <g:Button styleName="primary" ui:field="createCourseBtn"></g:Button>
+               <g:HTMLPanel styleName="coureEditActions" ui:field="coursePanel">
+                   <span class="folderIcon"></span>
+                   <g:InlineLabel styleName="classTitle" ui:field="titleLbl"></g:InlineLabel> 
+				</g:HTMLPanel>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+         <div class="AssignedCourse">
+            <uc:H4Panel ui:field="lessonPacingPanel"></uc:H4Panel>
+            <uc:PPanel ui:field="minimumScrPanel"></uc:PPanel>
+            <uc:PPanel styleName="help-block" ui:field="miniNotesPanel"></uc:PPanel>
+            <div class="scoreBoxBlock">
+               <img src="images/prize.png"/>
+               <div class="textBoxDiv">
+                  <g:TextBox styleName="form-control" ui:field="scoreTextBox"></g:TextBox><span>%</span>
+               </div>
+               <g:Button styleName="primary" ui:field="saveBtn"></g:Button>
+			   <g:Label ui:field="saveLblText"></g:Label>
+			   <g:Label ui:field="errorLabel"></g:Label>
+            </div>
+         </div>
+      </div>
+      <div class="clearfix"></div>
+   </div>
+   <div class="pageContainerBG">
+      <div class="howItWorks">
+         <uc:H2Panel ui:field="pacingWorks"></uc:H2Panel>
+         <uc:PPanel ui:field="pacingNotes"></uc:PPanel>
+         <hr/>
+         <div class="AssessmentandCollections">
+            <span><img src="images/floderIcon-org.png"/><g:InlineLabel ui:field="assessmentsLbl"/></span>
+            <span class="leftMargin"><img src="images/floderIcon-blue.png"/><g:InlineLabel ui:field="collectionLbl"/></span>
+           <!--  <span class="leftMargin"></span> -->
+         </div>
+      </div>
+      <div class="CourseandUnitViewContainer">
+         <div class="col-md-6 col-sm-6">
+            <div class="courseViewBlock">
+               <img src="images/course-View.png" class="img-responsive"/>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6">
+            <div class="unitViewBlock">
+               <img src="images/new-unit-view.png" class="img-responsive"/>
+            </div>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+</g:HTMLPanel>
+</ui:UiBinder>
+
+
+

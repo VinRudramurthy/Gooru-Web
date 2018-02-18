@@ -3,6 +3,7 @@
 	border: 1px solid #DDD;
 	height: 320px;
 	width: 450px;
+	background: white;
 }
 .successPopupContainer{
 	padding: 3px;
@@ -29,9 +30,6 @@
 
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #666, #515151);
-	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
 }
 .popupHeaderText{
 	color:white;

@@ -1,0 +1,71 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:col="urn:import:org.ednovo.gooru.client.mvp.shelf.collection"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+
+	<g:HTMLPanel ui:field="gShelfMainContainer">
+		<g:HTMLPanel ui:field="pnlMainContainer" styleName="gradeContainer greyBackground">
+			<div class="container">
+				<div class="row no-gutter equifier">
+					<div class="col-md-3 col-sm-3">
+						<div class="floderLeftContainer">
+							<div class="myCousesTabMenu">
+								<g:Anchor ui:field="lnkMyCourses" styleName="mycourseMenu" text="{i18n.GL3335}" title="{i18n.GL3335}"/>
+
+								<g:Anchor styleName="mycollectionMenu" ui:field="lnkMyFoldersAndCollecctions" text="{i18n.GL0180}" title="{i18n.GL0180}" />
+
+
+
+
+								</div>
+
+
+								<panel:HTMLEventPanel styleName="myCoursesLeftMainHeader" ui:field="createNewCourse">
+								<g:InlineLabel text="{i18n.GL3471}"></g:InlineLabel>
+
+								<span class="plus">+</span>
+								<div class="clearfix"></div>
+								</panel:HTMLEventPanel>
+								<panel:HTMLEventPanel styleName="myCoursesLeftMainHeader createCollectionColor" ui:field="createNewCollection">
+								<g:InlineLabel text="{i18n.GL1451}"></g:InlineLabel>
+
+								<span class="plus">+</span>
+								<div class="clearfix"></div>
+								</panel:HTMLEventPanel>
+								<panel:HTMLEventPanel styleName="myCoursesLeftMainHeader createassessmentColor" ui:field="createNewAssessment">
+								<span>Create Assessment</span>
+
+								<span class="plus">+</span>
+								<div class="clearfix"></div>
+								</panel:HTMLEventPanel>
+
+							<div class="folderListBlock">
+
+						<panel:HTMLEventPanel styleName="folderLeftMainHeader"
+									ui:field="organizeRootPnl">
+									<g:Label ui:field="organizelbl" text="{i18n.GL0180}"></g:Label>
+								</panel:HTMLEventPanel>
+								<g:ScrollPanel ui:field="collectionListScrollpanel"
+									styleName="collectionScrlPanel">
+									<g:HTMLPanel ui:field="floderTreeContainer" />
+								</g:ScrollPanel>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-9">
+					    <g:HTMLPanel ui:field="titleIconContainer" styleName="lblCollectionTitle">
+						    <g:InlineLabel ui:field="imgIconLbl"></g:InlineLabel>
+							<g:Label ui:field="lblCollectionTitle" styleName="lblCollectionSubTitle"/>
+							 <g:Label ui:field="lblLastEditedBy" styleName="lastEditedBy"/>
+					    </g:HTMLPanel>
+						<g:HTMLPanel styleName="floderRightContainer" ui:field="pnlSlot" />
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="pnlNoDataContainer"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

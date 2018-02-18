@@ -1,19 +1,13 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
-	<ui:with type="org.ednovo.gooru.client.mvp.home.HomeCBundle" field="res" />
-	<g:HTMLPanel>
-		<g:FlowPanel styleName="{res.css.removePopupContainer}"
-			height="100px">
-			<g:FlowPanel styleName="{res.css.removeText}">
+		<g:FlowPanel styleName="shareSelection" ui:field="mainPanel">
+			<g:FlowPanel styleName="contentDescription">
 				<g:Label ui:field="lblClassDismissed" />
 			</g:FlowPanel>
-			<g:FlowPanel styleName="{res.css.actionField}" ui:field="buttonContainer">
-				<gg:BlueButtonUc ui:field="okBtnUc"
-					styleName="overRideBlueButton" />
-				<g:Anchor ui:field="cancelAnr"
-					styleName="collectionFormCancelButton" />
+			<g:FlowPanel styleName="actionField" ui:field="buttonContainer">
+				<gg:BlueButtonUc ui:field="okBtnUc"	styleName="primary" />
+				<g:Button ui:field="cancelAnr"	styleName="collectionFormCancelButton secondary" />
 			</g:FlowPanel>
 		</g:FlowPanel>
-	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

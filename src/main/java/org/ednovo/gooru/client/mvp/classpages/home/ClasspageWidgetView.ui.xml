@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:txt="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.ui">
+		<ui:style field="StudyStyle" src="StudyStyles.css" />
+     <!--  <gg:HTMLEventPanel styleName="{StudyStyle.content-box}" ui:field="classpageContainer"> <g:Image ui:field="classImage" />
+        <g:HTMLPanel styleName="{StudyStyle.hover-section}">
+          <g:HTMLPanel styleName="{StudyStyle.overlayBg}" ui:field="classTitle"></g:HTMLPanel>
+        </g:HTMLPanel>
+        <g:HTMLPanel>
+        <g:Image styleName="{StudyStyle.profileImage}" ui:field="imgUserProfile"></g:Image>
+        <g:HTMLPanel styleName="{StudyStyle.profileImageText}" ui:field="ownerName"></g:HTMLPanel>
+        <g:HTMLPanel styleName="{StudyStyle.h4}" ui:field="assignmentsCounter"></g:HTMLPanel>  
+		<div style="float: left; height: 30px; margin-left: 8px; font-size: 16px; font-weight: normal; margin-top: 5px; border-right: 1px solid #999999;margin-bottom: 5px;"></div>  
+        <g:HTMLPanel styleName="{StudyStyle.h4}" ui:field="assignmentsCount"></g:HTMLPanel>   
+        </g:HTMLPanel> 
+      </gg:HTMLEventPanel> -->
+		<gg:HTMLEventPanel styleName="col-md-6 col-sm-6"  ui:field="classpageContainer">
+		   <g:HTMLPanel styleName="classBlockInner">
+		      <g:HTMLPanel styleName="blockBody">
+		         <g:Image ui:field="classImage" />
+		         <txt:H4Panel ui:field="classTitle"></txt:H4Panel>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="blockFooter" ui:field="blockFooter">
+		          	  <g:Image ui:field="imgUserProfile"></g:Image>
+		              <g:InlineLabel ui:field="ownerName"></g:InlineLabel>
+		              <g:InlineLabel ui:field="assignmentsCounter"></g:InlineLabel>
+		              <g:InlineLabel styleName="devider" ui:field="dividerLbl"></g:InlineLabel>
+		              <g:InlineLabel ui:field="assignmentsCount"></g:InlineLabel>
+		      </g:HTMLPanel>
+		   </g:HTMLPanel>
+		</gg:HTMLEventPanel>		
+</ui:UiBinder>
+

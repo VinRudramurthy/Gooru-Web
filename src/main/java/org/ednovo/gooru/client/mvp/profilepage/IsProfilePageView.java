@@ -26,12 +26,16 @@ package org.ednovo.gooru.client.mvp.profilepage;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.code.LibraryCodeDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
+import org.ednovo.gooru.application.shared.model.user.UserFollowDo;
+import org.ednovo.gooru.application.shared.model.user.UserTagsDo;
+import org.ednovo.gooru.client.mvp.profilepage.data.ProfilePageLibraryView;
 import org.ednovo.gooru.client.uc.ProfilePageDescriptionEditUc;
-import org.ednovo.gooru.shared.model.code.LibraryCodeDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.user.ProfileDo;
 
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 
@@ -103,4 +107,57 @@ public interface IsProfilePageView extends IsViewWithHandlers<ProfilePageUiHandl
 	Label getChilNoShareOption();
 
 	void closeAllOpenedPopUp();
+	
+	ProfilePageLibraryView getContentView();
+	
+	public void getFollowersObj(List<UserFollowDo> userFollowDo);
+	
+	public void getFolloweingsObj(List<UserFollowDo> userFollowDo);
+	
+	public void getTagsObj(List<UserTagsDo> userTagsDo);
+	
+	void isFollow(String isFollow);
+
+	/**
+	 * @function getFollowButton 
+	 * 
+	 * @created_date : Jun 13, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @return
+	 * 
+	 * @return : Button
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	Button getFollowButton();
+
+	
+	/**
+	 * @function getFollowingButton 
+	 * 
+	 * @created_date : Jun 13, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @return
+	 * 
+	 * @return : Button
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	Button getFollowingButton();
 }

@@ -24,9 +24,9 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.register;
 
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.uc.AppPopUp;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -39,12 +39,14 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class RegistrationWelcomePopup extends Composite implements MessageProperties {
+public class RegistrationWelcomePopup extends Composite{
 
 	private static RegistrationWelcomePopupUiBinder uiBinder = GWT.create(RegistrationWelcomePopupUiBinder.class);
 
 	interface RegistrationWelcomePopupUiBinder extends UiBinder<Widget, RegistrationWelcomePopup> {
 	}
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	@UiField
 	BlueButtonUc registerWelcomeUc;
 	
@@ -52,7 +54,6 @@ public class RegistrationWelcomePopup extends Composite implements MessageProper
 	
 	private AppPopUp appPopUp;
 	
-	private static final String READY_TO_USE_GOORU = GL1190+GL_SPL_EXCLAMATION;
 
 	/**
 	 * Class constructor, creates welcome popup after successful registration 
@@ -60,13 +61,24 @@ public class RegistrationWelcomePopup extends Composite implements MessageProper
 	public RegistrationWelcomePopup() {
 		RegisterCBundle.INSTANCE.css().ensureInjected();
 		appPopUp = new AppPopUp();
-		appPopUp.setContent(READY_TO_USE_GOORU, uiBinder.createAndBindUi(this));
+		appPopUp.setContent(i18n.GL1190()+i18n.GL_SPL_EXCLAMATION(), uiBinder.createAndBindUi(this));
 		appPopUp.show();
 		appPopUp.center();
+		
+		getStartedText.setText(i18n.GL1188()+i18n.GL_SPL_SEMICOLON()+" ");
+		getStartedText.getElement().setId("lblGetStartedText");
+		getStartedText.getElement().setAttribute("alt",i18n.GL1188());
+		getStartedText.getElement().setAttribute("title",i18n.GL1188());
+		
+		happyStudyingText.setText(i18n.GL1189()+i18n.GL_SPL_EXCLAMATION());
+		happyStudyingText.getElement().setId("lblHappyStudyingText");
+		happyStudyingText.getElement().setAttribute("alt",i18n.GL1189());
+		happyStudyingText.getElement().setAttribute("title",i18n.GL1189());
+		
+		registerWelcomeUc.setText(i18n.GL0190());
 		registerWelcomeUc.getElement().setId("btnRegisterWelcome");
-		getStartedText.setText(GL1188+GL_SPL_SEMICOLON);
-		happyStudyingText.setText(GL1189+GL_SPL_EXCLAMATION);
-		registerWelcomeUc.setText(GL0190);
+		registerWelcomeUc.getElement().setAttribute("alt",i18n.GL0190());
+		registerWelcomeUc.getElement().setAttribute("title",i18n.GL0190());
 	}
 	
 	@Override

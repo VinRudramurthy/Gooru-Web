@@ -26,8 +26,8 @@
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #515151, #333);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#515151', EndColorStr='#333333');
+	
+	
 	
 }
 
@@ -37,17 +37,14 @@
 	margin: auto;
 }
 .player-resource-title {
+	color: white;
+	float: left;
 	font-size: 20px;
-	padding-top: 12px;
 	max-width: 58%;
 	min-width: 10%;
-	float: left;
-	white-space: nowrap !important;
 	overflow: hidden;
-	margin-right: 5px;
 	text-overflow: ellipsis;
-	color: white;
-	margin-left: 10px;
+	white-space: nowrap;
 }
 
 .dislike-button {
@@ -76,8 +73,8 @@
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #515151, #333);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#515151', EndColorStr='#333333');
+	
+	
 }
 .player_buttons{
 	float: right;
@@ -91,19 +88,6 @@
 }
 
 
-.close-button{
-	background:url("images/player/close-button.png") no-repeat;
-	/* background-position: -398px -65px; */
-	width: 22px;
-	height: 22px;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-.close-button:hover{
-	/* background-position: -398px -37px; */
-	cursor: pointer;
-}
 
 .player-studentview-button{
 	float: right;
@@ -149,35 +133,39 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 	background: #4E9746;
 }
- .headerbar .loginStatus {
-    float:right;
-    margin-top:8px;
-    line-height:12px;
-    background-color:#46873F;
-    border:1px solid #386D32;
-    box-shadow: inset 0px 0px 6px #3C7335;
-    padding:6px 15px;
-    border-radius:20px;
+.loginStatus {
+	display: inline-block;
+    background-color: #46873f;
+	border: 1px solid #386d32;
+	border-radius: 20px;
+	box-shadow: 0 0 6px #3c7335 inset;
+	float: right;
+	line-height: 12px;
+	margin-right: 35px;
+	position: relative;
+	padding: 7px 15px;
+	color: #ffffff;
 }
     
- .headerbar .loginStatus span {  
+ .loginStatus span {  
     vertical-align:middle;
 }
 
- .headerbar .loginStatus.loggedOut span {  
+ .loginStatus.loggedOut span {  
     vertical-align:middle;
     opacity:.6;
 }
 
- .headerbar .loginStatus .username {
+ .loginStatus .username {
     max-width:140px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
     display:inline-block;
+    float:left;
 }
 
- .headerbar .loginStatus .tooltipContainer {
+ .loginStatus .tooltipContainer {
 	width: 150px;
 	position: absolute;
 	left:-80px;
@@ -185,7 +173,7 @@
 	margin-top: 0px;
 }
 
- .headerbar .loginStatus .arrowBorder {
+ .loginStatus .arrowBorder {
  	width: 0px;
 	height: 0px;
 	border: 10px solid;
@@ -196,7 +184,7 @@
 	border-top: none;
 }
 
- .headerbar .loginStatus .arrow {
+ .loginStatus .arrow {
 	width: 0px;
 	height: 0px;
 	border: 10px solid;
@@ -218,7 +206,7 @@
 .loggedOut{
 	cursor:pointer;
 }
- .headerbar .loginStatus .loggedIn .tooltipContent {
+ .loginStatus .loggedIn .tooltipContent {
 	text-align:left;
 	color: #515151;
 	font-size: 12px;
@@ -238,7 +226,7 @@
 	float:left;
 }
 .loginStatus .loggingIcon {
-    width:20px;
+    /* width:20px; */
     height:20px;
     display:inline-block;
     position:relative;
@@ -259,6 +247,7 @@
     left: 0;
     bottom: 0;
     right: 0;
+    dispaly:none;
 }
 
 .loginStatus .loggingIcon .remainingTrack {
@@ -290,7 +279,7 @@
 .loginStatus .loggingIcon .innerDot {
     border:5px solid #46873F;
     background-color:white;
-    width:6px;
+   /*  width:6px; */
     height:6px;
     position:absolute;
     top:2px;
@@ -300,6 +289,14 @@
 
 .studyPlayer .tabs{
 	background: #4e9746;
+}
+.studyPlayer{
+	background: #4e9746;
+	padding: 7px 0;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	width: 100%;
+	min-height:50px;
 }
 
 .toolTip{
@@ -327,4 +324,27 @@
 .tooltipText{
 	font-size:12px;
 	color:#515151;
+}
+.close-button{
+	background:url("images/player/close-button.png") no-repeat;
+	/* background-position: -398px -65px; */
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.fullScreenContainer{
+	float:right;
+	width: 12%;
+	cursor: pointer;
+}
+.fullScreenImage{
+	float:left;
+}
+.fullScreenText{
+	margin-left: 10px;
+	margin-top: 9px;
+	color: white;
+	width:100%;
 }

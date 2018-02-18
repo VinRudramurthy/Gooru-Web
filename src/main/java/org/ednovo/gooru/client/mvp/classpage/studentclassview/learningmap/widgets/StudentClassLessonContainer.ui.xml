@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+    xmlns:span="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src="" />
+	<g:HTMLPanel styleName="rowContainer no-gutter">
+	   	<span:HTMLEventPanel styleName="col-md-4 col-sm-4 cursorPointer" ui:field="lessonWidget">
+		   <g:Label styleName="numaricOrder" ui:field="numericOrder"></g:Label>
+		   <g:HTMLPanel styleName="heighlightBlockUnitReports">
+		      <g:HTMLPanel styleName="lessonDetails col-md-10 col-sm-10 col-xs-10">
+	             <uc:H3Panel ui:field="lessonCountName"></uc:H3Panel>
+	             <uc:PPanel ui:field="lessonName"></uc:PPanel>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="progressBlockLeft col-md-2 col-sm-2 col-xs-2 line-height-70">
+				  <g:HTMLPanel ui:field="circleIcon">
+		                <span></span>
+		          </g:HTMLPanel>
+		      </g:HTMLPanel>
+		   </g:HTMLPanel>
+		</span:HTMLEventPanel>
+	   <g:HTMLPanel styleName="col-md-8 col-sm-8">
+	       <g:HTMLPanel styleName="progressBlock">
+				<span:HTMLEventPanel styleName="scrollLeftArrow cursorArrows cursorPointer" ui:field="leftArrow"></span:HTMLEventPanel>
+		       	<g:HTMLPanel styleName="lessonDescription divTable" ui:field="lessonContainer"/>
+				<div class="clearfix"></div>
+				<span:HTMLEventPanel styleName="scrollRightArrow cursorArrows cursorPointer" ui:field="rightArrow"></span:HTMLEventPanel>
+	       </g:HTMLPanel>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

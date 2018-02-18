@@ -1,14 +1,13 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
 <g:HTMLPanel>
-	<g:FocusPanel ui:field="focusPanel" styleName="{res.css.editableFieldSetting}">
+	<g:FocusPanel ui:field="focusPanel" styleName="Uc-editableFieldSetting">
 		<g:DeckPanel ui:field="deckPanel">
-			<g:Label ui:field="editLabel" styleName="{res.css.editableUserSettingField}"/>
+			<g:Label ui:field="editLabel" styleName="Uc-editableUserSettingField"/>
 			<g:TextBox styleName="edit" maxLength="25" ui:field="editTextBox" />
 			</g:DeckPanel>
 	</g:FocusPanel>
-	<g:Label ui:field="errorLabel" styleName="{res.css.errorValidationSetting}"/>
+	<g:Label ui:field="errorLabel" styleName="Uc-errorValidationSetting"/>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

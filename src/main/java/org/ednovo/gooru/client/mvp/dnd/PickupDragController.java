@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -24,12 +24,12 @@
  ******************************************************************************/
 /*
  * Copyright 2009 Fred Sauer
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License
  * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
  * or implied. See the License for the specific language governing permissions and limitations under
@@ -40,9 +40,8 @@ package org.ednovo.gooru.client.mvp.dnd;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.mvp.settings.CustomAnimation;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.settings.DragDropAnimation;
 import org.ednovo.gooru.client.util.MixpanelUtil;
 
@@ -69,7 +68,7 @@ import com.google.gwt.user.client.ui.Widget;
  * DragController used for drag-and-drop operations where a draggable widget or drag proxy is
  * temporarily picked up and dragged around the boundary panel. Be sure to register a {@link
  * DropController} for each drop target.
- * 
+ *
  * @see #registerDropController(DropController)
  */
 public class PickupDragController extends AbstractDragController {
@@ -96,7 +95,7 @@ public class PickupDragController extends AbstractDragController {
 		/**
 		 * Initial location for absolute panel parents.
 		 */
-		Location initialDraggableParentLocation; 
+		Location initialDraggableParentLocation;
 	}
 
 	/**
@@ -108,7 +107,7 @@ public class PickupDragController extends AbstractDragController {
 	 * The implicit boundary drop controller.
 	 */
 	private final BoundaryDropController boundaryDropController;
-	
+
 
 
 	private int boundaryOffsetX;
@@ -130,11 +129,11 @@ public class PickupDragController extends AbstractDragController {
 	private Widget movablePanel;
 
 	private HashMap<Widget, SavedWidgetInfo> savedWidgetInfoMap;
-	
+
 	private static int DESIRED_LEFT_POSITION_350 = 350;
-	
+
 	private static int DESIRED_LEFT_POSITION_500 = 500;
-	
+
 	private static int DESIRED_LEFT_POSITION_600 = 600;
 
 	private static int DESIRED_LEFT_POSITION_700 = 700;
@@ -144,25 +143,25 @@ public class PickupDragController extends AbstractDragController {
 	private static int DESIRED_LEFT_POSITION_900 = 900;
 
 	private static int DESIRED_LEFT_POSITION_1000 = 1000;
-	
+
 	private int draggedElementStartLeft=0;
-	
+
 	private int draggedElementStartTop=0;
-	
+
 	private int draggedElementEndLeft=0;
-	
+
 	private int draggedElementEndTop=0;
-	
+
 	/**
 	 * Create a new pickup-and-move style drag controller. Allows widgets or a
 	 * suitable proxy to be temporarily picked up and moved around the specified
 	 * boundary panel.
-	 * 
+	 *
 	 * <p>
 	 * Note: An implicit {@link BoundaryDropController} is created and
 	 * registered automatically.
 	 * </p>
-	 * 
+	 *
 	 * @param boundaryPanel
 	 *            the desired boundary panel or <code>RootPanel.get()</code>
 	 *            (read http://code.google.com/p/gwt-dnd/wiki/GettingStarted) if
@@ -181,7 +180,7 @@ public class PickupDragController extends AbstractDragController {
 	}
 
 	@Override
-	public void dragEnd() { 
+	public void dragEnd() {
 		assert context.finalDropController == null == (context.vetoException != null);
 		if (context.vetoException != null) {
 			context.dropController.onLeave(context);
@@ -193,31 +192,34 @@ public class PickupDragController extends AbstractDragController {
 				else{
 					MixpanelUtil.Drag_ResourceAction();
 				}
-				
+
 				restoreSelectedWidgetsLocation();
-				new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750); 
+				//new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750);
 			}
 		} else {
 			if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.COLLECTION_SEARCH)){
-				new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750); 
-				
+				new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750);
+
 			}
-			else if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){ 
+			else if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){
 				MixpanelUtil.Drag_ResourceAction();
-				new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750);  
+				new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(750);
 			}
 			context.dropController.onDrop(context);
 			context.dropController.onLeave(context);
 			context.dropController = null;
 		}
 
-		if (!getBehaviorDragProxy()) {	
+		if (!getBehaviorDragProxy()) {
 			restoreSelectedWidgetsStyle();
 		}
 		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.SHELF)){
-			new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(10000); 
+			new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(10000);
 		}
-		
+		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.ASSESSMENT_PLAY) || AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.COLLECTION_PLAY) || AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_PLAY)){
+			new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(10000);
+		}
+
 		//		movablePanel.removeFromParent();
 		movablePanel = null;
 		super.dragEnd();
@@ -227,7 +229,7 @@ public class PickupDragController extends AbstractDragController {
 	public void dragMove() {
 		// may have changed due to scrollIntoView(), developer driven changes
 		// or manual user scrolling
-		
+
 		long timeMillis = System.currentTimeMillis();
 		if (timeMillis - lastResetCacheTimeMillis >= CACHE_TIME_MILLIS) {
 			lastResetCacheTimeMillis = timeMillis;
@@ -237,13 +239,13 @@ public class PickupDragController extends AbstractDragController {
 
 		int desiredLeft = context.desiredDraggableX - boundaryOffsetX;
 		int desiredTop = context.desiredDraggableY - boundaryOffsetY;
-		
-		
+
+
 		if (getBehaviorConstrainedToBoundaryPanel()) {
 			desiredLeft = Math.max(0,Math.min(desiredLeft, dropTargetClientWidth - context.draggable.getOffsetWidth()));
 			desiredTop = Math.max(0,Math.min(desiredTop, dropTargetClientHeight- context.draggable.getOffsetHeight()));
 		}
-		
+
 		if(context.mouseX>(Window.getClientWidth())&&desiredLeft>400) {
 			context.mouseX = Window.getClientWidth();
 			desiredLeft = 400;
@@ -267,7 +269,7 @@ public class PickupDragController extends AbstractDragController {
 			context.dropController.onMove(context);
 		}
 	}
-	
+
 	public int setMovablePanelDesiredLeft(int desiredLeftPosition){
 		if(context.mouseX<(Window.getClientWidth())) {
 			desiredLeftPosition = context.mouseX;
@@ -276,9 +278,9 @@ public class PickupDragController extends AbstractDragController {
 		}
 		return desiredLeftPosition;
 	}
-	
+
 	@Override
-	public void dragStart() { 
+	public void dragStart() {
 		super.dragStart();
 
 		lastResetCacheTimeMillis = System.currentTimeMillis();
@@ -304,7 +306,7 @@ public class PickupDragController extends AbstractDragController {
 			HashMap<Widget, CoordinateLocation> widgetLocation = new HashMap<Widget, CoordinateLocation>();
 			draggedElementStartLeft=draggableAbsoluteLeft;
 			draggedElementStartTop=draggableAbsoluteTop;
-			
+
 			for (Widget widget : context.selectedWidgets) {
 				widgetLocation.put(widget,new CoordinateLocation(widget.getAbsoluteLeft(), widget.getAbsoluteTop()));
 			}
@@ -324,23 +326,23 @@ public class PickupDragController extends AbstractDragController {
 		}
 		movablePanel.addStyleName(DragClientBundle.INSTANCE.css().movablePanel());
 		calcBoundaryOffset();
-		dropTargetClientWidth = DOMUtil.getClientWidth(context.boundaryPanel.getElement()); 
+		dropTargetClientWidth = DOMUtil.getClientWidth(context.boundaryPanel.getElement());
 		dropTargetClientHeight = DOMUtil.getClientHeight(context.boundaryPanel.getElement());
 	}
 
 	/**
 	 * Whether or not dropping on the boundary panel is permitted.
-	 * 
+	 *
 	 * @return <code>true</code> if dropping on the boundary panel is allowed
 	 */
 	public boolean getBehaviorBoundaryPanelDrop() {
-		return boundaryDropController.getBehaviorBoundaryPanelDrop(); 
+		return boundaryDropController.getBehaviorBoundaryPanelDrop();
 	}
 
 	/**
 	 * Determine whether or not this controller automatically creates a drag
 	 * proxy for each drag operation.
-	 * 
+	 *
 	 * @return <code>true</code> if drag proxy behavior is enabled
 	 */
 	public boolean getBehaviorDragProxy() {
@@ -349,7 +351,7 @@ public class PickupDragController extends AbstractDragController {
 
 	/**
 	 * Retrieve currently selected widgets.
-	 * 
+	 *
 	 * @return iterator of currently selected widgets
 	 */
 	public Iterable<Widget> getSelectedWidgets() {
@@ -378,9 +380,9 @@ public class PickupDragController extends AbstractDragController {
 	/**
 	 * Register a new DropController, representing a new drop target, with this
 	 * drag controller.
-	 * 
+	 *
 	 * @see #unregisterDropController(DropController)
-	 * 
+	 *
 	 * @param dropController
 	 *            the controller to register
 	 */
@@ -398,7 +400,7 @@ public class PickupDragController extends AbstractDragController {
 	 * Set whether or not widgets may be dropped anywhere on the boundary panel.
 	 * Set to <code>false</code> when you only want explicitly registered drop
 	 * controllers to accept drops. Defaults to <code>true</code>.
-	 * 
+	 *
 	 * @param allowDroppingOnBoundaryPanel
 	 *            <code>true</code> to allow dropping
 	 */
@@ -409,7 +411,7 @@ public class PickupDragController extends AbstractDragController {
 	/**
 	 * Set whether or not this controller should automatically create a drag
 	 * proxy for each drag operation.
-	 * 
+	 *
 	 * @param dragProxyEnabled
 	 *            <code>true</code> to enable drag proxy behavior
 	 */
@@ -419,10 +421,10 @@ public class PickupDragController extends AbstractDragController {
 
 	/**
 	 * Unregister a DropController from this drag controller.
-	 * 
+	 *
 	 * @see #registerDropController(DropController)
 	 * @see #unregisterDropControllers()
-	 * 
+	 *
 	 * @param dropController
 	 *            the controller to register
 	 */
@@ -432,7 +434,7 @@ public class PickupDragController extends AbstractDragController {
 
 	/**
 	 * Unregister all DropControllers from this drag controller.
-	 * 
+	 *
 	 * @see #registerDropController(DropController)
 	 * @see #unregisterDropController(DropController)
 	 */
@@ -445,7 +447,7 @@ public class PickupDragController extends AbstractDragController {
 	 * drop target. To ensure that draggable widgets can only be dropped on
 	 * registered drop targets, set <code>allowDroppingOnBoundaryPanel</code> to
 	 * <code>false</code>.
-	 * 
+	 *
 	 * @param boundaryPanel
 	 *            the panel to which our drag-and-drop operations are
 	 *            constrained
@@ -462,7 +464,7 @@ public class PickupDragController extends AbstractDragController {
 	/**
 	 * Called by {@link PickupDragController#dragStart()} to allow subclasses to
 	 * provide their own drag proxies.
-	 * 
+	 *
 	 * @param context
 	 *            the current drag context
 	 * @return a new drag proxy
@@ -488,7 +490,7 @@ public class PickupDragController extends AbstractDragController {
 
 	/**
 	 * Restore the selected widgets to their original location.
-	 * 
+	 *
 	 * @see #saveSelectedWidgetsLocationAndStyle()
 	 * @see #restoreSelectedWidgetsStyle()
 	 */
@@ -507,20 +509,20 @@ public class PickupDragController extends AbstractDragController {
 			}
 		}
 		if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.SHELF)){
-			new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(10000);  
+			new DragDropAnimation(movablePanel, draggedElementStartLeft, draggedElementStartTop,draggedElementEndLeft,draggedElementEndTop).run(10000);
 		}
 	}
 
 	/**
 	 * Restore the selected widgets with their original style.
-	 * 
+	 *
 	 * @see #saveSelectedWidgetsLocationAndStyle()
 	 * @see #restoreSelectedWidgetsLocation()
 	 */
 	protected void restoreSelectedWidgetsStyle() {
 		for (Widget widget : context.selectedWidgets) {
 			SavedWidgetInfo info = savedWidgetInfoMap.get(widget);
-			
+
 			widget.getElement().getStyle().setProperty("margin", info.initialDraggableMargin);
 		}
 	}
@@ -528,7 +530,7 @@ public class PickupDragController extends AbstractDragController {
 	/**
 	 * Save the selected widgets' current location in case they much be restored
 	 * due to a cancelled drop.
-	 * 
+	 *
 	 * @see #restoreSelectedWidgetsLocation()
 	 */
 	protected void saveSelectedWidgetsLocationAndStyle() {

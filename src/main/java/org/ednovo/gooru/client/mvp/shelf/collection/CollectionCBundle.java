@@ -70,6 +70,8 @@ public interface CollectionCBundle extends ClientBundle{
 		
 		String collectionThumbnails();
 		
+		String assessmentThumbnails();
+		
 		String collectionNotify();
 		
 		String changeImage();
@@ -91,8 +93,7 @@ public interface CollectionCBundle extends ClientBundle{
 		String infoAddButton();
 		
 		String standardsCont();
-		
-		String gradeListCont();
+		String standardsEditResourceCont();
 		
 		String gradeList();
 		
@@ -119,8 +120,6 @@ public interface CollectionCBundle extends ClientBundle{
 		String shelfGradeInfoHigherEd();
 		
 		String shelfHigherEd();
-		
-		String courseMaxMsg();
 		
 		String ErrorShow();
 		
@@ -181,10 +180,6 @@ public interface CollectionCBundle extends ClientBundle{
 		String shelfVocabularyStandard();
 		
 		String shelfGradeSelectResources();
-		
-		String floatLeftCollectionInputBox();
-		
-		String collectionCourseLstPanel();
 		
 		String collectionStandardsMargin();
 		
@@ -275,6 +270,84 @@ public interface CollectionCBundle extends ClientBundle{
 		String shelfGradeTeacherTipButtonsContainer();
 		String searchRenameCollProfanityErrLbl();
 		String createCollContentAlignInputs();
+		
+		String primaryLabel();
+		String infoContainerMargin();
+		String primaryLabelContainer();
+		
+		String primaryToggleArrowBottom();
+		
+		String primaryToggleArrowBottomrotateRight();
+		
+		String secondaryLabelContainer();
+		
+		String secondaryInformationContainer();
+		
+		String secondaryInfoContainer();
+		
+		String languageObjectiveContainer();
+		
+		String languageObjectiveTextArea();
+		
+		String languageObjectiveInfoContainer();
+		
+		String depthOfKnowledgeContainer();
+		
+		String checkBoxinnerContiner();
+		
+		String checkBoxOuterContiner();
+				
+		String checkBoxinnerContinerlevel2();
+		String checkBoxinnerContinerlevel3();
+		String checkBoxinnerContinerlevel4();
+		
+		String checkBoxlevels();
+		
+		String checkBoxinnerContinerlearning();
+		
+		String checkBoxinnerContinerlearninglevel2();
+		
+		String checkBoxinnerContinerlearninglevel3();
+		
+		String dropdownContainerInstructional();
+		
+		String arrowInstructional();
+		
+		String scrollPanelContainerInstructional();
+		
+		String learningInnovationSkills();
+		
+		String deptOfKnowledge();
+		
+		String languageObjectives();
+		
+		String teacherTipLabel();
+		
+		String teacherTipPencilHolder();
+		
+		String addResourceSuggestedBox();
+		
+		String addResourceSuggestedBoxForQuestion();
+		
+		String checkBoxinnerContinerForQuestion();
+		
+		String questionDepthOfKnoweldgeContainer();
+		
+		String errorLabelColor();
+		String depthOfKnowledgeSubContainer();
+		String addQuestionStandard();
+		String btnOuterContainer();
+		String gradeInfoLabel();
+		String browseContainer();
+		String charLimit();
+		String learningObjErrStyle();
+		String centuryContainer();
+		String rightCourseContainer();
+		String languageTextAreaCont();
+		String scrollPanelContainerAudience();
+		String dropdownContainerAudience();
+		String deselecteAssessment();
+		String selecteAssessment();
 	}
 	@Source("Collection.css")
 	CollectionCss css();

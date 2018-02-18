@@ -1,0 +1,239 @@
+@charset "utf-8";
+/* CSS Document */
+
+#popupSteps {
+	width: 500px;
+	background: #ffffff;
+	margin: 0 auto;
+}
+#popupSteps .popupPanelMain {
+	border: 1px solid #dddddd;
+}
+#popupSteps .popupPanelHeader {
+	padding: 10px 15px;
+	background: #515151;
+	color: #ffffff;
+	font-size:16px;
+	font-weight:bold;
+}
+#popupSteps .closeButtonpopupSteps{
+	text-align:right;
+}
+#popupSteps .popupPanelMain .popupPanelBody {
+	padding: 15px 15px;
+}
+#popupSteps .popupPanelMain .popupPanelBody .alertIconPopup{
+	text-align:center;
+}
+#popupSteps .popupPanelMain .popupPanelBody h3, #popupSteps .popupPanelMain .popupPanelBody h5{
+	text-align:center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#popupSteps .popupPanelMain .popupPanelBody h3{
+	font-size:24px;
+	color:#fbb03b;
+}
+#popupSteps .popupPanelMain .popupPanelBody h5{
+	font-size:12px;
+	color:#515151;
+	font-weight:bold;
+}
+ #popupSteps .popupPanelMain .popupPanelBody .indicationHeader{
+	 margin:20px 0;
+ }
+ 
+  #popupSteps .popupPanelMain .popupPanelBody .indicationHeader.firstStep,  #popupSteps .popupPanelMain .popupPanelBody .indicationHeader.lastStep{
+	  min-height:76px;
+  }
+ #popupSteps .popupPanelMain .popupPanelBody .popupTextBoxesBlock{
+	 margin-top:15px;
+ }
+  #popupSteps .popupPanelMain .popupPanelBody .popupTextBoxesBlock p{
+	  margin-bottom:3px;
+  }
+#popupSteps .popupPanelMain .popupPanelFooter {
+	border-top: 1px solid #dddddd;
+	padding:15px 15px;
+	min-height:61px;
+}
+#popupSteps .popupPanelMain .popupPanelFooter p{
+	margin:0 0 0 0;
+	line-height:12px;
+	color:#fbb03b;
+}
+#popupSteps .popupPanelMain .popupPanelFooter .deleteButtons{
+	text-align:right;
+}
+#popupSteps .popupGreyBoxCheck input[type=checkbox].css-checkbox {
+	position: absolute;
+	z-index: -1000;
+	left: -1000px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+#popupSteps .popupGreyBoxCheck input[type=checkbox].css-checkbox + label.css-label {
+	padding-left: 36px;
+	height: 34px;
+	display: inline-block;
+	line-height: 34px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 12px;
+	font-weight:normal;
+	vertical-align: middle;
+	cursor: pointer;
+}
+#popupSteps .popupGreyBoxCheck input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -35px;
+}
+#popupSteps .popupGreyBoxCheck label.css-label {
+	background-image: url(../images/checkboxesGreay.png);
+	background-repeat:no-repeat;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+
+
+
+
+
+#popupSteps .popupOrgBoxCheck input[type=checkbox].css-checkbox {
+	position: absolute;
+	z-index: -1000;
+	left: -1000px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+#popupSteps .popupOrgBoxCheck input[type=checkbox].css-checkbox + label.css-label {
+	padding-left: 36px;
+	height: 34px;
+	display: inline-block;
+	line-height: 30px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 12px;
+	font-weight:normal;
+	vertical-align: middle;
+	cursor: pointer;
+	/*  text-overflow: ellipsis;
+	 overflow:hidden;
+	 white-space:nowrap; */
+}
+#popupSteps input[type=checkbox].css-checkbox + label.css-label {
+	 /* text-overflow: ellipsis;
+	 overflow:hidden;
+	 white-space:nowrap; */
+}
+#popupSteps .popupOrgBoxCheck input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -35px;
+}
+#popupSteps .popupOrgBoxCheck label.css-label {
+	background-image: url(../images/checkboxesOrg.png);
+	background-repeat:no-repeat;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+button.assessmentButton{
+	background:#fbb03b;
+	border:none;
+  border-radius: 4px 4px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  padding: 7px 9px 7px 9px;
+}
+button.assessmentButton:hover {
+  background:#f4a831;
+  color: #ffffff;
+  cursor: pointer;
+}
+@media (min-width: 240px) and (max-width: 319px) {
+	 #popupSteps{
+		 width:auto;
+		 margin-left:15px;
+		 margin-right:15px;
+	 }
+	 #popupSteps .popupPanelMain{
+		 margin-bottom:50px;
+	 }
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+	 #popupSteps{
+		 width:auto;
+		 margin-left:15px;
+		 margin-right:15px;
+	 }
+	  #popupSteps .popupPanelMain{
+		 margin-bottom:50px;
+	 }
+	
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	  #popupSteps{
+		 width:auto;
+		 margin-left:15px;
+		 margin-right:15px;
+	 }
+	  #popupSteps .popupPanelMain{
+		 margin-bottom:50px;
+	 }
+}
+
+/*
+@media only screen and (max-width: 767px){
+	
+	
+}*/
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	 #popupSteps{
+		 width:auto;
+		 margin-left:15px;
+		 margin-right:15px;
+	 }
+	 #popupSteps .popupPanelMain .popupPanelBody h3{
+		 font-size:22px;
+	 }
+	 #popupSteps .popupPanelMain .popupPanelBody .indicationHeader.firstStep, #popupSteps .popupPanelMain .popupPanelBody .indicationHeader.lastStep {
+    min-height: 97px;
+}
+#popupSteps .popupPanelMain .popupPanelFooter {
+    min-height: 88px;
+}
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+	  #popupSteps{
+		 width:auto;
+		 margin-left:15px;
+		 margin-right:15px;
+	 }
+}
+ @media (min-width: 1200px) {
+}

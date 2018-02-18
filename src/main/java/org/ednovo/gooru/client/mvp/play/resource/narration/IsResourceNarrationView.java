@@ -24,13 +24,14 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.resource.narration;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 
 import com.gwtplatform.mvp.client.PopupView;
 
 public interface IsResourceNarrationView extends PopupView, IsViewWithHandlers<ResourceNarrationUiHandlers>{
 	public void setNarrationMetadata(CollectionItemDo collectionItemDo,String userName,String gooruUid);
+
 	public void showAddToolTip();
-	
+	public boolean isShowingPopup();
 }

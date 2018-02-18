@@ -1,7 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:with type="org.ednovo.gooru.client.mvp.home.HomeCBundle" field="res" />
 	<ui:style>
 		.guideInfoArrow{
 			background: url("images/Collection-Search/standards-arrow.png") repeat scroll -96px -98px transparent;
@@ -12,7 +11,7 @@
     		top: -14px;
     		width: 26px;
 		}
-		
+
 		.logoutText {
 			height: 16px !important;
 			font-size: 13px !important;
@@ -21,14 +20,14 @@
 			cursor: pointer !important;
 			float: left;
 		}
-		
+
 		.logPanel {
 			height: 50px;
 			cursor: pointer !important;
 		}
 	</ui:style>
 		<g:FlowPanel ui:field="logPanel" styleName="{style.logPanel}">
-			<g:Label styleName="{style.guideInfoArrow}"/> 
+			<g:Label styleName="{style.guideInfoArrow}"/>
 			<g:Label styleName="{style.logoutText}" ui:field="tooltipText"/>
 		</g:FlowPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

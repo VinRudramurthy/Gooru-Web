@@ -26,20 +26,21 @@ package org.ednovo.gooru.client.mvp.play.collection.share.email;
 
 
 
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.uc.PlayerBundle;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class SentEmailSuccessVc extends PopupPanel implements MessageProperties{
+public class SentEmailSuccessVc extends PopupPanel{
 
 	private static SentEmailSuccessVcUiBinder uiBinder = GWT
 			.create(SentEmailSuccessVcUiBinder.class);
@@ -48,11 +49,15 @@ public class SentEmailSuccessVc extends PopupPanel implements MessageProperties{
 			UiBinder<Widget, SentEmailSuccessVc> {
 	}
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	@UiField
-	Label okLbl,toEmailLbl;
-	@UiField HTMLPanel emailToFriendText,thanksEmailText;
+	Label toEmailLbl;
 	
+	@UiField
+	Button okLbl;
+	
+	@UiField HTMLPanel emailToFriendText,thanksEmailText;
 
 	/**
 	 * Class constructor , create a new pop up
@@ -61,14 +66,26 @@ public class SentEmailSuccessVc extends PopupPanel implements MessageProperties{
 	public SentEmailSuccessVc(String toEmail) {
 		setWidget(uiBinder.createAndBindUi(this));
 		toEmailLbl.setText(toEmail);
+		toEmailLbl.getElement().setId("lblToEmailLbl");
+		toEmailLbl.getElement().setAttribute("alt",toEmail);
+		toEmailLbl.getElement().setAttribute("title",toEmail);
 		this.setGlassEnabled(true);
 		this.setGlassStyleName(PlayerBundle.INSTANCE.getPlayerStyle().setGlassPanelStyle());
 		this.getElement().getStyle().setZIndex(99999);
 		this.show();
 		this.center();
-		emailToFriendText.getElement().setInnerHTML(GL0222);
-		thanksEmailText.getElement().setInnerHTML(GL0648);
-		okLbl.setText(GL0190);
+		emailToFriendText.getElement().setInnerHTML(i18n.GL0222());
+		emailToFriendText.getElement().setId("pnlEmailToFriendText");
+		emailToFriendText.getElement().setAttribute("alt",i18n.GL0222());
+		emailToFriendText.getElement().setAttribute("title",i18n.GL0222());
+		thanksEmailText.getElement().setInnerHTML(i18n.GL0648());
+		thanksEmailText.getElement().setId("pnlThanksEmailText");
+		thanksEmailText.getElement().setAttribute("alt",i18n.GL0648());
+		thanksEmailText.getElement().setAttribute("title",i18n.GL0648());
+		okLbl.setText(i18n.GL0190());
+		okLbl.getElement().setId("lblOkLbl");
+		okLbl.getElement().setAttribute("alt",i18n.GL0190());
+		okLbl.getElement().setAttribute("title",i18n.GL0190());
 	
 	}
 	

@@ -26,14 +26,14 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.folder.FolderDo;
+import org.ednovo.gooru.application.shared.model.folder.FolderListDo;
 import org.ednovo.gooru.client.mvp.classpages.assignments.AddAssignmentContainerCBundle;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.mvp.settings.CustomAnimation;
 import org.ednovo.gooru.client.mvp.shelf.list.TreeMenuImages;
-import org.ednovo.gooru.shared.model.folder.FolderDo;
-import org.ednovo.gooru.shared.model.folder.FolderListDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
@@ -49,7 +49,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -75,19 +74,7 @@ import com.google.gwt.user.client.ui.Widget;
  * 
  * @Reviewer:
  */
-public abstract class CopyConfirmPopupVc  implements MessageProperties{
-
-//	@UiField BlueButtonUc btnCopy;
-//	
-//	@UiField Label btnCancel, resourceFirstElement,loadingTextLbl,copyLabelText;
-//	
-//	@UiField HTMLEventPanel popUpCopyCollection;
-//	
-//	@UiField ScrollPanel copyPopUpScrollHtmlPanel;
-//	
-//	@UiField FocusPanel copyPopUpResourceListImage;
-//	
-//	@UiField HTMLPanel copyLabel, htmlScrollPanel, loadingPanel,copyCollectionText;
+public abstract class CopyConfirmPopupVc{
 	
 	@UiField HTMLPanel floderTreeContainer;
 	@UiField Button copyResourceBtnLbl,cancelResourcePopupBtnLbl;
@@ -99,6 +86,13 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 	private int limit=20;
 	private int totalHitCount=0;
 	private int pageNum=1;
+	
+	private String resourceType;
+	
+	private String questionType;
+	
+	private static final String ASSESSMENT = "assessment";
+	private static final String QUESTION = "question";
 	
 	private CollectionTreeItem cureentcollectionTreeItem=null;
 	private CollectionTreeItem previousSelectedItem=null;
@@ -128,6 +122,8 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 	interface CopyConfirmPopupVcUiBinder extends UiBinder<Widget, CopyConfirmPopupVc> {
 	}
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	private Tree folderTreePanel = new Tree(new TreeMenuImages()){
 		 @Override
 		 public void onBrowserEvent(Event event) {
@@ -140,20 +136,27 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 
 	/**
 	 * default constructor of CopyConfirmPopupVc
+	 * @param resourceType 
 	 */
-	public CopyConfirmPopupVc() {
+	public CopyConfirmPopupVc(String resourceType,String questionType) {
 		super();
 		popupPanel=new PopupPanel();
 		popupPanel.setWidget(uiBinder.createAndBindUi(this));
 		setStaticTexts();
+		setResourceType(resourceType);
+		setQuestionType(questionType);
 		AddAssignmentContainerCBundle.INSTANCE.css().ensureInjected();
-		popupPanel.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().copyResourcePopupContainer());
+		popupPanel.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().copyResourcePopupContainerShelf());
 		popupPanel.setGlassEnabled(true);
 		popupPanel.setAutoHideOnHistoryEventsEnabled(true);
 		popupPanel.show();
 		popupPanel.center();
 		popupPanel.setModal(true);
+		dropdownListContainerScrollPanel.getElement().setId("sbDropdownListContainerScrollPanel");
+		dropdownListContainerScrollPanel.getElement().getStyle().setMarginTop(0, Unit.PX);
 		dropdownListContainerScrollPanel.setVisible(false);
+		chooseCollectionErrorLabel.getElement().setId("lblChooseCollectionErrorLabel");
+		floderTreeContainer.getElement().setId("pnlFloderTreeContainer");
 		addingText.setVisible(false);
 		dropdownListPlaceHolder.addClickHandler(new OnDropdownListPlaceHolderClick());
 		dropdownListContainerScrollPanel.addScrollHandler(new ScrollDropdownListContainer());
@@ -197,62 +200,44 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 		floderTreeContainer.add(folderTreePanel);
 		folderTreePanel.addItem(loadingTreeItem());
 		getWorkspaceData(0,20,true);
-		/*setWidget(uiBinder.createAndBindUi(this));*/
-		//copyCollectionText.getElement().setInnerHTML(GL0947);
-		//loadingTextLbl.setText(GL0110.toLowerCase()+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP);
-//		btnCopy.setText(GL0827);
-//		btnCancel.setText(GL0142);
-//		copyLabelText.setText(GL0505.toLowerCase());
-		//GL0505
-//		setModal(true);
-//		Window.enableScrolling(false);
-//		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(88, false));
-
-//		show();
-//		center();
-//		loadingTextLbl.setVisible(true);
-//		populateUserCollections();
-//		btnCopy.getElement().setId("btnCopy");
-//		btnCancel.getElement().setId("lblCancel");
-//		loadingPanel.setVisible(false);
-//		copyLabel.setVisible(false);
-//		btnCancel.setVisible(false);
-//		loadingPanel.setVisible(true);
-//		copyPopUpScrollHtmlPanel.getElement().getStyle().setVisibility(Visibility.HIDDEN);
-//		copyPopUpResourceListImage.getElement().removeAttribute("tabindex");
-		/**
-		 * on click for display list of collection in listbox
-		 */
-//		copyPopUpResourceListImage.addClickHandler(new ClickHandler() {
-//
-//			@Override
-//			public void onClick(ClickEvent event) {
-//				if (copyPopUpScrollHtmlPanel.getElement().getStyle()
-//						.getVisibility().equalsIgnoreCase("VISIBLE")) {
-//					copyPopUpScrollHtmlPanel.getElement().getStyle()
-//							.setVisibility(Visibility.HIDDEN);
-//				} else {
-//					copyPopUpScrollHtmlPanel.getElement().getStyle()
-//							.setVisibility(Visibility.VISIBLE);
-//				}
-//			}
-//		});
 
 	}
 	public void setStaticTexts(){
-		copyCollectionPopupHeader.setText(GL0946);
-		copyResourceTitleLabel.setText(GL0947);
-		dropdownListPlaceHolder.setText(GL1377);
-		copyResourceBtnLbl.setText(GL0827);
-		cancelResourcePopupBtnLbl.setText(GL0142);
+		copyCollectionPopupHeader.setText(i18n.GL0946());
+		copyCollectionPopupHeader.getElement().setId("lblCopyCollectionPopupHeader");
+		copyCollectionPopupHeader.getElement().setAttribute("alt", i18n.GL0946());
+		copyCollectionPopupHeader.getElement().setAttribute("title", i18n.GL0946());
+		copyResourceTitleLabel.setText(i18n.GL0947());
+		copyResourceTitleLabel.getElement().setId("lblCopyResourceTitleLabel");
+		copyResourceTitleLabel.getElement().setAttribute("alt", i18n.GL0947());
+		copyResourceTitleLabel.getElement().setAttribute("title", i18n.GL0947());
+		dropdownListPlaceHolder.setText(i18n.GL1377());
+		dropdownListPlaceHolder.getElement().setId("lblDropdownListPlaceHolder");
+		dropdownListPlaceHolder.getElement().setAttribute("alt", i18n.GL1377());
+		dropdownListPlaceHolder.getElement().setAttribute("title", i18n.GL1377());
+		copyResourceBtnLbl.setText(i18n.GL0827());
+		cancelResourcePopupBtnLbl.setText(i18n.GL0142());
 		copyResourceBtnLbl.getElement().setId("btnCopy");
+		copyResourceBtnLbl.getElement().setAttribute("alt", i18n.GL0827());
+		copyResourceBtnLbl.getElement().setAttribute("title", i18n.GL0827());
+		
 		cancelResourcePopupBtnLbl.getElement().setId("lblCancel");
-		addingText.setText(GL0505.toLowerCase());
+		cancelResourcePopupBtnLbl.getElement().setAttribute("alt", i18n.GL0142());
+		cancelResourcePopupBtnLbl.getElement().setAttribute("title", i18n.GL0142());
+		addingText.setText(i18n.GL0505().toLowerCase());
+		addingText.getElement().setId("btnCopy");
+		addingText.getElement().setAttribute("alt", i18n.GL0505().toLowerCase());
+		addingText.getElement().setAttribute("title", i18n.GL0505().toLowerCase());
+		
 	}
 	
 	public void setSelectedCollectionTitle(){
+		copyResourceBtnLbl.setEnabled(true);
+		copyResourceBtnLbl.getElement().removeClassName("disabled");
 		if(cureentcollectionTreeItem!=null){
 			dropdownListPlaceHolder.setText(cureentcollectionTreeItem.getCollectionName());
+			dropdownListPlaceHolder.getElement().setAttribute("alt", cureentcollectionTreeItem.getCollectionName());
+			dropdownListPlaceHolder.getElement().setAttribute("title", cureentcollectionTreeItem.getCollectionName());
 			chooseCollectionErrorLabel.setText("");
 		}
 	}
@@ -321,6 +306,7 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 		private String gooruOid=null;
 		private boolean isOpen=false;
 		private int itemCount=0;
+		private String collectionType;
 		public CollectionTreeItem(){
 			initWidget(folderContainer=new FlowPanel());
 			folderContainer.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().foldercollection());
@@ -332,14 +318,18 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 			this();
 			folderContainer.addStyleName(levelStyleName);
 		}
-		public CollectionTreeItem(String levelStyleName,String folderTitle,String gooruOid,int itemCount){
+		public CollectionTreeItem(String levelStyleName,String folderTitle,String gooruOid,int itemCount, String collectionType){
 			this();
+			if(ASSESSMENT.equals(collectionType)){
+				folderContainer.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().folderAssessment());
+			}
 			if(levelStyleName!=null){
 				folderContainer.addStyleName(levelStyleName);
 			}
 			this.gooruOid=gooruOid;
 			this.setItemCount(itemCount);
 			this.collectionName=folderTitle;
+			this.collectionType = collectionType;
 			folderName.setText(folderTitle);
 		}
 		public boolean isOpen() {
@@ -353,6 +343,9 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 		}
 		public String getCollectionName(){
 			return collectionName;
+		}
+		public String getCollectionType(){
+			return collectionType;
 		}
 		public int getItemCount() {
 			return itemCount;
@@ -377,8 +370,9 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 						 TreeItem folderItem=new TreeItem(new FolderTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid()));
 						 folderTreePanel.addItem(folderItem);
 						 adjustTreeItemStyle(folderItem);
-					 }else if(floderDo.getType().equals("scollection")){
-						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount()));
+					 }else{
+						 String collectionType=floderDo.getCollectionType().equals(ASSESSMENT)?floderDo.getCollectionType():floderDo.getType();
+						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount(),collectionType));
 						 folderTreePanel.addItem(folderItem);
 						 adjustTreeItemStyle(folderItem);
 					 }
@@ -402,8 +396,9 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 						 TreeItem folderItem=new TreeItem(innerFolderTreeItem);
 						 item.addItem(folderItem);
 						 adjustTreeItemStyle(folderItem);
-					 }else if(floderDo.getType().equals("scollection")){
-						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(getTreeItemStyleName(folderLevel),floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount()));
+					 }else{
+						 String collectionType=floderDo.getCollectionType().equals(ASSESSMENT)?floderDo.getCollectionType():floderDo.getType();
+						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(getTreeItemStyleName(folderLevel),floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount(),collectionType));
 						 item.addItem(folderItem);
 						 adjustTreeItemStyle(folderItem);
 					 }
@@ -472,30 +467,29 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 		hide();
 	}
 
-//	/**
-//	 * on click for hide listbox when user click outside the listbox
-//	 */
-//	@UiHandler("copyResourceBtnLbl")
-//	public void onpopUpCopyCollection(ClickEvent clickEvent) {
-//		if (copyPopUpScrollHtmlPanel.getElement().getStyle().getVisibility()
-//				.equalsIgnoreCase("VISIBLE")) {
-//			copyPopUpScrollHtmlPanel.getElement().getStyle()
-//					.setVisibility(Visibility.HIDDEN);
-//		}
-//
-//	}
-
 	@UiHandler("copyResourceBtnLbl")
 	public void onClickCopyBtn(ClickEvent clickEvent){
 		if(cureentcollectionTreeItem!=null){
 			if(cureentcollectionTreeItem.getItemCount()>= 25){
-				chooseCollectionErrorLabel.setText(GL0302);
+				chooseCollectionErrorLabel.setText(i18n.GL0302());
+				chooseCollectionErrorLabel.getElement().setAttribute("alt", i18n.GL0302());
+				chooseCollectionErrorLabel.getElement().setAttribute("title", i18n.GL0302());
 			}else{
-				hideButton(false);
-				copyResourceToCollection(cureentcollectionTreeItem.getGooruOid());
+				if(!QUESTION.equals(getResourceType())&& ASSESSMENT.equals(cureentcollectionTreeItem.getCollectionType()) && !getQuestionType().equalsIgnoreCase("OE")){
+					chooseCollectionErrorLabel.setText("Oops! can copy only questions for Assessments.");
+					copyResourceBtnLbl.setEnabled(false);
+					copyResourceBtnLbl.getElement().addClassName("disabled");
+				}else{
+					hideButton(false);
+					copyResourceBtnLbl.setEnabled(true);
+					copyResourceBtnLbl.getElement().removeClassName("disabled");
+					copyResourceToCollection(cureentcollectionTreeItem.getGooruOid());
+				}
 			}
 		}else{
-			chooseCollectionErrorLabel.setText(GL1377);
+			chooseCollectionErrorLabel.setText(i18n.GL1377_1());
+			chooseCollectionErrorLabel.getElement().setAttribute("alt", i18n.GL1377_1());
+			chooseCollectionErrorLabel.getElement().setAttribute("title", i18n.GL1377_1());
 		}
 	}
 	public void hideButton(boolean hideButtons){
@@ -506,28 +500,38 @@ public abstract class CopyConfirmPopupVc  implements MessageProperties{
 	}
 	public void hide(){
 		popupPanel.hide();
-		Window.enableScrolling(true);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
 	}
 	public abstract void copyResourceToCollection(String collectionId);
-	
-	
-	/**
-	 * for close copy collection popup
-	 * 
-	 * @param clickEvent
-	 *//*
-	@UiHandler("cancelButton")
-	public void onCloseClick(ClickEvent clickEvent) {
-		hide();
-		Window.enableScrolling(true);
-		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
-
-	}*/
 	public TreeItem loadingTreeItem(){
-		Label loadingText=new Label(GL1452);
+		Label loadingText=new Label(i18n.GL1452());
 		loadingText.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().loadingText());
 		return new TreeItem(loadingText);
 	}
+
+	/**
+	 * @return the resourceType
+	 */
+	public String getResourceType() {
+		return resourceType;
+	}
+
+	/**
+	 * @param resourceType the resourceType to set
+	 */
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+	}
+
+	public String getQuestionType() {
+		return questionType;
+	}
+
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
+	
+	
+	
 
 }

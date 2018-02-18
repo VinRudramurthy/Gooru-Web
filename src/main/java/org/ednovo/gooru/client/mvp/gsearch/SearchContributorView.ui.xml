@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:hpanel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:s="urn:import:org.ednovo.gooru.client.mvp.search" xmlns:dnd="urn:import:org.ednovo.gooru.client.mvp.dnd"
+	xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="contributorDropDown">
+		 <panel:UlPanel styleName="contributorPnl" ui:field="resultsPnl">
+ 			 <panel:LiPanel styleName="contributordropdown-header" ui:field="userTxtLbl"></panel:LiPanel>
+       		 <panel:LiPanel styleName="divider"></panel:LiPanel>
+	    		 <panel:LiPanel ui:field="userContainerLiPanel">
+	    		  </panel:LiPanel>
+             <panel:LiPanel styleName="divider"></panel:LiPanel>
+            <panel:LiPanel styleName="contributordropdown-header" ui:field="organizationTxtLbl" ></panel:LiPanel>
+            <panel:LiPanel styleName="divider"></panel:LiPanel>
+                   <panel:LiPanel styleName="contributordropdown-header" ui:field="organizationContainer">
+                   </panel:LiPanel>
+  		</panel:UlPanel>
+  		 <panel:UlPanel ui:field="noResultsPnl" styleName="noresultsStyle">
+	  		 <panel:LiPanel>
+	                <g:InlineLabel ui:field="noResultsFoundLbl"></g:InlineLabel> 
+	         </panel:LiPanel>
+         </panel:UlPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

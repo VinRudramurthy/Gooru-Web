@@ -1,32 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
-	<ui:style field= "playerStyle" src="resourceshare.css"/>
-	<g:FlowPanel styleName="{playerStyle.collection-narration-container}">
-		<g:FlowPanel styleName="{playerStyle.collection-narration-wrapper}">
-			<g:HTMLPanel styleName="{playerStyle.collection-share-maintitle}" ui:field="shareMainTitle"></g:HTMLPanel>
-			
-			<g:FlowPanel styleName="{playerStyle.collection-share-wrapper}">
-				<g:FlowPanel styleName="{playerStyle.collection-share-titleContainer}">
-					<g:Label styleName="{playerStyle.collection-share-title}" ui:field="resourceTitleText"></g:Label>
-					<g:TextArea styleName="{playerStyle.collection-share-textbox}" ui:field="resourceShareTextArea"></g:TextArea>
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<g:FlowPanel styleName="collection-resource-narration-container addResourcePopup" ui:field="resourceSharePanel">
+		<g:FlowPanel styleName="narration-wrapper">
+			<g:HTMLPanel styleName="collection-share-maintitle"	ui:field="shareMainTitle"></g:HTMLPanel>
+			<g:FlowPanel styleName="share-wrapper">
+				<g:FlowPanel styleName="col-md-6 col-xs-12 collection-share-titleContainer borderLeft">
+					<g:Label styleName="collection-share-title"	ui:field="resourceTitleText"></g:Label>
+					<g:TextArea styleName="collection-share-textbox"	ui:field="resourceShareTextArea"></g:TextArea>
+					<uc:PPanel styleName="collection-share-buttonscontainer">
+						<g:InlineLabel styleName="col-md-6 col-sm-6 col-xs-6 collection-share-button1"
+								ui:field="bitlyLink"></g:InlineLabel>
+						<g:InlineLabel styleName="col-md-6  col-sm-6 col-xs-6 collection-share-button2"
+							ui:field="embedLink"></g:InlineLabel>
+						<g:InlineLabel styleName="clearfix"/>
+					</uc:PPanel>
+					<g:HTMLPanel styleName="clearfix"/>
 				</g:FlowPanel>
-				<g:FlowPanel styleName="{playerStyle.collection-share-separator}"></g:FlowPanel>
-				<g:FlowPanel ui:field="socialSharePanel">
-					<g:Label styleName="{playerStyle.collection-socialshare-title}"></g:Label>
-					<g:HTMLPanel styleName="{playerStyle.collection-share-titleContainer}" ui:field="sharePanel"></g:HTMLPanel>
+				<g:FlowPanel ui:field="socialSharePanel" styleName="col-md-6 col-xs-12">
+					<g:Label styleName="collection-socialshare-title"></g:Label>
+					<g:HTMLPanel styleName="collection-share-titleContainer"
+						ui:field="sharePanel"></g:HTMLPanel>
 				</g:FlowPanel>
+				<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				
 			</g:FlowPanel>
-			<g:HTMLPanel styleName="{playerStyle.collection-share-buttonscontainer}">
-				<g:InlineLabel styleName="{playerStyle.collection-share-button1}" ui:field="bitlyLink"></g:InlineLabel>
-				<g:InlineLabel styleName="{playerStyle.collection-share-button2}" ui:field="embedLink"></g:InlineLabel>	
-			</g:HTMLPanel>
-		</g:FlowPanel> 
-			<uc:HTMLEventPanel styleName="{playerStyle.resource-info-bottomImageContainer}" ui:field="hideButton">
-      <g:Label styleName="{playerStyle.resource-info-hideImage}"/>
-      <g:Label styleName="{playerStyle.resource-info-hideText}" ui:field="hideText"></g:Label>
- </uc:HTMLEventPanel>
+		</g:FlowPanel>
+		<panel:HTMLEventPanel styleName="resource-info-bottomImageContainer"
+			ui:field="hideButton">
+			<g:Label styleName="resource-info-hideImage" />
+			<g:Label styleName="resource-info-hideText"
+				ui:field="hideText"></g:Label>
+		</panel:HTMLEventPanel>
 	</g:FlowPanel>
 </ui:UiBinder>

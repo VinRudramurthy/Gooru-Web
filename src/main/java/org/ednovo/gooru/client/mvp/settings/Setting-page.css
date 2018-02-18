@@ -1,37 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-.settingPageMainTitle {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 35px 0px 0px 0px;
-	font-size: 38px;
-	font-weight: bold;
-	color: rgba(100, 100, 100, 0.8);
-	text-shadow: 1px 2px 2px #EEE, 0 0 0 #000, 1px 2px 2px #EEE;
-}
-
-.settingInfoContainer {
-	float: left;
-	width: 95%;
-	margin-left: 20px;
-	min-height: 206px;
-	height: auto;
-}
-
-.settingInfoTitleContainer {
-	width: 100%;
-	float: left;
-	min-height: 50px;
-	height: auto;
-	/* border-bottom: 1px solid #CCC; */
-}
-
-.settingInfoTitleOneContainer {
-	width: 100%;
-	float: left;
-	min-height: 50px;
-	height: auto;
-	/* border-bottom: 1px solid #CCC; */
-}
 
 .settingInfoTitleContainerLast {
 	width: 100%;
@@ -40,83 +8,6 @@
 	height: auto;
 	border-bottom: 1px solid #CCC;
 	margin-bottom: 15px;
-}
-
-.settingInfoTitle {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	color: #515151;
-	margin: 20px 0px 0px 2px;
-	float: left;
-	border-bottom: 1px solid #ccc;
-	width: 700px;
-}
-
-.settingInfoExpanderArrow {
-	background: url(images/settings/setting-info-expander.png);
-	float: right;
-	width: 10px;
-	height: 16px;
-	cursor: pointer;
-	margin: 20px 0px 0px 0px;
-}
-
-.settingInfoMimiusArrow {
-	background: url(images/settings/setting-info-minimus.png);
-	width: 16px;
-	height: 10px;
-	float: right;
-	cursor: pointer;
-	margin: 20px 0px 0px 0px;
-}
-
-.settingOneSetOfInputContainer {
-	float: left;
-	width: 695px;
-	height: 30px;
-	margin-bottom: 5px;
-}
-
-.settingOneSetOfContactInputContainer {
-	float: left;
-	width: 395px;
-	min-height: 30px;
-	margin-bottom: 30px;
-	height: auto;
-}
-
-.settingInfoNameText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	font-size: 12px;
-	text-align: right;
-	width: 72px;
-	vertical-align: middle;
-	line-height: 30px;
-}
-
-.settingInfoNameTextContent {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	font-size: 12px;
-	text-align: right;
-	width: 72px;
-	vertical-align: middle;
-	line-height: 30px;
-}
-
-.settingInfoEmailText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	font-size: 12px;
-	text-align: right;
-	width: 72px;
-	margin-top: 15px;
-	vertical-align: middle;
-	line-height: 30px;
 }
 
 .settingOneSetOfInputBoxContainer {
@@ -139,16 +30,6 @@
 	padding-left: 5px;
 }
 
-.settingPageUserNameColor {
-	border: 0px;
-	width: 303px;
-	height: 30px;
-	padding-left: 4px;
-	/* color: #999999; */
-	vertical-align: middle;
-	line-height: 30px;
-}
-
 .settingPageUserNameColorlastName {
 	border: 0px;
 	width: 303px;
@@ -159,81 +40,12 @@
 	line-height: 30px;
 }
 
-.settingPageUserNameColorfirstName {
-	border: 0px;
-	/* width: 303px;
- */
-	height: 30px;
-	color: #515151;
-	float: left;
-	vertical-align: middle;
-	line-height: 30px;
-}
-
-.settingPageUserNameColorGender {
-	border: 0px;
-	width: 303px;
-	height: 30px;
-	padding-left: 4px;
-	color: #515151;
-	vertical-align: middle;
-	line-height: 30px;
-}
-
-.radio {
-	background: url(images/settings/radio.png) no-repeat;
-	/* background-position: 0px -34px; */
-	width: 19px;
-	height: 17px;
-	display: inline-block;
-	margin-bottom: -5px;
-}
-
-.radioButtonSelected {
-	background: url(images/settings/radio.png) no-repeat;
-	/* background-position: 0px -34px; */
-	width: 19px;
-	height: 17px;
-	display: inline-block;
-	margin-bottom: -5px;
-	background-position: 0px -34px;
-}
-
 input.styled {
 	display: none;
 }
 
 .radioStyled {
 	display: none;
-}
-
-.settingPageCenterWrapper {
-	width: 1010px;
-	min-height: 415px;
-	height: auto;
-	margin: 0 auto;
-}
-
-.settingPageUserImageContainer {
-	float: left;
-	width: 242px;
-	height: 295px;
-	background-color: #FFF;
-	border-radius: 4px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-}
-
-.settingPageUserImageHolder {
-	float: left;
-	width: 202px;
-	/* height: 247px; */
-	margin: 20px 0px 0px 20px;
-}
-
-.settingPageUserImage {
-	width: 201px;
-	height: 205px;
-	float: left;
 }
 
 .settingPageUserImageChangeImageBg {
@@ -254,56 +66,6 @@ input.styled {
 	text-align: center;
 	margin-top: 3px;
 	cursor: pointer;
-}
-
-.settingPageUserImageUserName {
-	float: left;
-	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	font-weight: bold;
-	width: 100%;
-	margin-top: 10px;
-	word-wrap: break-word;
-	word-wrap: break-word;
-}
-
-.settingPageUserImageUserNameHint {
-	float: left;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.settingPageInfoContainerWrapper {
-	float: right;
-	width: 740px;
-	min-height: 225px;
-	height: auto;
-	background-color: #FFF;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-	border-radius: 4px;
-	margin-bottom: 50px;
-}
-
-.settingInfoTitleContainerTwo {
-	float: left;
-	width: 100%;
-	/* cursor: pointer; */
-}
-
-.settingPageRadioButtonHolder {
-	float: left;
-	margin: 10px 0px 0px 13px;
-	width: 150px;
-}
-
-.settingPageRadioButtonContainer {
-	float: left;
-	margin-bottom: 25px;
-	width: 120px;
 }
 
 .settingPageSecurityChangePassword {
@@ -336,41 +98,6 @@ input.styled {
 	background: -o-linear-gradient(top, #4C98CC, #1076BB);
 }
 
-.settingsPageSaveProfileButton {
-	background: -moz-linear-gradient(center top, #4c98cc, #1076bb) repeat
-		scroll 0 0 transparent;
-	background: -o-linear-gradient(top, #4c98cc, #1076bb);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#4c98cc),
-		to(#1076bb));
-	background: -webkit-linear-gradient(top, #4c98cc, #1076bb);
-	background: -moz-linear-gradient(top, #4c98cc, #1076bb);
-	background-image: -ms-linear-gradient(top, #4c98cc, #1076bb);
-	background: -o-linear-gradient(top, #4c98cc, #1076bb);
-	background-color: #1076bb;
-	border: 0 none;
-	border-radius: 4px 4px 4px 4px;
-	/* clear: both; */
-	color: #fff;
-	cursor: pointer;
-	/* 	margin-left: 10px; */
-	padding: 8px 9px;
-	position: relative;
-	/* float: left; */
-	/* margin-left: 282px; */
-	margin-bottom: 13px;
-	float: right;
-}
-
-.settingsPageSaveProfileButton:hover {
-	background: #1076bb;
-	cursor: pointer;
-}
-
-.settingsPageSaveButtonContainer {
-	float: right;
-	margin-top: -36px;
-}
-
 .settingsPageCancelButtonContainer {
 	float: left;
 	padding-top: 13px;
@@ -391,23 +118,6 @@ input.styled {
 	padding: 8px 8px 0px 8px;
 }
 
-.settingHeaderInfo {
-	width: 149px;
-	height: 36px;
-	margin: 0 auto;
-	margin-bottom: 36px;
-}
-
-.settingWrapper {
-	/* background: url(images/settings/gray_noise_25.png); */
-	font-family: Arial, sans-serif;
-	color: #333;
-	font-size: 12px;
-	width: 1110px;
-	/* height: 1020px; */
-	margin: 0 auto;
-}
-
 .settingInfoNameTextOne {
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
@@ -420,57 +130,6 @@ input.styled {
 	color: #4c98cc
 }
 
-.settingInfoForgotPassword {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	text-align: right;
-	margin-top: 10px;
-	margin-left: 15px;
-	padding: 0px 0px 20px 0px;
-	cursor: pointer;
-	color: #1076BB;
-}
-
-.pleaseWait {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	text-align: right;
-	margin-top: 10px;
-	margin-left: 15px;
-	padding: 0px 0px 20px 0px;
-	font-style: italic;
-	color: #515151;
-}
-
-.settingInfoForgotPassword:hover {
-	color: #4c98cc;
-}
-
-.settingInfoNameGoogleTextOne {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	text-align: right;
-	margin-top: 10px;
-	margin-left: 37px;
-	padding: 10px 0px 16px 8px;
-	color: #515151;
-	margin-bottom: 20px;
-}
-
-.settingInfoRoleText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #999;
-	font-size: 13px;
-	text-align: right;
-	margin-left: 10px;
-	width: 55px;
-	padding: 10px 0px 15px 0px;
-}
-
 .settingOneSetOfLable {
 	border: 0;
 	float: right;
@@ -480,32 +139,8 @@ input.styled {
 	color: rgb(148, 143, 143);
 }
 
-.settingOneSetOfLableEmail {
-	border: 0;
-	float: right;
-	width: 322px;
-	height: 30px;
-	padding: 15px 0px 0px 0px;
-	vertical-align: middle;
-	line-height: 30px;
-}
-
-.settingHtmlPanel {
-	float: left;
-	/* overflow: hidden; */
-	width: 690px;
-	margin-top: 10px;
-}
-
 .radioText {
 	margin-left: 5px;
-}
-
-.settingOneSetOfLabelontainer {
-	border: none;
-	padding: 0px 0px 0px 10px;
-	color: #515151;
-	float: left;
 }
 
 .settingOneSetOfLabelontainerName {
@@ -641,207 +276,12 @@ input.styled {
 	padding: 2px 112px 9px 0px;
 }
 
-.mandatoryNameLabel {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 30%;
-	color: rgb(250, 176, 58);
-	/* 	text-align: right;
-	position: relative;
-	top: 10px; */
-	float: right;
-	padding: 5px 290px 9px 0;
-}
-
 /*button center alignment*/
-.settingsPageSaveProfileButtonCenter {
-	width: 120px;
-	margin: 0 auto;
-}
-
 /* Profile settings Css */
-.publicProfileContent {
-	display: none;
-	padding: 20px;
-	background-color: rgb(255, 255, 255);
-	width: 202px;
-	border-color: rgb(234, 234, 234);
-	border-width: 1px;
-	margin-top: 45px;
-	float: left;
-	clear: both;
-	/* Safari v3.0+ and by Chrome v0.2+ */
-	-webkit-border-radius: 4px;
-	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
-	border-radius: 4px;
-	border-style: solid;
-	/* Safari v3.0+ and by Chrome v0.2+ */
-	-webkit-box-shadow: 0px 0px 10px rgba(204, 204, 204, 0.3);
-	/* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
-	box-shadow: 0px 0px 10px rgba(204, 204, 204, 0.3);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.Glow(Color=#ffcccccc,Strength=10)";
-	filter: progid:DXImageTransform.Microsoft.Glow(Color=#ffcccccc, Strength=10);
-}
 
-.publicProfileTitle {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: rgb(81, 81, 81);
-}
 
 .clear {
 	clear: both;
-}
-
-.publicProfileOnButtonContent {
-	margin: 10px 0px 30px 0px;
-}
-
-.publicProfileOnButtonContent button {
-	border-radius: 0px;
-	font-weight: normal;
-	color: #515151;
-}
-
-.publicProfileOffButtonsDeActive {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(81, 81, 81);
-	font-size: 12px;
-	width: 57px;
-	height: 29px;
-	cursor: pointer;
-	text-align: center;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
-		to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	float: left;
-}
-
-.publicProfileOffButtonsActive,.publicProfileOffButtonsActive:hover {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(81, 81, 81);
-	font-size: 12px;
-	/* background-color: #ededed; */
-	background-color: #dddddd;
-	width: 57px;
-	height: 29px;
-	cursor: pointer;
-	background: #ddd;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#bbb), to(#eee));
-	background: -webkit-linear-gradient(top, #bbb, #eee);
-	background: -moz-linear-gradient(top, #bbb, #eee);
-	background: -ms-linear-gradient(top, #bbb, #eee);
-	background: -o-linear-gradient(top, #bbb, #eee);
-	-moz-box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	-webkit-box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	border: 1px solid #ddd;
-	border-left: transparent;
-	float: left;
-}
-
-.publicProfileOnButtonActive,.publicProfileOnButtonActive:hover {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(81, 81, 81);
-	font-size: 12px;
-	/* background-color: #ededed; */
-	background-color: #dddddd;
-	width: 57px;
-	height: 29px;
-	cursor: pointer;
-	background: #ddd;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#bbb), to(#eee));
-	background: -webkit-linear-gradient(top, #bbb, #eee);
-	background: -moz-linear-gradient(top, #bbb, #eee);
-	background: -ms-linear-gradient(top, #bbb, #eee);
-	background: -o-linear-gradient(top, #bbb, #eee);
-	-moz-box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	-webkit-box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.05);
-	border: 1px solid #ddd;
-	border-right: transparent;
-	float: left;
-}
-
-.publicProfileOffButtonsActive:hover,.publicProfileOnButtonActive:hover
-	{
-	cursor: default;
-}
-
-.publicProfileOnButtonDeActive {
-	font-family: Arial, Helvetica, sans-serif;
-	color: rgb(81, 81, 81);
-	font-size: 12px;
-	width: 57px;
-	height: 29px;
-	cursor: pointer;
-	text-align: center;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
-		to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	float: left;
-}
-
-.publicProfileOnButtonDeActive:hover,.publicProfileOnTitleActive:hover,.publicProfileOffButtonsDeActive:hover
-	{
-	cursor: pointer;
-	background: #eee;
-}
-
-.publicProfileDescription {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: rgb(153, 153, 153);
-	text-align: left;
-	padding: 0px 0px 10px 0px;
-}
-
-.publicProfileTextarea {
-	background-color: rgb(255, 255, 255);
-	max-width: 200px;
-	margin-bottom: -18px;
-	height: 146px;
-	word-wrap: break-word;
-	border-color: rgb(221, 221, 221);
-	border-width: 1px;
-	outline: 0;
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-	border-style: solid;
-	position: relative;
-	z-index: 10;
-	bottom: -2px;
-	cursor: pointer;
-	margin-top: -20px;
-}
-
-.publicProfilePencil-IconNew {
-	width: 10px;
-	height: 15px;
-	background: url(images/pencil-hover-icon.fw.png) no-repeat;
-	margin-left: 3px;
-	margin-top: 3px;
-}
-
-.publicProfileTextarea:hover {
-	cursor: pointer;
-	display: block;
-}
-
-.publicProfilePencil-IconNew:hover {
-	cursor: pointer;
-	display: block;
 }
 
 .publicProfileIcon {
@@ -855,20 +295,6 @@ input.styled {
 	background: url(images/profilepage/pencil-hover-icon.fw.png);
 	width: 10px;
 	height: 15px;
-}
-
-.publicProfileTextarea:hover {
-	display: block;
-}
-
-.publicProfileHoverButtons {
-	/*float:left;*/
-	text-align: center;
-	padding: 40px 0px 0px 0px;
-	clear: both;
-	overflow: hidden;
-	margin: 0 auto;
-	width: 50%;
 }
 
 .publicProfileHoverButtonBg {
@@ -896,37 +322,6 @@ input.styled {
 	background-color: #4C98cc;
 }
 
-.publicProfileSaveButtonContent {
-	float: right;
-	margin-bottom: 5px;
-}
-
-.publicProfileSeePageButtonBg:hover {
-	background: #1076BB;
-}
-
-.publicProfileSeePageButtonBg {
-	float: left;
-	cursor: pointer;
-	color: white;
-	background: #1076BB;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
-		to(#1076BB));
-	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
-	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
-	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
-	background: -o-linear-gradient(top, #4C98CC, #1076BB);
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	border: none;
-	font-family: Arial, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 2px 2px;
-	width: 100px;
-	height: 33px;
-}
 
 .publicProfileIcon-hover {
 	display: none;
@@ -934,65 +329,6 @@ input.styled {
 	top: 0px;
 	position: relative;
 	z-index: 20;
-}
-
-.publicProfileSaveButtonBg:hover {
-	background: #1076BB;
-}
-
-.publicProfileSaveButtonBg {
-	float: left;
-	cursor: pointer;
-	color: white;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
-		to(#1076BB));
-	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
-	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
-	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
-	background: -o-linear-gradient(top, #4C98CC, #1076BB);
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	padding: 7px 2px 0 2px;
-	border: none;
-	font-family: Arial, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	margin: 0px 5px 0px 0px;
-	background-color: rgb(16, 118, 187);
-	border: 1px solid #1076BB;
-}
-
-.publicProfileSaveButtonText {
-	padding: 7px 9px;
-	margin-bottom: 5px;
-}
-
-.publicProfileCancelText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(16, 118, 186);
-	padding: 7px 9px;
-	cursor: pointer;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
-		to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	clear: both;
-}
-
-.publicProfileCancelText:hover {
-	cursor: pointer;
-	background: #ddd
 }
 
 .profileEditImage {
@@ -1005,92 +341,8 @@ input.styled {
 	margin-top: 15px;
 }
 
-.profileDescription {
-	height: 18px;
-	text-align: left;
-	font-size: 14px;
-	color: rgba(200, 200, 200, 0.8);
-	margin-right: 17px;
-}
 
-.mandatoryAboutUsLabel {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: rgb(250, 176, 58);
-	float: left;
-	padding: 2px 0px 9px 0px;
-	width: 100px;
-}
-
-.uploadProfileImageHolder {
-	width: 201px;
-	height: 205px;
-}
-
-.uploadProfileImageButton {
-	display: none;
-	position: relative;
-	text-align: center;
-	height: 15px;
-	top: -44px;
-	background-color: #1076BB;
-	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat
-		scroll 0 0 transparent;
-	background: -o-linear-gradient(top, #4C98CC, #1076BB);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#4C98CC),
-		to(#1076BB));
-	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
-	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
-	background-image: -ms-linear-gradient(top, #4C98CC, #1076BB);
-	background: -o-linear-gradient(top, #4C98CC, #1076BB);
-	border: 0 none;
-	border-radius: 4px 4px 4px 4px;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-ms-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	-o-border-radius: 4px 4px 4px 4px;
-	color: white;
-	cursor: pointer;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 8px 9px;
-	width: 152px;
-	margin-left: 15px;
-	float: left;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C98CC',
-		endColorstr='#1076BB');
-}
-
-.uploadProfileImageButton:hover {
-	background: #1076BB;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1076BB',
-		endColorstr='#1076BB');
-}
-
-.clearContent {
-	clear: both;
-	padding-top: 15px;
-}
 /* Adding Course and Grade feature css */
-.userCoursePopup {
-	/* position: absolute; */
-	top: 43px;
-	left: 73px;
-	/* width: 392px; */
-	/* padding: 5px; */
-	background: #fff;
-	/* background-color:rgb(255,255,255);
-	border-color:rgb(221,221,221);
-	border-width:1px;
-	border-style:solid;
-	-moz-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	-webkit-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	z-index: 1;	 */
-	float: left;
-}
 
 /* .settingGradeInfoContainer {
 	float: left;
@@ -1098,59 +350,7 @@ input.styled {
 	margin-top: 10px;
 	width: 385px;
 } */
-.settingGradeInfoTitleContainer {
-	float: left;
-	width: 270px;
-	margin-left: 15px;
-	height: 25px;
-	border-bottom: 1px solid #CCC;
-	margin-bottom: 12px;
-}
 /*course title css here*/
-.settingCourseInfoTitleContainer {
-	float: left;
-	width: 270px;
-	height: 25px;
-	border-bottom: 1px solid #CCC;
-	margin-bottom: 12px;
-}
-
-.settingGradeInfoTitle {
-	font-size: 13px;
-	color: #515151;
-}
-
-.settingGradeContentContainer {
-	float: left;
-	width: 250px;
-	margin-bottom: 10px;
-	margin-left: 15px;
-}
-
-.settingGradeGartenContainer {
-	float: left;
-	width: 250px;
-	opacity: 0.6;
-}
-
-.settingGradeInfoContainer {
-	float: left;
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 315px;
-}
-
-.settingCourseInfoTitle {
-	font-size: 13px;
-	color: #515151;
-}
-
-.addedCoursesList {
-	float: left;
-	width: 321px;
-	/* margin: 5px 0px 10px 2px; */
-	margin-bottom: 10px;
-}
 
 .coursePoupSaveBtnContainer {
 	width: 125px;
@@ -1185,20 +385,6 @@ input.styled {
 	background: #eee;
 }
 
-.settingGradeTitleLabel {
-	float: left;
-	margin-left: 15px;
-	font-family: arial;
-	color: #999;
-}
-
-.settingCourseTitleLabel {
-	float: left;
-	/* margin-left: 15px; */
-	font-family: arial;
-	color: #999;
-}
-
 /*this following 2 classes copied form collection.css*/
 .profileKinderGartenGrade {
 	font-size: 14px;
@@ -1222,92 +408,14 @@ input.styled {
 	margin-bottom: 10px;
 }
 /*this class has added for 5.9 sprint*/
-.settingEditButton {
-	float: right;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	margin-right: 6px;
-	color: #1076BB;
-	padding: 7px 9px;
-	border-radius: 4px;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
-		to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	text-decoration: none;
-	margin-top: -34px;
-}
 
-.settingEditButton:hover {
-	background: #efefef;
-	cursor: pointer;
-}
-
-.settingCancelButton {
-	float: right;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	margin-right: 6px;
-	color: #1076bb;
-	padding: 7px 9px;
-	border-radius: 4px;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
-		to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	text-decoration: none;
+.settingOneSetOfStandardInputContainerDefault {
 	float: left;
-}
-
-.settingCancelButton:hover {
-	background: #efefef;
-	cursor: pointer;
-}
-
-.settingOneSetOfInputContainerLastNameNew {
-	float: left;
-	vertical-align: middle;
-	line-height: 30px;
-	color: #515151;
-}
-
-.settingInfoText {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #515151;
-	margin: 20px 0 0 2px;
-	float: right;
-	margin-top: -20px;
-}
-
-.emailSecurityText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	text-align: right;
-	width: 154px;
-	color: #999;
-	margin-left: 74px;
-}
-
-.settingOneSetOfInputContainerName {
-	width: 100%;
-	float: left;
-	height: 30px;
-	margin-bottom: 5px;
-}
-
-.defaultTextcss {
-	margin-left: 4px;
-	color: #999;
+	width: 395px;
+	min-height: 30px;
+	margin-bottom: 30px;
+	height: auto;
+	margin-top: 10px;
 }
 
 .deafaultCourse {
@@ -1324,44 +432,4 @@ input.styled {
 	border-radius: 3px;
 	margin: 2px;
 	float: left;
-}
-
-.radioTextGeneral {
-	margin-left: 22px;
-	margin-top: -14px;
-}
-.standardsText{
-	text-align: left;
-	/* width: 223px; */
-	font-family: Arial, Helvetica, sans-serif;
-	color: #515151;
-	font-size: 12px;
-}
-.standardsTextDescription{
-	text-align: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #999;
-	font-size: 12px;
-	margin-bottom: 10px;
-	
-}
-.settingOneSetOfStandardInputContainer {
-	float: left;
-	width: 395px;
-	min-height: 30px;
-	margin-bottom: 30px;
-	height: auto;
-}
-.settingOneSetOfStandardInputContainerDefault {
-	float: left;
-	width: 395px;
-	min-height: 30px;
-	margin-bottom: 30px;
-	height: auto;
-	margin-top: 10px;
-}
-.standardsCheckBox{
-	float: left;
-	width: 285px;
-	margin: 2px 14px;
 }

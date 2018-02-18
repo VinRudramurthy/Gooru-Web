@@ -24,9 +24,33 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.preview.home;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.client.mvp.rating.events.OpenReviewPopUpEventHandler;
 
-public interface PreviewHomeUiHandlers extends BaseUiHandlers{
+public interface PreviewHomeUiHandlers extends BaseUiHandlers,OpenReviewPopUpEventHandler{
 	void scrollStudyPageEndPage(); 
 	public void resetCollectionActivityEventId();
+	/**
+	 * @function openReviewPopUp 
+	 * 
+	 * @created_date : May 27, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @param assocGooruOId
+	 * @param title
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	void openReviewPopUp(String assocGooruOId, String title);
+	void triggerCollectionShareDataEvent(String collectionId,String itemType,String shareType,boolean confirmStatus);
+	
 }

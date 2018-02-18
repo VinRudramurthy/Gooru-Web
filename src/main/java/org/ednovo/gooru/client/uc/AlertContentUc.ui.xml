@@ -30,19 +30,16 @@
 		.okButton button {
 			color:#515151;
 		}
-		.okButton button:hover {
-			color:#515151;
-			background: #ddd;
-		}
+		
 	</ui:style>
 	<g:FlowPanel>
 		<g:FlowPanel ui:field="headerPanel" styleName="{style.title}">
 			<g:Label ui:field="alertMessageHeaderField"/>	
 		</g:FlowPanel>
 		<g:FlowPanel ui:field="contentPanel" styleName="{style.content}">
-			<g:Label styleName="{style.contentStyle}" ui:field="alertMessageField"/>
+			<g:HTML styleName="{style.contentStyle}" ui:field="alertMessageField"/>
 		<g:FlowPanel styleName="{style.okButton}">
-			<g:Button ui:field="okButton"/>
+			<g:Button styleName="primary" ui:field="okButton"/>
 		</g:FlowPanel>
 		</g:FlowPanel>
 	</g:FlowPanel>

@@ -25,19 +25,13 @@
  ******************************************************************************/
 
 package org.ednovo.gooru.client.mvp.play.collection.preview.home.share;
-
-/**
- * 
- */
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * @author Gooru Team
- * 
  */
 public class SocialShareSmallPresenter extends ChildPresenter<SocialShareSmallPresenter, IsSocialShareSmallView> {
 
-	
 	/**
 	 * Class constructor
 	 * 
@@ -46,20 +40,10 @@ public class SocialShareSmallPresenter extends ChildPresenter<SocialShareSmallPr
 	public SocialShareSmallPresenter(IsSocialShareSmallView childView) {
 		super(childView);
 	}
-	
-
-
-	
 	private void onBind() {
 		throw new RuntimeException("Not implemented");
 	}
-	
-	
 	private void onLoad() {
 		throw new RuntimeException("Not implemented");
 	}
-	
-	
-	 
-	}
-
+}

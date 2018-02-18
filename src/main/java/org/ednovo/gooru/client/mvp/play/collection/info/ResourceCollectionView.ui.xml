@@ -7,7 +7,7 @@
 	<g:FlowPanel styleName="{playerStyle.collection-resource-container}">
 		<g:HTMLPanel styleName="{playerStyle.collection-thumbnail-container}">
 		    <g:HTMLPanel ui:field="imageContainer">
-				<g:Image styleName="{playerStyle.collection-thumbnail}" ui:field="collectionThumbnail"/>
+				<g:Image styleName="infoCollectionThumbnail" ui:field="collectionThumbnail"/>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
 		<g:FlowPanel styleName="{playerStyle.collection-metadata-container}">

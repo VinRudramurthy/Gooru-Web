@@ -55,4 +55,5 @@ public class AppVerticalPanelDropController extends VerticalPanelDropController 
 			((DropBox) dropTarget).onDrop((Draggable) context.draggable);
 		}
 	}
+	
 }

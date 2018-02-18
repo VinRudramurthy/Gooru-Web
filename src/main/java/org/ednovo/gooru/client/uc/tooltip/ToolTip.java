@@ -24,9 +24,9 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.uc.tooltip;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -41,13 +41,13 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ToolTip extends PopupPanel implements MessageProperties, HasMouseOutHandlers{
+public class ToolTip extends PopupPanel implements HasMouseOutHandlers{
 	
 	@UiField
 	HTMLPanel panelCode;
 	
 	@UiField
-	HTMLPanel lblTitle;
+	HTMLPanel lblTitle,tootltipContent;
 	
 	@UiField Anchor lblLink;
 	
@@ -58,12 +58,22 @@ public class ToolTip extends PopupPanel implements MessageProperties, HasMouseOu
 	public static ToolTipUiBinder toolTipUiBinder=GWT.create(ToolTipUiBinder.class);{
 	}
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class); 
+	
 	public ToolTip(){
 		setWidget(toolTipUiBinder.createAndBindUi(this));
 	//	lblTitle.setText(GL0450);
-		lblTitle.setTitle(GL0450);
-		lblLink.setText(GL0451);
+		lblTitle.setTitle(i18n.GL0450()+" ");
+		lblTitle.getElement().setId("pnlLblTitle");
+		lblTitle.getElement().setAttribute("alt",i18n.GL0450()+" ");
+		lblTitle.getElement().setAttribute("title", i18n.GL0450()+" ");
+		lblLink.setText(i18n.GL0451());
+		lblLink.getElement().setId("lnkLblLink");
+		lblLink.getElement().setAttribute("alt", i18n.GL0451());
+		lblLink.getElement().setAttribute("title", i18n.GL0451());
+
 		lblLink.setTarget("_blank");
+		panelCode.getElement().setId("pnlPanelCode");
 		panelCode.getElement().getStyle().setWidth(150, Unit.PX);
 		this.addMouseOutHandler(new MouseOutHandler() {
 			
@@ -85,9 +95,20 @@ public class ToolTip extends PopupPanel implements MessageProperties, HasMouseOu
 		
 		setWidget(toolTipUiBinder.createAndBindUi(this));
 		lblTitle.getElement().setInnerHTML(description);
-		lblLink.setText(GL0451);
+		lblLink.setText(i18n.GL0451());
+		lblLink.getElement().setId("lnkLblLink");
+		lblLink.getElement().setAttribute("alt", i18n.GL0451());
+		lblLink.getElement().setAttribute("title", i18n.GL0451());
 		lblLink.setTarget("_blank");
+		panelCode.getElement().setId("pnlPanelCode");
+		lblTitle.getElement().setId("pnlLblTitle");
+		lblTitle.getElement().setAttribute("alt", description);
+		lblTitle.getElement().setAttribute("title", description);
 		panelCode.getElement().getStyle().setWidth(150, Unit.PX);
+		
+		if(AppClientFactory.getPlaceManager().getRequestParameter("view", null)!=null && !AppClientFactory.getPlaceManager().getRequestParameter("view", null).equals("") && AppClientFactory.getPlaceManager().getRequestParameter("view", null).equals("end")){
+			tootltipContent.getElement().getStyle().setWidth(155, Unit.PX);
+		}
 
 		this.addMouseOutHandler(new MouseOutHandler() {
 			
@@ -104,12 +125,42 @@ public class ToolTip extends PopupPanel implements MessageProperties, HasMouseOu
 			}
 		});
 	}
+	public ToolTip(String description,String type){
+		
+		setWidget(toolTipUiBinder.createAndBindUi(this));
+		lblTitle.getElement().setInnerHTML(description);
+		panelCode.getElement().setId("pnlPanelCode");
+		lblTitle.getElement().setId("pnlLblTitle");
+		lblTitle.getElement().setAttribute("alt", description);
+		lblTitle.getElement().setAttribute("title", description);
+		panelCode.getElement().getStyle().setWidth(150, Unit.PX);
+		
 
+		this.addMouseOutHandler(new MouseOutHandler() {
+			
+			@Override
+			public void onMouseOut(MouseOutEvent event) {
+				hide();
+			}
+		});
+		AppClientFactory.getInjector().getHomeService().mosLink(new SimpleAsyncCallback<String>() {
+
+			@Override
+			public void onSuccess(String result) {
+				lblLink.setHref(result);
+			}
+		});
+	}
 	@Override
 	public HandlerRegistration addMouseOutHandler(MouseOutHandler handler) {
 		return addDomHandler(handler, MouseOutEvent.getType());
 	}
 	
-	
-	
+	public Anchor getLblLink(){
+		return lblLink;
+	}
+	public HTMLPanel getTootltipContent()
+	{
+		return tootltipContent;
+	}
 }

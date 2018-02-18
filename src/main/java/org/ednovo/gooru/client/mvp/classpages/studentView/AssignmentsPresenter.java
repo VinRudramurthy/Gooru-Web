@@ -29,16 +29,27 @@ package org.ednovo.gooru.client.mvp.classpages.studentView;
  */
 import java.util.List;
 
+import org.ednovo.gooru.application.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.ClasspageService;
+import org.ednovo.gooru.application.client.service.ResourceServiceAsync;
+import org.ednovo.gooru.application.shared.model.content.ResourceDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.child.ChildPresenter;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.service.ClasspageService;
-import org.ednovo.gooru.client.service.ResourceServiceAsync;
-import org.ednovo.gooru.shared.model.content.ResourceDo;
 
 /**
- * @author Search Team
  * 
+ * @fileName : AssignmentsPresenter.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class AssignmentsPresenter extends ChildPresenter<AssignmentsPresenter, IsAssignmentsView> {
 
@@ -85,36 +96,29 @@ public class AssignmentsPresenter extends ChildPresenter<AssignmentsPresenter, I
 		return AppClientFactory.getInjector().getResourceService();
 	}
 	
-	/*public SimpleAsyncCallback<List<CollectionDo>> getUserCollectionsAsyncCallback() {
-		if (getMyUserCollectionsAsyncCallback == null) {
-			getMyUserCollectionsAsyncCallback = new SimpleAsyncCallback<List<CollectionDo>>() {
-
-				@Override
-				public void onSuccess(List<CollectionDo> result) {
-					getView().onPostUserCollections(result);
-					if (result.size()>0){
-						getView().showPanel(true);
-					}
-					if (result.size()>=10){
-						getView().disableAddNewCollection();
-					}
-				}
-			};
-		}
-		return getMyUserCollectionsAsyncCallback;
-	}*/
-	 
+	 /**
+	  * 
+	  * @function getAssignmentCollections 
+	  * 
+	  * @created_date : 07-Dec-2014
+	  * 
+	  * @description
+	  * 
+	  * 
+	  * @parm(s) : @param assignmentId
+	  * 
+	  * @return : void
+	  *
+	  * @throws : <Mentioned if any exceptions>
+	  *
+	  * 
+	  *
+	  *
+	  */
 	public void getAssignmentCollections(String assignmentId) {
 		AppClientFactory.getInjector().getClasspageService().v2GetAssignmentCollectionsById(assignmentId, new SimpleAsyncCallback<List<ResourceDo>>() {
-
 			@Override
 			public void onSuccess(List<ResourceDo> result) {
-				/*if (result.size()>0){
-					getView().showPanel(true);
-				}
-				if (result.size()>=10){
-					getView().disableAddNewCollection();
-				}*/
 				if(result.size()==0){
 					getView().emptyAssignment();
 				}

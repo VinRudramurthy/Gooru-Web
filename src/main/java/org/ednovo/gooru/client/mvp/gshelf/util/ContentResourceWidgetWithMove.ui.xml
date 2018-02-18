@@ -1,0 +1,140 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:event="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="tableRow">
+		<div class="tableColumn">
+			<div class="tableMainHeader">
+				<g:Label styleName="resourceNumber" ui:field="lblItemSequence" />
+				<event:HTMLEventPanel styleName="resourceNameBlock" ui:field="titleBlockPnl">
+					<g:InlineLabel ui:field="spnResourceType" />
+					<g:HTML styleName="resourceTitle" ui:field="lblResourceTitle" />
+				</event:HTMLEventPanel>
+			</div>
+		</div>
+		<div class="tableColumn">
+			<div class="tableListTags">
+				<div class="no-gutter">
+					<div class="col-md-12">
+						<div class="reviewsIcon">
+							<img src="images/messageIcon.png"></img>
+						</div>
+						<g:HTMLPanel styleName="reviewsText" ui:field="pnlNarration" />
+
+						<g:FlowPanel ui:field="narrationConatainer">
+							<g:HTML ui:field="resourceNarrationHtml" />
+							<g:Label ui:field="lblCharLimit"></g:Label>
+							<g:FlowPanel ui:field="editFloPanel">
+								<g:FlowPanel ui:field="narationFloPanel" styleName="resourceNarrationContainer">
+									<g:TextArea ui:field="narrationTxtArea" styleName="narrationText" />
+									<g:Label ui:field="narrationAlertMessageLbl" />
+								</g:FlowPanel>
+							</g:FlowPanel>
+						</g:FlowPanel>
+
+						<div class="clearfix"></div>
+						<g:HTMLPanel styleName="timeIcon" ui:field="pnlTimeIcon">
+							<g:Image ui:field="imgDisplayIcon" />
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="timeText" ui:field="pnlYoutubeContainer">
+							<g:Label ui:field="videoTimeField" styleName="youtubeText" />
+							<g:Label ui:field="fromLblDisplayText" styleName="youtubeText" />
+							<g:Label ui:field="lblEditSartPageText"></g:Label>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+						<g:Label ui:field="startStopTimeDisplayText" styleName="totalVideoTimeStyles"></g:Label>
+						<g:HTMLPanel ui:field="timeEditContainer">
+							<g:HTMLPanel styleName="col-md-6 text-center videostart">
+								<g:Label styleName="videostartHeader">Start</g:Label>
+								<g:HTMLPanel>
+									<g:TextBox ui:field="startMinTxt"></g:TextBox>
+									<g:InlineLabel>:</g:InlineLabel>
+									<g:TextBox ui:field="startSecTxt"></g:TextBox>
+								</g:HTMLPanel>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="col-md-6 text-center videostart">
+								<g:Label styleName="videostartHeader">Stop</g:Label>
+								<g:HTMLPanel>
+									<g:TextBox ui:field="stopMinTxt"></g:TextBox>
+									<g:InlineLabel>:</g:InlineLabel>
+									<g:TextBox ui:field="stopSecTxt"></g:TextBox>
+								</g:HTMLPanel>
+							</g:HTMLPanel>
+							<g:Label ui:field="errorMsgLabel" styleName="errorMessage"></g:Label>
+							<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+							<g:HTMLPanel>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:FlowPanel ui:field="pnlPdfEdiContainer"
+							styleName="pdfEdiContainer pdfEdiContainerLeft">
+							<g:Label ui:field="lblStartPage" styleName="styleForLbl" />
+							<g:FlowPanel styleName="pdfEditBox pdfEdiContainerLeft">
+								<g:TextBox ui:field="startpdfPageNumber" />
+							</g:FlowPanel>
+							<g:Label ui:field="lblEndPage" styleName="styleForLbl" />
+							<g:FlowPanel styleName="pdfEdiContainerLeft">
+								<g:TextBox ui:field="stoppdfPageNumber" />
+							</g:FlowPanel>
+							<g:Label ui:field="updatePDFLabelText"></g:Label>
+						</g:FlowPanel>
+						<g:Label ui:field="lblError" styleName="errorMessage"></g:Label>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<g:HTMLPanel styleName="tableColumn lastItem">
+			<g:HTMLPanel styleName="btn-group editButton" ui:field="pnlEditContainer">
+				<g:Button styleName="btn btn-default dropdown-toggle" text="{i18n.GL0140}"
+					ui:field="btnEdit" />
+				<panel:UlPanel ui:field="ulGradePanel">
+					<panel:LiPanel>
+						<g:Anchor ui:field="updateResourceBtn" text="{i18n.GL0962}"
+							title="{i18n.GL0962}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="editInfoLbl" text="{i18n.GL0963}"
+							title="{i18n.GL0963}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="editVideoTimeLbl" text="{i18n.GL0964}"
+							title="{i18n.GL0964}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="editStartPageLbl" text="{i18n.GL0960}"
+							title="{i18n.GL0960}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="copyResource" text="{i18n.GL0965}"
+							title="{i18n.GL0965}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="confirmDeleteLbl" text="{i18n.GL0237}"
+							title="{i18n.GL0237}" />
+					</panel:LiPanel>
+					<panel:LiPanel>
+						<g:Anchor ui:field="addTages" text="{i18n.GL1795}" title="{i18n.GL1795}" />
+					</panel:LiPanel>
+				</panel:UlPanel>
+			</g:HTMLPanel>
+			<g:HTMLPanel ui:field="pnlArrows" styleName="tableListOrder">
+				<g:Label styleName="topArrow sprite" ui:field="lblTopArrow" />
+				<div class="numInput">
+					<g:TextBox styleName="form-control" maxLength="3"
+						ui:field="txtMoveTextBox" />
+				</div>
+				<g:Label styleName="bottomArrow sprite" ui:field="lblDownArrow" />
+			</g:HTMLPanel>
+			<g:Label ui:field="lblUpdateTextMessage" text="{i18n.GL0966}"
+				title="{i18n.GL0966}" />
+			<g:FlowPanel ui:field="actionVerPanel">
+				<g:Button styleName="primary updateButton" ui:field="btnUpdate"
+					text="{i18n.GL0240}" title="{i18n.GL0240}" />
+				<g:Button styleName="secondary updateButton" ui:field="btnCancel"
+					text="{i18n.GL0142}" title="{i18n.GL0142}" />
+			</g:FlowPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

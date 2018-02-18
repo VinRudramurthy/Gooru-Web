@@ -28,7 +28,7 @@
 package org.ednovo.gooru.client.mvp.shelf.event;
 
 
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 
 import com.google.gwt.event.shared.EventHandler;
 

@@ -24,8 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.customize;
 
-import org.ednovo.gooru.client.child.IsChildView;
-import org.ednovo.gooru.client.mvp.dnd.IsDraggable;
+import org.ednovo.gooru.application.client.child.IsChildView;
 
 /**
  * @author Search Team

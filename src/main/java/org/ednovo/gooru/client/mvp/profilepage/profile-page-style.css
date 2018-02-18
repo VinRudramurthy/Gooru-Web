@@ -4,7 +4,7 @@
 }
 
 body {
-	background-image: url("images/profilepage/gray_noise_25.png");
+	background-image: url("images/landing-page/gray_noise_25.png");
 	font-family: Arial, sans-serif;
 	color:#515151;
 	font-size:12px;
@@ -32,95 +32,22 @@ a:hover {
 	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
 	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
 	background: -o-linear-gradient(top, #4C98CC, #1076BB);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C98CC', endColorstr='#1076BB');
+	
 }
 
 .gooru-button:hover {
 	cursor:pointer;
 	background: #1076BB;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1076BB', endColorstr='#1076BB');
+	
 }
 
-.profileMainContainer {
-	width:1200px;
-	margin:0 auto;
-}
-
-.profileContainer {
-	padding:20px;
-	width:1121px;
-	margin:auto;
-	position: fixed;
-}
-
-.userInfo {
-	overflow:hidden;
-}
-
-.avatar {
-	width:100px;
-	height:100px;
-	background-color:white;
-	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
-	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
-	box-shadow: 0 0 10px rgba(0,0,0,.1);
-	padding:10px;
-	float:left;
-	margin-right:20px;
-}
-
-.aboutUserText {
-	width:633px;
-	float:left;
-}
-
-.userName {
-	font-size: 38px;
-	font-weight: bold;
-	color: rgba(100,100,100, 0.8);
-	text-shadow: 1px 2px 2px #EEE, 0 0 0 #000, 1px 2px 2px #EEE;
-	background-color: transparent;
-}
-
-.userBio {
-	padding-top: 0px;
-	line-height: 140% !important;
-	width: 550px;
-}
 
 .userTitle {
 	font-size:16px;
 	margin-bottom:20px;
 }
 
-.userContent {
-	clear:both;
-	border-bottom:1px solid #ddd;
-}
 
-.tabs {
-	height: 35px;
-	width: 100%;
-	border:1px solid #ddd;
-	background: rgb(239,239,239); /* Old browsers */
-	/* Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
-
-	/* Safari 5.1, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
-
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
-
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
-
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
-	
-	/* IE */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FDFDFD', EndColorStr='#EDEDED');
-}
 
 .tabsLiActive {
 	display: inline-block;
@@ -134,7 +61,7 @@ a:hover {
 	background: -moz-linear-gradient(top, #DDD, #F5F5F5);
 	background: -ms-linear-gradient(top, #DDD, #F5F5F5);
 	background: -o-linear-gradient(top, #DDD, #F5F5F5);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#F5F5F5');
+	
 }
 
 .tabsLi, .tabsLiDeactivated {
@@ -158,8 +85,8 @@ a:hover {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
 	
-	/* IE */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FDFDFD', EndColorStr='#EDEDED');
+	
+	
 }
 
 .tabsLi:hover {
@@ -167,53 +94,7 @@ a:hover {
 	cursor: pointer;	
 }
 
-.tabs li {
-	display:inline-block;
-	padding:10px 20px;
-}
 
-.tabs li:hover.deactivated {
-	background-color:transparent;
-	cursor: default;
-}
-
-.tabs li:hover {
-	background-color:#efefef;
-	cursor: pointer;
-}
-
-.tabs li.deactivated {
-	color:#999;
-}
-
-.tabs li.active {
-	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
-	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
-	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
-	
-	/* Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#F5F5F5));
-
-	/* Safari 5.1, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #DDD, #F5F5F5);
-
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #DDD, #F5F5F5);
-
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #DDD, #F5F5F5);
-
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #DDD, #F5F5F5);
-	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#F5F5F5');
-}	
-
-.contentView {
-	height:600px; /* This needs to be calculated. Use the window height - 210px */
-	border-top: 1px solid #ddd;
-}
 
 .folderBlock {
 	float: left;
@@ -236,22 +117,15 @@ a:hover {
 	float:left;
 	border-right: 1px dashed #ccc;
 	padding:20px 20px 0px 0px;
-	position: fixed;
 }
 
 .contentVisualView {
-	width:713px;
+	width:708px;
 	height:100%;
 	overflow:auto;
 	overflow-x: hidden;
-	float:left;
 	padding:20px;
-	position: fixed;
 	margin-left: 370px;
-}
-
-.folderMetadata {
-	margin-bottom:40px;
 }
 
 .folderIcon {
@@ -265,14 +139,6 @@ a:hover {
 .folderInfo {
 	width:480px;
 	float:left;
-}
-
-.folderTitle {
-	font-size:16px;
-	margin-bottom:10px;
-}
-
-.folderDescription{
 }
 
 .blockHoverButtons {
@@ -313,15 +179,15 @@ ul {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FDFDFD', endColorstr='#EDEDED');
+	
+	
 }
 
 .folders-li:hover, .folders-li.open:hover {
 	background:#EFEFEF;
 	
-	/* IE 6-9 */	
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EFEFEF', endColorstr='#EFEFEF');
+	
+	
 	
 	box-shadow:none;
 	border-bottom:1px solid #efefef;
@@ -344,8 +210,8 @@ ul {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #DDD, #F5F5F5);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#F5F5F5');
+	
+	
 	
 	box-shadow: inset 0 0 10px rgba(0,0,0,.1);
 	border-top:1px solid #ccc;
@@ -393,8 +259,8 @@ ul {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FDFDFD', endColorstr='#EDEDED');
+	
+	
 	
 	/* IE 10 */
 	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
@@ -436,7 +302,7 @@ ul {
 }
 
 .folders li:hover {
-	//background-color:#CFE3F1;
+	/* background-color:#CFE3F1; */
 	cursor: pointer;
 }
 
@@ -509,23 +375,7 @@ ul {
 	height:370px; /* This needs to be calculated. Use the window height - 440px */
 }
 
-.search-result-box .tabs {	
-	margin: 10px -10px -10px -10px;
-	opacity:0;
-}
 
-.search-result-box .tabs.open {
-	opacity:1;
-}
-
-.search-result-box:hover .tabs, .tabs.active {
-	opacity:1;
-}
-
-.search-result-box .tabs li {
-	padding-top:5px;
-	padding-bottom:5px;
-}
 
 .search-result-box .resources-inside li {
 	clear:both;
@@ -690,8 +540,8 @@ li.resources {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #666, #515151);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#515151');
+	
+	
 }
 
 .standards li div.bubble-arrow {
@@ -704,32 +554,9 @@ li.resources {
 	height: 10px;
 	position: relative;
 	left: 22px;
-	background-image: url("images/profilepage/bubble-arrow.png");
+	background-image: url("images/bubble-arrow.png");
 }
 
-.standards li div.standard-popup {
-	display:none;
-	position:absolute;
-	left:-50px;
-	top:20px;
-	width: 150px;
-}
-
-.standards li div.standards-inner {
-	color:#515151;
-	background-color:white;
-	border: 1px solid #ddd;
-	font-size:12px;
-	padding:10px;
-	-moz-box-shadow:     0 0 10px rgba(0,0,0,.2);
-	-webkit-box-shadow:  0 0 10px rgba(0,0,0,.2);
-	box-shadow:          0 0 10px rgba(0,0,0,.2);
-	border-radius: 4px;
-}
-
-.standards li:hover div.standard-popup {
-	display:block;
-}
 
 .resource-description {
 	margin:10px 0px 0px 0px;
@@ -825,14 +652,6 @@ li.resources {
 
 .collection-info-list li {
 	padding: 5px 0px 5px 30px;
-}
-
-.collection-info-list .grade {
-	background: url("images/profilepage/grade-icon.png") no-repeat;
-}
-
-.collection-info-list .likes {
-	background: url("images/profilepage/likes-icon.png") no-repeat;
 }
 
 .collections-using {
@@ -969,40 +788,12 @@ li.resources {
 	font-style:italic;
 	color:#999;
 }
-.profileOffConatinerStyle{
-	width: 97%;
-	margin: 0 auto;
-	padding-top: 20px;
-	color: #515151;
-}
 
-.loadingImage{
-	background: url("images/core/B-Dot.gif");
-	width: 200px;
-	height: 175px;
-	margin: 0 auto;				
-}
-
-.userMetadata {
-	width: 700px;
-	padding-top: 10px;
-	display: inline-block;
-	position: relative;
-	float: left;
-}
 .userDesc {
 	float: left;
 	padding-top: 5px;
 }
-.userCount {
-	width: 462px;
-	float: left;
-	text-align: center;
-	margin-left: 5px;
-	margin-right: 5px;
-	overflow: hidden;
-    height: 25px;
- }
+
 .userNumber {
 	color: white;
 	background-color: #1076bb;
@@ -1016,29 +807,8 @@ li.resources {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
-.userCourse {
-	float:left;
-	position: relative;
-	text-align: center;
-	height: 25px;
-	overflow: hidden;
-}
-.userCoursePopup {
-	position: absolute;
-    top: 43px;
-    left: 73px;
-    width: 392px;
-    padding: 5px;
-    background:#fff;
-	background-color:rgb(255,255,255);
-	border-color:rgb(221,221,221);
-	border-width:1px;
-	border-style:solid;
-	-moz-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	-webkit-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
-	z-index: 1;	
-}
+
+
 .userCourseName {
 	color: white;
 	border-radius: 4px;
@@ -1052,27 +822,7 @@ li.resources {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
-.hoverButtons {
-}
-.edit-Button {
-	color: #1076bb;
-	border-radius: 4px;
-	padding: 7px 9px;
-	border: none;
-	font-family: Arial, sans-serif;
-	display: inline-block;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-}
-.edit-Button:hover {
-	cursor: pointer;
-	background: #eee;
-}
+
 .share-rightDesc {
 	float: right;
 	font-size: 12px;
@@ -1080,16 +830,7 @@ li.resources {
 	clear: right;
 	padding: 4px 0px;
 }
-.aboutUserTextRight {
-	overflow: hidden;
-	width: 348px;
-	float: left;
-}
-.gooru-social-buttons {
-	float: right;
-	clear: right;
-	width: 102px;
-}
+
 .gooru-social-Input {
 	float: right;
 	padding-right: 10px;
@@ -1114,19 +855,6 @@ li.resources {
 	margin-right: 0px;
 	vertical-align: top;
 }
-.gooruProfileOnOffContainer {
-	float: right;
-	clear: right;
-	height: 75px;
-	text-align: center;
-}
-
-.profileGradeInfoContainer {
-	float: left;
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 385px;
-}
 
 .profileSaveBtnContainer {
 	float: left;
@@ -1134,40 +862,6 @@ li.resources {
 	margin-top: 10px;
 	width: 385px;
 	text-align: center;
-}
-
-.profileGradeInfoTitleContainer {
-	float: left;
-	width: 60px;
-}
-
-.profileGradeContentContainer {
-	float: left;
-	width: 250px;
-	margin-top: -10px;
-}
-
-.profileGradeInfoTitle {
-	font-size: 12px;
-	color: #515151;
-}
-
-.profileCourseInfoTitle {
-	font-size: 12px;
-	color: #515151;
-	padding-top: 13px;
-}
-
-.profileGradeGartenContainer {
-	float: left;
-	width: 250px;
-	opacity: 0.6;
-}
-
-.addedCoursesList {
-	float: right;
-	width: 321px;
-	margin: 5px 0px 10px 0px;
 }
 
 .editPencil {
@@ -1179,86 +873,80 @@ li.resources {
 	margin-left: 3px;
 }
 
-.bioMainContainer {
-	float: left;
-	width: 635px;
-}
-
 .bioLeftContainer {
 	float: left;
 	width: 73px;
 }
 
-.bioRightContainer {
-	float: left;
-	width: 560px;
+.starBg {
+	color: #fff;
+	cursor: pointer;
+	bottom: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: absolute;
+	font-weight: bold;
+	padding: 10px 7px;
+	padding-left: 30px;
+	background: #4D9645 url('images/profilepage/rating.png') 5px 8px no-repeat;
 }
 
-.metaDataContainer {
-	float: left;
-	max-width: 530px;
-	min-height: 40px;
+
+.addedCourseLbl {
+	font-size: 14px;
+	margin: 5px;
 }
 
-.bioTextAreaContainer {
-	width: 477px;
-	float: left;
-}
-.userMetaDataContainer {
+.profilepageFollwoingContent{
+	Width:100%;
 	float:left;
-	margin-bottom: 20px;
-	margin-top:28px;
+	
 }
-.coursePopupCancelLbl {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 120%;
-	color: #1076bb;
-	text-align: left;
-	padding: 0 0 0 3px;
-	cursor: pointer;	
-	float: left;
-	margin-top: 6px;
-	border-radius: 4px;
-	padding: 7px 9px 8px 9px;
-	display: inline-block;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
+.profilepageFollwoingContentlabel{
+	float:left;
 }
-.coursePopupCancelLbl:hover {
-	background:#eee;
+.profilepageTagContentMainDiv{
+	Width:90%;
+	float:left;
 }
-.coursePoupSaveBtnContainer {
-	width: 125px;
-	margin: 0 auto;
+.profilepageTagContentMainDivconent{
+	float:left;
+	width:65%;
+	color:green;
+}
+.profilepageTagContentMainDivconentcount{
+	float:left;
+	width:25%;
+	color:green;
+}
+.infoSectionAuthor{
+    margin-top:15px;
+    padding-bottom:15px;
+    border-bottom:1px solid #ddd;
+
+}
+.rightPanel .userImageContainer {
+    margin-right:10px;
+    width:40px;
+    height:40px;
+    border-radius:40px;
+    display:inline-block;
+    vertical-align:middle;
+    border:3px solid #87BADD;
+}
+.rightPanel .userImage{
+    width:40px;
+    height:40px;
+     border-radius:40px;
+    display:inline-block;
+    vertical-align:middle;
+}
+.teacherTipOuterContainer
+{
+	width:200px;
+	word-wrap:break-word;
+	padding:5px;
+	overflow:hidden;
+	
 }
 
-.moreGradeCourseLbl {
-	margin-top: 5px;
-	margin-left: 0px;
-	float: left;
-	color: #4c98cc;
-	cursor: pointer;
-}
-.floatLeftCollectionInputBox {
-	display: inline-block;
-	float: left;
-}
-
-.moreGradeCourseLbl:hover {
-	cursor: pointer;
-	/* opacity: 0.6; */
-}
-
-.gradeCourseEditBtnContainer {
-	float: left;
-	width: 50px;
-	height: 25px;
-	margin-left: 10px;
-}

@@ -1,0 +1,22 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:ppanel="urn:import:org.ednovo.gooru.client.uc" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	 <g:HTMLPanel styleName="shareColContainer">
+          		<div class="fractionBlocks no-gutter">
+								<panel:HTMLEventPanel ui:field="widgetContainer" styleName="fractionMultiBlock">
+									<g:Label ui:field="standardCode" styleName="col-md-3 col-sm-3 frLeft"></g:Label>
+									<g:HTMLPanel styleName="col-md-9 col-sm-9 frRight">
+									<ppanel:PPanel ui:field="standardDesc"></ppanel:PPanel>
+									</g:HTMLPanel>
+									<div class="clearfix"></div>
+								</panel:HTMLEventPanel>
+								<panel:HTMLEventPanel ui:field="widgetContainerDesc" styleName="fractionMultiBlock">
+									<g:HTMLPanel styleName="col-md-11 col-sm-11 frRight">
+									<ppanel:PPanel ui:field="standardDescMain"></ppanel:PPanel>
+									</g:HTMLPanel>
+									<div class="clearfix"></div>
+								</panel:HTMLEventPanel>
+							</div>
+          </g:HTMLPanel>
+</ui:UiBinder>

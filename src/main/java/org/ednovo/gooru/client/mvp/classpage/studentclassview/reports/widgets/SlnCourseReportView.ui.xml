@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc" 
+    xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src="" />
+	<g:HTMLPanel styleName="rowContainer no-gutter">
+	   <uc:HTMLEventPanel styleName="col-md-3 col-sm-3 cursorPointer" ui:field="unitBlock">
+		   <g:Label styleName="numaricOrder" ui:field="numericOrder"></g:Label>
+		   <g:HTMLPanel styleName="heighlightBlockUnitReports">
+		      <g:HTMLPanel styleName="lessonDetails">
+	             <span:H3Panel ui:field="unitCountName"></span:H3Panel>
+	             <span:PPanel ui:field="unitName"></span:PPanel>
+		      </g:HTMLPanel>
+		   </g:HTMLPanel>
+	   </uc:HTMLEventPanel>
+	   <div class="col-md-3 col-sm-3 col-xs-6">
+	      <div class="progressBlock">
+	         <div class="wrapCircles">
+	            <g:HTMLPanel ui:field="timeRadial">
+	               <div class="overlay"></div>
+	            </g:HTMLPanel>
+	         </div>
+	         <div class="wrapCirclesViews">
+	             <span:H3Panel ui:field="collectionStudyCount"></span:H3Panel>
+	             <span:SmallPanel ui:field="collectionStudyLbl"></span:SmallPanel>
+	         </div>
+	      </div>
+	   </div>
+	   <div class="col-md-3 col-sm-3 col-xs-6">
+	      <div class="progressBlock">
+	         <div class="wrapCircles">
+	            <g:HTMLPanel ui:field="scoreRadial">
+	               <div class="overlay"></div>
+	            </g:HTMLPanel>
+	         </div>
+	         <div class="wrapCirclesViews">
+	            <span:H3Panel ui:field="assessmentStudyCount"></span:H3Panel>
+	            <span:SmallPanel ui:field="assessmentStudyLbl"></span:SmallPanel> 
+	         </div>
+	      </div>
+	   </div>
+	   <div class="col-md-3 col-sm-3 col-xs-12">
+	      <div class="timeAndScore">
+	         <div class="totalStudy">
+	            <span:PPanel ui:field="studyTimeLbl"></span:PPanel> 
+	            <span:H3Panel ui:field="studyTimeValue"></span:H3Panel>	            	             
+	         </div>
+	         <g:HTMLPanel styleName="avgScore" ui:field="avgScore">
+	            <span:PPanel ui:field="scoreLbl"></span:PPanel> 
+	            <span:H2Panel ui:field="scoreValue"></span:H2Panel>	            	             
+	         </g:HTMLPanel>
+	      </div>
+	   </div>
+	   <div class="clearfix"></div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

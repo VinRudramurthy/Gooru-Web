@@ -1,7 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui"
-	xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc" 
 	xmlns:qac="urn:import:org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item"
 	xmlns:uqi="urn:import:org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item"
 	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat"
@@ -9,27 +9,33 @@
 	ui:generateLocales="default">
 	<ui:style field="editQuestionStyle" src="EditQuestionResource.css"
 		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.UpdateResourceBundle" />
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.shelf.collection.CollectionCBundle"
+		field="res1" />
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle"
+		field="res2"></ui:with>
 	<g:HTMLPanel styleName="{editQuestionStyle.editQuestionPopupContainer}">
 		<g:Label ui:field="lblEditQuestionTitle" styleName="{editQuestionStyle.editQuestionPopupHeader}"></g:Label>
 		<g:HTMLPanel styleName="{editQuestionStyle.questionOptionsContainer}">
-			<uc:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
+			<tinyMce:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
 				ui:field="questionTabButton">
 				<g:RadioButton name="questionTypeGrouop" ui:field="multipleChoiceRadioButton"
 					checked="true" styleName="{editQuestionStyle.questionRadioButtonStyle}"></g:RadioButton>
 				<g:Anchor ui:field="ancMultipleChoice" styleName="{editQuestionStyle.editResourceBigTitle}"></g:Anchor>
-			</uc:HTMLEventPanel>
-			<uc:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
+			</tinyMce:HTMLEventPanel>
+			<tinyMce:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
 				ui:field="trueOrFlaseButton">
 				<g:RadioButton name="questionTypeGrouop" ui:field="trueOrFalseRadioButton"
 					styleName="{editQuestionStyle.questionRadioButtonStyle}"></g:RadioButton>
 				<g:Anchor ui:field="ancTrueOfFalse" styleName="{editQuestionStyle.editResourceBigTitle}"></g:Anchor>
-			</uc:HTMLEventPanel>
-			<uc:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
+			</tinyMce:HTMLEventPanel>
+			<tinyMce:HTMLEventPanel styleName="{editQuestionStyle.buttonDeSelected}"
 				ui:field="openEndedButton">
 				<g:RadioButton name="questionTypeGrouop" ui:field="openEndedRadioButton"
 					styleName="{editQuestionStyle.questionRadioButtonStyle}"></g:RadioButton>
 				<g:Anchor ui:field="ancOpenEnded" styleName="{editQuestionStyle.editResourceBigTitle}"></g:Anchor>
-			</uc:HTMLEventPanel>
+			</tinyMce:HTMLEventPanel>
 		</g:HTMLPanel>
 		<g:HTMLPanel styleName="{editQuestionStyle.addResourcePopupOuterdiv}">
 			<g:HTMLPanel styleName="{editQuestionStyle.addResourceEditPopup}">
@@ -114,6 +120,164 @@
 						<g:Label styleName="{editQuestionStyle.addResourceFormInputBottomText}"
 							ui:field="errorMessageForHintsCheck"></g:Label>
 					</g:HTMLPanel>
+						 <!-- Depth Of Knowledge Start-->
+      		<g:FlowPanel styleName="{res1.css.depthOfKnowledgeContainer}">
+					<g:FlowPanel styleName="{res1.css.gradeInfoTitleContainer} {res1.css.deptOfKnowledge}">
+						<g:Label styleName="{res1.css.shelfGradeInfoTitle}"
+							ui:field="depthOfKnowledgeHeader" />
+					</g:FlowPanel>
+					<g:Label styleName="{res1.css.shelfGradeInfoBottom}"
+						ui:field="depthOfKnowledgeTitle" />
+					<g:FlowPanel styleName="{res1.css.languageObjectiveInfoContainer}">
+						<g:HTMLPanel styleName="{res1.css.checkBoxOuterContiner}">
+							<g:HTMLPanel styleName="{res1.css.checkBoxinnerContiner}">
+								<g:CheckBox styleName="{res1.css.checkBoxlevels}"
+									ui:field="chkLevelRecall"></g:CheckBox>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="{res1.css.checkBoxinnerContinerlevel2}">
+								<g:CheckBox styleName="{res1.css.checkBoxlevels}"
+									ui:field="chkLevelSkillConcept"></g:CheckBox>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="{res1.css.checkBoxinnerContinerlevel3}">
+								<g:CheckBox ui:field="chkLevelStrategicThinking"
+									styleName="{res1.css.checkBoxlevels}"></g:CheckBox>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="{res1.css.checkBoxinnerContinerlevel4}">
+								<g:CheckBox ui:field="chkLevelExtendedThinking"
+									styleName="{res1.css.checkBoxlevels}"></g:CheckBox>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+					</g:FlowPanel>
+					<g:FlowPanel styleName="gradeListCont">
+						<g:FlowPanel />
+						<g:FlowPanel />
+						<g:FlowPanel />
+					</g:FlowPanel>
+					<g:FlowPanel styleName="{res1.css.shelfGradeInfogardenContainer}" />
+				</g:FlowPanel>
+         <!-- Depth Of Knowledge End -->
+    	<!-- Educational use -->
+		 <g:HTMLPanel styleName="{res2.css.myEducationalFormContent}">
+          <g:HTMLPanel styleName="{res2.css.myFolderCollectionFormTitle}" ui:field="educationalTitle"></g:HTMLPanel>
+          <g:HTMLPanel styleName="{res2.css.myFolderCollectionCategoryDiv}">
+			<g:HTMLPanel styleName="{res2.css.myEducationPanelInputDiv}">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionCategoryDivText}">
+						<g:HTMLPanel>
+							<g:HTMLPanel styleName="" ui:field="educationalpanel"></g:HTMLPanel>
+							<g:Label styleName="{res2.css.resourceCategoryLabel}"  ui:field="resourceEducationalLabel"></g:Label>
+						</g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res2.css.myEducationArrowleftContainer}">
+						<g:Label ui:field="educationalDropDownLbl"	styleName="{res2.css.myFolderCollectionPopupSprite} {res2.css.myFolderCollectionArrowleft}"></g:Label>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			
+            <g:Label styleName="{res2.css.addNewResourceMandatoryCategory}" ui:field="mandatoryEducationalLbl"></g:Label>
+          </g:HTMLPanel>
+        </g:HTMLPanel>
+       
+		 <g:HTMLPanel styleName="{res2.css.reorderLabelContainer}" ui:field="educationalUsePanel">
+			<g:HTMLPanel styleName="{res2.css.myEducationDropdown}">
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="activityPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="activityText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="handoutPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="handoutText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="homeworkPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="homeworkText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="gamePanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="gameText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="presentationPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="presentationText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="referenceMaterialPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="referenceMaterialText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="quizPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="quizText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="curriculumPlanPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="curriculumPlanText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="lessonPlanPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="lessonPlanText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="unitPlanPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="unitPlanText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="projectPlanPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="projectPlanText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="readingPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="readingText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="textbookPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="textbookText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="articlePanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="articleText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel styleName="{res2.css.myFolderCollectionFolderVideoOuterContainer}" ui:field="bookPanel">
+					<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoContainer}">						
+						<g:HTMLPanel styleName="{res2.css.myFolderCollectionFolderVideoTitle}" ui:field="bookText"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<!-- Educational use End -->
+		        
+		<!-- Standards Start -->
+		 <g:FlowPanel ui:field="standardContainer">
+					<g:Label styleName="{res1.css.shelfGradeInfoBottom}"
+						ui:field="standardsDefaultText"></g:Label>
+					<g:FlowPanel styleName="{res1.css.shelfCourseSubject}">
+						<g:FlowPanel styleName="{res1.css.addResourceSuggestedBox}">
+							<g:FlowPanel styleName="{res1.css.standardsCont}">
+								<uc:AppSuggestBox ui:field="standardSgstBox"
+									width="255px" height="19px" />
+									<g:HTMLPanel styleName="{res1.css.browseContainer}">
+										<g:Button ui:field="browseStandards" styleName="secondary">Browse</g:Button>
+									</g:HTMLPanel>
+								<g:Label styleName="{res1.css.standardMaxHide}" ui:field="standardMaxMsg" />
+								<g:FlowPanel ui:field="standardsPanel"
+									styleName="{res1.css.collectionStandardsMargin}" />
+							</g:FlowPanel>
+						</g:FlowPanel>
+					</g:FlowPanel>
+				</g:FlowPanel>
+        <!-- Standards End -->
+    
 					<g:HTMLPanel styleName="{editQuestionStyle.addResourceGrayButtonContainer}" ui:field="panelPleaseWait">
 						<g:Label ui:field="lblPleaseWait" styleName="{editQuestionStyle.pleaseWait}" />
 					</g:HTMLPanel>

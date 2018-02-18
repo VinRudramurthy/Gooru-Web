@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,8 +23,6 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection;
-
-import org.ednovo.gooru.client.mvp.shelf.ShelfCBundle;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -50,9 +48,9 @@ public class CollectionTabTitleVc extends FocusPanel {
 
 	@UiField
 	FlowPanel wrapperFloPanel;
-	
+
 	String title ="";
-	
+
 	private static CollectionTabTitleVc selectedTabTitleVc;
 
 	private static CollectionTabTitleVcUiBinder uiBinder = GWT.create(CollectionTabTitleVcUiBinder.class);
@@ -65,9 +63,12 @@ public class CollectionTabTitleVc extends FocusPanel {
 	 */
 	public CollectionTabTitleVc() {
 		setWidget(uiBinder.createAndBindUi(this));
+		wrapperFloPanel.getElement().setId("fpnlWrapperFloPanel");
+		imageSimPanel.getElement().setId("spnlImageSimPanel");
+		labelLbl.getElement().setId("lblLabelLbl");
 	}
 
-	/** 
+	/**
 	 * @param enable decides to add or remove activeClass style
 	 */
 	public void setSelected(boolean enable) {
@@ -75,14 +76,13 @@ public class CollectionTabTitleVc extends FocusPanel {
 			selectedTabTitleVc.setSelected(false);
 		}
 		String activeCss;
-		
-		activeCss = ShelfCBundle.INSTANCE.css().collectionMetaDataTabTitleActive();
+
+		activeCss = "ctt-collectionMetaDataTabTitleActive";
 		if (title.equalsIgnoreCase("share")){
 			wrapperFloPanel.getElement().getStyle().setPaddingTop(9.0, Unit.PX);
-/*			wrapperFloPanel.getElement().getStyle().setPaddingRight(5.4, Unit.PCT);
-*/			wrapperFloPanel.getElement().getStyle().setPaddingBottom(9.0, Unit.PX);
+			wrapperFloPanel.getElement().getStyle().setPaddingBottom(9.0, Unit.PX);
 		}
-		
+
 		if (enable) {
 			wrapperFloPanel.addStyleName(activeCss);
 		} else {
@@ -93,12 +93,12 @@ public class CollectionTabTitleVc extends FocusPanel {
 
 	public void setEnabled(boolean enabled) {
 		if(enabled) {
-			wrapperFloPanel.setStyleName(ShelfCBundle.INSTANCE.css().collectionMetaDataTabTitle());
+			wrapperFloPanel.setStyleName("ctt-collectionMetaDataTabTitle");
 		} else {
-			wrapperFloPanel.setStyleName(ShelfCBundle.INSTANCE.css().collectionMetaDataTabTitleDisabled());
+			wrapperFloPanel.setStyleName("ctt-collectionMetaDataTabTitleDisabled");
 		}
 	}
-	
+
 	/**
 	 * @param label name of label
 	 */
@@ -106,16 +106,17 @@ public class CollectionTabTitleVc extends FocusPanel {
 		title = label;
 		if (title !=null &&  (title.equalsIgnoreCase("share") || title.contains("Collaborator"))){
 			wrapperFloPanel.getElement().getStyle().setPaddingTop(9.0, Unit.PX);
-/*			wrapperFloPanel.getElement().getStyle().setPaddingRight(5.4, Unit.PCT);
-*/			wrapperFloPanel.getElement().getStyle().setPaddingBottom(9.0, Unit.PX);
+			wrapperFloPanel.getElement().getStyle().setPaddingBottom(9.0, Unit.PX);
 		}
 		labelLbl.setText(label);
+		labelLbl.getElement().setAttribute("alt",label);
+		labelLbl.getElement().setAttribute("title",label);
 	}
 
 	public FlowPanel getWrapperFloPanel() {
 		return wrapperFloPanel;
 	}
-	
+
 	/**
 	 * @param style for image panel
 	 */

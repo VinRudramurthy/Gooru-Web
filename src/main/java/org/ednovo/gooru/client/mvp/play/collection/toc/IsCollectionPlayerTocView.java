@@ -24,15 +24,19 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.toc;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 
 public interface IsCollectionPlayerTocView extends IsViewWithHandlers<CollectionPlayerTocUiHandlers>{
 	
-	public void setNavigationResources(CollectionDo collectionDo);
+	public void setNavigationResources(CollectionDo collectionDo,boolean isCollectionHome);
 	
 	public void setResourceActive(String collectionId,String collectionItemid,boolean isCollectionHome);
 	
 	public void clearNavigationPanel();
+	
+	public void hideResourceCountLabel(boolean hide);
+	
+	public void clearMarginLeft();
 	
 }

@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tbp="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style field="playerStyle" src="folderCollectionView.css" />
+	<g:HTMLPanel styleName="{playerStyle.perTaskContainer}" ui:field="collectionTypePanel">
+		<tbp:H4Panel ui:field="lblCollectionTitle"></tbp:H4Panel>
+		<g:Label ui:field="imgLock" styleName="{playerStyle.lockImage}"/>
+		<g:Label ui:field="lblCollectionDesc" styleName="{playerStyle.collectionDesc}"></g:Label> 
+		<g:FlowPanel ui:field="pnlResources"></g:FlowPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

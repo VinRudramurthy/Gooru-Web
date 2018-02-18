@@ -3,7 +3,8 @@ package org.ednovo.gooru.client.uc.suggestbox.widget;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.BlurEvent;
@@ -44,23 +45,18 @@ import com.google.gwt.user.client.ui.TextBox;
  *
  * @Reviewer:
  */
-public abstract class AutoSuggestForm extends Composite implements MessageProperties {
+public abstract class AutoSuggestForm extends Composite {
 	FlowPanel form;
 	InputListWidget txtInput = null;
 
 	String EMAIL_REGEX = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	public AutoSuggestForm(MultiWordSuggestOracle oracle) {
 		form = new FlowPanel();
 		form.setStyleName("form");
 		initWidget(form);
-		
-		// MultipleTextBox txt = new MultipleTextBox();
-		// SuggestBox box = new SuggestBox(getSuggestions(), txt);
-		// box.addStyleName("original-token-input");
-		// box.setAnimationEnabled(true);
-
-		// form.add(box);
 		if (txtInput == null){
 			 txtInput = new InputListWidget(oracle);
 		}
@@ -179,7 +175,7 @@ public abstract class AutoSuggestForm extends Composite implements MessageProper
 			final ListItem item = new ListItem();
 			item.setStyleName("token-input-input-token-gooru");
 			txtInputBox = new TextBox();
-			txtInputBox.getElement().setAttribute("placeholder", GL1111);
+			txtInputBox.getElement().setAttribute("placeholder", i18n.GL1111());
 			txtInputBox.getElement()
 					.setAttribute(
 							"style",
@@ -320,14 +316,15 @@ public abstract class AutoSuggestForm extends Composite implements MessageProper
 					if (event.getNativeKeyCode() == KeyCodes.KEY_BACKSPACE && txtInputBox.getValue().trim().length() <= 0) {
 						keyPressOnTextBox(null);
 						if ("".equals(txtInputBox.getValue().trim())) {
-							ListItem li = (ListItem) list.getWidget(list
-									.getWidgetCount() - 2);
-							Paragraph p = (Paragraph) li.getWidget(0);
-							if (itemsSelected.contains(p.getText())) {
-								itemsSelected.remove(p.getText());
+							if(list.getWidgetCount() >1){
+								ListItem li = (ListItem) list.getWidget(list.getWidgetCount() - 2);
+								Paragraph p = (Paragraph) li.getWidget(0);
+								if (itemsSelected.contains(p.getText())) {
+									itemsSelected.remove(p.getText());
+								}
+								list.remove(li);
+								txtInputBox.setFocus(true);
 							}
-							list.remove(li);
-							txtInputBox.setFocus(true);
 						}
 					}
 				}

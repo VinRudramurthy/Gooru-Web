@@ -6,17 +6,38 @@
 		type="org.ednovo.gooru.client.mvp.home.library.assign.AssignPopUpCBundle"
 		field="res" />
 			<g:HTMLPanel>
-	      	  <g:HTMLPanel styleName="{res.css.popupTitleLogin}" ui:field="hangOnText"></g:HTMLPanel>
-		      <g:Label ui:field="collectionDescription" styleName="{res.css.popupDescLogin}"></g:Label>
+	      	  <g:HTMLPanel styleName="dontWorrkText" ui:field="hangOnText"></g:HTMLPanel>
+		      <g:Label ui:field="collectionDescription" styleName="contentDesc"></g:Label>
+		      <g:HTMLPanel styleName="{res.css.loginPopupStyle}">
+			    <g:Label styleName="{res.css.loginWithGooru}" ui:field="lblLoginwithGooru"></g:Label>
+			    <g:Button ui:field="gmailButton" styleName="{res.css.gConnectButton}"></g:Button>
+			    <g:HTMLPanel styleName="{res.css.dividerCustomize}">
+			      <g:Label styleName="dividerText" ui:field="lblOr"/>
+			  </g:HTMLPanel>
 		      <g:HTMLPanel styleName="{res.css.inputBlockOuter}">
-		       	<gg:TextBoxWithPlaceholder ui:field="loginTxtBox" setFocus="true"/>
-				<gg:TextBoxWithPlaceholder ui:field="passwordTxtBox" password="true" />
-		        <g:HTMLPanel styleName="{res.css.pwdTxt}"><g:Anchor ui:field="forgotPwd"></g:Anchor></g:HTMLPanel>
+		        <gg:TextBoxWithPlaceholder ui:field="loginTxtBox" setFocus="true" styleName="form-control form_control"/>
+
+				<gg:TextBoxWithPlaceholder ui:field="passwordTxtBox" password="true"  styleName="form-control form_control"/>
+
+		        <g:HTMLPanel styleName="forgotPasswordLink">
+		            <g:Anchor ui:field="forgotPwd"></g:Anchor>
+		        </g:HTMLPanel>
 		      </g:HTMLPanel>
-		      <g:HTMLPanel styleName="{res.css.btn}">
-		        <g:Button ui:field="loginButton" styleName="primary  {res.css.LoginText}"></g:Button>
+		      <g:HTMLPanel styleName="loginPopupbtnContainer">
+		        <g:Button ui:field="loginButton" styleName="primary"></g:Button>
 		        <g:Label ui:field="lblPleaseWait" styleName="{res.css.processing}"></g:Label>
 		      </g:HTMLPanel>
-		      <g:HTMLPanel styleName="{res.css.signUp}" ui:field="signUpPanel"><g:Label ui:field="donotHaveAcount"></g:Label><g:Anchor ui:field="ancSignUp"></g:Anchor></g:HTMLPanel>
+		      <g:HTMLPanel styleName="{res.css.privacyCustomizeContainernew}">
+					<g:InlineLabel ui:field="lblPii"></g:InlineLabel>
+					<g:Anchor ui:field="ancprivacy" styleName="{res.css.privacyAlignStyleNew}"></g:Anchor>
+					<g:InlineLabel ui:field="toUsText"></g:InlineLabel>
+				</g:HTMLPanel>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="haveAccountContainer" ui:field="signUpPanel">
+		          <g:HTMLPanel styleName="haveAccount">
+		        	  <g:InlineLabel ui:field="donotHaveAcount"></g:InlineLabel>
+		          	  <g:Anchor ui:field="ancSignUp"></g:Anchor>
+		          </g:HTMLPanel>
+		     </g:HTMLPanel>
 			</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

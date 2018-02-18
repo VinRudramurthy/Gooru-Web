@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,18 +26,16 @@ package org.ednovo.gooru.client.mvp.home.register;
 
 import java.util.Map;
 
-
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.UserServiceAsync;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
+import org.ednovo.gooru.application.shared.model.user.UserDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
-import org.ednovo.gooru.client.service.UserServiceAsync;
-import org.ednovo.gooru.client.uc.AlertContentUc;
-import org.ednovo.gooru.client.uc.UcCBundle;
-import org.ednovo.gooru.shared.model.user.ProfileDo;
-import org.ednovo.gooru.shared.model.user.UserDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
@@ -51,7 +49,7 @@ import com.gwtplatform.mvp.client.View;
  * @author Search Team
  *
  */
-public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistrationView> implements UserRegistrationUiHandlers,MessageProperties {
+public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistrationView> implements UserRegistrationUiHandlers{
 
 	private static final String GOORU_UID = "gooruuid";
 	private static final String SESSION_Id = "sessionid";
@@ -69,42 +67,40 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 	private SimpleAsyncCallback<UserDo> checkUserAsyncCallback;
 
 	private ChildAccountPopup childAccountPopup;
-	
+
 	private SimpleAsyncCallback<UserDo> createChildUserAsyncCallback;
 
 	private String accountType;
-	
+
 	private boolean showWelcomeMessage = false;
-	
+
 	private SimpleAsyncCallback<UserDo> updateFlagAsyncCallback;
-	
+
 	private static final String CHILD = "Child";
-	
+
 	private static final String NON_PARENT = "NonParent";
-	
+
 	private static final String PARENT = "Parent";
-	
-	private static final String OH_NO_TEXT = GL1415+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP;
-	
+
+
 	private static final String ACCOUNT_TYPE = "accountType";
-	
+
 	private static final String REGISTRATION_TYPE = "registrationType";
-	
+
 	private static final String FIRST_NAME = "firstName";
-	
+
 	private static final String LAST_NAME = "lastName";
-	
+
 	private static final String EMAIL_ID = "emailId";
-	
+
 	private static final String ORGANIZATION_CODE = "organizationCode";
-	
+
 	private static final String GOORU = "gooru";
-	
-	private static final String CHILD_LAST_NAME = "childlastname";
-	
-	private static final String CHILD_FIRST_NAME = "childfirstname";
-	
+
+
 	private static final String GMAIL_ADDRESS = "@gmail.com";
+
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * Class constructor
@@ -120,7 +116,7 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 	@Override
 	public void onBind() {
 		super.onBind();
-		setUpdateUserAsyncCallback(new AsyncCallback<ProfileDo>() {
+		setUpdateUserAsyncCallback(new SimpleAsyncCallback<ProfileDo>() {
 
 			@Override
 			public void onSuccess(final ProfileDo userProfile) {
@@ -142,8 +138,6 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 
 			@Override
 			public void onFailure(Throwable caught) {
-				UcCBundle.INSTANCE.css().ensureInjected();
-				new AlertContentUc(OH_NO_TEXT, caught.getMessage()).getAlertBox().addStyleName(UcCBundle.INSTANCE.css().increaseZindex());
 			}
 
 		});
@@ -154,11 +148,11 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 				getView().checkUserNameAvailability(result);
 			}
 		});
-		
+
 		setCreateChildUserAsyncCallback(new SimpleAsyncCallback<UserDo>() {
 			@Override
 			public void onSuccess(UserDo user) {
-				if (getView().getRegistrationType().equalsIgnoreCase(CHILD)) 
+				if (getView().getRegistrationType().equalsIgnoreCase(CHILD))
 				{
 					getView().closeRegisterPopup();
 					childAccountPopup = new ChildAccountPopup();
@@ -166,12 +160,12 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 						@Override
 						public void onClick(ClickEvent event) {
 							childAccountPopup.getPopupPanel().hide();
-							if (showWelcomeMessage) 
+							if (showWelcomeMessage)
 							{
 								showWelcomeMessage();
 							}
 							else
-							{								
+							{
 								AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.HOME);
 							}
 						}
@@ -179,7 +173,7 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 				}
 			}
 		});
-		
+
 		setUpdateFlagAsyncCallback(new SimpleAsyncCallback<UserDo>() {
 			@Override
 			public void onSuccess(UserDo newUser) {
@@ -187,7 +181,7 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 				user.setViewFlag(newUser.getViewFlag());
 				AppClientFactory.setLoggedInUser(user);
 			}
-		});	
+		});
 	}
 
 	@Override
@@ -196,7 +190,7 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 		getView().setRegisteredUserDetails(getUser(), getAccountType());
 	}
 
-	
+
 	@Override
 	public void updateUserDetails(Map<String, String> params) {
 		params.put(ACCOUNT_TYPE, getView().getRegistrationType());
@@ -217,19 +211,19 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 		params.put("dateOfBirth", AppClientFactory.getPlaceManager().getRequestParameter(DOB).replaceAll("d", "/"));
 
 		this.getUserService().registerUser(params, getCreateChildUserAsyncCallback());
-		
+
 	}
-	
+
 	/**
 	 * Creates welcome popup after registration
 	 */
-	private void showWelcomeMessage() { 
-		
+	private void showWelcomeMessage() {
+
 		AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.HOME);
 		getUserService().updateUserViewFlag(AppClientFactory.getLoggedInUser().getGooruUId(), 1, getUpdateFlagAsyncCallback());
 		Window.enableScrolling(false);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, false));
-		
+
 		/*registrationWelcomePopup = new RegistrationWelcomePopup();
 		registrationWelcomePopup.getConfirmButton().addClickHandler(new ClickHandler() {
 			@Override
@@ -240,7 +234,7 @@ public class UserRegistrationPresenter extends PresenterWidget<IsUserRegistratio
 				GooruGuideVc gooruGuideVc = new GooruGuideVc();
 				gooruGuideVc.show();
 				gooruGuideVc.center();
-				
+
 			}
 		});*/
 	}

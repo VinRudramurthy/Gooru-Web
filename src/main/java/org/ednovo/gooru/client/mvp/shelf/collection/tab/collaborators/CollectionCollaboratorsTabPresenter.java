@@ -28,14 +28,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.CollaboratorsServiceAsync;
+import org.ednovo.gooru.application.shared.model.content.CollaboratorsDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.home.event.HeaderTabType;
 import org.ednovo.gooru.client.mvp.home.event.HomeEvent;
 import org.ednovo.gooru.client.mvp.search.event.SetFooterEvent;
-import org.ednovo.gooru.client.service.CollaboratorsServiceAsync;
-import org.ednovo.gooru.shared.model.content.CollaboratorsDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;

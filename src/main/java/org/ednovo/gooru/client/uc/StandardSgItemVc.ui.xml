@@ -1,8 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
 	<g:FlowPanel>
-		<g:HTML styleName="{res.css.standards}" ui:field="standardsTitle" />
-		<g:HTML styleName="{res.css.descStandards}"  ui:field="standardsDesc" />
+		<g:HTML styleName="Uc-standards" ui:field="standardsTitle" />
+		<g:HTML styleName="Uc-descStandards"  ui:field="standardsDesc" />
 	</g:FlowPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

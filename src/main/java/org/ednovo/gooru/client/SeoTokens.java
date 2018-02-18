@@ -25,16 +25,33 @@
 
 package org.ednovo.gooru.client;
 
-public interface SeoTokens {
-	String HOME_TITLE_ANONYMOUS = "Featured Courses | Sign up, Sign in ";
-	String HOME_TITLE_LOGGEDIN = "Featured Courses";
+/**
+ * 
+ * @fileName : SeoTokens.java
+ *
+ * @description : 
+ *	Message (Title) related to SEO.
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
+public interface SeoTokens{
+	String HOME_TITLE_ANONYMOUS = "Gooru | Sign up, Sign in ";
+	String HOME_TITLE_LOGGEDIN = "Gooru";
+	String DISCOVER_TITLE_ANONYMOUS = "Featured Courses | Sign up, Sign in ";
+	String DISCOVER_TITLE_LOGGEDIN = "Featured Courses";
 	String RESOURCE_PLAYER_TITLE = "";
 	String COLLECTION_PLAYER_TITLE = "";
 	String RESOURCE_SEARCH_TITLE = "Discover Resources | ";
 	String COLLECTION_SEARCH_TITLE = "Discover Collections | ";
-	String TEACH_TITLE = "Teach";
-	String STUDY_TITLE = "Study";
-	String WORKSPACE_TITLE = "Organize";
+	String TEACH_TITLE = "My Classes";
+	String STUDY_TITLE = "My Classes";
+	String WORKSPACE_TITLE = "My Collections";
 	String SETTINGS_TITLE = "Settings";
 	String PROFILE_PAGE_TITLE = "";
 	String COURSE_PAGE_TITLE = "";

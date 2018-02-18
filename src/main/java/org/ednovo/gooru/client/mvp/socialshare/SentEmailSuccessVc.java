@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -24,13 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.socialshare;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.mvp.classpages.studentView.StudentAssignmentView;
-import org.ednovo.gooru.client.mvp.home.HomeCBundle;
-import org.ednovo.gooru.client.mvp.shelf.ShelfCBundle;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.uc.AppPopUp;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -39,6 +36,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -48,20 +46,22 @@ import com.google.gwt.user.client.ui.Widget;
  * @fileName : SentEmailSuccessVc.java
  *
  * @description : This file used to show email share success popUp.
- *                   
- * 
+ *
+ *
  * @version : 5.4
  *
  * @date: August, 2013
  *
  * @Author: Gooru Team
- * 
+ *
  * @Reviewer: Gooru Team
  */
-public class SentEmailSuccessVc extends Composite implements MessageProperties{
+public class SentEmailSuccessVc extends Composite {
 
 	private static SentEmailSuccessVcUiBinder uiBinder = GWT
 			.create(SentEmailSuccessVcUiBinder.class);
+
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface SentEmailSuccessVcUiBinder extends
 	UiBinder<Widget, SentEmailSuccessVc> {
@@ -70,48 +70,87 @@ public class SentEmailSuccessVc extends Composite implements MessageProperties{
 	private AppPopUp appPopUp;
 
 	@UiField
-	Label okLbl,toEmailLbl;
-	@UiField HTMLPanel emailToFriendText,emailSentText;
+	Label toEmailLbl;
+
+	@UiField
+	Button okLbl;
+	@UiField HTMLPanel emailToFriendText,emailSentText,popupContainer;
 
 	/**
 	 * Class constructor , create a new pop up
-	 * @param toEmail 
+	 * @param toEmail
 	 */
 	public SentEmailSuccessVc(String toEmail) {
 		initWidget(uiBinder.createAndBindUi(this));
 		appPopUp = new AppPopUp();
 		appPopUp.setWidget(uiBinder.createAndBindUi(this));
-		appPopUp.setStyleName(ShelfCBundle.INSTANCE.css().shelfItemSucessPopUp());
 		appPopUp.getElement().getStyle().setZIndex(999999);
-		appPopUp.setGlassStyleName(HomeCBundle.INSTANCE.css().loginPopupGlassStyle());
+		appPopUp.setGlassStyleName("loginPopupGlassStyle");
 		appPopUp.setGlassEnabled(true);
 		appPopUp.show();
 		appPopUp.center();
-		emailToFriendText.getElement().setInnerHTML(GL0222);
-		emailSentText.getElement().setInnerHTML(GL0648);
+
+		emailToFriendText.getElement().setInnerHTML(i18n.GL0222());
+		emailToFriendText.getElement().setId("pnlEmailToFriendText");
+		emailToFriendText.getElement().setAttribute("alt", i18n.GL0222());
+		emailToFriendText.getElement().setAttribute("title", i18n.GL0222());
+
+		emailSentText.getElement().setInnerHTML(i18n.GL0648());
+		emailSentText.getElement().setId("pnlEmailSentText");
+		emailSentText.getElement().setAttribute("alt", i18n.GL0648());
+		emailSentText.getElement().setAttribute("title", i18n.GL0648());
+
 		toEmailLbl.setText(toEmail);
-		okLbl.setText(GL0190);
+		toEmailLbl.getElement().setId("lblToEmailLbl");
+		toEmailLbl.getElement().setAttribute("alt", toEmail);
+		toEmailLbl.getElement().setAttribute("title", toEmail);
+
+		okLbl.setText(i18n.GL0190());
+		okLbl.getElement().setId("lblOkLbl");
+		okLbl.getElement().setAttribute("alt", i18n.GL0190());
+		okLbl.getElement().setAttribute("title", i18n.GL0190());
+
 		Window.enableScrolling(false);
 	}
-	
+
 	public SentEmailSuccessVc(String messageHeader, String desc) {
 		initWidget(uiBinder.createAndBindUi(this));
 		appPopUp = new AppPopUp();
 		appPopUp.setWidget(uiBinder.createAndBindUi(this));
-		appPopUp.setStyleName(ShelfCBundle.INSTANCE.css().shelfItemSucessPopUp());
+		appPopUp.setStyleName("ses-shelfItemSucessPopUp");
 		appPopUp.getElement().getStyle().setZIndex(999999);
 		appPopUp.setPixelSize(480, 208);
-		appPopUp.setGlassStyleName(HomeCBundle.INSTANCE.css().loginPopupGlassStyle());
+		appPopUp.setGlassStyleName("loginPopupGlassStyle");
 		appPopUp.setGlassEnabled(true);
 		appPopUp.show();
 		appPopUp.center();
+
 		emailToFriendText.getElement().setInnerHTML(messageHeader);
+		emailToFriendText.getElement().setId("pnlEmailToFriendText");
+		emailToFriendText.getElement().setAttribute("alt", messageHeader);
+		emailToFriendText.getElement().setAttribute("title", messageHeader);
+
 		emailSentText.getElement().setInnerHTML("");
-		/*toEmailLbl.getElement().getStyle().setWidth(70, Unit.PCT);
-		toEmailLbl.getElement().getStyle().setPaddingLeft(86, Unit.PX);*/
-		toEmailLbl.setStyleName(ShelfCBundle.INSTANCE.css().aleartDescText());
+		emailSentText.getElement().setId("pnlEmailSentText");
+
+		toEmailLbl.setStyleName("ses-aleartDescText");
 		toEmailLbl.setText(desc);
-		okLbl.setText(GL0190);
+		toEmailLbl.getElement().setId("lblToEmailLbl");
+		toEmailLbl.getElement().setAttribute("alt", desc);
+		toEmailLbl.getElement().setAttribute("title", desc);
+
+		okLbl.setText(i18n.GL0190());
+		okLbl.getElement().setId("lblOkLbl");
+		okLbl.getElement().setAttribute("alt", i18n.GL0190());
+		okLbl.getElement().setAttribute("title", i18n.GL0190());
+		if(i18n.GL1535().equalsIgnoreCase(desc) || i18n.GL1535_1().equalsIgnoreCase(desc)){
+			popupContainer.getElement().getStyle().setWidth(438, Unit.PX);
+			popupContainer.getElement().getStyle().setMargin(0, Unit.PX);
+			popupContainer.getElement().getStyle().clearHeight();
+			toEmailLbl.getElement().getStyle().clearWidth();
+			toEmailLbl.addStyleName("ses-aleartDescTextForNotLoggedInUser");
+			appPopUp.setStyleName("ses-shelfItemSucessPopUpWithOutWidth");
+		}
 		Window.enableScrolling(false);
 	}
 
@@ -123,12 +162,12 @@ public class SentEmailSuccessVc extends Composite implements MessageProperties{
 	public void onBtnClick(ClickEvent clickEvent) {
 		appPopUp.hide();
 		String placeToken = AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken();
-		if(placeToken.equals(PlaceTokens.STUDENT) && !StudentAssignmentView.getMainContainerStatus())
+		if(placeToken.equals(PlaceTokens.STUDENT_VIEW) || placeToken.equals(PlaceTokens.STUDENT))
 		{
 			Window.enableScrolling(true);
 			AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.HOME);
 		}
-		else if(!(placeToken.equals(PlaceTokens.COLLECTION_PLAY) ||placeToken.equals(PlaceTokens.PREVIEW_PLAY)||placeToken.equals(PlaceTokens.RESOURCE_PLAY))) {
+		else if(!(placeToken.equals(PlaceTokens.SEARCH_RESOURCE) || placeToken.equals(PlaceTokens.SEARCH_COLLECTION) || placeToken.equals(PlaceTokens.COLLECTION_PLAY) || placeToken.equals(PlaceTokens.ASSESSMENT_PLAY)  ||placeToken.equals(PlaceTokens.PREVIEW_PLAY)||placeToken.equals(PlaceTokens.RESOURCE_PLAY))) {
 			Window.enableScrolling(true);
 		}
 	}

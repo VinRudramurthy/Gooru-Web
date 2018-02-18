@@ -10,10 +10,16 @@
 		<!-- <g:HTMLPanel styleName="{toolTip.arrowBorder}"></g:HTMLPanel> -->
 		<g:HTMLPanel styleName="{toolTip.discoverTooltipContent}" ui:field="tooltipPanel">
 			<g:Label styleName="{toolTip.discoverTooltipLabel}" ui:field="lblGooruLibrary" />
-			<g:Label styleName="{toolTip.discoverTooltipLabel}" ui:field="lblRusdLibrary" />
-<!-- 			<panel:HTMLEventPanel styleName="{toolTip.discoverTooltipLabel}" ui:field="lblPartnerLibrary"/>
+			<panel:HTMLEventPanel styleName="{toolTip.discoverTooltipLabel}" ui:field="lblDistrictLibrary" />
+			<g:HTMLPanel ui:field="dropdownImgLib" styleName="{toolTip.partnerDropDownArrow}"></g:HTMLPanel>
+ 			<panel:HTMLEventPanel styleName="{toolTip.discoverTooltipLabel}" ui:field="lblPartnerLibrary"/>
 			<g:HTMLPanel ui:field="dropdownImg" styleName="{toolTip.partnerDropDownArrow}"></g:HTMLPanel>
- -->		</g:HTMLPanel>
-<!-- 		<panel:HTMLEventPanel styleName="{toolTip.partnerLibraryContainer}" ui:field="partnerLibContainer"/>
- -->	</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="{toolTip.partnerLibraryDivInfo}">
+ 			<panel:HTMLEventPanel styleName="{toolTip.partnerLibraryContainer}" ui:field="partnerLibContainer"/>
+ 		</g:HTMLPanel>
+ 		<g:HTMLPanel styleName="{toolTip.districtLibrayCOntainerInfo}">
+ 			<panel:HTMLEventPanel styleName="{toolTip.districtLibraryContainer}" ui:field="districtLibContainer"/>
+ 		</g:HTMLPanel>
+	</g:HTMLPanel>
 </ui:UiBinder>

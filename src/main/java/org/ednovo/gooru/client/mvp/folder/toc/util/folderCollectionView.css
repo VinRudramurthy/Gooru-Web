@@ -1,0 +1,82 @@
+.perTaskContainer{
+	/* padding:30px 0; */
+}
+.collectionTitle{
+	color: #0066cc;
+	font-weight: bold;
+	margin: 30px 0 10px 0;
+}
+.video{
+    background-position: 0 0 !important;
+}
+.webpage{
+    background-position: 0 -224px !important;
+}
+
+.interactive{
+    background-position: 0 -28px !important;
+}
+
+.question{
+    background-position: 0 -140px !important;
+}
+
+.image{
+    background-position: 0 -251px !important;
+}
+
+.texts{
+    background-position: 0 -55px !important;
+}
+
+.audio{
+    background-position: 0 -279px !important;
+}
+
+.perTaskContainer ul{
+	margin:0 0;
+	padding:0 0;
+}
+.perTaskContainer ul li{
+	margin:10px 0;
+	background: url("../images/resource-type-icons.png") no-repeat scroll 0 0 transparent;
+    padding: 3px 31px;
+	list-style:none;
+	cursor: pointer;
+	margin-left:15px;
+}
+.foldercollection { 
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 8px 4px;
+    padding-left: 34px;
+}
+.foldercollection.child {
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 89px 4px;
+}
+.sequenceNumner{
+	position: absolute;
+	margin-left: -56px;
+	padding-right:2%;
+	text-align: right;
+	color: #06c;
+	width: 3.3%;
+}
+.collectionDesc{
+	white-space: normal;
+	color:#252525;
+	cursor: auto;
+	margin-top: 8px;
+}
+.resourceTitle{
+	min-width: 50px;
+	width: 10%;
+	color:#1076bb;
+	font-size:12px;
+	padding-left:0px;
+}
+.lockImage{
+	background: url(../images/folders/lock-icon.png) no-repeat;
+	margin-left: 7px;
+	display: inline-block;
+	height: 13px;
+	width: 15px;
+}

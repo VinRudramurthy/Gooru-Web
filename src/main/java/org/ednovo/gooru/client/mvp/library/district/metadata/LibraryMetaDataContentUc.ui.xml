@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="folderMetaStyle" src="../../../shelf/collection/folders/FolderItemMetaDataUc.css" type="org.ednovo.gooru.client.mvp.shelf.collection.folders.FolderItemMetaDataUcStyleBundle" />
+	<g:HTMLPanel styleName="{folderMetaStyle.sausdMetaData}">
+	   <g:HTMLPanel styleName="{folderMetaStyle.ideasBlock} {folderMetaStyle.sausdContent}" ui:field="bigIdeasPanel">
+	      <g:HTMLPanel styleName="{folderMetaStyle.blockView} {folderMetaStyle.idea}">
+	         <g:Label styleName="{folderMetaStyle.blockViewTitle}" ui:field="ideasStaticLbl"/>
+	      </g:HTMLPanel>
+	      <g:HTML styleName="{folderMetaStyle.padding10}" ui:field="bigIdeasLbl"/>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="{folderMetaStyle.ideasBlock} {folderMetaStyle.sausdContentLast}" ui:field="essentialQuestionsPanel">
+	      <g:HTMLPanel styleName="{folderMetaStyle.blockView} {folderMetaStyle.question}">
+	         <g:Label styleName="{folderMetaStyle.blockViewTitle}" ui:field="questionsStaticLbl"/>
+	      </g:HTMLPanel>
+	      <g:HTML styleName="{folderMetaStyle.padding10}" ui:field="essentialQuestionsLbl"/>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="{folderMetaStyle.ideasBlock} {folderMetaStyle.ideasBlockLast} {folderMetaStyle.sausdContentBlock}" ui:field="performanceTaskPanel">
+	      <g:HTMLPanel styleName="{folderMetaStyle.blockView} {folderMetaStyle.task}">
+	         <g:Label styleName="{folderMetaStyle.blockViewTitle}" ui:field="tasksStaticLbl"/>
+	      </g:HTMLPanel>
+	      <g:HTML styleName="{folderMetaStyle.padding10}" ui:field="performanceTaskLbl"/>
+	   </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

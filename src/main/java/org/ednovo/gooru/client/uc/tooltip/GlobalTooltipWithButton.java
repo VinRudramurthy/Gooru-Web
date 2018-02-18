@@ -4,6 +4,8 @@
  */
 package org.ednovo.gooru.client.uc.tooltip;
 
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -54,6 +56,8 @@ public class GlobalTooltipWithButton extends PopupPanel implements HasMouseOutHa
 	@UiField
 	Button btnConfirm;
 	
+	@UiField HTMLEventPanel confirmationPanel;
+	
 	/**
 	 * Because this class has a default constructor, it can
 	 * be used as a binder template. In other words, it can be used in other
@@ -67,16 +71,29 @@ public class GlobalTooltipWithButton extends PopupPanel implements HasMouseOutHa
 	 */
 	public GlobalTooltipWithButton() {
 		setWidget(uiBinder.createAndBindUi(this));
+		 confirmationPanel.getElement().setId("epnlConfirmationPanel");
+	     panelArrow.getElement().setId("pnlPanelArrow");
+	     headerText.getElement().setId("lblHeaderText");
+	     desLbl.getElement().setId("lblDesLbl");
+	 	btnConfirm.getElement().setId("btnBtnConfirm");
 		setGlassEnabled(true);
-		headerText.removeFromParent();
 		show();
 		setPanelPosition();
 	}
 	public GlobalTooltipWithButton(String description, String btnName){
         setWidget(uiBinder.createAndBindUi(this));
-		desLbl.setText(description);
+        confirmationPanel.getElement().setId("epnlConfirmationPanel");
+        panelArrow.getElement().setId("pnlPanelArrow");
+        desLbl.setText(description);
 		btnConfirm.setText(btnName);
+		btnConfirm.getElement().setId("btnBtnConfirm");
+		btnConfirm.getElement().setAttribute("alt", btnName);
+		btnConfirm.getElement().setAttribute("title", btnName);
+		headerText.getElement().setId("lblHeaderText");
 		headerText.removeFromParent();
+		 desLbl.getElement().setId("lblDesLbl");
+		 desLbl.getElement().setAttribute("alt", description);
+		 desLbl.getElement().setAttribute("title", description);
 		setGlassEnabled(true);
 		show();
 		setPanelPosition();
@@ -84,9 +101,20 @@ public class GlobalTooltipWithButton extends PopupPanel implements HasMouseOutHa
 	
 	public GlobalTooltipWithButton(String header,String description, String btnName){
         setWidget(uiBinder.createAndBindUi(this));
+        confirmationPanel.getElement().setId("epnlConfirmationPanel");
+        panelArrow.getElement().setId("pnlPanelArrow");
 		desLbl.setText(description);
+		btnConfirm.getElement().setId("btnBtnConfirm");
 		btnConfirm.setText(btnName);
 		headerText.setText(header);
+		btnConfirm.getElement().setAttribute("alt", btnName);
+		btnConfirm.getElement().setAttribute("title", btnName);
+		headerText.getElement().setId("lblHeaderText");
+		headerText.getElement().setAttribute("alt",header);
+		headerText.getElement().setAttribute("title", header);
+		desLbl.getElement().setId("lblDesLbl");
+		desLbl.getElement().setAttribute("alt", description);
+		 desLbl.getElement().setAttribute("title", description);
 		setGlassEnabled(true);
 		show();
 		setPanelPosition();

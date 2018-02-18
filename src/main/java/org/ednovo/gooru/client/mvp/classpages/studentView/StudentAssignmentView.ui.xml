@@ -5,14 +5,7 @@
 	xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
 
 	<ui:style field="StudentStyle" src="StudentStyles.css" />
-		
 	<g:HTMLPanel ui:field="mainContainer">
-		<!-- <panel:HTMLEventPanel styleName="{StudentStyle.classPageArrContainer}" 
-			ui:field="backToEditPanel" visible="false"> <g:HTMLPanel styleName="{StudentStyle.classPageArrOuterDiv}"> 
-			<g:HTMLPanel styleName="{StudentStyle.classPageSpriteImg classPageArrIcon}"></g:HTMLPanel> 
-			<g:Image styleName="{StudentStyle.classPageArrImg}" url="./images/Classpage/student/NextArrow.png" 
-			width="120" height="90" /> </g:HTMLPanel> <g:HTMLPanel styleName="{StudentStyle.classPageArrText}">Back</g:HTMLPanel> 
-			</panel:HTMLEventPanel> -->
 		<g:HTMLPanel styleName="{StudentStyle.classpageContainer}">
 			<g:HTMLPanel styleName="{StudentStyle.classpageBannerview}">
 				<g:HTMLPanel styleName="{StudentStyle.classpageBanner}">
@@ -29,26 +22,50 @@
 		</g:HTMLPanel>
 
 		<g:HTMLPanel styleName="{StudentStyle.classpageClasscode}">
-		<g:HTMLPanel styleName="{StudentStyle.usernameDivContianer}">
-		<g:Image styleName="{StudentStyle.radioButtonImg}" ui:field="imgProfileImage"/>
-		<g:Label styleName="{StudentStyle.usernameCss}" ui:field="lblUserName" />
-		</g:HTMLPanel>
+			<g:HTMLPanel styleName="{StudentStyle.usernameDivContianer}">
+				<g:Image styleName="{StudentStyle.radioButtonImg}" ui:field="imgProfileImage"/>
+				<g:Label styleName="{StudentStyle.usernameCssName}" ui:field="lblUserName" />
+			</g:HTMLPanel>
 			<g:HTMLPanel styleName="{StudentStyle.classpageCodeShareInput}">
-				<g:Button styleName="primary {StudentStyle.classpageHoverButton}"
-					ui:field="btnJoinClass"></g:Button>
+				<!-- <g:Button styleName="primary {StudentStyle.classpageHoverButton}" ui:field="btnJoinClass"></g:Button> -->
 			</g:HTMLPanel>
-			<g:Label ui:field="lblWebHelp" styleName="{StudentStyle.classpageCodeHelp}"></g:Label>
+			<!-- <g:Label ui:field="lblWebHelp" styleName="{StudentStyle.classpageCodeHelp}"></g:Label> -->
 			<g:HTMLPanel styleName="{StudentStyle.studentWithdrawBtn}">
-				<g:Button styleName="secondary {StudentStyle.studentWithdrawStyle}"
-					ui:field="btnWithDraw"></g:Button>
+				<!-- <g:Button styleName="secondary {StudentStyle.studentWithdrawStyle}" ui:field="btnWithDraw"></g:Button> -->
 			</g:HTMLPanel>
-			
-			<g:HTMLPanel styleName="{StudentStyle.classpageCodeShareInputForImage}">
-			    <g:Image ui:field="userImage" styleName="{StudentStyle.userimageStyle}" url="images/Classpage/student/user.png"></g:Image>
+			<g:HTMLPanel ui:field="memberContainer" styleName="{StudentStyle.classpageCodeShareInputForImage}">
 			    <g:Label styleName="{StudentStyle.classMemberStyle}" ui:field="LblMember"></g:Label>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-
+		<g:HTMLPanel styleName="containerProgress containerProgressWidth" ui:field="panelProgressContainer">
+		    <panel:HTMLEventPanel styleName="nextStudent" ui:field="panelPrevious">
+		        <g:Label styleName="leftArrow" ui:field="lblPrevious"></g:Label>
+		    </panel:HTMLEventPanel>
+			<g:HTMLPanel styleName="assignmentPathContainer" ui:field="panelAssignmentPath">
+			    <g:Label styleName="assignmentProgressStudent" ui:field="lblAssignmentProgress" />
+			    <g:HTMLPanel styleName="path">
+					<g:FlowPanel styleName="assignmentPath" ui:field="panelAssignmentProgress" />
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			<panel:HTMLEventPanel styleName="previousStudent" ui:field="panelNext">
+			    <g:Label styleName="rightArrow" ui:field="lblNext"></g:Label>
+			</panel:HTMLEventPanel>
+		</g:HTMLPanel>
+		<!-- <g:HTMLPanel styleName="{StudentStyle.assignmentDotsContainer}" ui:field="panelAssignmentPath">
+			<g:Label styleName="{style.css.assignmentProgress}" ui:field="lblAssignmentProgress" />
+			<g:HTMLPanel styleName="{style.css.path}">
+				<g:FlowPanel styleName="{style.css.assignmentPath}" ui:field="panelAssignmentProgress" />
+			</g:HTMLPanel>
+		</g:HTMLPanel> -->
+		<!-- <g:FlowPanel styleName="dropdowncontainerStudent">
+					<g:Label styleName="dropdownPlaceHolderStudent" ui:field="dropdownPlaceHolder"></g:Label>
+					<g:FlowPanel styleName="dropdownListContainerScrollPanelStudent" ui:field="dropDownListContainer">
+					</g:FlowPanel>
+		</g:FlowPanel> -->
+	    <g:FlowPanel styleName="{StudentStyle.paginationContainer}">
+				<g:FlowPanel styleName="{StudentStyle.searchResultContainer}"
+					ui:field="paginationFocPanel"></g:FlowPanel>
+		</g:FlowPanel>
 
 		<g:HTMLPanel styleName="{StudentStyle.classPageContainerforAssignment}">
 
@@ -56,8 +73,10 @@
 				<g:Label styleName="{StudentStyle.classPageNoAssignment}"
 					ui:field="noAssignmentMsg" visible="false"></g:Label>
 				<g:HTMLPanel ui:field="contentpanel" />
-				<g:FlowPanel styleName="{StudentStyle.searchResultContainer}"
-					ui:field="paginationFocPanel"></g:FlowPanel>
+				
+						<g:FlowPanel styleName="{StudentStyle.searchResultContainer}"
+					ui:field="paginationFocPanel1"></g:FlowPanel>
+
 				<!-- <g:HTMLPanel styleName="{StudentStyle.classpageTopLine}"></g:HTMLPanel> -->
 			</g:HTMLPanel>
 		</g:HTMLPanel>

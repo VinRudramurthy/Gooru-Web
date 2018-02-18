@@ -9,7 +9,7 @@
 }
 
 .hoverPopupArrow {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;
@@ -20,7 +20,7 @@
 }
 
 .hoverPopupArrowNewResource {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;
@@ -31,7 +31,7 @@
 }
 
 .gooruGuidePopupArrow {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;
@@ -387,7 +387,26 @@
 	position: fixed;
 	top: 50px;
 	width: 139px;
+	z-index: 10;
 }
+
+.myCollectoinTooltipContent{
+	/* text-align: center; */
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-moz-border-radius: 4px;
+	position: fixed;
+	top: 50px;
+	width: 170px;
+}
+
+
 .globalTooltipButtonMargin{
 	margin: 10px 0px 0px 63px;
 }
@@ -447,15 +466,13 @@
 	width: 204px;
 	float: left;
 }
-
 .inputContainer{
 	padding: 8px;
 }
 
-.partnerLibraryContainer {
+.districtLibraryContainer{
 	background: white;
 	margin-left: 141px;
-	margin-top: 50px;
 	font-weight: normal;
 	border: 1px solid #ddd;
 	background-color: white;
@@ -464,7 +481,29 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 	-moz-border-radius: 4px;
 	position: relative;
-	width: 100%;
+	width: 75%;
+	min-height: 200px;
+	cursor: pointer;
+	margin-top: 73px;
+	color: #515151;
+}
+
+.partnerLibraryContainer {
+	background: white;
+	margin-left: 141px;
+	margin-top: 99px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	-moz-border-radius: 4px;
+	position: relative;
+	width: 260px;
+	height: 458px;
+	cursor: pointer;
+	color: #515151;
 }
 .headerStyle{
 	font-size: 12px;
@@ -487,4 +526,54 @@
 	float: right;
 	margin-top: -16px;
 	margin-right: 10px;
+}
+
+.collectionIcon{
+	
+	background: url(images/folders/panel/collection-smaller-icon.png) no-repeat;
+}
+
+.folderIcon{
+	
+	background: url(images/folders/panel/folder-smaller-icon.png) no-repeat;
+}
+
+.textPadding{
+	
+}
+
+.collectionToolTipLabel{
+	padding: 6px;
+    cursor: pointer;
+    padding-left: 40px;
+    background: url(images/folders/panel/collection-smaller-icon.png) 10px no-repeat;
+}
+.folderToolTipLabel{
+	padding: 6px;
+    cursor: pointer;
+    padding-left: 40px;
+    background: url(images/folders/panel/folder-smaller-icon.png) 10px no-repeat;
+}
+.mycollectionsToolTipLabel{
+	padding: 6px;
+    cursor: pointer;
+    padding-left: 40px;
+    background: url(images/folders/panel/edit-smaller-icon.png) 14px no-repeat;
+}
+
+.collectionToolTipLabel:hover,.folderToolTipLabel:hover, .mycollectionsToolTipLabel:hover, .dashBoardToolTipLabel:hover {
+	background-color: #cfe3f1;
+}
+.partnerLibraryDivInfo{
+	/* position: fixed !important;width:22% !important; */
+	z-index: 0;
+}
+.districtLibrayCOntainerInfo{
+	/* position: fixed !important; */
+	z-index: 0;
+}
+.dashBoardToolTipLabel{
+	padding: 6px;
+    cursor: pointer;
+    padding-left: 10px;
 }

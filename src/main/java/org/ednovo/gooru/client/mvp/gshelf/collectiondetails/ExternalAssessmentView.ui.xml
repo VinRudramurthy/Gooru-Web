@@ -1,0 +1,89 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc.suggestbox.widget">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="pnlExternalAssessmentContainter">
+		<div class="existingAssessment">
+
+			<div class="assessmentTitle">
+				<uc:Paragraph text="{i18n.GL3381}"></uc:Paragraph>
+				<p>
+					<g:TextBox styleName="form-control" ui:field="txtAssessmentTitle"
+						maxLength="50" />
+					<g:Label ui:field="lblErrorMessage" styleName="errorMessage text-right" />
+				</p>
+			</div>
+
+
+			<div class="assessmentURL">
+				<uc:Paragraph text="{i18n.GL3183}"></uc:Paragraph>
+				<p>
+					<g:TextBox styleName="form-control" ui:field="txtAssessmentURL" />
+					<g:Label ui:field="lblErrorMessageForURL" styleName="errorMessage text-right" />
+				</p>
+			</div>
+
+			<div class="assessmentDescription">
+				<uc:Paragraph text="{i18n.GL0904}"></uc:Paragraph>
+				<p>
+					<g:TextArea styleName="form-control" ui:field="txaAssessmentDescription" />
+					<g:Label ui:field="lblErrorMessageForDesc" styleName="errorMessage text-right" />
+				</p>
+			</div>
+
+			<div class="assessmentPrivacy">
+				<div class="row">
+					<div class="col-md-2 col-sm-3 setPaddingLeft">
+						<uc:Paragraph text="{i18n.GL0873}"></uc:Paragraph>
+					</div>
+					<div class="col-md-10 col-sm-9">
+						<input type="radio" class="css-checkbox" id="radio6" name="radiog_dark" />
+						<g:HTMLPanel styleName="css-label radGroup2" ui:field="pnlPublic">
+							<img src="images/publicIcon.png" />
+							Public
+						</g:HTMLPanel>
+						<input type="radio" class="css-checkbox" id="radio7" name="radiog_dark" />
+						<g:HTMLPanel styleName="css-label radGroup3" ui:field="pnlSharable">
+							<img src="images/sharableIcon.png" />
+							Sharable
+						</g:HTMLPanel>
+						<input type="radio" class="css-checkbox" id="radio8" name="radiog_dark" />
+						<g:HTMLPanel styleName="css-label radGroup2" ui:field="pnlPrivate">
+							<img src="images/privateIcon.png" />
+							Private
+						</g:HTMLPanel>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="assessmentRequires">
+				<div class="row">
+					<div class="col-md-2 col-sm-3 setPaddingLeft">
+						<uc:Paragraph text="{i18n.GL3487}"></uc:Paragraph>
+					</div>
+					<div class="col-md-10 col-sm-9">
+						<input type="radio" class="css-checkbox" id="radio9" name="radiog_dark" />
+						<g:Label styleName="css-label radGroup2" text="{i18n.GL_GRR_YES}"
+							title="{i18n.GL_GRR_YES}" ui:field="lblRequiresYes" />
+						<input type="radio" class="css-checkbox" id="radio10" name="radiog_dark" />
+						<g:Label styleName="css-label radGroup2" text="{i18n.GL_GRR_NO}"
+							title="{i18n.GL_GRR_NO}" ui:field="lblRequiresNo" />
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="stepsButtonGroup saveButton">
+				<g:Button styleName="secondary" ui:field="btnSaveExternalAssessment"
+					text="{i18n.GL0141}" title="{i18n.GL0141}" />
+			</div>
+			
+			<g:HTMLPanel ui:field="spinnerIconContainer" styleName="spinnerContainer" visible="false">
+				<g:HTMLPanel ui:field="spinnerIconPos" styleName="loadingImage spinnerDisplayPosition"></g:HTMLPanel>
+			</g:HTMLPanel>
+			
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

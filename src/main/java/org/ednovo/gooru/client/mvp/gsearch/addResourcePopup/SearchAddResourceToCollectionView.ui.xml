@@ -1,0 +1,36 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.classpages.assignments.AddAssignmentContainerCBundle"
+		field="res"></ui:with>
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+		<g:HTMLPanel>
+	<div id="addCollectionPopup">
+		<div class="popHeader">
+		<g:Label styleName="col-md-10 col-xs-10 popHeading" ui:field="addtocollHeaderText"></g:Label>
+		<div class="col-md-2"><g:Anchor ui:field="cancelResourcePopupBtnLbl" styleName="closeButton"></g:Anchor></div>
+		<div class="clearfix"></div>
+		</div>
+		<g:Label ui:field="addingTextLbl" styleName="remixMenuTitle"/>
+						<g:HTMLPanel styleName="myCourseContainer" ui:field="myCourseContainer">
+							<g:HTMLPanel styleName="myCousesTabMenu"  ui:field="remixPopupTabPnl">
+								<g:Anchor ui:field="mycontentLbl" styleName="mycourseMenu" text="{i18n.GL3335}" title="{i18n.GL3335}"/>
+								<g:Anchor styleName="mycollectionMenu" ui:field="mycollectionsLbl" text="{i18n.GL0180}" title="{i18n.GL0180}" />
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+		<g:Label ui:field="myCollDefault" styleName="foldermenuHeader" text="{i18n.GL1752}" title="{i18n.GL1752}"/>
+		<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="dropdownListContainerScrollPanel">
+	          <g:HTMLPanel ui:field="floderTreeContainer" styleName="popBody"/>
+		</g:ScrollPanel>
+		 <g:Label ui:field="lblEmptyErrorMessage" styleName="noTextMessage"/>
+			<div class="clearfix"></div>
+			<div class="popFooter">
+				<div class="addButton leftAlign"><g:Label styleName="errorMessage" ui:field="lblError" text="{i18n.GL1134}" title="{i18n.GL1134}"/></div>
+				<div class="addButton leftAlign"><g:Button styleName="addNewCollectionStyle" ui:field="btnAddNew" text="{i18n.GL3226}" title="{i18n.GL3226}"/></div>
+				<div class="addButton rightAlign"><g:Button styleName="primary" ui:field="btnAddExisting" text="{i18n.GL0590}" title="{i18n.GL0590}"/></div>
+			</div>
+		<div class="clearfix"></div>
+	</div>
+</g:HTMLPanel>
+</ui:UiBinder>

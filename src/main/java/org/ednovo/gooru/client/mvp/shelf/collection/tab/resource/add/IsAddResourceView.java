@@ -38,13 +38,20 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add;
 * @Reviewer 
 *
 */
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ExistsResourceDo;
-import org.ednovo.gooru.shared.model.content.ResourceMetaInfoDo;
-import org.ednovo.gooru.shared.model.user.MediaUploadDo;
+import java.util.List;
+import java.util.Map;
 
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionQuestionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ExistsResourceDo;
+import org.ednovo.gooru.application.shared.model.content.ListValuesDo;
+import org.ednovo.gooru.application.shared.model.content.ResourceMetaInfoDo;
+import org.ednovo.gooru.application.shared.model.drive.GoogleDriveItemDo;
+import org.ednovo.gooru.application.shared.model.user.MediaUploadDo;
+
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.gwtplatform.mvp.client.PopupView;
 
 public interface IsAddResourceView extends PopupView, IsViewWithHandlers<AddResourceUiHandlers>{
@@ -68,6 +75,30 @@ public interface IsAddResourceView extends PopupView, IsViewWithHandlers<AddReso
 	void removeQuestionEditImage();
 
 	void uploadResource(MediaUploadDo result); 
+	
+	void getDriveDetails(GoogleDriveItemDo driveDo);
+	
+	void getFolderDetails(String title, String id, List<GoogleDriveItemDo> result); 
+	
+	public void showAddWebResourceWidget(boolean isGoogleDriveFile,FlowPanel googleDriveContainer,GoogleDriveItemDo googleDriveItemDo);
 
+	void setUpdatedStandardsCode(String setStandardsVal,int id,String desc,boolean val, boolean isUserOwnResource);
+	
+	public void setCollectionDo(CollectionDo collectionDo);
+
+	void setPopupImageData(ResourceMetaInfoDo result);
+	
+	void clearQuestionSlot();
+	
+	void hidePopup();
+	
+	void questionMetadata(CollectionQuestionItemDo collectionQuestionItemDo);
+	
+	boolean checkQuestionSlot();
+	
+	void setDepthOfKnowledges(List<ListValuesDo> result);
+
+	void displaySelectedStandards(List<Map<String, String>> standListArray);
+	
 	
 }

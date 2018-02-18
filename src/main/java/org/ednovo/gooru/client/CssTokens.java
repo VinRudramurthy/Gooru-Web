@@ -40,4 +40,24 @@ public interface CssTokens {
 	
 	String FLOAT_LEFT = "floatLeft";
 
+	String ACTIVE = "active";
+	
+	String DISABLED="disabled";
+	
+	String GREYSTYLE="grey";
+	
+	String GREEN_STYLE = "green";
+	
+	String LIGHT_GREEN_STYLE = "lightgreen";
+	
+	String RED_STYLE = "red";
+	
+	String YELLOW_GREEN_STYLE = "yellowgreen";
+	
+	String ORANGE_STYLE = "org";
+
+	String CURSOR_POINTER = "cursorPointer";
+
+	String TEXT_UPPERCASE = "text-uppercase";
+	
 }

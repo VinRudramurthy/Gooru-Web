@@ -1,0 +1,199 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a:hover {
+	color: #87BADD;
+}
+.profileConainer {
+	width: 1000px;
+	margin: 0 auto;
+}
+.profilepageFollwoingContent {
+	width: 993px;
+	min-height: 130px;
+	padding-top: 15px;
+	
+}
+.profilepageFollwoingContentlabel {
+	float: left;
+}
+.profilepageTagContentMainDiv {
+	Width: 90%;
+	float: left;
+}
+.profilepageTagContentMainDivconent {
+	float: left;
+	width: 65%;
+	color: green;
+}
+.profilepageTagContentMainDivconentcount {
+	float: left;
+	width: 25%;
+	color: green;
+}
+.infoSectionAuthor {
+	display: inline-block;
+	vertical-align: top;
+	width: 444px;
+	height: 127px;
+	margin-right: 50px;
+	margin-bottom: 30px;
+	background: #fff;
+	padding: 20px 40px;
+	border: 1px solid #DDD;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	webkit-box-shadow: 0px 0px 7px rgba(153,153,153,0.1);
+	/* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
+	box-shadow: 0px 0px 7px rgba(153,153,153,0.1);
+}
+
+.userImageContainer {
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+	border-radius: 50px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 3px solid #87BADD;
+}
+.followerUserImageContainer{
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+	border-radius: 50px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.followerUserImage {
+	width: 80px;
+	height: 80px;
+	border-radius: 70px;
+	border: 3px solid #87BADD;
+}
+.userImage {
+	width: 80px;
+	height: 80px;
+	border-radius: 70px;
+	
+}
+.teacherTipOuterContainer {
+	width: 200px;
+	word-wrap: break-word;
+	padding: 5px;
+	overflow: hidden;
+}
+.username {
+	display: block;
+	vertical-align: middle;
+	/* color: #1076bb; */
+	font-weight: bold;
+	font-size: 18px;
+}
+.username:hover{
+	cursor:pointer;
+}
+.profilepageFollwoingContentText {
+	font-weight: bold;
+	padding: 14px 0px;
+	font-size: 18px;
+	border-bottom: 1px solid #ddd;
+	
+}
+.profilepageFollowerContentText {
+	padding: 14px 0px;
+	font-size: 18px;
+	border-bottom: 1px solid #ddd;
+	
+}
+.profileFollowingUserNameDetails {
+	display: inline-block;
+	vertical-align: top;
+}
+.userDetails {
+	font-size: 12px;
+}
+.titleBold {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 0px;
+	color: #515151;
+}
+.clear {
+	clear: both;
+}
+/*For Popup */
+.popup {
+	background-color:white;
+	width: 450px;
+	margin:0px auto;
+	height:170px;
+}
+
+.popupInner {
+	border: 1px solid #DDD;
+	height: 167px;
+}
+
+.popupHeader {
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+}
+
+.popupContent {
+	padding:15px;
+    text-align:center;
+}
+.userInput .popupContent {
+    text-align:center;
+    margin-top: 32px;
+}
+.okCancel {
+	width: 100%;
+    text-align:center;
+	margin:auto;
+	margin-bottom:15px;
+}
+.inputLabel {
+    margin:5px 0px;
+   
+}
+.buttonMargins {
+	margin: 10px 0px 0px 10px;	
+}
+.seeMoreStyle{
+	color: blue;
+	font-size: 13px;
+	cursor: pointer;
+	text-align: center;
+	padding-bottom:20px;
+}
+.scrollStyle{
+
+}
+.inlineStyle{
+	display: inline-block;
+    margin-top: 10px;
+}
+.centerAlignBtn{
+	text-align:center;
+	margin-bottom: 20px;
+}

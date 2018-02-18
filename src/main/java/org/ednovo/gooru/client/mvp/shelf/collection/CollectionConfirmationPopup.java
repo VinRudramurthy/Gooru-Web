@@ -24,10 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -36,21 +36,25 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public  class CollectionConfirmationPopup extends PopupPanel implements MessageProperties{
+public  class CollectionConfirmationPopup extends PopupPanel {
 
 	@UiField Label shareMsgTitle, shareMsgTxt, shareMsgLbl, closeButton,classPageNames;
 	
 
 	@UiField BlueButtonUc okButton, goBackBtn;
+	@UiField HTMLPanel buttonContainer;
 	
 	
 	
 	private static CollectionConfirmationPopupUiBinder uiBinder = GWT
 			.create(CollectionConfirmationPopupUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface CollectionConfirmationPopupUiBinder extends
 			UiBinder<Widget, CollectionConfirmationPopup> {
@@ -59,26 +63,40 @@ public  class CollectionConfirmationPopup extends PopupPanel implements MessageP
 	public CollectionConfirmationPopup() {
 		setWidget(uiBinder.createAndBindUi(this));
 		
-		shareMsgTitle.setText(GL0836);
-		shareMsgTxt.setText(GL0837);
-		shareMsgLbl.setText(GL0838);
+		this.getElement().setAttribute("style", "min-height:247px; width:436px;");
+		shareMsgTitle.setText(i18n.GL0836());
+		shareMsgTitle.getElement().setId("lblShareMsgTitle");
+		shareMsgTitle.getElement().setAttribute("alt",i18n.GL0836());
+		shareMsgTitle.getElement().setAttribute("title",i18n.GL0836());
+		
+		shareMsgTxt.setText(i18n.GL0837());
+		shareMsgTxt.getElement().setId("lblShareMsgTxt");
+		shareMsgTxt.getElement().setAttribute("alt",i18n.GL0837());
+		shareMsgTxt.getElement().setAttribute("title",i18n.GL0837());
+		
+		shareMsgLbl.setText(i18n.GL0838());
+		shareMsgLbl.getElement().setId("lblShareMsgLbl");
+		shareMsgLbl.getElement().setAttribute("alt",i18n.GL0838());
+		shareMsgLbl.getElement().setAttribute("title",i18n.GL0838());
+		
 		okButton.getElement().getStyle().setMarginLeft(7, Unit.PX);
-		goBackBtn.setText(GL0834);
-		okButton.setText(GL0835);
+		goBackBtn.setText(i18n.GL0834());
+		goBackBtn.getElement().setAttribute("alt",i18n.GL0834());
+		goBackBtn.getElement().setAttribute("title",i18n.GL0834());
+		
+		okButton.setText(i18n.GL0835());
+		okButton.getElement().setAttribute("alt",i18n.GL0835());
+		okButton.getElement().setAttribute("title",i18n.GL0835());
+		
 		goBackBtn.getElement().setId("btnGoBack");
 		okButton.getElement().setId("btnOk");
-		this.setGlassEnabled(true);
+		closeButton.getElement().setId("lblCloseButton");
+		classPageNames.getElement().setId("lblClassPageNames");
+		buttonContainer.getElement().setId("pnlButtonContainer");
 		
-        /*this.setPopupPositionAndShow(new PopupPanel.PositionCallback() {
-
-            public void setPosition(int offsetWidth, int offsetHeight) {
-                int left = (Window.getClientWidth() - offsetWidth) / 3;
-                int top = (Window.getClientHeight() - offsetHeight) / 3;
-                left=left+250;
-                top=top+40;
-                setPopupPosition(left, top);
-            }
-        });*/
+		
+		
+		this.setGlassEnabled(true);
 		this.center();
         this.show();
         

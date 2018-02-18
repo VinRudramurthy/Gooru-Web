@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,12 +23,12 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.ednovo.gooru.client.mvp.resource.dnd;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.dnd.AppPickupDragController;
 import org.ednovo.gooru.client.mvp.dnd.Draggable;
 
@@ -39,7 +39,7 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 
 /**
  * @author Search Team
- * 
+ *
  */
 public class ResourceDragController extends AppPickupDragController {
 
@@ -55,7 +55,7 @@ public class ResourceDragController extends AppPickupDragController {
 	}
 
 	/**
-	 * Class constructor with two parameter  
+	 * Class constructor with two parameter
 	 * @param boundaryPanel instance of {@link AbsolutePanel}
 	 * @param allowDroppingOnBoundaryPanel  whether or not boundary panel should allow dropping
 	 */
@@ -64,10 +64,10 @@ public class ResourceDragController extends AppPickupDragController {
 	}
 
 	/**
-	 * Class constructor with three parameter 
+	 * Class constructor with three parameter
 	 * @param boundaryPanel instance of {@link AbsolutePanel}
 	 * @param allowDroppingOnBoundaryPanel  whether or not boundary panel should allow dropping
-	 * @param deleteOnFalseDrop whether or not to set false to drop 
+	 * @param deleteOnFalseDrop whether or not to set false to drop
 	 */
 	public ResourceDragController(AbsolutePanel boundaryPanel, boolean allowDroppingOnBoundaryPanel, boolean deleteOnFalseDrop) {
 		super(boundaryPanel, allowDroppingOnBoundaryPanel);
@@ -95,8 +95,11 @@ public class ResourceDragController extends AppPickupDragController {
 			adjustLeft = ((Draggable) context.draggable).getDraggableUc().getDragLeftCorrection();
 			adjustTop = ((Draggable) context.draggable).getDraggableUc().getDragTopCorrection();
 		}
-		DOMUtil.fastSetElementPosition(context.draggable.getElement(), context.mouseX - context.draggable.getAbsoluteLeft() - adjustLeft, context.mouseY - context.draggable.getAbsoluteTop() - adjustTop);
-	}
+		if(!AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().toString().equals(PlaceTokens.ASSESSMENT_PLAY) || !AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().toString().equals(PlaceTokens.COLLECTION_PLAY) || !AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().toString().equals(PlaceTokens.RESOURCE_PLAY)) {
+			DOMUtil.fastSetElementPosition(context.draggable.getElement(), context.mouseX - context.draggable.getAbsoluteLeft() - adjustLeft, context.mouseY - context.draggable.getAbsoluteTop() - adjustTop);
+		}
+
+		}
 
 	@Override
 	public void previewDragStart() throws VetoDragException {
@@ -119,7 +122,7 @@ public class ResourceDragController extends AppPickupDragController {
 	protected void restoreSelectedWidgetsLocation() {
 		if (isDeleteOnFalseDrop()) {
 			// Destroy draggable on drop fail
-//			new CustomAnimation(context.draggable).run(200); 
+//			new CustomAnimation(context.draggable).run(200);
 //			context.draggable.removeFromParent();
 		} else {
 			((Draggable) context.draggable).setDragMode(false);

@@ -1,31 +1,30 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
 	<g:HTMLPanel>
-		<g:PopupPanel ui:field="errorPopUpNew" styleName="{res.css.errorPopUp}">
-			<g:FlowPanel styleName="{res.css.inlineBorder}">
-				<g:FlowPanel ui:field="captionTitle" styleName="{res.css.captionTitle}">
+		<g:PopupPanel ui:field="errorPopUpNew" styleName="Uc-errorPopUp">
+			<g:FlowPanel styleName="Uc-inlineBorder">
+				<g:FlowPanel ui:field="captionTitle" styleName="Uc-captionTitle">
 					<g:HTMLPanel>
-						<g:Label styleName="{res.css.headerText}" ui:field="errorPopupHeaderText"></g:Label>
+						<g:Label styleName="Uc-headerText" ui:field="errorPopupHeaderText"></g:Label>
 					</g:HTMLPanel>
 				</g:FlowPanel>
-				<g:FlowPanel styleName="{res.css.firstTextBox}">
+				<g:FlowPanel styleName="Uc-firstTextBox">
 					<g:HTMLPanel>
-						<g:Label styleName="{res.css.dragMsg}" ui:field="dragText"></g:Label>
-						<div class="{res.css.QCFText}">
-							<g:Label styleName="{res.css.QuestMsg}" ui:field="questionLabel"></g:Label>
-							<g:Label styleName="{res.css.QuestMsg}" ui:field="faqsText"></g:Label>
+						<g:Label styleName="Uc-dragMsg" ui:field="dragText"></g:Label>
+						<div class="Uc-QCFText">
+							<g:Label styleName="Uc-QuestMsg" ui:field="questionLabel"></g:Label>
+							<g:Label styleName="Uc-QuestMsg" ui:field="faqsText"></g:Label>
 						</div>
 					</g:HTMLPanel>
 				</g:FlowPanel>
-				<g:FlowPanel styleName="{res.css.secondTextBox}">
-					<g:FlowPanel styleName="{res.css.OkCancelDiv}">
-						<g:Label styleName="{res.css.okButton}" ui:field="okButton"></g:Label>
-						<g:Label styleName="{res.css.cancelButton}" ui:field="cancelButton"></g:Label>
+				<g:FlowPanel styleName="Uc-secondTextBox">
+					<g:FlowPanel styleName="Uc-OkCancelDiv">
+						<g:Label styleName="Uc-okButton" ui:field="okButton"></g:Label>
+						<g:Label styleName="Uc-cancelButton" ui:field="cancelButton"></g:Label>
 					</g:FlowPanel>
 				</g:FlowPanel>
 			</g:FlowPanel>
 		</g:PopupPanel>
 
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

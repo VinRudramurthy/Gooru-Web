@@ -97,14 +97,6 @@ a:hover {
 	font-weight:normal;
 }
 
-.searchContainer {
-	width:410px;
-	float:right;
-	border-radius:4px;
-	background-color:rgba(255,255,255,.3);
-	padding:15px;
-}
-
 .searchBar {
 	margin-right:5px;
 	font-size:16px !important;
@@ -114,12 +106,6 @@ a:hover {
 	border: 1px solid #DDD;
 	font-family: arial, sans-serif;
 	font-size: 12px;
-}
-
-.searchContainer button {
-	font-size:16px;
-	padding:9px 11px;
-	//width: 78px;
 }
 
 .filters {
@@ -690,8 +676,8 @@ h3.methodsContentTitle {
 	vertical-align:middle;
 }
 
-.getStarted {	
-	
+.getStarted {
+
 }
 
 .collectionMetadata {
@@ -703,7 +689,7 @@ h3.methodsContentTitle {
 	background: url("images/core/B-Dot.gif");
 	width: 200px;
 	height: 175px;
-	margin: 0 auto;				
+	margin: 0 auto;
 }
 
 .gradeDropdown {
@@ -765,7 +751,7 @@ h3.methodsContentTitle {
 	position: relative;
 }
 
-.collectionInlineMsg{	
+.collectionInlineMsg{
 	color: #1076BB;
 	cursor:pointer;
 }

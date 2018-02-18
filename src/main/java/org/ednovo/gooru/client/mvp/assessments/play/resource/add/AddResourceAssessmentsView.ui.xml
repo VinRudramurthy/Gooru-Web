@@ -1,0 +1,51 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+	<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header" xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+	<g:HTMLPanel styleName="collectionPlayerAddResourcesContainer addResourcePopup" ui:field="mainPanel">
+	<g:HTMLPanel styleName="collectionPlayerAddResourcesContent" ui:field="resourceImageContainerInAddResource">
+    	<g:HTMLPanel styleName="collectionPlayerAddResourcesIconContainer">
+            <g:HTMLPanel styleName="collectionPlayerAddResourcesText" ui:field="addresourceText"></g:HTMLPanel>
+         </g:HTMLPanel>
+         <g:HTMLPanel  styleName="addCollectionContainer" ui:field="addCollectionContainer">
+	         <g:Label  styleName="collectionPlayerAddResourcesCollectionInstead" ui:field="addToExistingColl">
+	         </g:Label>
+         </g:HTMLPanel>
+    </g:HTMLPanel>
+    
+    <g:FlowPanel styleName="successMessageContainer" ui:field="resourceAddedSuccessMessageContainer">
+    	<g:Label styleName="successMessageLabelText" ui:field="successMessageLabelText"></g:Label> 
+    	<g:HTMLPanel styleName="workSpaceLinkContainer">
+    		<g:Button styleName="secondary" ui:field="workSpaceBtn" ></g:Button>
+    	</g:HTMLPanel> 
+    	<g:HTMLPanel styleName="addCollectionInsteadLabelContainer" ui:field="addCollectionInsteadLabelContainer">
+    		<g:Label styleName="addCollectionInsteadLabelText" ui:field="addCollectionInsteadLabelText"></g:Label>
+    	</g:HTMLPanel>
+    </g:FlowPanel>
+    <g:HTMLPanel styleName="collectionPlayerExistingCollectionContainer" ui:field="existingCollectionContainer">
+    	<div class="collectionPlayerExistingCollectionContent">
+            <div class="collectionPlayerExistingCollectionInputContainer">
+            	<g:InlineLabel ui:field="dropdownListPlaceHolder" styleName="dropdownListPlaceHolder"></g:InlineLabel>
+            	<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="dropdownListContainerScrollPanel">
+	            	<g:HTMLPanel ui:field="dropdownListContainer" styleName="dropdownListContainer">
+			   		 </g:HTMLPanel>
+		   		 </g:ScrollPanel>
+            </div>
+            <g:Button styleName="collectionPlayerExistingAddButtonText" ui:field="addResourceToCollectionButton"></g:Button>
+            <g:Label ui:field="addingLabel" styleName="addingLabelText"></g:Label>
+            <g:Label ui:field="resourceAdditionErrorStyle" styleName="resourceAdditionErrorStyle"></g:Label>
+        </div>
+        
+        	<g:HTMLPanel  styleName="collectionPlayerNewColletionText" ui:field="createCollectionLabelContainer">
+        		<g:Label styleName="addNewLabel" ui:field="addNewCollectionLabel"></g:Label>
+        	</g:HTMLPanel>
+        	<g:Label ui:field="errorMessage" styleName="errorLabelText" ></g:Label>
+            <g:Label ui:field="sizeMessage" styleName="errorLabelText" ></g:Label>
+    </g:HTMLPanel>
+     <uc:HTMLEventPanel styleName="resource-info-bottomImageContainer" ui:field="hideButton">
+      <g:Label styleName="resource-info-hideImage"/>
+      <g:Label styleName="resource-info-hideText" ui:field="hideText"></g:Label>
+ </uc:HTMLEventPanel>
+</g:HTMLPanel>
+	
+</ui:UiBinder> 

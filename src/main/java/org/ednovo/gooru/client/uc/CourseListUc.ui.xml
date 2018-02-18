@@ -3,87 +3,106 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
 	<ui:style>
 		.myFolderCollectionFormContainer {
-			float: left;
-			padding: 0 21px 0 0px;
-			width: 250px;
-			border-left: 1px solid #ddd;
-			background-color: white;
-			overflow-y: auto !important;
-			overflow-x: hidden !important;
-			max-height: 446px;
-			min-height: 370px;
+		float: left;
+		padding: 0 21px 0 0px;
+		width: 250px;
+		border-left: 1px solid #ddd;
+		background-color: white;
+		overflow-y: auto !important;
+		overflow-x: hidden !important;
+		min-height: 370px;
 		}
-		
+
 		.collectionInfoAddButtonContainer {
-			display: inline-block;
-			background: #fff;
-			padding: 10px 0px;
-			text-align: center;
-			width: 100%;
-			border-top: 1px solid #ddd;
+		display: inline-block;
+		background: #fff;
+		padding: 10px 0px;
+		text-align: center;
+		width: 100%;
+		border-top: 1px solid #ddd;
 		}
-		
+
 		.collectionAddButton {
-			display: inline-block;
-			vertical-align: top;
-			margin-right: 14px;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 14px;
 		}
-		.myFolderCollectionPopupOuterdiv { 
-	        width: 531px; 
-	        margin: 0 auto;
-			position: relative;
-			padding: 3px 7px 3px 5px;
-			background: #fff;
-			border-color: rgb(221, 221, 221);
-  		}
-		
+		.myFolderCollectionPopupOuterdiv {
+		width: 548px;
+		margin:0 auto;
+		position: relative;
+		padding: 3px 7px 3px 5px;
+		background: #fff;
+		border-color: rgb(221, 221, 221);
+		}
+
 		.myFolderCollectionUrlContent {
-			float: left;
-			width: 259px;
-			/*height: 510px;*/
-			border-bottom: none;
-			border-left: none;
-			font-size: 15px;
-			border-style: solid;
-			border-color: rgb(221, 221, 221);
-			border-left: none;
-			border-bottom: none;
-			background: url("../images/core/background-image.png") !important;
+		float: left;
+		width: 256px;
+		/*height: 510px;*/
+		border-bottom: none;
+		border-left: none;
+		font-size: 15px;
+		border-style: solid;
+		border-color: rgb(221, 221, 221);
+		border-left: none;
+		border-bottom: none;
+		background: url("../images/background-image.png") !important;
 		}
+		.coursePopupStyle {
+		float: left;
+		background-color: #fff;
+		border-color:
+		#ddd;
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		margin-bottom:
+		6px;
+
+		}
+        .courseScrollStyle{
+         min-height: 350px;
+		 max-height: 400px;
+		 overflow-x: hidden;
+		 overflow-y: auto;
+        }
+
 	</ui:style>
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle"
 		field="res"></ui:with>
-
 	<g:FlowPanel>
-		<g:HTMLPanel styleName="{style.myFolderCollectionPopupOuterdiv}">
+		<g:HTMLPanel styleName="PopupMainVSmall">
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionPopupContainer}">
-				<g:HTMLPanel styleName="{res.css.myFolderCollectionPopup}">
-					<g:HTMLPanel styleName="{res.css.myFolderCollectionBlackBg}">
-						<g:Label styleName="{res.css.myFolderCollectionTitle}"
-							ui:field="titleLbl"></g:Label>
-					</g:HTMLPanel>
+				<g:HTMLPanel styleName="{res.css.myFolderCollectionBlackBg}">
+					<g:Label styleName="{res.css.myFolderCollectionTitle}"
+						ui:field="titleLbl"></g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{style.coursePopupStyle}">
 					<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}"
 						ui:field="loadingPanel">
-						<g:Label styleName="{res.css.loadingImageForResource}" />
+						<g:Label styleName="{res.css.loadingImageForResource1}" />
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{style.myFolderCollectionUrlContent}"
-						ui:field="addResourceTabContainer">
+					<g:HTMLPanel styleName="{style.courseScrollStyle}">
+						<g:HTMLPanel styleName="{style.myFolderCollectionUrlContent}"
+							ui:field="addResourceTabContainer">
+						</g:HTMLPanel>
+						<g:FlowPanel styleName="{style.myFolderCollectionFormContainer}"
+							ui:field="contentPanel" />
 					</g:HTMLPanel>
-					<g:FlowPanel styleName="{style.myFolderCollectionFormContainer}"
-						ui:field="contentPanel" />
-
 					<g:HTMLPanel styleName="{style.collectionInfoAddButtonContainer}"
 						ui:field="buttonsPanel">
 						<g:HTMLPanel styleName="{style.collectionAddButton}"
 							ui:field="addCourseBtnPanel">
 							<g:Button styleName="secondary" ui:field="cancelCourseBtn" />
 						</g:HTMLPanel>
-						<uc:BlueButtonUc styleName="primary"
-							ui:field="addCourseBtnLbl" />
+						<uc:BlueButtonUc styleName="primary" ui:field="addCourseBtnLbl" />
 					</g:HTMLPanel>
 				</g:HTMLPanel>
+				<g:HTMLPanel styleName="clearfix" />
 			</g:HTMLPanel>
+			<g:HTMLPanel styleName="clearfix" />
 		</g:HTMLPanel>
 	</g:FlowPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

@@ -1,0 +1,303 @@
+.circle, .bluecircle, .greencircle, .circleInside{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	/* margin: -8px 2px 0px 2px; */
+	background: #B9BBCA;
+	border-radius: 20px;
+	/* display: inline-block; */
+	vertical-align: top;
+	float: left;
+	position: relative;
+	display: inline-block;
+	float: left;
+	vertical-align: top;
+}
+.bluecircle{
+	background: #B9BBCA;
+}
+.greencircle{
+	background: #A3CBA0;
+}
+
+.greencircle:hover .assignmentStudyPopup {
+	display: block;
+}
+.bluecircle:hover .assignmentStudyPopup {
+	display: block;
+}
+.line{
+	height: 3px;
+	background: #B9B9C8 2px;
+	margin-top: 13px;
+	margin-bottom: 7px;
+	width: 8px;
+	float: left;
+}
+
+.leftMargin{
+	margin-left: 6px;
+}
+
+.rightMargin{
+	margin-right: 6px;
+}
+
+.container{
+	/* background: red; */
+	/* width: 47px; */
+	float: left;
+}
+
+.circleContainer{
+	float: left;
+	/* width: 47px; */
+	height: 17px;
+}
+
+.assignmentNumbers{
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	margin: 5px auto;
+	font-weight: bold;
+}
+
+.viewedCircle{
+	background: #009E0F;
+	
+}
+
+.circle:hover .profileVisiblityPopup {
+	display: block;
+}
+.circle:hover .userLibraryPopup {
+	display: block;
+}
+
+
+.bubblearrowstyle {
+	width: 0;
+	height: 0;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	top: 1px;
+	margin: auto;
+	border-top: none;
+	z-index: 100000;
+	left: 15px;
+	right: 0;
+}
+
+.assignmentStudyPopupArrow{
+	width: 0;
+	height: 0;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	top: 1px;
+	margin: auto;
+	border-top: none;
+	z-index: 100000;
+	margin-left: 10px;
+}
+
+.standardsinner {
+	color: #515151;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	font-size: 12px;
+	width: 369px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.standardsPopup {
+	width: 200px;
+	padding: 10px;
+	float: left;
+}
+
+.studyPopup {
+	width: 300px;
+	padding: 10px;
+	float: left;
+}
+.profileVisiblityPopup {
+	display: none;
+	text-align: left;
+	z-index: 9;
+	padding: 10px;
+	position: relative;
+	top: -11px;
+	left: -19px
+}
+.assignmentStudyPopup{
+	position: absolute;
+	left: -5px;
+	top: 28px;
+	display: none;
+	text-align: left;
+	z-index: 999;
+}
+
+.title{
+	color: #515151;
+	font-size: 14px;
+}
+
+.move{
+	color: #515151;
+	font-size: 12px;
+	margin-top : 10px;
+	float: left;	
+}
+
+.moveContainer{
+	
+	
+}
+
+/* Dropdown css */
+.myFolderCollectionCategoryDiv {
+	position: relative;
+	width: 35%;
+	float: left;
+	margin-left: 15px;
+}
+
+.myFolderCollectionCategoryInputDiv {
+	border-color: rgb(221, 221, 221);
+	border-width: 1px;
+	border-style: solid;
+	height: 28px;
+}
+
+.myFolderCollectionCategoryDivText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(153, 153, 153);
+	padding: 3px 0 0 5px;
+}
+
+.resourceCategoryLabel {
+	float: left;
+	padding: 5px 0 0 2px;
+	width: 86px;
+}
+
+
+.myFolderCollectionArrowleftContainer {
+	position: absolute;
+	top: 12px;
+	float: right;
+	right: 5px;
+}
+.myFolderCollectionPopupSprite {
+	width: 640px;
+	height: 480px;
+	background: url(images/NewResourcePopup/popup-sprites.png) no-repeat;
+}
+
+.myFolderCollectionArrowleft {
+	background-position: -44px 0;
+	width: 15px;
+	height: 10px;
+	cursor: pointer;
+}
+
+.myFolderCollectionFolderDropdown { 
+	/* border-color: #ddd; */
+	/* border-width: 1px; */
+	/* border-style: solid; */
+	position: relative;
+	background-color: #fff;
+	z-index: 1;
+	/* top: -11px; */
+	width: 77%;
+	padding: 5px 5px 5px 7px;
+}
+
+.reorderLabelContainer {
+	position: absolute;
+	float: left;
+	width: 97%;
+	border: 1px solid #ddd;
+	border-top: none;
+	height: 100px;
+	overflow-y: scroll;
+}
+.myFolderCollectionFolderVideoTitle:hover {
+	background-color: #cfe3f1;
+	cursor: pointer;
+}
+
+.myFolderCollectionFolderVideoTitle {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: rgb(153, 153, 153);
+	text-align: left;
+}
+.assignmentCollectionTitle{
+	color: #1076bb;
+	display: inline-block;
+	font-size: 16px;
+	width: 138px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	float: left;
+	margin: 5px 6px;
+}
+.headerLeft {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+}
+.dueDataIcon {
+	display: inline-block;
+	vertical-align: top;
+	background: url(images/Classpage/calendar.png) no-repeat;
+	padding-left: 21px;
+	height: 18px;
+	margin-bottom: 5px;
+}
+.headerDueDate {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+}
+.directionHeading {
+	font-size: 12px;
+	line-height: 120%;
+	font-weight: bold;
+	color: #515151;
+}
+.directionDesc {
+	color: #515151;
+}
+
+.studyPlay{
+	width: 90px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 4px;
+	padding: 7px 29px 8px 7px;
+	background: #1076bb;
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, #1076bb;
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#4c98cc), to(#1076bb));
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, -webkit-linear-gradient(top, #4c98cc, #1076bb);
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, -moz-linear-gradient(top, #4c98cc, #1076bb);
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, -ms-linear-gradient(top, #4c98cc, #1076bb);
+	background: url(images/preview-arrow-small.png) 70px center no-repeat, -o-linear-gradient(top, #4c98cc, #1076bb);
+	float: right;
+	cursor: pointer;
+}

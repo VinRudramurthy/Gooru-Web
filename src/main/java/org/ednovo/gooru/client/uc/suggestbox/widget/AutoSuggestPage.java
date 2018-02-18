@@ -57,14 +57,6 @@ public class AutoSuggestPage extends DialogBox {
             form = new FlowPanel();
             form.setStyleName("form");
             initWidget(form);
-
-//            MultipleTextBox txt = new MultipleTextBox();
-//            SuggestBox box = new SuggestBox(getSuggestions(), txt);
-//            box.addStyleName("original-token-input");
-//            box.setAnimationEnabled(true);
-
-//            form.add(box);
-
             form.add(new InputListWidget());
         }
 

@@ -129,8 +129,9 @@ margin: 0 auto;
 	-moz-border-radius: 4px;
 	/* -webkit-border-radius: 4px; */
 	position: relative;
-	top: -6px;
+	top: -90px;
 	width: 277px;
 	float: left;
 	left: -7px;
+	z-index: 999999;
 }

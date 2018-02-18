@@ -1,0 +1,48 @@
+.display {
+	width: 65%;
+	float: left;
+}
+
+.popup-bg {
+	background-color: rgba(0,0,0,.5);
+	height: 240px;
+}
+
+.popup {
+	background-color: white;
+	width: 450px;
+	margin: 50px auto;
+	padding: 3px;
+}
+
+.popup-inner {
+	border: 1px solid #DDD;
+}
+
+.popup-header {
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+	
+	/* IE 6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
+}
+
+.popup-content {
+	padding: 15px;
+}

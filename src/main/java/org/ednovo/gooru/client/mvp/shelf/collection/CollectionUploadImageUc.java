@@ -24,9 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection;
 
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.ui.HTMLEventPanel;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Display;
@@ -49,7 +50,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class CollectionUploadImageUc extends Composite implements MessageProperties {
+public class CollectionUploadImageUc extends Composite {
 
 	@UiField
 	Image collectionImg;
@@ -58,8 +59,18 @@ public class CollectionUploadImageUc extends Composite implements MessagePropert
 	Label changeImgLbl;
 	
 	@UiField HTMLEventPanel collectionEditImageContainer;
+	
+	private String collectionType;
+	
+	private static final String ASSESSMENT = "assessment";
+	
+	private static final String DEFULT_ASSESSMENT_IMG = "images/default-assessment-image -160x120.png";
+	
+	private static final String DEFULT_COLLECTION_IMG = "images/default-collection-image-160x120.png";
 
 	private static CollectionUploadImageUcUiBinder uiBinder = GWT.create(CollectionUploadImageUcUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface CollectionUploadImageUcUiBinder extends UiBinder<Widget, CollectionUploadImageUc> {
 	}
@@ -69,25 +80,49 @@ public class CollectionUploadImageUc extends Composite implements MessagePropert
 	 */
 	public CollectionUploadImageUc() {
 		initWidget(uiBinder.createAndBindUi(this));
-		changeImgLbl.setText(GL0800);
+		changeImgLbl.setText(i18n.GL0800());
+		changeImgLbl.getElement().setAttribute("alt",i18n.GL0800());
+		changeImgLbl.getElement().setAttribute("title",i18n.GL0800());
 		changeImgLbl.getElement().setId("lblChangeImg");
+		
 		collectionImg.addErrorHandler(new ErrorHandler() {
 
 			@Override
 			public void onError(ErrorEvent event) {
-				collectionImg.setUrl("images/default-collection-image-160x120.png");
+				setDefaultImage();
 			}
 		});
 		
 		collectionEditImageContainer.addMouseOverHandler(new ShowUploadImageButton());
 		collectionEditImageContainer.addMouseOutHandler(new HideUploadImageButton());
+		collectionEditImageContainer.getElement().setId("epnlCollectionEditImageContainer");
+		collectionImg.getElement().setId("imgCollectionImg");
 	}
 
 	/**
 	 * @param url of image
+	 * @param collectionType 
 	 */
-	public void setUrl(String url) {
-		collectionImg.setUrl(url);
+	public void setUrl(String url, String collectionType) {
+		this.collectionType=collectionType;
+		if(url!=null&&!url.trim().isEmpty()) {
+			if(url.equalsIgnoreCase("images/defaultRes.png")){
+				changeImgLbl.setText(i18n.GL1087());
+				StringUtil.setAttributes(changeImgLbl.getElement(), "changeImgLbl", i18n.GL1087(), i18n.GL1087());
+			}else{
+				changeImgLbl.setText(i18n.GL0800());
+				StringUtil.setAttributes(changeImgLbl.getElement(), "changeImgLbl", i18n.GL0800(), i18n.GL0800());
+			}
+			if(collectionType!=null && collectionType.equals(ASSESSMENT)){
+				collectionImg.setStyleName(CollectionCBundle.INSTANCE.css().assessmentThumbnails());
+			}else{
+				collectionImg.setStyleName(CollectionCBundle.INSTANCE.css().collectionThumbnails());
+			}
+			collectionImg.setUrl(url);
+			
+		} else {
+			setDefaultImage();
+		}
 	}
 
 	/**
@@ -126,6 +161,20 @@ public class CollectionUploadImageUc extends Composite implements MessagePropert
 			changeImgLbl.getElement().getStyle().setDisplay(Display.NONE);
 		}
 		
+	}
+	/**
+	 * To set the default image
+	 */
+	protected void setDefaultImage() {
+		if(collectionType!=null && collectionType.equals(ASSESSMENT)){
+			collectionImg.setStyleName(CollectionCBundle.INSTANCE.css().assessmentThumbnails());
+			collectionImg.setUrl(DEFULT_ASSESSMENT_IMG);
+		}else{
+			collectionImg.setStyleName(CollectionCBundle.INSTANCE.css().collectionThumbnails());
+			collectionImg.setUrl(DEFULT_COLLECTION_IMG);
+		}
+		changeImgLbl.setText(i18n.GL1087());
+		StringUtil.setAttributes(changeImgLbl.getElement(), "changeImgLbl", i18n.GL1087(), i18n.GL1087());
 	}
 
 }

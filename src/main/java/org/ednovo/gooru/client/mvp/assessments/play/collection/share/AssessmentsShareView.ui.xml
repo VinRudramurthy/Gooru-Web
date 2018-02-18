@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field="playerStyle" src="collectionshare.css" />
+	<g:FlowPanel styleName="{playerStyle.collection-narration-container}">
+		<panel:HTMLEventPanel styleName="{playerStyle.resource-info-bottomImageContainer}"
+			ui:field="hideButton">
+			<g:Label styleName="{playerStyle.resource-info-hideImage}" />
+			<g:Label styleName="{playerStyle.resource-info-hideText}"
+				ui:field="hideText"></g:Label>
+		</panel:HTMLEventPanel>
+		<g:FlowPanel styleName="{playerStyle.collection-narration-wrapper}">
+			<g:HTMLPanel styleName="{playerStyle.collection-share-maintitle}"	ui:field="shareMainTitle"></g:HTMLPanel>
+			<g:FlowPanel styleName="{playerStyle.collection-share-wrapper}">
+				<g:FlowPanel styleName="col-md-6 col-xs-12  {playerStyle.collection-share-titleContainer} borderLeft">
+					<g:Label styleName="{playerStyle.collection-share-title}"	ui:field="resourceTitleText"></g:Label>
+					<g:TextArea styleName="{playerStyle.collection-share-textbox}"	ui:field="resourceShareTextArea"></g:TextArea>
+					<uc:PPanel styleName="{playerStyle.collection-share-buttonscontainer}">
+						<g:InlineLabel styleName="col-md-6 col-sm-6 col-xs-6 {playerStyle.collection-share-button1}"
+								ui:field="bitlyLink"></g:InlineLabel>
+						<g:InlineLabel styleName="col-md-6  col-sm-6 col-xs-6 {playerStyle.collection-share-button2}"
+							ui:field="embedLink"></g:InlineLabel>
+					</uc:PPanel>
+					<g:HTMLPanel styleName="clearfix"/>
+
+				</g:FlowPanel>
+				<g:FlowPanel ui:field="socialSharePanel" styleName="col-md-6 col-xs-12">
+					<g:Label styleName="{playerStyle.collection-socialshare-title}"
+						ui:field="shareText"></g:Label>
+					<g:HTMLPanel styleName="{playerStyle.collection-share-titleContainer}"
+						ui:field="sharePanel"></g:HTMLPanel>
+				</g:FlowPanel>
+				<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				<g:FlowPanel styleName="{playerStyle.collection-share-titleContainer}"
+					ui:field="collectionShareContainer">
+					<g:Label styleName="{playerStyle.collection-share-title}"
+						ui:field="collectionShareText"></g:Label>
+					<g:TextArea styleName="{playerStyle.collection-share-textbox}"
+						ui:field="collectionShareTextArea"></g:TextArea>
+				</g:FlowPanel>
+			</g:FlowPanel>
+
+		</g:FlowPanel>
+
+	</g:FlowPanel>
+</ui:UiBinder>

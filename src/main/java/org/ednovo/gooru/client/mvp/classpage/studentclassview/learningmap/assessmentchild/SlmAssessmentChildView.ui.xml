@@ -1,0 +1,65 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" 
+    xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	
+    <ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+    
+	<ui:style src="" />
+	<g:HTMLPanel styleName="fractionsDetailsContainer">
+	     <g:HTMLPanel styleName="rowContainer no-gutter ">
+	        <g:HTMLPanel styleName="col-md-5 col-sm-5">
+	           <g:HTMLPanel styleName="studyBlock">
+	              <g:HTMLPanel ui:field="imageContainer">
+	                 <g:Image ui:field="contentImage" styleName="cursorPointer"></g:Image>
+	              </g:HTMLPanel>
+	              <g:HTMLPanel styleName="descriptionContainer">
+	                 <uc:H3Panel ui:field="contentName" styleName="cursorPointer"/>
+	                 <uc:PPanel ui:field="contentDescription"/>
+	              </g:HTMLPanel>
+	           </g:HTMLPanel>
+	        </g:HTMLPanel>
+	        <g:HTMLPanel styleName="col-md-7 col-sm-7">
+	           <g:HTMLPanel styleName="no-gutter">
+	              <g:HTMLPanel styleName="col-md-6 col-sm-6">
+	                  <g:HTMLPanel styleName="minimumScoreLblPanel" ui:field="minimumScoreLblPanel">
+		                  <uc:SpanPanel styleName="minimumScoreLblKey" text="{i18n.GL3580}"/>
+		                  <uc:SpanPanel ui:field="minScore" styleName="minimumScoreLblValue"/>
+	                  </g:HTMLPanel>
+	              </g:HTMLPanel>
+	              <g:HTMLPanel styleName="col-md-6 col-sm-6">
+	                 <g:HTMLPanel styleName="fraNumbers" ui:field="reportView">
+	                    <g:HTMLPanel styleName="list-group">
+	                       <g:HTMLPanel styleName="list-group-item timeSpent">
+	                          <g:Label styleName="pull-left" ui:field="timeSpentLbl"></g:Label>
+	                          <g:Label styleName="pull-right" ui:field="timeSpent"></g:Label>
+	                          <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	                       </g:HTMLPanel>
+	                       <g:HTMLPanel styleName="list-group-item totalViews">
+	                          <g:Label styleName="pull-left" text="{i18n.GL2276}"></g:Label>
+	                          <g:Label styleName="pull-right" ui:field="viewCount"></g:Label>
+	                          <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	                       </g:HTMLPanel>
+	                       <g:HTMLPanel styleName="list-group-item lastSession">
+	                          <g:Label styleName="pull-left" ui:field="lastAccessedLbl"></g:Label>
+	                          <g:Label styleName="pull-right" ui:field="lastSession"></g:Label>
+	                          <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	                       </g:HTMLPanel>
+	                       <panel:HTMLEventPanel styleName="list-group-item viewLink" ui:field="viewReport">
+	                          <g:Anchor ui:field="reportUrl" text="{i18n.GL2296}"></g:Anchor>
+	                       </panel:HTMLEventPanel>
+	                    </g:HTMLPanel>
+	                 </g:HTMLPanel>
+	              </g:HTMLPanel>
+	              <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	           </g:HTMLPanel>
+	        </g:HTMLPanel>
+	        <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	     </g:HTMLPanel>
+	     <g:HTMLPanel styleName="lesson-view-data rowContainer no-gutter">
+				<panel:HTMLEventPanel styleName="scrollLeftArrow cursorArrows cursorPointer" ui:field="leftArrow"></panel:HTMLEventPanel> 
+		        <g:HTMLPanel styleName="resourceImgContainer" ui:field="resourceImgContainer"></g:HTMLPanel>
+				<div class="clearfix"></div>
+				<panel:HTMLEventPanel styleName="scrollRightArrow cursorArrows cursorPointer" ui:field="rightArrow"></panel:HTMLEventPanel>
+	     </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

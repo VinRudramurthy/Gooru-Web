@@ -32,7 +32,7 @@ body {
 }
 .shelfItemContentDiv {
 	border: 1px solid #CCC;
-	min-height: 400px;
+	min-height: 300px;
 	height: auto;
 	margin: -4px 4px 4px;
 }
@@ -48,11 +48,7 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.gwt-Label {
-	text-align: right;
-	width: 150px;
-	padding-right: 10px;
-}
+
 .contentDesc {
 	font-size: 12px;
 	line-height: 120%;
@@ -133,17 +129,15 @@ select {
 	float: left;
 }
 .publicImage {
-	background: url(images/icon-sprite.png) repeat scroll -63px -390px rgba(0, 0, 0, 0);
-	cursor: pointer;
-	display: block;
-	float: left;
-	height: 21px;
-	width: 27px;
-	margin-top: 5px;
 }
 .publicText {
 	line-height: 10px;
-	padding: 6px 0px 0 55px;
+	padding: 5px 0 0 39px;
+	margin-top: 6px;
+}
+.requiresText {
+	line-height: 10px;
+	padding: 5px 0 0 14px;
 	margin-top: 6px;
 }
 .visibilityText {
@@ -162,13 +156,9 @@ select {
 	width: 38px;
 	margin-top: 9px;
 }
+.linkImageForAssessment {
+}
 .privateImage {
-	background: url(images/icon-sprite.png) repeat scroll -61px -209px rgba(0, 0, 0, 0);
-	cursor: pointer;
-	display: block;
-	float: left;
-	height: 24px;
-	width: 27px;
 }
 .clearStyle {
 	clear: both;
@@ -186,11 +176,6 @@ select {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-}
-.formViewButtonContainer {
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 20px;
 }
 .overRideBlueButton {
 	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat scroll 0 0 transparent;
@@ -270,5 +255,183 @@ button.secondary {
 	color: rgb(250, 176, 58);
 	text-align: right;
 	position: relative;
-	margin-right: 41px;
+	margin-right: 12px;
+	margin-bottom: 5px;
+	clear: both;
 }
+
+.txtBoxCollectionName{
+	border-color: rgb(204, 204, 204);
+	margin-bottom: 5px !important
+}
+
+.labelPadding{
+	padding-top: 7px;
+}
+
+.paddingSelection{
+	padding:10px 12px;
+}
+
+.logInput{
+	margin:20px 0 10px 0;
+}
+.form_control {
+	width: 78%;
+	height: 30px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4285715;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	display: inline-block;
+}
+.form_edit_control {
+	width: 74%;
+	height: 30px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4285715;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	display: inline-block;
+}
+.form_drop_control{
+	width:79%;
+	height: 30px;
+	font-size: 14px;
+	line-height: 1.4285715;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border:none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	display: inline-block;
+}
+.form_edit_textares_control {
+	width: 74%;
+	height: 30px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.4285715;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	display: inline-block;
+	resize: none;
+	height: 85px;
+}
+.logInput .form_control{
+	margin-bottom:6px;
+	border-radius:0 0;
+}
+
+.formViewButtonContainer {
+    clear: both;
+	padding-bottom: 20px;
+	padding-top: 25px;
+	text-align: center;
+}
+.textMiddle {
+	margin-top: 10px;
+	text-align: center;
+}
+.exstingURL{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.assessmentTextBoxContainer{
+	display: inline-block;
+	padding-bottom: 16px;
+}
+.assessmentTextBoxEditContainer{
+	padding-bottom: 16px;
+}
+.assessmentTextBoxText{
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+}
+.assessmentEditTextBoxText{
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+}
+.radioButtoncontainer{
+		display: inline-block;
+		font-weight: normal;
+}
+.assessmentPrivacyRightContainer{
+	display: inline-block;
+	width: 74%;
+}
+.radioBox{
+	float:left;
+	vertical-align: middle;
+	width: 100px;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+.publicImage label{
+	background: url(images/icon-sprite.png) repeat scroll -68px -390px rgba(0, 0, 0, 0);
+	height: 21px;
+	width: 27px;
+	padding-left: 25px;
+	margin-bottom: 0px;
+	line-height: 21px;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+.privateImage label{
+	background: url(images/icon-sprite.png) repeat scroll -68px -215px rgba(0, 0, 0, 0);
+	padding-left: 21px;
+	margin-bottom: 0px;
+	line-height: 21px;
+	width: 27px;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+.linkImageForAssessment label{
+	background: url(images/icon-sprite.png) repeat scroll -67px -261px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 21px;
+	width: 38px;
+	padding-left: 22px;
+	margin-bottom: 0px;
+	line-height: 21px;
+	font-weight: normal;
+}
+.creatNew{
+	margin-left:18px;
+}
+.headingTextDisplay{
+  margin-top: -10px;
+  margin-bottom: 15px;
+  }
+  .headingTextDisplayNote{
+    margin-top: -27px;
+  margin-bottom: 18px;
+  }

@@ -27,13 +27,9 @@ package org.ednovo.gooru.client.uc;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.mvp.play.collection.info.ResourceInfoView.MouseOutHideToolTip;
-import org.ednovo.gooru.client.mvp.play.collection.info.ResourceInfoView.MouseOverShowStandardToolTip;
-import org.ednovo.gooru.shared.model.content.StandardFo;
+import org.ednovo.gooru.application.shared.model.content.StandardFo;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.dom.client.Style.Visibility;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -66,12 +62,14 @@ public class CollectionStandardsView extends Composite implements HasClickHandle
 	public CollectionStandardsView(){
 		initWidget(uiBinder.createAndBindUi(this));
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
+		standardContainer.getElement().setId("fpnlStandardContainer");
 	}
 	
 	@UiConstructor
 	public CollectionStandardsView(List<StandardFo> standardsList){
 		initWidget(uiBinder.createAndBindUi(this));
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
+		standardContainer.getElement().setId("fpnlStandardContainer");
 		renderStandards(standardsList);
 	}
 

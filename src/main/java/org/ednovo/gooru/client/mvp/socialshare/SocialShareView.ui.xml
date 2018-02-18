@@ -1,92 +1,64 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
 
-	<ui:style field="SocialShare" src="SocialShareStyles.css" />
-	<ui:style field="socialShareStyle" src="SocialShareStyles.css" type="org.ednovo.gooru.client.mvp.socialshare.SocialShareStyle" />
-	<ui:with
-		type="org.ednovo.gooru.client.mvp.classpages.studentView.AssignmentsViewCBundle"
-		field="res" />
-	<g:HTMLPanel styleName="{SocialShare.classPageShareContainer}" ui:field="socialShareContainer">
-		<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsContainer}">
+	<g:HTMLPanel  ui:field="socialShareContainer">
+		<g:HTMLPanel>
 			<g:HTMLPanel ui:field="shareTextPanel">
-				<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}">
-					<panel:HTMLEventPanel styleName="{SocialShare.fbPageShareButtonsBg}"
-						ui:field="fbPanel">
-						<g:HTMLPanel
-							styleName="{SocialShare.classPageShareButtonSpriteOuterDiv} {SocialShare.classPageShareButtonSpriteAlign}">
-							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteFacebook}"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsBgDesc}" ui:field="facbookText"></g:HTMLPanel>
-					</panel:HTMLEventPanel>
-				</g:HTMLPanel>
-
-				<panel:HTMLEventPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}"
-					ui:field="twitterPanel">
-					<g:HTMLPanel styleName="{SocialShare.twitterPageShareButtonsBg}" ui:field="panelTwitter">
-						<g:HTMLPanel styleName="{SocialShare.classPageShareButtonSpriteOuterDiv}">
-							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteTwitter}"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsBgDesc}" ui:field="twitterText"></g:HTMLPanel>
-					</g:HTMLPanel>
+					<uc:PPanel ui:field="fbPanel">
+						<g:Anchor ui:field="facbookText" styleName="ssv-facebookbtn"></g:Anchor>
+ 					</uc:PPanel>
+				<panel:HTMLEventPanel	ui:field="twitterPanel">
+					<uc:PPanel  ui:field="panelTwitter">
+						<g:Anchor  ui:field="twitterText" styleName="ssv-twitterbtn"></g:Anchor>
+					</uc:PPanel>
 				</panel:HTMLEventPanel>
 
 
-				<panel:HTMLEventPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}"
-					ui:field="emailPanel">
-					<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsBg}" ui:field="panelEmail">
-						<g:HTMLPanel styleName="{SocialShare.classPageShareButtonSpriteOuterDiv}">
-							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteEmail}"></g:HTMLPanel>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsBgDesc}" ui:field="emailText"></g:HTMLPanel>
-					</g:HTMLPanel>
+				<panel:HTMLEventPanel	ui:field="emailPanel">
+					<uc:PPanel  ui:field="panelEmail">
+						<g:Anchor ui:field="emailText" styleName="ssv-emailbtn"></g:Anchor>
+ 					</uc:PPanel>
 				</panel:HTMLEventPanel>
-
-
-
 			</g:HTMLPanel>
-
 			<g:HTMLPanel ui:field="shareIconPanel">
-				<panel:HTMLEventPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}"
+				<panel:HTMLEventPanel styleName="ssv-classPageShareButtonsOuterDiv"
 					ui:field="fbIconPanel">
-					<g:HTMLPanel styleName="{SocialShare.fbPageShareIconButtonsBg}" ui:field="panelfbIcon">
+					<g:HTMLPanel styleName="ssv-fbPageShareIconButtonsBg" ui:field="panelfbIcon">
 						<g:HTMLPanel
-							styleName="{SocialShare.classPageShareButtonSpriteOuterDiv} {SocialShare.classPageShareButtonSpriteAlign}">
+							styleName="ssv-classPageShareButtonSpriteOuterDiv ssv-classPageShareButtonSpriteAlign">
 							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteFacebook}"></g:HTMLPanel>
+								styleName="ssv-classPageShareButtonsSprite ssv-classPageShareButtonSpriteFacebook"></g:HTMLPanel>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
 				</panel:HTMLEventPanel>
 
-				<panel:HTMLEventPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}"
+				<panel:HTMLEventPanel styleName="ssv-classPageShareButtonsOuterDiv"
 					ui:field="twIconPanel">
-					<g:HTMLPanel styleName="{SocialShare.twitterPageShareIconButtonsBg}"  ui:field="panelTwIcon">
+					<g:HTMLPanel styleName="ssv-twitterPageShareIconButtonsBg"  ui:field="panelTwIcon">
 						<g:HTMLPanel
-							styleName="{SocialShare.classPageShareButtonSpriteOuterDiv} {SocialShare.classPageShareButtonSpriteTAlign}">
+							styleName="ssv-classPageShareButtonSpriteOuterDiv ssv-classPageShareButtonSpriteTAlign">
 							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteTwitter}"></g:HTMLPanel>
+								styleName="ssv-classPageShareButtonsSprite ssv-classPageShareButtonSpriteTwitter"></g:HTMLPanel>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
 				</panel:HTMLEventPanel>
 
 
-				<panel:HTMLEventPanel styleName="{SocialShare.classPageShareButtonsOuterDiv}"
+				<panel:HTMLEventPanel styleName="classPageShareButtonsOuterDiv"
 					ui:field="emailIconPanel">
-					<g:HTMLPanel styleName="{SocialShare.classPageShareButtonsFTEBg}"  ui:field="panelEmailIcon">
+					<g:HTMLPanel styleName="ssv-classPageShareButtonsFTEBg"  ui:field="panelEmailIcon">
 						<g:HTMLPanel
-							styleName="{SocialShare.classPageShareButtonSpriteOuterDiv} {SocialShare.classPageShareButtonSpriteEAlign}">
+							styleName="ssv-classPageShareButtonSpriteOuterDiv ssv-classPageShareButtonSpriteEAlign">
 							<g:HTMLPanel
-								styleName="{SocialShare.classPageShareButtonsSprite} {SocialShare.classPageShareButtonSpriteEmail}"></g:HTMLPanel>
+								styleName="ssv-classPageShareButtonsSprite ssv-classPageShareButtonSpriteEmail"></g:HTMLPanel>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
 				</panel:HTMLEventPanel>
 
 			</g:HTMLPanel>
 
-			<g:Image ui:field="categoryImage" styleName="{SocialShare.displayNone}"></g:Image>
+			<g:Image ui:field="categoryImage" styleName="ssv-displayNone"></g:Image>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 

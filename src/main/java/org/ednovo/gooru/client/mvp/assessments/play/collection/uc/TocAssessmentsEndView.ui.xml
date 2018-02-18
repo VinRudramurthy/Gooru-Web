@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header">
+	<ui:style field= "playerStyle" src="resourcetocview.css"/>
+	<g:FlowPanel styleName="{playerStyle.collection-home-container}" ui:field="endContainer">
+		<g:FlowPanel  ui:field="endImageContainer" styleName="{playerStyle.collection-top-homeContainer}">
+			<g:FlowPanel styleName="{playerStyle.collection-home-thumbnail}" ui:field="resourceThumbnailContainer">
+				<g:Label styleName="{playerStyle.collection-home-type}"></g:Label>
+				<g:Label styleName="{playerStyle.collection-home-overlay}"></g:Label>
+				<g:Image styleName="{playerStyle.collection-home-image}" ui:field="resourceThumbnail"></g:Image>
+			</g:FlowPanel>
+			<g:HTMLPanel styleName="{playerStyle.collection-home-title}" ui:field="resourceTitle"></g:HTMLPanel>
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder>

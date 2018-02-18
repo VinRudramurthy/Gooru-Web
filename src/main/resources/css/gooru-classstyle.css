@@ -1,0 +1,2829 @@
+@charset "utf-8";
+/* CSS Document */
+
+#getStartedContainer .blueBand{
+	background:#87badd;
+	padding:5px 0;
+	position: fixed;
+	width: 100%;
+	text-align: left;
+}
+#getStartedContainer .topBlueRight{
+	text-align:right;
+}
+#getStartedContainer .blueBand h2{
+	color:#ffffff;
+	margin:9px 0;
+	font-size:24px;
+	font-weight:bold;
+}
+
+#getStartedContainer .rightWhiteBox, #getStartedContainer .settingsMenu{
+
+	display:inline-block;
+	vertical-align:middle;
+}
+#getStartedContainer .settingsMenu .classAnrSettings{
+	color:#ffffff;
+	display:inline-block;
+	margin-right:0;
+	font-weight:bold;
+	cursor:pointer;
+	padding: 15px 10px 15px 0;
+}
+#getStartedContainer .settingsMenu .classAnrSettings:hover,  #getStartedContainer .settingsMenu  .classAnrSettings:focus{
+	opacity: 0.75;
+	text-decoration:none;
+	margin: 0px;
+	border: 0px;
+}
+#getStartedContainer .settingsMenu .classAnrSettings.active {
+	background: #4897ce;
+}
+#getStartedContainer .rightWhiteBox  span{
+    background: #ffffff none repeat scroll 0 0;
+    color: #515151;
+    font-size: 26px;
+    font-weight: normal;
+	border-radius:4px 4px;
+	-webkit-border-radius:4px 4px;
+	-moz-border-radius:4px 4px;
+    padding: 6px 12px;
+	display:inline-block;
+}
+
+#getStartedContainer .whiteBG{
+	background:#ffffff;
+}
+#getStartedContainer .getStarted{
+	text-align:center;
+/* 	margin-top: 49px; */
+	padding-bottom: 30px;
+}
+#getStartedContainer .getStarted h1{
+	text-align:center;
+	color:#515151;
+	margin:0 0 0 0;
+	padding:30px 0;
+}
+
+#getStartedContainer .getStarted button.primary{
+	padding:8px 35px;
+}
+	#getStartedContainer .videoBlock{
+		text-align:center;
+		padding:35px 0;
+	}
+#getStartedContainer .videoBlock .img-responsive{
+	display:inline-block;
+	border:1px solid #eaeaea;
+}
+.gradeContainer {
+	background: #333333;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));
+	background: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+	background: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+	background: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+	background: -o-linear-gradient(top, #ffffff, #f5f5f5);
+	margin-top: 40px;
+}
+.mainHeader{
+	padding: 15px 15px;
+	border-bottom: 1px solid #dddddd;
+	margin-top: 49px;
+}
+.standardBlueBand{
+	background:#87badd;
+	position:fixed;
+	padding:0 0;
+	top:49px;
+	width:100%;
+	z-index:9;
+}
+.standardBlueBand .topBlueRight{
+	text-align:right;
+}
+.standardBlueBand h2{
+	color:#ffffff;
+	margin:15px 0;
+	font-size:24px;
+	font-weight:bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.standardBlueBand .rightWhiteBox, .standardBlueBand .settingsMenu{
+
+	display:inline-block;
+	vertical-align:middle;
+}
+.standardBlueBand .settingsMenu a{
+	color:#ffffff;
+	display:inline-block;
+	margin-right:10px;
+	font-weight:bold;
+}
+.standardBlueBand .settingsMenu a:hover,  .standardBlueBand .settingsMenu a:focus{
+	opacity:.8;
+	text-decoration:none;
+}
+.standardBlueBand .rightWhiteBox  span{
+    background: #ffffff none repeat scroll 0 0;
+    color: #515151;
+    font-size: 26px;
+    font-weight: normal;
+	border-radius:4px 4px;
+	-webkit-border-radius:4px 4px;
+	-moz-border-radius:4px 4px;
+    padding: 6px 12px;
+	display:inline-block;
+}
+.mainBodySupportBlock{
+	position:relative;
+	margin-top:90px;
+}
+.mainBodySupportBlock .whiteBG{
+	background:#ffffff;
+}
+
+.MainHeader{
+	padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+}
+
+.MainHeader h2{
+	font-size:20px;
+	color:#5151512;
+	margin:0 0;
+}
+
+.geryBackgroundBody{
+	background:#f8fafb;
+		border:1px solid #dddddd;
+		border-top:none;
+}
+
+.paddingBlock{
+	padding:15px 15px;
+}
+
+/**class settings css**/
+.classSettingsContainer{
+
+	margin:0 auto;
+}
+
+.classSettingsContainer .form-control{
+	font-size:12px;
+	color:#515151;
+}
+
+.classSettingsContainer .gradesContainer {
+    background: #e8e7e7 none repeat scroll 0 0;
+    padding: 20px;
+	margin-bottom:15px;
+}
+.classSettingsContainer .classSettingsInner p img {
+	margin-left: 5px;
+}
+
+.classSettingsContainer .classSettingsInner{
+	padding:5% 10%;
+}
+  .classSettingsContainer  .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+   .classSettingsContainer .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+	.classSettingsContainer p{
+		margin:0 0 5px 0;
+	}
+	.classSettingsContainer  .form-control{
+		margin-bottom:15px;
+	}
+	  .classSettingsContainer .btn-default{
+		  background-color:#dddddd;
+		  border:none;
+		  font-size:13px;
+		  color:#1076bb;
+	  }
+
+	  .classSettingsContainer  .thumbImageUrl{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	    .classSettingsContainer .rightWhiteBox span {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 4px;
+    color: #515151;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: normal;
+    padding: 4px 24px;
+	border:1px solid #dddddd;
+	margin-bottom:20px;
+}
+
+.classSettingsContainer .visibilityBlock {
+    margin-top: 40px;
+}
+.classSettingsContainer .visibilityBlock a {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    color: #515151;
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+.classSettingsContainer .visibilityBlock a:hover, .classSettingsContainer .visibilityBlock a:focus {
+    border: 2px solid #85b9df;
+    color: #515151;
+    display: block;
+	text-decoration:none;
+    opacity: 1;
+}
+.classSettingsContainer .visibilityBlock a.active {
+    border: 2px solid #85b9df;
+    color: #515151;
+    display: block;
+    opacity: 1;
+}
+
+.classSettingsContainer .visiblityHeader{
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+.classSettingsContainer .visibilityBlock .anchorCls{
+	color:#515151;
+	display:block;
+	border:2px solid #f8fafb;
+    padding:5px 5px;
+	border-radius:4px 4px;
+	cursor:pointer;
+}
+
+.classSettingsContainer .visibilityBlock .anchorCls:hover{
+	color:#515151;
+	display:block;
+	border:2px solid #85b9df;
+	opacity:1;
+	cursor:pointer;
+}
+.classSettingsContainer .visibilityBlock .anchorCls.active{
+	color:#515151;
+	display:block;
+	border:2px solid #85b9df;
+	opacity:1;
+}
+.classSettingsContainer .visibilityBlock .anchorCls{
+	margin:0 0;
+}
+
+.classSettingsContainer .actionButtons{
+	margin:50px 0;
+	text-align:center;
+}
+.classSettingsContainer .actionButtons button.primary{
+	padding:7px 20px;
+}
+
+/** content settings css **/
+
+.labelStyle.customs-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.customs-select select {
+    display: inline-block;
+    border: 1px solid #dddddd;
+    padding: 8px 8px 8px 4px;
+    margin: 0;
+    font: inherit;
+    font-weight: normal;
+    outline: none;
+    /* remove focus ring from Webkit */
+
+    line-height: 1.2;
+    background: #ffffff;
+    width: 100%;
+    -webkit-appearance: none;
+    /* remove the strong OSX influence from Webkit */
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 40px;
+}
+/* Select arrow styling */
+
+.customs-select:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 6px 7px;
+    width: 23px;
+    background: #ffffff url(${cdn.endpoint}/images/downarrow.png) no-repeat 0px 14px;
+    color: #515151;
+    pointer-events: none;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+    border: 1px solid #dddddd;
+    border-left: 0px solid #dddddd;
+}
+.no-pointer-events .customs-select:after {
+    content: none;
+}
+select option {
+    color: #515151;
+    padding: 8px 10px
+}
+.contentSettingsContainer .unitLeft p {
+    margin: 0 0 2px 0;
+    font-size: 13px;
+}
+.contentSettingsContainer .unitLeft .customs-select select {
+    font-size: 18px;
+    color: #515151;
+}
+.contentSettingsContainer .contentSettingsTable .contentTable {
+    display: table;
+    width: 100%;
+}
+.contentSettingsContainer .contentSettingsTable .contentTable p {
+    margin: 0 0;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableHeading {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableRow {
+    display: table-row;
+}
+.contentSettingsContainer .contentTables .contentTableRow {
+    display: table-row;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableCell {
+    display: table-cell;
+    border: solid;
+    border-width: 1px;
+    padding: 0 0;
+    border-color: #dddddd;
+    vertical-align: top;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner {
+    display: table;
+    width: 100%;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner {
+    display: table-cell;
+    border-right: 1px solid #dddddd;
+    padding: 4px 10px;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableRowInner {
+    display: table-row;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableRowInner .contentTableCellInner {
+    border-bottom: 1px solid #dddddd;
+    color: #1076bb;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableRowInner:last-child .contentTableCellInner {
+    border-bottom: none;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner {
+    width: 16%;
+    border-right: none;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner:first-child {
+    width: 35%;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner:nth-child(2) {
+    width: 18%;
+    text-align: center;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner:nth-child(3) {
+    text-align: right;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner:nth-child(3) {
+    text-align: center;
+    padding: 4px 0;
+    width: 10%;
+}
+.contentSettingsContainer .contentSettingsTable .contentTableInner .contentTableCellInner:nth-child(4) {
+    text-align: center;
+    padding: 4px 0;
+    width: 10%;
+}
+.contentSettingsContainer .contentSettingsTable .lessonHeading h4 {
+    margin: 0 0 3px 0;
+    font-weight: bold;
+}
+.contentSettingsContainer .contentSettingsTable .lessonHeading p {
+    margin: 0 0 0 0;
+    font-weight: bold;
+}
+.contentSettingsContainer .contentSettingsTable .firstColumDiv {
+    position: relative;
+    width: 20%;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    border-radius: 4px 4px;
+    margin: 0 auto;
+    display: block;
+    background: #fcfff4;
+    background: #85b9df;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne label {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    border-radius: 4px 4px;
+    top: 1px;
+    left: 1px;
+    /* cursor: pointer; */
+    background: #f8fafb;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne label:after {
+    content: '';
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #85b9df;
+    border-radius: 4px 4px;
+    opacity: 0;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne label:hover::after {
+    opacity: 0.3;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne input[type=checkbox] {
+    visibility: hidden;
+}
+.contentSettingsContainer .contentSettingsTable .squaredOne input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+/* end .squaredOne */
+
+.contentSettingsContainer .contentSettingsTableIndications {
+    text-align: right;
+    padding: 10px 10px;
+}
+.contentSettingsContainer .contentSettingsTableIndications .makeallVisible {
+    display: inline-block;
+}
+.contentSettingsContainer .contentSettingsTableIndications .visible {
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 11%;
+}
+.contentSettingsContainer .contentSettingsTableIndications .hiddenOpt {
+    display: inline-block;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    border-radius: 4px 4px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    background: #fcfff4;
+    background: #85b9df;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne label {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-radius: 4px 4px;
+    top: 1px;
+    left: 1px;
+   /*  cursor: pointer; */
+    background: #f8fafb;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne label:after {
+    content: '';
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #85b9df;
+    border-radius: 4px 4px;
+    opacity: 0;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne label:hover::after {
+    opacity: 0.3;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne input[type=checkbox] {
+    visibility: hidden;
+}
+.contentSettingsContainer .contentSettingsTableIndications .squaredOne input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+/* end .squaredOne */
+
+.contentSettingsTable .contentTable .lessonHeading {
+    position: relative;
+    left: 10%;
+   	padding: 10px 0;
+}
+.contentSettingsTable .contentTable .lessonHeader {
+    padding: 4px 15px;
+    width:20%;
+}
+
+
+/** class content css **/
+
+.classMenuBlock{
+	border-bottom:1px solid #dddddd;
+	background: #fff;
+}
+
+.classMenuBlock .classMenuLeft ul{
+	margin:0 0;
+	padding:0 0;
+}
+.classMenuBlock .classMenuLeft{
+	/* border-right:1px solid #dddddd; */
+}
+.classMenuBlock .classMenuLeft ul li{
+	margin:0 0;
+	padding:0 0;
+	display:table-cell;
+}
+.classMenuBlock .classMenuLeft ul li a{
+	display:block;
+	padding:24px 24px;
+	color:#9999a6;
+	font-weight:bold;
+}
+.classMenuBlock .classTitle{
+	color: #515151;
+	font-weight: bold;
+	margin: 0 8px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 150px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+.classMenuBlock .classMenuLeft ul li a:hover, .classMenuBlock .classMenuLeft ul li a:focus {
+	background:#e7f1f9;
+	color:#1076bb;
+	text-decoration:none;
+}
+.classMenuBlock .classMenuLeft ul li.active a{
+	background:#e7f1f9;
+	color:#1076bb;
+}
+.classMenuBlock .classMenuRight{
+	float:right;
+
+}
+.classMenuBlock .classMenuRight .coureEditActions, .classMenuBlock .classMenuRight .stPriviewButton{
+	display:table-cell;
+}
+.classMenuBlock .classMenuRight .coureEditActions, .classMenuBlock .classMenuRight .stPriviewButton{
+	padding:15px 5px;
+}
+.classMenuBlock .classMenuRight .coureEditActions{
+	padding:15px 5px;
+	border-right:1px solid #dddddd;
+
+}
+.classMenuBlock .classMenuRight .coureEditActions a{
+	display:inline-block;
+	color:#515151;
+	font-weight:bold;
+	margin:0 6px;
+}
+.classMenuBlock .classMenuRight .coureEditActions .courseLblStyle{
+	padding :10px;
+}
+.classMenuBlock .classMenuRight .coureEditActions a:hover, .classMenuBlock .classMenuRight .coureEditActions a:focus{
+	opacity:1;
+	text-decoration:none;
+}
+.classMenuBlock .classMenuRight .coureEditActions .folderIcon{
+	/* background:url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -226px -371px; */
+	background:url(${cdn.endpoint}/images/g-folder-small.png) no-repeat -226px -371px;
+	width:35px;
+	height:30px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.setScoreContainer {
+	padding:15px 0;
+}
+.setScoreContainer .setScoreLeft p{
+	margin:0 0 0 0;
+}
+.setScoreContainer .setScoreLeft p.help-block{
+	font-style:italic;
+}
+.setScoreContainer .setScoreLeft .scoreBox{
+	margin:6px 0;
+}
+.setScoreContainer .setScoreLeft .scoreBox .form-control{
+	font-size:24px;
+	font-weight:bolder;
+	color:#78b172;
+	display: inline-block;
+	width: 85px;
+	vertical-align: middle;
+}
+.setScoreContainer .setScoreLeft .scoreBox .scorePercentage{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 24px;
+	margin-left: 5px;
+}
+.setScoreContainer  .actionButtons{
+	text-align:center;
+	margin:30px 0;
+}
+.setScoreContainer  .actionButtons button{
+	padding:8px 20px;
+}
+
+/** student roaster css **/
+
+.studentsMenuBlock {
+    border-bottom: 1px solid #dddddd;
+    background: #fff;
+}
+.studentsMenuBlock .studentsLeftMenu ul {
+    margin: 0 0;
+    padding: 0 0;
+}
+.studentsMenuBlock .studentsLeftMenu ul li {
+    margin: 0 0;
+    padding: 0 0;
+    display: table-cell;
+}
+.studentsMenuBlock .studentsLeftMenu ul li:first-child a:hover {
+    border-radius: 4px 0 0 0;
+}
+.studentsMenuBlock .studentsLeftMenu ul li a {
+    display: block;
+    color: #a19999;
+    padding: 18px 25px;
+    font-size: 18px;
+}
+.studentsMenuBlock .studentsLeftMenu ul li a:hover,
+.studentsMenuBlock .studentsLeftMenu ul li a:focus {
+    background: #e7f1f9;
+    color: #4897ce;
+    text-decoration: none;
+}
+.studentsMenuBlock .studentsLeftMenu ul li.active a {
+    background: #e7f1f9;
+    color: #4897ce;
+    text-decoration: none;
+}
+.studentsMenuBlock .studentsLeftMenu ul li:first-child.active a {
+    border-radius: 4px 0 0 0;
+}
+.studentsMenuBlock .scoreStatus {
+    text-align: right;
+    padding: 6px 6px;
+    float: right;
+}
+.studentsMenuBlock .scoreStatus div {
+    display: table-cell;
+    padding: 8px 15px;
+    width: 62px;
+    text-align: center;
+    font-weight: bold;
+}
+.studentsMenuBlock .scoreStatus div.red {
+    background: #e08282;
+    color: #ffffff;
+    border-radius: 4px 0 0 4px;
+}
+.studentsMenuBlock .scoreStatus div.org {
+    background: #fec956;
+    color: #ffffff;
+}
+.studentsMenuBlock .scoreStatus div.yellowgreen {
+    background: #edf167;
+    color: #ffffff;
+}
+.studentsMenuBlock .scoreStatus div.lightgreen {
+    background: #a2de81;
+    color: #ffffff;
+}
+.studentsMenuBlock .scoreStatus div.green {
+    background: #3fc380;
+    color: #ffffff;
+    border-radius: 0 4px 4px 0;
+}
+.rosterContainer .rightWhiteBox span {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    color: #515151;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding: 4px 24px;
+}
+.rosterContainer .inviteStudents h5 {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+.rosterContainer .inviteStudents p {
+    margin: 0 0 10px;
+}
+.rosterContainer .inviteBox {
+    position: relative;
+}
+.rosterContainer .inviteBox .auto_suggest{
+    width: 80%;
+}
+.rosterContainer .inviteBox .token-input-input-token-gooru .gwt-SuggestBox{
+    height: 27px;
+}
+.rosterContainer .inviteBox .form-control {
+    font-size: 12px;
+    width: 90%;
+}
+.rosterContainer .inviteBox button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    padding: 7px 25px;
+}
+.rosterContainer {
+    padding: 15px 0;
+}
+.rosterContainer .inviteStudents {
+	display:inline-block;
+    padding: 10px 15px 30px 15px;
+    width: 100%;
+}
+.rosterContainer .joinedStudentsBlock {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+.rosterContainer .joinedStudentsBlock .tableDiv {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.rosterContainer .joinedStudentsBlock .tablerow {
+   /*  display: table-row; */
+    position: relative;
+
+}
+.rosterContainer .joinedStudentsBlock .tablecell {
+    border: medium none;
+    display: inline-block;
+    padding: 10px;
+}
+.rosterContainer .joinedStudentsBlock .tablerow:hover {
+    background: #ffffff;
+}
+.rosterContainer .joinedStudentsBlock .studentsImage {
+    width: 65px;
+}
+.rosterContainer .joinedStudentsBlock .tablerow .removeButton {
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 6px;
+}
+.rosterContainer .joinedStudentsBlock .tablerow:hover .removeButton {
+    display: block;
+}
+.rosterContainer .joinedStudentsBlock .studentsImage img {
+    border: 3px solid #87badd;
+    border-radius: 50%;
+    height: 43px;
+    width: 43px;
+}
+.rosterContainer .joinedStudentsBlock .studentsName {
+    width: 120px;
+}
+.rosterContainer .joinedStudentsBlock .studentsName p {
+    margin: 0 0;
+}
+.rosterContainer .joinedStudentsBlock .tablecell {
+    border: medium none;
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+}
+.rosterContainer .joinedStudentsBlock h5 {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.rosterContainer .joinedStudentsBlock .indiactionText {
+    text-align: right;
+}
+
+.rosterContainer .tooltipContainer {
+	display: none;
+}
+
+.rosterContainer .tooltipContainer {
+	position: absolute;
+	left: -134px;
+	z-index: 97;
+}
+.rosterContainer button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
+	display:block;
+}
+.rosterContainer .arrowBorder {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent #DDD transparent;
+	position: relative;
+	top: 0px;
+	margin: auto;
+	border-top: none;
+	left: 65px;
+}
+
+.rosterContainer .arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	margin: auto;
+	top: -9px;
+	border-top: none;
+	z-index: 97;
+	left: 65px;
+}
+
+.rosterContainer .tooltipContent {
+	text-align: left;
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 15px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	position: relative;
+	top: -10px;
+	width: 155px;
+	float: left;
+}
+
+.rosterContainer .pleaseWait{
+	font-style: italic;
+	color: #515151;
+	height: 24px;
+	margin-top: 8px;
+}
+
+.rosterContainer .error{
+	text-align: right;
+	width: 80%;
+	word-wrap: break-word;
+}
+.rosterContainer .buttonContainer {
+	text-align: left;
+	display: inline-block;
+	width: 100%;
+}
+
+.rosterContainer .buttonTooltip{
+	display: inline-block;
+	position: relative;
+}
+
+.rosterContainer .joinedStudentsBlock.seeMoreActive, .seeMorePending, .pleaseWait{
+	float: right;
+}
+.rosterContainer .classSettingsInner p img {
+	margin-left: 5px;
+}
+.rosterContainer .classSettingsInner p{
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+/** student report css **/
+
+.classReportMenuBlock{
+	border-bottom:1px solid #dddddd;
+}
+
+.classReportMenuBlock .classMenuLeft ul{
+	margin:0 0;
+	padding:0 0;
+}
+.classReportMenuBlock .classMenuLeft{
+	/* border-right:1px solid #dddddd; */
+}
+.classReportMenuBlock .classMenuLeft ul li{
+	margin:0 0;
+	padding:0 0;
+	display:table-cell;
+}
+.classReportMenuBlock .classMenuLeft ul li a{
+	display:block;
+	padding:24px 24px;
+	color:#9999a6;
+	font-weight:bold;
+}
+
+.classReportMenuBlock .classMenuLeft ul li div{
+	display: block;
+	padding: 24px 24px;
+	font-size: 15px;
+}
+.classReportMenuBlock .classTitle{
+	color: #515151;
+	font-weight: bold;
+	margin: 0 8px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 150px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+.classReportMenuBlock .classMenuLeft ul li.active a{
+	background:#e7f1f9;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions, .classMenuBlock .classMenuRight .stPriviewButton{
+	display:table-cell;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions, .classMenuBlock .classMenuRight .stPriviewButton{
+	padding:15px 5px;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions{
+	padding:15px 5px;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions a{
+	display:inline-block;
+	font-weight:bold;
+	margin:0 6px;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions a:hover, .classMenuBlock .classMenuRight .coureEditActions a:focus{
+	opacity:1;
+	text-decoration:none;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions .folderIcon{
+	/* background:url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -226px -371px; */
+	background:url(${cdn.endpoint}/images/g-folder-small.png) no-repeat -226px -371px;
+	width:35px;
+	height:30px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.classMenuRight .stPriviewButton .btn-default {
+	background-color: #ddd;
+	border: 0;
+	font-size: 13px;
+	color: #1076bb;
+}
+
+/** new unit dropdown css **/
+
+.selctListBox{
+	width:100%;
+	font-size:18px;
+	position:relative;
+	color:#515151;
+
+
+}
+.selctListBox .listSelecter{
+	border:1px solid #dddddd ;
+	padding:6px 6px;
+	background:#ffffff;
+	height:42px;
+	border-radius:4px 4px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.selctListBox .listSelecter:after {
+	content:"";
+	position: absolute;
+	top: 4px;
+	right: -1px;
+	bottom: 0;
+	line-height: 30px;
+	padding: 6px 7px;
+	width:23px;
+	background:url(${cdn.endpoint}/images/downarrow.png) no-repeat 0px 14px;
+	color: #515151;
+}
+
+.selctListBox .listMenu{
+	background:#ffffff;
+	border:1px solid #dddddd;
+    max-height: 235px;
+	position:absolute !important;
+	left:0;
+	right:0;
+	bottom:auto;
+	top:40px !important;
+	z-index:99;
+	overflow-y:auto;
+}
+.selctListBox .listSelecter:hover .listMenu{
+	display:block;
+}
+.selctListBox .listMenu .unitStyle{
+	padding:6px 7px;
+}
+.selctListBox .listMenu .unitStyle:hover{
+	background:#f5f5f5;
+}
+.class-footer{
+	padding: 3px 15px 10px;
+	margin-top: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5;
+}
+
+
+#getStartedContainer .gettingStartedMain h1 {
+    color: #515151;
+    margin: 0;
+    padding: 30px 0;
+	font-size:24px;
+    text-align: center;
+	font-family:"Arvo",serif !important;
+}
+
+#getStartedContainer .gettingStartedMain .emptyClass{
+	width:660px;
+	padding:50px 50px 20px 50px;
+	border-radius:4px 4px;
+	margin:0 auto 50px auto;
+	background:url(${cdn.endpoint}/images/GettingStarted.png) no-repeat center center;
+	box-shadow:0 0 4px #cccccc;
+}
+#getStartedContainer .gettingStartedMain .emptyClass p{
+	margin:0 0 5px 0;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .addCourse{
+	margin-right:60px;
+	margin-bottom:35px;
+}
+
+#getStartedContainer .gettingStartedMain .emptyClass .addStudents{
+	margin-right:60px;
+
+}
+
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents{
+text-align:left;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents p{
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents span{
+
+	display:block;
+	margin-left:50px;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents span .img-responsive{
+	display:inline-block;
+
+}
+
+#getStartedContainer .gettingStartedMain .findout{
+	margin:60px 0 0 0;
+	text-align:right;
+}
+#getStartedContainer .gettingStartedMain .findout a:hover, #getStartedContainer .gettingStartedMain .findout a:focus{
+	text-decoration:none;
+}
+.dividerStyle{
+	min-height: 42px;
+	line-height: 42px;
+}
+
+
+/** my classes new landing page **/
+
+.myClassesLanding .classBlocks .classBlockInner {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(81, 81, 81, 0.3);
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 30px;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockBody {
+    height: 77px;
+   /*  background: url(../images/default-classpage.png) no-repeat center center; */
+    background-size: cover;
+    position: relative;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockBody.scienceGrade {
+    background: url(../images/science-grade.png) no-repeat center center;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockBody:before {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockBody h4 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 9;
+    position: absolute;
+    margin: 30px 0;
+    display: inline-block;
+    width: 100%;
+    top:0;
+    left: 0;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockFooter {
+    text-align: center;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockFooter img {
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px #87badd;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockFooter span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    font-weight: bold;
+}
+.myClassesLanding .classBlocks .classBlockInner .blockFooter span.devider {
+    border-right: 1px solid #999999;
+    font-size: 16px;
+    font-weight: normal;
+    height: 30px;
+    min-height:30px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+.myClassesLanding .myClassesHeader h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+.myClassesLanding .myClassesTabs {
+    margin-top: 25px;
+    background: #ffffff;
+    border-radius: 4px 4px;
+    display: table;
+}
+.myClassesLanding .myClassesTabs a {
+    display: table-cell;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #515151;
+}
+.myClassesLanding .myClassesTabs a:hover,
+.myClassesLanding .myClassesTabs a:focus {
+    text-decoration: none;
+    background: #e5f1f8;
+    color: #0074c6;
+}
+.myClassesLanding .myClassesTabs a.active {
+    text-decoration: none;
+    background: #e5f1f8;
+    color: #0074c6;
+}
+.myClassesLanding .myClassesAlert {
+    margin-top: 15px;
+    background: #ffffff;
+    border-radius: 4px 4px;
+    padding: 13px 13px;
+}
+.myClassesLanding .myClassesAlert .alertIcon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50px;
+}
+.myClassesLanding .myClassesAlert .alertText {
+    display: table-cell;
+    vertical-align: middle;
+}
+.myClassesLanding .myClassesAlert .alertText p {
+    color: #515151;
+    margin: 0 0;
+}
+.myClassesLanding .myClassesHeader{
+	margin:50px 0 0 0;
+}
+.myClassesLanding .classcodeBox .form-control {
+    border-radius: 0;
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 15px;
+    width: auto !important;
+}
+.myClassesLanding .classcodeBox {
+    text-align: right;
+}
+
+/** new empty study page**/
+
+.myClassesGettingStartTopMenu {
+    margin: 25px 0;
+}
+.myClassesArchivedMenu a {
+    color: #515151;
+    display: table-cell;
+    font-size: 16px;
+    padding: 12px 30px;
+    background: #ffffff;
+}
+.myClassesArchivedMenu a:first-child {
+    border-radius: 4px 0 0 4px;
+}
+.myClassesArchivedMenu a:last-child {
+    border-radius: 0 4px 4px 0;
+}
+.myClassesArchivedMenu a:hover,
+.myClassesArchivedMenu a:focus {
+    background: #e5f1f8;
+    color: #0074c6;
+    text-decoration: none;
+}
+.myClassesArchivedMenu a.active {
+    background: #e5f1f8 none repeat scroll 0 0;
+    color: #0074c6;
+    text-decoration: none;
+}
+.myClassesArchivedMenu {
+    display: inline-block;
+    border-radius: 4px 4px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.myClassesGettingStartTopMenu .classcodeBox {
+    text-align: right;
+}
+.myClassesGettingStartTopMenu .classcodeBox .form-control {
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 15px;
+    width: auto;
+    height: 36px;
+}
+.myClassesGettingStartTopMenu button.primary {
+    padding: 9px 20px;
+}
+.myClasesGettingStartMainBlock.whiteBG {
+    background: #ffffff url(../images/myclassesGettingStarted-bg.png) no-repeat center bottom;
+    background-size: 100% auto;
+}
+.PaddingGutter {
+    padding: 60px 150px;
+}
+.myClassesCodeSearch .classcodeBox {
+    text-align: right;
+}
+.myClassesCodeSearch .classcodeBox .form-control {
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 15px;
+    width: auto;
+    height: 36px;
+}
+.myClassesCodeSearch h3 {
+    margin: 0 0;
+    font-family: "Arvo", serif !important;
+    font-size: 20px;
+    color: #515151;
+}
+.myClassesCodeSearch .classcodeBox button.primary {
+    padding: 9px 12px;
+}
+.myClassesCodeSearch {
+    border-bottom: 1px solid #939492;
+    padding-bottom: 10px;
+}
+.myClassesSteps h2 {
+    margin: 27px 0;
+    font-family: "Arvo", serif !important;
+    font-size: 28px;
+    color: #4d4e4c;
+    font-weight: bold;
+    text-align: center;
+}
+.myClassesSteps .stepsBlockInner {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.myClassesSteps .stepsBlockInner .numaricCircle {
+    width: 39px;
+    height: 39px;
+    background: #4b9841;
+    float: left;
+    border-radius: 50% 50%;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    margin-right: 12px;
+}
+.myClassesSteps .stepsBlockInner .numaricCircle:before {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #ffffff;
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50% 50%;
+}
+.myClassesSteps .stepsBlockInner .StepsContent {
+    float: left;
+    width: 76%;
+}
+.myClassesSteps .stepsBlockInner .StepsContent h3 {
+    font-family: "Arvo", serif !important;
+    font-size: 20px;
+    color: #3b813f;
+    margin: 0 0 5px 0;
+}
+.supportLink {
+    margin: 25px 54px 0 0;
+    text-align: right;
+}
+.supportLink a:hover,
+.supportLink a:focus {
+    text-decoration: none;
+}
+.emptyCreateClass{
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+
+/** content pacing css **/
+
+.setScoreContainer {
+    background: #f8fafb;
+    border: 1px solid #dddddd;
+    border-left: none;
+    border-right: none;
+    padding: 20px 18px;
+}
+.setScoreContainer p {
+    margin: 0 0;
+}
+.setScoreContainer p.help-block {
+    font-style: italic;
+    color: #999999;
+}
+.setScoreContainer h4 {
+    margin: 0 0 10px 0;
+}
+.setScoreContainer .selectCourseButton {
+    margin-top: 20px;
+    text-align: center;
+}
+.setScoreContainer .AssignedCourseBlock {
+    border-right: 1px solid #dddddd;
+}
+.setScoreContainer .scoreBoxBlock {
+    margin-top: 20px;
+}
+.setScoreContainer .scoreBoxBlock .textBoxDiv .form-control {
+    color: #78b172;
+    font-size: 24px;
+    font-weight: bolder;
+    width: 73px !important;
+    display: inline-block;
+}
+.setScoreContainer .scoreBoxBlock .textBoxDiv {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15px;
+}
+.setScoreContainer .scoreBoxBlock .textBoxDiv span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #999999;
+}
+button.grey {
+    background: #999999;
+    border: medium none;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: Arial, sans-serif !important;
+    padding: 7px 9px;
+}
+button.grey:hover {
+    background: #666666;
+}
+.setScoreContainer .scoreBoxBlock button.grey {
+    padding: 9px 22px;
+}
+.setScoreContainer .selectCourseButton button.primary {
+    padding: 9px 22px;
+}
+.howItWorks {
+    padding: 30px 30px;
+}
+.howItWorks h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #0074be;
+    font-family: "Arvo", serif !important;
+    margin: 0 0 10px 0;
+}
+.howItWorks p {
+    font-size: 16px;
+    font-family: "Arvo", serif !important;
+    margin: 0 225px;
+    text-align: center;
+}
+.howItWorks .AssessmentandCollections {
+    margin: 0 auto;
+	width: 500px;
+}
+.howItWorks .AssessmentandCollections span {
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Arvo", serif !important;
+    margin: 0 0 15px 0;
+}
+.howItWorks .AssessmentandCollections span em {
+    font-weight: bold;
+    font-style: normal;
+}
+.howItWorks .AssessmentandCollections span img {
+    margin: 0 8px;
+}
+.howItWorks .AssessmentandCollections span.leftMargin {
+    margin-left: 50px;
+    display: inline-block;
+}
+.CourseandUnitViewContainer {
+    padding: 0 90px 90px;
+}
+.CourseandUnitViewContainer .courseViewBlock,
+.CourseandUnitViewContainer .unitViewBlock {
+    border: 1px solid #dddddd;
+    border-radius: 4px 4px;
+    padding: 0 0;
+    background: #ffffff;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv .tableRow {
+    border-bottom: 1px solid #dddddd;
+    display: table-row;
+    width: 100%;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv .tableColumn {
+    display: table-cell;
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+.CourseandUnitViewContainer h3 {
+    font-size: 16px;
+    font-family: "Arvo", serif !important;
+    margin: 0 0 12px 0;
+}
+.CourseandUnitViewContainer {
+    font-family: "Arvo", serif !important;
+    font-size: 12px;
+}
+.CourseandUnitViewContainer .indiacationText {
+    margin: 20px 0;
+}
+.CourseandUnitViewContainer .borderText {
+    border-bottom: 1px solid #dddddd;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv .tableColumn .tblHeading {
+    font-size: 16px;
+    width: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv .tableColumn .scoreStatus {
+    width: 132px;
+}
+.CourseandUnitViewContainer .scoreStutusTable .tableDiv .tableColumn .scoreStatusGreyText {
+    color: #999999;
+    line-height: 15px;
+}
+.ContentPacingMenu ul {
+    margin: 0;
+    padding: 0;
+}
+.ContentPacingMenu ul li {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+}
+.ContentPacingMenu ul li a {
+    color: #999999;
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+}
+.ContentPacingMenu ul li a:hover,
+.ContentPacingMenu ul li a:focus {
+    background: #e7f1f9 none repeat scroll 0 0;
+    color: #1076bb;
+    text-decoration: none;
+}
+.ContentPacingMenu ul li.active a {
+    background: #e7f1f9 none repeat scroll 0 0;
+    color: #1076bb;
+}
+.pageContainerBG {
+    background: #ffffff url("../images/myclassesGettingStarted-bg.png") no-repeat center bottom;
+}
+
+.setScoreContainer .selectCourseButton .coureEditActions .folderIcon{
+	/* background:url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -226px -371px; */
+	background:url(${cdn.endpoint}/images/g-folder-small.png) no-repeat;
+	width:35px;
+	height:30px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.setScoreContainer .selectCourseButton .coureEditActions .classTitle{
+	color: #515151;
+	font-weight: bold;
+	margin: 0 8px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 150px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+
+/** Add course to class popup css changes **/
+
+#addCourseToClasPopup{
+	padding:25px 0;
+	margin: 0% 25%;
+}
+#addCourseToClasPopup .modal-dialog{
+	width:438px;
+	margin:0 auto;
+}
+#addCourseToClasPopup .modal-header{
+	background-color:#515151;
+	color:#ffffff;
+	border-radius:6px 6px 0 0;
+	margin-top:-2px;
+
+}
+#addCourseToClasPopup .close{
+	font-size:35px;
+	color:#ffffff;
+	opacity:1;
+}
+#addCourseToClasPopup .modal-footer button.primary{
+	padding:7px 20px;
+}
+
+#addCourseToClasPopup .modal-body{
+	padding:0 0;
+}
+#addCourseToClasPopup .indications{
+	background:#dddddd;
+	padding:6px 15px;
+}
+
+#addCourseToClasPopup .assignCourseBlock{
+	padding:15px 40px;
+}
+#addCourseToClasPopup .assignCourseBlock h3{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin:18px 0;
+	color:#515151;
+}
+#addCourseToClasPopup .assignCourseBlock ul{
+	margin:0 0;
+	padding:0 0;
+}
+#addCourseToClasPopup .assignCourseBlock ul li{
+	margin:0 0 10px 0;
+	padding:0 0;
+	list-style:none;
+	font-size:14px;
+
+}
+#addCourseToClasPopup .assignCourseBlock ul li span{
+	width:15px;
+	height:15px;
+	border-radius:50% 50%;
+	display:inline-block;
+	vertical-align:top;
+	margin-right:10px;
+	margin-top:3px;
+}
+#addCourseToClasPopup .assignCourseBlock ul li em{
+display:inline-block;
+width:90%;
+font-style:normal;
+}
+#addCourseToClasPopup .assignCourseBlock ul li span.bluedot{
+	background:#87badd;
+}
+#addCourseToClasPopup .assignCourseBlock ul li span.greendot{
+	background:#a6cba2;
+}
+#addCourseToClasPopup .assignCourseBlock ul li span.orgdot{
+	background:#fdd79d;
+}
+#addCourseToClasPopup .dropdownListClassContainerScrollPanel{
+	/* border: 1px solid #ddd; */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	z-index: 9999;
+	height: 275px;
+	overflow-x:hidden !important;
+}
+
+#addCourseToClasPopup .addNewCollectionStyle{
+	color: #1076bb;
+	margin-left: 10px;
+	float: left;
+}
+#addCourseToClasPopup .addNewCollectionErrorStyle{
+	font-weight: bold;
+	height: 10px;
+	color: #fab03a;
+	font: 12px arial;
+	text-align: left;
+	margin-bottom: 15px;
+}
+.createCourseImage{
+	 background: url('${cdn.endpoint}/images/course-folder-closed.png') no-repeat 33px 13px;
+	 margin-left: 115px;
+	 height: 60px;
+}
+
+.mycontent{
+	margin-top: 35px;
+	text-align: center;
+	padding: 0 0 50px;
+}
+
+
+
+
+/** Get Started File Css Style **/
+.gettingStartedStep2 {
+    margin: 0 200px;
+    margin-top: -90px;
+}
+.gettingStartedStep2 hr {
+    border-color: #515151;
+}
+.gettingStartedStep2 .mainHeader h3 {
+    margin: 0 0;
+    text-align: center;
+    padding: 60px 0 20px 0;
+    font-size: 24px;
+    color: #0074be;
+    font-family: "Arvo", serif !important;
+}
+.gettingStartedStep2 .mainHeader p {
+    font-size: 12px;
+    font-family: "Arvo", serif !important;
+    text-align: center;
+}
+.gettingStartedStep2 .stepsBlockStep2 {
+    width: 350px;
+    margin: 50px auto;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .numaricCircle {
+    background: #999999;
+    border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    height: 39px;
+    line-height: 40px;
+    margin-right: 12px;
+    position: relative;
+    text-align: center;
+    width: 39px;
+    vertical-align: middle;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .numaricCircle.greenCircle {
+    background: #4b9841;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .numaricCircle::before {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    content: "";
+    height: 35px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 35px;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .StepsContent {
+    display: inline-block;
+    width: 76%;
+    vertical-align: middle;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .StepsContent h3 {
+    color: #515151;
+    font-family: "Arvo", serif !important;
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+.gettingStartedStep2 .stepsBlockStep2 .stepsBlockInner .StepsContent.greenText h3 {
+    color: #4b9841;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup {
+    margin-bottom: 25px;
+    margin-left: 30px;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup img {
+    margin-right: 10px;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup button.primary {
+    vertical-align: bottom;
+    padding: 8px 12px;
+}
+.gettingStartedStep2 .gettingStartedFooter {
+    text-align: center;
+    margin-bottom: 100px;
+    display: inline-block;
+    width: 100%;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup .indicationText {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup .indicationText p {
+    margin: 0 0;
+    line-height: 14px;
+}
+.gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup button.primary.alinMiddle {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.gettingStartedStep2 .gettingStartedFooter a {
+    color: #0074be;
+}
+.gettingStartedStep2 .gettingStartedFooter a:hover,
+.gettingStartedStep2 .gettingStartedFooter a:focus {
+    text-decoration: none;
+}
+.gettingStartedStep2 .gettingStartedFooter div {
+    margin-bottom: 10px;
+}
+
+.teachViewEmptyData {
+    margin: 0 200px;
+}
+.teachViewEmptyData .teachViewEmptyDataContainer{
+	padding: 15px 15px;
+	margin-top: 49px;
+}
+.teachViewEmptyData .teachViewEmptyDataContainer h3 {
+    margin: 0 0;
+    text-align: center;
+    padding: 60px 0 20px 0;
+    font-size: 24px;
+    color: #0074be;
+    font-family: "Arvo", serif !important;
+}
+.teachViewEmptyData .teachViewEmptyDataContainer p {
+    font-size: 12px;
+    font-family: "Arvo", serif !important;
+    text-align: center;
+}
+
+/** Media Scripts starts Here **/
+
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+	.standardBlueBand{
+		position:relative;
+	}
+	.mainBodySupportBlock{
+		margin-top:0;
+	}
+	.classSettingsContainer .classSettingsInner{
+		padding:5% 0;
+	}
+.standardBlueBand .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+
+.standardBlueBand .settingsMenu img{
+	width:19px;
+}
+.standardBlueBand .settingsMenu a:last-child{
+	margin-right:0;
+	margin-bottom:0;
+}
+.standardBlueBand  .blueBand{
+	text-align:center;
+}
+.standardBlueBand .settingsMenu a{
+	margin-bottom:10px;
+	border:1px solid #a2d0f0;
+	padding:6px 6px;
+	background:#87badd;
+}
+.standardBlueBand .topBlueRight{
+	text-align:center;
+}
+.standardBlueBand h2{
+	text-align:center;
+}
+.standardBlueBand .rightWhiteBox, .standardBlueBand .settingsMenu{
+	width:100%;
+}
+.standardBlueBand .rightWhiteBox span{
+	width:98%;
+}
+.classSettingsContainer .gradesContainer ul li.gradeTypes {
+
+    margin:0 0 10px 0;
+    width: 100%;
+}
+.classSettingsContainer .gradesContainer ul{
+	margin:0 0 18px 0;
+}
+.classSettingsContainer .gradesContainer ul li a {
+
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+	.standardBlueBand{
+		position:relative;
+	}
+	.mainBodySupportBlock{
+		margin-top:0;
+	}
+	.classSettingsContainer .classSettingsInner{
+		padding:5% 0;
+	}
+.standardBlueBand .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+
+.standardBlueBand .settingsMenu img{
+	width:19px;
+}
+.standardBlueBand .settingsMenu a:last-child{
+	margin-right:0;
+}
+.standardBlueBand  .blueBand{
+	text-align:center;
+}
+.standardBlueBand .topBlueRight{
+	text-align:center;
+}
+.standardBlueBand h2{
+	text-align:center;
+}
+.standardBlueBand .rightWhiteBox, .standardBlueBand .settingsMenu{
+	width:100%;
+}
+.standardBlueBand .rightWhiteBox span{
+	width:68%;
+}
+.classSettingsContainer .gradesContainer ul li.gradeTypes {
+
+    margin:0 0 10px 0;
+    width: 100%;
+}
+.classSettingsContainer .gradesContainer ul{
+	margin:0 0 18px 0;
+}
+.classSettingsContainer .gradesContainer ul li a {
+
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+}
+}
+
+
+@media (min-width: 480px) and (max-width: 767px){
+	.standardBlueBand{
+		position:relative;
+	}
+	.mainBodySupportBlock{
+		margin-top:0;
+	}
+.classSettingsContainer .classSettingsInner {
+    padding: 5% 6%;
+}
+.standardBlueBand .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+
+.standardBlueBand .settingsMenu img{
+	width:19px;
+}
+.standardBlueBand .settingsMenu a:last-child{
+	margin-right:0;
+}
+.standardBlueBand  .blueBand{
+	text-align:center;
+}
+.standardBlueBand .topBlueRight{
+	text-align:center;
+}
+.standardBlueBand h2{
+	text-align:center;
+}
+.standardBlueBand .rightWhiteBox, .standardBlueBand .settingsMenu{
+	width:100%;
+}
+.standardBlueBand .rightWhiteBox span{
+	width:65%;
+}
+}
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		.mainBodySupportBlock{
+			margin-top:100px;
+		}
+		.classSettingsContainer .classSettingsInner{
+			padding:5% 0;
+		}
+
+.standardBlueBand h2{
+	font-size:16px;
+	margin-left:6px;
+}
+.standardBlueBand .settingsMenu img{
+	width:20px;
+}
+.standardBlueBand .rightWhiteBox{
+	margin-right:6px;
+}
+.standardBlueBand .rightWhiteBox span{
+	font-size:18px;
+}
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+		.standardBlueBand .settingsMenu img{
+			width:25px;
+		}
+
+		}
+@media (min-width: 1200px) {
+.standardBlueBand .settingsMenu img{
+			width:30px;
+		}
+}
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+#getStartedContainer .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+#getStartedContainer .settingsMenu img{
+	width:19px;
+	margin: 0 8px;
+}
+#getStartedContainer .settingsMenu a:last-child{
+	margin-right:0;
+	margin-bottom:0;
+}
+#getStartedContainer  .blueBand{
+	text-align:center;
+}
+#getStartedContainer .settingsMenu a{
+	margin-bottom:10px;
+	border:1px solid #a2d0f0;
+	padding:6px 6px;
+	background:#87badd;
+}
+#getStartedContainer .topBlueRight{
+	text-align:center;
+}
+
+}
+@media (min-width: 320px) and (max-width: 479px) {
+#getStartedContainer .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+
+#getStartedContainer .settingsMenu img{
+	width:19px;
+	margin: 0 8px;
+}
+#getStartedContainer .settingsMenu a:last-child{
+	margin-right:0;
+}
+#getStartedContainer  .blueBand{
+	text-align:center;
+}
+#getStartedContainer .topBlueRight{
+	text-align:center;
+}
+}
+@media (min-width: 480px) and (max-width: 767px){
+
+#getStartedContainer .settingsMenu{
+	text-align:center;
+	width:100%;
+	padding:12px 0;
+	margin:8px 0;
+	background:#79afd4;
+	border-top:1px solid #6da3c8;
+	border-bottom:1px solid #6da3c8;
+}
+
+#getStartedContainer .settingsMenu img{
+	width:19px;
+	margin: 0 8px;
+}
+#getStartedContainer .settingsMenu a:last-child{
+	margin-right:0;
+}
+#getStartedContainer  .blueBand{
+	text-align:center;
+}
+#getStartedContainer .topBlueRight{
+	text-align:center;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+#getStartedContainer .blueBand h2{
+	font-size:16px;
+	margin-left:6px;
+}
+#getStartedContainer .settingsMenu img{
+	width:20px;
+	margin: 0 8px;
+}
+#getStartedContainer .rightWhiteBox{
+	margin-right:6px;
+}
+#getStartedContainer .rightWhiteBox span{
+	font-size:18px;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+		#getStartedContainer .settingsMenu img{
+			width:25px;
+			margin: 0 8px;
+}
+}
+@media (min-width: 1200px) {
+	#getStartedContainer .settingsMenu img{
+			width:30px;
+			margin: 0 8px;
+		}
+}
+
+/** content settings css **/
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+    .contentSettingsContainer .contentSettingsTable {
+        width: 750px;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .contentSettingsContainer .contentSettingsTable {
+        width: 750px;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .contentSettingsContainer .contentSettingsTable {
+        width: 750px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {} @media (min-width: 992px) and (max-width: 1199px) {}
+/* for Webkit's CSS-only solution */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .customs-select select {
+        padding-right: 30px;
+    }
+}
+
+
+/** class content css**/
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+ .classMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	 	 .classMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+	.classMenuBlock .classMenuRight {
+    float: none;
+}
+.classMenuBlock .classMenuRight .coureEditActions{
+	display:block;
+	 border-bottom:1px solid #dddddd;
+	 text-align:center;
+}
+.classMenuBlock .classMenuRight .stPriviewButton{
+	display:block;
+	text-align:center;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	 .classMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+	.classMenuBlock .classMenuRight {
+    float: none;
+    margin: 0 auto;
+    width: 415px;
+}
+}
+
+
+/** student roaster css **/
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+    .studentsMenuBlock .studentsLeftMenu {
+        border-bottom: 1px solid #dddddd;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li {
+        width: 1%;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li a {
+        font-size: 15px;
+        padding: 18px 0px;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus {
+        float: none;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus div {
+        display: inline-block;
+        margin-left: -3px;
+    }
+    .rosterContainer .joinedStudentsBlock h5 {
+        text-align: left;
+    }
+    .rosterContainer .joinedStudentsBlock .indiactionText {
+        text-align: left;
+    }
+    .rosterContainer .joinedStudentsBlock .studentsName {
+        width: auto;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .studentsMenuBlock .studentsLeftMenu {
+        border-bottom: 1px solid #dddddd;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li {
+        width: 1%;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li a {
+        font-size: 15px;
+        padding: 18px 0px;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus {
+        float: none;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus div {
+        display: inline-block;
+        margin-left: -3px;
+    }
+    .rosterContainer .joinedStudentsBlock h5 {
+        text-align: left;
+    }
+    .rosterContainer .joinedStudentsBlock .indiactionText {
+        text-align: left;
+    }
+    .rosterContainer .joinedStudentsBlock .studentsName {
+        width: auto;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .studentsMenuBlock .studentsLeftMenu {
+        border-bottom: 1px solid #dddddd;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li {
+        width: 1%;
+    }
+    .studentsMenuBlock .studentsLeftMenu ul li a {
+        padding: 17px 7px;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus {
+        float: none;
+        text-align: center;
+    }
+    .studentsMenuBlock .scoreStatus div {
+        display: inline-block;
+        margin-left: -3px;
+    }
+    .rosterContainer .joinedStudentsBlock h5 {
+        text-align: left;
+    }
+    .rosterContainer .joinedStudentsBlock .indiactionText {
+        text-align: left;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .studentsMenuBlock .studentsLeftMenu ul li a {
+        font-size: 15px;
+        padding: 21px 20px;
+    }
+}
+
+/** student reports css **/
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+ .classReportMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classReportMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	 	 .classReportMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classReportMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+	.classReportMenuBlock .classMenuRight {
+    float: none;
+}
+.classReportMenuBlock .classMenuRight .coureEditActions{
+	display:block;
+	 border-bottom:1px solid #dddddd;
+	 text-align:center;
+}
+.classReportMenuBlock .classMenuRight .stPriviewButton{
+	display:block;
+	text-align:center;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	 .classReportMenuBlock .classMenuLeft{
+			 border-bottom:1px solid #dddddd;
+		 }
+	 .classReportMenuBlock .classMenuLeft ul li{
+		width:1%;
+		overflow:hidden;
+		text-align:center;
+	}
+	.classReportMenuBlock .classMenuRight {
+    float: none;
+    margin: 0 auto;
+    width: 415px;
+}
+}
+
+/** new empty class css**/
+
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+	 #getStartedContainer .gettingStartedMain .emptyClass{
+		margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+	padding:20px 20px;
+	}
+	#getStartedContainer .gettingStartedMain .emptyClass .addCourse {
+    margin: 0 0 30px 0;
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .addStudents {
+     margin: 0 0 30px 0;
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents {
+    text-align: center;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents span {
+    margin-left:0;
+}
+#getStartedContainer .gettingStartedMain .findout {
+    margin: 40px 0 0;
+    text-align: center;
+}
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+	 #getStartedContainer .gettingStartedMain .emptyClass{
+		margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+	}
+	#getStartedContainer .gettingStartedMain .emptyClass .addCourse {
+    margin: 0 50px 30px;
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .addStudents {
+    margin: 0 50px 30px;
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents {
+    text-align: center;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents span {
+    margin-left:0;
+}
+#getStartedContainer .gettingStartedMain .findout {
+    margin: 40px 0 0;
+    text-align: center;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	  #getStartedContainer .gettingStartedMain .emptyClass{
+		margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+	}
+		#getStartedContainer .gettingStartedMain .emptyClass .addCourse {
+    margin: 0 0px 30px;
+
+}
+	#getStartedContainer .gettingStartedMain .emptyClass .addStudents {
+    margin: 0 0px 60px;
+
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents {
+    text-align: center;
+}
+#getStartedContainer .gettingStartedMain .emptyClass .measureStudents span {
+
+    margin-left: 0;
+}
+}
+
+/** new myclasses home landing page css**/
+
+@media (min-width: 240px) and (max-width: 319px) {
+    .myClassesLanding .myClassesTabs a {
+        display: table-cell;
+        width: 1%;
+    }
+    .myClassesLanding .myClassesHeader h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody {
+        height: 40px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody img{
+        height: 40px !important;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody h4 {
+        margin: 11px 0;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter img {
+        width: 20px;
+        height: 20px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter span.devider {
+        height: 20px;
+    }
+    .classcodeBox {
+	    text-align: center;
+	}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .myClassesLanding .myClassesTabs a {
+        display: table-cell;
+        width: 1%;
+    }
+    .myClassesLanding .myClassesHeader h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody {
+        height: 40px;
+    }
+     .myClassesLanding .classBlocks .classBlockInner .blockBody img{
+        height: 40px !important;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody h4 {
+        margin: 11px 0;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter img {
+        width: 20px;
+        height: 20px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter span.devider {
+        height: 20px;
+    }
+    .classcodeBox {
+	    text-align: center;
+	}
+}
+@media (min-width: 480px) and (max-width: 767px) {
+	 .classcodeBox {
+    text-align: center;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .myClassesLanding .myClassesHeader {
+        margin: 26px 0 0 0;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .classcodeBox {
+    text-align: center;
+} .blockBody {
+        height: 40px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockBody h4 {
+        margin: 11px 0;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter img {
+        width: 20px;
+        height: 20px;
+    }
+    .myClassesLanding .classBlocks .classBlockInner .blockFooter span.devider {
+        height: 30px;
+    }
+}
+
+/** new empty study class media scripts **/
+
+@media (min-width: 240px) and (max-width: 319px) {
+    .myClassesArchivedMenu {
+        display: table;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .myClassesArchivedMenu {
+        display: table;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .myClassesGettingStartTopMenu a {
+        width: 1%;
+        padding: 12px 15px;
+    }
+    .myClassesGettingStartTopMenu {
+        text-align: center;
+    }
+    .myClassesGettingStartTopMenu button.primary {
+        margin-bottom: 15px;
+    }
+    .myClassesGettingStartTopMenu .classcodeBox {
+        text-align: center;
+    }
+    .PaddingGutter {
+        padding: 30px 20px;
+    }
+    .myClassesCodeSearch .classcodeBox {
+        text-align: left;
+        margin-top: 15px;
+    }
+    .supportLink {
+        margin: 25px 0 0;
+        text-align: center;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .myClassesArchivedMenu {
+        display: table;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .myClassesArchivedMenu {
+        display: table;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .myClassesGettingStartTopMenu a {
+        width: 1%;
+        padding: 12px 15px;
+    }
+    .myClassesGettingStartTopMenu {
+        text-align: center;
+    }
+    .myClassesGettingStartTopMenu button.primary {
+        margin-bottom: 15px;
+    }
+    .myClassesGettingStartTopMenu .classcodeBox {
+        text-align: center;
+    }
+    .PaddingGutter {
+        padding: 30px 20px;
+    }
+    .myClassesCodeSearch .classcodeBox {
+        text-align: left;
+        margin-top: 15px;
+    }
+    .supportLink {
+        margin: 25px 0 0;
+        text-align: center;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .ClassmenuAndButtons {
+        text-align: center;
+    }
+    .myClassesGettingStartTopMenu .classcodeBox {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .PaddingGutter {
+        padding: 60px;
+    }
+    .myClassesCodeSearch .classcodeBox {
+        margin-top: 15px;
+        text-align: left;
+    }
+    .supportLink {
+        margin: 25px 0 0;
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .PaddingGutter {
+        padding: 60px 30px;
+    }
+    .myClassesGettingStartTopMenu {
+        margin: 25px 15px;
+    }
+}
+
+/** content pacing media scripts  **/
+
+@media (min-width: 240px) and (max-width: 319px) {
+    .setScoreContainer {
+        padding: 20px 10px;
+    }
+    .setScoreContainer .AssignedCourseBlock {
+        border-bottom: 1px solid #dddddd;
+        border-right: none;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .setScoreContainer .scoreBoxBlock .textBoxDiv .form-control {
+        width: 60px;
+    }
+    .howItWorks p {
+        margin: 0 0;
+    }
+    .howItWorks .AssessmentandCollections {
+        margin: 55px 0;
+    }
+    .CourseandUnitViewContainer {
+        padding: 0 0 90px;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .setScoreContainer {
+        padding: 20px 10px;
+    }
+    .setScoreContainer .AssignedCourseBlock {
+        border-bottom: 1px solid #dddddd;
+        border-right: none;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .setScoreContainer .scoreBoxBlock .textBoxDiv .form-control {
+        width: 60px;
+    }
+    .howItWorks p {
+        margin: 0 0;
+    }
+    .howItWorks .AssessmentandCollections {
+        margin: 55px 0;
+    }
+    .CourseandUnitViewContainer {
+        padding: 0 0 90px;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .setScoreContainer {
+        padding: 20px 10px;
+    }
+    .setScoreContainer .AssignedCourseBlock {
+        border-bottom: 1px solid #dddddd;
+        border-right: none;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .setScoreContainer .scoreBoxBlock .textBoxDiv .form-control {
+        width: 60px;
+    }
+    .howItWorks p {
+        margin: 0 0;
+    }
+    .howItWorks .AssessmentandCollections {
+        margin: 55px 0;
+    }
+    .CourseandUnitViewContainer {
+        padding: 0 0 90px;
+    }
+    .CourseandUnitViewContainer .courseViewBlock,
+    .CourseandUnitViewContainer .unitViewBlock {
+        display: inline-block;
+    }
+    .CourseandUnitViewContainer {
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .howItWorks p {
+        margin: 0 100px;
+    }
+    .howItWorks .AssessmentandCollections {
+        margin: 63px 65px 0;
+    }
+    .CourseandUnitViewContainer {
+        padding: 0 50px 90px;
+    }
+}
+
+/** Add course to class popup meadia scripts **/
+
+/* @media (min-width: 320px) and (max-width: 479px) {
+#addCourseToClasPopup .modal-dialog{
+	width:auto;
+	margin-left:10px;
+	margin-right:10px;
+}
+#addCourseToClasPopup .assignCourseBlock {
+	padding: 15px 30px;
+}
+#addCourseToClasPopup .assignCourseBlock ul li em {
+	width: 80%;
+}
+} */
+/** Media Script Files for Get Started Page **/
+@media (min-width: 240px) and (max-width: 319px) {
+    .gettingStartedStep2 {
+        margin: 0 30px;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 {
+        width: auto;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup {
+        margin-left: 0;
+        text-align: center;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup .indicationText {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .gettingStartedStep2 {
+        margin: 0 30px;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 {
+        width: auto;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup {
+        margin-left: 0;
+        text-align: center;
+    }
+    .gettingStartedStep2 .stepsBlockStep2 .contenFolderbuttonGroup .indicationText {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .gettingStartedStep2 {
+        margin: 0 50px;
+    }
+}
+

@@ -32,4 +32,5 @@ public interface PlayerConstants {
 	public static final String RESOURCE_PLAYER_EVENT_NAME = "resource-play-dots";
 	public static final String RESOURCE_PLAYER_CONTEXT = "#!resource-play&id=";
 
+
 }

@@ -25,9 +25,9 @@
 package org.ednovo.gooru.client.mvp.play.collection.share;
 import java.util.Map;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 public interface IsCollectionShareView extends IsViewWithHandlers<CollectionShareUiHandlers>{
    public void setIframeText(Map<String, String> embedLink);
    

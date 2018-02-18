@@ -5,18 +5,19 @@
 	margin-top: 10px;
 }
 .collaboratorBg {
-	min-height: 252px;
+	/* min-height: 252px; */
 	height: auto;
 	border-color: rgb(221,221,221);
 	border-width: 1px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
-	border-style: solid;
-	background-color: rgb(240,240,240);
+	/* border-style: solid; */
+	/* background-color: rgb(240,240,240); */
 }
 .collaboratorContent {
-	padding: 20px;
+	/* padding: 20px; */
+	padding: 10px 0;
 }
 .collaboratorTitle {
 	font-size: 16px;
@@ -78,6 +79,7 @@
 	padding-top: 5px;
 	border-radius: 5px;
 	background-color: transparent;
+	height: 50px;
 	/* min-height: 55px; */
 	/* display: inline-block; */
 	/* margin-top: 15px; */
@@ -90,28 +92,8 @@
 
 .btnRemoveCollab{
 	vertical-align: middle;
-	margin-top: -36px;
-	margin-left: -10px;
-}
-
-.radioButton {
-	width: 19px;
-	height: 17px;
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 15px;
-	background-position: 0 -16px;
-	cursor: pointer;
-	background: url(images/collaborators/radio.png) no-repeat;
-}
-.radioButtonSelected {
-	background: url(images/collaborators/radio.png) no-repeat;
-	width: 19px;
-	height: 17px;
-	display: inline-block;
-	margin-top: 15px;
-	background-position: 0 -51px;
-	cursor: pointer;
+	/* margin-top: -36px;
+	margin-left: -10px; */
 }
 .usernameCss {
 	display: inline-block;
@@ -250,8 +232,6 @@
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #666, #515151);
 	
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
 }
 .popupContent {
 	padding:15px;
@@ -278,7 +258,7 @@
 	width: 100%;
     text-align:center;
 	margin:auto;
-	margin-bottom:15px;
+	margin-bottom:5px;
 	/* margin-top: 25px; */
 }
 #btnNegitive, #btnPositive{
@@ -373,6 +353,7 @@ button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
 	font-size: 12px;
 	border: 1px solid #ccc;
 	padding: 3px;
+	box-sizing:content-box;
 }
 .deleteContainer{
 	text-align: center;
@@ -381,11 +362,32 @@ button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
 
 .deleteContainer input[type="text"]{
 	width: 300px;
-	height: 17px;
+	height: 29px;
 	padding: 5px;
 	border: 1px solid #DDD;
 	font-family: arial, sans-serif;
 	font-size: 12px;
 	margin: 10px 3px 0px 3px;
 	background-color: #f9f9f9;
+}
+.tag {
+	display: inline-block;
+	vertical-align: top;
+	width: 25px;
+	height: 21px;
+	cursor: pointer;
+	background: url(../images/tag.png) left no-repeat;
+	z-index: 555555;
+	bottom: 28px;
+	position: relative;
+	left: 100px;
+}
+
+.privacyAlignStyle{
+	margin-right: 2px;
+}
+.deleteTextLable{
+	text-align: left;
+	margin-left: 115px;
+	margin-bottom: -6px;
 }

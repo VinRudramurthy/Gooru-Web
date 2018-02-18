@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.preview.metadata;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 import org.ednovo.gooru.client.mvp.play.collection.event.EditCommentChildViewHandler;
 import org.ednovo.gooru.client.mvp.play.collection.event.SetPlayerLoginStatusHandler;
 import org.ednovo.gooru.client.mvp.play.collection.event.UpdateCommentChildViewHandler;
@@ -36,7 +36,5 @@ public interface PreviewPlayerMetadataUiHandlers extends BaseUiHandlers,SetPlaye
 	public void deleteCommentFromCollection(String gooruOid,String commentUid, String offset, String limit);
 	
 	public void getPaginationResults(String gooruOid, String offset, String limit);
-	
-	//public void getFlagedReport(String gooruOid);
 	
 }

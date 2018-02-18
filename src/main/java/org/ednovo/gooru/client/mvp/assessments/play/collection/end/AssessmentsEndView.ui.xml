@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+
+	<g:FlowPanel ui:field="PrintPnl" styleName="container">
+	    <g:FlowPanel ui:field="assessmentReportContainer" styleName="row"></g:FlowPanel>
+		<g:FlowPanel styleName="studentAssessmentReportViewContainer" ui:field="studentAssessmentReportViewContainer">
+			<g:FlowPanel styleName="container">
+				<g:FlowPanel styleName="row">
+
+					<g:FlowPanel styleName="headerLinksContainer">
+
+						<g:FlowPanel styleName="col-md-6 col-xs-8 col-sm-6 titleContainer">
+
+							<g:FlowPanel styleName="headerBackLinkBox">
+								<g:HTMLPanel ui:field="collectionSummaryText"></g:HTMLPanel>
+							</g:FlowPanel>
+						</g:FlowPanel>
+						<g:FlowPanel styleName="col-md-6 col-sm-6">
+							<g:FlowPanel styleName="printOptions">
+
+								<g:Button ui:field="printButton" styleName="secondary printIcon">
+								</g:Button>
+								<g:Button ui:field="downloadButton" styleName="secondary downloadIcon">
+								</g:Button>
+
+							</g:FlowPanel>
+						</g:FlowPanel>
+
+						<g:FlowPanel styleName="clearfix" />
+					</g:FlowPanel>
+
+					<g:FlowPanel styleName="studentAssessmentBodyBlock">
+
+
+						<g:FlowPanel styleName="scoreBrief no-gutter">
+
+							<g:FlowPanel styleName="col-md-5 col-sm-4">
+								<g:FlowPanel styleName="lessonDetails">
+									<g:FlowPanel styleName="thumbnailImage orgBorder">
+										<g:Image ui:field="collectionImage"></g:Image>
+									</g:FlowPanel>
+									<g:FlowPanel styleName="lessionDescription">
+										<uc:H3Panel ui:field="collectionTitle"></uc:H3Panel>
+										<uc:PPanel>
+											<g:InlineLabel ui:field="collectionResourcesCount"></g:InlineLabel>
+										</uc:PPanel>
+									</g:FlowPanel>
+
+								</g:FlowPanel>
+							</g:FlowPanel>
+							<g:FlowPanel styleName="col-md-2 col-sm-2">
+								<g:FlowPanel styleName="totalIndividualScore">
+									<uc:H4Panel ui:field="scoreTitle" text="{i18n.GL4004}"></uc:H4Panel>
+									<uc:H2Panel styleName="blue" ui:field="score"></uc:H2Panel>
+									<uc:PPanel ui:field="goal"></uc:PPanel>
+								</g:FlowPanel>
+							</g:FlowPanel>
+							<g:FlowPanel styleName="col-md-3 col-sm-3 colmd3-reset">
+
+								<g:FlowPanel styleName="infoGraphic">
+									<g:FlowPanel styleName="wrapCircles">
+										<g:FlowPanel ui:field="progressRadial" styleName="progress-radial">
+											<g:FlowPanel styleName="overlay">
+												<g:InlineLabel ui:field="correctStatus"></g:InlineLabel>
+											</g:FlowPanel>
+										</g:FlowPanel>
+									</g:FlowPanel>
+								</g:FlowPanel>
+
+							</g:FlowPanel>
+
+							<g:FlowPanel styleName="col-md-2 colmd2-reset">
+
+								<g:FlowPanel styleName="attemptsBlock">
+									<g:FlowPanel styleName="custom-select">
+										<g:ListBox ui:field="sessionsDropDown">
+										</g:ListBox>
+									</g:FlowPanel>
+									<uc:PPanel ui:field="lastModifiedTime"></uc:PPanel>
+								</g:FlowPanel>
+
+							</g:FlowPanel>
+
+							<g:FlowPanel styleName="clearfix" />
+
+						</g:FlowPanel>
+
+						<!-- <g:FlowPanel styleName="optionsBlock no-gutter">
+
+							<g:FlowPanel styleName="col-md-6 col-sm-6">
+								<g:FlowPanel styleName="optionMenu">
+									<g:FlowPanel styleName="btn-group">
+										<g:Button styleName="btn btn-default active" text="{i18n.GL2282}"></g:Button>
+										<button class="btn btn-default" type="button">Open-Ended Questions</button>
+									</g:FlowPanel>
+								</g:FlowPanel>
+							</g:FlowPanel>
+							<g:FlowPanel styleName="clearfix"></g:FlowPanel>
+
+						</g:FlowPanel> -->
+
+							<g:HTMLPanel styleName="loadingImageMainDiv" ui:field="loadingImageLabel">
+							<g:Label styleName="loadingImageForSummary" />
+						</g:HTMLPanel>
+
+						<g:HTMLPanel ui:field="questionsTable" styleName="questionsTable">
+
+						</g:HTMLPanel>
+					</g:FlowPanel>
+				</g:FlowPanel>
+			</g:FlowPanel>
+		</g:FlowPanel>
+		<g:HTMLPanel ui:field="printWidget"></g:HTMLPanel>
+		<g:Frame ui:field="downloadFile"></g:Frame>
+	</g:FlowPanel>
+</ui:UiBinder>

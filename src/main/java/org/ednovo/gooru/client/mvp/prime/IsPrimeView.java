@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.prime;
 
-import org.ednovo.gooru.client.gin.IsView;
+import org.ednovo.gooru.application.client.gin.IsView;
 
 /**
  * @author Search Team

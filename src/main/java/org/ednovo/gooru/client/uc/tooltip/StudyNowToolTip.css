@@ -9,7 +9,7 @@
 }
 
 .hoverPopupArrow {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;
@@ -20,7 +20,7 @@
 }
 
 .hoverPopupArrowNewResource {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;
@@ -31,7 +31,7 @@
 }
 
 .gooruGuidePopupArrow {
-	background: url(images/core/bubble-arrow.png);
+	background: url(images/bubble-arrow.png);
 	display: block;
 	width: 25px;
 	height: 10px;

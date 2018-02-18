@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,6 +23,8 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 package org.ednovo.gooru.client.uc;
+
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.KeyUpEvent;
@@ -67,53 +69,22 @@ public class FolderEditableTextAreaUc extends Composite implements HasValue<Stri
 
 	protected String text;
 
-	@UiField(provided = true)
-	UcCBundle res;
 
 	/**
 	 * Class constructor
 	 */
 	public FolderEditableTextAreaUc() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
+		focusPanel.getElement().setId("focuspnlFocusPanel");
+		deckPanel.getElement().setId("dpnlDeckPanel");
+		html.getElement().setId("htmlHtml");
+		textArea.getElement().setId("tatTextArea");
+		StringUtil.setAttributes(textArea, true);
 		deckPanel.showWidget(0);
-		/*focusPanel.addClickHandler(new ClickHandler() {
 
-			@Override
-			public void onClick(ClickEvent event) {
-				switchToEdit();
-			}
-		});*/
-
-		/*html.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				switchToEdit();
-			}
-		});*/
-
-		/*textArea.addBlurHandler(new BlurHandler() {
-			@Override
-			public void onBlur(BlurEvent event) {
-				switchToLabel();
-			}
-		});*/
-
-		/*textArea.addKeyPressHandler(new KeyPressHandler() {
-
-			@Override
-			public void onKeyPress(KeyPressEvent event) {
-
-				if (event.getCharCode() == KeyCodes.KEY_ENTER) {
-					switchToLabel();
-				} else if (event.getCharCode() == KeyCodes.KEY_ESCAPE) {
-					textArea.setText(html.getText()); // reset to the original value
-				}
-			}
-		});*/
 		textArea.addKeyUpHandler(new ValidateConfirmText());
 	}
-	
+
 	private class ValidateConfirmText implements KeyUpHandler {
 
 		@Override
@@ -144,9 +115,9 @@ public class FolderEditableTextAreaUc extends Composite implements HasValue<Stri
 		setValue(textArea.getText(), true); // fires events, too
 		deckPanel.showWidget(0);
 		String text = getValue();
-		 
+
 		if ((getText() != null || text.trim().length() > 0)) {
-			
+
 			setText(text);
 			onEditDisabled(getValue());
 		}
@@ -161,13 +132,13 @@ public class FolderEditableTextAreaUc extends Composite implements HasValue<Stri
 	public void onEditDisabled(String text) {
 
 	}
-	
+
 	// Override this method to catch on blur
 	/**
 	 * @param text
 	 */
 	public void checkCharacterLimit(String text) {
-		
+
 	}
 
 	@Override
@@ -187,7 +158,11 @@ public class FolderEditableTextAreaUc extends Composite implements HasValue<Stri
 			value = getPlaceholder();
 		}*/
 		html.setHTML(value);
+		html.getElement().setAttribute("alt", value);
+		html.getElement().setAttribute("title", value);
 		textArea.setText(value);
+		textArea.getElement().setAttribute("alt", value);
+		textArea.getElement().setAttribute("title", value);
 	}
 
 	public void setExtraHtmlStyleName(String style) {
@@ -198,21 +173,13 @@ public class FolderEditableTextAreaUc extends Composite implements HasValue<Stri
 		textArea.addStyleName(style);
 	}
 
-	/*public String getPlaceholder() {
-		return placeholder;
-	}
-
-	public void setPlaceholder(String placeholder) {
-		this.placeholder = placeholder;  
-	}*/
-
 	public String getText() {
 		return text;
 	}
 
 	public void setText(String text) {
-		
-		
+
+
 		this.text = text;
 		setValue(text);
 	}

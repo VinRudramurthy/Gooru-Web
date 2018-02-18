@@ -1,0 +1,67 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:event="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+<g:HTMLPanel ui:field="assessmentMaincontainer" styleName="myAllCoursesBackground">
+
+
+<h2>Assessment Tips </h2>
+
+<div class="col-md-6 col-sm-6">
+
+<div class="buildingCollectionSteps">
+
+<div class="stepsBlockInner">
+<div class="numaricCircle">
+1
+</div>
+<div class="StepsContent">
+<h3>Copy and remix collections from other teachers by using Search.</h3>
+</div>
+</div>
+
+
+
+<div class="stepsBlockInner">
+<div class="numaricCircle greenCircle">
+2
+</div>
+<div class="StepsContent greenText">
+<h3>Add your own questions! There are 8 types of system-scored items.</h3>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="resoursesbuttonGroup">
+
+<g:Button ui:field="addQuestionBtn" styleName="primary">Add Question</g:Button>
+
+<p><g:Anchor href="http://support.gooru.org/hc/en-us/sections/201152865" target="_blank">More information in the Support Center.</g:Anchor></p>
+
+</div>
+
+
+</div>
+</div>
+
+
+<div class="col-md-6  col-sm-6 imgAlign">
+
+<img src="images/g-assessment-tips-image.png" class="img-responsive"/>
+</div>
+
+
+<div class="clearfix"></div>
+
+</g:HTMLPanel>
+</ui:UiBinder>

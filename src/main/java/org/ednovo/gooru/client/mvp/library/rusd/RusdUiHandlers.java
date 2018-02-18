@@ -3,7 +3,7 @@
  */
 package org.ednovo.gooru.client.mvp.library.rusd;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 
 /**
  * @author Search Team

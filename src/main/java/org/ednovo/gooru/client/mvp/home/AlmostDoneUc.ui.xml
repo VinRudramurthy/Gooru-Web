@@ -1,65 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
-xmlns:gg="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
-<ui:with type="org.ednovo.gooru.client.mvp.home.AlmostDoneUcCBundle" field="res" />
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with type="org.ednovo.gooru.client.mvp.home.AlmostDoneUcCBundle"
+		field="res" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel styleName="{res.css.popup} {res.css.imgBG}">
+		<g:HTMLPanel styleName="{res.css.popupInner}">
+			<g:Label styleName="{res.css.popupHeader}" ui:field="lblHeader"/>
+			<g:Label styleName="{res.css.closeButton}" ui:field="lblClose"/>
+			<g:HTMLPanel styleName="{res.css.popupContent}">
+				<g:Label styleName="{res.css.h1}" ui:field="lblJoin" />
+				<g:Label styleName="{res.css.subheader}" ui:field="lblSubHeader"/>
+				<g:HTMLPanel styleName="{res.css.userInfoContainer}">
+					<g:Label styleName="{res.css.ssoEmail}" ui:field="lblUserEmail" />
+						<g:Label styleName="{res.css.roleStep1}" text="{i18n.GL2202}" />
+					<g:HTMLPanel styleName="{res.css.role}">
+						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.teacherRole}" ui:field="panelTeacher">
+							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
+							<g:Label styleName="{res.css.roleLabel}" ui:field="lblTeacher"></g:Label>
+							<g:HTMLPanel ui:field="rdTeacher" />
+							<g:HTMLPanel styleName="{res.css.tooltipContainer}">
+								<div class="arrowBorder"></div>
+								<div class="arrow"></div>
+								<div class="tooltipContent">
+									<g:Label styleName="tooltipContentTitle" ui:field="lblTeacherContainer"/>
+									<g:Label ui:field="lblTeacherDesc"></g:Label>
+								</div>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.studentRole}" ui:field="panelStudent">
+							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
+							<g:Label styleName="{res.css.roleLabel}" ui:field="lblStudent"></g:Label>
+							<g:HTMLPanel ui:field="rdStudent" />
+							<g:HTMLPanel styleName="{res.css.tooltipContainer}">
+								<div class="arrowBorder"></div>
+								<div class="arrow"></div>
+								<div class="tooltipContent">
+									<g:Label styleName="tooltipContentTitle" ui:field="lblTooltipStudent" />
+									<g:Label styleName="" ui:field="lblStudentDesc"></g:Label>
+								</div>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.parentRole}" ui:field="panelParent">
+							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
+							<g:Label styleName="{res.css.roleLabel}" ui:field="lblParent"></g:Label>
+							<g:HTMLPanel ui:field="rdParent" />
+							<g:HTMLPanel styleName="{res.css.tooltipContainer}">
+								<div class="arrowBorder"></div>
+								<div class="arrow"></div>
+								<div class="tooltipContent">
+									<g:Label styleName="tooltipContentTitle" ui:field="lblTooltipParent">Parent</g:Label>
+									<g:Label styleName="" ui:field="lblParentDesc"></g:Label>
+								</div>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="{res.css.roleOption} {res.css.otherRole}" ui:field="panelOther">
+							<g:HTMLPanel styleName="{res.css.roleOptionImage}"></g:HTMLPanel>
+							<g:Label styleName="{res.css.roleLabel}" ui:field="lblOther"></g:Label>
+							<g:HTMLPanel ui:field="rdOther" />
+							<g:HTMLPanel styleName="{res.css.tooltipContainer}">
+								<div class="arrowBorder"></div>
+								<div class="arrow"></div>
+								<div class="tooltipContent">
+									<g:Label styleName="tooltipContentTitle" ui:field="lblToolTipOther">Other</g:Label>
+									<g:Label ui:field="lblOtherDesc"></g:Label>
+								</div>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<gg:ErrorLabelUc ui:field="lblSelectRole" styleName="errorMessage {res.css.userRegErrorStyle}"></gg:ErrorLabelUc>
+					</g:HTMLPanel>
+						<g:Label styleName="{res.css.unameStep2}" text="{i18n.GL2203}" />
+					<g:HTMLPanel styleName="{res.css.chooseUsername}">
+						<gg:TextBoxWithPlaceholder ui:field="txtChooseUsername" styleName="form-control {res.css.textUserName} {res.css.submitRegistration}" />
+						<g:HTMLPanel styleName="{res.css.usernameToolTipContainer}" ui:field="panelUsernameTooltip">
+							<div class="arrowBorder"></div>
+							<div class="arrow"></div>
+							<div class="tooltipContent">
+								<g:Label ui:field="lblPickWisely"></g:Label>
+							</div>
+						</g:HTMLPanel>
+						<gg:ErrorLabelUc ui:field="userNameValidUc" styleName="errorMessage {res.css.userRegErrorStyle}" />
+						<g:Button styleName="primary {res.css.submitRegistration}" ui:field="btnSubmit"/>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
 
-<g:HTMLPanel>
-	
-<g:HTMLPanel styleName="{res.css.registrationPopupContainer}">
-  <g:HTMLPanel styleName="{res.css.registrationPopupInnerdiv}">
-    <g:HTMLPanel styleName="{res.css.registrationPopupHeaderBg}">
-      <g:HTMLPanel styleName="{res.css.registrationPopupHeaderTitle}" ui:field="almostDoneText"></g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.registrationPopupCloseBtnContainer}">
-        <panel:HTMLEventPanel ui:field="cancelButton" styleName="{res.css.registrationPopupBtnSprite} {res.css.registrationPopupCloseBtn}"></panel:HTMLEventPanel>
-      </g:HTMLPanel>
-    </g:HTMLPanel>
-    <g:HTMLPanel styleName="{res.css.registrationPopupDesc}" ui:field="fillOutText"></g:HTMLPanel>
-    <g:HTMLPanel styleName="{res.css.registrationPopupInputContainer}">
-      <g:HTMLPanel styleName="{res.css.registrationPopupInputText}" ui:field="emailText"></g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.registrationPopupInputOuterDiv}">
-        <g:TextBox ui:field="emailTxtBox" styleName="{res.css.registrationPopupInputControl} {res.css.registrationPopupInputBorderNone}"/>
-      </g:HTMLPanel>
-    </g:HTMLPanel>
-    <g:HTMLPanel styleName="{res.css.registrationPopupInputContainer}">
-      <g:HTMLPanel styleName="{res.css.registrationPopupInputText}" ui:field="uNameLbl"></g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.registrationPopupInputOuterDiv}">
-        <g:TextBox ui:field="userNameTxtBox" styleName="{res.css.registrationPopupInputControl}"/>
-         <g:Label styleName="{res.css.almostDoneFormInputBottomText}" ui:field="errorMessageForUserNameLbl"></g:Label>
-      </g:HTMLPanel>
-     
-    </g:HTMLPanel>
-    
-    <g:HTMLPanel styleName="{res.css.registrationPopupInputContainer}">
-      	<g:HTMLPanel styleName="{res.css.registrationPopupRoleText}" ui:field="roleText"></g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.registrationPopupDropdownControl}">
-       	 <!-- <div class="{res.css.registrationPopupDropdownDesc}">Student</div>
-        <div class="{res.css.registrationPopupDownArrContainer}">
-          <div class="{res.css.registrationPopupDownArrSprite}{res.css.registrationPopupDownArr}"></div>
-        </div> -->
-        <g:ListBox ui:field="roleListBox" styleName="{res.css.registrationPopupDropdownControl} {res.css.registrationPopupInputDropDownText}">
-          <!-- <div class="{res.css.registrationPopupDropdownList}">Student</div>
-          <div class="{res.css.registrationPopupDropdownList}">Teacher</div> -->
-        </g:ListBox>
-         <g:Label styleName="{res.css.almostDoneFormInputBottomRoleText}" ui:field="errorMessageForRoleLbl"></g:Label>
-      </g:HTMLPanel>
-    </g:HTMLPanel>
-    
-     <g:HTMLPanel styleName="{res.css.registrationLegalMessage}">
-     <g:Label ui:field="agreeText"></g:Label>
-     	<g:Anchor styleName="{res.css.anchorText}" ui:field="termsAndPolicyAnr"/><br/>
-     	 <g:Label ui:field="andText"></g:Label><g:Anchor styleName="{res.css.anchorText}" ui:field="copyRightAnr"/><g:Label ui:field="gooruText"></g:Label> 
-     </g:HTMLPanel>
-    
-    <g:HTMLPanel  styleName="{res.css.registrationPopupButtonCotnainer}">
-      <g:HTMLPanel ui:field="buttonContainer" styleName="{res.css.registrationPopupBlueButton}">
-        <panel:HTMLEventPanel ui:field="okButton" styleName="{res.css.registrationPopupButtonText}"></panel:HTMLEventPanel>
-      </g:HTMLPanel>
-    </g:HTMLPanel>
-  </g:HTMLPanel>
-</g:HTMLPanel>
-	
-</g:HTMLPanel>
-
-
+		</g:HTMLPanel>
+	</g:HTMLPanel>
 </ui:UiBinder>

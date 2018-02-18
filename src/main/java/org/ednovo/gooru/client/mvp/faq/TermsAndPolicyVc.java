@@ -24,7 +24,8 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.faq;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 
 import com.google.gwt.core.client.GWT;
@@ -59,23 +60,27 @@ public abstract class TermsAndPolicyVc extends PopupPanel {
 	public TermsAndPolicyVc(boolean isPrivacy) {
 		super(false);
 		this.isPrivacy=isPrivacy;
-		
+
 		setWidget(uiBinder.createAndBindUi(this));
-		setGlassEnabled(true);		
+		setGlassEnabled(true);
 		privacyCloseBtn.getElement().setId("btnOk");
 	}
 
 	/**
-	 * @param clickEvent instance of {@link ClickEvent}, hide TermsAndPolicyVc popup 
+	 * @param clickEvent instance of {@link ClickEvent}, hide TermsAndPolicyVc popup
 	 */
 	@UiHandler("privacyCloseBtn")
 	public void privacyCloseButtonClick(ClickEvent clickEvent) {
 		this.hide();
-		Window.enableScrolling(true);
-		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));	
+		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
 		openParentPopup();
+		if (AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.SEARCH_COLLECTION) || AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.SEARCH_RESOURCE) || AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.COLLECTION_PLAY) || AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.ASSESSMENT_PLAY)){
+			Window.enableScrolling(false);
+		}else{
+			Window.enableScrolling(true);
+		}
 	}
-	
+
 	public abstract void openParentPopup();
 
 }

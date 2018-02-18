@@ -84,7 +84,6 @@
 
 .myClasspageMyCollectionBg {
 	float: left;
-	/* 	background: url(../images/Classpage/assignments/mycollection.png); */
 	width: 142px;
 	height: 27px; /*margin:50px 0px 0px 287px;*/
 }
@@ -379,17 +378,6 @@
 	display: block;
 }
 
-.playIcon {
-	background: url("images/Collection-Search/play-icon.png") no-repeat
-		scroll 0 0 transparent;
-	cursor: pointer;
-	height: 16px;
-	left: 53px;
-	position: relative;
-	top: 38px;
-	width: 12px;
-}
-
 .mandatoryLabel {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -577,16 +565,6 @@
 
 .assignCollection {
 	margin-left:0px;
-}
-
-.classpageAddPlusIcon {
-	position: relative;
-	top: -31px;
-	left: 10px;
-	width: 21px;
-	height: 22px;
-	background: url(images/Classpage/sprite-classpage-type.png) no-repeat
-		left top;
 }
 
 .btnContainer {

@@ -1,0 +1,372 @@
+@charset "utf-8";
+/* CSS Document */
+#pnlNoSearchResults .mainHeadingBlock{
+	margin-top:20px;
+}
+#pnlNoSearchResults .noResultsContainer .mainHeadingBlock  .h2{
+	margin:8px 10px;
+	font-size:24px;
+	display:inline-block;
+}
+#pnlNoSearchResults .noResultsContainer .mainHeadingBlock .h2 span{
+ 	display: inline-block;
+    font-size: 16px;
+	margin:6px 8px 0 0;
+    vertical-align: top;
+}
+#pnlNoSearchResults .noResultsContainer  .h3{
+	font-size:24px;
+	margin-bottom:20px;
+}
+#pnlNoSearchResults .filterTags{
+	display:inline-block;
+	margin:4px 8px;
+	vertical-align:top;
+}
+#pnlNoSearchResults .filterTags ul{
+	margin:0 0;
+	padding:0 0;
+}
+#pnlNoSearchResults .filterTags ul li{
+	margin:0 0;
+	padding:8px 10px;
+	display:inline-block;
+	list-style:none;
+	color:#ffffff;
+	font-weight:bold;
+	background:#87badd;
+	border-radius:4px 4px;
+}
+#pnlNoSearchResults .filterTags ul li a{
+	color:#ffffff;
+	padding: 0 0 0 5px;
+	font-size:10px;
+}
+#pnlNoSearchResults .filterTags ul li a:hover,#pnlNoSearchResults  .filterTags ul li a:focus{
+	text-decoration:none;
+	outline:none;
+}
+#pnlNoSearchResults .noResultsContainer p span{
+	color:#599B4F;
+	font-weight:bold;
+	display:inline-block;
+}
+#pnlNoSearchResults .noResultsContainer p span.dot{
+	color:#515151;
+	font-weight:bold;
+	margin:0 4px;
+}
+#pnlNoSearchResults .featuredLibrariesContainer{
+	margin:0 10px;
+}
+#pnlNoSearchResults .featuredLibrariesContainer .featuredLibraryDiv{
+	margin:10px 10px;
+		font-size:14px;
+}
+#pnlNoSearchResults .featuredLibrariesContainer col-md-3:first-child{
+	padding-left:0;
+}
+#pnlNoSearchResults .featuredLibrariesContainer .greyBox{
+	background:#e8e7e7;
+	border-radius:6px 6px;
+	border:1px solid #dddddd;
+	padding:5px 10px;
+	margin-bottom:15px;
+	min-height: 102px;
+}
+#pnlNoSearchResults .featuredLibrariesContainer .greyBox span{
+	width: 68%;
+	line-height: 18px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+}
+#pnlNoSearchResults .featuredLibrariesContainer .greyBox img{
+	width:50px;
+	margin-right:8px;
+	float:left;
+	height:auto;
+}
+#pnlNoSearchResults .QualityBoards, .noResultsContainer{
+	margin:0 10px;
+}
+#pnlNoSearchResults .QualityBoards h4{
+	margin:10px 10px;
+	font-size:14px;
+}
+#pnlNoSearchResults .QualityBoards .panel-default > .panel-heading{
+	border-bottom: 1px solid #ddd;
+	background:none;
+	padding:5px 10px;
+}
+#pnlNoSearchResults .QualityBoards .panel-footer {
+    background: none repeat scroll 0 0 #dddddd;
+    padding: 10px;
+}
+#pnlNoSearchResults .QualityBoards .panel-body {
+    padding: 0;
+}
+#pnlNoSearchResults .QualityBoards .BoardMain{
+	background:#4c98cc;
+	border-radius:2px 2px;
+	padding:30px 25px;
+}
+#pnlNoSearchResults .QualityBoards .BoardMain.greenControl{
+	background:#4e9746;
+}
+#pnlNoSearchResults .QualityBoards .boardHeader{
+	font-size:30px;
+	color:#ffffff;
+	line-height:34px;
+}
+#pnlNoSearchResults .QualityBoards  .metaData{
+	padding:10px 10px;
+}
+#pnlNoSearchResults .QualityBoards  .metaData p{
+	text-align:right;
+}
+#pnlNoSearchResults .QualityBoards .multipleCollections {
+	padding:20px 10px;
+	border-top:1px solid #dddddd;
+}
+#pnlNoSearchResults .QualityBoards .multipleCollections img{
+	width:100%;
+	height:92px;
+	margin-bottom:15px;
+	border-left:5px solid #1076bb;
+}
+#pnlNoSearchResults .QualityBoards .multipleCollections a{
+	display:block;
+}
+#pnlNoSearchResults .QualityBoards .multipleCollections a:hover,#pnlNoSearchResults  .QualityBoards .multipleCollections a:focus{
+	opacity:0.75;
+}
+#pnlNoSearchResults .QualityBoards .emptyCollection{
+	min-height:92px;
+	width:100%;
+	background:#87badd;
+	position:relative;
+}
+#pnlNoSearchResults .QualityBoards .emptyCollection a{
+	font-size:14px;
+	font-weight:bold;
+	display:block;
+	color:#ffffff;
+	padding:13% 0;
+	text-align:center;
+}
+#pnlNoSearchResults .QualityBoards .emptyCollection a:hover,#pnlNoSearchResults  .QualityBoards .emptyCollection a:focus{
+	opacity:0.85;
+	text-decoration:none;
+}
+#pnlNoSearchResults .QualityBoards .multipleResources{
+	padding:104px 17px 20px 33px;
+	border-top:1px solid #dddddd;
+}
+#pnlNoSearchResults .QualityBoards .multipleResources .resourceImage{
+	margin:1% 1%;
+}
+#pnlNoSearchResults .QualityBoards .multipleResources .emptyCollection{
+	background:#7ab075;
+    display: inline-block;
+    margin: 1%;
+    min-height: 60px;
+    position: relative;
+    width: 47%;
+}
+#pnlNoSearchResults .QualityBoards .multipleResources .emptyCollection a{
+	color: #ffffff;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 11% 0;
+    text-align: center;
+}
+.libSprite{
+	background:url(../images/lib-sprite.png) no-repeat;
+	width:49px;
+	height:49px;
+
+	display:inline-block;
+	vertical-align: middle;
+	  margin-right: 7px;
+}
+.overallDiv{
+	cursor:pointer;
+}
+.coreLogo{
+	background-position:-23px -12px;
+}
+.lusdLogo{
+	background-position:-94px -12px;
+
+}
+.lpsLogo{
+	background-position:-167px -12px;
+}
+
+.rusdLogo{
+	background-position:-240px -12px;
+}
+
+.sausdLogo{
+	background-position:-310px -12px;
+}
+
+.susdLogo{
+	background-position:-381px -12px;
+}
+
+.valverdeLogo{
+	background-position:-453px -12px;
+}
+
+.autodeskLogo{
+	background-position:-529px -12px;
+}
+
+.ccstLogo{
+	background-position:-23px -82px;
+}
+
+.epacsLogo{
+	background-position:-94px -82px;
+}
+
+.esypLogo{
+	background-position:-167px -82px;
+}
+
+.fteLogo{
+	background-position:-241px -82px;
+}
+
+.lifeboardLogo{
+	background-position:-310px -82px;
+}
+
+.natgeoLogo{
+	background-position:-381px -82px;
+}
+
+.ngcLogo{
+	background-position:-453px -82px;
+}
+
+.cfciLogo{
+	background-position:-528px -82px;
+}
+
+.onrLogo{
+	background-position:-23px -150px;
+}
+.psdLogo{
+	background-position:-94px -150px;
+}
+.lessonopolyLogo{
+background-position:-167px -150px;
+}
+
+.ticalLogo{
+background-position:-242px -150px;
+}
+
+.wspwhLogo{
+background-position:-309px -150px;
+}
+
+.youthvoicesLogo{
+background-position:-380px -150px;
+}
+
+@media only screen and (max-width: 767px){
+	#pnlNoSearchResults .noResultsContainer .mainHeadingBlock .h2{
+		width:100%;
+		text-align:center;
+	}
+	#pnlNoSearchResults .filterTags{
+		width:100%;
+		text-align:center;
+	}
+	#pnlNoSearchResults .QualityBoards .boardHeader{
+		text-align:center;
+	}
+	#pnlNoSearchResults .noResultsContainer p span{
+		display:block;
+		text-align:center;
+	}
+	#pnlNoSearchResults .noResultsContainer p span.dot{
+		display:inline-block;
+	}
+	
+	#pnlNoSearchResults .libLogo{
+		width:100%;
+		text-align:center;
+	}
+	#pnlNoSearchResults .libLogo .img-responsive{
+		display:inline-block;
+	}
+	
+	#pnlNoSearchResults .QualityBoards .multipleCollections .colInner{
+		width:300px;
+		margin:0 auto;
+	}
+	
+	#pnlNoSearchResults .QualityBoards .multipleCollections img{
+		
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources .emptyCollection{
+		width:98%;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources{
+		padding:25px 0;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources .resInner{
+		width:262px;
+		margin:0 auto;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	#pnlNoSearchResults .QualityBoards .multipleResources .resourceImage{
+		width: 80px !important;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources .emptyCollection{
+		width:255px;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleCollections {
+		min-height:375px;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources {
+		min-height:375px;
+		padding:20px 33px;
+	}
+	#pnlNoSearchResults .featuredLibrariesContainer .greyBox{
+		text-align:center;
+	}
+	#pnlNoSearchResults .featuredLibrariesContainer .greyBox img{
+		float:none;
+		width:auto;
+	}
+	#pnlNoSearchResults .featuredLibrariesContainer .greyBox span{
+		width:100%;
+		text-align:center;
+	}
+	#pnlNoSearchResults .featuredLibrariesContainer .greyBox{
+	min-height: 116px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1100px) {
+	#pnlNoSearchResults .QualityBoards .multipleResources{
+		padding:38px 33px 20px;
+		min-height:260px;
+	}
+	
+	#pnlNoSearchResults .featuredLibrariesContainer .greyBox span{
+		width:65%;
+	}
+	#pnlNoSearchResults .QualityBoards .multipleResources .emptyCollection{
+		width:75%;
+	}
+}

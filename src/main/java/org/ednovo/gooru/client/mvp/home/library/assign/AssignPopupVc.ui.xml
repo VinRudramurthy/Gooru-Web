@@ -1,61 +1,102 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:a="urn:import:aj.org.objectweb.asm"
-	xmlns:gt="urn:import:com.tractionsoftware.gwt.user.client.ui"  xmlns:gg="urn:import:org.ednovo.gooru.client.uc" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	xmlns:gt="urn:import:com.tractionsoftware.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.home.library.assign.AssignPopUpCBundle"
 		field="res" />
-	<g:HTMLPanel styleName="{res.css.assign}">
-		<g:HTMLPanel styleName="{res.css.assignContent}">
-			<g:HTMLPanel styleName="{res.css.assignHeader}">
-			<g:Label ui:field="lblAssignTitle" styleName="{res.css.assignTitle}"/>
-				<g:Label ui:field="cancelButton"
-					styleName="{res.css.assignCloseMarker} {res.css.assignSprite} {res.css.assignCloseMark}"></g:Label>
+	<g:HTMLPanel styleName="PopupMainVSmall" ui:field="assignContainer">
+		<g:HTMLPanel  styleName="popupInnerGrey">
+			<g:HTMLPanel styleName="popupgreyHeader">
+			    <g:HTMLPanel styleName="row">
+			        <g:HTMLPanel styleName="col-md-8 col-xs-8">
+			        	<g:Label ui:field="lblAssignTitle" styleName="{res.css.assignTitle}" />
+			        </g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-4 col-xs-4 closeContainer">
+						<g:Label ui:field="cancelButton"	styleName="closeButton"></g:Label>
+					</g:HTMLPanel>
+			    </g:HTMLPanel>
+				<g:HTMLPanel styleName="clearfix"/>
 			</g:HTMLPanel>
-			<g:HTMLPanel styleName="{res.css.conent}">
-		<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}" ui:field="loadingImageLabel">
-		      <g:Label  styleName="{res.css.loadingImageForSelfEdit}" />
-		   </g:HTMLPanel>
-				  <g:HTMLPanel styleName="{res.css.popupContent}" ui:field="popupContentAssign">
-		<g:Label ui:field="lblpopupTitle" styleName="{res.css.popupTitle}"/>		  
-        <g:Label styleName="{res.css.popupDesc}" ui:field="assignDes"/>
-        <g:HTMLPanel styleName="{res.css.popupcornerBg}">
-        <g:TextArea styleName="{res.css.shareTextarea}" ui:field="shareLinkTxtBox">
-        
-            </g:TextArea>
-      </g:HTMLPanel>
-      <g:Label styleName="{res.css.url}" ui:field="swithUrlLbl"/>
-      <g:Label styleName="{res.css.url}" ui:field="swithToEmbedLbl"/>
-      <g:HTMLPanel styleName="{res.css.clear}"></g:HTMLPanel>
-<!--          <g:HTMLPanel styleName="{res.css.sociaMediaText}">Share this link via </g:HTMLPanel>
-      <g:HTMLPanel ui:field="socialSharePanel" styleName="{res.css.socialiconContainer}">
-       </g:HTMLPanel> -->
-      <g:HTMLPanel styleName="{res.css.contentBorder}"></g:HTMLPanel>
-      
-     <uc:HTMLEventPanel ui:field="htmlLoginPanel">   
-   	    <g:Label styleName="{res.css.popupTitle}" ui:field="lblLoginPopupTitle"/>  
-        <g:Label styleName="{res.css.popupDesc}" ui:field="lblAssignPopDes"/>
-    	<g:HTMLPanel styleName="{res.css.inputBlockOuter}">
-       	<gg:TextBoxWithPlaceholder ui:field="loginTxtBox" setFocus="true"/>
-		<gg:TextBoxWithPlaceholder ui:field="passwordTxtBox" password="true" />
-        <g:HTMLPanel styleName="{res.css.pwdTxt}"><g:Anchor ui:field="forgotPwd"></g:Anchor></g:HTMLPanel>
-      </g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.btn}">
-        <g:Button ui:field="loginButton" styleName="primary {res.css.LoginText}"></g:Button>
-        <g:Label ui:field="lblPleaseWait" styleName="{res.css.processing}"></g:Label>
-      </g:HTMLPanel>
-      <g:HTMLPanel styleName="{res.css.signUp}" ui:field="signUpStyles"><g:Label ui:field="donothaveAC"></g:Label> <g:Anchor ui:field="ancSignUp"></g:Anchor></g:HTMLPanel>
-    </uc:HTMLEventPanel>  
-      
-    	<uc:HTMLEventPanel ui:field="htmlEvenPanelContainer" styleName="{res.css.heightClasspagecontainer}">
-			
-	</uc:HTMLEventPanel>
-	  
-    </g:HTMLPanel>
-    
+			<g:HTMLPanel ui:field="assignPopupContent" styleName="shareSelection">
+				<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}"
+					ui:field="loadingImageLabel">
+					<g:Label styleName="{res.css.loadingImageForSelfEdit}" />
+				</g:HTMLPanel>
+				<g:HTMLPanel 		ui:field="popupContentAssign">
+					<g:Label ui:field="lblpopupTitle" styleName="dontWorrkText" />
+					<g:Label styleName="contentDesc" ui:field="assignDes" />
+					<g:HTMLPanel styleName="popupcornerBg">
+						<g:TextArea styleName="form-control form_control shareTextarea readonly"
+							ui:field="shareLinkTxtBox">
+						</g:TextArea>
+					</g:HTMLPanel>
+
+					<g:HTMLPanel styleName="sharenEmbedContainer">
+						<g:Anchor  ui:field="swithUrlLbl" />
+						<g:Anchor  ui:field="swithToEmbedLbl" />
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.clear}"></g:HTMLPanel>
+					<!-- <g:HTMLPanel styleName="{res.css.sociaMediaText}">Share this link
+						via </g:HTMLPanel> <g:HTMLPanel ui:field="socialSharePanel" styleName="{res.css.socialiconContainer}">
+						</g:HTMLPanel> -->
+					<g:HTMLPanel styleName="{res.css.contentBorder}" ui:field="contentBorderPanel"></g:HTMLPanel>
+
+					<uc:HTMLEventPanel ui:field="htmlLoginPanel" styleName="loginShareContainer">
+						<g:Label styleName="{res.css.popupTitle}" ui:field="lblLoginPopupTitle" />
+						<g:Label styleName="{res.css.popupDesc}" ui:field="lblAssignPopDes" />
+						<g:HTMLPanel styleName="{res.css.loginPopupStyle}">
+
+						<g:Label styleName="{res.css.loginWithGooru}" ui:field="lblLoginwithGooru"></g:Label>
+
+						<g:Button ui:field="gmailButton" styleName="{res.css.gConnectButton}"></g:Button>
+
+							<g:HTMLPanel styleName="{res.css.divider}">
+								<g:Label styleName="{res.css.dividerText}" ui:field="lblOr" />
+							</g:HTMLPanel>
+
+							<g:HTMLPanel styleName="{res.css.inputBlockOuter}">
+
+								<gg:TextBoxWithPlaceholder ui:field="loginTxtBox"
+									setFocus="true" styleName="form-control form_control" />
+								<g:HTMLPanel styleName="{res.css.privacyText}">
+									<g:InlineLabel styleName="{res.css.popupDesc}"
+										ui:field="lblPii"></g:InlineLabel>
+									<g:Anchor ui:field="ancprivacy"
+										styleName="{res.css.privacyAlignStyle} {res.css.popupDesc}"></g:Anchor>
+									<g:InlineLabel styleName="{res.css.popupDesc}"
+										ui:field="toUsText"></g:InlineLabel>
+							    </g:HTMLPanel>
+								<gg:TextBoxWithPlaceholder ui:field="passwordTxtBox"
+									password="true" styleName="form-control form_control"/>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="forgotPasswordLink forgotPwdMargin">
+									<g:Anchor ui:field="forgotPwd"></g:Anchor>
+								</g:HTMLPanel>
+							<g:HTMLPanel styleName="loginPopupbtnContainer">
+								<g:Button ui:field="loginButton" styleName="primary"></g:Button>
+								<g:Label ui:field="lblPleaseWait" styleName="{res.css.processing}"></g:Label>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="haveAccountContainer" ui:field="signUpStyles">
+						    <g:HTMLPanel styleName="haveAccount">
+						    	<g:InlineLabel ui:field="donothaveAC"></g:InlineLabel>
+								<g:Anchor ui:field="ancSignUp"></g:Anchor>
+						    </g:HTMLPanel>
+						</g:HTMLPanel>
+					</uc:HTMLEventPanel>
+
+					<uc:HTMLEventPanel ui:field="htmlEvenPanelContainer"	styleName="{res.css.heightClasspagecontainer}">
+
+					</uc:HTMLEventPanel>
+
+				</g:HTMLPanel>
+
 			</g:HTMLPanel>
-			
+
 		</g:HTMLPanel>
+		<g:HTMLPanel styleName="clearfix"/>
 	</g:HTMLPanel>
 
-</ui:UiBinder> 
+</ui:UiBinder>

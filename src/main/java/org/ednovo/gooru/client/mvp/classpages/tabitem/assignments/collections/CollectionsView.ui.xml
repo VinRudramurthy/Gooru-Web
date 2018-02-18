@@ -4,41 +4,47 @@
 	xmlns:gt="urn:import:com.tractionsoftware.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
 	xmlns:dt="urn:import:com.google.gwt.user.datepicker.client">
 	<ui:style field="style" src="collections.css" />
-	<g:FlowPanel styleName="{style.classpageContainer}" ui:field="classpageItemContainer">
-	  <g:FlowPanel styleName="{style.classpageHeader}" ui:field="editButtonsToolBar">
-	    <g:HTMLPanel styleName="{style.headerLeft}">
-	    	<g:Label styleName="{style.headerText} " ui:field="dueDateText"></g:Label>
-	    	<g:Label styleName="{style.headerDueDate}" ui:field="dueDate"></g:Label>
-	    </g:HTMLPanel>
-	    <g:FlowPanel styleName="{style.headerRight}"  ui:field="headerRightPanel">
-	      <g:Button styleName="{style.viewAnaytics}" ui:field="viewClassItemAnalyticsButton"></g:Button>
-	      	<g:FlowPanel styleName="{style.AnalyticsDropdown}" ui:field="dropdownPanelAnalyticsButton">
-	        <g:Label styleName="{style.AnalyticsDropdownLi}" ui:field="moniterProgress"></g:Label>
-	        <g:Label styleName="{style.AnalyticsDropdownLi}" ui:field="collectionSummary"></g:Label>
-     	  </g:FlowPanel>
-	      <g:Button styleName="{style.editButton}" ui:field="editClassItemButton"></g:Button>
-	      <g:FlowPanel styleName="{style.classpageDropdown}" ui:field="dropdownPanel">
-	        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editDueDateButton"></g:Label>
-	        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editDirectionButton"></g:Label>
-	        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editCollection"></g:Label>
-	        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="deleteItemButton"></g:Label>
-     	  </g:FlowPanel>
-	    </g:FlowPanel>
-	  </g:FlowPanel>
-	  <g:FlowPanel styleName="{style.classpageContent}">
-	    <g:Label styleName="{style.classpageHeading}" ui:field="directionsLabel"></g:Label>
-	    <g:HTMLPanel styleName="{style.classpageDesc}" ui:field="directionContentPanel"></g:HTMLPanel>
-	    <g:Label styleName="{style.classpageBorder}"></g:Label>
-	    <g:FlowPanel styleName="{style.classpageContentPanel}">
-		    <g:HTMLPanel styleName="{style.classpageResourceThumbnail}" ui:field="thumbnailContainer"> 
-		    	<g:Image  ui:field="collectionImage" styleName="{style.classpageResourceImage}"/> 
+	<g:FlowPanel styleName="{style.assignmentContainerHt}">
+	    <g:HTMLPanel styleName="{style.circle}" ui:field="panelCircle">
+			<g:Label ui:field="assignmentIndex" styleName="{style.assignmentNumbers}"></g:Label>
+		</g:HTMLPanel>
+		<g:FlowPanel styleName="{style.classpageContainer}" ui:field="classpageItemContainer">
+		  <g:FlowPanel styleName="{style.classpageHeader}" ui:field="editButtonsToolBar">
+		    <g:HTMLPanel styleName="{style.headerLeft}">
+		    	<g:Label styleName="{style.headerText} " ui:field="dueDateText"></g:Label>
+		    	<g:Label styleName="{style.headerDueDate}" ui:field="dueDate"></g:Label>
 		    </g:HTMLPanel>
-		    <g:FlowPanel styleName="{style.resourceHeaderTextPanel}">
-		      <g:Anchor styleName="{style.resourceTitle}" ui:field="classpageItemTitle"></g:Anchor>
-		      <g:Label styleName="{style.classpageHeading}" ui:field="learningObjective"></g:Label>
-		      <g:HTML styleName="{style.classpageDesc}" ui:field="learningObject"></g:HTML>
-		    </g:FlowPanel>
-	  	</g:FlowPanel>
-	  </g:FlowPanel>
+		    <!-- <g:FlowPanel styleName="{style.headerRight}"  ui:field="headerRightPanel">
+		      <g:Button styleName="{style.viewAnaytics}" ui:field="viewClassItemAnalyticsButton"></g:Button>
+		      	<g:FlowPanel styleName="{style.AnalyticsDropdown}" ui:field="dropdownPanelAnalyticsButton">
+		        <g:Label styleName="{style.AnalyticsDropdownLi}" ui:field="moniterProgress"></g:Label>
+		        <g:Label styleName="{style.AnalyticsDropdownLi}" ui:field="collectionSummary"></g:Label>
+	     	  </g:FlowPanel>
+		      <g:Button styleName="{style.editButton}" ui:field="editClassItemButton"></g:Button>
+		      <g:FlowPanel styleName="{style.classpageDropdown}" ui:field="dropdownPanel">
+		        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editDueDateButton"></g:Label>
+		        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editDirectionButton"></g:Label>
+		        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="editCollection"></g:Label>
+		        <g:Label styleName="{style.classpadeDropdownLi}" ui:field="deleteItemButton"></g:Label>
+	     	  </g:FlowPanel>
+		    </g:FlowPanel> -->
+		  </g:FlowPanel>
+		  <g:FlowPanel styleName="{style.classpageContent}">
+		    <g:Label styleName="{style.classpageHeading}" ui:field="directionsLabel"></g:Label>
+		    <g:Label styleName="{style.directionsCharLimit}" ui:field="lblDirectionCharLimit"></g:Label>
+		    <g:HTMLPanel styleName="{style.classpageDesc}" ui:field="directionContentPanel"></g:HTMLPanel>
+		    <g:Label styleName="{style.classpageBorder}"></g:Label>
+		    <g:FlowPanel styleName="{style.classpageContentPanel}">
+			    <g:HTMLPanel styleName="{style.classpageResourceThumbnail}" ui:field="thumbnailContainer"> 
+			    	<g:Image  ui:field="collectionImage" styleName="{style.classpageResourceImage}"/> 
+			    </g:HTMLPanel>
+			    <g:FlowPanel styleName="{style.resourceHeaderTextPanel}">
+			      <g:Anchor styleName="{style.resourceTitle}" ui:field="classpageItemTitle"></g:Anchor>
+			      <g:Label styleName="{style.classpageHeading}" ui:field="learningObjective"></g:Label>
+			      <g:HTML styleName="{style.classpageDesc}" ui:field="learningObject"></g:HTML>
+			    </g:FlowPanel>
+		  	</g:FlowPanel>
+		  </g:FlowPanel>
+		</g:FlowPanel>
 	</g:FlowPanel>
 </ui:UiBinder> 

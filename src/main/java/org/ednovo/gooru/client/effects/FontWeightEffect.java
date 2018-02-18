@@ -32,8 +32,19 @@ import com.google.gwt.dom.client.Style.FontWeight;
 import com.google.gwt.user.client.Timer;
 
 /**
- * @author Search Team
  * 
+ * @fileName : FontWeightEffect.java
+ *
+ * @description : 
+ *	This class responsible to show Fade effect for Fonts.
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class FontWeightEffect extends Timer {
 

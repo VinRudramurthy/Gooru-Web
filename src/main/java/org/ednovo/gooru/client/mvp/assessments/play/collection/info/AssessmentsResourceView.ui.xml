@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field= "playerStyle" src="resourceinfo.css"/>
+	<g:FlowPanel styleName="{playerStyle.collection-resource-container}">
+		<g:HTMLPanel styleName="{playerStyle.collection-thumbnail-container}">
+		    <g:HTMLPanel ui:field="imageContainer">
+				<g:Image styleName="infoCollectionThumbnail" ui:field="collectionThumbnail"/>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:FlowPanel styleName="{playerStyle.collection-metadata-container}">
+			<g:Anchor styleName="{playerStyle.collection-metadata-title}" ui:field="collectionTitle"></g:Anchor>
+			<g:HTMLPanel styleName="{playerStyle.collection-author-container}">
+				<g:Label styleName="{playerStyle.collection-author-title}" ui:field="createdByText"></g:Label>
+				<g:Label styleName="{playerStyle.collection-author-name}" ui:field="userName"></g:Label>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="{playerStyle.collection-innermetadata-container}" ui:field="metadataContainer">
+			</g:HTMLPanel>
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder>

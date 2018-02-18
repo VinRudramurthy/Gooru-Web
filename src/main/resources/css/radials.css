@@ -1,0 +1,1864 @@
+@charset "utf-8";
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+	float: left;
+	margin-right: 15px;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #dddddd;
+}
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+	background-color: #fafafa;
+	border-radius: 50%;
+	font-size: 16px;
+	height: 68px;
+	line-height: 68px;
+	margin-left: 6px;
+	margin-top: 6px;
+	position: absolute;
+	text-align: center;
+	width: 68px;
+}
+/* -------------------------------------
+ * Mixin for progress-% class Blue
+ * ------------------------------------- */
+.blue-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-50 {
+	background-image: linear-gradient(-90deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-51 {
+	background-image: linear-gradient(-86deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-52 {
+	background-image: linear-gradient(-82deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-53 {
+	background-image: linear-gradient(-78deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-54 {
+	background-image: linear-gradient(-75deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-55 {
+	background-image: linear-gradient(-72deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-56 {
+	background-image: linear-gradient(-68deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-57 {
+	background-image: linear-gradient(-64deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-58 {
+	background-image: linear-gradient(-60deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-59 {
+	background-image: linear-gradient(-57deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-60 {
+	background-image: linear-gradient(-54deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-61 {
+	background-image: linear-gradient(-50deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-62 {
+	background-image: linear-gradient(-46deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-63 {
+	background-image: linear-gradient(-42deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-64 {
+	background-image: linear-gradient(-39deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-65 {
+	background-image: linear-gradient(-36deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-66 {
+	background-image: linear-gradient(-32deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-67 {
+	background-image: linear-gradient(-28deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-68 {
+	background-image: linear-gradient(-24deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-69 {
+	background-image: linear-gradient(-21deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-70 {
+	background-image: linear-gradient(-18deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-71 {
+	background-image: linear-gradient(-14deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-72 {
+	background-image: linear-gradient(-10deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-73 {
+	background-image: linear-gradient(-6deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-74 {
+	background-image: linear-gradient(-3deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-75 {
+	background-image: linear-gradient(0deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-76 {
+	background-image: linear-gradient(4deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-77 {
+	background-image: linear-gradient(8deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-78 {
+	background-image: linear-gradient(12deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-79 {
+	background-image: linear-gradient(15deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-80 {
+	background-image: linear-gradient(18deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-81 {
+	background-image: linear-gradient(22deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-82 {
+	background-image: linear-gradient(26deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-83 {
+	background-image: linear-gradient(30deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-84 {
+	background-image: linear-gradient(33deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-85 {
+	background-image: linear-gradient(36deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-86 {
+	background-image: linear-gradient(40deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-87 {
+	background-image: linear-gradient(44deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-88 {
+	background-image: linear-gradient(48deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-89 {
+	background-image: linear-gradient(51deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-90 {
+	background-image: linear-gradient(54deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-91 {
+	background-image: linear-gradient(58deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-92 {
+	background-image: linear-gradient(62deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-93 {
+	background-image: linear-gradient(66deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-94 {
+	background-image: linear-gradient(69deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-95 {
+	background-image: linear-gradient(72deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-96 {
+	background-image: linear-gradient(76deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-97 {
+	background-image: linear-gradient(80deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-98 {
+	background-image: linear-gradient(84deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-99 {
+	background-image: linear-gradient(87deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.blue-progress-100 {
+	background-image: linear-gradient(90deg, #85b9df 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #85b9df 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-50 {
+	background-image: linear-gradient(-90deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-51 {
+	background-image: linear-gradient(-86deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-52 {
+	background-image: linear-gradient(-82deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-53 {
+	background-image: linear-gradient(-78deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-54 {
+	background-image: linear-gradient(-75deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-55 {
+	background-image: linear-gradient(-72deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-56 {
+	background-image: linear-gradient(-68deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-57 {
+	background-image: linear-gradient(-64deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-58 {
+	background-image: linear-gradient(-60deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-59 {
+	background-image: linear-gradient(-57deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-60 {
+	background-image: linear-gradient(-54deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-61 {
+	background-image: linear-gradient(-50deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-62 {
+	background-image: linear-gradient(-46deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-63 {
+	background-image: linear-gradient(-42deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-64 {
+	background-image: linear-gradient(-39deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-65 {
+	background-image: linear-gradient(-36deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-66 {
+	background-image: linear-gradient(-32deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-67 {
+	background-image: linear-gradient(-28deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-68 {
+	background-image: linear-gradient(-24deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-69 {
+	background-image: linear-gradient(-21deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-70 {
+	background-image: linear-gradient(-18deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-71 {
+	background-image: linear-gradient(-14deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-72 {
+	background-image: linear-gradient(-10deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-73 {
+	background-image: linear-gradient(-6deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-74 {
+	background-image: linear-gradient(-3deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-75 {
+	background-image: linear-gradient(0deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-76 {
+	background-image: linear-gradient(4deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-77 {
+	background-image: linear-gradient(8deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-78 {
+	background-image: linear-gradient(12deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-79 {
+	background-image: linear-gradient(15deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-80 {
+	background-image: linear-gradient(18deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-81 {
+	background-image: linear-gradient(22deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-82 {
+	background-image: linear-gradient(26deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-83 {
+	background-image: linear-gradient(30deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-84 {
+	background-image: linear-gradient(33deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-85 {
+	background-image: linear-gradient(36deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-86 {
+	background-image: linear-gradient(40deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-87 {
+	background-image: linear-gradient(44deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-88 {
+	background-image: linear-gradient(48deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-89 {
+	background-image: linear-gradient(51deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-90 {
+	background-image: linear-gradient(54deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-91 {
+	background-image: linear-gradient(58deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-92 {
+	background-image: linear-gradient(62deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-93 {
+	background-image: linear-gradient(66deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-94 {
+	background-image: linear-gradient(69deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-95 {
+	background-image: linear-gradient(72deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-96 {
+	background-image: linear-gradient(76deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-97 {
+	background-image: linear-gradient(80deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-98 {
+	background-image: linear-gradient(84deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-99 {
+	background-image: linear-gradient(87deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.red-progress-100 {
+	background-image: linear-gradient(90deg, #e08282 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #e08282 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-50 {
+	background-image: linear-gradient(-90deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-51 {
+	background-image: linear-gradient(-86deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-52 {
+	background-image: linear-gradient(-82deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-53 {
+	background-image: linear-gradient(-78deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-54 {
+	background-image: linear-gradient(-75deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-55 {
+	background-image: linear-gradient(-72deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-56 {
+	background-image: linear-gradient(-68deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-57 {
+	background-image: linear-gradient(-64deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-58 {
+	background-image: linear-gradient(-60deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-59 {
+	background-image: linear-gradient(-57deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-60 {
+	background-image: linear-gradient(-54deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-61 {
+	background-image: linear-gradient(-50deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-62 {
+	background-image: linear-gradient(-46deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-63 {
+	background-image: linear-gradient(-42deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-64 {
+	background-image: linear-gradient(-39deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-65 {
+	background-image: linear-gradient(-36deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-66 {
+	background-image: linear-gradient(-32deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-67 {
+	background-image: linear-gradient(-28deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-68 {
+	background-image: linear-gradient(-24deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-69 {
+	background-image: linear-gradient(-21deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-70 {
+	background-image: linear-gradient(-18deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-71 {
+	background-image: linear-gradient(-14deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-72 {
+	background-image: linear-gradient(-10deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-73 {
+	background-image: linear-gradient(-6deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-74 {
+	background-image: linear-gradient(-3deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-75 {
+	background-image: linear-gradient(0deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-76 {
+	background-image: linear-gradient(4deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-77 {
+	background-image: linear-gradient(8deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-78 {
+	background-image: linear-gradient(12deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-79 {
+	background-image: linear-gradient(15deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-80 {
+	background-image: linear-gradient(18deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-81 {
+	background-image: linear-gradient(22deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-82 {
+	background-image: linear-gradient(26deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-83 {
+	background-image: linear-gradient(30deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-84 {
+	background-image: linear-gradient(33deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-85 {
+	background-image: linear-gradient(36deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-86 {
+	background-image: linear-gradient(40deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-87 {
+	background-image: linear-gradient(44deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-88 {
+	background-image: linear-gradient(48deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-89 {
+	background-image: linear-gradient(51deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-90 {
+	background-image: linear-gradient(54deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-91 {
+	background-image: linear-gradient(58deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-92 {
+	background-image: linear-gradient(62deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-93 {
+	background-image: linear-gradient(66deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-94 {
+	background-image: linear-gradient(69deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-95 {
+	background-image: linear-gradient(72deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-96 {
+	background-image: linear-gradient(76deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-97 {
+	background-image: linear-gradient(80deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-98 {
+	background-image: linear-gradient(84deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-99 {
+	background-image: linear-gradient(87deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.org-progress-100 {
+	background-image: linear-gradient(90deg, #fec956 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #fec956 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-50 {
+	background-image: linear-gradient(-90deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-51 {
+	background-image: linear-gradient(-86deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-52 {
+	background-image: linear-gradient(-82deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-53 {
+	background-image: linear-gradient(-78deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-54 {
+	background-image: linear-gradient(-75deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-55 {
+	background-image: linear-gradient(-72deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-56 {
+	background-image: linear-gradient(-68deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-57 {
+	background-image: linear-gradient(-64deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-58 {
+	background-image: linear-gradient(-60deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-59 {
+	background-image: linear-gradient(-57deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-60 {
+	background-image: linear-gradient(-54deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-61 {
+	background-image: linear-gradient(-50deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-62 {
+	background-image: linear-gradient(-46deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-63 {
+	background-image: linear-gradient(-42deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-64 {
+	background-image: linear-gradient(-39deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-65 {
+	background-image: linear-gradient(-36deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-66 {
+	background-image: linear-gradient(-32deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-67 {
+	background-image: linear-gradient(-28deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-68 {
+	background-image: linear-gradient(-24deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-69 {
+	background-image: linear-gradient(-21deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-70 {
+	background-image: linear-gradient(-18deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-71 {
+	background-image: linear-gradient(-14deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-72 {
+	background-image: linear-gradient(-10deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-73 {
+	background-image: linear-gradient(-6deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-74 {
+	background-image: linear-gradient(-3deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-75 {
+	background-image: linear-gradient(0deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-76 {
+	background-image: linear-gradient(4deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-77 {
+	background-image: linear-gradient(8deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-78 {
+	background-image: linear-gradient(12deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-79 {
+	background-image: linear-gradient(15deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-80 {
+	background-image: linear-gradient(18deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-81 {
+	background-image: linear-gradient(22deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-82 {
+	background-image: linear-gradient(26deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-83 {
+	background-image: linear-gradient(30deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-84 {
+	background-image: linear-gradient(33deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-85 {
+	background-image: linear-gradient(36deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-86 {
+	background-image: linear-gradient(40deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-87 {
+	background-image: linear-gradient(44deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-88 {
+	background-image: linear-gradient(48deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-89 {
+	background-image: linear-gradient(51deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-90 {
+	background-image: linear-gradient(54deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-91 {
+	background-image: linear-gradient(58deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-92 {
+	background-image: linear-gradient(62deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-93 {
+	background-image: linear-gradient(66deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-94 {
+	background-image: linear-gradient(69deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-95 {
+	background-image: linear-gradient(72deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-96 {
+	background-image: linear-gradient(76deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-97 {
+	background-image: linear-gradient(80deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-98 {
+	background-image: linear-gradient(84deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-99 {
+	background-image: linear-gradient(87deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.yellowgreen-progress-100 {
+	background-image: linear-gradient(90deg, #edf167 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #edf167 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-50 {
+	background-image: linear-gradient(-90deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-51 {
+	background-image: linear-gradient(-86deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-52 {
+	background-image: linear-gradient(-82deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-53 {
+	background-image: linear-gradient(-78deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-54 {
+	background-image: linear-gradient(-75deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-55 {
+	background-image: linear-gradient(-72deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-56 {
+	background-image: linear-gradient(-68deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-57 {
+	background-image: linear-gradient(-64deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-58 {
+	background-image: linear-gradient(-60deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-59 {
+	background-image: linear-gradient(-57deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-60 {
+	background-image: linear-gradient(-54deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-61 {
+	background-image: linear-gradient(-50deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-62 {
+	background-image: linear-gradient(-46deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-63 {
+	background-image: linear-gradient(-42deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-64 {
+	background-image: linear-gradient(-39deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-65 {
+	background-image: linear-gradient(-36deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-66 {
+	background-image: linear-gradient(-32deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-67 {
+	background-image: linear-gradient(-28deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-68 {
+	background-image: linear-gradient(-24deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-69 {
+	background-image: linear-gradient(-21deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-70 {
+	background-image: linear-gradient(-18deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-71 {
+	background-image: linear-gradient(-14deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-72 {
+	background-image: linear-gradient(-10deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-73 {
+	background-image: linear-gradient(-6deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-74 {
+	background-image: linear-gradient(-3deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-75 {
+	background-image: linear-gradient(0deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-76 {
+	background-image: linear-gradient(4deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-77 {
+	background-image: linear-gradient(8deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-78 {
+	background-image: linear-gradient(12deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-79 {
+	background-image: linear-gradient(15deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-80 {
+	background-image: linear-gradient(18deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-81 {
+	background-image: linear-gradient(22deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-82 {
+	background-image: linear-gradient(26deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-83 {
+	background-image: linear-gradient(30deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-84 {
+	background-image: linear-gradient(33deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-85 {
+	background-image: linear-gradient(36deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-86 {
+	background-image: linear-gradient(40deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-87 {
+	background-image: linear-gradient(44deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-88 {
+	background-image: linear-gradient(48deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-89 {
+	background-image: linear-gradient(51deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-90 {
+	background-image: linear-gradient(54deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-91 {
+	background-image: linear-gradient(58deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-92 {
+	background-image: linear-gradient(62deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-93 {
+	background-image: linear-gradient(66deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-94 {
+	background-image: linear-gradient(69deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-95 {
+	background-image: linear-gradient(72deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-96 {
+	background-image: linear-gradient(76deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-97 {
+	background-image: linear-gradient(80deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-98 {
+	background-image: linear-gradient(84deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-99 {
+	background-image: linear-gradient(87deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.lightgreen-progress-100 {
+	background-image: linear-gradient(90deg, #a2de81 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #a2de81 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-0 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(90deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-1 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(94deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-2 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(98deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-3 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(102deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-4 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(105deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-5 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(108deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-6 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(112deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-7 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(116deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-8 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(120deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-9 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(123deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-10 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(126deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-11 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(130deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-12 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(134deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-13 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(138deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-14 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(141deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-15 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(144deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-16 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(148deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-17 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(152deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-18 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(156deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-19 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(159deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-20 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(162deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-21 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(166deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-22 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(170deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-23 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(174deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-24 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(177deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-25 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(180deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-26 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(184deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-27 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(188deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-28 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(192deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-29 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(195deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-30 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(198deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-31 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(202deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-32 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(206deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-33 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(210deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-34 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(213deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-35 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(216deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-36 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(220deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-37 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(224deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-38 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(228deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-39 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(231deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-40 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(234deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-41 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(238deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-42 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(242deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-43 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(246deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-44 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(249deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-45 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(252deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-46 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(256deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-47 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(260deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-48 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(264deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-49 {
+	background-image: linear-gradient(90deg, #dddddd 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(267deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-50 {
+	background-image: linear-gradient(-90deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-51 {
+	background-image: linear-gradient(-86deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-52 {
+	background-image: linear-gradient(-82deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-53 {
+	background-image: linear-gradient(-78deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-54 {
+	background-image: linear-gradient(-75deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-55 {
+	background-image: linear-gradient(-72deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-56 {
+	background-image: linear-gradient(-68deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-57 {
+	background-image: linear-gradient(-64deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-58 {
+	background-image: linear-gradient(-60deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-59 {
+	background-image: linear-gradient(-57deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-60 {
+	background-image: linear-gradient(-54deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-61 {
+	background-image: linear-gradient(-50deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-62 {
+	background-image: linear-gradient(-46deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-63 {
+	background-image: linear-gradient(-42deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-64 {
+	background-image: linear-gradient(-39deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-65 {
+	background-image: linear-gradient(-36deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-66 {
+	background-image: linear-gradient(-32deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-67 {
+	background-image: linear-gradient(-28deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-68 {
+	background-image: linear-gradient(-24deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-69 {
+	background-image: linear-gradient(-21deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-70 {
+	background-image: linear-gradient(-18deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-71 {
+	background-image: linear-gradient(-14deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-72 {
+	background-image: linear-gradient(-10deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-73 {
+	background-image: linear-gradient(-6deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-74 {
+	background-image: linear-gradient(-3deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-75 {
+	background-image: linear-gradient(0deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-76 {
+	background-image: linear-gradient(4deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-77 {
+	background-image: linear-gradient(8deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-78 {
+	background-image: linear-gradient(12deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-79 {
+	background-image: linear-gradient(15deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-80 {
+	background-image: linear-gradient(18deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-81 {
+	background-image: linear-gradient(22deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-82 {
+	background-image: linear-gradient(26deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-83 {
+	background-image: linear-gradient(30deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-84 {
+	background-image: linear-gradient(33deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-85 {
+	background-image: linear-gradient(36deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-86 {
+	background-image: linear-gradient(40deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-87 {
+	background-image: linear-gradient(44deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-88 {
+	background-image: linear-gradient(48deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-89 {
+	background-image: linear-gradient(51deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-90 {
+	background-image: linear-gradient(54deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-91 {
+	background-image: linear-gradient(58deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-92 {
+	background-image: linear-gradient(62deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-93 {
+	background-image: linear-gradient(66deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-94 {
+	background-image: linear-gradient(69deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-95 {
+	background-image: linear-gradient(72deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-96 {
+	background-image: linear-gradient(76deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-97 {
+	background-image: linear-gradient(80deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-98 {
+	background-image: linear-gradient(84deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-99 {
+	background-image: linear-gradient(87deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+.green-progress-100 {
+	background-image: linear-gradient(90deg, #3fc380 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #3fc380 50%, #dddddd 50%, #dddddd);
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	.progress-radial .overlay {
+        height: 55px;
+        line-height: 55px;
+        margin-left: 5px;
+        margin-top: 5px;
+        width: 55px;
+    }
+    .progress-radial {
+        height: 65px;
+        margin-right: 15px;
+        width: 65px;
+    }
+}

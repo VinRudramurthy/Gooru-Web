@@ -26,20 +26,23 @@ package org.ednovo.gooru.client.uc;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.code.CodeDo;
+import org.ednovo.gooru.application.shared.model.code.LibraryCodeDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle;
 import org.ednovo.gooru.client.mvp.shelf.event.AddCourseEvent;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.code.CodeDo;
-import org.ednovo.gooru.shared.model.code.LibraryCodeDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -55,18 +58,32 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class CourseListUc extends PopupPanel implements MessageProperties {
+/**
+* @description : This class used for  Add a course to the collection.
+*
+* @version :1.0
+*
+* @date: APR 19 2014
+   	
+* @Author Gooru Team
+* 
+* Reviewer Gooru Team
+ */
+
+public class CourseListUc extends PopupPanel {
 
 	private static CourseListUcUiBinder uiBinder = GWT
 			.create(CourseListUcUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface CourseListUcUiBinder extends UiBinder<Widget, CourseListUc> {
 	}
 
-/*	@UiField Anchor fromweb;
-*/	
-/*	@UiField HTMLEventPanel urlTabButton;
-*/	
+	/*@UiField Anchor fromweb;
+	
+	@UiField HTMLEventPanel urlTabButton;*/
+	
 	@UiField static FlowPanel contentPanel;
 	
 	@UiField HTMLPanel buttonsPanel,addCourseBtnPanel,loadingPanel;
@@ -107,19 +124,41 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 	  	this.getElement().getStyle().setZIndex(99999);
 		setGlassEnabled(true);
 		isSelected=false;
-		this.center();
-		this.show();
-		titleLbl.setText(GL0847);
-		cancelCourseBtn.setText(GL0142);
-		addCourseBtnLbl.setText(GL0590);
+		
+		titleLbl.setText(i18n.GL0847());
+		titleLbl.getElement().setId("errlblErrorLabel");
+		titleLbl.getElement().setAttribute("alt", i18n.GL0847());
+		titleLbl.getElement().setAttribute("title", i18n.GL0847());
+		cancelCourseBtn.setText(i18n.GL0142());
+		cancelCourseBtn.getElement().setId("btnCancelCourseBtn");
+		cancelCourseBtn.getElement().setAttribute("alt", i18n.GL0142());
+		cancelCourseBtn.getElement().setAttribute("title", i18n.GL0142());
+		addCourseBtnLbl.setText(i18n.GL0590());
+		addCourseBtnLbl.getElement().setId("bluebtnAddCourseBtnLbl");
+		addCourseBtnLbl.getElement().setAttribute("alt", i18n.GL0590());
+		addCourseBtnLbl.getElement().setAttribute("title", i18n.GL0590());
+		loadingPanel.getElement().setId("pnlLoadingPanel");
+		addResourceTabContainer.getElement().setId("pnlAddResourceTabContainer");
+		contentPanel.getElement().setId("fpnlContentPanel");
+		buttonsPanel.getElement().setId("pnlButtonsPanel");
+		addCourseBtnPanel.getElement().setId("pnlAddCourseBtnPanel");
+		
 		loadingPanel.setVisible(true);
 		setCourseData();
 		collectionId=collectionDo.getGooruOid();
 		Window.enableScrolling(false);
+		
+		this.setHeight("469px");
+		this.setWidth("542px");
+		
+		this.center();
+		this.show();
 	}
 	
-	
-	
+ 
+	/**
+	 * This method used to call getCourse api.
+	 */
 	private void setCourseData() {
 		AppClientFactory.getInjector().getTaxonomyService().getCourse(new SimpleAsyncCallback<List<LibraryCodeDo>>() {
 
@@ -133,6 +172,10 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 
 
 
+	/**
+	 * This method used to set the subjects and courses data from api.
+	 * @param libraryCode instance of {@link LibraryCodeDo}
+	 */
 	public void setCourseList(final List<LibraryCodeDo> libraryCode) {
 		this.libraryCode=libraryCode;
 		Map<String,Integer> subjectList = new HashMap<String, Integer>();
@@ -176,6 +219,10 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 		}
 	}
 	
+	/**
+	 * This method used to set Course List.
+	 * @param libraryCodeDo instance of {@link LibraryCodeDo}
+	 */
 	private void setCourseData(final List<LibraryCodeDo> libraryCodeDo) {
 		final HTMLPanel panel=new HTMLPanel("");
 		panel.clear();
@@ -217,8 +264,12 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 		}
 
 	}
+	/**
+	 * To set the Default Course data.
+	 */
 	
-	public void setDefaultCourseData(){
+	public void setDefaultCourseData(CollectionDo collectionDo){
+		this.collectionDo=collectionDo;
 		collectionId=collectionDo.getGooruOid();
 		isSelected=false;
 		for(int i = 0; i < libraryCode.size(); i++) {
@@ -235,6 +286,10 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 			}
 	}
 	
+	/**
+	 * To close the courseList popup.
+	 * @param clickEvent instance of {@link ClickEvent}
+	 */
 	
 	@UiHandler("cancelCourseBtn")
 	public void onClickClose(ClickEvent clickEvent){
@@ -242,6 +297,9 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 		Window.enableScrolling(true);
 	}
 	
+	/**
+	 * @param clickEvent
+	 */
 	@UiHandler("addCourseBtnLbl")
 	public void onAddCourseBtnClick(ClickEvent clickEvent){
 		MixpanelUtil.mixpanelEvent("Organize_Add_Course");
@@ -249,11 +307,16 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 		String courseId= Integer.toString(courseCode);
 		if(isSelected){
 			collectionId=collectionDo.getGooruOid();
-			for (CodeDo code : collectionDo.getTaxonomySet()) {
+			for (CodeDo code : new HashSet<CodeDo>(collectionDo.getTaxonomySet())) {
 				if(code.getDepth()==2){
-					oldCourseId=Integer.toString(code.getCodeId());
-					updateCourse(collectionId, oldCourseId,"delete");				}
-				
+
+				//	deleteCourse(collectionId, code.getCodeId());	
+				}
+
+					//oldCourseId=Integer.toString(code.getCodeId());
+					//deleteCourse(collectionId, code.getCodeId());	
+					//updateCourse(collectionId, oldCourseId,"delete");					
+
 			}
 			if (AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.SHELF)){
 				MixpanelUtil.mixpanelEvent("Collaborator_edits_collection");
@@ -263,23 +326,48 @@ public class CourseListUc extends PopupPanel implements MessageProperties {
 			hide();
 			Window.enableScrolling(true);
 		}else{
-			new AlertContentUc(GL0061,GL1022);
+			new AlertContentUc(i18n.GL0061(),i18n.GL1022());
 		}
 		
 		
 	}
 	
-	public void updateCourse(String collectionId, String courseCode, String action) {
-	  	
+	/**
+	 * This method used modify/update the course of collection
+	 * @param collectionId {@link String}
+	 * @param courseCode {@link String}
+	 * @param action {@link String}
+	 */
+	public void updateCourse(String collectionId, final String courseCode, String action) {
 		AppClientFactory.getInjector().getResourceService().updateCollectionMetadata(collectionId, null, null, null, null, null, courseCode, null, null, action, new SimpleAsyncCallback<CollectionDo>() {
 
 			@Override
 			public void onSuccess(CollectionDo result) {	
-				collectionDo=result;
+				if(collectionDo!=null){
+ 					Set<CodeDo> codeSet=new HashSet<CodeDo>();
+ 					CodeDo codeDo=new CodeDo();
+ 					if(!courseCode.equalsIgnoreCase("")){
+ 						codeDo.setCodeId(Integer.valueOf(courseCode));
+ 					}
+ 					codeDo.setDepth((short)2);
+ 					codeSet.add(codeDo);
+ 					collectionDo.setTaxonomySet(codeSet);
+ 				}
 			}
 		});
-
 	}
-	
-	
+	/**
+	 * This method used to delete the old course.
+	 * @param collectionId {@link String}
+	 * @param courseCode {@link String}
+	 */
+	public void deleteCourse(String collectionId, int courseCode) {
+		AppClientFactory.getInjector().getResourceService().deleteTaxonomyResource(collectionId, courseCode, new SimpleAsyncCallback<Void>() {
+			@Override
+			public void onSuccess(Void result) {
+				Set<CodeDo> codeSet=new HashSet<CodeDo>();
+				collectionDo.setTaxonomySet(codeSet);
+			}
+		});
+	}
 }

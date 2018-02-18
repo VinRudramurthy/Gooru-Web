@@ -7,7 +7,7 @@
 	max-height:25px !important;
 }
 body {
-	background: url("../images/gray_noise_25.png");
+	background: url("${cdn.endpoint}/images/landing-page/gray_noise_25.png");
 	color:#515151;
 	font-size:12px;
 }
@@ -19,7 +19,7 @@ a, a:visited, a:active {
 
 a:hover {
 	text-decoration:none !important;
-	opacity:.6;
+/* 	opacity:.6; */
 	cursor:pointer;
 }
 
@@ -64,11 +64,13 @@ a img {
 }
 
 .errorMessage {
+	font-size:12px;
 	font-style:italic;
-	color:#FBB03B;
+	font-family:arial;
+	color:#EE1E7B;
 }
 
-button.primary {
+button.primary, a.primary {
 	color: white;
 	background-color: #1076bb;
 	border-radius: 4px;
@@ -76,10 +78,10 @@ button.primary {
 	border: 1px solid #1076BB;
 	font-family: Arial, sans-serif;
 	display:inline-block;
-	
-	/* Old browsers */ 
+
+	/* Old browsers */
 	background:#1076BB;
-	
+
 	/* Safari 4-5, Chrome 1-9 */
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
 
@@ -95,10 +97,29 @@ button.primary {
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #4C98CC, #1076BB);
 }
+button.green {
+	color: #ffffff;
+	background-color: rgb(78, 151, 70);
+	border-radius: 4px;
+	padding: 7px 9px;
+	border: 1px solid rgb(78, 151, 70);
+	font-family: Arial, sans-serif;
+	display:inline-block;
+	font-size: 14px;
 
-button.primary:hover {
-	color:white;
+	/* Old browsers */
+	background:rgb(78, 151, 70);
+
+}
+
+button.primary:focus, button.primary:visited, button.primary:hover, a.primary:hover, a.primary:focus, a.primary:visited {
+	color:#ffffff;
 	background:#1076BB;
+	cursor:pointer;
+}
+button.green:hover {
+	color:#ffffff;
+	background:rgb(78, 151, 70);
 	cursor:pointer;
 }
 
@@ -121,15 +142,15 @@ button.secondary:hover {
 }
 
 button.disabled, button.disabled:hover {
-	color: #999;
-	background: #efefef;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
-	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
-	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
-	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
-	background: -o-linear-gradient(top, #fdfdfd, #ddd);
-	border: 1px solid #ddd;
-	cursor: default;
+	color: #999 !important;
+	background: #efefef !important;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd)) !important;
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd) !important;
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd) !important;
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd) !important;
+	background: -o-linear-gradient(top, #fdfdfd, #ddd) !important;
+	border: 1px solid #ddd !important;
+	cursor: default !important;
 }
 
 .arrowButton {
@@ -142,29 +163,29 @@ button.disabled, button.disabled:hover {
 	font-family: Arial, sans-serif;
 	display:inline-block;
 	margin:10px;
-	
+
 	/* Old browsers */
 	background: #1076BB;
-	
+
 	/* Safari 4-5, Chrome 1-9 */
-	background: url("../images/buttons/button-arrow.png") right center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
 
 	/* Safari 5.1, Chrome 10+ */
-	background: url("../images/buttons/button-arrow.png") right center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
 
 	/* Firefox 3.6+ */
-	background: url("../images/buttons/button-arrow.png") right center no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
 
 	/* IE 10 */
-	background: url("../images/buttons/button-arrow.png") right center no-repeat, -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat, -ms-linear-gradient(top, #4C98CC, #1076BB);
 
 	/* Opera 11.10+ */
-	background: url("../images/buttons/button-arrow.png") right center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
 }
 
 .arrowButton:hover {
 	color:white;
-	background: #1076BB url("../images/buttons/button-arrow.png") right center no-repeat;
+	background: #1076BB url("${cdn.endpoint}/images/buttons/button-arrow.png") right center no-repeat;
 	cursor:pointer;
 }
 
@@ -178,80 +199,80 @@ button.disabled, button.disabled:hover {
 	font-family: Arial, sans-serif;
 	display:inline-block;
 	margin:10px;
-	
+
 	/* Old browsers */
 	background: #1076BB;
-	
+
 	/* IE 10 */
-	background: #1076BB url("../images/buttons/plus.png") 7px center no-repeat;
-	
+	background: #1076BB url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat;
+
 	/* Safari 4-5, Chrome 1-9 */
-	background: url("../images/buttons/plus.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
 
 	/* Safari 5.1, Chrome 10+ */
-	background: url("../images/buttons/plus.png") 7px center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
 
 	/* Firefox 3.6+ */
-	background: url("../images/buttons/plus.png") 7px center no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
 
 	/* Opera 11.10+ */
-	background: url("../images/buttons/plus.png") 7px center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
 }
 
 .plusButton:hover {
 	color:white;
-	background: #1076BB url("../images/buttons/plus.png") 7px center no-repeat;
+	background: #1076BB url("${cdn.endpoint}/images/buttons/plus.png") 7px center no-repeat;
 	cursor:pointer;
 }
 
 .plusButton.secondary {
 	padding: 7px 9px 7px 25px;
-	
+
 	/* IE 10 */
-	background: #DDD url("../images/buttons/plus-blue.png") 7px center no-repeat;
-	
+	background: #DDD url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat;
+
 	/* Safari 4-5, Chrome 1-9 */
-	background: url("../images/buttons/plus-blue.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#DDD));
+	background: url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#DDD));
 
 	/* Safari 5.1, Chrome 10+ */
-	background: url("../images/buttons/plus-blue.png") 7px center no-repeat, -webkit-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat, -webkit-linear-gradient(top, #FDFDFD, #DDD);
 
 	/* Firefox 3.6+ */
-	background: url("../images/buttons/plus-blue.png") 7px center no-repeat, -moz-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat, -moz-linear-gradient(top, #FDFDFD, #DDD);
 
 	/* Opera 11.10+ */
-	background: url("../images/buttons/plus-blue.png") 7px center no-repeat, -o-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat, -o-linear-gradient(top, #FDFDFD, #DDD);
 }
 
 .plusButton.secondary:hover {
 	color:#1076BB;
-	background: #DDD url("../images/buttons/plus-blue.png") 7px center no-repeat;
+	background: #DDD url("${cdn.endpoint}/images/buttons/plus-blue.png") 7px center no-repeat;
 	cursor:pointer;
 }
 
 .plusButton.disabled, .plusButton.disabled:hover {
 	/* Safari 4-5, Chrome 1-9 */
-	background: url("../images/buttons/plus-gray.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#DDD));
+	background: url("${cdn.endpoint}/images/buttons/plus-gray.png") 7px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#DDD));
 
 	/* Safari 5.1, Chrome 10+ */
-	background: url("../images/buttons/plus-gray.png") 7px center no-repeat, -webkit-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-gray.png") 7px center no-repeat, -webkit-linear-gradient(top, #FDFDFD, #DDD);
 
 	/* Firefox 3.6+ */
-	background: url("../images/buttons/plus-gray.png") 7px center no-repeat, -moz-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-gray.png") 7px center no-repeat, -moz-linear-gradient(top, #FDFDFD, #DDD);
 
 	/* IE 10 */
-	background: #DDD url("../images/buttons/plus-gray.png") 7px center no-repeat;
-	
+	background: #DDD url("${cdn.endpoint}/images/buttons/plus-gray.png") 7px center no-repeat;
+
 	/* Opera 11.10+ */
-	background: url("../images/buttons/plus-gray.png") 7px center no-repeat, -o-linear-gradient(top, #FDFDFD, #DDD);
+	background: url("${cdn.endpoint}/images/buttons/plus-gray.png") 7px center no-repeat, -o-linear-gradient(top, #FDFDFD, #DDD);
 }
 
 .tabs {
 	border:1px solid #ddd;
-	
+
 	/* Old browsers */
 	background: rgb(239,239,239);
-	
+
 	/* Safari 4-5, Chrome 1-9 */
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
 
@@ -266,7 +287,7 @@ button.disabled, button.disabled:hover {
 
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
-	
+
 }
 
 .tabsLi {
@@ -297,7 +318,7 @@ button.disabled, button.disabled:hover {
 	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
 	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
 	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
-	
+
 	/* Old browsers */
 	background: #dddddd;
 
@@ -315,11 +336,11 @@ button.disabled, button.disabled:hover {
 
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #cccccc, #efefef);
-	
+
 }
 
 .resourceTypeIcon {
-	background: url('../images/resource-type-icons.png') no-repeat;
+	background: url('${cdn.endpoint}/images/resource-type-icons.png') no-repeat;
 	width: 27px;
 	height: 20px;
 }
@@ -361,11 +382,12 @@ button.disabled, button.disabled:hover {
 	cursor: pointer;
 	background: #EEE;
 }
+
 .loadingImage {
-	background: url("../images/core/B-Dot.gif");
+	background: url("${cdn.endpoint}/images/core/B-Dot.gif");
 	width: 200px;
 	height: 175px;
-	margin: 0 auto;				
+	margin: 0 auto;
 }
 /* added in release-5.12 */
 /*searchHomeFilter*/
@@ -373,10 +395,57 @@ button.disabled, button.disabled:hover {
 .categoryFilterContainer  input[type="checkbox"] {
 	margin: 3px 0.5ex !important;
 }
+.fivestar{
+	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -10px !important;
+}
 
-.categoryFilterContainer .filterCheckBox label {
+.fourstar{
+ 	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -38px !important;
+}
+
+.threestar{
+	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -65px !important;
+}
+
+.twostar{
+ 	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -89px !important;
+}
+.onestar{
+ 	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -116px !important;
+}
+.zerostar{
+ 	background: url(${cdn.endpoint}/images/stars.png) no-repeat 14px -148px !important;
+}
+
+.reStar{
+	height: 17px;
+	display: inline-block;
+	width: 90px;
+}
+.fivestar label, .fourstar label, .threestar label, .twostar label, .onestar label, .zerostar label{
+	padding-left: 46%;
+}
+
+ .categoryFilterContainer .filterCheckBox label {
 	padding: 3px 31px;
-	background: url(../images/resource-type-icons.png) no-repeat transparent;
+	background: url(${cdn.endpoint}/images/resource-type-icons.png) no-repeat transparent;
+}
+.categoryFilterContainer .filterCheckBox input[type="checkbox"]{
+	margin: 3px 0.5ex !important;
+}
+.showonlyquizzes{
+	display:block;
+}
+.showonlyquizzes label{
+	padding:0 !important;
+	background:none !important;
+}
+.onlyresourceswithreviews{
+	display:inline;
+}
+
+.onlyresourceswithreviews label{
+	display:inline !important;
 }
 
 .filterCheckBox {
@@ -386,7 +455,7 @@ button.disabled, button.disabled:hover {
 }
 
 .videos label {
-	background-position: 0px 1px !important;	
+	background-position: 0px 1px !important;
 }
 
 .interactives label {
@@ -408,9 +477,9 @@ button.disabled, button.disabled:hover {
 .questions label {
 	background-position: 0px -139px !important;
 }
-/* 
+/*
 .slides label {
-	background-position: 0px -167px !important;	
+	background-position: 0px -167px !important;
 }
  */
 .texts label {
@@ -437,14 +506,14 @@ button.disabled, button.disabled:hover {
 button.primary.dropdownButton {
 	padding: 7px 43px 7px 10px;
 	color: white;
-	background: #1076bb url("../images/folders/panel/dropdown-button.png") right center no-repeat;
+	background: #1076bb url("${cdn.endpoint}/images/folders/panel/dropdown-button.png") right center no-repeat;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#4C98CC),
 		to(#1076BB));
-	background: url("../images/folders/panel/dropdown-button.png") right center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/dropdown-button.png") right center no-repeat,
 		-webkit-linear-gradient(top, #4C98CC, #1076BB);
 	background: url("./_images/dropdown-button.png") right center no-repeat,
 		-ms-linear-gradient(top, #4c98cc, #1076bb);
-	background: url("../images/folders/panel/dropdown-button.png") right center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/dropdown-button.png") right center no-repeat,
 		-o-linear-gradient(top, #4c98cc, #1076bb);
 	border-radius: 4px;
 	border: 1px solid #1076bb;
@@ -452,20 +521,20 @@ button.primary.dropdownButton {
 }
 
 button.primary.dropdownButton:hover {
-	background: #1076BB url("../images/folders/panel/dropdown-button.png") right center no-repeat;
+	background: #1076BB url("${cdn.endpoint}/images/folders/panel/dropdown-button.png") right center no-repeat;
 }
 
 button.secondary.dropdownButton {
 	padding: 7px 43px 7px 10px;
 	color: #1076BB;
-	background: #DDD url("../images/folders/panel/dropdown-button-secondary.png") right center no-repeat;
+	background: #DDD url("${cdn.endpoint}/images/folders/panel/dropdown-button-secondary.png") right center no-repeat;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FDFDFD),
 		to(#DDD));
-	background: url("../images/folders/panel/dropdown-button-secondary.png") right center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/dropdown-button-secondary.png") right center no-repeat,
 		-webkit-linear-gradient(top, #FDFDFD, #DDD);
 	background: url("./_images/dropdown-button-secondary.png") right center no-repeat,
 		-ms-linear-gradient(top, #FDFDFD, #DDD);
-	background: url("../images/folders/panel/dropdown-button-secondary.png") right center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/dropdown-button-secondary.png") right center no-repeat,
 		-o-linear-gradient(top, #FDFDFD, #DDD);
 	border-radius: 4px;
 	border: 1px solid #DDD;
@@ -473,7 +542,7 @@ button.secondary.dropdownButton {
 }
 
 button.secondary.dropdownButton:hover {
-	background: #DDD url("../images/folders/panel/dropdown-button-secondary.png") right center no-repeat;
+	background: #DDD url("${cdn.endpoint}/images/folders/panel/dropdown-button-secondary.png") right center no-repeat;
 }
 
 .dropdownButtonContainer {
@@ -520,14 +589,14 @@ button.backArrowButton {
     font-size:12px;
 	padding: 7px 10px 7px 24px;
 	color: #1076BB;
-	background: #DDD url("../images/folders/panel/back-button-arrow.png") left center no-repeat;
+	background: #DDD url("${cdn.endpoint}/images/folders/panel/back-button-arrow.png") left center no-repeat;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FDFDFD),
 		to(#DDD));
-	background: url("../images/folders/panel/back-button-arrow.png") left center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/back-button-arrow.png") left center no-repeat,
 		-webkit-linear-gradient(top, #FDFDFD, #DDD);
 	background: url("./_images/back-button-arrow.png") left center no-repeat,
 		-ms-linear-gradient(top, #FDFDFD, #DDD);
-	background: url("../images/folders/panel/back-button-arrow.png") left center no-repeat,
+	background: url("${cdn.endpoint}/images/folders/panel/back-button-arrow.png") left center no-repeat,
 		-o-linear-gradient(top, #FDFDFD, #DDD);
 	border-radius: 4px;
 	border: 1px solid #DDD;
@@ -535,7 +604,7 @@ button.backArrowButton {
 }
 
 button.backArrowButton:hover {
-	background: #DDD url("../images/folders/panel/back-button-arrow.png") left center no-repeat;
+	background: #DDD url("${cdn.endpoint}/images/folders/panel/back-button-arrow.png") left center no-repeat;
 }
 
 .pleaseWaitMessage {
@@ -804,3 +873,140 @@ button.backArrowButton:hover {
 	font-weight: bold;
 	padding-bottom: 10px;
 }
+
+/* Media Css for hiding specif objects */
+
+/* @media screen and (min-width: 0px) and (max-width: 1000px) {
+	#focuspnlShelfFocPanel{
+		display: none;
+	}
+} */
+
+.filterCheckBox label {
+    font-weight: normal;
+}
+
+
+.yes, .no{
+	margin: 0px;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.yes{
+	color: green;
+}
+
+.no{
+	color: red;
+}
+.caretStyle{
+	float: right;
+	position: absolute;
+	margin-top: 9px;
+	right: 3%;
+}
+textarea {
+	resize:none !important;
+}
+
+
+/** new class popup css *//
+
+
+@charset "utf-8";
+/* CSS Document */
+#create-class-popup {
+	padding:25px 0;
+}
+#create-class-popup .modal-dialog{
+	width:400px;
+	margin:0 auto;
+}
+#create-class-popup .modal-header{
+	background-color:#515151;
+	color:#ffffff;
+	border-radius:6px 6px 0 0;
+
+}
+#create-class-popup .close{
+	font-size:35px;
+	color:#ffffff;
+	opacity:1;
+}
+#create-class-popup .modal-footer button.primary{
+	padding:7px 20px;
+}
+
+#create-class-popup .gradeBlock{
+	background:#dddddd;
+	border-radius:4px 4px;
+	padding:8px 8px;
+}
+#create-class-popup .visibilityBlock{
+	margin-top:20px;
+}
+#create-class-popup .visibilityBlock .anchorCls{
+	color:#515151;
+	display:block;
+	border:2px solid #ffffff;
+    padding:5px 5px;
+	border-radius:4px 4px;
+	cursor:pointer;
+}
+
+#create-class-popup .visibilityBlock .anchorCls:hover{
+	color:#515151;
+	display:block;
+	border:2px solid #85b9df;
+	opacity:1;
+	cursor:pointer;
+}
+#create-class-popup .visibilityBlock .anchorCls.active{
+	color:#515151;
+	display:block;
+	border:2px solid #85b9df;
+	opacity:1;
+}
+#create-class-popup .visibilityBlock .anchorCls{
+	margin:0 0;
+}
+#create-class-popup .modal-dialog{
+		width:auto;
+		margin-left:10px;
+		margin-right:10px;
+}
+#create-class-popup .visiblityHeader{
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.headerpadding{
+	padding:5px;
+}
+.noActiveClassStudents{
+	margin: 50px auto;
+	text-align: center;
+}
+@media (min-width: 240px) and (max-width: 319px){
+	#create-class-popup .modal-dialog{
+		width:auto;
+		margin-left:10px;
+		margin-right:10px;
+	}
+
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	#create-class-popup .modal-dialog{
+		width:auto;
+		margin-left:10px;
+		margin-right:10px;
+	}
+}
+#suggestedResourceImageUc #imgImage{
+	width: 80px;
+	height: 62px;
+}
+
+
+
+

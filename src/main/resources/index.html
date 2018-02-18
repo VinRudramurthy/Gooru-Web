@@ -2,117 +2,74 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<!-- <meta http-equiv="X-UA-Compatible" content="IE=9"> -->
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
-<meta name="viewport" content="width=640, user-scalable=no">
-<link type="text/css" rel="stylesheet" href="css/gooru.css">
-<link type="text/css" rel="stylesheet" href="css/gooru-global.css">
-<link type="text/css" rel="stylesheet" href="css/fi/foundation-icons.css">
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Featured Courses | Sign up, Sign in </title>
-<script type="text/javascript" src='newgooru/newgooru.nocache.js'></script>
-<script type="text/javascript"
-	src="scripts/tinymce/tinymce/jscripts/tiny_mce/plugins/asciimath/js/ASCIIMathMLwFallback.js"></script>
-<script type="text/javascript"
-	src="scripts/tinymce/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<meta name="version" content='${gooru.release.version}'>
+<title>Gooru | Sign up, Sign in </title>
+
+<link href="${cdn.endpoint}/css/main-styles.min.css?version=${gooru.release.version}" media="all" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="${cdn.endpoint}/images/favicon.png?version=${gooru.release.version}" />
+
 <script>
-     (function() {
- 	    var et = document.createElement('script'); et.type = 'text/javascript'; et.async= true;
- 	    et.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.google.com/jsapi?key=ABQIAAAAda4WhJd6JK8w7AUcwc4FChRmAaOIOXFIJ_BmtIMHmVPHNHLDPxQ5kQWgJnLOe0-4giQzR5D8bv7WCg';
- 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(et, s);
- 	  })();
-     
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
-     { (i[r].q=i[r].q||[]).push(arguments)}
-     ,i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','//www.google-analytics.com/analytics.js','hewlettOERTracker');
-     
-</script>
-<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/NQx3lF2RAdAcYft8tWKZKA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+		{ (i[r].q=i[r].q||[]).push(arguments)}
+		,i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','hewlettOERTracker');
 
-<script type="text/javascript">
-     (function() {
- 	    var et = document.createElement('script'); et.type = 'text/javascript'; et.async= true;
- 	    et.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js';
- 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(et, s);
- 	  })(); 
-</script>
+	     function hewlettTracking(a)
+	     {
+	    	 try
+	    	 {
+	    		hewlettOERTracker('create', 'UA-5033010-1', 'auto');
+	    		hewlettOERTracker('send', 'pageview', a);
+	    	 }
+	    	 catch(e)
+	    	 {
 
-<link rel="icon" type="image/png" href="images/favicon.png" />
-<!-- Mixpanel - Test : a9c35657dfd3d125f7bc3cb663482cba, Live : c022bca6fa50a08b7c42fed5f5104deb  -->
-<!-- start Mixpanel -->
-<script type="text/javascript" id="mixpanel_header">
-var mixpanelApiKey = '${mixpanel.apikey}';
-(function(e, b) {
-  if (!b.__SV) {
-    var a, f, i, g;
-    window.mixpanel = b;
-    a = e.createElement("script");
-    a.type = "text/javascript";
-    a.async = !0;
-    a.src = ("https:" === e.location.protocol ? "https:" : "http:") + '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';
-    f = e.getElementsByTagName("script")[0];
-    f.parentNode.insertBefore(a, f);
-    b._i = [];
-    b.init = function(a, e, d) {
-      function f(b, h) {
-        var a = h.split(".");
-        2 == a.length && (b = b[a[0]], h = a[1]);
-        b[h] = function() {
-          b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
-        }
-      }
-      var c = b;
-      "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
-      c.people = c.people || [];
-      c.toString = function(b) {
-        var a = "mixpanel";
-        "mixpanel" !== d && (a += "." + d);
-        b || (a += " (stub)");
-        return a
-      };
-      c.people.toString = function() {
-        return c.toString(1) + ".people (stub)"
-      };
-      i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-      for (g = 0; g < i.length; g++) f(c, i[g]);
-      b._i.push([a, e, d])
-    };
-    b.__SV = 1.2
-  }
-})(document, window.mixpanel || []);
-mixpanel.init(mixpanelApiKey); 
-</script><!-- end Mixpanel -->
-<!-- production : b6b82f4d-0e6e-4ad5-96d9-30849cf17727; QA: 33b9ad34-1a0c-43ba-bb9c-4784abe07110 -->
-<!-- production : insights.goorulearning.org/log/et.min.js?v=1; QA: qa.logapi.goorulearning.org/js-sdk/et-qa.js?v=1 -->
-<script type="text/javascript">
-		<!--
-	   		var _et = _et || {};
-	   		_et.apiKey = '${log.api.key}';
-	   		_et.endPoint = '${log.api.endpoint}';
-	   		_et.data = [] || _et.data;
-	  		(function() {
-	    		var et = document.createElement('script'); et.type = 'text/javascript'; et.async= true;
-	    		et.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + '${log.sdk}';
-	    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(et, s);
-	  		})(); 
-		-->
-</script>
-<script type="text/javascript">
-	hewlettOERTracker('create', 'UA-5033010-1', 'auto');
-	hewlettOERTracker('send', 'pageview', location.pathname + location.search + location.hash);
-</script>
+	    	 }
+	     }
+
+	    hewlettOERTracker('create', 'UA-5033010-1', 'auto');
+	 	hewlettOERTracker('send', 'pageview', location.pathname + location.search + location.hash);
+
+	</script>
+
 </head>
 <body>
-	<iframe id="__printingFrame" style="width: 0; height: 0; border: 0"></iframe>
-	<noscript>
+   <iframe id="__printingFrame" style="width: 0; height: 0; border: 0"></iframe>
+  	<noscript>
 		<div
 			style="width: 22em; position: absolute; left: 50%; overflow: auto; margin-left: -11em; color: red; border: 1px solid red; padding: 4px; font-family: sans-serif">
 			Your web browser must have JavaScript enabled in order for this
 			application to display correctly.</div>
 	</noscript>
+
+
+	<script type="text/javascript">
+	<!--
+		   		var _et = _et || {};
+		   		_et.apiKey = '${log.api.key}';
+		   		_et.endPoint = '${log.api.endpoint}';
+		   		_et.data = [] || _et.data;
+	-->
+	</script>
+
+	<script type="text/javascript" src="${log.sdk}" defer></script>
+
+	<script type="text/javascript" src='application/application.nocache.js?version=${gooru.release.version}' defer></script>
+
+	<script type="text/javascript" src="${cdn.endpoint}/scripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/scripts/tinymce/tinymce/jscripts/tiny_mce/plugins/asciimath/js/ASCIIMathMLwFallback.min.js" defer></script>
+	<script type="text/javascript" src="/scripts/tinymce/tinymce/jscripts/tiny_mce/tiny_mce.js" defer></script>
+
+	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+	<script type="text/javascript" src="//widget.uservoice.com/NQx3lF2RAdAcYft8tWKZKA.js" defer></script>
+
+	<!-- Already Minified -->
+	<script type="text/javascript" src="${cdn.endpoint}/scripts/main-script.min.js" defer></script>
 </body>
 </html>

@@ -26,20 +26,49 @@ package org.ednovo.gooru.client.mvp.play.collection.share;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.client.mvp.play.collection.CollectionPlayerPresenter;
+import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
+import org.ednovo.gooru.shared.util.ClientConstants;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
-public class CollectionSharePresenter extends PresenterWidget<IsCollectionShareView> implements CollectionShareUiHandlers{
+public class CollectionSharePresenter extends PresenterWidget<IsCollectionShareView> implements CollectionShareUiHandlers,ClientConstants{
 
 	private String collectionId=null, resourceId=null;
 	private boolean isResourceView;
+	private boolean isCollectionPlayer=false;
+	private boolean isPreviewPlayer=false;
 	
+
+	private CollectionPlayerPresenter collectionPlayerPresenter=null;
+	private PreviewPlayerPresenter previewPlayerPresenter=null;
+	
+	public CollectionPlayerPresenter getCollectionPlayerPresenter() {
+		return collectionPlayerPresenter;
+	}
+
+	public void setCollectionPlayerPresenter(CollectionPlayerPresenter collectionPlayerPresenter) {
+		this.collectionPlayerPresenter = collectionPlayerPresenter;
+		this.isCollectionPlayer=true;
+	}
+
+	public PreviewPlayerPresenter getPreviewPlayerPresenter() {
+		return previewPlayerPresenter;
+		
+	}
+
+	public void setPreviewPlayerPresenter(PreviewPlayerPresenter previewPlayerPresenter) {
+		this.previewPlayerPresenter = previewPlayerPresenter;
+		this.isPreviewPlayer=true;
+	}
+	
+
 	@Inject
 	public CollectionSharePresenter(EventBus eventBus, IsCollectionShareView view) {
 		super(eventBus, view);
@@ -62,20 +91,19 @@ public class CollectionSharePresenter extends PresenterWidget<IsCollectionShareV
 		}else{
 		 collectionId=collectionDo.getGooruOid();
 		 final Map<String, String> params = new HashMap<String, String>();
-			params.put("type", AppClientFactory.getPlaceManager()
-					.getCurrentPlaceRequest().getNameToken());
-			params.put("shareType", "share");
+			params.put(ClientConstants.TYPE, AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken());
+			params.put(ClientConstants.SHARETYPE, ClientConstants.SHARE);
 			AppClientFactory.getInjector().getSearchService().getShortenShareUrl(collectionId,params, new SimpleAsyncCallback<Map<String,String>>() {
 				@Override
 				public void onSuccess(final Map<String, String> collectionShareMap) {
-					String shareUrl=collectionShareMap.get("decodeRawUrl");
+					String shareUrl=collectionShareMap.get(ClientConstants.DECODERAWURL);
 					getView().setData(collectionDo);
 					getView().setEmbedurl(shareUrl);
-					params.put("shareType", "embed");
+					params.put(ClientConstants.SHARETYPE, ClientConstants.EMBED);
 					AppClientFactory.getInjector().getSearchService().getShortenShareUrl(collectionDo.getGooruOid(),params, new SimpleAsyncCallback<Map<String,String>>() {
 						@Override
 						public void onSuccess(Map<String, String> result) {
-							collectionShareMap.put("embedUrlRawUrl", result.get("decodeRawUrl"));
+							collectionShareMap.put(ClientConstants.EMBEDURLRAWURL, result.get(ClientConstants.DECODERAWURL));
 							getView().setCollectionShareData(collectionShareMap);
 						}
 					});
@@ -92,8 +120,8 @@ public class CollectionSharePresenter extends PresenterWidget<IsCollectionShareV
 				this.resourceId=resourceId;
 				this.collectionId=null;
 				 Map<String, String> params = new HashMap<String, String>();
-					params.put("type", PlaceTokens.RESOURCE_SEARCH);
-					params.put("shareType", "share");
+					params.put(ClientConstants.TYPE, PlaceTokens.SEARCH_RESOURCE);
+					params.put(ClientConstants.SHARETYPE, ClientConstants.SHARE);
 				AppClientFactory.getInjector().getSearchService().getShortenShareUrl(resourceId,params, new SimpleAsyncCallback<Map<String,String>>() {
 						@Override
 						public void onSuccess(Map<String, String> result) {
@@ -116,15 +144,21 @@ public class CollectionSharePresenter extends PresenterWidget<IsCollectionShareV
 	}
 	
 	@Override
-	public void sendEmail(String fromEmail, final String toEmail, String copyEmail,
-			String subject, String message) {
+	public void sendEmail(String fromEmail, final String toEmail, String copyEmail,	String subject, String message) {
 		AppClientFactory.getInjector().getPlayerAppService().sendEmail(fromEmail, toEmail, copyEmail, subject, message, new SimpleAsyncCallback<String>() {
 			@Override
 			public void onSuccess(String result) {
 				getView().hideSendEmailPopup(toEmail);
 			}
 		});
-		
 	}
-	
+
+	@Override
+	public void triggerShareDatalogEvent(String resourceGooruOid,String collectionItemId, String itemType,String shareType, boolean confirmStatus) {
+		if(isCollectionPlayer){
+			collectionPlayerPresenter.triggerShareDatalogEvent(resourceGooruOid, collectionItemId,  itemType, shareType,  confirmStatus);
+		}else if(isPreviewPlayer){
+			previewPlayerPresenter.triggerShareDatalogEvent(resourceGooruOid, collectionItemId,  itemType, shareType,  confirmStatus);
+		}
+	}
 }

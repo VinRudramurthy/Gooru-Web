@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field= "footerstyle" src="footerstyle.css" type="org.ednovo.gooru.client.mvp.assessments.play.collection.footer.FooterStyleResource"/>
+	<ui:with type="org.ednovo.gooru.client.uc.PlayerBundle" field="palyerBundle" />
+	<html5:FooterTag styleName="{footerstyle.footerContainer}" ui:field="footerContainer">
+		<g:FlowPanel styleName="container animationWrapper text-center" ui:field="resourceAnimationContainer"></g:FlowPanel>
+		<g:HTMLPanel styleName="container">
+			<div class="col-md-14  {footerstyle.textRightMargin}">
+				<g:Button styleName="{footerstyle.infoButtonNormal}" ui:field="infoButton"></g:Button>
+				<g:Button styleName="{footerstyle.addButtonNormal}" ui:field="addButton"></g:Button>
+				<g:Button styleName="{footerstyle.shareButtonNormal}" ui:field="shareButton"></g:Button>
+				<g:Button styleName="{footerstyle.flagButtonNormal}" ui:field="flagButton"></g:Button>
+			</div>
+		</g:HTMLPanel>
+	</html5:FooterTag>
+</ui:UiBinder>

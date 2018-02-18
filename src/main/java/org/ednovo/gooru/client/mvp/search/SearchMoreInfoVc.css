@@ -82,10 +82,12 @@ grade modification......
 }
 
 .moreInfoRightScrollPanel {
-	width: 365px;
+	width: 100%;
 	height: 212px;
 	float: left;
-	padding-left: 10px;
+	/* padding-left: 10px; */
+	overflow-y: scroll !important;
+	overflow-x: hidden !important;
 }
 
 
@@ -127,12 +129,13 @@ grade modification......
 }
 /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .moreInfoRightScrollPanel::-webkit-scrollbar-corner {
-	background-color: red;
+	/* background-color: red; */
 }
 
 .moreInfoRightPanel {
-	width: 345px;
+	width: 505px;
 	float: left;
+	padding-left:8px;
 }
 
 
@@ -151,6 +154,7 @@ grade modification......
 	font-weight: bold;
 	margin-bottom: 10px;
 	margin-right: 7px;
+	margin-top:5px;
 }
 .imageIcon {
 	width: 19px;
@@ -183,9 +187,8 @@ grade modification......
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #999999;
-	width: 534px;
+	width: 100%;
 	position: relative;
-	height: 94px;
 	clear: both;
 	
 }
@@ -193,7 +196,7 @@ grade modification......
 .resourceCollectionTitlePanel {
 	float: left;
 	height: 70px;
-	max-width:275px
+	
 }
 
 
@@ -252,6 +255,7 @@ grade modification......
 }
 
 .notFriendly{
+	clear:both;
 	font-style: italic;
 	color: #999;
 	float: left;
@@ -260,7 +264,7 @@ grade modification......
 .questionMark{
 	float:left;
 	cursor: pointer;
-	position: absolute;
+	/* position: absolute; */
 	top: 39px;
 	left: 50px;
 }

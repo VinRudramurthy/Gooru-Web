@@ -3,7 +3,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
 xmlns:gg="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
 <ui:with type="org.ednovo.gooru.client.uc.ForgetPopUpCBundle" field="res" />
-<g:HTMLPanel>
+<g:HTMLPanel styleName="PopupMainV2Small">
   <div class="{res.css.forgetPopupInnerdiv}">
     <div class="{res.css.forgetPopupHeaderBg}">
       <g:Label styleName="{res.css.forgetPopupHeaderTitle}" ui:field="forgetPopupHeaderText"></g:Label>

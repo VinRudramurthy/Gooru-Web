@@ -4,45 +4,19 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.classpages.assignments.AddAssignmentContainerCBundle"
 		field="res"></ui:with>
-		<g:FlowPanel styleName="{res.css.popupContent}">
+		<g:FlowPanel ui:field="popupContent" styleName="{res.css.popupContent}">
 			<g:HTMLPanel styleName="{res.css.popupHeader}">
 				<g:Label styleName="{res.css.popupHeaderText}" ui:field="addCollectionPopupHeader"></g:Label>
 			</g:HTMLPanel>
 			<g:HTMLPanel styleName="{res.css.assignmentMainContainer}">
-				<g:HTMLPanel styleName="{res.css.assignmentContentContainer}">
-					<g:HTMLPanel styleName="{res.css.assignmentControlsContainer}">
-					    <g:HTMLPanel>
-						<g:Label styleName="{res.css.assignmentTitleLabel}" ui:field="assignmentTitleLabel"></g:Label>
-						<g:Label styleName="{res.css.assignmentErrorMessage}" ui:field="chooseCollectionErrorLabel"></g:Label>
-						</g:HTMLPanel>
-						<g:FlowPanel styleName="{res.css.dropdowncontainer}">
-			              	<g:Label ui:field="dropdownListPlaceHolder" styleName="{res.css.dropdownPlaceHolder}"> </g:Label>
-			              	<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="{res.css.dropdownListContainerScrollPanel}">
-				            	<g:HTMLPanel ui:field="floderTreeContainer" styleName="{res.css.folderStucture}">
-						   		 </g:HTMLPanel>
-					   		 </g:ScrollPanel>
-          			   </g:FlowPanel>
-          			   <g:Label styleName="{res.css.assignmentsystemMessage}" ui:field="chooseCollectionHelpText"></g:Label>
-          			   
-						<g:Label styleName="{res.css.mandatoryLabel}" ui:field="mandatoryTitleLabel"></g:Label>
-					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.assignmentDirectionsContainer}">
-						<g:Label styleName="{res.css.assignmentTitleLabel}" ui:field="assignmentDirectionLabel"></g:Label>
-						<g:HTMLPanel styleName="{res.css.assignmentDirectionContainer}">
-							<g:TextArea styleName="{res.css.assignmentDirectionTxtArea}" ui:field="assignmentDirectionsTxtArea"></g:TextArea>
-							<g:Label styleName="{res.css.assignmentErrorMessage}" ui:field="directionErrorLabel"></g:Label>
-						</g:HTMLPanel>
-						<g:Label styleName="{res.css.mandatoryLabel}" ui:field="mandatoryDirectionLabel"></g:Label>
-					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.assignmentControlsContainer}">
-						<g:Label styleName="{res.css.assignmentTitleLabel}" ui:field="assignmentDueDateLabel"></g:Label>
-						<g:HTMLPanel>
-							<g:SimplePanel ui:field = "datePanelContainer"/>
-							<g:Label styleName="{res.css.mandatoryLabel}" ui:field="mandatoryDueDateLabel"></g:Label>
-						</g:HTMLPanel>
-					</g:HTMLPanel>
-				</g:HTMLPanel>
-				<g:HTMLPanel styleName="{res.css.assignmentButtonsContainer}">
+			    <g:Label styleName="{res.css.subHeadingCollMsg}" ui:field="subHeadingMsgLbl"></g:Label>
+			    <g:Label styleName="{res.css.emptyCollMsg}" ui:field="emptyMsgLbl"></g:Label>
+				<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="{res.css.dropdownListContainerScrollPanel}">
+	            	<g:HTMLPanel ui:field="floderTreeContainer" styleName="{res.css.folderStucture}">
+			   		</g:HTMLPanel>
+				</g:ScrollPanel>
+				<g:Label ui:field="displayCountLabel" styleName="{res.css.selectionCountLabel}"></g:Label>
+				<g:HTMLPanel ui:field="buttonsContainer" styleName="{res.css.assignmentButtonsContainer}">
 					<g:Button styleName="secondary"  ui:field="cancelResourcePopupBtnLbl" />
 					<g:Button styleName="primary {res.css.assignButton}"  ui:field="addResourceBtnLbl" />
 					<g:Label ui:field="addingText" styleName=""></g:Label>

@@ -1,0 +1,788 @@
+.assignmentMainContainer {
+	float: left;
+	padding: 0px 25px 0px 18px;
+	width: 97%;
+	/* height: 518px; */
+}
+.assignmentSuccessMainContainer {
+	float: left;
+	width: 100%;
+	/* height: 518px; */
+}
+.successPopupContainer{
+	padding: 3px;
+	height: 323px;
+	width:453px;
+	background: white;
+	z-index: 999;
+}
+.successText{
+	
+}
+
+.assignmentButtonsContainer {
+	float: left;
+	margin: 18px 0 15px 0px;
+	text-align: center;
+	width: 100%;
+}
+.navigateButtonsContainer{
+	float: left;
+	margin: 38px 0 15px 55px;
+}
+
+.assessmentAddContainer {
+		
+	/* Firefox v3.6+ */
+	background-image: -moz-linear-gradient(99% 0% -90deg, rgb(76, 152, 204)
+		0%, rgb(16, 118, 187) 100%);
+	/* safari v4.0+ and by Chrome v3.0+ */
+	background-image: -webkit-gradient(linear, 99% 0%, 99% 100%, color-stop(0, rgb(76, 152,
+		204)), color-stop(1, rgb(16, 118, 187)));
+	/* Chrome v10.0+ and by safari nightly build*/
+	background-image: -webkit-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 100%);
+	/* Opera v11.10+ */
+	background-image: -o-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 100%);
+	/* IE v10+ */
+	background-image: -ms-linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 100%);
+	/*background-image: linear-gradient(-90deg, rgb(76, 152, 204) 0%,
+		rgb(16, 118, 187) 100%);*/
+	width: 67px;
+	height: 30px;
+	/* Firefox v1.0+ */
+	-moz-border-radius: 4px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius: 4px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius: 4px;
+	float: left;
+	background-color: #1076BB;
+}
+
+.myFolderCollectionOk:hover {
+	color: white;
+	background: #1076BB;
+	cursor: pointer;
+}
+
+.addButtonTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	padding: 7px 0px 0px 0px;
+	cursor: pointer;
+}
+
+.assignmentsCancel {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	float: left;
+	color: #1076BB;
+	font-style: normal;
+	padding: 6px 0px 0px 10px;
+	cursor: pointer;
+}
+
+.assignmentsCancel:hover {
+	color: #87BADD;
+}
+
+.assignmentContentContainer {
+	
+}
+
+.buttonSelected {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd),
+		to(#f5f5f5));
+	background: -moz-linear-gradient(top, #ddd, #f5f5f5);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, .1);
+	border-top: 1px solid #ccc;
+	height: 37px;
+	cursor: pointer;
+	border-bottom: 1px solid #ddd;
+}
+
+/* Container */
+.assignmentContainerMainPanel {
+	/* width: 42%; */
+	margin: 0 auto;
+	position: relative;
+	padding: 3px 6px 3px 3px;
+	background: #fff;
+	border-color: rgb(221, 221, 221);
+}
+
+.assignmentContainer {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.myFolderCollectionPopup {
+	float: left;
+	background-color: #FFF;
+	border-color: rgb(221, 221, 221);
+	border-width: 1px;
+	border-style: solid;
+	width: 100%;
+	margin-bottom: 6px;
+	/* height: 556px; */
+}
+
+.assignmentTitleBlackBg {
+	width: 100%;
+	height: 39px;
+	background-color: rgb(81, 81, 81);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666),
+		to(#515151));
+	background: -webkit-linear-gradient(top, #666, #515151);
+	background: -moz-linear-gradient(top, #666, #515151);
+	background: -ms-linear-gradient(top, #666, #515151);
+	background: -o-linear-gradient(top, #666, #515151);
+}
+
+.assignmentTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 120%;
+	color: rgb(255, 255, 255);
+	padding: 8px 5px 5px 10px;
+}
+
+.assignmentTabContent {
+	float: left;
+	width: 120px;
+	/* 	height: 506px; */
+	border-bottom: none;
+	border-left: none;
+	border-style: solid;
+	border-color: rgb(221, 221, 221);
+	border-left: none;
+	border-bottom: none;
+	background-color: #FFF;
+}
+
+.buttonDeSelected {
+	margin: 0px;
+	color: #515151;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #eee;
+	background: white;
+	height: 37px;
+	cursor: pointer;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FDFDFD),
+		to(#EDEDED));
+	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+}
+
+.buttonSelected:hover,.buttonDeSelected:hover {
+	background: #efefef;
+	box-shadow: none;
+}
+
+.assignmentTabTitleBg {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 120%;
+	color: #000;
+	text-align: left;
+	padding: 8px 0px 5px 10px;
+}
+
+/* Content */
+.assignmentTitleLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: rgb(81, 81, 81);
+	text-align: left;
+	margin-bottom:5px;
+	width: 270px;
+	float: left;
+}
+
+.assignmentTextBoxContainer {
+	background-color: transparent;
+	width: 415px;
+	height: 28px;
+	border-color: rgb(221, 221, 221);
+	border-width: 1px;
+	/* Firefox v1.0+ */
+	-moz-border-radius: 1px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius: 1px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius: 1px;
+	border-style: solid;
+}
+
+.assignmentTextBox {
+	border: 0px;
+	height: 24px;
+	width: 98%;
+	font-size: 12px;
+	line-height: 120%;
+}
+
+.assignmentDueDateTextBox {
+	border: 0px;
+	height: 24px;
+	width: 86%;
+	font-size: 12px;
+	line-height: 120%;
+	float: left;
+}
+
+.assignmentControlsContainer {
+	margin: 16px 24px 0px 0px;
+	float:left;
+	width:100%;
+}
+
+.assignmentDirectionsContainer {
+	margin: 16px 10px 0 0;
+	float: left;
+}
+
+.assignmentDateCalender {
+	background: url(images/Collection-Search/icon-sprite.png) no-repeat
+		scroll -7px -472px transparent;
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 21px;
+	margin-left: 6px;
+	width: 30px;
+	margin-top: 4px;
+}
+
+.assignmentDirectionContainer {
+	margin-top: 15px;
+	padding-left: 4px;
+	width: 408px;
+	height: 81px;
+	border-color: #DDD;
+	border-width: 1px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	border-style: solid;
+}
+
+.assignmentCollectionsContainer {
+	width: 314px;
+	height: 28px;
+	margin-top: 20px;
+/* 	border-color: #DDD;
+	border-width: 1px;
+ */	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	border-style: solid;
+}
+
+.assignmentDirectionTxtArea {
+	max-height: 78px;
+	width: 406px;
+	height: 78px;
+	border: 0;
+	resize:none;
+	font-size: 12px;
+	margin-top: 0px !important
+}
+
+.mandatoryLabel {
+	ont-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(249, 176, 57);
+	text-align: right;
+	float:right;
+	margin-top:3px;
+}
+.assignmentPopupStyle {
+	background: none repeat scroll 0 0 #FFFFFF;
+	clip: inherit !important;
+	overflow: visible !important;
+	position: absolute !important;
+	width: 532px;
+}
+
+.registerErrorLabel{
+	/* background-color: #FFFFCC;
+    border: 1px solid #CC0000;
+    clear: both;
+    font: 10px arial;
+    margin-left: 144px;
+    margin-top: 3px;
+    padding: 3px; 
+    width: 194px;*/
+}
+
+.gooruDateBoxError {
+	border: 1px solid #ccc;
+    float: left;
+    margin-bottom: 3px;
+    padding: 2px;
+    width: 264px;
+    background-color: #FFFFCC;
+}
+
+
+.gooruDateError{
+	border: 0 none;
+    float: left;
+    height: 20px;
+    width: 228px;
+    background-color:#FFFFCC;
+}
+
+.listBox{
+	background-color:rgb(255,255,255);
+	width:317px;
+	height:28px;
+	border-color:rgb(221,221,221);
+	border-width:1px;
+	/* Firefox v1.0+ */
+	-moz-border-radius:1px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius:1px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius:1px;
+	border-style:solid;
+		
+}
+.popupContainer{
+	width:450px;
+	padding:3px;
+	height:430px;
+	background: white;
+	z-index: 999;
+}
+.popupContainer .popupContent{
+	border:1px solid #DDD;
+	height:420px;
+}
+
+.copyResourcePopupContainer{
+	width:450px;
+	padding:3px;
+	height:185px;
+	background: white;
+	z-index: 999;
+}
+.copyResourcePopupContainer .popupContent{
+	border:1px solid #DDD;
+	height:182px;
+}
+.popupHeader{
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+	
+}
+.popupHeaderText{
+	color:white;
+	font-size:16px;
+}
+
+.folderStucture {
+    /* width:395px; */
+}
+.folderStucture table {
+   /*  width:395px; */
+}
+.folderStucture > div > div > div > div {
+    margin-left:0px !important;
+}
+
+/*////////////*/
+
+.folderLevel,.foldercollection {
+    height: 25px;
+    line-height: 25px;
+    padding-right:15px;
+    position:relative;
+    text-align:left;
+    cursor:default;
+}
+
+.folderLevel .title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em;
+}
+
+.folderLevel,.foldercollection { /* grandparent level - default */
+    box-sizing:border-box;
+    padding-left:65px;
+}
+
+.folderLevel.root {
+    background-image:none;
+    padding: 0px 10px 0px 10px;
+    overflow: visible;
+}
+
+.folderLevel.parent {
+    padding-left:93px;
+}
+
+.folderLevel.child {
+    padding-left:121px;
+}
+.folderLevel.innerchild,.foldercollection.innerchild {
+    padding-left:149px;
+}
+
+.foldercollection.parent {
+    padding-left:93px;
+}
+
+.foldercollection.child {
+    padding-left:121px;
+}
+
+
+/*////////////////////// positioning with folder icon ///////////////////*/
+
+
+.folderLevel { /* grandparent level - default */
+    background: url('../images/folders/panel/folder-small-icon.png') no-repeat 33px 4px;
+}
+
+.folderLevel.parent {
+    background: url('../images/folders/panel/folder-small-icon.png') no-repeat 61px 4px;
+}
+
+.folderLevel.child {
+    background: url('../images/folders/panel/folder-small-icon.png') no-repeat 89px 4px;
+}
+.folderLevel.innerchild{
+	 background: url('../images/folders/panel/folder-small-icon.png') no-repeat 117px 4px;
+}
+
+.foldercollection { /* grandparent level - default */
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 33px 4px;
+}
+
+.foldercollection.parent {
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 61px 4px;
+}
+
+.foldercollection.child {
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 89px 4px;
+}
+.foldercollection.innerchild {
+    background: url('../images/folders/panel/collection-small-icon.png') no-repeat 117px 4px;
+}
+
+.folderAssessment { /* grandparent level - default */
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 33px 4px;
+    background-size: 22px 18px;
+}
+
+.folderAssessment.parent {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 61px 4px;
+    background-size: 22px 18px;
+}
+
+.folderAssessment.child {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 89px 4px;
+    background-size: 22px 18px;
+}
+.folderAssessment.innerchild {
+    background: url('../images/folders/panel/assessment-smal.png') no-repeat 117px 4px;
+    background-size: 22px 18px;
+}
+
+.folderLevel:hover,.folderAssessment:hover {
+    background-color:#f0f0f0;
+}
+
+.folderAssessment.selected {
+    background-color:#CFE3F1;
+}
+.folderLevel,.folderAssessment {
+    height: 25px;
+    line-height: 25px;
+    padding-right:15px;
+    position:relative;
+    text-align:left;
+    cursor:default;
+}
+.folderLevel,.folderAssessment { /* grandparent level - default */
+    box-sizing:border-box;
+    padding-left:65px;
+}
+.folderLevel.innerchild,.folderAssessment.innerchild {
+    padding-left:149px;
+}
+.folderAssessment.parent {
+    padding-left:93px;
+}
+
+.folderAssessment.child {
+    padding-left:121px;
+}
+
+
+/*////////////////////// other ../images ///////////////////*/
+
+
+.folderLevel.open {
+    background-image: url('../images/folders/panel/folder-small-icon-open.png');
+}
+
+
+
+/*////////////////////////////////////////////////////////*/
+
+.folderLevel .arrow {
+    width:25px;
+    height:25px;
+    border-radius:2px;
+    position:absolute;
+    top:0px;
+    background: url('../images/folders/panel/arrow-closed.png') no-repeat center;
+    display:none;
+}
+
+.folderLevel .arrow:hover {
+    background-color:#f0f0f0;
+    cursor:pointer;
+     display:none;
+}
+
+.folderLevel.open .arrow {
+    background-image: url('../images/folders/panel/arrow-open.png');
+    display:none;
+}
+
+.folderLevel.empty .arrow {
+    display:none;
+}
+
+.folderLevel .arrow { /* grandparent level - default */
+    left:5px;
+    display:none;
+}
+
+.folderLevel.parent .arrow {
+    left:33px;
+    display:none;
+}
+
+.folderLevel.child .arrow {
+    left:61px;
+    display:none;
+}
+.folderLevel.innerchild .arrow {
+    left:89px;
+    display:none;
+}
+
+.folderLevel:hover,.foldercollection:hover {
+    background-color:#f0f0f0;
+}
+
+.foldercollection.selected {
+    background-color:#CFE3F1;
+}
+.folderLevel.selected {
+    background-color:#CFE3F1;
+}
+ .dropdowncontainer{
+	 width: 324px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 1px;
+	margin-top: 3px;
+ }
+ .dropdownPlaceHolder{
+ 	background: url(images/dropdownMenuArrow.png) no-repeat;
+	background-color: white;
+	background-position: right center;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	display: block;
+	width: 382px;
+	height: auto;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+ }
+ .dropdownListContainerScrollPanel{
+   	height: 275px;
+    list-style-type: none;
+    margin: 20px auto auto 44px;
+    width: 91%;
+    color:#999;
+ }
+ .assignmentsystemMessage{
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	/* font-style:italic; */
+	line-height: 120%;
+	color: #999;
+	text-align: left;
+	margin-top:3px;
+	float:left;
+	width: 95%;
+ }
+ .assignmentErrorMessage{
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style:italic;
+	line-height: 120%;
+	color: #FBB03B;
+	text-align: left;
+	margin-top:3px;
+	float:left;
+	height:0px;
+ }
+ .assignmentDirectiomErrorMessage{
+  	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style:italic;
+	line-height: 120%;
+	color: #FBB03B;
+	text-align: left;
+	float:left;
+	height:0px;
+ }
+ .loadingText{
+	 width: 100%;
+	font-style: italic;
+	font-size: 12px;
+	color: #999;
+ }
+ .assignButton{
+ 	margin-left: 10px;
+ }
+ 
+.assignmentTitleLabelForOe{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: rgb(81, 81, 81);
+	text-align: left;
+	margin-bottom:5px;
+	float: left;
+}
+  .primaryButton{
+ 	 margin-left: 5px;
+  }
+  
+  
+.noCollectionMsgContainer{
+	border:1px solid #DDD;
+	height:220px;
+	width: 450px;
+  }
+ 
+.noCollectionMsgOuterContainer{
+	padding: 3px;
+	height: 222px;
+	background: white;
+	z-index: 999;
+}
+
+.emptyCollMsg{
+	text-align: center;
+	margin-top: 38px;
+	float: left;
+	margin-left: -19px;
+	font-size: 12px;
+}
+
+.subHeadingCollMsg{
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	float: left;
+	margin-left: 12px;
+	font-size: 12px;
+}
+.selectionCountLabel{
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+	margin-top:5px;
+	font-weight: bold;
+	height:10px;
+	margin-bottom: 15px;
+}
+.selectionErrorLabel{
+	width: 89%;
+	font-weight: bold;
+	height: 10px;
+	color: #fab03a;
+	font: 12px arial;
+	text-align: right;
+}
+.assignmentButtonsContainerCopy {
+	float: left;
+	margin: 18px 0 15px 150px;
+	position:absolute;
+	margin-top:88px;
+}
+.addTextButtonsContainer{
+	float: left;
+	width: 174px;
+	left: 10%;
+	position: relative;
+}
+.addPlayerStyle{
+	display: inline-block;
+	float: center;
+/*	margin-left: 275px;*/
+	/* height: 258px; */
+	background-color: #fff;
+}
+ .addMyCollectionsStyle{
+	/* font-size: 16px;
+	background-color: #cfe3f1; */
+	height: 20px;
+	text-align: left;
+	padding-top: 7px;
+	padding-left: 11px;
+ }
+ .addResourceTextStyles{
+		position: relative;
+	 }
+ .addCollectionTextStyles{
+	/* float: left; */
+	left: 12px;
+	position: relative;
+	top:10px;
+	margin-bottom:22px;
+	color:#999;
+	 }
+.collectionChild1{
+	padding-left:87px !important;
+}
+.collectionChild2{
+	padding-left:177px !important;
+}

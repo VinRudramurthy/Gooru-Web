@@ -1,0 +1,534 @@
+#fpnlWrapperContainerField .ratingVisualizations {
+    overflow:hidden;
+}
+
+#fpnlWrapperContainerField .rating {
+    margin: 3px 10px 3px 0px;
+    font-size:12px;
+    /* width: 95px; used in search
+    float: right; used in search
+    text-align:right; used in search */
+    vertical-align:middle;
+    line-height: 1.4em;
+}
+
+#fpnlWrapperContainerField .rating .star,#fpnlWrapperContainerField .userRating .star {
+    font-size:14px;
+    color:#999;
+}
+
+#fpnlWrapperContainerField .rating .star.filled {
+    color:#4e9746;
+}
+
+/* //.rating .star:before, .userRating .star:before {content:'\2606';}
+//.rating .star.filled:before, .userRating .star.filled:before {content:'\2605';} */
+
+#fpnlWrapperContainerField .star:before {
+    display: inline-block;
+    /* font-family: FontAwesome; */
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:'\2606';
+}
+
+#fpnlWrapperContainerField .star.filled:before {
+    content: "\2605";
+}
+
+#fpnlWrapperContainerField .userRating .star.filled {
+    color:#1076BB;
+}
+
+/*//////////////////////////////////////////////////// popups ////////////////*/
+
+body.popupBG {
+    background-color:rgba(0,0,0,.6);
+}
+
+#fpnlWrapperContainerField .popup {
+	background-color:white;
+	width: 450px;
+	margin:50px auto;
+	padding:3px;
+}
+
+#fpnlWrapperContainerField .popupInner {
+	border: 1px solid #DDD;
+}
+
+#fpnlWrapperContainerField .popupHeader {
+    position:relative;
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+	
+	/* IE 6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
+}
+
+#fpnlWrapperContainerField .popupHeader h1 {
+    font-size:16px;
+    font-weight:normal;
+}
+
+#fpnlWrapperContainerField .popupContent {
+	padding:15px;
+    height:400px;
+    overflow:auto;
+}
+
+#fpnlWrapperContainerField .closeButton {
+    width: 17px;
+    height: 17px;
+    background: url("../_images/close-button.png") no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#fpnlWrapperContainerField .closeButton:hover {
+    opacity:.6;
+}
+
+/*//////////////////////////////// distribution graph////////////*/
+
+#fpnlWrapperContainerField .distribution {
+    float: left;
+    width: 120px;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-right: 120px;
+}
+
+#fpnlWrapperContainerField .average {
+    float:left;
+    width:150px;
+}
+
+#fpnlWrapperContainerField h3 {
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+#fpnlWrapperContainerField .barGraph .label { 
+    display:inline-block;
+    width:60px;
+    line-height:12px;
+    text-align:right;
+    margin-right:5px;
+    vertical-align:middle;
+}
+
+#fpnlWrapperContainerField .barGraph .bar { 
+    display:inline-block;
+    width:100px; /* this is the max width for the bars */
+}
+
+#fpnlWrapperContainerField .bar {
+    height:10px;
+    background-color: #8CC63E;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#fpnlWrapperContainerField .barGraph .bar:nth-child(7) {
+    background-color: #57B53B;
+}
+
+#fpnlWrapperContainerField .barGraph .bar:nth-child(11) {
+    background-color: #4E9746;
+}
+
+#fpnlWrapperContainerField .barGraph .bar:nth-child(15) {
+    background-color: #45843E;
+}
+
+#fpnlWrapperContainerField .barGraph .bar:nth-child(19) {
+    background-color: #0F7A42;
+}
+
+#fpnlWrapperContainerField .count {
+    display:inline-block;
+    font-size:11px;
+}
+
+/*//////////////////// ratings and reviews ////////*/
+
+#fpnlWrapperContainerField .userRating {
+    clear:both;
+    background:#f0f0f0;
+    padding:10px 15px;
+    margin: 15px 0px;
+    line-height:29px;
+}
+
+#fpnlWrapperContainerField .userRating.reviewContainer {
+    line-height:1.2em;
+    padding:15px;
+    position:relative;
+}
+
+#fpnlWrapperContainerField .userRating.editContainer {
+    line-height:1.2em;
+    padding:15px;
+}
+
+#fpnlWrapperContainerField .userRating button {
+    float:right;
+}
+
+#fpnlWrapperContainerField .reviewContainer button {
+    float:none;
+    display:block;
+    visibility:hidden;
+    opacity:0;
+    -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -o-transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+#fpnlWrapperContainerField .reviewContainer:hover button {
+    visibility:visible;
+    opacity:1;
+}
+
+#fpnlWrapperContainerField .userRating.reviewContainer .username,
+#fpnlWrapperContainerField .userRating.reviewContainer .timestamp,
+#fpnlWrapperContainerField .userRating.reviewContainer .rating,
+#fpnlWrapperContainerField .userRating.reviewContainer .review {
+    opacity:1;
+    transition:opacity .2s;
+}
+
+#fpnlWrapperContainerField .userRating.reviewContainer:hover .username,
+#fpnlWrapperContainerField .userRating.reviewContainer:hover .timestamp,
+#fpnlWrapperContainerField .userRating.reviewContainer:hover .rating,
+#fpnlWrapperContainerField .userRating.reviewContainer:hover .review {
+    opacity:.4;
+}
+
+#fpnlWrapperContainerField .userRating.reviewContainer {
+    background:#f0f0f0;
+    transition:background .2s;
+}
+
+#fpnlWrapperContainerField .userRating.reviewContainer:hover {
+    background:#f6f6f6;
+    cursor:default;
+}
+
+#fpnlWrapperContainerField .reviewContainer {
+    margin-bottom:25px;
+    position:relative;
+}
+
+#fpnlWrapperContainerField .reviewContainer .username,
+#fpnlWrapperContainerField .editContainer .username {
+    width:200px;
+    float:left;
+}
+
+#fpnlWrapperContainerField .reviewContainer .timestamp, 
+#fpnlWrapperContainerField .editContainer .timestamp {
+    float:right;
+}
+
+#fpnlWrapperContainerField .reviewContainer hr,#fpnlWrapperContainerField .editContainer hr {
+    clear:both;
+    border:none;
+    border-bottom: 1px solid #ddd;
+    margin:3px 0px;
+}
+#fpnlWrapperContainerField .rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+#fpnlWrapperContainerField .rating:not(:checked) > label {
+    float:right;
+    width:16px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    line-height:1.2;
+    color:#999;
+    font-size:16px;
+    transition: color .2s;
+}
+
+#fpnlWrapperContainerField .rating:not(:checked) > label:before {
+    line-height: 1;
+    display: inline-block;
+    text-decoration: inherit;
+    display: inline-block;
+    /* font-family: FontAwesome; */
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:'\2606';
+}
+
+#fpnlWrapperContainerField .rating > input:checked ~ label:before,
+#fpnlWrapperContainerField .rating:not(:checked) > label:hover:before,
+#fpnlWrapperContainerField .rating:not(:checked) > label:hover ~ label:before,
+#fpnlWrapperContainerField .rating > input:selected ~ label:before,
+#fpnlWrapperContainerField .rating:not(:selected) > label:hover:before,
+#fpnlWrapperContainerField .rating:not(:selected) > label:hover ~ label:before{
+    display: inline-block;
+    /* font-family: FontAwesome; */
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:'\2605';
+}
+
+#fpnlWrapperContainerField .rating > input:checked ~ label, .rating > input:selected ~ label {
+    color: #579ECF;
+}
+
+#fpnlWrapperContainerField .rating:not(:checked) > label:hover, .rating:not(:selected) > label:hover,
+#fpnlWrapperContainerField .rating:not(:checked) > label:hover ~ label, .rating:not(:selected) > label:hover ~ label {
+    color: #1076BB;
+}
+
+#fpnlWrapperContainerField .rating > input:checked + label:hover,
+#fpnlWrapperContainerField .rating > input:checked + label:hover ~ label,
+#fpnlWrapperContainerField .rating > input:checked ~ label:hover,
+#fpnlWrapperContainerField .rating > input:checked ~ label:hover ~ label,
+#fpnlWrapperContainerField .rating > label:hover ~ input:checked ~ label,
+
+#fpnlWrapperContainerField .rating > input:selected + label:hover,
+.rating > input:selected + label:hover ~ label,
+.rating > input:selected ~ label:hover,
+.rating > input:selected ~ label:hover ~ label,
+.rating > label:hover ~ input:selected ~ label {
+    color: #1076BB;
+}
+
+fieldset {
+    border:none;
+    display:inline-block;
+}
+
+#fpnlWrapperContainerField .ratingContainer {
+    /* height:60px; */
+    white-space:nowrap;
+    overflow:hidden;
+    text-align:center;
+    -webkit-font-smoothing: antialiased !important;
+   /*  margin-left:10px; */
+    position:relative;
+   /*  float:left; */
+   display: inline-block;
+   vertical-align: middle;
+}
+
+#fpnlWrapperContainerField .editRatingContainer {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0px;
+    left: 0px;
+}
+
+#fpnlWrapperContainerField .userRating .editRatingContainer {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0px;
+    left: 0px;
+}
+
+#fpnlWrapperContainerField .editRatingContainer {
+    background:none;
+    transition: background .2s;
+}
+
+#fpnlWrapperContainerField .editRatingContainer:hover {
+    background:rgba(255,255,255,.6);
+}
+
+#fpnlWrapperContainerField .userRating .editRatingContainer {
+    background:none;
+}
+
+#fpnlWrapperContainerField .userRating:hover .editRatingContainer {
+    background:none;
+}
+
+#fpnlWrapperContainerField .editRating {
+    margin:44px auto 0px auto;
+}
+
+#fpnlWrapperContainerField .editContainer textarea {
+    width:100%;
+    height:72px;
+    display:block;
+    display: block;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #DDD;
+    box-sizing:border-box;
+    font-size:12px;
+}
+
+#fpnlWrapperContainerField .saveCancelContainer {
+    text-align:center;
+}
+
+#fpnlWrapperContainerField .saveCancelContainer button {
+    float:none;
+    margin:10px 2px 0px 2px;
+}
+
+#fpnlWrapperContainerField .timestamp .edited {
+    color:#999;
+}
+
+#fpnlWrapperContainerField .editRatingContainer {
+    text-align:center;
+}
+
+#fpnlWrapperContainerField .editRatingContainer button {
+    text-align:center;
+    margin-top:10px;
+    display:inline-block;
+}
+
+#fpnlWrapperContainerField .userRating .editRatingContainer button {
+    margin-top:25px;
+}
+
+#fpnlWrapperContainerField .editRatingContainer .dropdownButtonContainer {
+    margin: 25px auto;
+    display: block;
+    width: 150px;
+    position:relative;
+}
+
+#fpnlWrapperContainerField .userRating .editRatingContainer .dropdownButtonContainer {
+    margin: 0px auto;
+}
+
+#fpnlWrapperContainerField .editRatingContainer .dropdownButtonContainer .dropdown {
+    width:150px;
+    position:absolute;
+    right:0px;
+    text-align:left;
+}
+
+#fpnlWrapperContainerField .userRating.deleting {
+    text-align:center;
+    color:#999;
+    padding:30px;
+}
+
+#fpnlWrapperContainerField .ratingConfirmationContainer {
+    padding:20px;
+    border:1px solid #ddd;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+    width:300px;
+    text-align:center;
+    border-radius:4px;
+    position:absolute;
+    top:0px;
+    /* left:115px; */
+    white-space:normal;
+}
+
+#fpnlWrapperContainerField .ratingConfirmationContainer h1 {
+    font-size:20px;
+    font-weight:normal;
+    margin-bottom:20px;
+}
+
+#fpnlWrapperContainerField .ratingConfirmationContainer .rating {
+    margin-bottom:20px;
+}
+
+#fpnlWrapperContainerField .ratingConfirmationContainer label {
+    display:block;
+    font-weight:bold;
+    text-align:left;
+    margin:5px 0px;
+}
+
+#fpnlWrapperContainerField .ratingConfirmationContainer textarea {
+    width:100%;
+    height:150px;
+    display:block;
+    display: block;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #DDD;
+    box-sizing:border-box;
+}
+
+/* #fpnlWrapperContainerField .arrowBorder {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-style:inset solid inset none;
+	border-color: transparent #DDD transparent transparent;
+	position: absolute;
+	top: 15px;
+	margin: auto;
+	border-left: none;
+	left: -10px;
+}
+
+#fpnlWrapperContainerField .arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-style:inset solid inset none;
+	border-color: transparent white transparent transparent;
+	position: absolute;
+	margin: auto;
+	top: 15px;
+	border-left: none;
+	z-index: 100;
+	left: -9px;
+} */
+
+#fpnlWrapperContainerField .confirmationIcon {
+    width:55px;
+    height:55px;
+    margin:0px auto 20px auto;
+    background: url('../_images/checkmark.png') center no-repeat;
+}
+
+#fpnlWrapperContainerField .ratingValue{
+	text-align: left;
+	margin-left: 15px;
+	margin-bottom: 2px;
+}
+#fpnlWrapperContainerField .subRatingContainer{
+	width: 160px;
+}

@@ -29,13 +29,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.ednovo.gooru.client.AppPlaceKeeper;
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.AppPlaceKeeper;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.BasePlacePresenter;
+import org.ednovo.gooru.application.client.service.ProfilePageServiceAsync;
+import org.ednovo.gooru.application.shared.model.code.CodeDo;
+import org.ednovo.gooru.application.shared.model.code.LibraryCodeDo;
+import org.ednovo.gooru.application.shared.model.code.ProfileCodeDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.user.BiographyDo;
+import org.ednovo.gooru.application.shared.model.user.IsFollowDo;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
+import org.ednovo.gooru.application.shared.model.user.ProfilePageDo;
+import org.ednovo.gooru.application.shared.model.user.UserFollowDo;
+import org.ednovo.gooru.application.shared.model.user.UserTagsDo;
 import org.ednovo.gooru.client.SeoTokens;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.gin.BasePlacePresenter;
 import org.ednovo.gooru.client.mvp.authentication.SignUpPresenter;
+import org.ednovo.gooru.client.mvp.home.AlmostDoneUc;
 import org.ednovo.gooru.client.mvp.home.event.HeaderTabType;
 import org.ednovo.gooru.client.mvp.home.event.HomeEvent;
 import org.ednovo.gooru.client.mvp.image.upload.ImageUploadPresenter;
@@ -43,19 +55,11 @@ import org.ednovo.gooru.client.mvp.profilepage.ProfilePagePresenter.IsProfilePag
 import org.ednovo.gooru.client.mvp.profilepage.event.RequestCollectionOpenEvent;
 import org.ednovo.gooru.client.mvp.profilepage.event.RequestFolderOpenEvent;
 import org.ednovo.gooru.client.mvp.profilepage.event.SetUserPublicProfileImageEvent;
-import org.ednovo.gooru.client.mvp.profilepage.list.ProfilePageListPresenter;
 import org.ednovo.gooru.client.mvp.search.event.ConfirmStatusPopupEvent;
 import org.ednovo.gooru.client.mvp.search.event.SetFooterEvent;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
-import org.ednovo.gooru.client.service.ProfilePageServiceAsync;
-import org.ednovo.gooru.shared.model.code.CodeDo;
-import org.ednovo.gooru.shared.model.code.LibraryCodeDo;
-import org.ednovo.gooru.shared.model.code.ProfileCodeDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.user.BiographyDo;
-import org.ednovo.gooru.shared.model.user.ProfileDo;
-import org.ednovo.gooru.shared.model.user.ProfilePageDo;
 
+import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.gwt.user.client.Window;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -63,6 +67,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 
 /**
  * @fileName : ProfilePagePresenter.java
@@ -80,13 +85,8 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
  */
 public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, IsProfilePageProxy> implements ProfilePageUiHandlers {
 	
-//	private SimpleAsyncCallback<List<CollectionDo>> userCollectionAsyncCallback;
-
-	@Inject 
-	private ProfilePageListPresenter profilePageListPresenter;
-	
 	private ImageUploadPresenter imageUploadPresenter;
-
+	
 	private ProfileDo profileDo;
 
 	private Date dob;
@@ -114,15 +114,14 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 	
 	SignUpPresenter signUpViewPresenter = null;
 	
-	private boolean isRefresh = false;
+	UserFollowDo userFollowDo=new UserFollowDo();
 	
 	@Inject
-	public ProfilePagePresenter(ProfilePageListPresenter profilePageListPresenter, IsProfilePageView view, IsProfilePageProxy proxy,ImageUploadPresenter imageUploadPresenter, SignUpPresenter signUpViewPresenter) {
+	public ProfilePagePresenter(IsProfilePageView view, IsProfilePageProxy proxy,ImageUploadPresenter imageUploadPresenter, SignUpPresenter signUpViewPresenter) {
 		super(view, proxy);
 		getView().setUiHandlers(this);
 		this.signUpViewPresenter = signUpViewPresenter;
-		this.profilePageListPresenter = profilePageListPresenter;
-		this.imageUploadPresenter=imageUploadPresenter;
+		this.imageUploadPresenter = imageUploadPresenter;
 		addRegisteredHandler(RequestFolderOpenEvent.TYPE, this);
 		addRegisteredHandler(RequestCollectionOpenEvent.TYPE, this);
 		addRegisteredHandler(SetUserPublicProfileImageEvent.TYPE, this);
@@ -146,7 +145,9 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 		userId = AppClientFactory.getPlaceManager().getRequestParameter("id");
 		AppClientFactory.fireEvent(new ConfirmStatusPopupEvent(false));
 		callBack = "reveal";
+		isFollow(userId);
 		createProfileUserData();
+	
 	}
 
 	@Override
@@ -162,34 +163,32 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 				userId = userResetId;
 				createProfileUserData();
 			}
-			getUserWorkSpace();
-			if (getPlaceManager().getRequestParameter("callback") != null && getPlaceManager().getRequestParameter("callback").equalsIgnoreCase("signup")) {
-				//To show SignUp (Registration popup)
-				Window.enableScrolling(false);
-				AppClientFactory.fireEvent(new SetHeaderZIndexEvent(98, false));
-				String type = getPlaceManager().getRequestParameter("type") ;
-				int displayScreen =getPlaceManager().getRequestParameter("type") !=null  ? Integer.parseInt(type) : 1;
-				signUpViewPresenter.displayPopup(displayScreen);
-				addToPopupSlot(signUpViewPresenter);
+			int flag = AppClientFactory.getLoggedInUser().getViewFlag();
+			final String loginType = AppClientFactory.getLoggedInUser().getLoginType() !=null ? AppClientFactory.getLoggedInUser().getLoginType() : "";
+			if(!AppClientFactory.isAnonymous() && flag==0 &&  !loginType.equalsIgnoreCase("Credential")) {
+				AlmostDoneUc update = new AlmostDoneUc(AppClientFactory.getLoggedInUser().getEmailId(), AppClientFactory.getLoggedInUser());
+				update.setGlassEnabled(true);
+				update.show();
+				update.center();
 			}
+		}
+		if (getPlaceManager().getRequestParameter("callback") != null && getPlaceManager().getRequestParameter("callback").equalsIgnoreCase("signup")) {
+			//To show SignUp (Registration popup)
+			Window.enableScrolling(false);
+			AppClientFactory.fireEvent(new SetHeaderZIndexEvent(98, false));
+			String type = getPlaceManager().getRequestParameter("type") ;
+			int displayScreen =getPlaceManager().getRequestParameter("type") !=null  ? Integer.parseInt(type) : 1;
+			signUpViewPresenter.displayPopup(displayScreen);
+			addToPopupSlot(signUpViewPresenter);
+		}
+		String tab=AppClientFactory.getPlaceManager().getRequestParameter("tab");
+		
+		if(AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.PROFILE_PAGE)&& tab==null){
+			
+			getUserAddedContentTagSummary(AppClientFactory.getPlaceManager().getRequestParameter("id"),"0","10");
 		}
 	}
 	
-	protected void getUserWorkSpace() {
-		String folderId = AppClientFactory.getPlaceManager().getRequestParameter("folderid");
-		getView().setContentTabVisibility(true);
-		if(folderId!=null&&!isRefresh) {
-			isRefresh = true;
-			getProfilePageService().getUserWorkSpace(userId, getFolderItemsAsyncCallback());
-		}
-		if(folderId!=null) {
-			getProfilePageService().getFolders(folderId, getGetWorkSpaceAsyncCallback());
-		} else {
-			getProfilePageService().getUserWorkSpace(userId, getGetWorkSpaceAsyncCallback());
-		}
-		
-		
-	}
 	
 	@Override
 	protected void onUnbind() {
@@ -219,8 +218,9 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 							profileDo = result;
 							AppClientFactory.setBrowserWindowTitle(SeoTokens.PROFILE_PAGE_TITLE + profileDo.getUser().getUsernameDisplay());
 							getView().setProfileData(profileDo);
-							setInSlot(TYPE_PUBLIC_SHELF_VIEW, profilePageListPresenter);
-							profilePageListPresenter.setUserData(profileDo.getUser().getUsernameDisplay());
+							
+							/** New Library Layout Data **/
+							getView().getContentView().setData();
 							
 							if(userId.equalsIgnoreCase(AppClientFactory.getLoggedInUser().getGooruUId())&&!isChildUser(result)) {
 								getView().enableEditableData(profileOptionvalue);
@@ -251,14 +251,11 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 						getView().getChilNoShareOption().setVisible(false);
 					}
 				}
+				
 			}
+			
 		});
 		AppClientFactory.fireEvent(new SetFooterEvent(AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken()));
-		getProfilePageService().profileVisitEvent(userId, new SimpleAsyncCallback<Void>(){
-			@Override
-			public void onSuccess(Void result) {
-			}
-		});
 	}
 	
 	private boolean isChildUser(ProfileDo profileDo) {
@@ -340,7 +337,7 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 				}
 				getView().setContentItemData(collectionItemDo);
 				if(callBack.equalsIgnoreCase("reveal")) {
-					profilePageListPresenter.setShelfListData(collectionItemDo);
+					/*new Library Layout data */
 				}
 			}
 		});
@@ -348,7 +345,7 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 		setFolderItemsAsyncCallback(new SimpleAsyncCallback<List<CollectionItemDo>>() {
 			@Override
 			public void onSuccess(List<CollectionItemDo> collectionItemDo) {
-				profilePageListPresenter.setShelfListData(collectionItemDo);
+				/*new Library Layout data */
 			}
 		});
 	}
@@ -356,6 +353,8 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
+		
+		
 	}
 
 	@Override
@@ -444,6 +443,7 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 		imageUploadPresenter.setPublicProfileImage(true);
 		imageUploadPresenter.setCollectionImage(false);
 		imageUploadPresenter.setEditResourceImage(false);
+		imageUploadPresenter.setAnswerImage(false);
 	}
 
 	@Override
@@ -500,4 +500,108 @@ public class ProfilePagePresenter extends BasePlacePresenter<IsProfilePageView, 
 			});
 		}
 	}
+
+	@Override
+	public void revealTab(Type<RevealContentHandler<?>> tabType) {
+		if (tabType.equals(TYPE_PUBLIC_SHELF_VIEW)) {
+			addToSlot(TYPE_PUBLIC_SHELF_VIEW, this);
+			////collectionResourceTabPresenter.getView().setData(collectionDo);
+		} if (tabType.equals(TYPE_FOLLOWING_VIEW)) {
+			//addToSlot(TYPE_FOLLOWING_VIEW,profilePageFollowPresenter);
+			//profilePageFollowPresenter.getView().setView();
+			
+		}else if(tabType.equals(TYPE_FOLLWER_VIEW)){
+			//addToSlot(TYPE_FOLLWER_VIEW, profilePageFollowPresenter);
+			//profilePageFollowPresenter.getView().setView();
+			
+		}
+			
+	}
+
+	@Override
+	public void clearTabSlot() {
+		clearSlot(TYPE_FOLLOWING_VIEW);
+		clearSlot(TYPE_FOLLWER_VIEW);
+		
+		
+	}
+
+	
+	@Override
+	public UserFollowDo getFollwingData() {
+		AppClientFactory.getInjector().getUserService().getFollowedOnUsers(profileDo.getUser().getGooruUId(),"0","20", new SimpleAsyncCallback<List<UserFollowDo>>() {
+			
+			@Override
+			public void onSuccess(List<UserFollowDo> result) {
+				getView().getFolloweingsObj(result);
+				
+			}
+		});
+		return userFollowDo;
+	}
+
+	@Override
+	public UserFollowDo getFollowerData() {
+		AppClientFactory.getInjector().getUserService().getFollowedByUsers(profileDo.getUser().getGooruUId(),"0","20", new SimpleAsyncCallback<List<UserFollowDo>>() {
+
+			@Override
+			public void onSuccess(List<UserFollowDo> result) {
+				getView().getFollowersObj(result);	
+				
+			}
+		});
+		return userFollowDo;
+	}
+
+	@Override
+	public void followUser(String gooruUid) {
+		AppClientFactory.getInjector().getUserService().followUser(profileDo.getUser().getGooruUId(), new SimpleAsyncCallback<Void>() {
+
+			@Override
+			public void onSuccess(Void result) {
+					getFollowerData();
+						
+			}
+		});
+		
+	}
+
+	@Override
+	public void unFollowUser(String gooruUid) {
+		AppClientFactory.getInjector().getUserService().unFollowUser(gooruUid, new SimpleAsyncCallback<Void>() {
+
+			@Override
+			public void onSuccess(Void result) {
+				getFollowerData();
+				
+			}
+		});
+		
+	}
+
+	
+	public void isFollow(String gooruUid) {
+		AppClientFactory.getInjector().getUserService().isFollowedUser(gooruUid, new SimpleAsyncCallback<IsFollowDo>() {
+
+			@Override
+			public void onSuccess(IsFollowDo result) {
+				getView().isFollow(result.getIsFollow());
+				
+			}
+		});
+		
+	}
+	@Override
+	public void getUserAddedContentTagSummary(String gooruUid,String offset,String limit){
+	AppClientFactory.getInjector().getUserService().getUserAddedContentTagSummary(gooruUid,offset,limit,new SimpleAsyncCallback<List<UserTagsDo>>() {
+
+		@Override
+		public void onSuccess(List<UserTagsDo> result) {
+			getView().getTagsObj(result);
+			
+		}
+	});
+
+	}
+	
 }

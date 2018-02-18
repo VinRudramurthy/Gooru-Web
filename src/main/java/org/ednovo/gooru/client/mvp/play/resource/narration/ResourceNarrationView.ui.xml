@@ -3,27 +3,28 @@
 
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header">
-	<ui:style field= "style" src="resourcenarration.css"/>
-	<g:HTMLPanel>
+	<!-- <ui:style field= "style" src="resourcenarration.css"/> -->
+	<g:HTMLPanel ui:field="narrartionpopupPnl">
 		<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
 			widget names. The ui:field attribute binds an element to a field in the owner 
 			class. See the GWT docs on UI Binder for more details. -->
-		<g:HTMLPanel styleName="{style.popupDisplay}">
-			<g:HTMLPanel styleName="{style.popup}">
-				<g:HTMLPanel styleName="{style.popupHeader}">
-					<g:HTML styleName="{style.popupHeaderTitle}" ui:field="resourceTitle"></g:HTML>
-					<g:Label styleName="{style.close-button}" ui:field="narrationCloseButton"></g:Label>
+		<g:HTMLPanel styleName="popupDisplay">
+			<g:HTMLPanel styleName="narrationPopup">
+				<g:HTMLPanel styleName="popupHeader">
+					<g:HTML styleName="col-md-11 col-sm-11 col-xs-10 popupHeaderTitle" ui:field="resourceTitle"></g:HTML>
+					<g:Label styleName="col-md-1 col-sm-1 col-xs-2 close-button" ui:field="narrationCloseButton"></g:Label>
+					<div class="clearfix"></div>
 				</g:HTMLPanel>
-				<g:HTMLPanel styleName="{style.popupInner}">
-					<g:HTMLPanel styleName="{style.popupContent}">
-						<g:HTMLPanel styleName="{style.circleBlock}">
-							<g:Image styleName="{style.circleBg}" ui:field="authorImage"></g:Image>
-							<g:Label ui:field="authorName"></g:Label>
-						</g:HTMLPanel>
-						<g:HTMLPanel styleName="{style.contentTitle} {style.visibilityHidden}"></g:HTMLPanel>
-						<g:HTML styleName="{style.contentDesc}" ui:field="narrationText"></g:HTML>
+				<g:HTMLPanel styleName="popupInner">
+					<g:HTMLPanel styleName="circleBlock">
+						<g:Image styleName="circleBg" ui:field="authorImage"></g:Image>
 					</g:HTMLPanel>
-					<g:Button styleName="primary"  ui:field="okButton" />
+					<g:Label ui:field="authorName"></g:Label>
+					<g:HTMLPanel styleName="contentTitle visibilityHidden"></g:HTMLPanel>
+					<g:HTML styleName="contentDesc" ui:field="narrationText"></g:HTML>
+					<g:HTMLPanel styleName="popupContent">
+						<g:Button styleName="primary"  ui:field="okButton" />
+					</g:HTMLPanel>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>

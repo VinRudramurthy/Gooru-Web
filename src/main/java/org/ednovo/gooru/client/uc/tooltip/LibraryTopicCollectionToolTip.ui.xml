@@ -9,7 +9,7 @@
 		}
 		
 		.hoverPopupArrow {
-			background: url(images/core/bubble-arrow.png);
+			background: url(images/bubble-arrow.png);
 			display: block;
 			width: 25px;
 			height: 10px;
@@ -33,6 +33,10 @@
 			font-style: italic;
 			color: #999999;
 		}
+	.ratingsDiv{
+		padding-left: 10px;
+		
+	}
 	</ui:style>
 	<ui:style field="toolTip" src="ToolTip.css" />
 		
@@ -45,8 +49,9 @@
 					<br />
 				</g:HTML>
 				<g:HTML ui:field="categoryLbl" styleName="{style.categoryLbl}"></g:HTML>
-				<g:Label ui:field="sourceLbl" styleName="{style.sourceLbl}"></g:Label>
+				<g:FlowPanel ui:field="sourceLbl" styleName="{style.sourceLbl}"></g:FlowPanel>
 			</g:FlowPanel>
+			 <g:FlowPanel styleName="{style.ratingsDiv}"  ui:field="ratingWidgetPanel"></g:FlowPanel>
 		</g:FlowPanel>
 	</g:FlowPanel>
 

@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.preview.metadata.comment;
 
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * @author Search Team

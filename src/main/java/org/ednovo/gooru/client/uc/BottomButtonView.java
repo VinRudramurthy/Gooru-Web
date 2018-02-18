@@ -52,6 +52,8 @@ public class BottomButtonView extends Composite implements HasClickHandlers{
 	
 	public BottomButtonView(){
 		initWidget(uiBinder.createAndBindUi(this));
+		buttonName.getElement().setId("inlineLblButtonName");
+		courseCount.getElement().setId("inlineLblCourseCount");
 	}
 	
 	public void setButtonStyle(String styleName){
@@ -60,6 +62,8 @@ public class BottomButtonView extends Composite implements HasClickHandlers{
 	
 	public void setButtonName(String buttonName){
 		this.buttonName.setText(buttonName);
+		this.buttonName.getElement().setAttribute("alt", buttonName);
+		this.buttonName.getElement().setAttribute("title", buttonName);
 	}
 	
 	public void setCountStyle(String styleName){
@@ -76,6 +80,8 @@ public class BottomButtonView extends Composite implements HasClickHandlers{
 	public void setCount(int count){
 		this.count=count;
 		courseCount.setText("("+count+")");
+		courseCount.getElement().setAttribute("alt", count+"");
+		courseCount.getElement().setAttribute("title", count+"");
 	}
 	
 	public int getCount(){

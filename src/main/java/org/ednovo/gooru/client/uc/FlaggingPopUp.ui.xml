@@ -1,8 +1,8 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
 	<ui:style field="flagPopUpstyle" src="player-flag-popup.css" />
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{flagPopUpstyle.playerflagcontainer} PopupMainVVSmall">
 		<div class="{flagPopUpstyle.playerflagpopupwrapper}">
 			<div class="{flagPopUpstyle.playerflagpopupinnerwrapper}">
 				<div class="{flagPopUpstyle.playerflagpopupheader}">
@@ -15,7 +15,7 @@
 				<div class="{flagPopUpstyle.playerflagcontentcontainer}">
 					<g:HTML styleName="{flagPopUpstyle.playerflagcontentTitle}"
 						ui:field="titleText" />
-					<!-- <div class="{flagPopUpstyle.playerflagcontenttext}">Flag this resource! 
+					<!-- <div class="{flagPopUpstyle.playerflagcontenttext}">Flag this resource!
 						</div> -->
 					<div class="{flagPopUpstyle.playerflagradiobutton}">
 						<g:CheckBox ui:field="checkBox3"
@@ -53,4 +53,4 @@
 			</div>
 		</div>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

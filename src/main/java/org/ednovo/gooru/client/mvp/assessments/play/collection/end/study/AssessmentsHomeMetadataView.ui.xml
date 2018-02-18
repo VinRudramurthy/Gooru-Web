@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header">
+	<ui:style field= "playerStyle" src="previewend.css"/>
+	<html5:SectionTag styleName="{playerStyle.block}">
+  		<g:FlowPanel styleName="col-md-4 col-sm-4 collectionsImageContainer" ui:field="assessmentImageContainter">
+  			<g:Image ui:field="collectionThumbnail" styleName="{playerStyle.collectionImage}"></g:Image>
+  		</g:FlowPanel>
+        <g:HTMLPanel styleName="col-md-8 col-sm-8 collectionsbuttons">
+            <g:HTMLPanel  styleName="player-buttonsContainer">
+	            <g:Label styleName="col-md-4 col-sm-4 playerAssessmentTitle" ui:field="lblAssessmentTitle"></g:Label>
+	            <g:Button ui:field="studyButton" styleName="{playerStyle.preview}"></g:Button>
+            </g:HTMLPanel>
+             <g:Button styleName="secondary" ui:field="shareCollectionBtn"></g:Button>
+	         <g:Button styleName="secondary" ui:field="customizeCollectionBtn"></g:Button>
+            <hr/>
+            <g:HTML ui:field="collectionGoal" styleName="{playerStyle.goal}"></g:HTML>
+        </g:HTMLPanel>
+        <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	</html5:SectionTag>
+</ui:UiBinder>

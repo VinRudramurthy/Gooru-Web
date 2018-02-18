@@ -38,5 +38,6 @@ public class DialogBoxUc extends DialogBox {
 	public DialogBoxUc() {
 		super(false, true);
 		this.setGlassEnabled(true);
+		this.center();
 	}
 }

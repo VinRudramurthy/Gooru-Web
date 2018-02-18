@@ -28,7 +28,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.PopupPanel;
@@ -55,9 +54,12 @@ public class ToolTipPopUp extends PopupPanel {
 	@UiConstructor
 	public ToolTipPopUp(String description, int leftPos, int rightPos) { 
 		setWidget(uiBinder.createAndBindUi(this));
-		text.setText(description);
+		text.setHTML(description);
 		setContentPanel(text);
 		setPopupPosition(leftPos, rightPos);
+		popupArrow.getElement().setId("pnlPopupArrow");
+		contentPanel.getElement().setId("spnlContentPanel");
+		downPopupArrow.getElement().setId("pnlDownPopupArrow");
 	}
 	
 	
@@ -66,6 +68,9 @@ public class ToolTipPopUp extends PopupPanel {
 		setWidget(uiBinder.createAndBindUi(this));
 		setContentPanel(widget);
 		setPopupPosition(leftPos, rightPos);
+		popupArrow.getElement().setId("pnlPopupArrow");
+		contentPanel.getElement().setId("spnlContentPanel");
+		downPopupArrow.getElement().setId("pnlDownPopupArrow");
 	}
 
 

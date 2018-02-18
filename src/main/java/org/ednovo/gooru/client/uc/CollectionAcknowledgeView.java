@@ -27,9 +27,9 @@ package org.ednovo.gooru.client.uc;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -57,10 +57,12 @@ public class CollectionAcknowledgeView extends Composite implements HasClickHand
 	
 	public CollectionAcknowledgeView(){
 		initWidget(uiBinder.createAndBindUi(this));
+		acknowledgeContainer.getElement().setId("fpnlAcknowledgeContainer");
 	}
 	@UiConstructor
 	public CollectionAcknowledgeView(CollectionDo collectionDo){
 		initWidget(uiBinder.createAndBindUi(this));
+		acknowledgeContainer.getElement().setId("fpnlAcknowledgeContainer");
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
 		renderAcknowledgeResource(collectionDo);
 	}
@@ -80,7 +82,7 @@ public class CollectionAcknowledgeView extends Composite implements HasClickHand
 						if((!collectionItemDo.getResource().getUrl().startsWith("https://docs.google.com"))&&(!collectionItemDo.getResource().getUrl().startsWith("http://docs.google.com"))){
 							Label sourceNameLabel=getResourceNameLabel(sourceName);
 							resourceSourcesContainer.add(sourceNameLabel);
-							TocResourceView ackResourceView=new TocResourceView(collectionItemDo,itemsCount+1,false);
+							TocResourceView ackResourceView=new TocResourceView(collectionItemDo,itemsCount+1,false,false);
 						ackResourceView.setResourceTitleColor();
 						//ackResourceView.addClickHandler(new PreviewResourceView(collectionItemDo, collectionDo.getGooruOid()));
 						resourceSourcesWidget.add(ackResourceView);	

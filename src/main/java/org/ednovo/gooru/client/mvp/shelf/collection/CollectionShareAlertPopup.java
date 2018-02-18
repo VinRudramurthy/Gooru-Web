@@ -24,13 +24,14 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.FontWeight;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -44,7 +45,7 @@ import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class CollectionShareAlertPopup extends PopupPanel implements MessageProperties{
+public abstract class CollectionShareAlertPopup extends PopupPanel {
 
 	@UiField Label shareMsgTitle, shareMsgTxt, shareMsgLbl, privateResourceLbl;
 	
@@ -60,6 +61,8 @@ public abstract class CollectionShareAlertPopup extends PopupPanel implements Me
 	
 	private static CollectionShareAlertPopupUiBinder uiBinder = GWT
 			.create(CollectionShareAlertPopupUiBinder.class);
+	
+    MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface CollectionShareAlertPopupUiBinder extends
 			UiBinder<Widget, CollectionShareAlertPopup> {
@@ -67,12 +70,27 @@ public abstract class CollectionShareAlertPopup extends PopupPanel implements Me
 
 	public CollectionShareAlertPopup() {
 		setWidget(uiBinder.createAndBindUi(this));
-		gooruPublicShare.setUrl("images/gooru-public-share-popup.png");
-		privateResourceLbl.setText(GL0840);
-		goBackBtn.setText(GL0841);
-		okButton.setText(GL0190);
+		privateResourceLbl.setText(i18n.GL0840());
+		privateResourceLbl.getElement().setId("lblPrivateResourceLbl");
+		privateResourceLbl.getElement().setAttribute("alt",i18n.GL0840());
+		privateResourceLbl.getElement().setAttribute("title",i18n.GL0840());
+		
+		goBackBtn.setText(i18n.GL1923());
+		goBackBtn.getElement().setAttribute("alt",i18n.GL1923());
+		goBackBtn.getElement().setAttribute("title",i18n.GL1923());
+		okButton.setText(i18n.GL1922());
+		okButton.getElement().setAttribute("alt",i18n.GL1922());
+		okButton.getElement().setAttribute("title",i18n.GL1922());
 		okButton.getElement().setId("btnOk");
 		goBackBtn.getElement().setId("btnGoBack");
+		shareAlertPopup.getElement().setId("pnlShareAlertPopup");
+		alertBodyStyle.getElement().setId("pnlAlertBodyStyle");
+		gooruPublicShare.getElement().setId("imgGooruPublicShare");
+		alertSuccessTitleTxt.getElement().setId("pnlAlertSuccessTitleTxt");
+		alertSuccessTxt.getElement().setId("pnlAlertSuccessTxt");
+		resourceHeaderPanel.getElement().setId("sbResourceHeaderPanel");
+		privateResourcePanel.getElement().setId("pnlPrivateResourcePanel");
+		buttonContainer.getElement().setId("pnlButtonContainer");
 	}
 
 	@UiHandler("okButton")
@@ -99,42 +117,110 @@ public abstract class CollectionShareAlertPopup extends PopupPanel implements Me
 			}
 		}
 		if(isPrivateResource) {
-			setVisibilityData(true, false);
-			shareMsgTitle.setText(GL0363);
-			shareMsgTxt.setText(GL0364);
-			shareMsgLbl.setText(GL0365);
+			setVisibilityData(false, false);
+			shareMsgTitle.setText(i18n.GL1965());
+			shareMsgTitle.getElement().setAttribute("alt",i18n.GL1965());
+			shareMsgTitle.getElement().setAttribute("title",i18n.GL1965());
+			shareMsgTxt.setText(i18n.GL0364());
+			shareMsgTxt.getElement().setAttribute("alt",i18n.GL0364());
+			shareMsgTxt.getElement().setAttribute("title",i18n.GL0364());
+			shareMsgLbl.setText(i18n.GL0365());
+			shareMsgLbl.getElement().setAttribute("alt",i18n.GL0365());
+			shareMsgLbl.getElement().setAttribute("title",i18n.GL0365());
 			alertSuccessTitleTxt.setVisible(true);
 		} else {
 			setPublicMsgData();
-			setPublicFromAlert();
 		}
 	}
 	
 	public void setPublicMsgData() {
 		isPrivateResource = true;
-		setVisibilityData(false, true);
-		shareMsgTitle.setText(GL0362 + GL0329 +GL0686);
+		setVisibilityData(true, true);
+		shareMsgTitle.setText(i18n.GL1965());
+		shareMsgTitle.getElement().setAttribute("alt",i18n.GL1965());
+		shareMsgTitle.getElement().setAttribute("title",i18n.GL1965());
+		shareMsgTxt.getElement().getStyle().setFontSize(12, Unit.PX);
+		shareMsgTxt.getElement().getStyle().setFontWeight(FontWeight.NORMAL);
+		shareMsgTxt.setText(i18n.GL1919());
+		shareMsgTxt.getElement().setAttribute("alt",i18n.GL1919());
+		shareMsgTxt.getElement().setAttribute("title",i18n.GL1919());
+		shareMsgLbl.setText(i18n.GL1920());
+		shareMsgLbl.getElement().setAttribute("alt",i18n.GL1920());
+		shareMsgLbl.getElement().setAttribute("title",i18n.GL1920());
 		gooruPublicShare.setVisible(true);
-		alertSuccessTxt.setVisible(false);
-		alertSuccessTitleTxt.setVisible(false);
+		alertSuccessTxt.setVisible(true);
+		alertSuccessTitleTxt.setVisible(true);
+		okButton.setText(i18n.GL1922());
+		okButton.getElement().setAttribute("alt",i18n.GL1922());
+		okButton.getElement().setAttribute("title",i18n.GL1922());
+		goBackBtn.setText(i18n.GL1923());
+		goBackBtn.getElement().setAttribute("alt",i18n.GL1923());
+		goBackBtn.getElement().setAttribute("title",i18n.GL1923());
+		goBackBtn.setVisible(true);
 	}
 	
 	public void setPrivateMsgData() {
-		setVisibilityData(false, false);
-		shareMsgTitle.setText(GL0362 + GL0700);
-		shareMsgTxt.setText(GL0688 + GL0687 + GL0333 +GL0686);
-		shareMsgLbl.setText(GL0366);
+		setVisibilityData(true, false);
+		shareMsgTitle.setText(i18n.GL0362() + i18n.GL0700());
+		shareMsgTitle.getElement().setAttribute("alt",i18n.GL0362() + i18n.GL0700());
+		shareMsgTitle.getElement().setAttribute("title",i18n.GL0362() + i18n.GL0700());
+		shareMsgTxt.setText(i18n.GL0688() + i18n.GL0687() + i18n.GL0333() +i18n.GL0686());
+		shareMsgTxt.getElement().setAttribute("alt",i18n.GL0688() + i18n.GL0687() + i18n.GL0333() +i18n.GL0686());
+		shareMsgTxt.getElement().setAttribute("title",i18n.GL0688() + i18n.GL0687() + i18n.GL0333() +i18n.GL0686());
+		shareMsgLbl.setText(i18n.GL0366());
+		shareMsgLbl.getElement().setAttribute("alt",i18n.GL0366());
+		shareMsgLbl.getElement().setAttribute("title",i18n.GL0366());
+		okButton.setText(i18n.GL0190());
+		okButton.getElement().setAttribute("alt",i18n.GL0190());
+		okButton.getElement().setAttribute("title",i18n.GL0190());
+		goBackBtn.setVisible(false);
 	}
 
 	public void setShareableMsgData() {
-		setVisibilityData(false, false);
-		shareMsgTitle.setText(GL0362 + GL0701);
-		shareMsgTxt.setText(GL0689 + GL0687 + GL0331 + GL0686);
-		shareMsgLbl.setText(GL0367);
+		setVisibilityData(true, false);
+		shareMsgTitle.setText(i18n.GL0362() + i18n.GL0701());
+		shareMsgTitle.getElement().setAttribute("alt",i18n.GL0362() + i18n.GL0701());
+		shareMsgTitle.getElement().setAttribute("title",i18n.GL0362() + i18n.GL0701());
+		shareMsgTxt.setText(i18n.GL0689() + i18n.GL0687() + i18n.GL0331() + i18n.GL0686());
+		shareMsgTxt.getElement().setAttribute("alt",i18n.GL0689() + i18n.GL0687() + i18n.GL0331() + i18n.GL0686());
+		shareMsgTxt.getElement().setAttribute("title",i18n.GL0689() + i18n.GL0687() + i18n.GL0331() + i18n.GL0686());
+		shareMsgLbl.setText(i18n.GL0367());
+		shareMsgLbl.getElement().setAttribute("alt",i18n.GL0367());
+		shareMsgLbl.getElement().setAttribute("title",i18n.GL0367());
+		okButton.setText(i18n.GL0190());
+		okButton.getElement().setAttribute("alt",i18n.GL0190());
+		okButton.getElement().setAttribute("title",i18n.GL0190());
+		goBackBtn.setVisible(false);
+	}
+	
+	public void confirmPopup() {
+		isPrivateResource = true;
+		setVisibilityData(true, true);
+		shareMsgTitle.setText(i18n.GL0748());
+		shareMsgTitle.getElement().setAttribute("alt",i18n.GL0748());
+		shareMsgTitle.getElement().setAttribute("title",i18n.GL0748());
+		shareMsgTxt.getElement().getStyle().setFontSize(12, Unit.PX);
+		shareMsgTxt.getElement().getStyle().setFontWeight(FontWeight.NORMAL);
+		shareMsgTxt.setText(i18n.GL1954());
+		shareMsgTxt.getElement().setAttribute("alt",i18n.GL1954());
+		shareMsgTxt.getElement().setAttribute("title",i18n.GL1954());
+		shareMsgLbl.setText(i18n.GL1955());
+		shareMsgLbl.getElement().setAttribute("alt",i18n.GL1955());
+		shareMsgLbl.getElement().setAttribute("title",i18n.GL1955());
+		gooruPublicShare.setVisible(true);
+		alertSuccessTxt.setVisible(true);
+		alertSuccessTitleTxt.setVisible(true);
+		okButton.setText(i18n.GL0190());
+		okButton.getElement().setAttribute("alt",i18n.GL0190());
+		okButton.getElement().setAttribute("title",i18n.GL0190());
+		goBackBtn.setText(i18n.GL1956());
+		goBackBtn.getElement().setAttribute("alt",i18n.GL1956());
+		goBackBtn.getElement().setAttribute("title",i18n.GL1956());
+		goBackBtn.setVisible(true);
 	}
 	
 	public void setVisibilityData(boolean isVisible, boolean isPublicResource) {
-		if(isVisible==false) {
+		if(isVisible==true) {
 			shareAlertPopup.setWidth("350px");
 		} else {
 			shareAlertPopup.setWidth("450px");
@@ -145,13 +231,14 @@ public abstract class CollectionShareAlertPopup extends PopupPanel implements Me
 		} else {
 			setPopupMargins(false);
 		}
+	
 		gooruPublicShare.setVisible(false);
 		alertSuccessTxt.setVisible(true);
-		privateResourceLbl.setVisible(isVisible);
-		resourceHeaderPanel.setVisible(isVisible);
-		alertSuccessTitleTxt.setVisible(!isVisible);
-		goBackBtn.setVisible(isVisible);
+		privateResourceLbl.setVisible(!isVisible);
+		resourceHeaderPanel.setVisible(!isVisible);
+		alertSuccessTitleTxt.setVisible(isVisible);
 		showPopup();
+		shareAlertPopup.getElement().getStyle().clearMargin();
 	}
 	
 	private void setPopupMargins(boolean isZero) {
@@ -161,7 +248,7 @@ public abstract class CollectionShareAlertPopup extends PopupPanel implements Me
 		} else {
 			alertBodyStyle.getElement().getStyle().setMargin(4, Unit.PX);
 			alertBodyStyle.getElement().getStyle().setMarginTop(-4, Unit.PX);
-			alertBodyStyle.getElement().getStyle().setPaddingTop(50, Unit.PX);
+			alertBodyStyle.getElement().getStyle().setPaddingTop(25, Unit.PX);
 			alertBodyStyle.getElement().getStyle().setPaddingRight(30, Unit.PX);
 			alertBodyStyle.getElement().getStyle().setPaddingBottom(15, Unit.PX);
 			alertBodyStyle.getElement().getStyle().setPaddingLeft(30, Unit.PX);

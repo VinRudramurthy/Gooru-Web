@@ -87,6 +87,7 @@
     line-height: 50px;
     padding-right:15px;
     position:relative;
+    box-sizing:content-box;
 	/* width: 280px; */
 	/* width: 176px; */
 }
@@ -151,8 +152,16 @@
     background-image: url('../images/folders/panel/collection-icon.png');
 }
 
+.folderLevel.assessment {
+    background-image: url('../images/folders/panel/assessment-type.png');
+}
+
 .folderLevel.publicIcon.collection {
     background-image: url('../images/folders/panel/collection-icon-public.png');
+}
+
+.folderLevel.assesstpublicIcon.assessment {
+    background-image: url('../images/folders/panel/assessment-icon-public.png');
 }
 
 .contents > .collection{
@@ -215,7 +224,6 @@
     background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
     background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 
 .folderLevel:hover {
@@ -398,8 +406,9 @@
     background-image:none;
     padding-top: 15px;
     display: block;
-    width: 100px;
+    width: 130px;
     float: left;
+    font-weight:bold;
 }
 
 .folderLevel.root .dropdownButtonContainer {
@@ -466,7 +475,9 @@
     overflow-x: hidden;
     position:relative; */
 }
+.editPanel{
 
+}
 
 .editPanel {
     background-color:#f0f0f0;
@@ -481,10 +492,9 @@
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
     box-shadow: 0 0 10px rgba(0,0,0,.1); 
     float:right;
-    overflow-y: hidden;
     overflow-x: hidden;
     position:relative;
-    min-height: 638px;
+	overflow-y: hidden;	
 }
 
 .editPanel > div:first-child {
@@ -495,34 +505,38 @@
     background-color:white;
     border-bottom:1px solid #ddd;
     overflow:auto;
-    padding: 25px 30px 15px 30px;
-    margin-top:50px;
+    padding: 25px 40px 15px 30px;
+    margin-top:12px;
 }
 
 .editPanelContent .titleSection .title {
     font-size:20px;
     font-weight:bold;
-    width:440px;
     float:left;
     height:30px;
     line-height:30px;
 }
 
 .editPanelContent .titleSection .folder.title {
-    padding-left:60px;
+    padding-left:51px;
     background: url('../images/folders/panel/folder-icon-organize-title.png') no-repeat left center;
 }
 
 .editPanelContent .titleSection .dropdownButtonContainer {
-    float:right;
-    width:76px;
+    float:left;
+    width:26px;/*width:76px;*/
 }
 
 .editPanelContent .mainSection {
-    border-top:1px solid white;
     padding:5px 30px;
     background: #f0f0f0;
 }
+/* .mainSection{
+	min-height: 340px;
+	overflow-y: scroll;
+	height: 340px;
+} */
+
 
 .editPanelContent .mainSection .addButtons {
     overflow:auto;
@@ -561,7 +575,7 @@
     box-shadow: 0 0 10px #4c98cc;
 }
 
-.contentBlock .info, .contentBlock .contents {
+.contentBlock .info, .contentBlock .contents, .contentBlock .reorderPanel {
     height:100%;
     padding:20px;
     box-sizing:border-box;
@@ -570,7 +584,7 @@
 }
 
 .contentBlock .info {
-    width:227px;
+    width:192px;
     float:left;
     text-align:center;
 }
@@ -578,6 +592,17 @@
 .contentBlock.collection .info img {
     border-left:8px solid #1076BB;
     margin-bottom:8px;
+}
+.contentBlock.collection .info img:hover{
+	opacity: .6;
+}
+
+.contentBlock.assessment .info img {
+    border-left:8px solid #feae29;
+    margin-bottom:8px;
+}
+.contentBlock.assessment .info img:hover{
+	opacity: .6;
 }
 
 .contentBlock.folder .info .image {
@@ -593,7 +618,7 @@
 }
 
 .contentBlock .contents {
-    width:390px;
+    width:316px;
     border-left:1px solid #ddd;
     float:left;
     background: -moz-linear-gradient(left, rgba(245,245,245,1) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 61%); /* FF3.6+ */
@@ -602,7 +627,6 @@
     background: -o-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* Opera 11.10+ */
     background: -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* IE10+ */
     background: linear-gradient(to right, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
 
 .contentBlock.folder .contents.empty {
@@ -616,7 +640,6 @@
 	  background-repeat: no-repeat;
 	  background-position:center;
 	  background-color: -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
 
 .contentBlock.collection .contents.empty {
@@ -626,11 +649,23 @@
     background: url('../images/folders/panel/empty-collection.png') no-repeat center, -o-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* Opera 11.10+ */
     background: url('../images/folders/panel/empty-collection.png') no-repeat center, -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* IE10+ */
     background: url('../images/folders/panel/empty-collection.png') no-repeat center, linear-gradient(to right, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* W3C */
-     background-image: url('../images/folders/panel/empty-collection.png');
-	  background-repeat: no-repeat;
-	  background-position:center;
-	  background-color: -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+    background-image: url('../images/folders/panel/empty-collection.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	background-color: -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%);
+}
+
+.contentBlock.assessment .contents.empty {
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, -moz-linear-gradient(left, rgba(245,245,245,1) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 61%); /* FF3.6+ */
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(245,245,245,1)), color-stop(60%,rgba(255,255,255,0)), color-stop(61%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, -webkit-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* Chrome10+,Safari5.1+ */
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, -o-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* Opera 11.10+ */
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* IE10+ */
+    background: url('../images/folders/panel/empty-assesment.png') no-repeat center, linear-gradient(to right, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%); /* W3C */
+    background-image: url('../images/folders/panel/empty-assesment.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	background-color: -ms-linear-gradient(left, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 61%);
 }
 
 .contentBlock .contents .resource {
@@ -639,11 +674,17 @@
 
 
 
-.contentBlock .contents .collection, .contentBlock .contents .folder {
+.contentBlock .contents .collection, .contentBlock .contents .assessment, .contentBlock .contents .folder {
     margin-bottom: 7px;
     height: 20px;
     padding-left:31px;
     line-height:20px;
+}
+
+.folder{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .contentBlock .contents .collection {
@@ -652,6 +693,11 @@
 
 .contentBlock .contents .folder {
     background: url(../images/folders/panel/folder-icon-small.png) no-repeat left center;
+}
+
+.contentBlock .contents .assessment {
+    background: url(../images/folders/panel/assessment-smal.png) no-repeat left center;
+    /* background-size: 27px 19px */
 }
 
 .contentBlock .contents .folder:hover {
@@ -677,8 +723,11 @@
     vertical-align:top;
 }
 
+
+
+
 .editPanelContent .titleSection .saveCancelContainer {
-    width:125px;
+    width:195px;
     float:right;
     text-align:right;
 }
@@ -706,6 +755,7 @@
     right: 0px;
     padding: 12px 12px 12px 75px;
     line-height: normal;
+    box-sizing:content-box;
 }
 
 .folderLevel .myShelfEditButtonContainer:hover {
@@ -716,7 +766,6 @@ background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,25
 background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%);
 background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%);
 background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
 }
 
 .editPanelContent .mainSection.emptyFolder {
@@ -724,7 +773,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     background: url(../images/folders/panel/empty-folder-large.png) no-repeat center;
 }
 .buttonMargins {
-	margin: 10px 0px 0px 10px;	
+	margin: 0px 0px 0px 10px;	
 }
 
 .folderTitleElipses{
@@ -748,7 +797,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
     -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
     -o-transition: visibility 0.2s linear, opacity 0.2s linear;
-    //transition: visibility 0 linear 0.2s, opacity 0.2s linear;
 }
 
 .tooltipContainer .arrowBorder {
@@ -837,4 +885,114 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 .collectionButton{
 	margin-left: 10px !important;
+}
+
+/* Drop Down Menu*/
+.dropdownButtonContainer {
+	float: left;
+}
+
+.dropdownButtonContainer .dropdown {
+    display:none;
+    background: white;
+    border: 1px solid #ddd;
+    position: absolute;
+    z-index: 98;
+    margin-left: -75px;
+    line-height: 1.2em;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.dropdownButtonContainer:hover .dropdown {
+    display:block;
+}
+
+.dropdownButtonContainer .dropdown .option {
+    padding:5px;
+}
+
+.dropdownButtonContainer .dropdown .option:hover {
+    background-color:#CFE3F1;
+    cursor:pointer;
+}
+
+.dropdownButtonContainer .dropdown .option.disabled {
+    color:#999;
+}
+
+.dropdownButtonContainer .dropdown .option.disabled:hover {
+    background-color:white;
+    cursor:default;
+}
+
+.dropdownItem {
+	height: 15px;
+	width: 15px;
+	margin: 5px;
+	padding-bottom: 6px;
+	cursor: pointer;
+	background: url('../images/settings/down-arrow.png') no-repeat center;
+}
+
+.dropdownItem:hover {
+	
+}
+
+.metaContainer {
+	height: 200px;
+}
+
+
+
+.contentBlock .reorderPanel{
+	width:62px;
+    float:left;
+    border-left:1px solid #ddd;
+    text-align:center;
+   	margin-left: 2px;;
+}
+
+.reorderTxtBox{
+	width: 18px;
+	float: left;
+	margin-bottom: 25px;
+}
+
+
+
+.upDownBtn{
+	margin-left: 3px;
+	margin-top: -14px;
+}
+
+.upDownBtn input[type="text"]{
+	width:34px;
+	margin:8px 0;
+	height:25px;
+	padding:1px 6px;
+	border:1px solid #DDDDDD;
+	font-size:16px;
+	color:#515151;
+	text-align:center;
+	margin-left: -3px;
+}
+
+.upDownBtnBlock{
+	display:block;
+	margin-bottom: 4px;
+	padding: 5px 8px;
+}
+
+.itemNumber{
+	display: inline;
+	margin-left: 12px;
+	float: left;
+	margin-top: 18px;
+	font-size: 20px;
+}
+.assessmentContainer{
+	text-align: center;
+	padding-top: 0px !important; 
 }

@@ -27,8 +27,19 @@ package org.ednovo.gooru.client.event;
 import com.google.gwt.event.shared.EventHandler;
 
 /**
- * @author Search Team
+ * 
+ * @fileName : InvokeRegisterHandler.java
  *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface InvokeRegisterHandler extends EventHandler {
 	

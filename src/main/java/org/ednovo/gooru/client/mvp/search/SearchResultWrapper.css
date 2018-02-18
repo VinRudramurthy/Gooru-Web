@@ -48,7 +48,8 @@
 }
 
 .contentPanel {
-	width: 456px;
+	/* width: 420px; */
+	width: 365px;
 	float: left;
 	padding: 10px 10px 0px;
 }
@@ -59,6 +60,7 @@
 	margin: 10px 0 0 0;
 	float: right;
 	width: 74px;
+	min-height: 15px;
 }
 
 .hiddenPanel {
@@ -72,17 +74,25 @@
 	height: 20px;
 }
 
-.share,.moreInfo, .embed {
+.share,.infoLbl, .embed {
+    color: #333333;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 6px;
+    text-align: center;
+    box-shadow: none;
+}
+.moreInfo {
     color: #333333;
     cursor: pointer;
     float: left;
     font-size: 12px;
     padding: 6px;
     text-align: center;
-    width: 81px;
     box-shadow: none;
 }
-.moreInfoActive,.shareActive, .embedActive {
+
+.moreInfoActive,.infoLblActive,.shareActive, .embedActive, .addLblActive, .analyticsLblActive, .tagsLblActive {
 	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
 	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
 	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
@@ -93,15 +103,17 @@
 	background: -o-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
 	background: -ms-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
 	background: linear-gradient(to bottom, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#efefef',GradientType=0 );
 }
-.share:HOVER, .moreInfo:HOVER, .shareActive:HOVER, .moreInfoActive:HOVER, .embed:HOVER {
+.share:HOVER, .moreInfo:HOVER,.infoLbl:HOVER, .shareActive:HOVER, .moreInfoActive:HOVER, .embed:HOVER, .addLblActive:HOVER, .tagsLblActive:HOVER, .analyticsLblActive:HOVER {
+
 	background:#EFEFEF;
 	cursor:pointer;
 	box-shadow: none;
 }
 .disclosurePanel {
+	float: left;
 	color: #999;
+	width:91%;
 }
 .disclosureHeader{
 	background:-moz-linear-gradient(center top , #FDFDFD, #EDEDED) repeat scroll 0 0 transparent;
@@ -159,7 +171,7 @@
 	padding-top: 5px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 25px 0px 40px 0px;
+	padding: 5px 0px 20px 0px;
 	}
 
 .blueLink,.blueLinkPad {
@@ -169,8 +181,8 @@
 	font-size: 10px;
 	margin-top: 5px;
 	padding-left: 4px;
+	display: inline-block;
 }
-
 .blueLinkPad {
 	color: #0F76BB;
 	cursor: pointer;
@@ -178,6 +190,7 @@
 	font-size: 10px;
 	margin-top: 1px;
 	padding-left: 4px;
+	display: inline-block;
 }
 
 .moreMetaLbl {
@@ -186,4 +199,34 @@
 
 .tagText {
 	color: #1076ba;
+}
+
+.ratingWidgetPanel{
+	padding-right: 5px;
+  text-align: center;
+  position: absolute;
+  right: 14px;
+}
+
+
+.tabActive{
+	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	background: rgb(239,239,239);
+	background: -moz-linear-gradient(top, rgba(239,239,239,1) 0%, rgba(247,247,247,1) 32%, rgba(239,239,239,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,239,239,1)), color-stop(32%,rgba(247,247,247,1)), color-stop(100%,rgba(239,239,239,1)));
+	background: -webkit-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
+	background: -o-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
+	background: -ms-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
+	background: linear-gradient(to bottom, rgba(239,239,239,1) 0%,rgba(247,247,247,1) 32%,rgba(239,239,239,1) 100%);
+}
+.tabActive:HOVER{
+	background:#EFEFEF;
+	cursor:pointer;
+	box-shadow: none;
+}
+.setFont{
+	font-size:12px;
+	white-space: normal;
 }

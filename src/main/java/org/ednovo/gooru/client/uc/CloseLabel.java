@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,12 +23,13 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.ednovo.gooru.client.uc;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Display;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -37,13 +38,15 @@ import com.google.gwt.user.client.ui.Label;
 
 /**
  * @author Search Team
- * 
+ *
  */
-public abstract class CloseLabel extends FlowPanel implements ClickHandler,MessageProperties {
+public abstract class CloseLabel extends FlowPanel implements ClickHandler {
 
 	private Label label;
 
 	private Label removeLabel;
+
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * Class constructor
@@ -51,12 +54,12 @@ public abstract class CloseLabel extends FlowPanel implements ClickHandler,Messa
 	 */
 	public CloseLabel(String text) {
 		removeLabel = new Label();
-		removeLabel.setStyleName(UcCBundle.INSTANCE.css().closeLabelRemove());
-		removeLabel.setText(GL_GRR_Close+" ");
+		removeLabel.setStyleName("Uc-closeLabelRemove");
+		removeLabel.setText(i18n.GL_GRR_Close()+" ");
 		label = new Label();
-		label.setStyleName(UcCBundle.INSTANCE.css().closeLabelText());
+		label.setStyleName("Uc-closeLabelText");
 		label.setText(text);
-		setStyleName(UcCBundle.INSTANCE.css().closeLabel());
+		setStyleName("Uc-closeLabel");
 		add(removeLabel);
 		add(label);
 		removeLabel.addClickHandler(this);
@@ -79,7 +82,7 @@ public abstract class CloseLabel extends FlowPanel implements ClickHandler,Messa
 			this.removeFromParent();
 		}
 	}
-	
+
 	public void disableParentRemoveFunction() {
 		removeLabel.getElement().getStyle().setDisplay(Display.NONE);
 	}

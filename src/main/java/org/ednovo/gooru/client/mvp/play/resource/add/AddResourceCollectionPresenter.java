@@ -25,13 +25,10 @@
 package org.ednovo.gooru.client.mvp.play.resource.add;
 
 
-import java.util.ArrayList;
-
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.folder.FolderListDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemsList;
-import org.ednovo.gooru.shared.model.folder.FolderListDo;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.Label;
@@ -43,6 +40,9 @@ public class AddResourceCollectionPresenter extends PresenterWidget<IsAddResourc
 
 	private int pageNum=1;
 	private int pageSize=20;
+	private static final String ASSESSMENT = "assessment";
+	private static final String QUESTION = "question";
+	
 	@Inject
 	public AddResourceCollectionPresenter(EventBus eventBus, IsAddResourceCollectionView view) {
 		super(eventBus, view);
@@ -69,7 +69,6 @@ public class AddResourceCollectionPresenter extends PresenterWidget<IsAddResourc
 	public void setCollectionItemData(String collectionId,CollectionItemDo collectionItemDo){
 		getView().setCollectionItemData(collectionId, collectionItemDo);
 		pageNum=1;
-		//getUserWorkspace(true);
 		getUserShelfData();
 	}
 	
@@ -88,20 +87,6 @@ public class AddResourceCollectionPresenter extends PresenterWidget<IsAddResourc
 		pageNum=1;
 		getUserShelfData();
 	}
-	@Override
-	public void getUserShelfCollections(int dropdownListContainertWidgetCount) {
-		pageNum++;
-		getUserWorkspace(false);
-	}
-	
-	public void getUserWorkspace(final boolean isClearPanel){
-		AppClientFactory.getInjector().getPlayerAppService().getWorkspaceCollections("", pageNum+"", pageSize+"", new SimpleAsyncCallback<ArrayList<CollectionItemsList>>() {
-			@Override
-			public void onSuccess(ArrayList<CollectionItemsList> userCollectionsList) {
-				getView().addCollectionItems(userCollectionsList, isClearPanel);
-			}
-		});
-	}		
 	
 	public void getUserShelfData(){
 		getView().resetSelectionData();
@@ -109,7 +94,7 @@ public class AddResourceCollectionPresenter extends PresenterWidget<IsAddResourc
 	}
 	
 	public void getWorkspaceData(int offset,int limit,final boolean clearShelfPanel){
-		AppClientFactory.getInjector().getResourceService().getFolderWorkspace(offset, limit,null, null, new SimpleAsyncCallback<FolderListDo>() {
+		AppClientFactory.getInjector().getResourceService().getFolderWorkspace(offset, limit,null, null,true, new SimpleAsyncCallback<FolderListDo>() {
 			@Override
 			public void onSuccess(FolderListDo folderListDo) {
 				getView().displayWorkspaceData(folderListDo,clearShelfPanel);
@@ -119,12 +104,27 @@ public class AddResourceCollectionPresenter extends PresenterWidget<IsAddResourc
 
 	@Override
 	public void getFolderItems(final TreeItem item,String parentId) {
-		AppClientFactory.getInjector().getfolderService().getChildFolders(0, 20, parentId,null, null, new SimpleAsyncCallback<FolderListDo>() {
+		AppClientFactory.getInjector().getfolderService().getChildFolders(0, 20, parentId,null, null,true, new SimpleAsyncCallback<FolderListDo>() {
 			@Override
 			public void onSuccess(FolderListDo folderListDo) {
 				getView().setFolderItems(item,folderListDo);
 			}
 		});
+	}
+	
+	@Override
+	public boolean validateIsAssessments(String collectionType,String category,String type) {
+		boolean flag=false;
+		if(ASSESSMENT.equalsIgnoreCase(collectionType)){
+			if(QUESTION.equalsIgnoreCase(collectionType) && (type!=null && !(type.equalsIgnoreCase("OE")))){
+				flag=true;
+			}else{
+				flag=false;
+			}
+		}else{
+			flag=true;
+		}
+		return flag;
 	}
 
 }

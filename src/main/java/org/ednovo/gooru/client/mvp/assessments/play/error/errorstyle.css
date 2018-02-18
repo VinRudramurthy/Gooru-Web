@@ -1,0 +1,29 @@
+.collectionPlayerWrapper{
+	width: 960px;
+	height: 525px;
+	margin: 0 auto;
+}
+
+.collectionPlayerContainer{
+	width: 960px;
+	min-height: 525px;
+	margin: 0 auto;
+}
+.errorText{
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	color:#FFFFFF;
+	font-size: 20px;
+	font-family: Arial,Verdana,Sans-serif;
+	height: 525px;
+	margin: 0 auto;
+	width: 960px;
+}
+.errorInnerText{
+	color: #1076BB;
+}
+.errorInnerText:hover{
+	color: #87BADD;
+}

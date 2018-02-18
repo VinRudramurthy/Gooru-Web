@@ -1,0 +1,53 @@
+[
+	{
+		"label": "CORE Districts",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#CoreLibrary",
+		"extraParms": null
+	},
+	
+	{
+		"label": "Lammersville Unified",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#lusd",
+		"extraParms": null
+	},
+	
+	{
+		"label": "Leadership Public Schools",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#lpslibrary",
+		"extraParms": null
+	},
+	{
+		"label": "Riverside Unified",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#rusd",
+		"extraParms": null
+	},
+	{
+		"label": "Santa Ana Unified",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#sausd",
+		"extraParms": null
+	},
+	{
+		"label": "Stockton Unified",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#susd",
+		"extraParms": null
+	},
+	{
+		"label": "Val Verde Unified",
+		"courseId":0,
+		"subjectId":0,
+		"link": "#valverde",
+		"extraParms": null
+	}
+]

@@ -26,10 +26,13 @@ package org.ednovo.gooru.client.uc;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.player.resource.client.view.resourceplayer.flag.FlagBundle;
-import org.ednovo.gooru.player.resource.shared.GetFlagContentDO;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.GetFlagContentDO;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
+import org.ednovo.gooru.client.mvp.play.collection.flag.FlagBundle;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -37,7 +40,6 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.HTML;
@@ -47,7 +49,7 @@ import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
 
-public class FlaggingPopUp extends PopupPanel implements MessageProperties {
+public class FlaggingPopUp extends PopupPanel {
 
 	private static FlaggingPopUpUiBinder uiBinder = GWT
 			.create(FlaggingPopUpUiBinder.class);
@@ -55,7 +57,8 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 	interface FlaggingPopUpUiBinder extends
 			UiBinder<Widget, FlaggingPopUp> {
 	}
-
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	@UiField HTMLEventPanel closeButton;
 	@UiField Button cancelButton,submitButton,submitButtonGray;
 	@UiField Image popUpCloseButton;
@@ -81,24 +84,60 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 		this.setGlassStyleName(FlagBundle.IMAGEBUNDLEINSTANCE.flagstyle().glassStyle());
 		setGlassEnabled(true);
 		resourceTitle=resourceTitle.replaceAll("</p>", " ").replaceAll("<p>", "").replaceAll("<br data-mce-bogus=\"1\">", "").replaceAll("<br>", "").replaceAll("</br>", "");
-		titleText.setHTML(GL1430 +resourceTitle+" \" "+GL1431+"");
-		flagText.setText(GL0600);
-		inappropriateText.setText(GL0612);
-		unavailableText.setText(GL0613);
-		inaccurateText.setText(GL0614);
-		otherReasonText.setText(GL0606);
-		provideMoretext.setText(GL0607);
-		cancelButton.setText(GL0608);
-		submitButton.setText(GL0486);
-		submitButtonGray.setText(GL0486);
-		popUpCloseButton.setAltText(GL1050);
+		titleText.setHTML(i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		titleText.getElement().setAttribute("alt", i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		titleText.getElement().setAttribute("title", i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		flagText.setText(i18n.GL0600());
+		flagText.getElement().setId("lblFlagText");
+		flagText.getElement().setAttribute("alt", i18n.GL0600());
+		flagText.getElement().setAttribute("title", i18n.GL0600());
+		closeButton.getElement().setId("epnlCloseButton");
+		inappropriateText.setText(i18n.GL0612());
+		inappropriateText.getElement().setId("lblInappropriateText");
+		inappropriateText.getElement().setAttribute("alt", i18n.GL0612());
+		inappropriateText.getElement().setAttribute("title", i18n.GL0612());
+		unavailableText.setText(i18n.GL0613());
+		unavailableText.getElement().setId("lblUnavailableText");
+		unavailableText.getElement().setAttribute("alt", i18n.GL0613());
+		unavailableText.getElement().setAttribute("title", i18n.GL0613());
+		inaccurateText.setText(i18n.GL0614());
+		inaccurateText.getElement().setId("lblInaccurateText");
+		inaccurateText.getElement().setAttribute("alt", i18n.GL0614());
+		inaccurateText.getElement().setAttribute("title", i18n.GL0614());
+		otherReasonText.setText(i18n.GL0606());
+		otherReasonText.getElement().setId("lblOtherReasonText");
+		otherReasonText.getElement().setAttribute("alt", i18n.GL0606());
+		otherReasonText.getElement().setAttribute("title", i18n.GL0606());
+		provideMoretext.setText(i18n.GL0607());
+		provideMoretext.getElement().setId("lblProvideMoretext");
+		provideMoretext.getElement().setAttribute("alt", i18n.GL0607());
+		provideMoretext.getElement().setAttribute("title", i18n.GL0607());
+		cancelButton.setText(i18n.GL0608());
+		cancelButton.getElement().setAttribute("alt", i18n.GL0608());
+		cancelButton.getElement().setAttribute("title", i18n.GL0608());
+		submitButton.setText(i18n.GL0486());
+		submitButton.getElement().setAttribute("alt", i18n.GL0486());
+		submitButton.getElement().setAttribute("title", i18n.GL0486());
+		submitButtonGray.setText(i18n.GL0486());
+		submitButtonGray.getElement().setAttribute("alt", i18n.GL0486());
+		submitButtonGray.getElement().setAttribute("title", i18n.GL0486());
+		popUpCloseButton.setAltText(i18n.GL1050());
+		popUpCloseButton.getElement().setAttribute("alt", i18n.GL1050());
+		popUpCloseButton.getElement().setAttribute("title", i18n.GL1050());
+		popUpCloseButton.getElement().setId("imgPopUpCloseButton");
 		cancelButton.getElement().setAttribute("id", "cancelButton");
 		submitButton.getElement().setAttribute("id", "SubmitButton");
 		submitButtonGray.getElement().setAttribute("id", "SubmitButtonInactive");
+		checkBox3.getElement().setId("chkCheckBox3");
+		checkBox2.getElement().setId("chkCheckBox2");
+		checkBox1.getElement().setId("chkCheckBox1");
+		checkBox4.getElement().setId("chkCheckBox4");
+		descriptionTextArea.getElement().setId("tatDescriptionTextArea");
+		StringUtil.setAttributes(descriptionTextArea, true);
 		popUpCloseButton.setResource(FlagBundle.IMAGEBUNDLEINSTANCE.closeFlagPopUpImages());
 		submitButtonGray.setVisible(true);
 		submitButton.setVisible(false);
-		AppClientFactory.getInjector().getResourceService().getContentReport(idStr, new AsyncCallback<GetFlagContentDO>() {
+		AppClientFactory.getInjector().getResourceService().getContentReport(idStr, new SimpleAsyncCallback<GetFlagContentDO>() {
 			
 			@Override
 			public void onSuccess(GetFlagContentDO result) {
@@ -117,9 +156,6 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 				
 			}
 			
-			@Override
-			public void onFailure(Throwable caught) {
-			}
 		});
 
 	
@@ -225,10 +261,7 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 		}
 	
 		if(formateSize==0){
-				AppClientFactory.getInjector().getResourceService().createContentReport(idStr, "content",formatting1,formatting2,formatting3,formatting4,descriptionTextArea.getText(), new AsyncCallback<Void>() {
-				@Override
-				public void onFailure(Throwable caught) {
-				}
+				AppClientFactory.getInjector().getResourceService().createContentReport(idStr, "content",formatting1,formatting2,formatting3,formatting4,descriptionTextArea.getText(), new SimpleAsyncCallback<Void>() {
 				@Override
 				public void onSuccess(Void result) {
 				}
@@ -237,19 +270,12 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 		}
 		
 		if(formateSize>0){	
-			AppClientFactory.getInjector().getResourceService().deleteContentReport(gooruOid, new AsyncCallback<String>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-			}
+			AppClientFactory.getInjector().getResourceService().deleteContentReport(gooruOid, new SimpleAsyncCallback<String>() {
 
 			@Override
 			public void onSuccess(String result) {
 				if(result==null){
-					AppClientFactory.getInjector().getResourceService().createContentReport(idStr, "content",formatting1,formatting2,formatting3,formatting4,descriptionTextArea.getText(), new AsyncCallback<Void>() {
-						@Override
-						public void onFailure(Throwable caught) {
-						}
+					AppClientFactory.getInjector().getResourceService().createContentReport(idStr, "content",formatting1,formatting2,formatting3,formatting4,descriptionTextArea.getText(), new SimpleAsyncCallback<Void>() {
 						@Override
 						public void onSuccess(Void result) {
 							
@@ -263,12 +289,7 @@ public class FlaggingPopUp extends PopupPanel implements MessageProperties {
 				
 		
 		if(!descriptionTextArea.getText().equals("")){
-			AppClientFactory.getInjector().getResourceService().updateReport(idStr,descriptionTextArea.getText(),new AsyncCallback<String>() {
-
-				@Override
-				public void onFailure(Throwable caught) {
-					
-				}
+			AppClientFactory.getInjector().getResourceService().updateReport(idStr,descriptionTextArea.getText(),new SimpleAsyncCallback<String>() {
 
 				@Override
 				public void onSuccess(String result) {

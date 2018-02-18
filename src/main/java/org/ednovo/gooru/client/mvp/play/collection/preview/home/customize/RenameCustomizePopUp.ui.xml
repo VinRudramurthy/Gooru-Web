@@ -1,35 +1,40 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
-	<ui:with
-		type="org.ednovo.gooru.client.mvp.play.collection.preview.home.assign.AssignPopUpCBundle"
+	<ui:with type="org.ednovo.gooru.client.mvp.play.collection.preview.home.assign.AssignPopUpCBundle"
 		field="res" />
 
-
-	<g:HTMLPanel styleName="{res.css.assign}" ui:field="panelAssign">
-		<g:HTMLPanel styleName="{res.css.assignContentLoginCustomize}">
-			<g:HTMLPanel styleName="{res.css.assignHeader}">
-				<g:HTMLPanel styleName="{res.css.assignTitle}" ui:field="customizeText"></g:HTMLPanel>
-				<g:Label ui:field="cancelButton"
-					styleName="{res.css.assignCloseMarker} {res.css.assignSprite} {res.css.assignCloseMark}"></g:Label>
+	<g:HTMLPanel styleName="PopupMainVSmall" ui:field="panelAssign">
+		<g:HTMLPanel styleName="popupInnerGrey">
+			<g:HTMLPanel styleName="popupgreyHeader">
+			    <g:HTMLPanel styleName="row">
+			        <g:HTMLPanel styleName="col-md-8 col-xs-8">
+			        	<g:HTMLPanel  ui:field="customizeText"></g:HTMLPanel>
+			        </g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-4 col-xs-4 closeContainer">
+						<g:Label ui:field="cancelButton" styleName="closeButton"></g:Label>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				</g:HTMLPanel>
 			</g:HTMLPanel>
-			<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}"
-				ui:field="loadingImageLabel">
+			<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}"	ui:field="loadingImageLabel">
 				<g:Label ui:field="loadingLbl" styleName="{res.css.loadingImageForSelfEditCustomize}" />
 			</g:HTMLPanel>
-			<g:HTMLPanel ui:field="popupcontentCustomize">
-				<g:HTMLPanel ui:field="loginCustom" styleName="{res.css.conentLoginPop}"></g:HTMLPanel>
-				<g:HTMLPanel ui:field="copyCollectionSuccess" styleName="{res.css.popupContent}">
-					<g:Label ui:field="lblpopupTitle" styleName="{res.css.popupTitle}" />
-					<g:Label styleName="{res.css.popupDesc}" ui:field="assignDes" />
-					<g:HTMLPanel styleName="{res.css.popupTextbox}"
-						ui:field="popupContentAssign">
-						<g:Label styleName="{res.css.txtboxDesc}" ui:field="lbltxtBoxTitle" />
-						<g:TextBox styleName="{res.css.inputTextBoxSyle}"
-							ui:field="copycollectionTextbox"></g:TextBox>
-						<g:Label styleName="{res.css.txtboxerrorColor}" ui:field="errorLabel" />
+
+			<g:HTMLPanel ui:field="popupcontentCustomize" styleName="shareSelection">
+				<g:HTMLPanel ui:field="loginCustom" ></g:HTMLPanel>
+				<g:HTMLPanel ui:field="copyCollectionSuccess">
+					<g:Label ui:field="lblpopupTitle" styleName="dontWorrkText" />
+					<g:Label styleName="contentDesc" ui:field="assignDes" />
+					<g:HTMLPanel styleName="remixContainer"	ui:field="popupContentAssign">
+						<g:Label styleName="col-md-12 labels" ui:field="lbltxtBoxTitle" />
+						<g:HTMLPanel styleName="col-md-12">
+							<g:TextBox 	ui:field="copycollectionTextbox" styleName="form-control"></g:TextBox>
+							<g:Label styleName="{res.css.txtboxerrorColor}" ui:field="errorLabel" />
+						</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 					</g:HTMLPanel>
-					<g:HTMLPanel ui:field="buttonsContainer" styleName="{res.css.popupButtons}">
+					<g:HTMLPanel ui:field="buttonsContainer" styleName="text-center addButtonContainer">
 						<g:Button ui:field="backtoLibrary" styleName="secondary"></g:Button>
 						<g:Button ui:field="editCollection" styleName="primary"></g:Button>
 					</g:HTMLPanel>
@@ -38,4 +43,4 @@
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 
-</ui:UiBinder> 
+</ui:UiBinder>

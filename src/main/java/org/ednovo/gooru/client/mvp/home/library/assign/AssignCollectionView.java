@@ -25,33 +25,36 @@
 package org.ednovo.gooru.client.mvp.home.library.assign;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.child.ChildView;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.ClasspageServiceAsync;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.AssignmentsListDo;
+import org.ednovo.gooru.application.shared.model.content.ClasspageItemDo;
+import org.ednovo.gooru.application.shared.model.content.ClasspageListDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.ResourceDo;
+import org.ednovo.gooru.application.shared.model.content.TaskResourceAssocDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.child.ChildView;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggableMirage;
+import org.ednovo.gooru.client.mvp.home.library.LibraryTopicListView;
+import org.ednovo.gooru.client.mvp.profilepage.data.item.ProfileTopicListView;
 import org.ednovo.gooru.client.mvp.shelf.event.CollectionEditShareEvent;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshCollectionInShelfListEvent;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshType;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshUserShelfCollectionsEvent;
-import org.ednovo.gooru.client.service.ClasspageServiceAsync;
 import org.ednovo.gooru.client.uc.AlertMessageUc;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
 import org.ednovo.gooru.client.uc.DateBoxUcCustomizedForAssign;
 import org.ednovo.gooru.client.util.MixpanelUtil;
 import org.ednovo.gooru.client.util.SetStyleForProfanity;
-import org.ednovo.gooru.shared.model.content.AssignmentsListDo;
-import org.ednovo.gooru.shared.model.content.ClasspageItemDo;
-import org.ednovo.gooru.shared.model.content.ClasspageListDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.ResourceDo;
-import org.ednovo.gooru.shared.model.content.TaskResourceAssocDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.ClientConstants;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -70,12 +73,12 @@ import com.google.gwt.event.dom.client.ScrollHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
@@ -95,7 +98,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @Reviewer:
  */
 public abstract class AssignCollectionView extends ChildView<AssignCollectionPresenter> implements
-IsCollectionAssign, MessageProperties {
+IsCollectionAssign,ClientConstants {
 
 	@UiField(provided = true)
 	AssignPopUpCBundle res;
@@ -103,17 +106,18 @@ IsCollectionAssign, MessageProperties {
 	@UiField Label lblAssignCollectionTitle,lblClasspages,lblClasspagePlaceHolder, lblClasspagesArrow,lblDirections,lblDirectionsOptional;
 	
 
-	@UiField Label lblAssignCollectionPrivate, lblNoClassPageMsg,lblNoClassPage,lblDuedate,lblDuedateOptional,directionsErrorLbl;
+	@UiField Label lblAssignCollectionPrivate, lblNoClassPageMsg,lblNoClassPage,lblDuedate,lblDuedateOptional,directionsErrorLbl,
+	               lblDirectionCharLimit;
 	
 	@UiField BlueButtonUc btnAssign;
 	
 	@UiField ScrollPanel spanelClasspagesPanel;
 	
-	@UiField HTMLPanel htmlClasspagesListContainer,duedateContainer;
+	@UiField HTMLPanel htmlClasspagesListContainer,duedateContainer,assignContainer;
 	
 	@UiField HTMLPanel  panelNoClasspages,htmlPanelContainer,panelTitleContainer,loadingImageLabel;
 	
-	@UiField HTMLPanel controlsContainer;
+	@UiField HTMLPanel controlsContainer,mainContainer;
 	
 	@UiField HTMLPanel assignMoreCpContainer;
 	
@@ -158,40 +162,62 @@ IsCollectionAssign, MessageProperties {
 	interface AssignCollectionViewUiBinder extends UiBinder<Widget, AssignCollectionView> {
 	}
 
-	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+
+	private boolean isClickedOnDropDwn=true;
 	
 	/**
 	 * Class constructor
 	 */
 	public AssignCollectionView(CollectionDo collectionDoObject) {
-		
-
 		res = AssignPopUpCBundle.INSTANCE;
 		AssignPopUpCBundle.INSTANCE.css().ensureInjected();
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		loadingImageLabel.setVisible(true);
-		
+		lblNoClassPageImage.getElement().getStyle().setWidth(100, Unit.PCT);
 		toAssignStr = collectionDoObject.getGooruOid();
 		collectionDoGlobal = collectionDoObject;
+		mainContainer.getElement().getStyle().setWidth(100, Unit.PCT);
 		
-		lblDirections.setText(GL1166);
-		lblDirectionsOptional.setText(GL1167);
-		lblDuedateOptional.setText(GL1167);
-		lblDuedate.setText(GL1168);
-		textAreaVal.setText(GL1461);
+		lblDirections.setText(i18n.GL1166());
+		lblDirections.getElement().setAttribute("alt",i18n.GL1166());
+		lblDirections.getElement().setAttribute("title",i18n.GL1166());
+		
+		lblDirectionsOptional.setText(i18n.GL1167());
+		lblDirectionsOptional.getElement().setAttribute("alt",i18n.GL1167());
+		lblDirectionsOptional.getElement().setAttribute("title",i18n.GL1167());
+		
+		lblDuedateOptional.setText(i18n.GL1167());
+		lblDuedateOptional.getElement().setAttribute("alt",i18n.GL1167());
+		lblDuedateOptional.getElement().setAttribute("title",i18n.GL1167());
+		
+		lblDuedate.setText(i18n.GL1168());
+		lblDuedate.getElement().setAttribute("alt",i18n.GL1168());
+		lblDuedate.getElement().setAttribute("title",i18n.GL1168());
+		
+		textAreaVal.setText(i18n.GL1461());
+		textAreaVal.getElement().setAttribute("alt",i18n.GL1461());
+		textAreaVal.getElement().setAttribute("title",i18n.GL1461());
 		textAreaVal.getElement().getStyle().setColor("#999");
+		StringUtil.setAttributes(textAreaVal, true);
+		
 		dateBoxUc = new DateBoxUcCustomizedForAssign(false, false,false);
 		duedateContainer.add(dateBoxUc);
 		dateBoxUc.getDoneButton().addClickHandler(new OnDoneClick());
 		textAreaVal.addKeyUpHandler(new DirectionsKeyUpHandler());
 		textAreaVal.getElement().setAttribute("maxlength", "400");
+		StringUtil.setAttributes(textAreaVal, true);
+		
+		String value = StringUtil.generateMessage(i18n.GL2103(), "500");
+		lblDirectionCharLimit.setText(value);
+		StringUtil.setAttributes(lblDirectionCharLimit.getElement(), "lblDirectionCharLimit", value, value);
 		
 		textAreaVal.addFocusHandler(new FocusHandler() {
 			@Override
 			public void onFocus(FocusEvent event) {
 				String directionText=textAreaVal.getText().trim();
-				if(directionText.equalsIgnoreCase(GL1389)){
+				if(COMPLETETEXT.equalsIgnoreCase(directionText)){ 
 					textAreaVal.setText("");
 				}
 				textAreaVal.getElement().getStyle().setColor("black");
@@ -212,7 +238,7 @@ IsCollectionAssign, MessageProperties {
 			public void onBlur(BlurEvent event) {
 				if(textAreaVal.getText().length() == 0)
 				{
-					textAreaVal.setText(GL1389);
+					textAreaVal.setText(i18n.GL1389());
 					textAreaVal.getElement().getStyle().setColor("#999");
 				}
 				Map<String, String> parms = new HashMap<String, String>();
@@ -227,23 +253,38 @@ IsCollectionAssign, MessageProperties {
 				});
 			}
 		});
-		
-		//dateValidationUc.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().registerErrorLabel());
-
+		ClickHandler assignHandler= new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				if(!isClickedOnDropDwn){
+					spanelClasspagesPanel.setVisible(false);
+				}else{
+					isClickedOnDropDwn=false;
+				}
+			}
+		};
+		RootPanel.get().addDomHandler(assignHandler, ClickEvent.getType());
 		getClassPageData();
 	}
-	
+
 	public void getClassPageData() {
-		lblNoClassPage.setText(GL0106);
-		lblNoClassPageMsg.setText(GL0109);
+		lblNoClassPage.setText(i18n.GL0106());
+		lblNoClassPage.getElement().setAttribute("alt",i18n.GL0106());
+		lblNoClassPage.getElement().setAttribute("title",i18n.GL0106());
+		
+		lblNoClassPageMsg.setText(i18n.GL0109());
+		lblNoClassPageMsg.getElement().setAttribute("alt",i18n.GL0109());
+		lblNoClassPageMsg.getElement().setAttribute("title",i18n.GL0109());
+		
 		lblNoClassPageImage.setUrl("images/library/banner-assign.png");
-		lblNoClassPageImage.setTitle(GL1025);
-		lblNoClassPageImage.setAltText(GL1025);
+		lblNoClassPageImage.setTitle(i18n.GL1025());
+		lblNoClassPageImage.setAltText(i18n.GL1025());
 		setLabelsAndIds();
 		htmlPanelContainer.setVisible(false);
 		panelNoClasspages.setVisible(false);
 		onLoaded();
 		panelTitleContainer.getElement().getStyle().setMarginBottom(15, Unit.PX);
+		panelTitleContainer.getElement().getStyle().setWidth(100, Unit.PCT);
 		spanelClasspagesPanel.setVisible(false);
 		spanelClasspagesPanel.addScrollHandler(new ScrollHandler() {
 			@Override
@@ -254,18 +295,12 @@ IsCollectionAssign, MessageProperties {
 				}
 			}
 		});
-		
-	
 		getClasspage(collectionDoGlobal, null);
 		assignMoreCpContainer.setVisible(false);
-	
 	}
 	
-
 	public void onLoaded(){
-		
 		setGetClasspageList(new SimpleAsyncCallback<ClasspageListDo>() {
-
 			@Override
 			public void onSuccess(ClasspageListDo result) 
 			{				
@@ -273,17 +308,16 @@ IsCollectionAssign, MessageProperties {
 				loadingImageLabel.setVisible(false);
 			}
 		});
-		
-	
 	}
 	private class DirectionsKeyUpHandler implements KeyUpHandler {
 		public void onKeyUp(KeyUpEvent event) {
 			directionsErrorLbl.setVisible(false);
-			if (textAreaVal.getText().length() >=400) {
-				textAreaVal.setText(textAreaVal.getText().trim()
-						.substring(0, 400));
+			if (textAreaVal!=null && textAreaVal.getText().length() >=400) {
+				textAreaVal.setText(textAreaVal.getText().trim().substring(0, 400));
 				directionsErrorLbl.setText("");
-				directionsErrorLbl.setText(MessageProperties.GL0143);
+				directionsErrorLbl.setText(i18n.GL0143());
+				directionsErrorLbl.getElement().setAttribute("alt",i18n.GL0143());
+				directionsErrorLbl.getElement().setAttribute("title",i18n.GL0143());
 				directionsErrorLbl.setVisible(true);
 			}
 
@@ -296,8 +330,6 @@ IsCollectionAssign, MessageProperties {
 				if (!(dateBoxUc.getValue() == null || dateBoxUc.getDateBox()
 						.getText().isEmpty())
 						&& dateBoxUc.hasValidateDate()) {
-				Date date = dateBoxUc.getValue();
-				
 				} else {
 					dateBoxUc.getDatePickerUc().hide();
 				}
@@ -325,16 +357,10 @@ IsCollectionAssign, MessageProperties {
 	public SimpleAsyncCallback<CollectionDo> getCollectionDoAsyncCallback() {
 		return collectionDoAsyncCallback;
 	}
-
-
-
 	public void setCollectionDoAsyncCallback(
 			SimpleAsyncCallback<CollectionDo> collectionDoAsyncCallback) {
 		this.collectionDoAsyncCallback = collectionDoAsyncCallback;
 	}
-
-
-
 	/** 
 	 * This method is to set the getClasspageList
 	 */
@@ -420,12 +446,8 @@ IsCollectionAssign, MessageProperties {
 	 *
 	 */
 	public void setClasspageData(ClasspageListDo classpageListDo){
-		
-
-
 		int resultSize = classpageListDo.getSearchResults().size();
 		if (resultSize > 0){
-			//htmlEvenPanelContainer.setVisible(true);
 			htmlPanelContainer.setVisible(true);
 			if (toClear){
 				htmlClasspagesListContainer.clear();
@@ -471,19 +493,15 @@ IsCollectionAssign, MessageProperties {
 			
 			btnAssign.setEnabled(true);
 			btnAssign.setStyleName(AssignPopUpCBundle.INSTANCE.css().activeAssignButton());
-
-			
 			//Hide the scroll container
 			spanelClasspagesPanel.setVisible(false);
 		}
 	}
 	
-	
 	public void setCollectionDo(CollectionDo collectionDo) {
 		this.collectionDoGlobal = collectionDo;
 		createrId=collectionDo.getUser().getGooruUId();
 	}
-	
 	
 	@UiHandler("btnAssign")
 	public void OnClickAssign(ClickEvent event){
@@ -500,8 +518,7 @@ IsCollectionAssign, MessageProperties {
 					btnAssign.setEnabled(true);
 				}else{
 					btnAssign.getElement().setAttribute("id", "btnAssign");
-					btnAssign.setText(GL1172);
-					//btnAssign.getElement().getStyle().setMarginRight(17, Unit.PCT);
+					btnAssign.setText(i18n.GL1172());
 					btnAssign.setEnabled(false);
 					btnAssign.setStyleName(AssignPopUpCBundle.INSTANCE.css().disableAssignButon());
 					
@@ -531,7 +548,7 @@ IsCollectionAssign, MessageProperties {
 							resourceDo.setGooruOid(collectionDoResult.getGooruOid());
 							taskResourceAssocDo.setResource(resourceDo);
 							String directionsVal = textAreaVal.getText();
-							if(directionsVal.equalsIgnoreCase(GL1389))
+							if(directionsVal.equalsIgnoreCase(i18n.GL1389()))
 							{
 								directionsVal = "";
 							}
@@ -545,10 +562,11 @@ IsCollectionAssign, MessageProperties {
 							{
 								dueDateVal = null;
 							}
-							AppClientFactory.getInjector().getClasspageService().createClassPageItem(classpageId, resourceDo.getGooruOid(),dueDateVal,directionsVal, new SimpleAsyncCallback<ClasspageItemDo>() {
-								@Override
-								public void onSuccess(ClasspageItemDo result) {
+							AppClientFactory.getInjector().getClasspageService().assignItemToClass(classpageId, resourceDo.getGooruOid(),dueDateVal,directionsVal, new SimpleAsyncCallback<ArrayList<ClasspageItemDo>>() {
 
+								@Override
+								public void onSuccess(ArrayList<ClasspageItemDo> result) {
+									// TODO Auto-generated method stub
 									MixpanelUtil.mixpanelEvent("Library_Assign_Successful");
 									
 									AppClientFactory.fireEvent(new RefreshCollectionInShelfListEvent(
@@ -558,8 +576,13 @@ IsCollectionAssign, MessageProperties {
 									btnAssign.setVisible(false);
 									
 									assignMoreCpContainer.setVisible(true);
-									assignMoreCpLbl.setText(GL0521);
+									assignMoreCpLbl.setText(i18n.GL0521()+ " ");
+									assignMoreCpLbl.getElement().setAttribute("alt",i18n.GL0521());
+									assignMoreCpLbl.getElement().setAttribute("title",i18n.GL0521());
+									
 									ancClasspageTitle.setText(lblClasspagePlaceHolder.getText());
+									ancClasspageTitle.getElement().setAttribute("alt",lblClasspagePlaceHolder.getText());
+									ancClasspageTitle.getElement().setAttribute("title",lblClasspagePlaceHolder.getText());
 								}
 							});
 						}
@@ -574,7 +597,7 @@ IsCollectionAssign, MessageProperties {
 					resourceDo.setGooruOid(collectionDoGlobal.getGooruOid());
 					taskResourceAssocDo.setResource(resourceDo);
 					String directionsVal = textAreaVal.getText();
-					if(directionsVal.equalsIgnoreCase(GL1389))
+					if(directionsVal.equalsIgnoreCase(i18n.GL1389()))
 					{
 						directionsVal = "";
 					}
@@ -587,20 +610,26 @@ IsCollectionAssign, MessageProperties {
 					{
 						dueDateVal = null;
 					}
-					AppClientFactory.getInjector().getClasspageService().createClassPageItem(classpageId,collectionDoGlobal.getGooruOid(),dueDateVal,directionsVal, new SimpleAsyncCallback<ClasspageItemDo>() {
+					
+					AppClientFactory.getInjector().getClasspageService().assignItemToClass(classpageId, collectionDoGlobal.getGooruOid(), dueDateVal, directionsVal, new SimpleAsyncCallback<ArrayList<ClasspageItemDo>>() {
+
 						@Override
-						public void onSuccess(ClasspageItemDo result) {
-							//closePoupfromChild();
+						public void onSuccess(ArrayList<ClasspageItemDo> result) {
+							// TODO Auto-generated method stub
 							MixpanelUtil.mixpanelEvent("Library_Assign_Successful");
 							
 							controlsContainer.setVisible(false);
 							btnAssign.setVisible(false);
-							
 							assignMoreCpContainer.setVisible(true);
-							assignMoreCpLbl.setText(GL0521);
+							assignMoreCpLbl.setText(i18n.GL0521()+" ");
+							assignMoreCpLbl.getElement().setAttribute("alt",i18n.GL0521()+" ");
+							assignMoreCpLbl.getElement().setAttribute("title",i18n.GL0521());
 							ancClasspageTitle.setText(lblClasspagePlaceHolder.getText());
+							ancClasspageTitle.getElement().setAttribute("alt",lblClasspagePlaceHolder.getText());
+							ancClasspageTitle.getElement().setAttribute("title",lblClasspagePlaceHolder.getText());
 						}
-					});	
+					});
+					
 				}
 					MixpanelUtil.mixpanelEvent("CoursePage_Assign_Collection");
 					btnAssign.setEnabled(true);
@@ -616,7 +645,7 @@ IsCollectionAssign, MessageProperties {
 		btnAssign.setVisible(true);
 		
 		btnAssign.getElement().setAttribute("id", "btnAssign");
-		btnAssign.setText(GL0104);
+		btnAssign.setText(i18n.GL0104());
 		
 		textAreaVal.setText("");
 		dateBoxUc.getDateBox().setValue("");
@@ -698,14 +727,9 @@ IsCollectionAssign, MessageProperties {
 			 * getting available classpages of the user
 			 */
 			getAllClasspages(limit, String.valueOf(classpageOffSet));
-			
-			//hideContainers();
-		
 	}
 	public void getAllClasspages(String limit, String offSet) {
 		AppClientFactory.getInjector().getClasspageService().v2GetAllClasspages(limit, offSet, getGetClasspageList());
-		
-		
 	}
 	
 	public void getNextClasspages() {
@@ -723,46 +747,82 @@ IsCollectionAssign, MessageProperties {
 	}
 	
 	public void OpenClasspageContainer(){
+		isClickedOnDropDwn=true;
 		spanelClasspagesPanel.setVisible(!spanelClasspagesPanel.isVisible());
-
-		
-		
 	}
 	
 	public void setLabelsAndIds()
 	{
-		
-		lblAssignCollectionPrivate.setText(GL0112);
+		panelTitleContainer.getElement().setId("pnlTitleContainer");
+		lblAssignCollectionPrivate.setText(i18n.GL0112());
+		lblAssignCollectionPrivate.getElement().setId("lblAssignCollectionPrivate");
+		lblAssignCollectionPrivate.getElement().setAttribute("alt",i18n.GL0112());
+		lblAssignCollectionPrivate.getElement().setAttribute("title",i18n.GL0112());
 		lblAssignCollectionPrivate.setVisible(false);
 		
-		lblAssignCollectionTitle.setText(GL0101);
-		lblClasspages.setText(GL0102);
-
+		lblAssignCollectionTitle.setText(i18n.GL0101());
+		lblAssignCollectionTitle.getElement().setId("lblAssignCollectionTitle");
+		lblAssignCollectionTitle.getElement().setAttribute("alt",i18n.GL0101());
+		lblAssignCollectionTitle.getElement().setAttribute("title",i18n.GL0101());
 		
-		btnAssign.setText(GL0104);
 		
-		lblClasspagePlaceHolder.setText(GL0105);
-
-		classPageBtn.setText(GL0517);
+		lblClasspages.setText(i18n.GL0102());
+		lblClasspages.getElement().setId("lblClasspages");
+		lblClasspages.getElement().setAttribute("alt",i18n.GL0102());
+		lblClasspages.getElement().setAttribute("title",i18n.GL0102());
+		
+		btnAssign.setText(i18n.GL0104());
+		btnAssign.getElement().setAttribute("alt",i18n.GL0104());
+		btnAssign.getElement().setAttribute("title",i18n.GL0104());
+		
+		lblClasspagePlaceHolder.setText(i18n.GL0105());
+		lblClasspagePlaceHolder.getElement().setId("lblClasspagePlaceHolder");
+		lblClasspagePlaceHolder.getElement().setAttribute("alt",i18n.GL0105());
+		lblClasspagePlaceHolder.getElement().setAttribute("title",i18n.GL0105());
+		
+		classPageBtn.setText(i18n.GL0517());
+		classPageBtn.getElement().setId("btnClassPage");
+		classPageBtn.getElement().setAttribute("alt",i18n.GL0517());
+		classPageBtn.getElement().setAttribute("title",i18n.GL0517());
 	
 		//Ids
 		btnAssign.getElement().setAttribute("id", "btnAssign");
 		btnAssign.setStyleName(res.css().disableAssignButon());
-		btnAssign.getElement().getStyle().setMarginLeft(190, Unit.PX);
+		assignContainer.getElement().setAttribute("style","float:left;margin-top:10px;width:100%;margin:0 auto;text-align:center");
 		btnAssign.setEnabled(false);
 		btnAssign.setStyleName(AssignPopUpCBundle.INSTANCE.css().disableAssignButon());
 
 		lblClasspagePlaceHolder.setStyleName(AssignPopUpCBundle.INSTANCE.css().placeHolderText());
 
-
-		
+		panelNoClasspages.getElement().setId("pnlNoClasspages");
+		lblNoClassPageImage.getElement().setId("imgLblNoClassPageImage");
+		lblNoClassPage.getElement().setId("lblNoClassPage");
+		lblNoClassPageMsg.getElement().setId("lblNoClassPageMsg");
+		loadingImageLabel.getElement().setId("pnlLoadingImageLabel");
+		htmlPanelContainer.getElement().setId("pnlHtmlPanelContainer");
+		controlsContainer.getElement().setId("pnlControlsContainer");
+		lblClasspagesArrow.getElement().setId("lblClasspagesArrow");
+		spanelClasspagesPanel.getElement().setId("sbSpanelClasspagesPanel");
+		htmlClasspagesListContainer.getElement().setId("pnlHtmlClasspagesListContainer");
+		lblDuedate.getElement().setId("lblDuedate");
+		lblDuedateOptional.getElement().setId("lblDuedateOptional");
+		duedateContainer.getElement().setId("pnlDuedateContainer");
+		lblDirections.getElement().setId("lblDirections");
+		lblDirectionsOptional.getElement().setId("lblDirectionsOptional");
+		textAreaVal.getElement().setId("tatTextAreaVal");
+		directionsErrorLbl.getElement().setId("errlblDirectionsErrorLbl");
+		assignMoreCpContainer.getElement().setId("pnlAssignMoreCpContainer");
+		assignMoreCpContainer.getElement().setAttribute("style", "text-align:center");
+		assignMoreCpLbl.getElement().setId("spnAssignMoreCpLbl");
+		ancClasspageTitle.getElement().setId("spnAncClasspageTitle");
 	}
 	
 	public abstract void closePoupfromChild();
 	
 	@UiHandler("ancClasspageTitle")
 	public void onClickAncClasspageTitle(ClickEvent clickevent) {
-//		getAssignmentView();
+		LibraryTopicListView.isAssignPopup=false;
+		ProfileTopicListView.isAssignPopup=false;
 		
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("classpageid", classpageId);

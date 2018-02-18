@@ -4,24 +4,34 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.classpages.newclasspage.NewClasspagePopupCBundle"
 		field="res" />
-		<g:HTMLPanel styleName="{res.css.popupOuter}">
-			<g:HTMLPanel styleName="{res.css.popupInner}">
-				<g:HTMLPanel styleName="{res.css.popupHeader}" ui:field="headerPanel" />
-				<g:HTMLPanel styleName="{res.css.popupContent}">
-					<g:HTMLPanel styleName="{res.css.popupTitle}" ui:field="titlePanel">
+		<g:HTMLPanel styleName="PopupMainVVSmall">
+			<g:HTMLPanel styleName="popupInnerGrey">
+			    <g:HTMLPanel  styleName="popupgreyHeader">
+			        <g:HTMLPanel styleName="row">
+			            <g:HTMLPanel styleName="col-md-12 col-xs-12" ui:field="headerPanel" />
+			            <g:HTMLPanel styleName="clearfix"/>
+			        </g:HTMLPanel>
+			      </g:HTMLPanel>
+				<g:HTMLPanel ui:field="bodyConatiner" >
+					<g:HTMLPanel styleName="col-md-12 col-xs-12" ui:field="titlePanel"></g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-12 col-xs-12">
+						<g:TextBox styleName="form-control form_control" ui:field="classpageTitleTxt" />
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.popupInputBoxContainer}">
-						<g:TextBox styleName="{res.css.popupInputBox}" ui:field="classpageTitleTxt" />
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-12 col-xs-12">
+						<g:Label styleName="{res.css.popupMandatoryTitleText}" ui:field="mandatoryClasspageTitleLbl"></g:Label>
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.popupMandatoryContainer}">
-						<g:Label styleName="{res.css.popupMandatoryTitleText}"
-							ui:field="mandatoryClasspageTitleLbl"></g:Label>
-					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 				</g:HTMLPanel>
-				<g:Label styleName="{res.css.creating}" ui:field="panelLoading"></g:Label>
-				<g:HTMLPanel styleName="{res.css.popupButtinContainer}" ui:field="panelControls">
-					<g:Button ui:field="btnCancel" styleName="secondary"/>
-					<g:Button ui:field="btnAdd" styleName="primary"/>
+				<g:HTMLPanel styleName="formViewButtonContainer">
+				    <g:HTMLPanel ui:field="panelPleaseWait">
+						<g:Label styleName="{res.css.creating}" ui:field="panelLoading"></g:Label>
+					</g:HTMLPanel>
+					<g:HTMLPanel ui:field="panelControls">
+						<g:Button ui:field="btnCancel" styleName="secondary"/>
+						<g:Button ui:field="btnAdd" styleName="primary"/>
+					</g:HTMLPanel>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>

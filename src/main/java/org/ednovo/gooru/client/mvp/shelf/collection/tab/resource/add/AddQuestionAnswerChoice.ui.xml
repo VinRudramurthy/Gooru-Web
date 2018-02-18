@@ -5,15 +5,15 @@
 	<g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerContainer}">
               <g:Label styleName="{addWebResourceStyle.addResourceFormAlphaText}" ui:field="labelChoice"></g:Label>
               <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerInputControl} answerChoiceAndHintsTextcontainer" ui:field="tinyOrTextBoxConatiner">
-               <tinyMce:TinyMCE ui:field="answerTextBox" characterLimit="150"></tinyMce:TinyMCE>
-              <!--   <g:TextBox  maxLength="150" styleName="{addWebResourceStyle.addResourceFormAnswerInputText}"/>  -->
-                <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerDeletebg}" ui:field="deleteButtonContainer">             
-           
-                </g:HTMLPanel>
+	              <tinyMce:TinyMCE ui:field="answerTextBox" characterLimit="150"></tinyMce:TinyMCE>
+	              <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerDeletebg}" ui:field="deleteButtonContainer"></g:HTMLPanel>
               </g:HTMLPanel>
-               <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerMarkbg}">
+               <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerMarkbg}" ui:field="optionNoButtonContainer">
+                       <g:Label styleName="{addWebResourceStyle.answerDeselected}" ui:field="optionNoButton"></g:Label>
+              </g:HTMLPanel>
+              <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerMarkbg}">
                        <g:Label styleName="{addWebResourceStyle.answerDeselected}" ui:field="optionSelectedButton"></g:Label>
-                </g:HTMLPanel>
-                 <g:Label text="" ui:field="errorMessageforAnswerChoice" styleName="{addWebResourceStyle.addResourceFormInputBottomText}"/>
+              </g:HTMLPanel>
+              <g:Label text="" ui:field="errorMessageforAnswerChoice" styleName="{addWebResourceStyle.addResourceFormInputBottomText} errorMessage"/>
        </g:HTMLPanel>
 </ui:UiBinder>

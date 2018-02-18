@@ -1,15 +1,13 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.mvp.shelf.ShelfCBundle" field="res" />
-	
-	<g:HTMLPanel styleName="{res.css.resourceDragCursorPosition}" >
+	<g:HTMLPanel styleName="resourceDragCursorPosition" >
 		<g:AbsolutePanel ui:field="container" width="252px" height="45px">
 			<g:Label  ui:field="dragImage" />
-			<g:FlowPanel styleName="{res.css.resourceDragWithImg}" ui:field="labelPanel">
-				<g:Label styleName="{res.css.resourceDragImage}" ui:field="dragResourceImage"/>
-				<g:HTML styleName="{res.css.resourceDragTitle} resourceDragCollectionTitle" ui:field="dragresourceTitle" />
+			<g:FlowPanel styleName="resourceDragWithImg" ui:field="labelPanel">
+				<g:Label styleName="resourceDragImage" ui:field="dragResourceImage"/>
+				<g:HTML styleName="resourceDragTitle resourceDragCollectionTitle" ui:field="dragresourceTitle" />
 			</g:FlowPanel>
 		</g:AbsolutePanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

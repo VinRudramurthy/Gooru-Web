@@ -24,14 +24,14 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.library.partner;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
 
 /**
  * @author Search Team
  * 
  */
 public interface PartnerLibraryUiHandlers extends BaseUiHandlers {
-	public void getPartnerChildFolderItems(String folderId, int pageNumber);
+	public void getPartnerChildFolderItems(String folderId, int pageNumber,String libraryGooruOid);
 	public void getPartnerWorkspaceFolders();
 	void getIntoPartnerLibrarypage();
 }

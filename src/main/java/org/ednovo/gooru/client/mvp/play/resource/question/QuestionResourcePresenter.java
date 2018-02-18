@@ -24,16 +24,24 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.resource.question;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.player.AnswerAttemptDo;
 import org.ednovo.gooru.client.mvp.play.collection.CollectionPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.resource.ResourcePlayerPresenter;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.client.util.PlayerDataLogEvents;
 import org.ednovo.gooru.shared.util.AttemptedAnswersDo;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.json.client.JSONBoolean;
 import com.google.gwt.json.client.JSONNumber;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONString;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
 
@@ -68,7 +76,9 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 	public void setResourcePlayerPresenter(ResourcePlayerPresenter resourcePlayerPresenter){
 		this.resourcePlayerPresenter=resourcePlayerPresenter;
 	}
-	
+	public FlowPanel getQuestioncontainer(){
+		return	getView().getQuestionContainer();
+	}
 	public AttemptedAnswersDo getUserAttemptedResult(String collectionItemId) {
 		if(isCollectionPlayer){
 			return collectionPlayerPresenter.getAttemptAnswersMap().get(collectionItemId);
@@ -82,24 +92,24 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 	}
 
 	@Override
-	public void createSessionItemAttempt(int answerId,String answerAttemptStatus) {
+	public void createSessionItemAttempt(String contentGooruOid,int answerId,String answerAttemptStatus) {
 		if(isCollectionPlayer){
-			collectionPlayerPresenter.createSessionItemAttempt(answerId, answerAttemptStatus);
+			collectionPlayerPresenter.createSessionItemAttempt(contentGooruOid,answerId, answerAttemptStatus);
 		}else if(isResourcePlayer){
-			resourcePlayerPresenter.createSessionItemAttempt(answerId, answerAttemptStatus);
+			resourcePlayerPresenter.createSessionItemAttempt(contentGooruOid,answerId, answerAttemptStatus);
 		}else if(isPreviewPlayer){
-			previewPlayerPresenter.createSessionItemAttempt(answerId, answerAttemptStatus);
+			previewPlayerPresenter.createSessionItemAttempt(contentGooruOid,answerId, answerAttemptStatus);
 		}	
 	}
 
 	@Override
-	public void createSesstionItemAttemptOe(String answerId,String attemptStatus,String answerText) {
+	public void createSesstionItemAttemptOe(String contentGooruOid,String answerId,String attemptStatus,String answerText) {
 		if(isCollectionPlayer){
-			collectionPlayerPresenter.createSessionItemAttemptOe(answerId ,attemptStatus,answerText);
+			collectionPlayerPresenter.createSessionItemAttemptOe(contentGooruOid,answerId ,attemptStatus,answerText);
 		}else if(isResourcePlayer){
-			resourcePlayerPresenter.createSessionItemAttemptOe(answerId, attemptStatus,answerText);
+			resourcePlayerPresenter.createSessionItemAttemptOe(contentGooruOid,answerId, attemptStatus,answerText);
 		}else if(isPreviewPlayer){
-			previewPlayerPresenter.createSessionItemAttemptOe(answerId ,attemptStatus,answerText);
+			previewPlayerPresenter.createSessionItemAttemptOe(contentGooruOid,answerId ,attemptStatus,answerText);
 		}		
 	}
 	
@@ -115,8 +125,7 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 	}
 
 	@Override
-	public void setAnswerAttemptSequence(int attemptSequence,
-			int attemptStatus, int answerId) {
+	public void setAnswerAttemptSequence(int attemptSequence,int attemptStatus, int answerId) {
 		if(isCollectionPlayer){
 			collectionPlayerPresenter.setAnswerAttemptSequence(attemptSequence, attemptStatus, answerId);
 		}else if(isResourcePlayer){
@@ -223,17 +232,13 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 		}
 	}
 	
-	public void createSessionAttemptTryWhenNavigation(int questionType){
-		getView().createSessionAttemptTryWhenNavigation(questionType);
-	}
-	
 	public void setHintIdWithTime(Integer hintId) {
 		if(isCollectionPlayer){
-			collectionPlayerPresenter.getHintIdsObject().put(hintId.toString(), new JSONNumber(getUnixTimeStamp()));
+			collectionPlayerPresenter.getHintIdsObject().put(StringUtil.toString(hintId), new JSONNumber(getUnixTimeStamp()));
 		}else if(isResourcePlayer){
-			resourcePlayerPresenter.getHintIdsObject().put(hintId.toString(), new JSONNumber(getUnixTimeStamp()));
+			resourcePlayerPresenter.getHintIdsObject().put(StringUtil.toString(hintId), new JSONNumber(getUnixTimeStamp()));
 		}else if(isPreviewPlayer){
-			previewPlayerPresenter.getHintIdsObject().put(hintId.toString(), new JSONNumber(getUnixTimeStamp()));
+			previewPlayerPresenter.getHintIdsObject().put(StringUtil.toString(hintId), new JSONNumber(getUnixTimeStamp()));
 		}		
 	}
 	
@@ -249,18 +254,71 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 	
 	public void setAnswerIdWithTime(Integer answerId,Integer attemptStatus,Integer attemptSequence) {
 		if(isCollectionPlayer){
-			collectionPlayerPresenter.getAnswerIdsObject().put(answerId.toString(), new JSONNumber(getUnixTimeStamp()));
+			collectionPlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId), new JSONNumber(getUnixTimeStamp()));
 			collectionPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
 			collectionPlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
 		}else if(isResourcePlayer){
-			resourcePlayerPresenter.getAnswerIdsObject().put(answerId.toString(), new JSONNumber(getUnixTimeStamp()));
+			resourcePlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId), new JSONNumber(getUnixTimeStamp()));
 			resourcePlayerPresenter.getAttemptStatusArray().add(attemptStatus);
 			resourcePlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
 		}else if(isPreviewPlayer){
-			previewPlayerPresenter.getAnswerIdsObject().put(answerId.toString(), new JSONNumber(getUnixTimeStamp()));
+			previewPlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId), new JSONNumber(getUnixTimeStamp()));
 			previewPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
 			previewPlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
 		}		
+	}
+	
+	public void setAnswerIdWithTimeForMa(List<Integer> answerId,Integer attemptStatus,Integer attemptSequence) {
+		if(isCollectionPlayer){
+			collectionPlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			collectionPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			collectionPlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
+		}else if(isResourcePlayer){
+			resourcePlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			resourcePlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			resourcePlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
+		}else if(isPreviewPlayer){
+			previewPlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			previewPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			previewPlayerPresenter.getAttemptTrySequenceArray().add(attemptSequence);
+		}		
+	}
+	
+	public void setAnswerIdWithTimeForHT(List<Integer> answerId,Integer attemptStatus,Integer attemptSequence) {
+		if(isCollectionPlayer){
+			collectionPlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			collectionPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			collectionPlayerPresenter.setAttemptTrySequenceArray(answerId);
+		}else if(isResourcePlayer){
+			resourcePlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			resourcePlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			resourcePlayerPresenter.setAttemptTrySequenceArray(answerId);
+		}else if(isPreviewPlayer){
+			previewPlayerPresenter.setAnswerIdsObject(new JSONObject());
+			setAnswerIds(answerId);
+			previewPlayerPresenter.getAttemptStatusArray().add(attemptStatus);
+			previewPlayerPresenter.setAttemptTrySequenceArray(answerId);
+		}		
+	}
+	
+	public void setAnswerIds(List<Integer> answerId){
+		if(answerId!=null && answerId.size()>0){
+			for(int i=0;i<answerId.size();i++){
+				if(isCollectionPlayer){
+					collectionPlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId.get(i)), new JSONNumber(getUnixTimeStamp()));
+				}else if(isResourcePlayer){
+					resourcePlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId.get(i)), new JSONNumber(getUnixTimeStamp()));
+				}else if(isPreviewPlayer){
+					previewPlayerPresenter.getAnswerIdsObject().put(StringUtil.toString(answerId.get(i)), new JSONNumber(getUnixTimeStamp()));
+				}		
+			}
+		}
+		
 	}
 	
 	public void setResourceScore(Integer score) {
@@ -286,10 +344,11 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 	}
 	
 	public void setFibAnswerIdsWithTime(List<Integer> attemptAnswerIds,List<Integer> attemptTrySequenceArray,List<Integer> attemptStatusArray){
-		for(int i=0;i<attemptAnswerIds.size();i++){
-			setAnswerIdWithTime(attemptAnswerIds.get(i),0,attemptTrySequenceArray.get(i));
+		if(attemptAnswerIds!=null && attemptAnswerIds.size()>0){
+			for(int i=0;i<attemptAnswerIds.size();i++){
+				setAnswerIdWithTime(attemptAnswerIds.get(i),0,attemptTrySequenceArray.get(i));
+			}
 		}
-		
 		if(isCollectionPlayer){
 			collectionPlayerPresenter.getAttemptStatusArray().clear();
 			collectionPlayerPresenter.getAttemptStatusArray().add(attemptTrySequenceArray!=null?attemptStatusArray.get(0):0);
@@ -300,11 +359,46 @@ public class QuestionResourcePresenter extends PresenterWidget<IsQuestionResourc
 			previewPlayerPresenter.getAttemptStatusArray().clear();
 			previewPlayerPresenter.getAttemptStatusArray().add(attemptTrySequenceArray!=null?attemptStatusArray.get(0):0);
 		}		
-		
+	}
+	
+	
+	public void isOeAnswerSubmited(boolean isOeAnswerSubmited){
+		if(isCollectionPlayer){
+			collectionPlayerPresenter.setOpenEndedAnswerSubmited(isOeAnswerSubmited);
+		}else if(isResourcePlayer){
+			resourcePlayerPresenter.setOpenEndedAnswerSubmited(isOeAnswerSubmited);
+		}else if(isPreviewPlayer){
+			previewPlayerPresenter.setOpenEndedAnswerSubmited(isOeAnswerSubmited);
+		}		
+	}
+	
+	public void userAttemptedAnswerObject(List<AnswerAttemptDo> answerOptionAttemptList){
+		List<JSONObject> answerOptionJsonArray=new ArrayList<JSONObject>();
+		Long timeStamp=getUnixTimeStamp();
+		if(answerOptionAttemptList!=null&&answerOptionAttemptList.size()>0){
+			for(int i=0;i<answerOptionAttemptList.size();i++){
+				AnswerAttemptDo answerAttemptDo=answerOptionAttemptList.get(i);
+				JSONObject attemptAnswerJsonObject=new JSONObject();
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.TEXT, new JSONString(StringUtil.toString(answerAttemptDo.getText())));
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.STATUS, new JSONString(StringUtil.toString(answerAttemptDo.getStatus())));
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.ORDER, new JSONString(StringUtil.toString(answerAttemptDo.getOrder())));
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.ANSWERID, new JSONNumber(answerAttemptDo.getAnswerId()));
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.TIMESTAMP, new JSONNumber(timeStamp));
+				attemptAnswerJsonObject.put(PlayerDataLogEvents.SKIP, JSONBoolean.getInstance(answerAttemptDo.isSkip()));
+				answerOptionJsonArray.add(attemptAnswerJsonObject);
+			}
+		}
+		if(isCollectionPlayer){
+			collectionPlayerPresenter.getAnswerObjectArray().add(answerOptionJsonArray);
+		}else if(isResourcePlayer){
+			resourcePlayerPresenter.getAnswerObjectArray().add(answerOptionJsonArray);
+		}else if(isPreviewPlayer){
+			previewPlayerPresenter.getAnswerObjectArray().add(answerOptionJsonArray);
+		}
 	}
 	
 	public Long getUnixTimeStamp(){
-		Long currentTime=System.currentTimeMillis();
+		Long currentTime=PlayerDataLogEvents.getUnixTime();
 		return currentTime;
 	}
 

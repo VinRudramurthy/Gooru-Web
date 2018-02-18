@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
+	      <g:HTMLPanel styleName="peopleBlock">
+        <div class="col-md-4 col-sm-4 viewMore">
+          <g:HTMLPanel styleName="userDetContainer"><g:Image ui:field="creatorImage"/><g:InlineLabel ui:field="relatedUserName" styleName="userNameforCollection"></g:InlineLabel>
+            <gg:PPanel styleName="userGrades" ui:field="gradePanel"></gg:PPanel>
+          </g:HTMLPanel>
+        </div>
+        <div class="col-md-8 col-sm-8 viewMore">
+          <div class="colleDetContaner"><g:Image ui:field="collectionImage"/><g:InlineLabel ui:field="relatedCollectionTitle" styleName="userNameforCollection"></g:InlineLabel> 
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,67 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:ucp="urn:import:org.ednovo.gooru.client.uc.suggestbox.widget">
+<g:HTMLPanel ui:field="emptynoColl" styleName="myAllCoursesBackground">
+
+
+<div class="gettingStartedHeader">
+<h2> Tips for Collections and Assessments</h2>
+<h4>Create, Remix, and Collaborate</h4>
+
+<p class="lead">Use this space to prepare your Collections &amp; Assessment before you share them with students in a class. Please also note that in order to share collections and assessments to students in a class, they have to placed in My Courses.</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="learningCollectionsFormativeAssessments">
+
+<div class="col-md-6 col-sm-6">
+<div class="LearningCollections">
+
+<img src="images/g-collection-folder-icon.png"/>
+<h3>Learning Collections</h3>
+<img src="images/learning-resource.png" class="img-responsive"/>
+<div class="contentText">Collections are “playlists” of multimedia resources. Copy and remix collections shared by other educators from Search. Or create a collection from scratch, adding your own files and favorite websites. </div>
+
+<g:Button ui:field="btnCollectionCreate" styleName="primary">Create a Collection</g:Button>
+
+</div>
+</div>
+
+
+
+
+
+<div class="col-md-6 col-sm-6">
+<div class="FormativeAssessments">
+
+<img src="images/g-assessment-folder-icon.png"/>
+<h3>Formative Assessments</h3>
+<img src="images/g-questions.png" class="img-responsive"/>
+<div class="contentText"> Create or remix a Gooru assessment using 8 different question types. Link to an external assessment, and students will enter their score. </div>
+
+<g:Button ui:field="btnAssessmentCreate" styleName="primary">Create an Assessment</g:Button>
+
+</div>
+</div>
+
+
+<div class="clearfix"></div>
+
+</div>
+
+
+<div class="bottomLink"><g:Anchor href="http://support.gooru.org/hc/en-us/categories/200064733" target="_blank">Find out more how to use My Collections</g:Anchor></div>
+
+
+
+
+
+
+</g:HTMLPanel>
+</ui:UiBinder>

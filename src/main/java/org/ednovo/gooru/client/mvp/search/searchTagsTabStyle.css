@@ -1,0 +1,85 @@
+.scrollStyleTag{
+	height: 190px;
+	width: 966px;
+}
+
+.searchTagsBg{
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	background: #4e9746;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	color: #fff;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 7px;
+	
+}
+
+
+.searchTabTagLbl{
+	color: #fff;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+}
+
+.searchTabTagRight{
+	display: inline-block;
+	vertical-align: top;
+	font-weight: bold;
+	text-align: center;
+	background: #a6cba2;
+	text-align: center;
+	border-radius: 0 7px 7px 0;
+}
+
+.btnGreen {
+	float: left;
+	background-color: #4E9746;
+	padding: 5px;
+	border-radius: 4px;
+	color: white;
+	height: 26px;
+	width: 100px;
+	margin-bottom: 18px;
+	
+}
+
+.scrollContainer{
+	height: 130px;
+	display: inline-block;
+	width: 100%
+	
+}
+
+.mainContainer{
+	padding: 6px;
+}
+
+.loadingImageMainDiv {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+	/* background-color: #FFF; */
+	/* opacity: 0.4; */
+	top: 0px;
+    left: 0px;
+    z-index:1;
+}
+
+.loadingImageForSearchTagsTab {
+	background: url("images/core/B-Dot.gif");
+	width: 200px;
+	height: 175px;
+	margin: 0 auto;
+	margin-top: 265px;;
+	position: absolute;
+	z-index: 5;
+	/* margin-left: 324px; */
+	margin-left: 550px;
+}

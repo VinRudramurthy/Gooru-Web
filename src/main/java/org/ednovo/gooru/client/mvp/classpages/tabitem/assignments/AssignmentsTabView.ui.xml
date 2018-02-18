@@ -1,22 +1,22 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:a="urn:import:aj.org.objectweb.asm"
-	xmlns:gt="urn:import:com.tractionsoftware.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:gt="urn:import:com.tractionsoftware.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
 	xmlns:dt="urn:import:com.google.gwt.user.datepicker.client">
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.classpages.tabitem.assignments.AssignmentsTabViewCBundle"
 		field="res" />
 	<g:HTMLPanel styleName="{res.css.assignmentContentContainer}">
 		<g:HTMLPanel styleName="{res.css.myFolderRightContentWrapperTwo}">
-			<uc:HTMLEventPanel styleName="{res.css.eventContainer}" ui:field="asignmentTiltleContainer">
-				<uc:HTMLEventPanel styleName="{res.css.metaContainer}"
+			<panel:HTMLEventPanel styleName="{res.css.eventContainer}" ui:field="asignmentTiltleContainer">
+				<panel:HTMLEventPanel styleName="{res.css.metaContainer}"
 					ui:field="clickEventPanel">
 					<g:HTMLPanel styleName="{res.css.myAssigntmentTitlePanel}"
 						ui:field="assignmentTitleLblPanel">
 						<g:HTML ui:field="assignmentTitelLbl"
 							styleName="{res.css.myCollectionAssigntmentTitleText}" />
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
+				</panel:HTMLEventPanel>
 				<g:HTMLPanel ui:field="actionPanel"
 					styleName="{res.css.myCollectionEditAndDeleteContainer}">
 					<g:Button ui:field="btnEditAssignment"
@@ -30,7 +30,7 @@
 				</g:HTMLPanel>
 				<g:Label ui:field="clickToExpandLabel"
 					styleName="{res.css.clickToExpand}"></g:Label>
-			</uc:HTMLEventPanel>
+			</panel:HTMLEventPanel>
 			<g:HTMLPanel ui:field="inLinePanel" styleName="{res.css.displayNonePanel}">
 				<g:HTMLPanel styleName="{res.css.myAssigntmentTitlePanel}"
 					ui:field="assignmentTitleTxtPanel">

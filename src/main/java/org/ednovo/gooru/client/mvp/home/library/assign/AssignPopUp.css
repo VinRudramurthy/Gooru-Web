@@ -18,7 +18,6 @@
 	
 }
 .directionsDiv{
-	width: 20%;
 	float: left;
 	padding-top: 4px; 
 
@@ -92,7 +91,7 @@
 }
 .dropdownContainer{
 	background-color:rgb(255,255,255);
-	width:310px;
+/* 	width:310px; */
 	height:28px;
 	border-color:rgb(221,221,221);
 	border-width:1px;
@@ -103,8 +102,8 @@
 	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
 	border-radius:1px;
 	border-style:solid;
-	position: absolute;
-	margin-left: 98px;
+/* 	position: absolute;
+	margin-left: 98px; */
 }
 .classpageContainerFont{
 	font-family:Arial, Helvetica, sans-serif;
@@ -115,7 +114,8 @@
 .controlsContainer{
 	float:left;
 	margin-bottom:10px;
-	margin-left:25px;
+	
+	width:100%;
 }
 
 .labelTitlePrivateText{
@@ -133,7 +133,7 @@
 	line-height:120%;
 	color:rgb(81,81,81);
 	text-align: center;
-	width: 445px;
+	/* width: 445px; */
 }
 
 .placeHolderText{
@@ -168,7 +168,7 @@
 .assignmentsContainer{
 	float : left;
 	width:100%;
-	margin-top:10px;
+	/* margin-top:10px; */
 }
 
 .duedateContainer{
@@ -184,7 +184,7 @@
 
 .scrollPanelContainer{
 	background-color:rgb(255,255,255);
-	width:310px;
+	width:90%;
 	border-color:rgb(221,221,221);
 	border-width:1px;
 	/* Firefox v1.0+ */
@@ -195,10 +195,10 @@
 	border-radius:1px;
 	border-style:solid;
 	top: 29px;
-	left: 4px;
+	
 	z-index: 9;
 	position: absolute !important;
-	margin-left: -5px;
+	
 	height: auto;
 	max-height: 108px;
 }
@@ -235,14 +235,14 @@
 	white-space: nowrap !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 281px;
+	width: 90%;
 }
 
 
 .disableAssignButon{
 	display: inline-block;
 	clear: both;
-	float: left;
+	
 	color: #999;
 	padding: 7px 9px;
 	border-radius: 4px;
@@ -275,7 +275,6 @@
 	background: -o-linear-gradient(top, #4C98CC, #1076BB);
 	cursor: pointer;
 	clear: both;
-	float: left;
 	background-color: #1076bb;
 }
 
@@ -371,7 +370,7 @@ padding-bottom: 18%;
 	text-overflow: ellipsis;
 }
 .assignHeader {
-	height: 31px;
+	height: 36px;
 	padding: 10px 0px 0px 10px;
 	background-color: rgb(81,81,81);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
@@ -379,7 +378,7 @@ padding-bottom: 18%;
 	background: -moz-linear-gradient(top, #666, #515151);
 	background: -ms-linear-gradient(top, #666, #515151);
 	background: -o-linear-gradient(top, #666, #515151);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
+	
 }
 
 .assignTitle {
@@ -413,7 +412,7 @@ padding-bottom: 18%;
 	-webkit-border-radius: 1px;
 	border-radius: 1px;
 	border-style: solid;
-	height:530px;
+	height:656px;
 }
 .assignContentLoginCustomize {
 	background-color: transparent;
@@ -441,7 +440,7 @@ padding-bottom: 18%;
 	width: 99%;
 	text-align: center;
 	padding: 15px 15px 40px 10px;
-	height:220px;
+	
 }
 
 .labelTextDisable{
@@ -530,7 +529,7 @@ padding-bottom: 18%;
 	background: -moz-linear-gradient(top, #666, #515151);
 	background: -ms-linear-gradient(top, #666, #515151);
 	background: -o-linear-gradient(top, #666, #515151);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
+
 }
 .popupHeaderTitle {
 	color: #fff;
@@ -543,9 +542,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndC
 	padding: 15px;
 }
 .heightClasspagecontainer{
-	height:155px;
+/* 	height:155px; */
 	margin-right: auto;
 	display: inline-block;
+	width:100%;
 }
 .contentTitle {
 	color: #fff;
@@ -554,7 +554,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndC
 .btn {
 	width: 115px;
 	margin: auto;
-	margin-bottom: 15px;
+	margin-bottom: 6px;
 }
 button.LoginText {
 	margin-top:15px;
@@ -704,7 +704,6 @@ button.LoginText {
 }
 .contentBorder {
 	text-align: center;
-	margin-top: -13px;
 	margin-bottom: 5px;
 	border-bottom: 1px solid rgb(221,221,221);
 }
@@ -712,7 +711,7 @@ button.LoginText {
 	width: 300px;
 	margin: 0 auto;
 	padding-top: 10px;
-	padding-left: 35px;
+	/* padding-left: 35px; */
 }
 .inputBlock {
 	display: block;
@@ -723,6 +722,10 @@ button.LoginText {
 }
 .popupTitle {
 	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #515151;
+	padding: 5px;
 }
 .popupTitleLogin {
 	text-align: center;
@@ -743,6 +746,7 @@ button.LoginText {
 	color: rgb(81,81,81);
 	text-align: center;
 	font-weight: normal;
+	margin-top: 6px;
 }
 
 .shareLinkContainer {
@@ -862,7 +866,6 @@ button.LoginText {
 	font-family:Arial, Helvetica, sans-serif;
 	display: inline-block;
 	vertical-align: top;
-	padding-top: 8px;
 	text-align:left;
 	padding-bottom: 30px;
 	font-weight:normal;
@@ -881,6 +884,112 @@ button.LoginText {
 	position: relative;
 	font-style: italic;
 }
+
+.gConnectButton {
+	padding:16px 16px 15px 64px;
+	color:white;
+	background: #1076BB url("images/login/g.png") left center no-repeat;
+	background: url("images/login/g.png") left center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: url("images/login/g.png") left center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("images/login/g.png") left center no-repeat, -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("images/login/g.png") left center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
+	border-radius:4px;
+	border:1px solid #1076BB;
+	/* margin-bottom: 15px; */
+	cursor: pointer;
+	margin-top:10px;
+}
+
+.gConnectButton:hover {
+	background: #1076BB url("images/login/g.png") left center no-repeat;
+}
+
+.divider {
+	border-bottom:1px solid #ddd;
+	width:100%;
+	height:1em;
+	margin:10px 0px 10px 0px;
+}
+
+.dividerText {
+	display:inline;
+	position:relative;
+	top:.5em;
+	padding:0px 10px;
+	background-color:#f0f0f0;
+	font-size: 12px;
+}
+.dividerCustomize {
+	border-bottom:1px solid #ddd;
+	height:1em;
+	margin:10px 0px 20px 0px;
+	padding-top: 5px;
+}
+
 /*End Success popup */
 
+.privacyAlignStyle{
+	margin-right: 2px;
+}
 
+.privacyContainer{
+	margin: 0px;
+	text-align: left;
+	/* margin-bottom: 10px; */
+	padding: 0px;
+	line-height: 66%;
+}
+
+.privacyCustomizeContainer{
+	margin: 0px;
+	text-align: left;
+	margin-bottom: 10px;
+	padding: 0px;
+	line-height: 100%;
+}
+.privacyCustomizeContainernew{
+	margin: 0px;
+	text-align: center;
+	margin-bottom: 10px;
+	padding: 0px;
+	line-height: 100%;
+}
+.privacyAlignStyleNew{
+	margin-left: 0px;
+}
+.errorLabel{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(250,176,58);
+	text-align: right;
+	margin-right: -53px;
+	float: right;
+}
+.loginPopupStyle{
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	text-align: center;
+	margin: 0px auto;
+	width: 74%;
+}
+.loginWithGooru{
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 10px;
+}
+
+.directionsChrLimit{
+	font-size: 12px;
+	float: right;
+	margin-right: 40px;
+	font-weight: normal;
+	color: #999;
+	margin-top: 10px;
+}
+.marginTop{
+	margin-top:10px;
+}
+
+.privacyText{
+	text-align: left;	
+}

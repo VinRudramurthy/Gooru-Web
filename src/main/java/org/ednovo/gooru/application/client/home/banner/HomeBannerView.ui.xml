@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel>
+		<section class="bannerContaner">
+			<div class="flowPlayer">
+				<g:Image url="images/newlandingpage/1.png" styleName="img-responsive bannerImageHeight" ui:field="imgBanner"></g:Image>
+			</div>
+			<div class="bannerCaption">
+				<g:HTMLPanel styleName="container" ui:field="panelTitleContainer">
+					<h1>
+						<g:Label ui:field="lblPageTitle1"></g:Label>
+						<g:Label ui:field="lblPageTitle2"></g:Label>
+						<g:Label ui:field="lblPageTitle3"></g:Label>
+					</h1>
+				</g:HTMLPanel>
+			</div>
+		</section>
+	</g:HTMLPanel>
+</ui:UiBinder>

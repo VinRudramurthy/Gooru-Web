@@ -1,0 +1,261 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<ui:style>
+	.popupWrapper {
+		bottom: 0;
+		left: 0;
+		outline: 0 none;
+		overflow: hidden;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 1050;
+		background: rgba(0,0,0,0.5);
+	}
+	.PopupMainVSmall {
+		width: 550px;
+		color: #515151;
+		margin: 10em auto;
+		position: relative;
+		font-family: arial;
+		font-size: 12px;
+		background: #fff;
+		border-radius: 0 0;
+		border: 1px solid #999;
+		padding: 3px 3px;
+		z-index: 999;
+	}
+	.popupInnerGrey {
+		border: 1px solid #ddd;
+		position: relative;
+	}
+	.popupgreyHeader {
+		padding: 10px 15px;
+		color: white;
+		background: -webkit-linear-gradient(top, #666, #515151);
+		background: -moz-linear-gradient(top, #666, #515151);
+		background: -ms-linear-gradient(top, #666, #515151);
+		background: -o-linear-gradient(top, #666, #515151);
+		background-color: #515151;
+		font-size: 16px;
+		filter: progid;
+	}
+	.shareSelection {
+		margin: 10px 35px;
+	}
+	.logInput {
+		margin: 20px 0 10px 0;
+	}
+	.formViewButtonContainer {
+		padding-bottom: 20px;
+		padding-top: 10px;
+		text-align: center;
+	}
+	.form_edit_control {
+		width: 74%;
+		height: 30px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.4285715;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+		transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+		display: inline-block;
+	}
+	.logInput .form_control {
+		margin-bottom: 6px;
+		border-radius: 0 0;
+	}
+	.mandatoryLabel{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		line-height: 100%;
+		color: #fab03a;
+		text-align: right;
+		position: relative;
+		margin-right: 12px;
+		margin-bottom: 5px;
+		clear: both;
+	}
+	.assessmentTextBoxContainer{
+		display: inline-block;
+		padding-bottom: 16px;
+	}
+	.assessmentTextBoxEditContainer{
+		padding-bottom: 16px;
+	}
+	.assessmentTextBoxText{
+		width: 9%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.assessmentEditTextBoxText{
+		width: 25%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.descriptionAlign{
+		vertical-align: top !important;
+	}
+	.radioButtoncontainer{
+		display: inline-block;
+		font-weight: normal;
+	}
+	.assessmentPrivacyRightContainer{
+		display: inline-block;
+		width: 74%;
+	}
+	.radioBox{
+		float:left;
+		vertical-align: middle;
+		width: 100px;
+		cursor: pointer;
+		font-weight: normal;
+	}
+	.publicImg{
+
+	}
+	.sharebleImg{
+		width: 120px !important;
+	}
+	.privateImg{
+
+	}
+
+	.publicImg label{
+		background: url(images/icon-sprite.png) repeat scroll -68px -390px rgba(0, 0, 0, 0);
+		height: 21px;
+		width: 27px;
+		padding-left: 25px;
+		margin-bottom: 0px;
+		line-height: 21px;
+		cursor: pointer;
+		font-weight: normal;
+	}
+
+	.privateImg label{
+		background: url(images/icon-sprite.png) repeat scroll -68px -215px rgba(0, 0, 0, 0);
+		padding-left: 21px;
+		margin-bottom: 0px;
+		line-height: 21px;
+		height: 24px;
+		width: 27px;
+		cursor: pointer;
+		font-weight: normal;
+	}
+
+	.sharebleImg label{
+		background: url(images/icon-sprite.png) repeat scroll -67px -261px rgba(0, 0, 0, 0);
+		cursor: pointer;
+		height: 21px;
+		width: 38px;
+		padding-left: 22px;
+		margin-bottom: 0px;
+		line-height: 21px;
+		font-weight: normal;
+	}
+
+	.publicText {
+		line-height: 10px;
+		padding: 6px 0px 0 55px;
+		margin-top: 6px;
+	}
+	.requiresText {
+		line-height: 10px;
+		padding: 5px 0 0 14px;
+		margin-top: 6px;
+	}
+
+	.form_edit_textares_control {
+		width: 74%;
+		height: 30px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.4285715;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+		transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+		display: inline-block;
+		resize: none;
+		height: 85px;
+	}
+	.privacy{
+		vertical-align: top !important;
+		margin-top: 8px;
+	}
+
+	</ui:style>
+	<g:HTMLPanel styleName="{style.popupWrapper}">
+		<div class="{style.PopupMainVSmall}">
+			<div class="{style.popupInnerGrey}">
+						<div class="{style.popupgreyHeader}">
+							<div class="row">
+								<g:Label styleName="col-md-8 col-xs-8" text="{i18n.GL3167}" title="{i18n.GL3167}">Edit Assessment URL </g:Label>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+					   	<div class="{style.shareSelection}">
+					 		<div class="{style.logInput}">
+					 			<g:HTMLPanel styleName="{style.assessmentTextBoxEditContainer}">
+					 				<g:Label styleName="{style.assessmentEditTextBoxText}" text="{i18n.GL3182}{i18n.GL_SPL_STAR}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL3182}"></g:Label>
+									<uc:TextBoxWithPlaceholder ui:field="txtExistingAssessmentTitle" styleName="{style.form_edit_control}"></uc:TextBoxWithPlaceholder>
+				 					<g:Label ui:field="lblExistingAssessmentError" styleName="{style.mandatoryLabel}" ></g:Label>
+				 				</g:HTMLPanel>
+				 				<g:HTMLPanel styleName="{style.assessmentTextBoxEditContainer}">
+				 					<g:Label styleName="{style.assessmentEditTextBoxText}" text="{i18n.GL3183}{i18n.GL_SPL_STAR}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL3183}"/>
+				 					<uc:TextBoxWithPlaceholder ui:field="txtExistingAssessmentURL" styleName="{style.form_edit_control}"></uc:TextBoxWithPlaceholder>
+				 					<g:Label ui:field="lblExistingAssessmentURLError" styleName="{style.mandatoryLabel}" ></g:Label>
+			 					</g:HTMLPanel>
+			 				</div>
+			 				<g:HTMLPanel styleName="{style.assessmentTextBoxEditContainer}">
+				 				<g:Label styleName="{style.assessmentEditTextBoxText} {style.descriptionAlign}" text="{i18n.GL0904}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL0904}"/>
+			 					<g:TextArea ui:field="txtExistingAssessmentDescription" styleName="{style.form_edit_textares_control}"></g:TextArea>
+			 					<g:Label ui:field="lblExistingAssessmentDescriptionError" styleName="{style.mandatoryLabel}" ></g:Label>
+			 				</g:HTMLPanel>
+			 				<g:HTMLPanel styleName="{style.assessmentTextBoxEditContainer}">
+					 			<g:Label styleName="{style.assessmentEditTextBoxText} {style.privacy}" text="{i18n.GL0873}{i18n.GL_SPL_STAR}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL0873}"/>
+					 			<g:HTMLPanel styleName="{style.assessmentPrivacyRightContainer}">
+							 			<panel:HTMLEventPanel styleName="{style.radioButtoncontainer}">
+							 				<g:RadioButton ui:field="rdBtnAssessmentPublic" name="" styleName="{style.radioBox} {style.publicImg}" title="{i18n.GL0329}"></g:RadioButton>
+							 			</panel:HTMLEventPanel>
+							 			<panel:HTMLEventPanel  styleName="{style.radioButtoncontainer}">
+							 				<g:RadioButton ui:field="rdBtnAssessmentShare" name="" styleName="{style.radioBox} {style.sharebleImg}" title="{i18n.GL0331}"></g:RadioButton>
+							 			</panel:HTMLEventPanel>
+							 			<panel:HTMLEventPanel styleName="{style.radioButtoncontainer}">
+							 				<g:RadioButton name="" ui:field="rdBtnAssessmentPrivate" styleName="{style.radioBox} {style.privateImg}" title="{i18n.GL0333}"></g:RadioButton>
+							 			</panel:HTMLEventPanel>
+					 			</g:HTMLPanel>
+			 				</g:HTMLPanel>
+			 				<g:HTMLPanel styleName="{style.assessmentTextBoxEditContainer}">
+				 			<g:Label styleName="{style.assessmentEditTextBoxText}" text="{i18n.GL3184}{i18n.GL_SPL_QUESTION}{i18n.GL_SPL_STAR}{i18n.GL_SPL_SEMICOLON}" title="{i18n.GL3184}"/>
+					 			<g:HTMLPanel styleName="{style.assessmentPrivacyRightContainer}">
+							 			<panel:HTMLEventPanel styleName="{style.radioButtoncontainer}">
+							 				<g:RadioButton name="" styleName="{style.radioBox}" ui:field="requireLoginYes"></g:RadioButton>
+							 			</panel:HTMLEventPanel>
+							 			<panel:HTMLEventPanel styleName="{style.radioButtoncontainer}">
+							 				<g:RadioButton name="" styleName="{style.radioBox}"  ui:field="requireLoginNo"></g:RadioButton>
+							 			</panel:HTMLEventPanel>
+					 			</g:HTMLPanel>
+			 				</g:HTMLPanel>
+							<div class="formViewButtonContainer">
+									 <g:Button ui:field="btnCancelAssessment" styleName="secondary" text="{i18n.GL0142}"></g:Button>
+							 		 <g:Button ui:field="btnSaveAssessment" styleName="primary" text="{i18n.GL0141}"></g:Button>
+							</div>
+						</div>
+	   		 </div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

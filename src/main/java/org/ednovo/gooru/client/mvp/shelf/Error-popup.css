@@ -9,6 +9,8 @@
 	-webkit-border-radius: 1px;
 	border-radius: 1px;
 	border-style: solid;
+	width:35%;
+	
 }
 .errorPopupHeaderBg {
 	width: 100%;

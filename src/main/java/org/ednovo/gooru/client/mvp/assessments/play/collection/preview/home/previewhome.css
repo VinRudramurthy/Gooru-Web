@@ -1,0 +1,173 @@
+.collectionImageContainer {
+    width: 354px;
+	height: 250px;
+	float: left;
+	margin-right: 15px;
+}
+.collectionImage {
+	width:334px;
+    height:250px;
+    border-left:20px solid #1076bb;
+    float:left;
+}
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+.infoSection {
+    margin-top:30px;
+}
+
+.preview {
+	width: 150px;
+    font-size:24px;
+    font-weight:bold;
+    color:#FFF;
+    border-radius: 4px;
+    /* padding:10px 48px 10px 0px; */
+    padding: 10px 70px 11px 15px;
+    /* Old browsers */
+	background: #1076BB ;
+	background: url("images/preview-arrow.png") 125px center no-repeat, #1076BB;
+	background: url("images/preview-arrow.png") 125px center no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: url("images/preview-arrow.png") 125px center no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("images/preview-arrow.png") 125px center no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("images/preview-arrow.png") 125px center no-repeat, -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: url("images/preview-arrow.png") 125px center no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
+
+}
+
+.preview:hover {
+    background: url("images/preview-arrow.png") 125px center no-repeat, #1076BB;
+    cursor: pointer;
+}
+
+ .leftArrow {
+    width: 0px;
+    height: 0px;
+    border:15px solid transparent;
+    border-right:15px solid #ddd;
+    display:inline-block;
+    margin-right:10px;
+    margin-left:-15px;
+    vertical-align:middle;
+}
+
+/*  .leftArrow:hover {
+    border-right:15px solid #999;
+    cursor:pointer;
+}
+
+ .rightArrow:hover {
+    border-left:15px solid #999;
+    cursor:pointer;
+}
+ */
+.rightArrow {
+    width: 0px;
+    height: 0px;
+    border:15px solid transparent;
+    border-left:15px solid #ddd;
+    display:inline-block;
+    margin-left:10px;
+    margin-right:-15px;
+    vertical-align:middle;
+}
+
+ .resources {
+    width:580px;
+    overflow:hidden;
+    white-space:nowrap;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+
+.collectionbuttons hr {
+margin: 10px 0px;
+border: 0px;
+height: 1px;
+background-color: #DDD;
+}
+.collectionbuttons button{
+	margin-right:5px;
+}
+.goal{
+	color:#515151;
+	font-size:12px;
+	font-family: Arial, sans-serif !important;
+}
+.infoSection h3{
+	margin-bottom:12px;
+	color:#515151;
+}
+.resource_count{
+	font-size: 14px;
+	color: #515151;
+	font-family: arial;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+/************** //////// ***********/
+
+.collectionEndImageContainer {
+    width: 170px;
+	height: 120px;
+	float: left;
+	margin-right: 15px;
+}
+.collectionEndImage {
+	width:160px;
+    height:120px;
+    border-left:10px solid #1076bb;
+    float:left;
+}
+
+.collectionreplay {
+	width: 170px;
+	height: 36px;
+	box-sizing: border-box;
+	text-indent: -171px;
+	position: relative;
+	background: url('images/replay.png') center 30px no-repeat, rgba(0, 0, 0, .6);
+	transition: background-color 0.5s ease;
+	color: white;
+	text-align: center;
+	padding-top: 85px;
+	cursor: pointer;
+}
+
+.collectionreplayText {
+	margin-top:85px;
+}
+
+.collectionreplay:hover{
+	background: url('images/replay.png') center 30px no-repeat, rgba(0, 0, 0, .8);
+}
+
+.collectionbuttons hr {
+	margin: 10px 0px;
+	border: 0px;
+	height: 1px;
+	background-color: #DDD;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.endTitle{
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Arial, sans-serif !important;
+	color:#515151;
+}
+

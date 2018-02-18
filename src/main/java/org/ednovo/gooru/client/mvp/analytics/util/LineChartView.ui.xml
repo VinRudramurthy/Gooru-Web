@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style src="CollectionChart.css"
+		type="org.ednovo.gooru.client.mvp.analytics.util.CollectionChartCBundle"
+		field="res" />
+	<g:HTMLPanel styleName="col-md-12">
+	    <g:HTMLPanel styleName="col-md-12 {res.chartBorder} paddingClear" ui:field="chartContainer"></g:HTMLPanel>
+	    <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	 </g:HTMLPanel>
+
+</ui:UiBinder>

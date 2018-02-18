@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,8 +28,8 @@ import com.google.gwt.uibinder.client.UiChild;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.widgetideas.client.GlassPanel;
 
 /**
  * @author Search Team
@@ -38,7 +38,7 @@ import com.google.gwt.widgetideas.client.GlassPanel;
 public class LabelGlassPanel extends AbsolutePanel {
 
 	protected Label glassPanelText;
-	protected GlassPanel glassPanel;
+	protected PopupPanel glassPanel;
 	protected FlowPanel contentPanel;
 	protected FlowPanel topPanel;
 
@@ -49,12 +49,14 @@ public class LabelGlassPanel extends AbsolutePanel {
 		super();
 		glassPanelText = new Label();
 		topPanel = new FlowPanel();
-		glassPanelText.setStyleName(UcCBundle.INSTANCE.css().labelGlassPanelText());
-		glassPanel = new GlassPanel(false);
+		glassPanelText.setStyleName("Uc-labelGlassPanelText");
+		glassPanel = new PopupPanel(false);
+		glassPanel.setGlassEnabled(true);
 		topPanel.add(glassPanelText);
 		contentPanel = new FlowPanel();
 		this.add(contentPanel);
 		this.add(glassPanel);
+
 		this.add(topPanel);
 		this.setWidgetPosition(glassPanel, 0, 0);
 		this.setWidgetPosition(topPanel, 0, 0);
@@ -81,7 +83,7 @@ public class LabelGlassPanel extends AbsolutePanel {
 		return contentPanel;
 	}
 
-	public GlassPanel getGlassPanel() {
+	public PopupPanel getGlassPanel() {
 		return glassPanel;
 	}
 

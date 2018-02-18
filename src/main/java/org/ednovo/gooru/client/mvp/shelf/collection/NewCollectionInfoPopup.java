@@ -53,6 +53,9 @@ public class NewCollectionInfoPopup extends PopupPanel {
 	public NewCollectionInfoPopup(String infoText) {
 		setWidget(uiBinder.createAndBindUi(this));
 		collectionInfoLbl.setText(infoText);
+		collectionInfoLbl.getElement().setId("lblCollectionInfoLbl");
+		collectionInfoLbl.getElement().setAttribute("alt",infoText);
+		collectionInfoLbl.getElement().setAttribute("title",infoText);
 		this.setAutoHideEnabled(true);
 	}
 

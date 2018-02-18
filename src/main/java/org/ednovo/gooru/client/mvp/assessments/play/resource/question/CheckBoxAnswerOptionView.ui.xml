@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:FlowPanel styleName="resourcesQuizzessAnswersOptionsContainer" ui:field="questionsMainPanel">
+     	<g:Label styleName="quizAnswerChoiceOption" ui:field="answerChoiceResult"></g:Label>
+     	<g:Label ui:field="radioYesButton"></g:Label>
+     	<g:Label ui:field="radioNoButton"></g:Label>
+        <g:HTML styleName="answerOptionContent" ui:field="answerOptionText"></g:HTML>
+        <g:RadioButton ui:field="answerOptionYesRadioButton" name="maRadioButton" styleName="hideButton"></g:RadioButton>
+        <g:RadioButton ui:field="answerOptionNoRadioButton" name="maRadioButton"  styleName="hideButton"></g:RadioButton>
+    </g:FlowPanel>
+</ui:UiBinder> 

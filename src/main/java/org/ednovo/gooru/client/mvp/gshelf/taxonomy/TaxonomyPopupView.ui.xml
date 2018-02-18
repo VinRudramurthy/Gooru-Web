@@ -1,0 +1,90 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"	xmlns:panel="urn:import:org.ednovo.gooru.client.ui" 
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel ui:field="taxonomyMainContainer">
+		<div class="container">
+			<div class="row">
+				<header class="standerdHeader">
+					<div class="col-md-11 col-xs-10 col-sm-10 standerdTxt"> Select Domain</div>
+					<div class="col-md-1 col-xs-2 col-sm-2 closeBtn">
+						<div>
+							<g:Image url="images/login/close-button.png" ui:field="closeBtn"/>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</header>
+			</div>
+			<div class="row">
+
+				<div class="greyBox">
+					<p>Select one domain to tag to.</p>
+				</div>
+
+				<div class="taxonomyMenu">
+					<div class="btn-group btn-group-justified" role="group"
+						aria-label="...">
+						<div class="btn-group" role="group">
+							<g:Button ui:field="k12Btn" styleName="btn btn-default">K - 12</g:Button>
+						</div>
+						<div class="btn-group" role="group">
+							<g:Button ui:field="higherEduBtn" styleName="btn btn-default">Higher Education</g:Button>
+						</div>
+						<div class="btn-group" role="group">
+							<g:Button ui:field="profLearningBtn" styleName="btn btn-default">Professional Learning</g:Button>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="standarBodyContainer">
+					<div class="listGroup no-gutter">
+					
+					    <div class="col-md-3 col-sm-3 border-right">
+							<g:Label styleName="optinHeader" text="Subject"></g:Label>
+							<uc:UlPanel styleName="list-unstyled containerHeight" ui:field="subjectUlContainer"></uc:UlPanel>
+						</div>
+						
+						<div class="col-md-2 col-sm-2 border-right">
+							<g:Label styleName="optinHeader" text="Course"></g:Label>
+							<g:ScrollPanel ui:field="scrollDiv" styleName="scrollCourseContainer">
+							<uc:UlPanel styleName="list-unstyled containerHeight" ui:field="courseUlContainer">
+							</uc:UlPanel></g:ScrollPanel>
+						</div>
+						
+						<div class="col-md-3 col-sm-3 border-right domainColumn">
+							<g:Label styleName="optinHeader" text="Domain"></g:Label>
+							<g:ScrollPanel ui:field="scrollDivDomain" styleName="scrollCourseContainer">
+							<uc:UlPanel styleName="list-unstyled containerHeight" ui:field="domainUlContainer">
+							</uc:UlPanel></g:ScrollPanel>
+						</div>
+						
+						<div class="col-md-4 col-sm-4 border-right listGroupLast">
+							<g:Label styleName="optinHeader" text="Standards"></g:Label>
+							<uc:UlPanel styleName="list-unstyled scrollCourseContainer containerHeight" ui:field="standardsUlContainer">
+							</uc:UlPanel>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+						<g:Label styleName="errorMessage errorLblPosition" ui:field="errorMsgLbl" text="{i18n.GL3492}" visible="false"></g:Label>
+				</div>
+				
+				<div class="standarFooterContainer">
+					<div class="buttonGroupContainer">
+						<div class="col-md-10 col-sm-10 col-xs-10 filters">
+						    <div class="filterTags">
+						        <uc:UlPanel ui:field="selectedUlContainer"></uc:UlPanel>
+          					</div>
+						</div>
+
+						<div class="col-md-2 col-sm-2 col-xs-2 addButton">
+							<g:Button styleName="primary" ui:field="addTaxonomyBtn" text="{i18n.GL0590_1}"></g:Button>
+						</div>
+
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

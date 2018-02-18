@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<!-- <ui:style field="playerStyle" src="ratings.css"/> -->
+	<g:HTMLPanel ui:field="starRatingsPnl">
+		<g:Label styleName="ratingValue" ui:field="starValue"></g:Label>
+			<g:Label styleName="ratingValue" ui:field="mouseOverStarValue"></g:Label>
+		<g:HTMLPanel styleName="rating">
+			<g:SimpleCheckBox ui:field="starOne" name="rating" styleName="rating" />
+			<g:SimpleCheckBox ui:field="starTwo" name="rating" styleName="rating" />
+			<g:SimpleCheckBox ui:field="starThree" name="rating" styleName="rating" />
+			<g:SimpleCheckBox ui:field="starFour" name="rating" styleName="rating" />
+			<g:SimpleCheckBox ui:field="starFive" name="rating" styleName="rating" />
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

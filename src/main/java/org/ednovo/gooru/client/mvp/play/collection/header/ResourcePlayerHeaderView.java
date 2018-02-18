@@ -25,45 +25,45 @@
 package org.ednovo.gooru.client.mvp.play.collection.header;
 
 import org.ednovo.gooru.client.uc.PlayerBundle;
-import org.ednovo.gooru.client.uc.tooltip.GlobalToolTip;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.ClientConstants;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.MouseOutEvent;
-import com.google.gwt.event.dom.client.MouseOutHandler;
-import com.google.gwt.event.dom.client.MouseOverEvent;
-import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ResourcePlayerHeaderView extends Composite{
+public class ResourcePlayerHeaderView extends Composite implements ClientConstants{
 	
 	@UiField HTML resourceTitle;
 	
 	@UiField Button infoButton,shareButton,addButton,flagButton;
 	
-	@UiField Label closeButton/*,thumbsDownButton,thumbsUpButton*/;
+
+	@UiField Anchor closeButton;
+
 	
 	private boolean isInfoButtonEnabled=false;
 	private boolean isShareButtonEnabled=false;
 	private boolean isAddButtonEnabled=false;
 	private boolean isFlagButtonEnabled=false;
-	private PopupPanel toolTipPopupPanel=new PopupPanel();
 	private static CollectionPlayerHeaderViewUiBinder uiBinder = GWT.create(CollectionPlayerHeaderViewUiBinder.class);
 
 	interface CollectionPlayerHeaderViewUiBinder extends UiBinder<Widget, ResourcePlayerHeaderView> {
-		
 	}
 	
 	public ResourcePlayerHeaderView(){
 		initWidget(uiBinder.createAndBindUi(this));
 		PlayerBundle.INSTANCE.getPlayerStyle().ensureInjected();
+		resourceTitle.getElement().setId("htmlResourceTitle");
+		addButton.getElement().setId("addButton");
+		flagButton.getElement().setId("btnFlagButton");
+		infoButton.getElement().setId("btnInfoButton");
+		shareButton.getElement().setId("btnShareButton");
+		closeButton.getElement().setId("lblCloseButton");
 	}
 
 	public void setResourceTitle(String title){
@@ -78,7 +78,7 @@ public class ResourcePlayerHeaderView extends Composite{
 		return shareButton;
 	}
 	
-	public Label getCloseButton(){
+	public Anchor getCloseButton(){
 		return closeButton;
 	}
 	
@@ -88,14 +88,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	public Button getFlagButton(){
 		return flagButton;
 	}
-	/*public Label getThumbsDownButton(){
-		return thumbsDownButton;
-	}
-	
-	public Label getThumbsUpButton(){
-		return thumbsUpButton;
-	}*/
-	
+
 	public boolean isInfoButtonEnabled() {
 		return isInfoButtonEnabled;
 	}
@@ -196,10 +189,9 @@ public class ResourcePlayerHeaderView extends Composite{
 		}
 	}
 	
-	
 	public void makeAddButtonActive(){
 		String button=getAddButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getAddButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonActive());
 			getAddButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonNormal());
 			getAddButton().getElement().removeAttribute("button");
@@ -211,7 +203,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void makeInfoButtonActive(){
 		String button=getInfoButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getInfoButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonActive());
 			getInfoButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonNormal());
 			getInfoButton().getElement().removeAttribute("button");
@@ -223,7 +215,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void makeShareButtonActive(){
 		String button=getShareButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			getShareButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonActive());
 			getShareButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonNormal());
 			getShareButton().getElement().removeAttribute("button");
@@ -236,7 +228,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	
 	public void makeFlagButtonActive(){
 		String button=getFlagButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)){
 			if(getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive())){
 				getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive());
 				getFlagButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrange());
@@ -273,7 +265,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void deselectAddButton(){
 		String button=getAddButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")&&isAddButtonEnabled()){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)&&isAddButtonEnabled()){
 			getAddButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonActive());
 			getAddButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().addButtonNormal());
 			getAddButton().getElement().removeAttribute("button");
@@ -281,7 +273,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void deselectInfoButton(){
 		String button=getInfoButton().getElement().getAttribute("button");
-		if(button!=null&&button.equalsIgnoreCase("active")&&isInfoButtonEnabled()){
+		if(button!=null&&ACTIVE.equalsIgnoreCase(button)&&isInfoButtonEnabled()){
 			getInfoButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonActive());
 			getInfoButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().infoButtonNormal());
 			getInfoButton().getElement().removeAttribute("button");
@@ -289,7 +281,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void deselectShareButton(){
 		String shareButtonVal=getShareButton().getElement().getAttribute("button");
-		if(shareButtonVal!=null&&shareButtonVal.equalsIgnoreCase("active")&&isShareButtonEnabled()){
+		if(shareButtonVal!=null&&ACTIVE.equalsIgnoreCase(shareButtonVal)&&isShareButtonEnabled()){
 			getShareButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonActive());
 			getShareButton().addStyleName(PlayerBundle.INSTANCE.getPlayerStyle().shareButtonNormal());
 			getShareButton().getElement().removeAttribute("button");
@@ -297,7 +289,7 @@ public class ResourcePlayerHeaderView extends Composite{
 	}
 	public void deselectFlagButton(){
 		String flagButtonVal=getFlagButton().getElement().getAttribute("button");
-		if(flagButtonVal!=null&&flagButtonVal.equalsIgnoreCase("active")&&isFlagButtonEnabled()){
+		if(flagButtonVal!=null&&ACTIVE.equalsIgnoreCase(flagButtonVal)&&isFlagButtonEnabled()){
 			if(getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive())||
 				getFlagButton().getStyleName().contains(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrange())){
 				getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().flagButtonOrangeActive());

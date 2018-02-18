@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel styleName="errorPopup">
+		<g:HTMLPanel styleName="errorPopupInner">
+			<g:HTMLPanel styleName="errorPopupHeader">
+				<g:Label ui:field="lblOops"/>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="errorPopupContent">
+				<g:Image url="images/refresh.png" width="95" height="106"></g:Image>
+				<g:HTMLPanel styleName="errorContent">
+					<g:Label styleName="errorIEMessage" ui:field="lblErrorIEMessage"></g:Label>
+					<g:Button ui:field="btnOk" styleName="primary">Ok</g:Button>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -40,20 +40,20 @@ package org.ednovo.gooru.client.mvp.home.library.contributors;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.library.LibraryUserDo;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.library.LibraryUserDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class LibraryContributorsView extends Composite implements MessageProperties {
+public class LibraryContributorsView extends Composite{
 
 	@UiField HTMLPanel container,contributorsText;
 	@UiField HTMLPanel featuredEducatorsPanel;
@@ -64,10 +64,16 @@ public class LibraryContributorsView extends Composite implements MessagePropert
 	interface LibraryContributorsViewUiBinder extends
 			UiBinder<Widget, LibraryContributorsView> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	public LibraryContributorsView(String placeToken) {
 		initWidget(uiBinder.createAndBindUi(this));
-		contributorsText.getElement().setInnerText(GL1182);
+		contributorsText.getElement().setInnerText(i18n.GL1182());
+		contributorsText.getElement().setId("pnlContributorsText");
+		contributorsText.getElement().setAttribute("alt",i18n.GL1182());
+		contributorsText.getElement().setAttribute("title",i18n.GL1182());
+		featuredEducatorsPanel.getElement().setId("pnlFeaturedEducatorsPanel");
 		getFeaturedUsers(placeToken);
 	}
 	
@@ -92,13 +98,10 @@ public class LibraryContributorsView extends Composite implements MessagePropert
 	 *
 	 */
 	private void getFeaturedUsers(final String placeToken) {
-		AppClientFactory.getInjector().getLibraryService().getLibraryFeaturedUsers(placeToken, new AsyncCallback<ArrayList<LibraryUserDo>>() {
+		AppClientFactory.getInjector().getLibraryService().getLibraryFeaturedUsers(placeToken, new SimpleAsyncCallback<ArrayList<LibraryUserDo>>() {
 			@Override
 			public void onSuccess(ArrayList<LibraryUserDo> userDoList) {
 				setFeaturedUsers(userDoList,placeToken);
-			}
-			@Override
-			public void onFailure(Throwable caught) {
 			}
 		});
 	}

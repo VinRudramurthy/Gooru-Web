@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -30,21 +30,21 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.BaseViewWithHandlers;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemsList;
+import org.ednovo.gooru.application.shared.model.folder.FolderDo;
+import org.ednovo.gooru.application.shared.model.folder.FolderListDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.gin.BaseViewWithHandlers;
 import org.ednovo.gooru.client.mvp.classpages.assignments.AddAssignmentContainerCBundle;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
 import org.ednovo.gooru.client.mvp.settings.CustomAnimation;
 import org.ednovo.gooru.client.mvp.shelf.list.TreeMenuImages;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
 import org.ednovo.gooru.client.uc.PlayerBundle;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemsList;
-import org.ednovo.gooru.shared.model.folder.FolderDo;
-import org.ednovo.gooru.shared.model.folder.FolderListDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
@@ -61,7 +61,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -76,39 +75,48 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
-public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceCollectionUiHandlers> implements IsAddResourceCollectionView,MessageProperties{
+public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceCollectionUiHandlers> implements IsAddResourceCollectionView{
 
 
-	private static ResourceShareViewUiBinder uiBinder = GWT.create(ResourceShareViewUiBinder.class);
+	private static final String ASSESSMENT = "assessment";
 
-	interface ResourceShareViewUiBinder extends UiBinder<Widget, AddResourceCollectionView> {
+	private static AddResourceCollectionViewUiBinder uiBinder = GWT.create(AddResourceCollectionViewUiBinder.class);
+
+	interface AddResourceCollectionViewUiBinder extends UiBinder<Widget, AddResourceCollectionView> {
 
 	}
 
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+
 	@UiField HTMLPanel dropdownListContainer,createCollectionLabelContainer,resourceImageContainerInAddResource,
-		addCollectionInsteadLabelContainer,addCollectionContainer,addresourceText,existingCollectionContainer;
+		addCollectionInsteadLabelContainer,addCollectionContainer,addresourceText,existingCollectionContainer,mainPanel;
 	@UiField InlineLabel dropdownListPlaceHolder;
 	@UiField ScrollPanel dropdownListContainerScrollPanel;
-	//@UiField Image resourceImageWidget;
 	@UiField Button addResourceToCollectionButton,workSpaceBtn;
 	@UiField Label addingLabel,addToExistingColl,errorMessage,
 					sizeMessage,successMessageLabelText,addCollectionInsteadLabelText,hideText,resourceAdditionErrorStyle;
 	@UiField FlowPanel resourceAddedSuccessMessageContainer;
-	/*@UiField Anchor workSpaceLink;*/
 	@UiField Label addNewCollectionLabel;
-	
+
 	@UiField HTMLEventPanel hideButton;
-	
+
 	private String collectionId=null;
-	
+
 	private String resourceId=null;
-	
+
+	private String category = null;
+
+	private String questionType=null;
+
 	private boolean isAllUserShelfCollectionsLoaded=false;
-	
+
 	private int limit=20;
 	private int totalHitCount=0;
 	private int pageNum=1;
-	
+
+	private String FOLDER = "folder";
+	private String SCOLLECTION = "scollection";
+
 	private Tree folderTreePanel = new Tree(new TreeMenuImages()){
 		 @Override
 		 public void onBrowserEvent(Event event) {
@@ -120,21 +128,42 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 	};
 	private CollectionTreeItem cureentcollectionTreeItem=null;
 	private CollectionTreeItem previousSelectedItem=null;
-	
+
 	@Inject
 	public AddResourceCollectionView(){
 		setWidget(uiBinder.createAndBindUi(this));
 		AddAssignmentContainerCBundle.INSTANCE.css().ensureInjected();
-		hideText.setText(GL0592);
-		addresourceText.getElement().setInnerHTML(GL0698);
-		dropdownListPlaceHolder.getElement().setInnerHTML(GL0105);
+		mainPanel.getElement().setId("mainPanel");
+		hideText.setText(i18n.GL0592());
+		hideText.getElement().setId("lblHideText");
+		hideText.getElement().setAttribute("alt",i18n.GL0592());
+		hideText.getElement().setAttribute("title",i18n.GL0592());
+
+		addresourceText.getElement().setInnerHTML(i18n.GL0698());
+		addresourceText.getElement().setId("pnlAddresourceText");
+		addresourceText.getElement().setAttribute("alt",i18n.GL0592());
+		addresourceText.getElement().setAttribute("title",i18n.GL0592());
+
+		dropdownListPlaceHolder.getElement().setInnerHTML(i18n.GL0105());
+		dropdownListPlaceHolder.getElement().setId("spnDropdownListPlaceHolder");
+		dropdownListPlaceHolder.getElement().setAttribute("alt",i18n.GL0105());
+		dropdownListPlaceHolder.getElement().setAttribute("title",i18n.GL0105());
+
 		dropdownListContainerScrollPanel.getElement().getStyle().setDisplay(Display.NONE);
 		dropdownListPlaceHolder.addClickHandler(new OnDropdownListPlaceHolderClick());
 		dropdownListContainerScrollPanel.addScrollHandler(new ScrollDropdownListContainer());
 		getAddResourceToCollectionButton().addClickHandler(new OnAddResourceButtonClick());
 		resourceAddedSuccessMessageContainer.setVisible(false);
-		addNewCollectionLabel.setText(GL0696);
-		resourceAdditionErrorStyle.setText(GL0659);
+		addNewCollectionLabel.setText(i18n.GL0696());
+		addNewCollectionLabel.getElement().setId("lblAddNewCollectionLabel");
+		addNewCollectionLabel.getElement().setAttribute("alt",i18n.GL0696());
+		addNewCollectionLabel.getElement().setAttribute("title",i18n.GL0696());
+
+		resourceAdditionErrorStyle.setText(i18n.GL0659());
+		resourceAdditionErrorStyle.getElement().setId("lblResourceAdditionErrorStyle");
+		resourceAdditionErrorStyle.getElement().setAttribute("alt",i18n.GL0659());
+		resourceAdditionErrorStyle.getElement().setAttribute("title",i18n.GL0659());
+
 		folderTreePanel.addSelectionHandler(new SelectionHandler<TreeItem>() {
 			  @Override
 			  public void onSelection(SelectionEvent<TreeItem> event) {
@@ -154,12 +183,13 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 				    item.getTree().setSelectedItem(parent, false); // TODO FIX ME
 				    if(!folderTreeItemWidget.isApiCalled()){
 				    	folderTreeItemWidget.setApiCalled(true);
-				    	System.out.println("");
+				    	if(item!=null&&folderTreeItemWidget.getGooruOid()!=null){
 				    	getFolderItems(item,folderTreeItemWidget.getGooruOid());
+				    	}
 				    }
 				    if(parent != null)
 				    	parent.setSelected(false);   // TODO FIX ME
-				    item.setState(!item.getState(), false);
+				    	item.setState(!item.getState(), false);
 			    }else if(folderWidget instanceof CollectionTreeItem){
 			    	if(previousSelectedItem!=null){
 			    		previousSelectedItem.removeStyleName(AddAssignmentContainerCBundle.INSTANCE.css().selected());
@@ -176,11 +206,11 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		dropdownListContainer.add(folderTreePanel);
 		folderTreePanel.addItem(loadingTreeItem());
 		existingCollectionContainer.setVisible(true);
+		setId();
 	}
 	public void setSelectedCollectionTitle(){
 		if(cureentcollectionTreeItem!=null){
 			dropdownListPlaceHolder.setText(cureentcollectionTreeItem.getCollectionName());
-			//chooseCollectionErrorLabel.setText("");
 		}
 	}
 	public void closeDropDown(){
@@ -190,7 +220,9 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		displayWorkspaceData(item,folderListDo);
 	}
 	public void getFolderItems(TreeItem item,String parentId){
+		if(parentId!=null){
 		getUiHandlers().getFolderItems(item,parentId);
+		}
 	}
 	public class FolderTreeItem extends Composite{
 		private FlowPanel folderContainer=null;
@@ -208,6 +240,8 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 			folderContainer.add(arrowLabel);
 			floderName=new Label();
 			floderName.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().title());
+			floderName.addStyleName("arav-addResource");
+
 			folderContainer.add(floderName);
 		}
 		public FolderTreeItem(String levelStyleName,String folderTitle,String gooruOid){
@@ -245,6 +279,7 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		Label folderName=null;
 		private String collectionName=null;
 		private String gooruOid=null;
+		private String collectionType;
 		private int itemsCount=0;
 		private boolean isOpen=false;
 		public CollectionTreeItem(){
@@ -252,20 +287,26 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 			folderContainer.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().foldercollection());
 			folderName=new Label();
 			folderName.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().title());
+			folderName.addStyleName("arav-addResource");
+
 			folderContainer.add(folderName);
 		}
 		public CollectionTreeItem(String levelStyleName){
 			this();
 			folderContainer.addStyleName(levelStyleName);
 		}
-		public CollectionTreeItem(String levelStyleName,String folderTitle,String gooruOid,int itemsCount){
+		public CollectionTreeItem(String levelStyleName,String folderTitle,String gooruOid,int itemsCount,String collectionType){
 			this();
+			if(ASSESSMENT.equals(collectionType)){
+				folderContainer.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().folderAssessment());
+			}
 			if(levelStyleName!=null){
 				folderContainer.addStyleName(levelStyleName);
 			}
 			this.gooruOid=gooruOid;
 			this.collectionName=folderTitle;
 			this.itemsCount=itemsCount;
+			this.collectionType=collectionType;
 			folderName.setText(folderTitle);
 		}
 		public boolean isOpen() {
@@ -279,6 +320,9 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		}
 		public String getCollectionName(){
 			return collectionName;
+		}
+		public String getCollectionType(){
+			return collectionType;
 		}
 		public int getItemsCount() {
 			return itemsCount;
@@ -295,75 +339,85 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		if(folderListDo!=null){
 			 List<FolderDo> foldersArrayList=folderListDo.getSearchResult();
 			 setPagination(folderListDo.getCount());
-			 if(foldersArrayList!=null&&foldersArrayList.size()>0){
+			 if(foldersArrayList!=null && foldersArrayList.size()>0){
 				 for(int i=0;i<foldersArrayList.size();i++){
 					 FolderDo floderDo=foldersArrayList.get(i);
-					 if(floderDo.getType().equals("folder")){
-						 TreeItem folderItem=new TreeItem(new FolderTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid()));
-						 if(foldersArrayList.get(i).getCollectionItems().size() == 0)
-						 {
-						 if(folderItem.getElement().hasChildNodes())
-						 {
-							 if(folderItem.getElement().getFirstChildElement().hasChildNodes())
-							 {
-								 if(folderItem.getElement().getFirstChildElement().getFirstChildElement().hasChildNodes())
-								 {
-									 folderItem.getElement().getFirstChildElement().getFirstChildElement().getFirstChildElement().getStyle().setDisplay(Display.NONE); 
+						 if(FOLDER.equals(floderDo.getType())){
+							 if(floderDo.getTitle()!=null && floderDo.getGooruOid()!=null){
+									 TreeItem folderItem=new TreeItem(new FolderTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid()));
+									 if(foldersArrayList.get(i).getCollectionItems()!=null && foldersArrayList.get(i).getCollectionItems().size() == 0)
+									 {
+										 if(folderItem.getElement().hasChildNodes())
+										 {
+											 if(folderItem.getElement().getFirstChildElement().hasChildNodes())
+											 {
+												 if(folderItem.getElement().getFirstChildElement().getFirstChildElement().hasChildNodes())
+												 {
+													 folderItem.getElement().getFirstChildElement().getFirstChildElement().getFirstChildElement().getStyle().setDisplay(Display.NONE);
+												 }
+
+											 }
+
+										 }
+									 }
+									 folderTreePanel.addItem(folderItem);
+									 adjustTreeItemStyle(folderItem);
+								}
+							 }else if(SCOLLECTION.equals(floderDo.getType())){
+								 if(floderDo.getTitle()!=null && floderDo.getGooruOid()!=null && floderDo.getItemCount()!=null){
+									 String collectionType=floderDo.getCollectionType().equals(ASSESSMENT)?floderDo.getCollectionType():floderDo.getType();
+									 TreeItem folderItem=new TreeItem(new CollectionTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount(), collectionType));
+									 folderTreePanel.addItem(folderItem);
+									 adjustTreeItemStyle(folderItem);
 								 }
-								 
-							 }
-							 
 						 }
-						 }
-						 folderTreePanel.addItem(folderItem);
-						 adjustTreeItemStyle(folderItem);
-					 }else if(floderDo.getType().equals("scollection")){
-						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(null,floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount()));
-						 folderTreePanel.addItem(folderItem);
-						 adjustTreeItemStyle(folderItem);
-					 }
 				 }
 			 }
 		}
 	}
-	
+
 	public void displayWorkspaceData(TreeItem item, FolderListDo folderListDo) {
 		if(folderListDo!=null){
 			 List<FolderDo> foldersArrayList=folderListDo.getSearchResult();
-			 if(foldersArrayList!=null&&foldersArrayList.size()>0){
+			 if(foldersArrayList!=null && foldersArrayList.size()>0){
 				 FolderTreeItem folderTreeItemWidget=(FolderTreeItem)item.getWidget();
 				 int folderLevel=folderTreeItemWidget.getFolerLevel();
 				 for(int i=0;i<foldersArrayList.size();i++){
 					 FolderDo floderDo=foldersArrayList.get(i);
-					 if(floderDo.getType().equals("folder")){
-						 String styleName=folderLevel==1?AddAssignmentContainerCBundle.INSTANCE.css().parent():AddAssignmentContainerCBundle.INSTANCE.css().child();
-						 FolderTreeItem innerFolderTreeItem=new FolderTreeItem(styleName,floderDo.getTitle(),floderDo.getGooruOid());
-						 innerFolderTreeItem.setFolerLevel(folderLevel+1);
-						 TreeItem folderItem=new TreeItem(innerFolderTreeItem);
-						 if(foldersArrayList.get(i).getCollectionItems().size() == 0)
-						 {
-						 if(folderItem.getElement().hasChildNodes())
-						 {
-							 if(folderItem.getElement().getFirstChildElement().hasChildNodes())
-							 {
-								 if(folderItem.getElement().getFirstChildElement().getFirstChildElement().hasChildNodes())
+						 if(FOLDER.equals(floderDo.getType())){
+							 String styleName=folderLevel==1?AddAssignmentContainerCBundle.INSTANCE.css().parent():AddAssignmentContainerCBundle.INSTANCE.css().child();
+							 if(floderDo.getTitle()!=null && floderDo.getGooruOid()!=null){
+								 FolderTreeItem innerFolderTreeItem=new FolderTreeItem(styleName,floderDo.getTitle(),floderDo.getGooruOid());
+								 innerFolderTreeItem.setFolerLevel(folderLevel+1);
+								 TreeItem folderItem=new TreeItem(innerFolderTreeItem);
+								 if(foldersArrayList.get(i).getCollectionItems()!=null && foldersArrayList.get(i).getCollectionItems().size() == 0)
 								 {
-									 folderItem.getElement().getFirstChildElement().getFirstChildElement().getFirstChildElement().getStyle().setDisplay(Display.NONE); 
+									 if(folderItem.getElement().hasChildNodes())
+									 {
+										 if(folderItem.getElement().getFirstChildElement().hasChildNodes())
+										 {
+											 if(folderItem.getElement().getFirstChildElement().getFirstChildElement().hasChildNodes())
+											 {
+												 folderItem.getElement().getFirstChildElement().getFirstChildElement().getFirstChildElement().getStyle().setDisplay(Display.NONE);
+											 }
+
+										 }
+
+									 }
 								 }
-								 
+								 item.addItem(folderItem);
+								 adjustTreeItemStyle(folderItem);
 							 }
-							 
+						 }else if(SCOLLECTION.equals(floderDo.getType())){
+							 if(floderDo.getTitle()!=null&&floderDo.getGooruOid()!=null && floderDo.getItemCount()!=null){
+								 String collectionType=floderDo.getCollectionType().equals(ASSESSMENT)?floderDo.getCollectionType():floderDo.getType();
+								 TreeItem folderItem=new TreeItem(new CollectionTreeItem(getTreeItemStyleName(folderLevel),floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount(), collectionType));
+								 item.addItem(folderItem);
+								 adjustTreeItemStyle(folderItem);
+							 }
 						 }
-						 }
-						 item.addItem(folderItem);
-						 adjustTreeItemStyle(folderItem);
-					 }else if(floderDo.getType().equals("scollection")){
-						 TreeItem folderItem=new TreeItem(new CollectionTreeItem(getTreeItemStyleName(folderLevel),floderDo.getTitle(),floderDo.getGooruOid(),floderDo.getItemCount()));
-						 item.addItem(folderItem);
-						 adjustTreeItemStyle(folderItem);
-					 }
 				 }
-					item.setState(folderTreeItemWidget.isOpen());
+				item.setState(folderTreeItemWidget.isOpen());
 			 }
 		}
 	}
@@ -408,45 +462,27 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 	public Label getAddNewCollectionLabel(){
 		return addNewCollectionLabel;
 	}
-	
-	/*@UiHandler("workSpaceLink")
-	public void workspaceLinkClickEvent(ClickEvent event){
-		AppClientFactory.getPlaceManager().setRefreshPlace(true);
-		AppClientFactory.getInjector().getClasspageService().getCollectionParentFolders(collectionId, new SimpleAsyncCallback<ArrayList<String>>() {
-			@Override
-			public void onSuccess(ArrayList<String> foldersList) {
-				if(foldersList!=null){
-					Map<String,String> parametesMap=new HashMap<String,String>();
-					parametesMap.put("id", collectionId);
-					if(foldersList.size()>0){
-						for(int i=0;i<foldersList.size();i++){
-							parametesMap.put("o"+(i+1), foldersList.get(i));
-						}
-					}
-					AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.SHELF, parametesMap);
-				}
-			}
-		});
-	}*/
-	
+
 	@UiHandler("workSpaceBtn")
 	public void workSpaceBtnClickEvent(ClickEvent event){
 		AppClientFactory.getPlaceManager().setRefreshPlace(true);
-		AppClientFactory.getInjector().getClasspageService().getCollectionParentFolders(collectionId, new SimpleAsyncCallback<ArrayList<String>>() {
-			@Override
-			public void onSuccess(ArrayList<String> foldersList) {
-				if(foldersList!=null){
-					Map<String,String> parametesMap=new HashMap<String,String>();
-					parametesMap.put("id", collectionId);
-					if(foldersList.size()>0){
-						for(int i=0;i<foldersList.size();i++){
-							parametesMap.put("o"+(i+1), foldersList.get(i));
+		if(collectionId!=null){
+			AppClientFactory.getInjector().getClasspageService().getCollectionParentFolders(collectionId, new SimpleAsyncCallback<ArrayList<String>>() {
+				@Override
+				public void onSuccess(ArrayList<String> foldersList) {
+					if(foldersList!=null){
+						Map<String,String> parametesMap=new HashMap<String,String>();
+						parametesMap.put("id", collectionId);
+						if(foldersList.size()>0){
+							for(int i=0;i<foldersList.size();i++){
+								parametesMap.put("o"+(i+1), foldersList.get(i));
+							}
 						}
+						AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.SHELF, parametesMap);
 					}
-					AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.SHELF, parametesMap);
 				}
-			}
-		});
+			});
+		}
 	}
 
 	public Label getAddingLabel() {
@@ -492,7 +528,7 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 	public ScrollPanel getDropdownListContainerScrollPanel() {
 		return dropdownListContainerScrollPanel;
 	}
-	
+
 
 	public void setDropdownListContainerScrollPanel(
 			ScrollPanel dropdownListContainerScrollPanel) {
@@ -506,47 +542,40 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		dropdownListContainer.add(dropDownListItem);
 		dropDownListItem.addClickHandler(new OnDropdownItemClick(collectionName,collectionId,collectionItemsSize));
 	}
-	
-//	public Image getResourceImageWidget() {
-//		return resourceImageWidget;
-//	}
-//
-//	public void setResourceImageWidget(Image resourceImageWidget) {
-//		this.resourceImageWidget = resourceImageWidget;
-//	}
+
 	public Label getErrorMessage() {
 		return errorMessage;
 	}
-	
+
 	public void setErrorMessage(Label errorMessage) {
 		this.errorMessage = errorMessage;
 	}
 	public Label getSizeMessage() {
 		return sizeMessage;
 	}
-	
-	
+
+
 	public void getUserShelfCollections(int dropdownListContainertWidgetCount){
 		if(!isAllUserShelfCollectionsLoaded){
-			
+
 		}
 	}
-	
 
-	/** 
+
+	/**
 	 * This method is to get the addToExistingColl
 	 */
 	public Label getAddCollectionViewButton() {
 		return addToExistingColl;
 	}
 
-	/** 
+	/**
 	 * This method is to set the addToExistingColl
 	 */
 	public void setAddToExistingColl(Label addToExistingColl) {
 		this.addToExistingColl = addToExistingColl;
 	}
-	
+
 	private class OnDropdownListPlaceHolderClick implements ClickHandler{
 		@Override
 		public void onClick(ClickEvent event) {
@@ -570,7 +599,7 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 			new CustomAnimation(dropdownListContainerScrollPanel).run(300);
 		}
 	}
-	
+
 
 	public HTMLPanel getResourceImageContainerInAddResource() {
 		return resourceImageContainerInAddResource;
@@ -607,14 +636,6 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		this.resourceAddedSuccessMessageContainer = resourceAddedSuccessMessageContainer;
 	}
 
-	/*public Anchor getWorkSpaceLink() {
-		return workSpaceLink;
-	}
-
-	public void setWorkSpaceLink(Anchor workSpaceLink) {
-		this.workSpaceLink = workSpaceLink;
-	}*/
-
 	public Label getAddCollectionInsteadLabelText() {
 		return addCollectionInsteadLabelText;
 	}
@@ -627,22 +648,31 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		addingLabel.setVisible(false);
 		addResourceToCollectionButton.setVisible(true);
 		if(getAddResourceToCollectionButton().getText().equalsIgnoreCase("Add Again")){
-			successMessageLabelText.setText(GL0699);
+			successMessageLabelText.setText(i18n.GL0699());
+			successMessageLabelText.getElement().setAttribute("alt",i18n.GL0699());
+			successMessageLabelText.getElement().setAttribute("title",i18n.GL0699());
 		}else{
-			successMessageLabelText.setText(GL0663);
-			addResourceToCollectionButton.setText(GL0691);
+			successMessageLabelText.setText(i18n.GL0663());
+			successMessageLabelText.getElement().setAttribute("alt",i18n.GL0663());
+			successMessageLabelText.getElement().setAttribute("title",i18n.GL0663());
+			addResourceToCollectionButton.setText(i18n.GL0691());
+			addResourceToCollectionButton.getElement().setAttribute("alt",i18n.GL0691());
+			addResourceToCollectionButton.getElement().setAttribute("title",i18n.GL0691());
 		}
-		workSpaceBtn.setText(GL1630);
-//		workSpaceLink.setText(GL0589);
-		//workSpaceLink.setHref("#organize&id="+collectionId+"&eventType=refresh");
+		workSpaceBtn.setText(i18n.GL1630());
+		workSpaceBtn.getElement().setAttribute("alt",i18n.GL1630());
+		workSpaceBtn.getElement().setAttribute("title",i18n.GL1630());
+
 		this.collectionId=collectionId;
 		addCollectionInsteadLabelContainer.clear();
 		Label colletionIsteadButton=getAddCollectionViewButton();
-		colletionIsteadButton.setText(GL0664);
+		colletionIsteadButton.setText(i18n.GL0664());
+		colletionIsteadButton.getElement().setAttribute("alt",i18n.GL0664());
+		colletionIsteadButton.getElement().setAttribute("title",i18n.GL0664());
 		colletionIsteadButton.getElement().getStyle().setMarginRight(138, Unit.PX);
-		//colletionIsteadButton.getElement().getStyle().setMarginTop(-15, Unit.PX);
+
 		addCollectionInsteadLabelContainer.add(colletionIsteadButton);
-		
+
 	}
 	public void showSuccessWidget(boolean showWidget){
 		resourceAddedSuccessMessageContainer.setVisible(showWidget);
@@ -654,18 +684,26 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		addingLabel.setVisible(false);
 		errorMessage.setVisible(false);
 		addResourceToCollectionButton.setVisible(true);
-		addResourceToCollectionButton.setText(GL0590);
+		addResourceToCollectionButton.setText(i18n.GL0590());
+		addResourceToCollectionButton.getElement().setAttribute("alt",i18n.GL0590());
+		addResourceToCollectionButton.getElement().setAttribute("title",i18n.GL0590());
 		addCollectionContainer.clear();
 		Label colletionIsteadButton=getAddCollectionViewButton();
 		colletionIsteadButton.getElement().getStyle().clearMarginRight();
 		colletionIsteadButton.getElement().getStyle().clearMarginTop();
-		colletionIsteadButton.setText(GL0664);
+		colletionIsteadButton.setText(i18n.GL0664());
+		colletionIsteadButton.getElement().setAttribute("alt",i18n.GL0664());
+		colletionIsteadButton.getElement().setAttribute("title",i18n.GL0664());
 		addCollectionContainer.add(colletionIsteadButton);
 	}
 
 	@Override
 	public void setCollectionItemData(String collectionId,CollectionItemDo collectionItemDo) {
+		if(collectionItemDo.getResource()!=null && collectionItemDo.getResource().getGooruOid()!=null){
 		this.resourceId=collectionItemDo.getResource().getGooruOid();
+		this.category = collectionItemDo.getResource().getCategory();
+		this.questionType=collectionItemDo.getQuestionType();
+		}
 		changeButtonText();
 	}
 	public void resetSelectionData(){
@@ -677,66 +715,83 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		cureentcollectionTreeItem=null;
 		previousSelectedItem=null;
 		errorMessage.setText("");
+		errorMessage.getElement().setAttribute("alt","");
+		errorMessage.getElement().setAttribute("title","");
 		dropdownListContainerScrollPanel.getElement().getStyle().setDisplay(Display.NONE);
-		getDropdownListPlaceHolder().setText(GL0105);
+		getDropdownListPlaceHolder().setText(i18n.GL0105());
 	}
 	private class OnAddResourceButtonClick implements ClickHandler {
 		@Override
 		public void onClick(ClickEvent event) {
-			if(dropdownListPlaceHolder.getText().equalsIgnoreCase(GL0105)){
+			if(dropdownListPlaceHolder.getText().equalsIgnoreCase(i18n.GL0105())){
 				errorMessage.setVisible(true);
-				errorMessage.setText(GL0699_1);
+				errorMessage.setText(i18n.GL0699_1());
+				errorMessage.getElement().setAttribute("alt",i18n.GL0699_1());
+				errorMessage.getElement().setAttribute("title",i18n.GL0699_1());
 			}else if(cureentcollectionTreeItem!=null){
 				errorMessage.setVisible(false);
 				if(cureentcollectionTreeItem.getItemsCount()>=25){
 					errorMessage.setVisible(true);
-					errorMessage.setText(GL0699_2);
+					errorMessage.setText(i18n.GL0699_2());
+					errorMessage.getElement().setAttribute("alt",i18n.GL0699_2());
+					errorMessage.getElement().setAttribute("title",i18n.GL0699_2());
 				}else{
-					getAddResourceToCollectionButton().getElement().getStyle().setDisplay(Display.NONE);
-					errorMessage.setText("");
-					addingLabel.setText(GL0591);
-					getAddingLabel().getElement().getStyle().setDisplay(Display.BLOCK);
-					copyCollectionItem(resourceId, cureentcollectionTreeItem.getGooruOid());
+					boolean flag = getUiHandlers().validateIsAssessments(cureentcollectionTreeItem.getCollectionType(),category,questionType);
+					if(flag){
+						errorMessage.setVisible(false);
+						getAddResourceToCollectionButton().getElement().getStyle().setDisplay(Display.NONE);
+						errorMessage.setText("");
+						errorMessage.getElement().setAttribute("alt","");
+						errorMessage.getElement().setAttribute("title","");
+						addingLabel.setText(i18n.GL0591());
+						addingLabel.getElement().setAttribute("alt",i18n.GL0591());
+						addingLabel.getElement().setAttribute("title",i18n.GL0591());
+						getAddingLabel().getElement().getStyle().setDisplay(Display.BLOCK);
+						if(resourceId!=null&&cureentcollectionTreeItem.getGooruOid()!=null){
+						copyCollectionItem(resourceId, cureentcollectionTreeItem.getGooruOid());
+						}
+					}else{
+						errorMessage.setVisible(true);
+						errorMessage.setText("Oops! can copy only questions for Assessments.");
+					}
 				}
 			}
 		}
 	}
-	
+
 	public void copyCollectionItem(String collectionItemId,String collectionId){
 		getUiHandlers().copyCollectionItem(collectionItemId, collectionId);
 	}
-	
+
 	public void addCollectionItems(ArrayList<CollectionItemsList> userCollectionsList,boolean isClearPanel) {
 			if (isClearPanel) {
 				getDropdownListContainer().clear();
 			}
-			if (userCollectionsList.size() > 0) {
+			if (userCollectionsList!=null && userCollectionsList.size() > 0) {
 				for (CollectionItemsList userCollection : userCollectionsList) {
 					addDropDownListItem(userCollection.getCollectionTitle(),userCollection.getCollectionId(),userCollection.getCollectionItemsListSize());
 				}
-			} else {
-				//isAllUserShelfCollectionsLoaded = true;
 			}
 	}
-	
+
 	/**
-	 * 
-	 * @function onhideBtnClicked 
-	 * 
+	 *
+	 * @function onhideBtnClicked
+	 *
 	 * @created_date : 11-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * 
+	 *
+	 *
 	 * @parm(s) : @param clickEvent
-	 * 
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
 	@UiHandler("hideButton")
-	public void onhideBtnClicked(ClickEvent clickEvent) 
+	public void onhideBtnClicked(ClickEvent clickEvent)
 	{
 		PlaceRequest collectionRequest = AppClientFactory.getPlaceManager().getCurrentPlaceRequest();
 		String collectionId = collectionRequest.getParameter("id", null);
@@ -747,8 +802,7 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 		params.put("id", collectionId);
 		params = PreviewPlayerPresenter.setConceptPlayerParameters(params);
 
-		
-		if(AppClientFactory.getCurrentPlaceToken().contains(PlaceTokens.RESOURCE_PLAY))
+	if(AppClientFactory.getCurrentPlaceToken().contains(PlaceTokens.RESOURCE_PLAY))
 	{
 		PlaceRequest request=new PlaceRequest(PlaceTokens.RESOURCE_PLAY).
 				with("id", collectionId);
@@ -793,9 +847,28 @@ public class AddResourceCollectionView extends BaseViewWithHandlers<AddResourceC
 
 
 	public TreeItem loadingTreeItem(){
-		Label loadingText=new Label(GL1452);
+		Label loadingText=new Label(i18n.GL1452());
 		loadingText.setStyleName(AddAssignmentContainerCBundle.INSTANCE.css().loadingText());
 		return new TreeItem(loadingText);
 	}
-	
+	public void setId(){
+		resourceImageContainerInAddResource.getElement().setId("pnlResourceImageContainerInAddResource");
+		addCollectionContainer.getElement().setId("pnlAddCollectionContainer");
+		addToExistingColl.getElement().setId("lblAddToExistingColl");
+		resourceAddedSuccessMessageContainer.getElement().setId("fpnlResourceAddedSuccessMessageContainer");
+		successMessageLabelText.getElement().setId("lblSuccessMessageLabelText");
+		workSpaceBtn.getElement().setId("btnWorkSpaceBtn");
+		addCollectionInsteadLabelContainer.getElement().setId("pnlAddCollectionInsteadLabelContainer");
+		addCollectionInsteadLabelText.getElement().setId("lblAddCollectionInsteadLabelText");
+		existingCollectionContainer.getElement().setId("pnlExistingCollectionContainer");
+		dropdownListContainerScrollPanel.getElement().setId("sbDropdownListContainerScrollPanel");
+		dropdownListContainer.getElement().setId("pnlDropdownListContainer");
+		addResourceToCollectionButton.getElement().setId("btnAddResourceToCollectionButton");
+		addingLabel.getElement().setId("lblAddingLabel");
+		resourceAdditionErrorStyle.getElement().setId("lblResourceAdditionErrorStyle");
+		createCollectionLabelContainer.getElement().setId("pnlCreateCollectionLabelContainer");
+		errorMessage.getElement().setId("lblErrorMessage");
+		sizeMessage.getElement().setId("lblSizeMessage");
+		hideButton.getElement().setId("epnlHideButton");
+	}
 }

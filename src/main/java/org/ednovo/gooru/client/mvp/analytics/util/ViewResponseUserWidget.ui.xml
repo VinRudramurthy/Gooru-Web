@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="unitStyle" src="tabContainer.css" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel>
+	<div class="{unitStyle.q_oer_content}">
+			<g:Label ui:field="questionCountlbl" styleName="{unitStyle.questionCountlbl}"/>
+			<g:Label ui:field="usernamelbl" styleName="{unitStyle.q_oer_user_header}"/>
+			<g:HTML ui:field="userResponselbl" styleName="{unitStyle.q_oer_question_response}"/>
+			<g:HTMLPanel ui:field="userAnswerspnl"></g:HTMLPanel>
+	</div>
+	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="giveFeedBackpnl" styleName="{unitStyle.profile_input_box_teacher_feedback}">
+				<div class="{unitStyle.assignee_profile_image}">
+					<g:Image ui:field="userProfileImage" styleName="{unitStyle.profileImage}"/>
+				</div>
+				<g:TextBox maxLength="500" styleName="{unitStyle.input_teacher_feedback_content}" ui:field="feedBacktxt"/>
+				<g:Button  ui:field="btnSubmit" styleName="primary" text="{i18n.GL0486}" title="{i18n.GL0486}"></g:Button>
+	</g:HTMLPanel>
+	<g:HTMLPanel ui:field="editFeedBackpnl">
+	<div class="{unitStyle.dashboard_view_teacher_feedback}">
+				<g:Label styleName="{unitStyle.teacher_name}" ui:field="teacherName"/>
+				<div class="{unitStyle.assignee_profile_image}">
+					<g:Image ui:field="userProfileImage1" styleName="{unitStyle.profileImage}"/>
+				</div>
+				<g:Label styleName="{unitStyle.teacher_feedback_content}" ui:field="editedText"/>
+				<div class="{unitStyle.feedback_bottom_content_details}">
+					<g:Label styleName="{unitStyle.feedback_date_and_time_details}" ui:field="createOn"/>
+					<div class="{unitStyle.feedback_content_edit_handler}">
+						<g:InlineLabel ui:field="spnEdit" text="{i18n.GL2285}" title="{i18n.GL2285}"></g:InlineLabel>
+						<g:InlineLabel ui:field="spnDelete" text="{i18n.GL0558}" title="{i18n.GL0558}"></g:InlineLabel>
+					</div>
+				</div>
+	</div>
+	</g:HTMLPanel>
+	</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

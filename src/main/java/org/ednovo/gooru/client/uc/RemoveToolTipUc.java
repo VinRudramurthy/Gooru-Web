@@ -24,26 +24,34 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.uc;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class RemoveToolTipUc extends PopupPanel implements MessageProperties{
+public class RemoveToolTipUc extends PopupPanel{
 	
 	@UiField Label removeText;
+	@UiField SimplePanel contentPanel;
 	public interface RemoveToolTipUcUiBinder extends UiBinder<Widget, RemoveToolTipUc>{
 		
 	}
 	public static RemoveToolTipUcUiBinder uiBinder=GWT.create(RemoveToolTipUcUiBinder.class);
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	public RemoveToolTipUc(){
 		
 		setWidget(uiBinder.createAndBindUi(this));
-		removeText.setText(GL0237);
+		removeText.setText(i18n.GL0237());
+		removeText.getElement().setId("lblRemoveText");
+		removeText.getElement().setAttribute("alt", i18n.GL0237());
+		removeText.getElement().setAttribute("title", i18n.GL0237());
+		contentPanel.getElement().setId("spnlContentPanel");
 	}
 }

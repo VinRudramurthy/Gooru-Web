@@ -27,7 +27,7 @@ package org.ednovo.gooru.client.mvp.socialshare;
 /**
  * 
  */
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * @author Gooru Team

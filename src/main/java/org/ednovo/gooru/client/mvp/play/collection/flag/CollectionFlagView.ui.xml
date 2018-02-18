@@ -1,105 +1,93 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
 	<ui:style field="flagPopUpstyle" src="player-flag-popup.css"/>
-<ui:with field='flagBundleCss' type='org.ednovo.gooru.player.collection.client.view.add.tooltip.FlagBundle'/>
-<!-- <ui:image field="dropdownMenuArrow" src='dropdownMenuArrow.png'/> -->
 	<g:HTMLPanel>
-		<div class="{flagPopUpstyle.endedquestionwrapper}">
-	<div class="{flagPopUpstyle.flagresourcesinnerwrapper}">
-    	<div class="{flagPopUpstyle.endedquestionheader}">
-            <g:Label styleName="{flagPopUpstyle.endedquestionheaderflagtext}" ui:field="headerflagtext"></g:Label>
-            <panel:HTMLEventPanel ui:field="closeButton" styleName="{flagPopUpstyle.playerflagpopupheaderCloseBtn}">
-        	    <g:Image ui:field="popUpCloseButton"/>
-        	</panel:HTMLEventPanel> 
+		<div class="PopupMainVSmall">
+		<div class="popupInnerGrey">
+    	<div class="popupgreyHeader">
+    	    <div class="row">
+            <g:Label styleName="col-md-8 col-xs-8 " ui:field="headerflagtext"></g:Label>
+            <panel:HTMLEventPanel ui:field="closeButton" styleName="col-md-4 col-xs-4 closeContainer">
+        	    <g:Image ui:field="popUpCloseButton" styleName="closeButton"/>
+        	</panel:HTMLEventPanel>
+        	</div>
+        	<div class="clearfix"/>
         </div>
-        
-        <g:HTMLPanel styleName="{flagPopUpstyle.flagresourceleftpart}" ui:field="flagresourceleftpart">
-            <panel:HTMLEventPanel ui:field="flagCollections">
-                 	<g:HTMLPanel styleName="{flagPopUpstyle.flagresourcenmenutext}" ui:field="flagCollectionText"></g:HTMLPanel>
+       <g:HTMLPanel styleName="flgContainer">
+       <g:HTMLPanel styleName="col-md-4 leftFlagPanel" ui:field="flagresourceleftpart">
+            <panel:HTMLEventPanel ui:field="flagCollections" styleName="leftFlagMenu">
+                 	<g:Anchor  ui:field="flagCollectionText"/>
           </panel:HTMLEventPanel>
-  <panel:HTMLEventPanel ui:field="flagResources">       
-              	<g:HTMLPanel styleName="{flagPopUpstyle.flagresourcenmenutext}" ui:field="flagResourceText"></g:HTMLPanel>
-            </panel:HTMLEventPanel> 
+  		 <panel:HTMLEventPanel ui:field="flagResources"  styleName="leftFlagMenu">
+              	<g:Anchor  ui:field="flagResourceText"/>
+            </panel:HTMLEventPanel>
         </g:HTMLPanel>
-        
+
       <!--  resourceFlagContainer -->
-        
-        <g:HTMLPanel styleName="{flagPopUpstyle.endedquestionrightpart}" ui:field="resourceFlagContainer">
-        	<div class="{flagPopUpstyle.playerflagcollectionresourcescontentcontainer}">
+        <g:HTMLPanel styleName="col-md-8 rightFlagPanel">
+        <g:HTMLPanel  ui:field="resourceFlagContainer">
         	    <g:Label styleName=" {flagPopUpstyle.playerflagcontentChooseResource}" ui:field="chooseResourceText"></g:Label>
         	     <div class="{flagPopUpstyle.leftalign}">
-        	         
-        	          <div class="{flagPopUpstyle.collectionPlayerExistingCollectionInputContainer}">
+        	     <div class="{flagPopUpstyle.collectionPlayerExistingCollectionInputContainer}">
               	<g:HTML ui:field="dropdownListPlaceHolder" styleName="{flagPopUpstyle.dropdownListPlaceHolder}"></g:HTML>
               	<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="{flagPopUpstyle.dropdownListContainerScrollPanel}">
 	            	<g:HTMLPanel ui:field="dropdownListContainer" styleName="{flagPopUpstyle.dropdownListContainer}">
 			   		 </g:HTMLPanel>
 		   		 </g:ScrollPanel>
             </div>
-        	         
-        	        
-               <!--  <g:ListBox ui:field="resourceListBox" styleName="{flagPopUpstyle.downarrow}"/> -->
-            	<!-- <input type="text" placeholder="Please choose the resource you want to flag"  id="resourceinput"/><div class="{flagPopUpstyle.downarrow}"></div> -->
+        	</div>
+        	<g:HTMLPanel styleName="clearfix"/>
+        	<g:Label styleName="normalText" ui:field="becauseText"></g:Label>
+	         <div class="normalText">
+            	<g:CheckBox ui:field="resourceCheckBox3"/> <g:InlineLabel  ui:field="incorporateresourceText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-        	<g:Label styleName="{flagPopUpstyle.playerflagcontentTextdescription}" ui:field="becauseText"></g:Label>
-           
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="resourceCheckBox3" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="incorporateresourceText"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="resourceCheckBox2"/> <g:InlineLabel  ui:field="unavailableresourceText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="resourceCheckBox2" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="unavailableresourceText"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="resourceCheckBox1" /> <g:InlineLabel  ui:field="inaccurateTextresource" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="resourceCheckBox1" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="inaccurateTextresource"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="resourceCheckBox4"/> <g:InlineLabel  ui:field="otherReason" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            
-            
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="resourceCheckBox4" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName="{flagPopUpstyle.playerflagcontent}" ui:field="otherReason"></g:Label>
-            </div>
-        
-	      <g:Label styleName=" {flagPopUpstyle.playerflagcontentTextCollectiondescription}" ui:field="provideMore"></g:Label>
-            <g:TextArea styleName="{flagPopUpstyle.playerflagtextarea}"  ui:field="resourceDescTextArea"/>
-           
+
+	      <g:Label styleName="normalText" ui:field="provideMore"></g:Label>
+            <g:TextArea styleName="form-control form_control"  ui:field="resourceDescTextArea"/>
+
            <!-- <div class="{flagPopUpstyle.playerflagbuttoncontainer}">
                <panel:HTMLEventPanel styleName="{flagPopUpstyle.playerflagbuttoncancel}" ui:field="resourceCancelButton">Cancel</panel:HTMLEventPanel>
                 <panel:HTMLEventPanel styleName="{flagPopUpstyle.playerflagbuttonsubmit}" ui:field="resourceSubmitButton">Submit</panel:HTMLEventPanel>
            </div> -->
-        </div>
-    </g:HTMLPanel>
+       </g:HTMLPanel>
    <!--  collectionFlagContiner -->
-         <g:HTMLPanel styleName="{flagPopUpstyle.endedquestionrightpart}" ui:field="collectionFlagContainer">
-        	<div class="{flagPopUpstyle.playerflagcollectionresourcescontentcontainer}">
-        	  <g:HTML styleName="{flagPopUpstyle.playerflagcontentTextdescription}" ui:field="collectionTitleField"/>
-             <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="collectionCheckBox1" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="incorporateText"></g:Label>
+         <g:HTMLPanel  ui:field="collectionFlagContainer">
+        	  <g:HTML styleName="normalText" ui:field="collectionTitleField"/>
+             <div class="normalText">
+            	<g:CheckBox ui:field="collectionCheckBox1" /> <g:InlineLabel  ui:field="incorporateText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="collectionCheckBox2" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="notAppropriateText"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="collectionCheckBox2" /> <g:InlineLabel  ui:field="notAppropriateText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="collectionCheckBox3" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName=" {flagPopUpstyle.playerflagcontent}" ui:field="inaccurateText"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="collectionCheckBox3"/> <g:InlineLabel  ui:field="inaccurateText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-            <div class="{flagPopUpstyle.playerflagradiobutton}">
-            	<g:CheckBox ui:field="collectionCheckBox4" styleName="{flagPopUpstyle.ckeckBoxPlyerStyle}"/> <g:Label styleName="{flagPopUpstyle.playerflagcontent}" ui:field="otherReasonText"></g:Label>
+            <div class="normalText">
+            	<g:CheckBox ui:field="collectionCheckBox4" /> <g:InlineLabel  ui:field="otherReasonText" styleName="{flagPopUpstyle.label}"></g:InlineLabel>
             </div>
-        
-	        <g:Label styleName=" {flagPopUpstyle.playerflagcontentTextCollectiondescription}" ui:field="provideMoreDetails"></g:Label>
-            <g:TextArea styleName="{flagPopUpstyle.playerflagtextarea}" ui:field="collectionDescTextArea"/>
-           
-           
-        </div>
+
+	        <g:Label styleName=" normalText" ui:field="provideMoreDetails"></g:Label>
+            <g:TextArea styleName="form-control form_control" ui:field="collectionDescTextArea"/>
+  	    </g:HTMLPanel>
+      	<div class="formViewButtonContainer">
+               <g:Button styleName="secondary" ui:field="collectionCancelButton"/>
+               <g:Button styleName="primary" ui:field="collectionSubmitButton"/>
+         	   <g:Button styleName="secondary" ui:field="submitButtonGray"/>
+         </div>
+        </g:HTMLPanel>
+          <g:HTMLPanel styleName="clearfix"/>
     </g:HTMLPanel>
-        <div class="{flagPopUpstyle.playerflagbuttoncontainer}">
-               <panel:HTMLEventPanel styleName="{flagPopUpstyle.playerflagbuttoncancel}" ui:field="collectionCancelButton"></panel:HTMLEventPanel>
-                <panel:HTMLEventPanel styleName="{flagPopUpstyle.playerflagbuttonsubmit}" ui:field="collectionSubmitButton"></panel:HTMLEventPanel>
-         <panel:HTMLEventPanel styleName="{flagPopUpstyle.playerflagbuttoncancelGray}" ui:field="submitButtonGray"></panel:HTMLEventPanel>
-                </div>
-        
-        
-        
-</div>
-</div>
+    </div>
+	</div>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

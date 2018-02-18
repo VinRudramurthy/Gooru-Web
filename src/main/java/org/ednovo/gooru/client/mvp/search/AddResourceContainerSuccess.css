@@ -1,0 +1,282 @@
+.inputLabel {
+    margin:5px 0px;
+    font-weight:bold;
+}
+
+.userInput .popupContent input[type="text"] {
+    width: 406px;
+    margin:0px;
+    margin-bottom:5px;
+}
+
+
+.inputContainer {
+    text-align:right;
+    margin-bottom:10px;
+}
+
+.inputContainer:last-child {
+    text-align:right;
+    margin-bottom:0px;
+}
+
+.inputContainer .errorMessage {
+    display:none;
+}
+
+p {
+    margin-bottom:10px;
+}
+
+.popup {
+	background-color:white;
+	width: 450px;
+	margin:0px auto;
+}
+
+.popupInner {
+	/* border: 1px solid #DDD; */
+}
+
+/* .popupInner {
+	border: 1px solid #DDD;
+} */
+
+.popupHeader {
+	padding:10px 15px;
+	color:white;
+	background-color:#515151;
+	font-size:16px;
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#515151));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #666, #515151);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #666, #515151);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #666, #515151);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #666, #515151);
+	
+}
+
+.popupContent {
+	padding:15px;
+    text-align:center;
+}
+
+.userInput .popupContent {
+    text-align:left;
+}
+
+.popupContent .header {
+	font-size:16px;
+    margin-bottom:10px;
+}
+.popupContent .headerppp {
+	font-size:12px;
+    margin-bottom:10px;
+}
+
+.popupContent .icon {
+    width:55px;
+    height:55px;
+    margin:10px auto 20px auto;
+}
+
+.popupContent .icon.delete {
+    background: url('../images/folders/exclamation-mark.png') no-repeat center;
+}
+
+.popupContent .icon.complete {
+    background: url('../images/folders/panel/checkmark.png') no-repeat center;
+}
+
+.okCancel {
+	width: 100%;
+    text-align:center;
+	margin:auto;
+	margin-bottom:15px;
+}
+
+.popupInner {
+    /* overflow:auto; */
+}
+
+.popupInner .folderStucture {
+    height:300px;
+    border:1px solid #ddd;
+    overflow:auto;
+    overflow-x:hidden;
+    background-color:#f9f9f9;
+}
+
+.popupInner .folderStucture.emptyFolder {
+    background: url(../images/folders/panel/empty-add-folder.png) no-repeat center;
+}
+.popupInner .folderStucture.emptyCollection {
+    background: url(../images/folders/panel/empty-move-collection.png) no-repeat center;
+}
+
+/*////////////*/
+
+.folderLevel {
+    height: 40px;
+    line-height: 40px;
+    padding-right:15px !important;
+    position:relative;
+    text-align:left;
+    cursor:default;
+    width:416px;
+}
+
+.folderLevel .title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em;
+}
+
+.folderLevel { /* grandparent level - default */
+    box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	padding-left:80px !important;
+}
+
+.folderLevel.root {
+    background-image:none;
+    padding: 0px 10px 0px 10px !important;
+    overflow: hidden;
+}
+
+.folderLevel.parent {
+    padding-left:108px !important;
+}
+
+.folderLevel.child {
+    padding-left:136px !important;
+}
+
+/*////////////////////// positioning with folder icon ///////////////////*/
+
+
+.folderLevel { /* grandparent level - default */
+    background: url('../images/folders/panel/folder-icon.png') no-repeat 33px 10px;
+}
+
+.folderLevel.parent {
+    background: url('../images/folders/panel/folder-icon.png') no-repeat 61px 10px;
+}
+
+.folderLevel.child {
+    background: url('../images/folders/panel/folder-icon.png') no-repeat 89px 10px;
+}
+
+/*////////////////////// other images ///////////////////*/
+
+
+.folderLevel.open {
+    background-image: url('../images/folders/panel/folder-icon-open.png');
+}
+
+
+
+/*////////////////////////////////////////////////////////*/
+
+.folderLevel .arrow {
+    width:25px;
+    height:25px;
+    border-radius:2px;
+    position:absolute;
+    top:9px;
+    background: url('../images/folders/panel/arrow-closed.png') no-repeat center;
+}
+
+.folderLevel .arrow:hover {
+    background-color:#f0f0f0;
+    cursor:pointer;
+}
+
+.folderLevel.open .arrow {
+    background-image: url('../images/folders/panel/arrow-open.png');
+    display:block;
+}
+
+.folderLevel.empty .arrow {
+    display:none;
+}
+
+.folderLevel .arrow { /* grandparent level - default */
+    left:5px;
+}
+
+.folderLevel.parent .arrow {
+    left:33px;
+}
+
+.folderLevel.child .arrow {
+    left:61px;
+}
+
+.folderLevel:hover {
+    background-color:#f0f0f0;
+}
+
+.folderLevel.selected {
+    background-color:#CFE3F1;
+}
+
+.buttonMargins {
+	margin: 10px 0px 0px 10px;	
+}
+
+.addingMessage {
+	padding:15px;
+    text-align:center !important;
+}
+.deleteText{
+	height: 32px;
+}
+.descriptionText{
+	margin-bottom:10px;	
+}
+.inputText
+{
+	width: 300px;
+    height: 17px;
+    padding: 5px;
+    border: 1px solid #DDD;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    margin:10px 3px 0px 3px;
+    background-color:#f9f9f9;
+}
+.popupMain {
+	background-color:white;
+	/* width: 450px; */
+	/* margin:50px auto; */
+	padding: 0px 0px 0 3px;
+}
+.loadingImageMainDiv {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+	top: 0px;
+    left: 0px;
+    z-index:1;
+}
+
+.loadingImageForMovePopup {
+	background: url("images/core/B-Dot.gif");
+	width: 200px;
+	height: 175px;
+	margin: 0 auto;
+	margin-top: 173px;;
+	position: absolute;
+	z-index: 5;
+	margin-left: 31%;
+}

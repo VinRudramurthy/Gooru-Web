@@ -3,7 +3,7 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
 	<ui:with type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle" field="res" />
 	<g:PopupPanel glassEnabled="true" autoHideEnabled="true">
-		<g:HTMLPanel styleName="{res.css.resourceExistsPopupPopupOuterContainer}">
+		<g:HTMLPanel styleName="{res.css.resourceExistsPopupPopupOuterContainer} PopupMainVVSmall">
 			<g:HTMLPanel styleName="{res.css.resourceExistsPopupContainer}">
 				<g:HTMLPanel styleName="{res.css.resourceExistsPopup}">
 					<g:HTMLPanel styleName="{res.css.resourceExistsPopupBlackBg}">

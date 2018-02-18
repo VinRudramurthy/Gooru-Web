@@ -30,6 +30,7 @@ package org.ednovo.gooru.client.uc;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.CssResource.NotStrict;
 
 /**
  * @author Search Team
@@ -282,7 +283,10 @@ public interface PlayerBundle extends ClientBundle {
 		public String getstandardMoreLink();
 		
 		@ClassName("info-style-Standard")
-		public String getstandardMoreInfo();
+		public String getstandardMoreInfo();		
+		
+		@ClassName("info-style-Century")
+		public String getcenturyMoreInfo();
 		
 		@ClassName("courseTooltip")
 		public String courseTooltip();
@@ -377,6 +381,46 @@ public interface PlayerBundle extends ClientBundle {
 		
 		@ClassName("resource-type-info-text")
 		public String textResourceTypeInfo();
+		
+		
+		@ClassName("resource-type-info-video-new")
+		public String videoResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-interactive-new")
+		public String interactiveResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-slide-new")
+		public String slideResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-question-new")
+		public String questionResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-website-new")
+		public String websiteResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-textbook-new")
+		public String textbookResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-handout-new")
+		public String handoutResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-lesson-new")
+		public String lessonResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-exam-new")
+		public String examResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-audio-new")
+		public String audioResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-imageIcon-new")
+		public String imageResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-other-new")
+		public String otherResourceTypeInfoNew();
+		
+		@ClassName("resource-type-info-text-new")
+		public String textResourceTypeInfoNew();
 	
 		public String setPopupStandardArrow();
 		
@@ -384,10 +428,31 @@ public interface PlayerBundle extends ClientBundle {
 		
 		public String btnResourceLink();
 		
+		@ClassName("resoruce-info-separator-bulletBlack")
+		public String bulletBlack();
+		
+		@ClassName("label-collection-title")
+		public String resourceTitleStyleName();
+		
 		@ClassName("studyPlayer")
 		public String studyPlayer();
+		
+		public String btnGreen();
+		public String resourceTagsGlassPanel();
+		
+		public String filled();
+		public String star();
+		public String ratingUserName();
+		public String htmlUserReviewContainer();
+		public String editRatingBtn();
+		public String textAreaRating();
+		public String noresourcesAvailable();
+		public String sequenceNumber();
+		public String collectionreplayContainer();
+		
+		
 	}
-
+	@NotStrict
 	@Source("playerstyle.css")
 	PlayerStyle getPlayerStyle();
 

@@ -1,0 +1,58 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.classpages.newclasspage.NewClasspagePopupCBundle"
+		field="res" />
+		<g:HTMLPanel ui:field="popupHeader" styleName="{res.css.PopupMainVVSmall}">
+			  <g:HTMLPanel styleName="modal-dialog">
+					<g:HTMLPanel styleName="modal-content">
+					      <g:HTMLPanel styleName="modal-header">
+					        <g:Button styleName="close" ui:field="btnCancel"><span>×</span></g:Button>
+					        <uc:H4Panel styleName="modal-title" ui:field="headerPanel"></uc:H4Panel>
+					      </g:HTMLPanel>
+					      <g:HTMLPanel styleName="modal-body">
+						 	  <uc:PPanel ui:field="titlePanel"></uc:PPanel>
+						      <uc:PPanel>
+						          <g:TextBox styleName="form-control form_control" ui:field="classpageTitleTxt" />
+						      </uc:PPanel>
+						      <uc:PPanel>
+								<g:Label styleName="{res.css.popupMandatoryTitleText}" ui:field="mandatoryClasspageTitleLbl"></g:Label>
+							  </uc:PPanel>
+						      <uc:PPanel ui:field="gradePanel"></uc:PPanel>
+							  <g:HTMLPanel ui:field="gradeWidget" styleName="headerpadding">
+							        <g:HTMLPanel styleName="grade" ui:field="gradeBlock">
+							        </g:HTMLPanel>
+						 	  </g:HTMLPanel>
+						     <g:HTMLPanel styleName="visibilityBlock">
+						      <uc:PPanel ui:field="visiblityPanel"></uc:PPanel>
+								 <g:HTMLPanel styleName="row less-gutter headerpadding">
+									 <g:HTMLPanel styleName="col-md-6 col-sm-6">
+									   <panel:HTMLEventPanel styleName="anchorCls active" ui:field="publicPanel">
+									     <strong class="visiblityHeader"><g:Label ui:field="anyonwwithLink"></g:Label></strong>
+									     <g:Label ui:field="anyonwwithLinkTxt"></g:Label>
+									   </panel:HTMLEventPanel>
+									 </g:HTMLPanel>
+						    		<g:HTMLPanel styleName="col-md-6 col-sm-6">
+						    		  <panel:HTMLEventPanel styleName="anchorCls" ui:field="privatePanel">
+							    		   <strong class="visiblityHeader"><g:Label ui:field="privateLbl"></g:Label></strong>
+							    		   <g:Label ui:field="privateLblTxt"></g:Label>
+						    		   </panel:HTMLEventPanel>
+									</g:HTMLPanel>
+						      		<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+						        </g:HTMLPanel>
+						 	</g:HTMLPanel>
+						    <g:HTMLPanel ui:field="panelPleaseWait">
+								<g:Label styleName="{res.css.creating}" ui:field="panelLoading"></g:Label>
+						    </g:HTMLPanel>
+					      </g:HTMLPanel>
+					      <g:HTMLPanel styleName="modal-footer" ui:field="panelControls">
+					        <g:Button ui:field="btnAdd" styleName="primary"/>
+					      </g:HTMLPanel>
+					</g:HTMLPanel>
+			   </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>
+
+
+

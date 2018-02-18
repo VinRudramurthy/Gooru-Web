@@ -27,17 +27,44 @@
  */
 package org.ednovo.gooru.client.mvp.classpages.resource.item;
 
-import org.ednovo.gooru.client.child.IsChildView;
+import org.ednovo.gooru.application.client.child.IsChildView;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggable;
 
 /**
- * @author SearchTeam
  * 
+ * @fileName : IsClasspageResourceItemView.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface IsClasspageResourceItemView extends IsChildView<ClasspageResourceItemChildPresenter>, IsDraggable {
 
 	/**
-	 * Delete the collection
+	 * 
+	 * @function onPostCollectionDelete 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
 	 */
 	void onPostCollectionDelete();
 }

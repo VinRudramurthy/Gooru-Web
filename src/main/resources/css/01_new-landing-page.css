@@ -1,0 +1,1196 @@
+@charset "utf-8";
+/* CSS Document */
+.wrapper {
+	position: relative;
+}
+.wrapperContent {
+	min-height: 450px;
+}
+
+.newSprite{
+	background:url(${cdn.endpoint}/images/newlandingpage/gooru-sprite.png) no-repeat 0 0;
+}
+
+
+.form-control::-moz-placeholder{
+	color:#4b4b4b;
+}
+
+
+
+
+.bannerContaner{
+	position:relative;
+
+}
+
+.bannerContaner .flowPlayer::before {
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.bannerContaner .flowPlayer img{
+	width:100%;
+}
+
+.bannerContaner .bannerCaption{
+	position:absolute;
+	top:11%;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+
+.bannerContaner .bannerCaption h1, .bannerContaner .bannerCaption h1 div{
+	font-family:"Arvo",serif !important;
+	color:#ffffff;
+	font-size:61px;
+	font-weight:bold;
+	text-align:center;
+}
+.bannerContaner .bannerCaption h1 span{
+	display:block;
+}
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eaeaea;
+  z-index: 89;
+}
+
+.dropdown-menu .liPanelStyle {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 9pt;
+}
+.dropdown-menu li:hover {
+    background: none repeat scroll 0 0 #c3ddee;
+}
+.dropdown-menu .liPanelStylenonBold {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 9pt;
+    padding-bottom: 10px;
+}
+
+.focusBlock{
+	position:relative;
+	margin-top:-169px;
+	z-index:89;
+	min-height: 230px;
+}
+.focusBlock .panel-default{
+	border-color:#b1d2e7;
+}
+.focusBlock .panel-heading{
+	background-color:transparent;
+	padding:20px 15px;
+		border-color:#b1d2e7;
+}
+
+.focusBlock .panel-heading .panel-title{
+	text-align:center;
+	font-family:"Arvo",serif !important;
+	color:#4c98cc;
+	font-size:34px;
+}
+
+.focusBlock .panel-footer{
+	background-color: #deebf3;
+	border-top:#b1d2e7;
+	font-size: 14px;
+}
+.focusBlock .panel-body{
+	padding:0 15px;
+	/* text-align:center; */
+}
+.focusBlock .panel-body p{
+	display:inline-block;
+	vertical-align:middle;
+	font-size:18px;
+		color:#4c98cc;
+		margin:0 0;
+}
+
+.focusBlock .panel-body .btn{
+	font-size:12px;
+	padding:6px 8px;
+
+}
+.focusBlock .panel-body .btn-group{
+	margin-left:4px;
+}
+.focusBlock .panel-body .btn-primary {
+    background-color: #87badd;
+    border-color: #7cb0d4;
+    color: #fff;
+    font-size: 18px;
+}
+
+.no-gutter > [class*='col-md-']{
+	padding-left:0px;
+	padding-right:0px
+}
+
+.less-gutter > [class*='col-md-']{
+	padding-left:8px;
+	padding-right:8px
+}
+
+.focusBlock .standards{
+	text-align:center;
+}
+.focusBlock .standards{
+	padding: 38px 0 38px 0;
+  	margin-left: 25px;
+}
+.focusBlock .grade{
+	 display: inline-block;
+	text-align: center;
+}
+.focusBlock .browseContentBtn{
+	padding:38px 15px 38px 15px;
+	border-right:1px solid #b1d2e7;
+	width:20%;
+}
+
+.focusBlock .panel-body .standards .btn-group{
+	margin:0 0;
+}
+.focusBlock .standards, .focusBlock .browseContentBtn{
+	min-height:110px;
+}
+.focusBlock .panel-footer{
+	padding:15px 15px;
+	text-align: center;
+}
+.focusBlock .panel-footer p{
+	text-align:center;
+	color:#1076ba;
+	margin:0 0;
+}
+.focusBlock .panel-footer a{
+	color:#1076ba;
+
+}
+.focusBlock .panel-footer a:hover{
+		text-decoration:none;
+
+}
+
+
+.categoriesBlock{
+	padding:0 0 50px 0;
+}
+
+
+.categoriesBlock .catHeading{
+	padding:15px 10px;
+	text-align:center;
+	font-family:"Arvo",serif !important;
+	border-bottom:4px solid #ffffff;
+	font-size:18px;
+	font-weight:600;
+}
+
+.categoriesBlock .catBody{
+	font-size:15px;
+	color:#515151;
+	background:#dcddde;
+	padding:15px 15px;
+	min-height: 190px;
+}
+
+
+
+.colorOpt1{
+	background:#6badcc;
+	color:#ffffff;
+}
+
+
+.colorOpt2{
+	background:#7dd0d0;
+		color:#ffffff;
+}
+
+
+.colorOpt3{
+	background:#799caf;
+		color:#ffffff;
+}
+
+
+.colorOpt4{
+	background:#7ebfbf;
+		color:#ffffff;
+}
+
+.findImage {
+	background-position:-10px -311px;
+	width:200px;
+	height:158px;
+}
+
+.remixImage {
+	background-position:-453px -147px;
+	width:200px;
+	height:158px;
+}
+.shareImage {
+	background-position:-197px -150px;
+	width:200px;
+	height:158px;
+}
+.monitorImage {
+	background-position:23px -151px;
+	width:200px;
+	height:158px;
+}
+.categoriesBlock .catBody .contentPane{
+	min-height:130px;
+}
+
+.categoriesBlock .callToAction{
+	text-align:center;
+}
+.categoriesBlock .callToAction button.primary, .categoriesBlock .callToAction a.primary{
+	font-size:14px;
+	width:80%;
+}
+.gradeContainer{
+ background: #333333;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));
+  background: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -o-linear-gradient(top, #ffffff, #f5f5f5);
+
+}
+
+
+.gettingStarted{
+	background:#e3e3e3;
+}
+.gettingStarted .gettingContentPane {
+
+
+}
+
+
+.gettingStarted .gettingContentPane h2{
+	margin-left: 35px;
+	font-family:"Arvo",serif !important;
+	margin-bottom:30px;
+	margin-top:30px;
+	font-size:25px;
+	color:#515151;
+	margin-left: 35px;
+}
+.gettingStarted .gettingContentPane .blocks{
+	margin-bottom:32px;
+	padding-left: 35px;
+	width: 76%;
+}
+
+.gettingStarted .gettingContentPane .blocks:last-child{
+	margin-bottom:0;
+}
+.gettingStarted .gettingContentPane h3, .gettingStarted .gettingContentPane a.h3{
+	color:#1076bb;
+	font-size:20px;
+	margin-bottom:4px;
+}
+
+.gettingStarted .gettingContentPane p{
+	font-size:15px;
+	color:#515151;
+}
+
+
+
+.remixBlock{
+	padding:60px 0;
+}
+
+
+.remixBlock h2{
+	font-family: "Arvo",serif !important;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 22px;
+	color: #515151;
+	font-weight: bold;
+}
+
+.remixBlock .empower{
+	text-align: center;
+	font-size: 30px;
+	font-family: "Arvo",serif !important;
+	font-weight: bold;
+	color: #1076bb;
+	margin-bottom: 35px;
+}
+
+
+.remixBlock p, .remixBlock span{
+		font-family:"Arvo",serif !important;
+		font-size:16px;
+		color:#333333;
+		line-height:22px;
+}
+
+.remixBlock .animation {
+  height: 178px !important;
+  overflow: hidden;
+  padding-top: 16px;
+  transition: all 0.5s ease-in 0s;
+}
+
+.remixBlock .animation:hover {
+  height: 178px !important;
+  padding-top: 0;
+}
+.remixBlock .finMainwrapper {
+	text-align:center;
+}
+.remixBlock .finMainwrapper .img-responsive{
+	display:inline-block;
+}
+
+.freeToOpenBlock{
+	position:relative;
+}
+	.freeToOpenBlock .focusBannerAlwys img{
+		width:100%;
+	}
+
+	.freeToOpenBlock .focusTextAlwys{
+		position:absolute;
+		top:30%;
+		left:0;
+		right:0;
+		bottom:0;
+	}
+	.freeToOpenBlock .focusTextAlwys .BlueBg{
+		background: #fff;
+		border-radius: 4px 4px;
+		padding: 20px 20px;
+		margin-bottom: 20px;
+		color: #4c98cc;
+		opacity: .75;
+	}
+		.freeToOpenBlock .focusTextAlwys .BlueBg p{
+			margin:0 0;
+			color:#000000;
+			font-size:17px;
+			font-family: "Arvo" !important;
+		}
+
+
+		.freeToOpenBlock .focusTextAlwys h2{
+			font-family:"Arvo",serif !important;
+			font-size:44px;
+			color:#ffffff;
+			font-weight:700;
+			margin:10% 0;
+
+		}
+		.freeToOpenBlock .focusTextAlwys h2 .gwt-InlineLabel{
+			font-family:"Arvo",serif !important;
+		}
+		.freeToOpenBlock .focusTextAlwys h2 span{
+			display:block;
+		}
+
+
+	footer{
+		background:#444444;
+		padding:30px 0;
+	}
+
+
+
+	footer p{
+		font-size:13px;
+		color:#ffffff;
+	}
+	footer h4 {
+  font-family: 'Arvo', serif !important;
+  color: #ffffff;
+  font-size: 17px;
+  margin-bottom:15px;
+}
+
+footer ul li a {
+  color: #eeeeee !important;
+  font-size: 12px;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+	footer ul li a:hover{
+		color:#ffffff;
+	}
+
+	footer .social	ul{
+		width:75%;
+	}
+		footer .social	ul li{
+			width:35%;
+			margin-bottom:5px;
+		}
+
+
+	.facebook{
+		width:32px;
+		height:32px;
+		display:block;
+		background-position:-451px -24px;
+	}
+		.twitter{
+		width:32px;
+		height:32px;
+		display:block;
+		background-position:-357px -24px;
+	}
+
+	.youtube{
+		width:32px;
+		height:32px;
+		display:block;
+		background-position:-406px -24px;
+	}
+		.google{
+		width:32px;
+		height:32px;
+		display:block;
+		background-position:-500px -24px;
+	}
+
+
+.focusBlock .browseContentBtn{
+	text-align: right;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.focusBlock .browseContentBtn button{
+	margin-right: 25px;
+}
+
+.focusBlock .browseContentBtn:after{
+    content:"or";
+    position:absolute;
+    right:-12px;
+    top:36%;
+    z-index:999;
+    color:#4ca4de;
+    padding:5px 5px;
+    background:#ffffff;
+    font-size:18px;
+}
+
+.focusTextAlwys button.primary {
+	width: 100%;
+}
+
+.gettingContentPane .eventsIco{
+	float: left;
+	height: 82px;
+	vertical-align: middle;
+	margin-top: 15px;
+	margin-left: -28px;
+	margin-right: 20px;
+}
+
+.gettingContentPane .events{
+	padding: 10px;
+	width: 75%;
+}
+
+.gettingContentPane .eventsContainer{
+	background: #deebf3;
+  	width: 100% !important;
+  	height: 110px;
+}
+
+.remixBlock a.sampleReport{
+	font-family: "Arvo",serif!important;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.gradePanel{
+	padding:39px 0 39px 10px;
+}
+
+.panelGrade{
+	min-width: 350px !important;
+}
+
+#btnSubjects.ellipsis{
+	width: 100px;
+}
+
+.ellipsis{
+	width: 90px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#gooruSearchMainContainer .subjectContainer {
+	display: inline-block;
+
+    text-align: left;
+	margin-left:12px;
+}
+
+#gooruSearchMainContainer .subjectContainer .dropdown-menu {
+	left: 0px;
+	top: 120%;
+	font-size: 12px;
+	min-width: 245px;
+	margin: 0;
+	padding: 0;
+}
+
+#gooruSearchMainContainer .subjectContainer .dropdown-menu>.active>a, #gooruSearchMainContainer .subjectContainer .dropdown-menu>.active>a:hover, #gooruSearchMainContainer .subjectContainer .dropdown-menu>.active>a:focus {
+	background: #87badd url(${cdn.endpoint}/images/checkmark.png) no-repeat 95% 5px;
+	color: #fff;
+}
+
+#gooruSearchMainContainer .subjectContainer .dropdown-menu>span {
+	font-size: 12px;
+	text-align: left;
+	color: #515151;
+	padding: 8px 20px;
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#gooruSearchMainContainer .subjectContainer .dropdown-menu>li>a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 1.42857143;
+	white-space: nowrap;
+	padding: 8px 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	color: #515151;
+	text-align: left;
+}
+
+
+.errorDisplay{
+	text-align:center;
+}
+
+.aboutApproach{
+	width: 50%;
+	text-align: center;
+	line-height: 20px;
+	font-size: 16px;
+}
+.callToAction{
+	text-align: center;
+}
+
+
+@media (max-width: 767px) {
+
+	.categoriesBlock .catBody .callToAction .classCodeTxtBoxStyle{
+		padding: 8px 6px;
+  		font-size: 11px !important;
+	}
+
+	.focusBlock .grade .dropdown-menu {
+    	left: auto;
+    	right: 0;
+		padding:0 0;
+	}
+
+	.focusBlock .grade .dropdown-menu::before {
+	    right: 9px;
+	    top: -7px;
+	}
+
+	.focusBlock .grade .dropdown-menu::before, .focusBlock .grade .dropdown-menu::after {
+	    left: 0 !important;
+	}
+	.focusBlock .grade .dropdown-menu::after {
+	    right: 10px;
+	    top: -6px;
+	}
+
+	.freeToOpenBlock .focusTextAlwys .BlueBg{
+		margin-bottom:10px;
+	}
+
+	.focusBlock .grade .subjectContainer .dropdown-menu {
+	    left: auto !important;
+	}
+
+	.aboutApproach{
+		width: auto;
+	}
+
+	.remixBlock a.sampleReport {
+		display: block;
+  		text-align: center;
+	}
+	#gooruSearchMainContainer .subjectContainer {
+		text-align: center;
+	}
+
+	.categoriesBlock .catBody{
+		font-size:15px;
+		color:#515151;
+		background:#dcddde;
+		padding:15px 15px;
+		min-height: inherit;
+	}
+	.findImage, .remixImage, .shareImage, .monitorImage {
+		margin: 0 auto;
+	}
+	.gradePanel {
+	  	padding: 5px 0;
+	}
+
+
+	.container {
+		width:auto !important;
+	}
+
+	.mainmenu{
+		width:100% !important;
+	}
+	.mainmenu .navbar-collapse{
+		width:100%;
+		float:left;
+		margin-top:10px;
+	}
+	.mainmenu .container > .navbar-header, .mainmenu .container-fluid > .navbar-header, .mainmenu .container > .navbar-collapse, .mainmenu .container-fluid > .navbar-collapse{
+		margin-left:0 !important;
+		margin-right:0 !important;
+	}
+	.mainmenu .navbar-default .navbar-collapse, .mainmenu .navbar-default .navbar-form{
+		border-color:#333333;
+	}
+
+	.mainmenu  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .mainmenu .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+		color:#ffffff;
+		opacity:0.7;
+	}
+	.mainmenu .nav{
+		float:left;
+		width:100%;
+		margin:7.5px 0;
+	}
+
+	.mainmenu .navbar-collapse{
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+	.searchbox{
+		display:none;
+	}
+	.focusBlock{
+		margin-top:0;
+	}
+	.bannerContaner .bannerCaption h1{
+		  padding: 6% 0;
+	}
+	.focusBlock .panel-heading .panel-title{
+		font-size:16px;
+	}
+	.focusBlock .grade{
+
+	}
+	.focusBlock .grade, .focusBlock .standards{
+		border-right:none;
+		border-bottom:none;
+	}
+	.focusBlock .grade, .focusBlock .standards{
+		padding:18px 0 18px 0;
+	}
+	.focusBlock .panel-body{
+		padding:0 0;
+	}
+	.focusBlock .panel-body p{
+
+	}
+	.focusBlock .blocksSearch{
+		display:block;
+		margin-bottom:4px;
+
+	}
+	.focusBlock .standards{
+
+	}
+	.focusBlock .standards .blocksSearch{
+		margin-bottom:0;
+	}
+
+	.focusBlock .grade, .focusBlock .standards, .focusBlock .browseContentBtn{
+		min-height:inherit;
+	}
+	.categoriesBlock .catBody .contentPane{
+		min-height:inherit;
+		margin-bottom:25px;
+		text-align:center;
+	}
+	.focusBlock .browseContentBtn {
+	    padding: 5px 25px 20px 25px;
+	    border-bottom: 1px solid #b1d2e7;
+	    text-align: center;
+		border-right:none;
+	}
+
+	.focusBlock .browseContentBtn button {
+		margin-right: 0px;
+	}
+	.bannerContaner .bannerCaption h1, .bannerContaner .bannerCaption h1 div {
+		font-family: "Arvo",serif!important;
+		color: #fff;
+		font-size: 120%;
+		font-weight: bold;
+		text-align: center;
+	}
+	.focusBlock .browseContentBtn:after {
+		content: "or";
+		position: absolute;
+		right: auto;
+		top: auto;
+		z-index: 999;
+		color: #4ca4de;
+		padding:0 5px;
+		background: #f5f5f5;
+		font-size: 18px;
+		bottom: -14px;
+		left: 45%;
+	}
+
+	.focusBlock .panel {
+
+	    margin:20px 15px 0 15px;
+	}
+	.focusBlock .panel-body{
+		background:#f5f5f5;
+	}
+	.categoriesBlock .categoryPanel{
+		margin-bottom:20px;
+	}
+	.gettingStarted .gettingContentPane{
+		padding:0 0;
+
+	}
+
+	.remixBlock h2{
+		margin-bottom:0;
+		margin-top: 30px;
+	}
+	.remixBlock p{
+		text-align:center;
+	}
+	.freeToOpenBlock .focusTextAlwys h2{
+		font-size:18px;
+		margin:0 0;
+	}
+	.freeToOpenBlock .focusTextAlwys{
+		top:10%;
+		bottom:10%;
+	}
+
+	.freeToOpenBlock .focusBannerAlwys img {
+	    height: 198px;
+	}
+	.freeToOpenBlock .focusTextAlwys {
+	    bottom: 5%;
+	    top: 5%;
+	}
+	.freeToOpenBlock .focusTextAlwys h2 {
+	    font-size: 22px;
+	    margin: 0;
+	    text-align: center;
+	}
+	.freeToOpenBlock .focusTextAlwys h2 span {
+	    display: inline-block;
+	}
+	.freeToOpenBlock .focusTextAlwys .BlueBg {
+
+	    margin-top: 10px;
+
+	}
+	.freeToOpenBlock  .callToAction{
+		text-align:center;
+	}
+	.freeToOpenBlock .focusTextAlwys .BlueBg p{
+		font-size:12px;
+	}
+	footer .footerLogo{
+		text-align:center;
+		margin-bottom:25px;
+
+	}
+	footer .footerLogo .img-responsive{
+		display:inline-block;
+	}
+	.gettingStarted .gettingStartedBanner img{
+		width:100%;
+	}
+	#gooruSearchMainContainer .subjectContainer{
+
+		text-align:center;
+		margin-left:0;
+		padding-bottom:4px;
+		display:block;
+	}
+	.gettingStarted .gettingContentPane .blocks {
+    margin-bottom: 39px;
+    padding: 0 5%;
+    width: 100%;
+}
+.gettingStarted .gettingContentPane h2{
+	margin-left:0;
+	padding:0 5%;
+}
+.gettingContentPane .eventsContainer{
+	height:auto;
+}
+.gettingContentPane .events{
+	width:100%;
+}
+.focusBlock .browseContentBtn{
+	width:100%;
+}
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.findImage, .remixImage, .shareImage, .monitorImage {
+		margin: 0 auto;
+
+	}
+
+	.gettingContentPane .events{
+		padding: 10px;
+		width: auto;
+	}
+
+	.bannerContaner .bannerCaption{
+		top:10%;
+	}
+	.bannerContaner .bannerCaption h1{
+		font-size:34px;
+	}
+	.focusBlock .panel-heading .panel-title{
+		font-size:24px;
+	}
+	.mainmenu .navbar-right{
+		margin-right:0;
+	}
+	.container {
+		width:auto !important;
+	}
+	.searchContainer .form-control{
+		height:43px;
+	}
+	.searchbox{
+		width:auto !important;
+	}
+
+	.mainmenu{
+		width:auto !important;
+	}
+
+
+	.logo{
+		 background-position: -14px -9px;
+	    display: inline-block;
+	    height: 45px;
+	    padding-top: 13px;
+	    width: 103px;
+
+	}
+
+	.mainmenu{
+		position:absolute !important;
+		right:0;
+		top:0;
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+	.searchContainer .sInner p{
+		font-size:14px;
+	}
+
+	.categoriesBlock .catBody .contentPane{
+		min-height:80px;
+	}
+
+	.categoriesBlock .catBody{
+		margin-bottom:30px;
+	}
+	.focusBlock  .panel{
+		margin-left:20px;
+		margin-right:20px;
+	}
+	.focusBlock{
+		margin-top:-110px;
+	}
+	.ellipsis {
+		width: 80px;
+	  	white-space: nowrap;
+	  	overflow: hidden;
+	  	text-overflow: ellipsis;
+	}
+	#btnSubjects.ellipsis {
+		width: 80px;
+	}
+
+	.categoriesBlock{
+		padding:30px 0 20px;
+	}
+	.categoriesBlock .catHeading{
+		font-size:17.5px;
+	}
+
+	.focusBlock .grade {
+	    float: left;
+
+	}
+	.focusBlock .standards {
+	    float: left;
+	    text-align: center;
+	}
+	.focusBlock .browseContentBtn {
+	  float: left;
+    padding: 39px 0;
+	}
+	.focusBlock .blocksSearch{
+		display: inline-block;
+	    margin-bottom: 10px;
+	}
+	.focusBlock .panel-body p {
+		margin:0 0 0px 0;
+	}
+	.focusBlock .grade, .focusBlock .standards, .focusBlock .browseContentBtn{
+		min-height:auto;
+	}
+	.focusBlock .panel-body{
+		padding:0 0;
+	}
+	.gettingStarted .gettingContentPane{
+		padding-left:0;
+	}
+	.gettingStarted .gettingContentPane h2{
+		margin-bottom:15px;
+		font-size:22px;
+	}
+	.gettingStarted .gettingContentPane h3{
+		font-size:18px;
+	}
+	.gettingStarted .gettingContentPane p{
+		font-size:14px;
+	}
+	.gettingStarted .gettingContentPane .blocks{
+		margin-bottom:10px;
+	}
+	.gettingStarted .gettingStartedBanner img{
+	 height: 374px;
+    width: 100%;
+	}
+	.remixBlock p{
+		min-height:70px;
+	}
+	.freeToOpenBlock .focusTextAlwys{
+		top:20%;
+	}
+
+	.freeToOpenBlock .focusTextAlwys h2{
+		font-size:36px;
+	}
+	.freeToOpenBlock .focusTextAlwys .BlueBg p{
+		font-size:13px;
+	}
+	.focusBlock  .standards p{
+		display:block;
+	}
+
+	.gradePanel{
+	padding:38px 0 38px 5px;
+	}
+	#gooruSearchMainContainer .subjectContainer{
+		width:auto;
+		margin:0 0 0 6px;
+	}
+	.focusBlock .browseContentBtn button {
+ 	 	margin-right: 18px;
+	}
+	.focusBlock .panel-body p{
+		font-size:13px;
+	}
+	.focusBlock .standards {
+		padding: 39px 0 0;
+		margin-left: 0px;
+	}
+
+.focusBlock .browseContentBtn::after{
+	top:36%;
+}
+
+.bannerContaner .bannerCaption h1, .bannerContaner .bannerCaption h1 div{
+	font-size:45px;
+}
+.focusBlock .panel-body .btn{
+	padding:6px 6px;
+}
+.gettingContentPane .eventsContainer{
+	height:auto;
+}
+.gettingContentPane .events h3{
+	margin:0 0 4px 0;
+}
+.gettingStarted .gettingContentPane .blocks{
+	width:95%;
+	height:95px;
+}
+.focusBlock .panel-body .btn-primary{
+	font-size:13px;
+}
+.focusBlock .standards{
+	width:22%;
+}
+.focusBlock .browseContentBtn{
+	width:19%;
+}
+.gettingContentPane .eventsIco{
+	height:75px;
+}
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+		.container{
+			width:970px !important;
+		}
+.focusBlock .grade{
+	padding:0 10px;
+}
+		.focusBlock .standards{
+			padding:38px 10px;
+		}
+
+		.bannerContaner .bannerCaption h1{
+			font-size:40px;
+		}
+		.gettingStarted .gettingStartedBanner img{
+			height:346px;
+		}
+		.gettingStarted .gettingContentPane h2{
+			margin-bottom:15px;
+			font-size:22px;
+		}
+		.gettingStarted .gettingContentPane h3{
+			font-size:18px;
+		}
+		.gettingStarted .gettingContentPane p{
+			font-size:14px;
+		}
+
+		.categoriesBlock .catHeading{
+			font-size:13.5px;
+		}
+		.freeToOpenBlock .focusTextAlwys h2{
+			margin:6% 0;
+		}
+
+		.focusBlock .browseContentBtn::after{
+			top:33%;
+		}
+
+		.bannerContaner .bannerCaption h1, .bannerContaner .bannerCaption h1 div {
+			font-size: 47px;
+		}
+		.focusBlock {
+			margin-top: -165px;
+		}
+
+		#btnSubjects.ellipsis {
+			width: 80px;
+		}
+		.gettingContentPane .eventsContainer{
+			height:97px;
+		}
+		.gradePanel {
+		    padding: 39px 0;
+		}
+		.focusBlock .panel-body .btn-primary{
+			font-size:16px;
+		}
+		.focusBlock .standards{
+			width:19%;
+		}
+		.focusBlock .browseContentBtn button{
+			margin-right:25px;
+		}
+		#gooruSearchMainContainer .subjectContainer{
+			margin-left:0;
+		}
+}
+@media (min-width: 1100px) and (max-width: 1199px){
+
+	.gettingStarted .gettingStartedBanner img{
+		height:367px;
+	}
+}
+
+
+ @media (min-width: 480px) and (max-width: 767px) {
+.bannerContaner .bannerCaption h1, .bannerContaner .bannerCaption h1 div{
+	font-size:142% !important;
+}
+ }
+
+ @media (min-width: 1200px) {
+
+
+
+
+}
+
+@media (min-width: 1100px) and (max-width: 1199px){
+	.gettingStarted .gettingStartedBanner img {
+  		height: 347px;
+	}
+}
+
+#gooruSearchMainContainer .subjectContainer .dropdown-menu>.active:hover{
+	width: 100%;
+	margin: 0px;
+	border: 0px;
+}
+
+#gooruSearchMainContainer .seachRightNavigation .gradesContainer li:hover{
+	background: none !important;
+  	margin: 0px;
+	border: 0px;
+	display: inline-block;
+}
+
+

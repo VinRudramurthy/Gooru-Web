@@ -53,7 +53,11 @@ public class UpdateSocialShareMetaDataEvent extends GwtEvent<UpdateSocialShareMe
 	public Type<UpdateSocialShareMetaDataHandler> getAssociatedType() {
 		return TYPE;
 	}
-
+	/**
+	 * Update the meta data description of the social share
+	 * @param title of the collection
+	 * @param description of the collection
+	 */
 	@Override
 	protected void dispatch(UpdateSocialShareMetaDataHandler handler) {
 		handler.updateSocialShareMetaData(title, description, imageUrl);

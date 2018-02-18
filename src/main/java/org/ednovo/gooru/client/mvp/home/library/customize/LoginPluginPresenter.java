@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.customize;
 
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * 

@@ -32,8 +32,19 @@ import com.google.gwt.core.client.Duration;
 import com.google.gwt.dom.client.Element;
 
 /**
- * @author Search Team
  * 
+ * @fileName : FadeInAndOut.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class FadeInAndOut extends Animation {
 

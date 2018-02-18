@@ -26,31 +26,199 @@ package org.ednovo.gooru.client.mvp.classpages.studentView;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.AssignmentsListDo;
-import org.ednovo.gooru.shared.model.content.ClasspageDo;
-import org.ednovo.gooru.shared.model.content.ClasspageItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.ClasspageDo;
+import org.ednovo.gooru.application.shared.model.content.ClasspageItemDo;
 
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.Label;
-
+/**
+ * 
+ * @fileName : IsStudentAssignmentView.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author tumbalam
+ *
+ * @Reviewer:
+ */
 public interface IsStudentAssignmentView extends IsViewWithHandlers<StudentAssignmentUiHandlers>  {
 
-	
-	
-	
+	/**
+	 * 
+	 * @function getBackToEditPanel 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @return
+	 * 
+	 * @return : Button
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	public Button getBackToEditPanel();
-
-
-	
-
+	/**
+	 * 
+	 * @function clearAll 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	void clearAll();
 	
-	
+	/**
+	 * 
+	 * @function setClasspageData 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param classpageDo
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	void setClasspageData( ClasspageDo classpageDo);
-	void showClasspageItems(ArrayList<ClasspageItemDo> classpageItemsList);
+	/**
+	 * 
+	 * @function showClasspageItems 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param classpageItemsList
+	 * @parm(s) : @param sortOrder
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	void showClasspageItems(ArrayList<ClasspageItemDo> classpageItemsList, String sortOrder);
+	/**
+	 * 
+	 * @function showClasspageItemsForAssignmentPath 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param classpageItemsList
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	void showClasspageItemsForAssignmentPath(ArrayList<ClasspageItemDo> classpageItemsList);
 
-			
+
+
+
+	/**
+	 * @function callAssignmentAPI 
+	 * 
+	 * @created_date : Jun 17, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @param classpageId
+	 * @param offsetProgress
+	 * @param limitProgress
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	void callAssignmentAPI(String classpageId, String offsetProgress,
+			String limitProgress);
+
+
+
+
+	/**
+	 * @function setSortingOrderInDropdown 
+	 * 
+	 * @created_date : Jun 17, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @param sortingOrder
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	void setSortingOrderInDropdown(String sortingOrder);			
+	/**
+	 * 
+	 * @function resetAll 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	void resetAll();
 }

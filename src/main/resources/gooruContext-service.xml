@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" 
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:sec="http://www.springframework.org/schema/security"
-	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:util="http://www.springframework.org/schema/util"  
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
-        http://www.springframework.org/schema/context 
-        http://www.springframework.org/schema/context/spring-context-3.1.xsd 
-        http://www.springframework.org/schema/aop 
-        http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
-        http://www.springframework.org/schema/security 
-        http://www.springframework.org/schema/security/spring-security-3.1.xsd 
-		http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 		http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util-3.1.xsd">
@@ -24,26 +24,26 @@
 	<context:annotation-config />
 
 	<aop:aspectj-autoproxy />
-	
-	<bean id="appSessionHolder" class="org.ednovo.gooru.server.AppSessionHolder" scope="request"/>
-	
+
+	<bean id="appSessionHolder" class="org.ednovo.gooru.application.server.AppSessionHolder" scope="request"/>
+
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
-		
+
 	<bean id="restUsername" class="java.lang.String">
 		<constructor-arg>
 			<value>${rest.username}</value>
 		</constructor-arg>
 	</bean>
-	
+
 	<bean id="restPassword" class="java.lang.String">
 		<constructor-arg>
 			<value>${rest.password}</value>
 		</constructor-arg>
 	</bean>
-	
+
 	<bean id="restConstants"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="properties">
@@ -74,6 +74,13 @@
 				<prop key="facebook.app_id">${facebook.app_id}</prop>
 				<prop key="facebook.dialogfeedurl">${facebook.dialogfeedurl}</prop>
 				<prop key="taxonomy.preferences">${taxonomy.preferences}</prop>
+				<prop key="redirect.url">${redirect.url}</prop>
+				<prop key="drive.api">${drive.api}</prop>
+				<prop key="google.restendpoint">${google.restendpoint}</prop>
+				<prop key="stories.url">${stories.url}</prop>
+				<prop key="community.library.gooruOid">${community.library.gooruOid}</prop>
+				<prop key="show.stories">${show.stories}</prop>
+				<prop key="clientside.loggers">${clientside.loggers}</prop>
 			</props>
 		</property>
 	</bean>

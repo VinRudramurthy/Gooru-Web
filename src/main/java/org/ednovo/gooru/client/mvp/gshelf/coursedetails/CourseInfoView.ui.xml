@@ -1,0 +1,74 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:w="urn:import:org.ednovo.gooru.client.mvp.gshelf.collectiondetails.widgets">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="courseInfo">
+		<div class="courseNameBlock">
+			<uc:PPanel ui:field="courseTitlePpanel"></uc:PPanel>
+			<p>
+				<g:TextBox styleName="form-control" ui:field="courseTitle" maxLength="50"/>
+				<g:Label ui:field="lblErrorMessage" styleName="errorMessage text-right"></g:Label>
+			</p>
+		</div>
+		<div class="tagCoursePanel">
+			<uc:PPanel ui:field="tagCoursePpanel"></uc:PPanel>
+			<div class="tagCoursePanelHeader">
+				<div class="btn-group btn-group-justified" role="group"
+					aria-label="...">
+					<div class="btn-group" role="group">
+						<g:Button styleName="btn btn-default active" ui:field="btnK12">K-12
+						</g:Button>
+					</div>
+					<div class="btn-group" role="group">
+						<g:Button styleName="btn btn-default" ui:field="btnHigherEducation">Higher
+							Education
+						</g:Button>
+					</div>
+					<div class="btn-group" role="group">
+						<g:Button styleName="btn btn-default" ui:field="btnProfessionalLearning">Professional
+							Learning
+						</g:Button>
+					</div>
+				</div>
+			</div>
+			<div class="tagCoursePanelBody">
+				<div class="courseGroupBlock">
+					<div class="no-gutter">
+						<div class="col-md-4 col-sm-5">
+							<div class="courseGroupLeft">
+								<div class="subHeading">Subject</div>
+								<uc:UlPanel ui:field="ulMainGradePanel" />
+							</div>
+						</div>
+						<div class="pnlBackGround">
+							<div class="subHeading">Course</div>
+							<g:HTMLPanel styleName="col-md-8 col-sm-7 scrollCourseContainer" ui:field="pnlGradeContainer" />
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="tagCoursePanelFooter">
+				<div class="filterTags">
+					<uc:UlPanel ui:field="ulSelectedItems" />
+				</div>
+				<g:Label styleName="col-md-8 col-sm-7 errorMessage" ui:field="lblGradeErrorMsg" />
+			</div>
+			<div class="clearfix"></div>
+			<div class="tagCourseOptions">
+				<w:AudienceView ui:field="audienceContainer"></w:AudienceView>
+				<div class="clearfix"></div>
+			</div>
+			<div class="stepsButtonGroup">
+				<g:Button styleName="secondary" ui:field="saveCourseBtn"
+					text="{i18n.GL3360}" />
+				<g:Button styleName="primary" ui:field="nextUnitBtn" text="{i18n.GL3361}" />
+			</div>
+		</div>
+		<g:HTMLPanel ui:field="spinnerIconContainer" styleName="spinnerContainer" visible="false">
+			<g:HTMLPanel styleName="loadingImage spinnerDisplayPosition"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tbp="urn:import:org.ednovo.gooru.client.uc">
+<g:HTMLPanel>
+	<div id="morePeoplePopWrapper">
+  <div class="popHeader">
+    <div class="col-md-10 col-xs-10 popHeading">More People</div>
+    <div class="col-md-1"><g:Anchor ui:field="cancelResourcePopupBtnLbl" styleName="closeButton"></g:Anchor></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="popBody">
+    <tbp:H4Panel ui:field="UsedByStr"></tbp:H4Panel>
+          <div class="peopleGroup">
+          <g:ScrollPanel ui:field="scrollContents" styleName="scrollDiv">
+    <g:HTMLPanel ui:field="scrollContainer" >
+       
+      </g:HTMLPanel></g:ScrollPanel>
+       </div>
+    </div>
+
+  <div class="clearfix"></div>
+  
+
+</div>
+</g:HTMLPanel>
+</ui:UiBinder> 

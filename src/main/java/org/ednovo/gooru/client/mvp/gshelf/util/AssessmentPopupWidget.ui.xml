@@ -1,0 +1,47 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:uc="urn:import:org.ednovo.gooru.client.uc.suggestbox.widget">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel ui:field="pnlMainContainer">
+		<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><g:InlineLabel ui:field="spnClose">&times;</g:InlineLabel></button>
+		        <panel:H4Panel ui:field="pnlTitle"></panel:H4Panel>
+		      </div>
+		      <div class="modal-body">
+			  <g:Label styleName="indications" text="{i18n.GL3375}" title="{i18n.GL3375}"/>
+			  <div class="assessmentInnerBlock">
+			 <div class="col-md-6 col-sm-6 col-xs-6 colxs6-reset">
+			 <uc:Paragraph ui:field="pBuildText"/>
+			 </div>
+			 
+			  <div class="col-md-6 col-sm-6 col-xs-6 colxs6-reset">
+			<g:Button styleName="primary btn-block" ui:field="btnCreateNormalAssessment" text="{i18n.GL3126}" title="{i18n.GL3126}"/>
+			 </div>
+			 <div class="clearfix"></div>
+			  </div>
+			 <div class="assessmentInnerBlock">
+			 <div class="col-md-6 col-sm-6 col-xs-6 colxs6-reset">
+			  <uc:Paragraph ui:field="pLinkText"/>
+			 </div>
+			 
+			  <div class="col-md-6 col-sm-6 col-xs-6 colxs6-reset">
+			<g:Button styleName="primary btn-block" ui:field="btnCreateExternalAssessment" text="{i18n.GL3125}" title="{i18n.GL3125}"/>
+			 </div>
+			 
+			 <div class="clearfix"></div>
+			 <div class="noteText">
+			 <div class="col-md-6 col-sm-6 col-xs-6 colxs6-reset">
+			  <uc:Paragraph ui:field="pNoteText"/>
+			 </div>
+			  </div>
+			   <div class="clearfix"></div>
+			  </div>
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

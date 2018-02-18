@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+
+	<g:FlowPanel ui:field="printblock">
+
+		<g:FlowPanel ui:field="titleblock">
+			<g:HTMLPanel ui:field="title"></g:HTMLPanel>
+			<g:FlowPanel ui:field="titleClear"></g:FlowPanel>
+		</g:FlowPanel>
+
+
+		<g:FlowPanel ui:field="firstBlock">
+			<g:FlowPanel ui:field="firstInnerBlock">
+
+				<g:FlowPanel ui:field="firstInnerSubBlock">
+					<g:FlowPanel ui:field="secondInnerSubBlock">
+						<g:Image ui:field="img" />
+					</g:FlowPanel>
+					<g:FlowPanel ui:field="detailsBlock">
+						<uc:H3Panel ui:field="collectionTitle"></uc:H3Panel>
+
+
+						<uc:PPanel ui:field="collectionResourcesCount">
+						</uc:PPanel>
+
+
+					</g:FlowPanel>
+				</g:FlowPanel>
+
+			</g:FlowPanel>
+
+			<g:FlowPanel ui:field="secondBlock">
+				<g:FlowPanel ui:field="secondInnerBlock">
+
+					<uc:H4Panel ui:field="scoreTitle"></uc:H4Panel>
+					<uc:H2Panel ui:field="score"></uc:H2Panel>
+					<uc:PPanel ui:field="goal"></uc:PPanel>
+				</g:FlowPanel>
+			</g:FlowPanel>
+
+			<g:FlowPanel ui:field="thirdBlock">
+				<g:FlowPanel ui:field="thirdInnerBlock">
+					<g:FlowPanel ui:field="thirdInnerSubBlock">
+						<g:FlowPanel ui:field="thirdInnerSub2Block">
+							<g:FlowPanel ui:field="progressRadial">
+
+								<g:InlineLabel ui:field="correctStatus"></g:InlineLabel>
+							</g:FlowPanel>
+						</g:FlowPanel>
+					</g:FlowPanel>
+				</g:FlowPanel>
+			</g:FlowPanel>
+
+
+			<g:FlowPanel ui:field="fourthBlock">
+				<g:FlowPanel ui:field="fourthInnerBlock">
+
+
+					<g:FlowPanel ui:field="customSelect">
+						<g:ListBox ui:field="sessionsDropDown">
+						</g:ListBox>
+					</g:FlowPanel>
+
+					<uc:PPanel ui:field="lastModifiedTime"></uc:PPanel>
+				</g:FlowPanel>
+			</g:FlowPanel>
+
+			<g:FlowPanel ui:field="clearfix" />
+		</g:FlowPanel>
+	</g:FlowPanel>
+
+</ui:UiBinder>

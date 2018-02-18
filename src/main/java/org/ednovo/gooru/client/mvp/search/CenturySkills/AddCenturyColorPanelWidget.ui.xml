@@ -1,0 +1,10 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HTMLPanel styleName="circlesBlock">
+	 	 <g:InlineHTML styleName="smallCircle greenCircle"  ui:field="spnGreenCircle"></g:InlineHTML> 
+         <g:InlineHTML styleName="smallCircle blueCircle"   ui:field="spnBlueCircle"></g:InlineHTML > 
+         <g:InlineHTML styleName="smallCircle yellowCircle" ui:field="spnYellowCircle"></g:InlineHTML>
+         <g:InlineHTML styleName="smallCircle purpleCircle" ui:field="spnPurpleCircle"></g:InlineHTML> 
+	</g:HTMLPanel>
+</ui:UiBinder> 

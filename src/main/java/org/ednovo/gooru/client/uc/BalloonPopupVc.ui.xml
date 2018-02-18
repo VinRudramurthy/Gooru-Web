@@ -1,12 +1,11 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
 	<g:FlowPanel>
-		<g:HTMLPanel styleName="{res.css.hoverPopupContainer}" ui:field="popupContainer">
-		    <g:HTMLPanel styleName="{res.css.hoverPopupArrow}"></g:HTMLPanel>
-		    <g:HTMLPanel styleName="{res.css.hoverPopupTextContainer}">
-		        <g:Label ui:field="popupDesc" styleName="{res.css.comingSoonLbl}"></g:Label>
+		<g:HTMLPanel styleName="Uc-hoverPopupContainer" ui:field="popupContainer">
+		    <g:HTMLPanel styleName="Uc-hoverPopupArrow"></g:HTMLPanel>
+		    <g:HTMLPanel styleName="Uc-hoverPopupTextContainer">
+		        <g:Label ui:field="popupDesc" styleName="Uc-comingSoonLbl"></g:Label>
 		    </g:HTMLPanel>
 		</g:HTMLPanel>
 	</g:FlowPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

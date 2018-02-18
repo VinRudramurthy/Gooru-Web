@@ -20,10 +20,6 @@
 						<br />
 						<br />
 						<g:HTMLPanel styleName="{res.css.threeActions}">
-							<!-- <g:HTMLPanel styleName="{res.css.publicImage}">
-								<g:HTMLPanel styleName="{res.css.heading}" ui:field="headingTittle"></g:HTMLPanel>
-								<g:InlineHTML ui:field="popupContentTxt"></g:InlineHTML>
-							</g:HTMLPanel> -->
 							<g:HTMLPanel styleName="{res.css.classList}">
 								<g:HTMLPanel styleName="{res.css.heading}" ui:field="manageList"></g:HTMLPanel>
 								<g:InlineHTML ui:field="manageListDesc"></g:InlineHTML>
@@ -34,10 +30,6 @@
 							</g:HTMLPanel>
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.buttonBlock} {res.css.extra}">
-							<!-- <g:HTMLPanel styleName="{res.css.checkboxContainer}">
-								<input name="" type="checkbox" value="" />
-								<label>Do not show this tutorial again.</label>
-							</g:HTMLPanel> -->
 							<g:Button styleName="primary" ui:field="btnOk"></g:Button>
 						</g:HTMLPanel>
 					</g:HTMLPanel>

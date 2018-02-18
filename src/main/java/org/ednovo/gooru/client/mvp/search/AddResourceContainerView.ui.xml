@@ -1,0 +1,49 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with
+		type="org.ednovo.gooru.client.mvp.search.AddResourceContainerCBundle"
+		field="res"></ui:with>
+		<ui:style field="FolderStyle" src="AddResourceContainerSuccess.css"/>
+		
+	 <g:FlowPanel ui:field="addContent">
+	 			<g:HTMLPanel ui:field="createCollectionbuttonsContainer">
+				<g:Label ui:field="addResourceText" styleName=""></g:Label>
+				<g:Anchor ui:field="addCollectiorOrReourceText"></g:Anchor>
+				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="loadingImage" styleName="loadingImage"/>
+			
+				<g:ScrollPanel ui:field="dropdownListContainerScrollPanel" styleName="{res.css.dropdownListContainerScrollPanel} dropdownListContainerScrollPanel ">
+	            	<g:HTMLPanel ui:field="floderTreeContainer" styleName="{res.css.folderStucture}">
+			   		</g:HTMLPanel>
+				</g:ScrollPanel>
+				<g:Label ui:field="displayErrorLabel" styleName="{res.css.selectionErrorLabel}"></g:Label>
+				<g:Label ui:field="displayCountLabel" styleName="{res.css.selectionCountLabel}"></g:Label>
+				<g:HTMLPanel ui:field="buttonsContainer" styleName="{res.css.assignmentButtonsContainer}">
+					<g:Button styleName="primary {res.css.assignButton}"  ui:field="addResourceBtnLbl" />
+					<g:Label ui:field="addingText" styleName=""></g:Label>
+				</g:HTMLPanel>
+				
+				
+				<g:HTMLPanel ui:field="enableSuccessView">
+				     <div class="{FolderStyle.popupMain}">
+						<div class="{FolderStyle.popupInner}">
+						<!--  <g:Label styleName="{FolderStyle.popupHeader}" ui:field="titleLabel"/> -->
+							<g:HTMLPanel styleName="{FolderStyle.popupContent}" ui:field="contentPnl">
+			                    <div class="{FolderStyle.icon} {FolderStyle.complete}"></div>
+			                   		 <g:Label styleName="{FolderStyle.header}" ui:field="headerTitle"/>
+			                   		 <g:InlineLabel styleName="{FolderStyle.headerppp}" ui:field="headerTitleDes"></g:InlineLabel>
+			                   		 <g:InlineLabel styleName="{FolderStyle.headerppp}" ui:field="headerTitleDesUsername"></g:InlineLabel>
+			                 </g:HTMLPanel>
+							<g:HTMLPanel styleName="{FolderStyle.okCancel}" ui:field="buttonContainerEnableSuccessView">
+								 <g:Button styleName="secondary" ui:field="cancelButton"/>
+							     <g:Button styleName="primary" ui:field="okButton"/>
+							</g:HTMLPanel>
+						</div>
+					</div>
+				</g:HTMLPanel>
+				
+				
+	</g:FlowPanel>
+	
+</ui:UiBinder>

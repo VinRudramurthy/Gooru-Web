@@ -24,17 +24,17 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.library.customize;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.ResourceServiceAsync;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.home.library.assign.AssignPopUpCBundle;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshCollectionInShelfListEvent;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshType;
-import org.ednovo.gooru.client.service.ResourceServiceAsync;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -44,7 +44,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -72,7 +71,6 @@ public abstract class LoginCustomizePopUp extends PopupPanel {
 
 	@Inject
 	private ResourceServiceAsync resourceService;
-
 	private SimpleAsyncCallback<CollectionDo> saveCollectionAsyncCallback;
 
 	@UiTemplate("LoginCustomizePopUp.ui.xml")
@@ -81,11 +79,13 @@ public abstract class LoginCustomizePopUp extends PopupPanel {
 	}
 
 	private static final Binder binder = GWT.create(Binder.class);
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	/**
 	 * 
 	 */
-	public LoginCustomizePopUp(String collectionId, final Boolean loginFlag) {
+	public LoginCustomizePopUp(String collectionId, final Boolean loginFlag,final String collectionTitle) {
 		super(false);
 		this.res = AssignPopUpCBundle.INSTANCE;
 		res.css().ensureInjected();
@@ -101,21 +101,16 @@ public abstract class LoginCustomizePopUp extends PopupPanel {
 		popupcontentCustomize.setVisible(false);
 		loadingImageLabel.setVisible(true);
 
-		AppClientFactory.getInjector().getClasspageService().getSCollIdClasspageById(collectionId, new AsyncCallback<CollectionDo>(){
-
-			@Override
-			public void onFailure(Throwable caught) {
-				
-			}
+		AppClientFactory.getInjector().getClasspageService().getSCollIdClasspageById(collectionId, new SimpleAsyncCallback<CollectionDo>(){
 
 			@Override
 			public void onSuccess(CollectionDo result) {
-				successDesc.setText(MessageProperties.GL0476);
+				successDesc.setText(i18n.GL0476());
 
 				if (loginFlag) {
 					loginCustom.setVisible(true);
 					copyCollectionSuccess.setVisible(false);
-				LoginPluginView assignWidget = new LoginPluginView(result) {
+				LoginPluginView assignWidget = new LoginPluginView(result,collectionTitle) {
 						
 						@Override
 						public void closePoupfromChild() {
@@ -123,7 +118,7 @@ public abstract class LoginCustomizePopUp extends PopupPanel {
 						}
 
 						@Override
-						public void showSuccessMsgfromChild(String collectionId) {
+						public void showSuccessMsgfromChild(String collectionId,String collectionTitle) {
 							showSuccessMsg(collectionId);
 							
 						}

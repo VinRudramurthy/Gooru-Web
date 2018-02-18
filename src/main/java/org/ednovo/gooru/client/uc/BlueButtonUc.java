@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -33,12 +33,12 @@ import com.google.gwt.user.client.ui.Button;
 public class BlueButtonUc extends Button {
 
 	/**
-	 * Class constructor, set style for button  
+	 * Class constructor, set style for button
 	 */
 	public BlueButtonUc() {
 		super();
-		this.setStyleName(UcCBundle.INSTANCE.css().gooruBlueButton());
-		
+		this.setStyleName("Uc-gooruBlueButton");
+
 	}
 
 	/**
@@ -49,14 +49,14 @@ public class BlueButtonUc extends Button {
 		this();
 		setText(text);
 	}
-	
+
 	public void setEnable(boolean isEnable){
 		if (isEnable){
-			this.setStyleName(UcCBundle.INSTANCE.css().gooruBlueButton());
+			this.setStyleName("Uc-gooruBlueButton");
 		}else{
-			this.setStyleName(UcCBundle.INSTANCE.css().disableGooruButon());
+			this.setStyleName("Uc-disableGooruButon");
 		}
 	}
-	
-	
+
+
 }

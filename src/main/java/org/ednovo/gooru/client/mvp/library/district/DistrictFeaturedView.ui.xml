@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field="districtStyleUc" src="district.css" type="org.ednovo.gooru.client.mvp.library.district.DistrictStyleBundle" />
+		<panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="featuredCourse">
+	        <g:HTMLPanel styleName="{districtStyleUc.courseImage} {districtStyleUc.chemistry}">
+	           <g:Image ui:field="featuredCourseImage"/>
+	           <g:Image styleName="{districtStyleUc.contributorImage}" ui:field="contributorImage"/>
+	        </g:HTMLPanel>
+	        <g:Label styleName="{districtStyleUc.courseTitle}" ui:field="courseTitle"></g:Label>
+	        <g:Label ui:field="courseAuthor"></g:Label>
+		</panel:HTMLEventPanel>
+</ui:UiBinder>

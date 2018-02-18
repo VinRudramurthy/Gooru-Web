@@ -24,8 +24,8 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.home.register;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.user.UserDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.user.UserDo;
 
 import com.gwtplatform.mvp.client.PopupView;
 

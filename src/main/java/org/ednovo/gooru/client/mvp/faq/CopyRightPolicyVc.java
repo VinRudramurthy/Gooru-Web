@@ -24,7 +24,8 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.faq;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 
 import com.google.gwt.core.client.GWT;
@@ -67,7 +68,11 @@ public abstract class CopyRightPolicyVc extends PopupPanel {
 	@UiHandler("termsCloseBtn")
 	public void privacyCloseButtonClick(ClickEvent clickEvent) {
 		this.hide();
-		Window.enableScrolling(true);
+		if (AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.SEARCH_COLLECTION) || AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken().equalsIgnoreCase(PlaceTokens.SEARCH_RESOURCE)){
+			Window.enableScrolling(false);
+		}else{
+			Window.enableScrolling(true);
+		}
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
 		openParentPopup();
 	}

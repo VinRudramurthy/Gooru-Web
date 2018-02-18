@@ -24,9 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.shared.util;
 
-import java.io.Serializable;
+import com.google.gwt.user.client.rpc.IsSerializable; 
+import java.util.Map;
 
-public class AttemptedAnswersDo implements Serializable{
+public class AttemptedAnswersDo implements IsSerializable{
 	
 	private static final long serialVersionUID = 4393225749052874789L;
 	
@@ -35,6 +36,7 @@ public class AttemptedAnswersDo implements Serializable{
 	private String answersText;
 	private int answerId;
 	private String[] fibAnswersList;
+	private Map<Integer,Boolean> answerOptionResult;
 	
 	public int getQuestionType() {
 		return questionType;
@@ -71,6 +73,12 @@ public class AttemptedAnswersDo implements Serializable{
 	 */
 	public void setFibAnswersList(String[] fibAnswersList) {
 		this.fibAnswersList = fibAnswersList;
+	}
+	public Map<Integer,Boolean> getAnswerOptionResult() {
+		return answerOptionResult;
+	}
+	public void setAnswerOptionResult(Map<Integer,Boolean> answerOptionResult) {
+		this.answerOptionResult = answerOptionResult;
 	}
 
 }

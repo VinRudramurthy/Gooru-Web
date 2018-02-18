@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	 <g:HTMLPanel>
+		    <g:HTMLPanel styleName="csw-collectionSummaryDetailsWrapper">
+				<g:HTMLPanel styleName="csw-left_container">
+				<g:Image ui:field="collectionImage" styleName="csw-collection_teacher_img"></g:Image>
+				<g:HTMLPanel styleName="csw-collection_details_teacher">
+				<g:InlineLabel ui:field="collectionTitle"></g:InlineLabel>
+				<br/>
+				<g:InlineLabel ui:field="collectionResourcesCount" styleName="csw-question_resource_details"></g:InlineLabel>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="csw-resource_in_collection_teacher_summary" ui:field="pnlCollectionLastAccessed">
+				<g:InlineLabel styleName="csv-collectionLastAccessed"  ui:field="collectionLastAccessedlbl"></g:InlineLabel>
+				<g:InlineLabel ui:field="collectionLastAccessed" styleName="csw-question_resource_details"></g:InlineLabel>
+				</g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			 <g:HTMLPanel ui:field="sessionsPnl" styleName="sessionsPnl">
+					<g:HTMLPanel styleName="csw-left_container">
+						<g:HTMLPanel styleName="session_details">
+						   <g:InlineLabel ui:field="sessionAccessedTime"></g:InlineLabel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="csw-resource_in_collection_teacher_summary">
+						<g:InlineLabel styleName="csv-collectionLastAccessed"  ui:field="sessionText"></g:InlineLabel>
+						<g:InlineLabel ui:field="sessionValue" styleName="csw-question_resource_details"></g:InlineLabel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		 </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,433 @@
+@charset "utf-8";
+/* CSS Document */
+#taxonomyStructureSelectionPopup {
+	padding:25px 0;
+	background:rgba(0,0,0,0.3);
+}
+
+#taxonomyStructureSelectionPopup header{
+	position:relative;
+}
+#taxonomyStructureSelectionPopup  header.standerdHeader{
+	padding:8px 0;
+	border-radius:4px 4px 0 0;
+	-webkit-border-radius:4px 4px 0 0;
+	-moz-border-radius:4px 4px 0 0;
+
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#515151));
+	background: -webkit-linear-gradient(top, #666666, #515151);
+		background: -moz-linear-gradient(top, #666666, #515151);
+	background: -ms-linear-gradient(top, #666666, #515151);
+	background: -o-linear-gradient(top, #666666, #515151);
+
+
+
+}
+
+#taxonomyStructureSelectionPopup .containerHeight{
+
+height:auto;
+}
+#taxonomyStructureSelectionPopup .scrollCourseContainer{
+	height: 424px;
+	overflow-y: auto;
+}
+
+#taxonomyStructureSelectionPopup  .standerdTxt{
+	font-size:18px;
+	color:#ffffff;
+	font-weight:normal;
+	padding:4px 15px;
+}
+#taxonomyStructureSelectionPopup  .greyBox{
+	background:#dddddd;
+	padding:10px 15px;
+}
+#taxonomyStructureSelectionPopup  .greyBox p{
+	margin:0 0;
+	color:#515151;
+}
+#taxonomyStructureSelectionPopup  .standerdHeader .closeBtn{
+	margin-top:5px;
+	text-align:right;
+}
+
+#taxonomyStructureSelectionPopup  .standarBodyContainer{
+	background:#ffffff;
+	padding:15px 15px;
+}
+#taxonomyStructureSelectionPopup  .standarBodyContainer .optinHeader{
+	padding:6px 10px;
+	font-weight:bold;
+	background:#efeeee;
+	color:#515151;
+}
+#taxonomyStructureSelectionPopup .buttonGroupContainer{
+	padding:0 0 15px 0;
+}
+#taxonomyStructureSelectionPopup  .listGroup{
+	margin:0 0 0  0;
+	border:1px solid #dddddd;
+	border-radius:4px 4px;
+
+}
+#taxonomyStructureSelectionPopup  .listGroup  ul li div{
+	color:#515151;
+	display:block;
+	line-height: 16px;
+
+}
+#taxonomyStructureSelectionPopup  .listGroup ul li.active div
+{
+
+	background: none repeat scroll 0% 0% rgb(207, 227, 241);
+
+}
+#taxonomyStructureSelectionPopup  .listGroup ul li.active a
+{
+
+	background: none repeat scroll 0% 0% rgb(207, 227, 241);
+
+}
+#taxonomyStructureSelectionPopup  .standarFooterContainer{
+	background:#ffffff;
+	border-radius:0 0 4px 4px;
+	-webkit-border-radius:0 0 4px 4px;
+	-moz-border-radius:0 0 4px 4px;
+}
+#taxonomyStructureSelectionPopup  .listGroup .border-right{
+	padding-left:0 !important;
+	padding-right:0 !important;
+		border-right:1px solid #cccccc;
+		 min-height: 450px;
+}
+
+#taxonomyStructureSelectionPopup  .listGroup ul li a{
+	color:#515151;
+	padding:6px 10px;
+	display:block;
+	line-height: 16px;
+}
+#taxonomyStructureSelectionPopup  .listGroup ul li .standardDiv{
+	color:#515151;
+	padding:6px 10px;
+	display:block;
+	line-height: 16px;
+}
+
+#taxonomyStructureSelectionPopup  .listGroup ul li .standardDivSub{
+	color:#515151;
+	padding:6px 10px;
+	display:block;
+	line-height: 16px;
+	padding-left:30px;
+}
+
+
+#taxonomyStructureSelectionPopup  .listGroup ul li .standardDivSubSub{
+	color:#515151;
+	padding:6px 10px;
+	display:block;
+	line-height: 16px;
+	padding-left:60px;
+}
+
+#taxonomyStructureSelectionPopup  .listGroup ul li .standardDivSub:hover{
+	color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+	opacity:1;
+	cursor: pointer;
+
+}
+
+#taxonomyStructureSelectionPopup  .listGroup ul li .standardDivSubSub:hover{
+	color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+	opacity:1;
+	cursor: pointer;
+
+}
+
+#taxonomyStructureSelectionPopup  .listGroup ul li a:hover{
+	color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+	opacity:1;
+
+}
+
+#taxonomyStructureSelectionPopup .filterTags {
+  display: inline-block;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+#taxonomyStructureSelectionPopup .filterTags ul {
+  margin: 0;
+  padding: 0;
+}
+#taxonomyStructureSelectionPopup .filterTags ul li {
+  background: #87badd none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  list-style: outside none none;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  padding: 8px 10px;
+}
+
+#taxonomyStructureSelectionPopup .filterTags ul li a {
+  color: #ffffff;
+  font-size: 10px;
+  padding: 0 0 0 5px;
+  display: inline-block;
+}
+
+#taxonomyStructureSelectionPopup .filterTags ul li a:hover, .filterTags ul li a:focus {
+  outline: medium none;
+  text-decoration: none;
+}
+
+#taxonomyStructureSelectionPopup .filterTags ul li a span{
+	margin-left:5px;
+}
+
+
+#taxonomyStructureSelectionPopup .addButton{
+	text-align:right;
+}
+#taxonomyStructureSelectionPopup .addButton button.primary{
+	padding:8px 25px;
+}
+#taxonomyStructureSelectionPopup  .listGroup ul li.active a,.listGroup ul li.focus a{
+		color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+}
+#taxonomyStructureSelectionPopup  .listGroup ul li a:active,.listGroup ul li a:focus{
+		color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+}
+#taxonomyStructureSelectionPopup .domainColumn ul li a{
+	color:#000000;
+}
+
+#taxonomyStructureSelectionPopup  .listGroup .domainColumn ul li.active a, #taxonomyStructureSelectionPopup  .listGroup .domainColumn ul li.focus a{
+		color:#000000;
+	background:#cfe3f1;
+	text-decoration:none;
+}
+
+#taxonomyStructureSelectionPopup .taxonomyMenu{
+	padding:10px 15px 0 15px;
+	background:#ffffff;
+}
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-group-justified{
+	border:1px solid #dddddd;
+	border-radius:4px 4px;
+
+}
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default{
+	font-size:13px;
+	color:#999999;
+	font-weight:bold;
+	border:none;
+	padding:8px 12px;
+		background:#efeeee;
+}
+
+#taxonomyStructureSelectionPopup .errorLblPosition{
+	float: right;
+	padding: 5px 0px 5px 0px;
+}
+
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default.active,
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default.focus,
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default:active,
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default:focus,
+#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default:hover,
+#taxonomyStructureSelectionPopup .taxonomyMenu .open > .dropdown-toggle.btn-default {
+    background-color: #d7e8f4;
+    color: #1076bb;
+	box-shadow:none;
+	outline:none;
+}
+
+
+
+
+#gettingstartedmycollections {
+    padding-left:70px;
+    padding-right:70px;
+}
+#gettingstartedmycollections .gettingStartedHeader {
+    margin-bottom: 45px;
+}
+#gettingstartedmycollections .gettingStartedHeader h2 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Arvo", serif;
+    margin: 30px 0 10px 0;
+    text-align: center;
+    color: #515151;
+}
+#gettingstartedmycollections .gettingStartedHeader h4 {
+    color: #4e9746;
+    font-size: 18px;
+    font-family: "Arvo", serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#gettingstartedmycollections .gettingStartedHeader p.lead {
+    font-size: 16px;
+    color: #515151;
+    font-family: "Arvo", serif;
+    margin: 0 62px;
+    text-align: center;
+}
+#gettingstartedmycollections .learningCollectionsFormativeAssessments {
+    text-align: center;
+}
+#gettingstartedmycollections .learningCollectionsFormativeAssessments h3 {
+    font-size: 18px;
+    font-family: "Arvo", serif;
+    color: #515151;
+    margin: 15px 0;
+}
+#gettingstartedmycollections .learningCollectionsFormativeAssessments .img-responsive {
+    display: inline-block;
+}
+#gettingstartedmycollections .learningCollectionsFormativeAssessments .contentText {
+    margin: 20px 8px;
+    min-height: 85px;
+    font-family: "Arvo", serif;
+    color: #515151;
+}
+#gettingstartedmycollections .bottomLink {
+    margin-top: 40px;
+    text-align: center;
+}
+#gettingstartedmycollections .bottomLink a {
+    color: #0074be;
+}
+#gettingstartedmycollections .bottomLink a:hover,
+#gettingstartedmycollections .bottomLink a:focus {
+    text-decoration: none;
+}
+#gettingstartedmycollections .LearningCollections {
+    border-right: 1px solid #979797;
+}
+
+@media (min-width: 240px) and (max-width: 319px){
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		min-height:inherit;
+	}
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+	#taxonomyStructureSelectionPopup .btn-group-justified > .btn,
+	#taxonomyStructureSelectionPopup .btn-group-justified > .btn-group{
+		display:block;
+		width:100%;
+	}
+	#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default{
+		font-size:13px;
+	}
+	#gettingstartedmycollections {
+	    padding-left: 25px;
+	    padding-right: 25px;
+	}
+	#gettingstartedmycollections .gettingStartedHeader p.lead {
+	    margin: 0 20px;
+	}
+	#gettingstartedmycollections .LearningCollections {
+	    border-right: none;
+	    border-bottom: 1px solid #979797;
+	    margin-bottom: 15px;
+	    padding-bottom: 15px;
+	}
+}
+
+
+@media (min-width: 320px) and (max-width: 479px) {
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		min-height:inherit;
+	}
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+	#taxonomyStructureSelectionPopup .btn-group-justified > .btn,
+	#taxonomyStructureSelectionPopup .btn-group-justified > .btn-group{
+		display:block;
+		width:100%;
+	}
+	#taxonomyStructureSelectionPopup .taxonomyMenu .btn-default{
+		font-size:12px;
+	}
+	#gettingstartedmycollections {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    #gettingstartedmycollections .gettingStartedHeader p.lead {
+        margin: 0 20px;
+    }
+    #gettingstartedmycollections .LearningCollections {
+        border-right: none;
+        border-bottom: 1px solid #979797;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		min-height:inherit;
+	}
+	#taxonomyStructureSelectionPopup .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+	#gettingstartedmycollections {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #gettingstartedmycollections .gettingStartedHeader p.lead {
+        margin: 0 20px;
+    }
+    #gettingstartedmycollections .LearningCollections {
+        border-right: none;
+        border-bottom: 1px solid #979797;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+    #gettingstartedmycollections .learningCollectionsFormativeAssessments .contentText {
+        min-height: inherit;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #gettingstartedmycollections {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #gettingstartedmycollections .learningCollectionsFormativeAssessments .contentText {
+        min-height: 105px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #gettingstartedmycollections {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (min-width: 1200px) {}

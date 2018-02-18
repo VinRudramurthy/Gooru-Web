@@ -1,0 +1,60 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:ucp="urn:import:org.ednovo.gooru.client.uc.suggestbox.widget">
+		<g:HTMLPanel styleName="col-md-6 col-sm-6 visibleElement">
+			<g:HTMLPanel styleName="panel panel-default">
+				<g:HTMLPanel styleName="panel-heading">
+					<div class="no-gutter">
+						<g:HTMLPanel styleName="col-md-6 col-sm-6 col-xs-6 viewContainer">
+							<span>
+								<img title="Number of Remixes" src="images/rev-arrows.png"/> <g:Label styleName="authorName" ui:field="remixCountLbl"></g:Label>
+							</span>
+							<span>
+								<img title="Number of Views" src="images/eye.png"/> <g:Label ui:field="lblViewCount" styleName="authorName"></g:Label>
+							</span>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="col-md-6 col-sm-6 col-xs-6 remixButton">
+							<g:Button styleName="primary" ui:field="remixBtn">Remix</g:Button>
+						</g:HTMLPanel>
+						<div class="clearfix"></div>
+					</div>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="panel-body">
+					<g:HTMLPanel styleName="no-gutter">
+						<g:HTMLPanel styleName="col-md-6 col-sm-6 collectionImg">
+							<a>
+								<g:Image ui:field="imgCollection"/>
+							</a>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="col-md-6 col-sm-6 collectionDesc">
+							<g:Label styleName="collectionTitleincoll" ui:field="collectionTitle"/>
+							<g:HTMLPanel styleName="userDetails">
+								<g:Image ui:field="imgAuthor"/>
+								<g:Label ui:field="authorName" styleName="authorName authorNameAddLeft"/>
+								<g:FlowPanel ui:field="teamContainer" styleName="authorName"></g:FlowPanel>
+								<g:HTMLPanel ui:field="creatorPanel"></g:HTMLPanel>
+							</g:HTMLPanel>
+							<g:HTMLPanel styleName="collectionDescription" ui:field="collectionDescription"/>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+
+						<g:HTMLPanel styleName="standerdContainer">
+							<g:FlowPanel styleName="searchStandard" ui:field="standardsDataPanel"/>
+							<!-- <g:InlineLabel styleName="additionalCount">+4</g:InlineLabel> -->
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="resourcesInside" ui:field="pnlResourceWidget">
+							<ucp:Paragraph ui:field="pResourceText"/>
+							<g:Label styleName="noResourcesText" ui:field="noResourcesText"/>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				<!-- <g:HTMLPanel styleName="panel-footer no-gutter">
+					<g:HTMLPanel styleName="col-md-12 col-sm-12 remixButton">
+						<g:Button styleName="primary" ui:field="remixBtn">Remix</g:Button>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				</g:HTMLPanel> -->
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+</ui:UiBinder>

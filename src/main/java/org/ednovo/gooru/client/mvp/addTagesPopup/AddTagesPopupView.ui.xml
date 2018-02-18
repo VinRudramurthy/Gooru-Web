@@ -1,0 +1,208 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"  xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui"  xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n"
+	type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="PopupMainSmall">
+		  <g:HTMLPanel  styleName="popupInnerGrey">
+		    <g:HTMLPanel styleName="popupgreyHeader" >
+		        <g:HTMLPanel styleName="row">
+		            <g:HTMLPanel styleName="col-md-12 col-xs-12">
+		            	<g:InlineLabel ui:field="addTagesTitle"></g:InlineLabel>
+		      			<g:Label styleName="at-tag"></g:Label>
+		            </g:HTMLPanel>
+		            <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+		        </g:HTMLPanel>
+		      </g:HTMLPanel >
+		    <g:HTMLPanel ui:field="addTagesContent" styleName="addTagsContent">
+		        <gg:PPanel ui:field="popupContentText"></gg:PPanel>
+		        <!-- 21Centuary Start -->
+			 <g:FlowPanel ui:field="centuaryContainer">
+					<g:Label styleName="addQuestionStandard"	ui:field="centuaryDefaultText"></g:Label>
+					<g:FlowPanel styleName="standardsCont">
+							<gg:AppSuggestBox ui:field="centurySgstBox" styleName="form-control at-browseInput form_control" />
+							<g:Button ui:field="centbrowseBtn" styleName="secondary">Browse</g:Button>
+							<g:Label styleName="at-standardMaxHide" ui:field="centuaryMaxMsg" />
+							<g:FlowPanel ui:field="centuryPanel" styleName="at-collectionStandardsMargin" />
+					</g:FlowPanel>
+			 </g:FlowPanel>
+			 <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+       		 <!-- 21Centuary End -->
+		        <br/>
+		      <g:HTMLPanel styleName="AddTagesPopup-h5">
+		      		<g:Label  ui:field="headerEducationalUse"></g:Label>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		     		 <g:Anchor  ui:field="activity"></g:Anchor>
+		      </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor ui:field="handout"></g:Anchor>
+		     </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor ui:field="homework"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		     		 <g:Anchor  ui:field="game"></g:Anchor>
+		      </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor  ui:field="presentation"></g:Anchor>
+		     </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		     	 <g:Anchor  ui:field="refMaterial"></g:Anchor>
+		     </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor  ui:field="quiz"></g:Anchor>
+		     </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="currPlan"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="lessonPlan"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="unitPlan"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="projectPlan"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		     		 <g:Anchor  ui:field="reading"></g:Anchor>
+		      </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		     	 <g:Anchor  ui:field="textbook"></g:Anchor>
+		     </g:HTMLPanel>
+		     <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor  ui:field="article"></g:Anchor>
+		     </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		     	 <g:Anchor  ui:field="book"></g:Anchor>
+		      </g:HTMLPanel>
+
+		      <g:HTMLPanel styleName="at-clearfix"></g:HTMLPanel>
+		      <!-- Standards Start -->
+			 <g:FlowPanel ui:field="standardContainer">
+					<g:Label styleName="addQuestionStandard"	ui:field="standardsDefaultText"></g:Label>
+					<g:FlowPanel styleName="standardsCont">
+						<gg:AppSuggestBox ui:field="standardSgstBox" styleName="form-control at-browseInput form_control" />
+						<tinyMce:HTMLEventPanel styleName="btn-group"
+									ui:field="btnStandardsBrowse">
+									<g:Button styleName="btn standardsContainerBswnbtn" text="{i18n.GL3479}"
+										title="{i18n.GL3479}" />
+									<g:HTMLPanel styleName="btn standardsContainerBswnbtn dropdown-toggle">
+										<g:InlineLabel styleName="caret"></g:InlineLabel>
+										<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+									</g:HTMLPanel>
+								</tinyMce:HTMLEventPanel>
+								<g:HTMLPanel ui:field="standardsCont">
+									<gg:UlPanel styleName="dropdown-menu"
+									ui:field="standardsDropListValues"></gg:UlPanel></g:HTMLPanel>
+							<g:Label styleName="at-standardMaxHide" ui:field="standardMaxMsg" />
+								<g:HTMLPanel styleName="filterTags">
+									<gg:UlPanel ui:field="ulSelectedItems" />
+								</g:HTMLPanel>
+					<!-- 		<g:FlowPanel ui:field="standardsPanel"	styleName="{res.css.collectionStandardsMargin}" /> -->
+					</g:FlowPanel>
+			 </g:FlowPanel>
+       		 <!-- Standards End -->
+		      <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-levelType">
+		        <g:Label  styleName="AddTagesPopup-h5" ui:field="lexileHeader"></g:Label >
+		        <g:HTMLPanel styleName="AddTagesPopup-levels">
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         	 <g:Anchor  ui:field="kindergarden"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		           		<g:Anchor  ui:field="level1"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level2"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level3"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level4"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level5"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level6"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level7"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level8"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level9"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level10"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level11"></g:Anchor>
+		           </g:HTMLPanel>
+		           <g:HTMLPanel styleName="AddTagesPopup-levelnumbers">
+		         		 <g:Anchor  ui:field="level12"></g:Anchor>
+		           </g:HTMLPanel>
+		       </g:HTMLPanel>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+		      <g:Label styleName="AddTagesPopup-h5" ui:field="AdsHeader"></g:Label>
+		   	  <g:HTMLPanel styleName="AddTagesPopup-li">
+		   	  		<g:Anchor  ui:field="noAds"></g:Anchor>
+		   	  </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="modAds"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	    <g:Anchor  ui:field="aggreAds"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:Label styleName="at-clearfix"></g:Label>
+		      <g:Label styleName="AddTagesPopup-h5" ui:field="accessHazard"></g:Label>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor  ui:field="flashingHazard"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      	<g:Anchor  ui:field="motionSimulationHazard"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-li">
+		      		<g:Anchor  ui:field="soundHazard"></g:Anchor>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+		      <br/>
+		      <g:HTMLPanel styleName="AddTagesPopup-levelType">
+		      <g:HTMLPanel styleName="row">
+		      <g:HTMLPanel styleName="col-md-8 mediaFeature">
+		       <g:Label styleName="AddTagesPopup-h5" ui:field="mediaLabel"/>
+			   <g:HTMLPanel styleName="btn-group">
+  				<g:Anchor ui:field="lblMediaPlaceHolder" styleName="btn btn-default dropdown-toggle at-mediaFeature">
+    			</g:Anchor>
+			      <g:ScrollPanel ui:field="spanelMediaFeaturePanel"
+					styleName="at-scrollPanelContainerInstructional" >
+    				<gg:UlPanel ui:field="htmlMediaFeatureListContainer"></gg:UlPanel>
+    			</g:ScrollPanel>
+
+			  </g:HTMLPanel>
+		       </g:HTMLPanel>
+		     <g:HTMLPanel styleName="col-md-4">
+		        <g:HTMLPanel styleName="AddTagesPopup-h5"><g:InlineLabel ui:field="moblieFriendly"></g:InlineLabel><br />
+		        <g:Button styleName="at-OnButtonDeActive" ui:field="mobileYes"></g:Button>
+		        <g:Button styleName="at-OnButtonDeActive" ui:field="mobileNo"></g:Button>
+		      </g:HTMLPanel>
+		      </g:HTMLPanel>
+		      <g:HTMLPanel styleName="clearfix"/>
+		       </g:HTMLPanel>
+		    </g:HTMLPanel>
+		      <g:HTMLPanel styleName="AddTagesPopup-okcancel">
+
+		      <g:Button styleName="primary" ui:field="addTagsBtn"></g:Button>
+		      <g:Button styleName="secondary" ui:field="cancelBtn"></g:Button>
+		      </g:HTMLPanel>
+
+		    </g:HTMLPanel>
+		  </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

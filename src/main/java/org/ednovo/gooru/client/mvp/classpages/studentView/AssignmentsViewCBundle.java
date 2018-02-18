@@ -29,8 +29,19 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 
 /**
- * @author Search Team
  * 
+ * @fileName : AssignmentsViewCBundle.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface AssignmentsViewCBundle extends ClientBundle {
 
@@ -113,7 +124,6 @@ public interface AssignmentsViewCBundle extends ClientBundle {
 
 		String collectionHover();
 
-		String playIcon();
 	}
 
 	@Source("assignments.css")

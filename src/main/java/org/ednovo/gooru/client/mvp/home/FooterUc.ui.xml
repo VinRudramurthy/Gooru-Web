@@ -13,18 +13,15 @@
 		}
 
 		.learnMoreIconsDiv div{
-			<!-- float: left; -->
 			margin-top: 10px;
 		}
 
 		div.learnMoreIconsDiv div.socialTextConnectUs, div.learnMoreIconsDiv div.socialBlogImages{
-			<!-- float: left; -->
 			margin-top: 8px;
 			display:inline-block
 		}
 
 		.socialBlogImages {
-			<!-- margin-left:60px; -->
 		}
 
 		.socialBlogImages a span {
@@ -56,8 +53,7 @@
 		}
 
 		.innerFooterDiv {
-			<!-- margin:auto;
-			width: 690px; -->
+			
 		}
 
 		.socialBlogImages a {
@@ -69,7 +65,6 @@
 		}
 
 		.learnMoreIconsDiv {
-			<!-- margin:auto; -->
 			width: 100%;
 		}
 
@@ -98,9 +93,9 @@
 							target="_blank">
 							<span class="{res.css.googleplusImage}"></span>
 						</a>
-						<a href="http://pinterest.com/goorulearning/" target="_blank">
+						<!--  <a href="http://pinterest.com/goorulearning/" target="_blank">
 							<span class="{res.css.pinterestImage}"></span>
-						</a>
+						</a>-->
 					</g:HTML>
 				</g:FlowPanel>
 				<g:HTMLPanel styleName="{res.css.homePageFooterMenu}">
@@ -119,14 +114,14 @@
 						<g:Label ui:field="copyRightYearText"/>
 					</g:SimplePanel>
 				</g:HTMLPanel>
-				<div style="width: 114px;height: 36px;overflow: hidden;display: inline-block;margin-top: 10px;">
+				<!-- <div style="width: 114px;height: 36px;overflow: hidden;display: inline-block;margin-top: 10px;">
 				    <g:Anchor ui:field="mixpanelLink">
-					<!-- <a href="https://mixpanel.com/f/partner" ui:filed="mixpanelLink"> -->
+					<a href="https://mixpanel.com/f/partner" ui:filed="mixpanelLink">
 						<img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png"
 							alt="Mobile Analytics"/>
-					<!-- </a> -->
+					</a>
 					</g:Anchor>
-				</div>
+				</div> -->
 			</g:HTMLPanel>
 		</g:FlowPanel>
 	</g:FlowPanel>

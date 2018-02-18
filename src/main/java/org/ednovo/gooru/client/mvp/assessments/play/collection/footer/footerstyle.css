@@ -1,0 +1,214 @@
+.footerContainer{
+	background:#333333;
+	padding:8px 0 0px 0;
+	position:fixed;
+	width:100%;
+	float:left;
+	bottom:0;
+	z-index: 999;
+	bottom:0 !important;
+	overflow: hidden;
+}
+.footerContainer .infoButtonNormal{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -3px -4px;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:31px;
+	height:30px;
+}
+
+.footerContainer .infoButtonNormal:hover{
+	background:url(images/player/player_sprite_new.png) no-repeat -3px -44px;
+	opacity:1;
+	cursor: pointer;
+}
+
+.footerContainer .infoButtonActive{
+display:inline-block;
+	width:31px;
+	height:30px;
+	background:url(images/player/player_sprite_new.png) no-repeat -3px -44px;
+	opacity:1;
+	cursor: pointer;
+}
+
+.infoButtonDisabled{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -3px -4px;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:31px;
+	height:30px;
+}
+
+ .fullscreenButtonNormal{
+	display:inline-block;
+	background:url(images/Player_FullScreen.png) no-repeat;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:45px;
+	height:43px;
+}
+
+ .fullscreenButtonNormal:hover{
+	background:url(images/Player_FullScreen.png) no-repeat;
+	opacity:.6;
+	cursor: pointer;
+}
+.fullscreenButtonActive{
+	display:inline-block;
+	background:url(images/Player_FullScreen.png) no-repeat;
+	opacity:1;
+	width:45px;
+	height:43px;
+	cursor: pointer;
+}
+.fullscreenButtonDisabled{
+	display:inline-block;
+	background:url(images/Player_FullScreen.png) no-repeat;
+	opacity:.6;
+	width:45px;
+	height:43px;
+}
+
+ .narrationButtonNormal{
+	display:inline-block;
+	background:url(images/player/narration.png) no-repeat;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:45px;
+	height:43px;
+}
+
+ .narrationButtonNormal:hover{
+	background:url(images/player/narration.png) no-repeat;
+	opacity:.6;
+	cursor: pointer;
+}
+.narrationButtonActive{
+	display:inline-block;
+	background:url(images/player/narration.png) no-repeat;
+	opacity:1;
+	width:45px;
+	height:43px;
+	cursor: pointer;
+}
+.narrationButtonDisabled{
+	display:inline-block;
+	background:url(images/player/narration.png) no-repeat;
+	opacity:.6;
+	width:45px;
+	height:43px;
+}
+
+
+.footerContainer .addButtonNormal{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -138px -4px;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:31px;
+	height:30px;
+	
+}
+
+.footerContainer .addButtonNormal:hover{
+	background:url(images/player/player_sprite_new.png) no-repeat -138px -44px;
+	opacity:1;
+	cursor: pointer;
+}
+.footerContainer .addButtonActive{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -138px -44px;
+	opacity:1;
+	width:31px;
+	height:30px;
+	cursor: pointer;
+}
+
+.addButtonDisabled{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -138px -4px;
+	width:31px;
+	height:30px;
+}
+
+.footerContainer .shareButtonNormal{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -188px -4px;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:31px;
+	height:30px;
+}
+
+.footerContainer .shareButtonNormal:hover{
+
+	background:url(images/player/player_sprite_new.png) no-repeat -188px -44px;
+	opacity:1;
+	cursor: pointer;
+}
+.footerContainer .shareButtonActive{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -188px -44px;
+	opacity:1;
+	width:31px;
+	height:30px;
+	cursor: pointer;
+}
+
+.shareButtonDisabled{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -188px -4px;
+	width:31px;
+	height:30px;
+}
+
+.footerContainer .flagButtonNormal{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -240px -4px;
+	/* transition:all 0.5s ease-in-out 0s; */
+	width:31px;
+	height:30px;
+}
+
+.footerContainer .flagButtonNormal:hover{
+	background:url(images/player/player_sprite_new.png) no-repeat -240px -44px;
+	opacity:1;
+	cursor: pointer;
+
+}
+
+.footerContainer .flagButtonActive{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -240px -44px;
+	opacity:1;
+	width:31px;
+	height:30px;
+	cursor: pointer;
+}
+.flagButtonDisable{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -240px -4px;
+	width:31px;
+	height:30px;
+}
+.flagButtonOrange{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -281px -4px;
+	width:31px;
+	height:30px;
+	cursor: pointer;
+}
+.flagButtonOrangeActive{
+	display:inline-block;
+	background:url(images/player/player_sprite_new.png) no-repeat -281px -4px;
+	width:31px;
+	height:30px;
+	cursor: pointer;
+}
+.text-right{
+	text-align:right;
+}
+.textRightMargin{
+	text-align:right;
+}
+.endPageIframe iframe{
+	width: 100% !important;
+	height: 422px !important;
+}

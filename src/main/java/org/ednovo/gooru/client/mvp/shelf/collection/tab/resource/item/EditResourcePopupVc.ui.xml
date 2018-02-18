@@ -10,9 +10,14 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle"
 		field="res"></ui:with>
+		<ui:with
+		type="org.ednovo.gooru.client.mvp.shelf.collection.CollectionCBundle"
+		field="res1" />
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
 	<g:HTMLPanel styleName="{res.css.myWebResourceContainer}">
 		<g:HTMLPanel styleName="{res.css.myFolderCollectionFormContent}">
-			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="urlTextPanel"/> 
+			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="urlTextPanel"/>
 			<g:HTMLPanel>
 				<g:Label ui:field="urlTextLbl" styleName="{res.css.inputTextBox}" />
 			</g:HTMLPanel>
@@ -29,7 +34,7 @@
 				ui:field="mandatoryTitleLbl"></g:Label>
 		</g:HTMLPanel>
 		<g:HTMLPanel styleName="{res.css.myFolderCollectionFormContent}">
-			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="resDescription"/> 
+			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="resDescription"/>
 			<g:HTMLPanel
 				styleName="{res.css.myFolderCollectionFormInputControl} {res.css.myFolderCollectionFormTextarea} editResourceDescriptionContainer">
 					<g:TextArea styleName="{res.css.inputTextBox} {res.css.newPopupTextAreaEdit}" ui:field="descriptionTxtAera" />
@@ -40,9 +45,9 @@
 				ui:field="descCharcterLimit"></g:HTMLPanel>
 		</g:HTMLPanel>
 		<g:HTMLPanel styleName="{res.css.myFolderCollectionFormContent}">
-			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="resourceFormat"/> 
+			<g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="resourceFormat"/>
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDiv}">
-				<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryInputDiv}">
+				<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryInputDivRFormat}" ui:field="panelCategory">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDivText}">
 						<g:HTMLPanel>
 							<g:HTMLPanel styleName="" ui:field="categorypanel"></g:HTMLPanel>
@@ -57,14 +62,14 @@
 				<g:Label styleName="{res.css.addNewResourceMandatoryCategory}"
 					ui:field="mandatoryCategoryLbl"></g:Label>
 			</g:HTMLPanel>
-		
-					 <g:HTMLPanel styleName="" ui:field="resourceTypePanel">
-			<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderUpdateDropdown}">
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+
+		 <g:HTMLPanel styleName="{res.css.reorderLabelContainerRFormat}" ui:field="resourceTypePanel">
+			<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderDropdownRFormat}">
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="videoResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteVideo}" ui:field="video">
@@ -73,12 +78,12 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="videoPanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="interactiveResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteInteractive}" ui:field="interactive">
@@ -87,12 +92,12 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="interactivePanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="websiteResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteWebsite}" ui:field="website">
@@ -101,12 +106,12 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="websitePanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="imageResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteImage}" ui:field="image">
@@ -115,12 +120,12 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="imagePanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="textResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteText}" ui:field="texts">
@@ -129,12 +134,12 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="textsPanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
-					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
+					styleName="{res.css.myFolderCollectionFolderVideoOuterContainerRFormat}"
 					ui:field="audioResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
-						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdiv}">
+						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoInnerdivRFormat}">
 							<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContent}">
 								<g:HTMLPanel
 									styleName="{res.css.myFolderCollectionFolderspriteNew} {res.css.myFolderCollectionFolderspriteAudio}" ui:field="audio">
@@ -143,8 +148,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="audioPanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-					<!-- <uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel>
+					<!-- <tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="otherResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -157,8 +162,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}" ui:field="otherPanel"/>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel> -->
-				<!-- <uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel> -->
+				<!-- <tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="slideResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -171,8 +176,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}">Slide</g:HTMLPanel>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="handoutResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -185,8 +190,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}">Handout</g:HTMLPanel>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="textbookResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -199,8 +204,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}">TextBook</g:HTMLPanel>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="lessonResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -213,8 +218,8 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}">Lesson</g:HTMLPanel>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel>
-				<uc:HTMLEventPanel
+				</tinyMce:HTMLEventPanel>
+				<tinyMce:HTMLEventPanel
 					styleName="{res.css.myFolderCollectionFolderVideoOuterContainer}"
 					ui:field="examResourcePanel">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoContainer}">
@@ -227,14 +232,14 @@
 						</g:HTMLPanel>
 						<g:HTMLPanel styleName="{res.css.myFolderCollectionFolderVideoTitle}">Exam</g:HTMLPanel>
 					</g:HTMLPanel>
-				</uc:HTMLEventPanel> -->
+				</tinyMce:HTMLEventPanel> -->
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-			
-			
+
+
 		</g:HTMLPanel>
-		
-		<g:HTMLPanel styleName="{res.css.myFolderCollectionThumbImageContainer}">
+
+		<g:HTMLPanel styleName="{res.css.standardsInEditResource}">
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionThumbImageDesc}" ui:field="thumbnailLbl"></g:HTMLPanel>
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionThumbRect}">
 				<g:HTMLPanel styleName="{res.css.myFolderCollectionThumbArrLContainer}">
@@ -248,8 +253,9 @@
 						ui:field="rightArrowLbl"></g:Label>
 				</g:HTMLPanel>
 				<g:HTMLPanel styleName="{res.css.myFolderCollectionThumbRectDesc}">
-					<g:Label styleName="" 
-						ui:field="generateImageLbl"></g:Label>
+					<!-- <g:Label styleName=""
+						ui:field="generateImageLbl"></g:Label> -->
+						 <g:Image url="" ui:field="generateImageLbl" styleName="{res.css.resourceThumbnailImage}"></g:Image>
 					<g:Image url="" ui:field="setThumbnailImage" styleName="{res.css.resourceThumbnailImage}"></g:Image>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
@@ -261,19 +267,161 @@
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionRefreshMainContainer}">
 				<g:HTMLPanel styleName="{res.css.myFolderCollectionRefreshContainer}">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionRefreshInnerContainer}">
-						<g:Label
-							styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionRefreshIcon}"
-							ui:field="refreshLbl"></g:Label>
+						<g:Label styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionRefreshIcon}"	ui:field="refreshLbl"></g:Label>
 					</g:HTMLPanel>
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionRefreshText}" ui:field="refreshLblPanel"></g:HTMLPanel>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-		
+
+
+
+
+		<g:HTMLPanel styleName="{res.css.advncedOption}"><g:InlineLabel ui:field="advancedText"></g:InlineLabel></g:HTMLPanel>
+		<!-- Educational use -->
+		 <g:HTMLPanel styleName="{res.css.myEducationalFormContent}" ui:field="educationalContainer">
+		 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconEducationalUse"></tinyMce:HTMLEventPanel>
+          <g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="educationalTitle"></g:HTMLPanel>
+          <g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDiv}">
+			<tinyMce:HTMLEventPanel styleName="{res.css.myEducationPanelInputDiv}" ui:field="educatioNalUseDropContainer">
+				<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDivText} dropdown">
+							<g:Anchor ui:field="resourceEducationalLabel" styleName="dropdown-toggle dropdownBorder"></g:Anchor>
+							<uc:UlPanel styleName=" dropdown-menu dropdownScroll"	ui:field="educationalUsePanel"></uc:UlPanel>
+						</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.myEducationArrowleftContainer}">
+						<g:Label ui:field="educationalDropDownLbl"	styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionArrowleft}"></g:Label>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+
+            <g:Label styleName="{res.css.addNewResourceMandatoryCategory}" ui:field="mandatoryEducationalLbl"></g:Label>
+          </g:HTMLPanel>
+        </g:HTMLPanel>
+
+
+		<!-- Educational use End -->
+		        	<!-- Moments of Learning -->
+		 <g:HTMLPanel styleName="{res.css.myEducationalFormContent}" ui:field="momentsOfLearningContainer">
+		 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconMomentsOfLearning"></tinyMce:HTMLEventPanel>
+          <g:HTMLPanel styleName="{res.css.myFolderCollectionFormTitle}" ui:field="momentsOfLearningTitle"></g:HTMLPanel>
+          <g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDiv}">
+			<tinyMce:HTMLEventPanel ui:field="momentsOfLearningDropDownContianer" styleName="{res.css.myEducationPanelInputDiv}">
+					<g:HTMLPanel styleName="{res.css.myFolderCollectionCategoryDivText}  dropdown">
+								<g:Anchor styleName="dropdown-toggle dropdownBorder"	ui:field="resourcemomentsOfLearningLabel"></g:Anchor>
+								<uc:UlPanel styleName=" dropdown-menu dropdownScroll"	ui:field="momentsOfLearningPanel"></uc:UlPanel>
+						</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.myEducationArrowleftContainer}">
+						<g:Label ui:field="momentsOfLearningDropDownLbl" styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionArrowleft}"></g:Label>
+					</g:HTMLPanel>
+				</tinyMce:HTMLEventPanel>
+
+            <g:Label styleName="{res.css.addNewResourceMandatoryCategory}" ui:field="mandatorymomentsOfLearninglLbl"></g:Label>
+          </g:HTMLPanel>
+        </g:HTMLPanel>
+       	<!-- Moments of Learning  End-->
+
+		<!-- Standards Start -->
+		<g:HTMLPanel ui:field="standardsBrowseContainer">
+		 <g:FlowPanel ui:field="standardContainer">
+		 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconstandards"></tinyMce:HTMLEventPanel>
+					<g:Label styleName="{res.css.shelfGradeInfoBottomWeb}"
+						ui:field="standardsDefaultText"></g:Label>
+					<g:FlowPanel styleName="{res1.css.shelfCourseSubject}">
+						<g:FlowPanel styleName="{res1.css.addResourceSuggestedBox}">
+							<g:FlowPanel styleName="{res1.css.standardsEditResourceCont}">
+								<uc:AppSuggestBox ui:field="standardSgstBox" width="255px" height="19px" styleName="contentBoxStyles"/>
+									<!-- <g:HTMLPanel styleName="{res1.css.browseContainer}">
+										<g:Button ui:field="browseStandards" styleName="secondary">Browse</g:Button>
+									</g:HTMLPanel> -->
+									<tinyMce:HTMLEventPanel styleName="btn-group"
+									ui:field="btnStandardsBrowse">
+									<g:Button styleName="btn standardsContainerBswnbtn" text="{i18n.GL3479}"
+										title="{i18n.GL3479}" />
+									<g:HTMLPanel styleName="btn standardsContainerBswnbtn dropdown-toggle">
+										<g:InlineLabel styleName="caret"></g:InlineLabel>
+										<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+									</g:HTMLPanel>
+								</tinyMce:HTMLEventPanel>
+							<g:HTMLPanel ui:field="standardsCont">
+									<uc:UlPanel styleName="dropdown-menu"
+									ui:field="standardsDropListValues"></uc:UlPanel></g:HTMLPanel>
+								 <g:HTMLPanel ui:field="errorContainer"></g:HTMLPanel>
+								<g:Label styleName="{res1.css.standardMaxHide}" ui:field="standardMaxMsg" />
+								<g:HTMLPanel styleName="filterTags">
+									<uc:UlPanel ui:field="ulSelectedItems" />
+								</g:HTMLPanel>
+								<!-- <g:FlowPanel ui:field="standardsPanel" styleName="{res1.css.collectionStandardsMargin}" /> -->
+							</g:FlowPanel>
+						</g:FlowPanel>
+					</g:FlowPanel>
+				</g:FlowPanel>
+				</g:HTMLPanel>
+        <!-- Standards End -->
+
+        <!-- 21 century Start -->
+		<g:HTMLPanel ui:field="centuryBrowseContainer">
+		 <g:FlowPanel ui:field="centuryContainer">
+		 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconCentury"></tinyMce:HTMLEventPanel>
+					<g:Label styleName="{res.css.shelfGradeInfoBottomWeb}"	ui:field="centuryDefaultText"></g:Label>
+					<g:FlowPanel styleName="{res1.css.shelfCourseSubject}">
+						<g:FlowPanel styleName="{res1.css.addResourceSuggestedBox}">
+							<g:FlowPanel styleName="{res1.css.standardsEditResourceCont}">
+								<uc:AppSuggestBox ui:field="centurySgstBox" width="255px" height="19px" styleName="contentBoxStyles"/>
+										<g:Button ui:field="browseCentury" styleName="secondary">Browse</g:Button>
+								 <g:HTMLPanel ui:field="errorContainerForCentury"></g:HTMLPanel>
+								<g:Label styleName="{res1.css.standardMaxHide}" ui:field="centuryMaxMsg" />
+								<g:FlowPanel ui:field="centuryPanel" styleName="{res1.css.collectionStandardsMargin}" />
+							</g:FlowPanel>
+						</g:FlowPanel>
+					</g:FlowPanel>
+				</g:FlowPanel>
+				</g:HTMLPanel>
+        <!-- 21 century End -->
+
+		<!--accessHazard -->
+      	<g:Label styleName="{res.css.clearfix}"></g:Label>
+      	<g:HTMLPanel ui:field="accessHazardContainer">
+      	 	 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconAccessHazard"></tinyMce:HTMLEventPanel>
+		      <g:Label styleName="{res.css.accessHazard}" ui:field="accessHazard"></g:Label>
+		      <g:HTMLPanel ui:field="hazardContainer"></g:HTMLPanel>
+		      <g:Label styleName="{res.css.clearfix}"></g:Label>
+		 </g:HTMLPanel>
+      	 <!-- accessHazard End -->
+      	 <!--mediaLabel -->
+      	 <br />
+      	 	<g:HTMLPanel ui:field="mediaFeatureContainer">
+      	 	 <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconMediafeature"></tinyMce:HTMLEventPanel>
+				  <g:Label styleName="{res.css.h5}" ui:field="mediaLabel" />
+
+	 		      <g:HTMLPanel styleName="{res.css.dropdownContainerInstructional}" ui:field="mediaLabelContainer">
+	 		      <g:Label ui:field="lblMediaPlaceHolder" styleName="{res.css.placeHolderText}"></g:Label>
+								<!-- <g:Label ui:field="lblMediaFeatureArrow" styleName="{res.css.arrowInstructional}"></g:Label> -->
+								<g:HTMLPanel styleName="{res.css.myEducationArrowleftContainer}" ui:field="mediaDropdownArrowConatainer">
+								<g:Label ui:field="lblMediaFeatureArrow" styleName="{res.css.myFolderCollectionPopupSprite} {res.css.myFolderCollectionArrowleft}"></g:Label>
+			      				 </g:HTMLPanel>
+			       <g:ScrollPanel ui:field="spanelMediaFeaturePanel"
+									styleName="{res.css.scrollPanelContainerInstructional}">
+									<g:HTMLPanel ui:field="htmlMediaFeatureListContainer"
+										styleName=""></g:HTMLPanel>
+								</g:ScrollPanel>
+			      </g:HTMLPanel>
+		      </g:HTMLPanel>
+      	 <!-- mediaLabel End -->
+      	 <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+      	  <!--moblieFriendly -->
+      	   <g:HTMLPanel ui:field="mobileFriendlyContainer">
+      	   <tinyMce:HTMLEventPanel styleName="{res.css.eHeader}" ui:field="eHearderIconMobileFriendly"></tinyMce:HTMLEventPanel>
+		      	 <g:HTMLPanel styleName="{res.css.h5} {res.css.selectsection}"><g:InlineLabel ui:field="moblieFriendly"></g:InlineLabel><br />
+				    <g:Button styleName="{res.css.OnButtonDeActive}" ui:field="mobileYes"></g:Button>
+				    <g:Button styleName="{res.css.OnButtonDeActive}" ui:field="mobileNo"></g:Button>
+				 </g:HTMLPanel>
+		 </g:HTMLPanel>
+      	 <!-- moblieFriendly End -->
+		 <tinyMce:HTMLEventPanel ui:field="AdvancedSetupContainer"></tinyMce:HTMLEventPanel>
+
 		 <g:HTMLPanel styleName="{res.css.resourceRightsContainerPdf}" ui:field="rightsContainer">
         	<g:CheckBox ui:field="rightsChkBox" styleName="{res.css.resourceRightsCheckBox}" checked="true"></g:CheckBox>
-        	<g:Label ui:field="rightsLbl" styleName="{res.css.ownResourceFormDeclarationText}"></g:Label> 
-     <uc:HTMLEventPanel ui:field="lblContentRights" styleName="{res.css.ownResourceFormRightsContent}">
+        	<g:Label ui:field="rightsLbl" styleName="{res.css.ownResourceFormDeclarationText}"></g:Label>
+     <tinyMce:HTMLEventPanel ui:field="lblContentRights" styleName="{res.css.ownResourceFormRightsContent}">
 	        	<g:HTMLPanel styleName="{res.css.resourceRightsPopupContainer}" ui:field="panelContentRights">
 					<g:HTMLPanel styleName="{res.css.arrowShadow}"></g:HTMLPanel>
 					<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
@@ -281,21 +429,26 @@
 					<g:HTMLPanel styleName="{res.css.resourceRightsInnerPopup}">
 						<!-- <g:HTMLPanel ui:field="htmlContentRightsDesc"></g:HTMLPanel> -->
 						<g:HTMLPanel ui:field="rightsContent">
-						<g:Label ui:field="agreeText"/>
-						<g:Anchor styleName="{res.css.anchorText}" ui:field="commuGuideLinesAnr"/>,<g:Anchor styleName="{res.css.customAnchorText}" ui:field="termsAndPolicyAnr"/>
-     						<g:Anchor styleName="{res.css.customAnchorText}" ui:field="privacyAnr"/>
-     		 			<g:Label ui:field="andText" styleName="{res.css.andText}" ></g:Label> <g:Anchor styleName="{res.css.anchorText}" ui:field="copyRightAnr"/>  <g:Label ui:field="additionalText" styleName="{res.css.additionalText}"/>
-    	 					</g:HTMLPanel>
+
+							<g:InlineLabel ui:field="agreeText"/>
+     						<g:InlineLabel styleName="{res.css.anchorText}" ui:field="commuGuideLinesAnr"/>
+     						<g:InlineLabel styleName="{res.css.customAnchorText}" ui:field="termsAndPolicyAnr"/>
+     						<g:InlineLabel styleName="{res.css.customAnchorText}" ui:field="privacyAnr"/>
+     		 				<g:InlineLabel ui:field="andText" styleName="{res.css.andText}" />
+     		 				<g:InlineLabel styleName="{res.css.anchorText}" ui:field="copyRightAnr"/>
+     		 				<g:InlineLabel ui:field="additionalText" styleName="{res.css.additionalText}"/>
+						</g:HTMLPanel>
 					</g:HTMLPanel>
 				</g:HTMLPanel>
-        	</uc:HTMLEventPanel>
+        	</tinyMce:HTMLEventPanel>
          </g:HTMLPanel>
-		
-		
+
+
 		<g:HTMLPanel styleName="{res.css.myFolderEditButtonContainer}" ui:field="saveButtonContainer">
 			<g:Button styleName="primary" ui:field="addResourceBtn" />
-			<g:Anchor styleName="{res.css.myFolderCollectionCancel}" 
-				ui:field="cancelResourcePopupBtnLbl" />
+			<!-- <g:Anchor styleName="{res.css.myFolderCollectionCancel}"
+				ui:field="cancelResourcePopupBtnLbl" /> -->
+				<g:Button styleName="grayPrimaryButton" ui:field="cancelResourcePopupBtnLbl"></g:Button>
 		</g:HTMLPanel>
 		<g:Label styleName="{res.css.myFolderEditButtonContainer}" ui:field="loadingTextLbl"></g:Label>
 	</g:HTMLPanel>

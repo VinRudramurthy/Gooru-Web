@@ -27,7 +27,21 @@ package org.ednovo.gooru.client;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
-
+/**
+ * 
+ * @fileName : GooruCBundle.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public interface GooruCBundle extends ClientBundle {
 	
 	static final GooruCBundle INSTANCE = GWT.create(GooruCBundle.class);
@@ -39,8 +53,6 @@ public interface GooruCBundle extends ClientBundle {
 		String goorulandingHeaderContainer();
 		
 		String logoDiv();
-		
-		String gooruLearningIcon();
 		
 		String editSearchInputBoxDiv();
 		
@@ -72,7 +84,7 @@ public interface GooruCBundle extends ClientBundle {
 		
 		String googleplusImage();
 		
-		String pinterestImage();
+		//String pinterestImage();
 		
 		String homePageFooterMenu();
 		
@@ -96,10 +108,6 @@ public interface GooruCBundle extends ClientBundle {
 		String gooruClassicView();
 		
 		/*String classicViewLabel();*/
-		
-		String gooruGuideImg();
-		
-		String loggedInGooruGuideImg();
 		
 		String imageUrlError();
 		
@@ -149,11 +157,10 @@ public interface GooruCBundle extends ClientBundle {
 		
 		String goorulandingFooterContainerNew();
 		
-		String discoverDropDown();
-		
 		String discoverDropDownBorder();
 		
 		String discoverTextStyle();
+		String positionStyle();
 		
 	}
 	@Source("Gooru.css")

@@ -6,7 +6,7 @@
 	<ui:style field= "playerStyle" src="resourcetocview.css"/>
 	<g:FlowPanel styleName="{playerStyle.collection-home-container}" ui:field="endContainer">
 		<g:FlowPanel  ui:field="endImageContainer" styleName="{playerStyle.collection-top-homeContainer}">
-			<g:FlowPanel styleName="{playerStyle.collection-home-thumbnail}"> 
+			<g:FlowPanel styleName="{playerStyle.collection-home-thumbnail}" ui:field="resourceThumbnailContainer"> 
 				<g:Label styleName="{playerStyle.collection-home-type}"></g:Label>
 				<g:Label styleName="{playerStyle.collection-home-overlay}"></g:Label>
 				<g:Image styleName="{playerStyle.collection-home-image}" ui:field="resourceThumbnail"></g:Image>

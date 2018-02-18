@@ -1,0 +1,54 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with type="org.ednovo.gooru.client.mvp.analytics.collectionSummaryIndividual.CollectionSummaryIndividualCBundle" field="unitStyle" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel>
+		<g:HTMLPanel ui:field="maincontainer">
+			<g:HTMLPanel ui:field="tabContainer"/>
+			 <g:HTMLPanel ui:field="individualScoredDatapnl">
+			 <g:HTMLPanel styleName="{unitStyle.css.resource_monitor_header_title}">
+			      <g:HTMLPanel styleName="{unitStyle.css.floatLeft}"><g:InlineLabel styleName="{unitStyle.css.correct_legend_one}" ></g:InlineLabel><g:InlineLabel styleName="correct-one {unitStyle.css.correct_incorrect_text}" text="{i18n.GL2267}" title="{i18n.GL2267}"></g:InlineLabel></g:HTMLPanel>
+			      <g:HTMLPanel styleName="{unitStyle.css.floatLeft}"><g:InlineLabel styleName="{unitStyle.css.correct_legend_other}"></g:InlineLabel><g:InlineLabel styleName="correct-other {unitStyle.css.correct_incorrect_text}" text="{i18n.GL2268}" title="{i18n.GL2268}"></g:InlineLabel></g:HTMLPanel>
+			      <g:HTMLPanel styleName="{unitStyle.css.floatLeft}"><g:InlineLabel styleName="{unitStyle.css.incorrect_legend}"></g:InlineLabel><g:InlineLabel styleName="incorrect-ans {unitStyle.css.correct_incorrect_text}"  text="{i18n.GL2269}" title="{i18n.GL2269}"></g:InlineLabel></g:HTMLPanel>
+			 </g:HTMLPanel>
+			<g:HTMLPanel ui:field="individualScoredData" styleName="{unitStyle.css.individualScore}"/>
+			</g:HTMLPanel>
+			<g:Label ui:field="userInfo" text="{i18n.GL3343}"></g:Label>
+			<g:HTMLPanel ui:field="individualOpenendedData"  styleName="{unitStyle.css.individualScore}" />
+			<g:HTMLPanel ui:field="individualResourceBreakdownDatapnl">
+				 <g:HTMLPanel styleName="{unitStyle.css.collectionOverViewpnl}" ui:field="panelOverview">
+				 	   <g:Label styleName="{unitStyle.css.collectionOverviewText}" text="{i18n.GL2274}" title="{i18n.GL2274}" ui:field="lblCollectionOverview"></g:Label>
+
+					 	<div class="{unitStyle.css.collectionTimeSpentDetails} {unitStyle.css.no_gutter}">
+						 	<div class="col-md-4 col-sm-4">
+							   <div class="{unitStyle.css.collectionBreakDown_infobox}">
+							   <g:Label styleName="{unitStyle.css.collectionBreakDown_infobox_titles}" text="{i18n.GL2275}" title="{i18n.GL2275}" ui:field="lblTotalTimeSpent"></g:Label>
+							   <g:Label styleName="{unitStyle.css.collectionBreakDown_infobox_titles}" ui:field="totalTimeSpentlbl"></g:Label>
+							   </div>
+						    </div>
+						    <div class="col-md-4 col-sm-4">
+							   <div class="{unitStyle.css.collectionBreakDown_infobox}">
+							   <g:Label styleName="{unitStyle.css.collectionBreakDown_infobox_titles}" text="{i18n.GL2276}" title="{i18n.GL2276}" ui:field="lblViews"></g:Label>
+							   <g:Label styleName="{unitStyle.css.collectionBreakDown_infobox_titles}" ui:field="totalViewlbl"></g:Label>
+							   </div>
+						    </div>
+						    <div class="col-md-4 col-sm-4">
+							   <div class="{unitStyle.css.collectionBreakDown_infobox}">
+							   <g:Label styleName="{unitStyle.css.collectionBreakDown_infobox_titles}"  text="{i18n.GL2277}" title="{i18n.GL2277}" ui:field="lblAvgReaction"></g:Label>
+							  <g:HTMLPanel styleName="{unitStyle.css.collectionBreakDown_infobox_titles}" ui:field="totalAvgReactionlbl"></g:HTMLPanel>
+							  </div>
+						  </div>
+						  <div class="clearfix"></div>
+					   </div>
+				 </g:HTMLPanel>
+				 <g:ListBox ui:field="filterDropDown" styleName="{unitStyle.css.filterDropDown}"/>
+					<div class="clearfix"></div>
+				 <g:HTMLPanel ui:field="individualResourceBreakdownData"  styleName="{unitStyle.css.individualScore} col-md-12 "/>
+		 </g:HTMLPanel>
+		 	<g:HTMLPanel ui:field="printWidget" styleName="{unitStyle.css.printWidget}"></g:HTMLPanel>
+			</g:HTMLPanel>
+		<g:Label ui:field="noErrorMesage" styleName="{unitStyle.css.showEmptyMessage}" text="{i18n.GL3102}" title="{i18n.GL3102}"></g:Label>
+		<g:Frame ui:field="downloadFile"></g:Frame>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,10 +23,10 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  * @fileName : LibraryTopicListView.java
  *
- * @description : 
+ * @description :
  *
  *
  * @version : 1.0
@@ -45,40 +45,51 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.StandardFo;
+import org.ednovo.gooru.application.shared.model.folder.FolderTocDo;
+import org.ednovo.gooru.application.shared.model.library.ConceptDo;
+import org.ednovo.gooru.application.shared.model.library.LessonDo;
+import org.ednovo.gooru.application.shared.model.library.LibraryCollectionItemDo;
+import org.ednovo.gooru.application.shared.model.library.LibraryResourceDo;
+import org.ednovo.gooru.application.shared.model.library.PartnerConceptListDo;
+import org.ednovo.gooru.application.shared.model.library.PartnerFolderDo;
+import org.ednovo.gooru.application.shared.model.library.TopicDo;
+import org.ednovo.gooru.application.shared.model.search.ResourceSearchResultDo;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
+import org.ednovo.gooru.client.mvp.gsearch.addResourcePopup.SearchAddResourceToCollectionPresenter;
+import org.ednovo.gooru.client.mvp.home.LoginPopupUc;
 import org.ednovo.gooru.client.mvp.home.library.assign.AssignPopupVc;
 import org.ednovo.gooru.client.mvp.home.library.customize.RenameAndCustomizeLibraryPopUp;
 import org.ednovo.gooru.client.mvp.home.library.events.OpenLessonConceptEvent;
 import org.ednovo.gooru.client.mvp.home.library.events.OpenLessonConceptHandler;
+import org.ednovo.gooru.client.mvp.home.library.events.SetConceptQuizDataEvent;
+import org.ednovo.gooru.client.mvp.home.library.events.SetConceptQuizDataHandler;
 import org.ednovo.gooru.client.mvp.home.library.events.SetLoadingIconEvent;
 import org.ednovo.gooru.client.mvp.home.library.events.SetLoadingIconHandler;
 import org.ednovo.gooru.client.mvp.home.library.events.StandardPreferenceSettingEvent;
 import org.ednovo.gooru.client.mvp.home.library.events.StandardPreferenceSettingHandler;
+import org.ednovo.gooru.client.mvp.rating.events.UpdateRatingsInRealTimeEvent;
+import org.ednovo.gooru.client.mvp.rating.events.UpdateRatingsInRealTimeHandler;
 import org.ednovo.gooru.client.uc.BrowserAgent;
 import org.ednovo.gooru.client.uc.DownToolTipWidgetUc;
 import org.ednovo.gooru.client.uc.StandardSgItemVc;
-import org.ednovo.gooru.client.uc.UcCBundle;
 import org.ednovo.gooru.client.uc.tooltip.GlobalToolTip;
 import org.ednovo.gooru.client.uc.tooltip.LibraryTopicCollectionToolTip;
 import org.ednovo.gooru.client.ui.HTMLEventPanel;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.content.StandardFo;
-import org.ednovo.gooru.shared.model.library.ConceptDo;
-import org.ednovo.gooru.shared.model.library.LessonDo;
-import org.ednovo.gooru.shared.model.library.LibraryCollectionItemDo;
-import org.ednovo.gooru.shared.model.library.LibraryResourceDo;
-import org.ednovo.gooru.shared.model.library.PartnerConceptListDo;
-import org.ednovo.gooru.shared.model.library.PartnerFolderDo;
-import org.ednovo.gooru.shared.model.library.TopicDo;
-import org.ednovo.gooru.shared.model.search.ResourceSearchResultDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.util.PlayerDataLogEvents;
+import org.ednovo.gooru.shared.util.ClientConstants;
 import org.ednovo.gooru.shared.util.ResourceImageUtil;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Display;
 import com.google.gwt.dom.client.Style.FontWeight;
+import com.google.gwt.event.dom.client.BlurEvent;
+import com.google.gwt.event.dom.client.BlurHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.ErrorEvent;
@@ -94,7 +105,6 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -108,7 +118,7 @@ import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
-public class LibraryTopicListView extends Composite implements MessageProperties{
+public class LibraryTopicListView extends Composite implements ClientConstants{
 
 	@UiField ScrollPanel lessonScrollPanel;
 	@UiField HTMLPanel topicBlock, conceptList,collectionInfo,resourcesInside,moreOnTopicText,standardsDescription;
@@ -116,162 +126,213 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 	@UiField Label topicTitleLbl, noCollectionLbl;
 	@UiField Image collectionImage;
 	@UiField HTML collectionTitleLbl, collectionDescriptionLbl;
-	@UiField Button assignCollectionBtn, customizeCollectionBtn;
+	@UiField Button assignCollectionBtn, customizeCollectionBtn,viewAllBtn;
 	@UiField HTMLPanel loadingImage, collectionViewer;
-	
+
 	@UiField LibraryStyleBundle libraryStyle;
+
+	@UiField Label collectionTitle, quizTitle;
 
 	private HandlerRegistration imageHandler;
 
 	private HandlerRegistration titleHandler;
-	
+
+	private String libraryGooruOid=null;
+
 	@UiField FlowPanel standardsFloPanel;
 
 	private Integer topicId;
-	
-	private boolean isScrollable = true;
-	
-	private boolean isAssignPopup = false;
-	
-	private boolean isCustomizePopup = false;
-	
-	private ConceptDo conceptDo;
-	
-	private String searchTitle="";
-	
-	private static final String DEFULT_IMAGE_PREFIX = "images/default-";
-	
-	private static final String PNG = ".png";
-	
-	private static final String SMALL = "Small";
-	
-	private static final String DEFAULT_COLLECTION_IMAGE = "../images/default-collection-image-160x120.png";
-	
-	private static Integer LESSON_PAGE_INITIAL_LIMIT = 3;
-	
-	private static String PAGE = "page";
-	
-	private static final String COURSE_PAGE = "course-page";
-	
-	private static final String STANDARD_CODE = "code";
 
-	private static final String STANDARD_DESCRIPTION = "description";
-	
-	private static final String PNG_CROP = "-80x60.";
-	
+	private boolean isScrollable = true;
+
+	public static boolean isAssignPopup = false;
+
+	public static boolean isCustomizePopup = false;
+
+	private static boolean isVisible=true;
+
+	private ConceptDo conceptDo;
+
+	private ArrayList<ConceptDo> conceptDoList;
+
+	private String searchTitle="";
+
+	private static final String  ASSESSMENT = "assessment";
+
 	private static LibraryTopicViewUiBinder uiBinder = GWT.create(LibraryTopicViewUiBinder.class);
-	
+
+	SearchAddResourceToCollectionPresenter remixPresenterWidget = AppClientFactory.getInjector().getRemixPresenterWidget();
+
 	private PopupPanel toolTipPopupPanel = new PopupPanel();
-	
+
 	private PopupPanel toolTipPopupPanelNew = new PopupPanel();
+	private PopupPanel toolTipPopupPanelCustomize = new PopupPanel();
 
 	private String placeToken = null;
-	
-	private static final String SUBJECT_NAME = "subject";
-	
-	private static final String STANDARDS="standard";
-	
-	private static final String SHARING_TYPE = "public";
-	
+
 	private int pageNumber = 2;
-	
+
 	String lessonCode="";
-	
+
+	String folderIdVal = "";
+	String folderIdValGbl = "";
+
+	String collectionIdVal = "";
+
 	List<String> standPrefCode = new ArrayList<String>();
 
-	private static final String STANDARD_ID = "standardId";
-	
-	interface LibraryTopicViewUiBinder extends
-			UiBinder<Widget, LibraryTopicListView> {
+	private static Integer LESSON_PAGE_INITIAL_LIMIT = 3;
+
+	private TopicDo topicDo = null;
+
+	Map<String,String> topicDetails = new HashMap<String,String>();
+
+	interface LibraryTopicViewUiBinder extends	UiBinder<Widget, LibraryTopicListView> {
 	}
 
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+
+
+	/**
+	 * Class constructor.(Calling from Library view {community library})
+	 * @param topicDo {@link TopicDo}
+	 * @param topicNumber {@link Integer}
+	 * @param placeToken {@link String}
+	 */
 	public LibraryTopicListView(TopicDo topicDo, Integer topicNumber, String placeToken) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.topicId = topicDo.getCodeId();
 		setPlaceToken(placeToken);
-		moreOnTopicText.getElement().setInnerHTML(GL1169);
-		assignCollectionBtn.setText(GL0104);
-		customizeCollectionBtn.setText(GL0631);
-		noCollectionLbl.setText(GL1170);
-		topicTitleLbl.setText(GL1171+" "+topicNumber+": "+topicDo.getLabel());
-		searchTitle=topicDo.getLabel();
-		
-		if(topicDo.getLesson()!=null) {
-			setLessonData(topicDo.getLesson());
-		} else {
-			setOnlyConceptData(topicDo.getCollection(), true, null, 0);
+		libraryGooruOid="";
+		if(PlaceTokens.COMMUNITY.equals(AppClientFactory.getPlaceManager().getCurrentPlaceRequest().getNameToken())){
+			libraryGooruOid=AppClientFactory.getLoggedInUser().getSettings().getCommunityLibraryGooruOid();
 		}
-		
+
+		topicTitleLbl.setText(i18n.GL1171()+" "+topicNumber+": "+topicDo.getLabel());
+		topicTitleLbl.getElement().setAttribute("alt",i18n.GL1171()+" "+topicNumber+": "+topicDo.getLabel());
+		topicTitleLbl.getElement().setAttribute("title",i18n.GL1171()+" "+topicNumber+": "+topicDo.getLabel());
+		searchTitle=topicDo.getLabel();
+		setElementsAttributes();
+		setIds();
+		setAssets();
+
+		toolTipPopupPanelCustomize.clear();
+		toolTipPopupPanelNew.clear();
+		toolTipPopupPanelCustomize.hide();
+		toolTipPopupPanelNew.hide();
+		if(topicDo.getLesson()!=null) {
+			setLessonData(topicDo.getLesson(),libraryGooruOid);
+		} else {
+			setOnlyConceptData(topicDo.getCollection(), true, null, 0,libraryGooruOid);
+		}
 		try {
+			this.topicDo = topicDo;
 			if(topicDo.getLesson()!=null) {
-				setConceptData(topicDo.getLesson().get(0).getCollection().get(0),topicDo.getCodeId(), topicDo.getLesson().get(0).getCodeId()+"", topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode());
+				if(topicDo.getLesson().get(0).getConcept()!=null&&topicDo.getLesson().get(0).getConcept().size()>0) {
+					setConceptDoList(topicDo.getLesson().get(0).getConcept().get(0).getCollection());
+					setConceptData(conceptDoList.get(0),topicDo.getCodeId(), topicDo.getLesson().get(0).getCodeId()+"", topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode(),libraryGooruOid);
+				} else {
+					setConceptData(topicDo.getLesson().get(0).getCollection().get(0),topicDo.getCodeId(), topicDo.getLesson().get(0).getCodeId()+"", topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode(),libraryGooruOid);
+				}
 			} else if (topicDo.getCollection()!=null) {
-				setConceptData(topicDo.getCollection().get(0),topicDo.getCodeId(),null, topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode());
+				if(topicDo.getLesson().get(0).getConcept()!=null&&topicDo.getLesson().get(0).getConcept().size()>0) {
+					setConceptDoList(topicDo.getLesson().get(0).getConcept().get(0).getCollection());
+					setConceptData(conceptDoList.get(0),topicDo.getCodeId(),null, topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode(),libraryGooruOid);
+				} else {
+					setConceptData(topicDo.getCollection().get(0),topicDo.getCodeId(),null, topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode(),libraryGooruOid);
+				}
 			} else {
 				setDefaultCollectionLbl();
 			}
 		} catch(Exception e) {
 			setDefaultCollectionLbl();
+			AppClientFactory.printSevereLogger("LibraryTopicListView::::"+e);
 		}
-		
-		
+
+		addCollectionQuizTitleData(LESSON);
+
 		String subjectName = AppClientFactory.getPlaceManager().getRequestParameter(SUBJECT_NAME);
 		if(subjectName!=null && subjectName.equalsIgnoreCase(STANDARDS)) {
 			searchLink.getElement().getStyle().setDisplay(Display.NONE);
+			viewAllBtn.setVisible(true);
+			if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.COMMUNITY)){
+				viewAllBtn.setVisible(false);
+			}
 		}
 		else
 		{
 			searchLink.getElement().getStyle().setDisplay(Display.BLOCK);
+			viewAllBtn.setVisible(false);
 		}
-		
+		//viewAllBtn.addClickHandler(new ViewAllBtnClickEvent());
+
 		searchLink.addClickHandler(new OnSearchLinkClick());
 		loadingImage.setVisible(false);
-		
+
 		assignCollectionBtn.addMouseOverHandler(new OnassignCollectionBtnMouseOver());
 		assignCollectionBtn.addMouseOutHandler(new OnassignCollectionBtnMouseOut());
 		customizeCollectionBtn.addMouseOverHandler(new OncustomizeCollectionBtnMouseOver());
 		customizeCollectionBtn.addMouseOutHandler(new OncustomizeCollectionBtnMouseOut());
-		
-		if(!AppClientFactory.isAnonymous()){
-			try {
-				getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
-			} catch (Exception e) {}
-		}else{
-			standardsFloPanel.setVisible(true);
-		}
-		
+		assignCollectionBtn.addBlurHandler(new assignTooltipBlur());
+		customizeCollectionBtn.addBlurHandler(new assignTooltipBlur());
+
+		loggedInUserStdPrefCode();
 		AppClientFactory.getEventBus().addHandler(OpenLessonConceptEvent.TYPE, openLessonConceptHandler);
 		AppClientFactory.getEventBus().addHandler(SetLoadingIconEvent.TYPE, setLoadingIconHandler);
 		AppClientFactory.getEventBus().addHandler(StandardPreferenceSettingEvent.TYPE, standardPreferenceSettingHandler);
+		AppClientFactory.getEventBus().addHandler(UpdateRatingsInRealTimeEvent.TYPE,setRatingWidgetMetaData);
+		AppClientFactory.getEventBus().addHandler(SetConceptQuizDataEvent.TYPE,setConceptQuizDataHandler);
+
+		getPopupAfterGMLogin();
+
+
 	}
-	
+
+	private boolean setQuizTabVisiblity(ArrayList<ConceptDo> conceptDoList) {
+		boolean isCollectionTabVisible = false;
+		if(conceptDoList!=null&&conceptDoList.size()>0){
+			for(int i=0;i<conceptDoList.size();i++){
+				if(conceptDoList.get(i).getCollectionType().equals("assessment")){
+					isCollectionTabVisible = true;
+					break;
+				}
+			}
+		}else{
+			return false;
+		}
+		return isCollectionTabVisible;
+	}
+
+
 	StandardPreferenceSettingHandler standardPreferenceSettingHandler= new StandardPreferenceSettingHandler(){
 		@Override
 		public List<String> getCode(List<String> standPrefCode) {
 			try {
-				
+
 				if(!AppClientFactory.isAnonymous()){
 					AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().setCode(standPrefCode);
-					getStandardPrefCode(standPrefCode); 
+					getStandardPrefCode(standPrefCode);
 				}else{
-					getStandardPrefCode(null); 
+					getStandardPrefCode(null);
 				}
-				
-			} catch (Exception e) {}
+
+			} catch (Exception e) {
+				AppClientFactory.printSevereLogger("LibraryTopicListView getCode"+e);
+			}
 			return standPrefCode;
-			
+
 			}
 	};
-	
+
 	protected void getStandardPrefCode(List<String> standPrefCode) {
 		if(!AppClientFactory.isAnonymous()) {
-			if(standPrefCode!=null){ 
+			if(standPrefCode!=null){
 				this.standPrefCode=standPrefCode;
 				standardsFloPanel.setVisible(true);
 				if(conceptDo!=null){
 					setMetaDataInfo(conceptDo);
 				}
-				
+
 			}else{
 				standardsFloPanel.setVisible(false);
 			}
@@ -280,178 +341,248 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 			if(conceptDo!=null){
 				setMetaDataInfo(conceptDo);
 			}
-			
+
 		}
 	}
-	
+	/**
+	 * To handle the Events of All fields here
+	 */
+	public void renderEvents(){
 
+		//viewAllBtn.addClickHandler(new ViewAllBtnClickEvent(lessonCode));
+	}
+
+	/**
+	 * To set the Id's for all fields
+	 */
+	public void setIds(){
+		topicBlock.getElement().setId("pnlTopicBlock");
+		topicTitleLbl.getElement().setId("lblTopicTitleLbl");
+		searchLink.getElement().setId("epnlSearchLink");
+		viewAllBtn.getElement().setId("btnViewAll");
+		moreOnTopicText.getElement().setId("pnlMoreOnTopicText");
+		lessonScrollPanel.getElement().setId("sbLessonScrollPanel");
+		conceptList.getElement().setId("pnlConceptList");
+		loadingImage.getElement().setId("pnlLoadingImage");
+		collectionViewer.getElement().setId("pnlCollectionViewer");
+		collectionInfo.getElement().setId("pnlCollectionInfo");
+		standardsDescription.getElement().setId("pnlStandardsDescription");
+		collectionImage.getElement().setId("imgCollectionImage");
+		collectionTitleLbl.getElement().setId("htmlCollectionTitleLbl");
+		collectionDescriptionLbl.getElement().setId("htmlCollectionDescriptionLbl");
+		standardsFloPanel.getElement().setId("fpnlStandardsFloPanel");
+		assignCollectionBtn.getElement().setId("btnAssignCollection");
+		customizeCollectionBtn.getElement().setId("btnCustomizeCollection");
+		resourcesInside.getElement().setId("pnlResourcesInside");
+		noCollectionLbl.getElement().setId("lnlNoCollectionLbl");
+		collectionTitle.getElement().setId("collectionTitle");
+		quizTitle.getElement().setId("quizTitle");
+		viewAllBtn.getElement().setAttribute("style", "float: right;margin: -25px -7px 0 0;");
+	}
+
+	private void setAssets() {
+		collectionTitle.setText(i18n.GL0645());
+		collectionTitle.getElement().setAttribute("alt",i18n.GL0645());
+		collectionTitle.getElement().setAttribute("title",i18n.GL0645());
+		quizTitle.setText(i18n.GL1670());
+		quizTitle.getElement().setAttribute("alt",i18n.GL1670());
+		quizTitle.getElement().setAttribute("title",i18n.GL1670());
+	}
+
+
+
+	/**
+	 * Class constructor (calling from library view)
+	 * @param conceptDo {@link ConceptDo}
+	 * @param conceptNumber {@link Integer}
+	 * @param placeToken {@link String}
+	 */
 	public LibraryTopicListView(ConceptDo conceptDo, Integer conceptNumber, String placeToken) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.topicId = conceptNumber;
 		setPlaceToken(placeToken);
-		assignCollectionBtn.setText(GL0104);
-		customizeCollectionBtn.setText(GL0631);
+		collectionImage.getElement().setAttribute("collid", conceptDo.getGooruOid());
+		collectionTitleLbl.getElement().setAttribute("collid", conceptDo.getGooruOid());
+		collectionTitleLbl.getElement().setAttribute(COLLECTION_TITLE,conceptDo.getTitle());
+
 		topicTitleLbl.setText(conceptDo.getTitle());
+		topicTitleLbl.getElement().setAttribute("alt",conceptDo.getTitle());
+		topicTitleLbl.getElement().setAttribute("title",conceptDo.getTitle());
 		searchTitle=conceptDo.getTitle();
-		moreOnTopicText.getElement().setInnerHTML(GL1169);
+		setElementsAttributes();
+
 		try {
-			setConceptData(conceptDo,conceptNumber,null, null,null);
+			setConceptData(conceptDo,conceptNumber,null, null,null,null);
 		} catch(Exception e) {
 			collectionInfo.setVisible(false);
 			resourcesInside.setVisible(false);
 			noCollectionLbl.setVisible(true);
+			AppClientFactory.printSevereLogger("LibraryTopicListView setConceptData:::"+e);
 		}
-		
-		//searchLink.getElement().getStyle().setDisplay(Display.NONE);
-		
+
+
 		assignCollectionBtn.addMouseOverHandler(new OnassignCollectionBtnMouseOver());
 		assignCollectionBtn.addMouseOutHandler(new OnassignCollectionBtnMouseOut());
 		customizeCollectionBtn.addMouseOverHandler(new OncustomizeCollectionBtnMouseOver());
 		customizeCollectionBtn.addMouseOutHandler(new OncustomizeCollectionBtnMouseOut());
-		
-		
+		assignCollectionBtn.addBlurHandler(new assignTooltipBlur());
+		customizeCollectionBtn.addBlurHandler(new assignTooltipBlur());
+		setIds();
+		setAssets();
+		addCollectionQuizTitleData(CONCEPT);
 		lessonScrollPanel.setVisible(false);
 		collectionViewer.addStyleName(libraryStyle.collectionViewerSubStyle());
 		collectionInfo.addStyleName(libraryStyle.collectionInfoSubStyle());
 		resourcesInside.addStyleName(libraryStyle.resourcesInsideSubStyle());
 		searchLink.addClickHandler(new OnSearchLinkClick());
 		loadingImage.setVisible(false);
-		if(!AppClientFactory.isAnonymous()){
-			try {
-				getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
-			} catch (Exception e) {}
-		}else{
-			standardsFloPanel.setVisible(true);
-		}
-		
+		loggedInUserStdPrefCode();
+		getPopupAfterGMLogin();
+
+		/**
+		 * Following events to set standard preference based on settings and to display ratings widget respectively
+		 */
 		AppClientFactory.getEventBus().addHandler(StandardPreferenceSettingEvent.TYPE, standardPreferenceSettingHandler);
+		AppClientFactory.getEventBus().addHandler(UpdateRatingsInRealTimeEvent.TYPE,setRatingWidgetMetaData);
 	}
 
 
-	
-
-
-	public LibraryTopicListView(PartnerFolderDo partnerFolderDo, int topicNumber, String placeToken) {
+	/**
+	 * Class constructor calling from library view and partner library view.
+	 * @param partnerFolderDo {@link PartnerFolderDo}
+	 * @param topicNumber {@link Integer}
+	 * @param placeToken {@link String}
+	 * @param libraryGooruOid {@link String}
+	 */
+	public LibraryTopicListView(PartnerFolderDo partnerFolderDo, int topicNumber, String placeToken,String libraryGooruOid) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.topicId = topicNumber;
+		this.libraryGooruOid=libraryGooruOid;
 		setPlaceToken(placeToken);
-		moreOnTopicText.getElement().setInnerHTML(GL1169);
-		assignCollectionBtn.setText(GL0104);
-		customizeCollectionBtn.setText(GL0631);
-		noCollectionLbl.setText(GL1170);
+		searchLink.getElement().getStyle().setDisplay(Display.NONE);
+
+
+
+		viewAllBtn.setVisible(true);
+		moreOnTopicText.getElement().setInnerHTML(i18n.GL1169());
+		moreOnTopicText.getElement().setAttribute("alt",i18n.GL1169());
+		moreOnTopicText.getElement().setAttribute("title",i18n.GL1169());
+		assignCollectionBtn.setText(i18n.GL0526());
+		assignCollectionBtn.getElement().setAttribute("alt",i18n.GL0526());
+		assignCollectionBtn.getElement().setAttribute("title",i18n.GL0526());
+		customizeCollectionBtn.setText(i18n.GL2037());
+		customizeCollectionBtn.getElement().setAttribute("alt",i18n.GL2037());
+		customizeCollectionBtn.getElement().setAttribute("title",i18n.GL2037());
+		noCollectionLbl.setText(i18n.GL1170());
+
+		toolTipPopupPanelCustomize.clear();
+		toolTipPopupPanelNew.clear();
+		toolTipPopupPanelCustomize.hide();
+		toolTipPopupPanelNew.hide();
 		topicTitleLbl.setText(partnerFolderDo.getTitle());
+		topicTitleLbl.getElement().setAttribute("alt",partnerFolderDo.getTitle());
+		topicTitleLbl.getElement().setAttribute("title",partnerFolderDo.getTitle());
 		searchTitle=partnerFolderDo.getTitle();
-		
-		if(partnerFolderDo.getCollections()!=null) {
-			setOnlyConceptData(partnerFolderDo.getCollections(), false, partnerFolderDo.getGooruOid(), partnerFolderDo.getItemCount());
+		setIds();
+		setElementsAttributes();
+		setAssets();
+		addCollectionQuizTitleData(PARTNER);
+		if(!StringUtil.checkNull(partnerFolderDo.getCollections())) {
+			setOnlyConceptData(partnerFolderDo.getCollections(), false, partnerFolderDo.getGooruOid(), partnerFolderDo.getItemCount(),libraryGooruOid);
 			try {
-				setConceptData(partnerFolderDo.getCollections().get(0),topicId, null, null,null);
+				setConceptData(partnerFolderDo.getCollections().get(0),topicId, null, null,null,libraryGooruOid);
 			} catch(Exception e) {
 				setDefaultCollectionLbl();
+				AppClientFactory.printSevereLogger("LibraryTopicListView setOnlyConceptData:::"+e);
 			}
 		} else {
 			setPartnerLibraryLessonData(partnerFolderDo.getFolderItems());
 			try {
-				setConceptData(partnerFolderDo.getFolderItems().get(0).getCollections().get(0),topicId, null, null,null);
+				setConceptData(partnerFolderDo.getFolderItems().get(0).getCollections().get(0),topicId, null, null,null,libraryGooruOid);
 			} catch(Exception e) {
 				setDefaultCollectionLbl();
+				AppClientFactory.printSevereLogger("LibraryTopicListView setPartnerLibraryLessonData"+e);
 			}
 		}
-		
+
 		searchLink.addClickHandler(new OnSearchLinkClick());
 		loadingImage.setVisible(false);
-		
+
+		folderIdValGbl = partnerFolderDo.getGooruOid();
+
+		collectionImage.getElement().setAttribute("folderId", partnerFolderDo.getGooruOid());
+		collectionTitleLbl.getElement().setAttribute("folderId",partnerFolderDo.getGooruOid());
+
+		viewAllBtn.addClickHandler(new ViewAllBtnClickEvent(partnerFolderDo.getGooruOid()));
+
 		assignCollectionBtn.addMouseOverHandler(new OnassignCollectionBtnMouseOver());
 		assignCollectionBtn.addMouseOutHandler(new OnassignCollectionBtnMouseOut());
 		customizeCollectionBtn.addMouseOverHandler(new OncustomizeCollectionBtnMouseOver());
 		customizeCollectionBtn.addMouseOutHandler(new OncustomizeCollectionBtnMouseOut());
-		if(!AppClientFactory.isAnonymous()){
-			try {
-				getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
-			} catch (Exception e) {}
-		}else{
-			standardsFloPanel.setVisible(true);
-		}
+		assignCollectionBtn.addBlurHandler(new assignTooltipBlur());
+		customizeCollectionBtn.addBlurHandler(new assignTooltipBlur());
+
+		loggedInUserStdPrefCode();
 		AppClientFactory.getEventBus().addHandler(OpenLessonConceptEvent.TYPE, openLessonConceptHandler);
 		AppClientFactory.getEventBus().addHandler(SetLoadingIconEvent.TYPE, setLoadingIconHandler);
 		AppClientFactory.getEventBus().addHandler(StandardPreferenceSettingEvent.TYPE, standardPreferenceSettingHandler);
+		AppClientFactory.getEventBus().addHandler(UpdateRatingsInRealTimeEvent.TYPE,setRatingWidgetMetaData);
+
+		getPopupAfterGMLogin();
+
 	}
 
+	/**
+	 * Sets the library lesson data
+	 * @param lessonDoList
+	 */
 	private void setPartnerLibraryLessonData(final ArrayList<PartnerFolderDo> lessonDoList) {
 		boolean isLessonHighlighted = true;
 		if(lessonDoList.size()>=LESSON_PAGE_INITIAL_LIMIT) {
 			for(int i=0;i<LESSON_PAGE_INITIAL_LIMIT;i++) {
-				if(i==0) {
-					isLessonHighlighted = true;
-				} else {
-					isLessonHighlighted = false;
-				}
+				isLessonHighlighted = i==0?true:false;
 				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted, (i+1)));
 			}
-			final String subject = AppClientFactory.getPlaceManager().getRequestParameter("subject","featured");
-			lessonScrollPanel.addScrollHandler(new ScrollHandler() {
-				@Override
-				public void onScroll(ScrollEvent event) {
-					if(isScrollable) {
-						isScrollable = false;
-						/*AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 5, getPlaceToken(), new AsyncCallback<ArrayList<LessonDo>>() {
-							@Override
-							public void onFailure(Throwable caught) {
-								throw new RuntimeException("Not implemented");
-							}
-
-							@Override
-							public void onSuccess(ArrayList<LessonDo> result) {
-								for(int i=0;i<result.size();i++) {
-									conceptList.add(new LibraryLessonUc(result.get(i),topicId,false,((LESSON_PAGE_INITIAL_LIMIT+1)+i)));
-								}
-							}
-						});*/
-					}
-				}
-			});
 		} else {
 			for(int i=0;i<lessonDoList.size();i++) {
-				if(i==0) {
-					isLessonHighlighted = true;
-				} else {
-					isLessonHighlighted = false;
-				}
+				isLessonHighlighted = i==0?true:false;
 				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted,(i+1)));
 			}
 		}
 	}
-	
-	/** 
+
+	/**
 	 * This method is to set the conceptDo
 	 */
 	public void setConceptDo(ConceptDo conceptDo) {
 		this.conceptDo = conceptDo;
 	}
-	
+
 	private ConceptDo getConceptDo() {
 		return conceptDo;
 	}
-	
+
 	/**
-	 * 
-	 * @param list 
-	 * @function setLessonData 
-	 * 
+	 *
+	 * @param list
+	 * @function setLessonData
+	 *
 	 * @created_date : 04-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * @parm(s) : 
-	 * 
+	 *
+	 * @parm(s) :
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
-	private void setLessonData(final List<LessonDo> lessonDoList) {
+	private void setLessonData(final List<LessonDo> lessonDoList,final String libraryGooruOid) {
 		boolean isLessonHighlighted = true;
 		String subjectName = AppClientFactory.getPlaceManager().getRequestParameter(SUBJECT_NAME);
+		final String subject = AppClientFactory.getPlaceManager().getRequestParameter("subject","featured");
+		int overallCount = 0;
 		if(subjectName!=null && subjectName.equalsIgnoreCase(STANDARDS)) {
 			LESSON_PAGE_INITIAL_LIMIT = 20;
 		}
@@ -462,24 +593,24 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				} else {
 					isLessonHighlighted = false;
 				}
-				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted, (i+1)));
+				if(lessonDoList.get(i).getConcept()!=null&&lessonDoList.get(i).getConcept().size()>0) {
+					overallCount = ++overallCount + lessonDoList.get(i).getConcept().size();
+				} else {
+					overallCount = ++overallCount + lessonDoList.get(i).getCollection().size();
+				}
+				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted, (i+1),libraryGooruOid));
 			}
-			final String subject = AppClientFactory.getPlaceManager().getRequestParameter("subject","featured");
+
 			lessonScrollPanel.addScrollHandler(new ScrollHandler() {
 				@Override
 				public void onScroll(ScrollEvent event) {
 					if(isScrollable) {
 						isScrollable = false;
-						AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 20, getPlaceToken(), new AsyncCallback<ArrayList<LessonDo>>() {
-							@Override
-							public void onFailure(Throwable caught) {
-								throw new RuntimeException("Not implemented");
-							}
-
+						AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 20, getPlaceToken(), new SimpleAsyncCallback<ArrayList<LessonDo>>() {
 							@Override
 							public void onSuccess(ArrayList<LessonDo> result) {
 								for(int i=0;i<result.size();i++) {
-									conceptList.add(new LibraryLessonUc(result.get(i),topicId,false,((LESSON_PAGE_INITIAL_LIMIT+1)+i)));
+									conceptList.add(new LibraryLessonUc(result.get(i),topicId,false,((LESSON_PAGE_INITIAL_LIMIT+1)+i),libraryGooruOid));
 								}
 							}
 						});
@@ -493,33 +624,45 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				} else {
 					isLessonHighlighted = false;
 				}
-				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted,(i+1)));
+				conceptList.add(new LibraryLessonUc(lessonDoList.get(i),topicId,isLessonHighlighted,(i+1),libraryGooruOid));
 			}
 		}
+		if(overallCount<15) {
+			isScrollable = false;
+			AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 20, getPlaceToken(), new SimpleAsyncCallback<ArrayList<LessonDo>>() {
+				@Override
+				public void onSuccess(ArrayList<LessonDo> result) {
+					for(int i=0;i<result.size();i++) {
+						conceptList.add(new LibraryLessonUc(result.get(i),topicId,false,((LESSON_PAGE_INITIAL_LIMIT+1)+i),libraryGooruOid));
+					}
+				}
+			});
+		}
 	}
-	
-	
+
+
 	/**
-	 * @function setOnlyConceptData 
-	 * 
+	 * @function setOnlyConceptData
+	 *
 	 * @created_date : 29-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
+	 *
 	 * @parm(s) : @param conceptDoList
-	 * 
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
-	private void setOnlyConceptData(ArrayList<ConceptDo> conceptDoList, boolean isTopicCalled, final String parentId, final int partnerItemCount) {
+	private void setOnlyConceptData(ArrayList<ConceptDo> conceptDoList, boolean isTopicCalled, final String parentId, final int partnerItemCount,final String libraryGooruOid) {
 		boolean isLessonHighlighted = true;
+
+		folderIdValGbl = parentId;
+
 		int pageCount = 0;
 		String subjectName = AppClientFactory.getPlaceManager().getRequestParameter(SUBJECT_NAME);
-		if(subjectName!=null && subjectName.equalsIgnoreCase(STANDARDS) || StringUtil.isPartnerUser(AppClientFactory.getCurrentPlaceToken())) {
-			LESSON_PAGE_INITIAL_LIMIT = 20;
-		}
+		LESSON_PAGE_INITIAL_LIMIT = (STANDARDS.equalsIgnoreCase(subjectName)|| StringUtil.isPartnerUser(AppClientFactory.getCurrentPlaceToken())?20:3);
 		if(parentId!=null) {
 			LESSON_PAGE_INITIAL_LIMIT = 20;
 			pageCount = partnerItemCount;
@@ -527,7 +670,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 			pageCount = conceptDoList.size();
 		}
 		if(pageCount>=LESSON_PAGE_INITIAL_LIMIT) {
-			conceptList.add(new LibraryLessonUc(conceptDoList,topicId,isLessonHighlighted, 0));
+			conceptList.add(new LibraryLessonUc(conceptDoList,topicId,isLessonHighlighted, 0,libraryGooruOid));
 			final String subject = AppClientFactory.getPlaceManager().getRequestParameter("subject","featured");
 			lessonScrollPanel.addScrollHandler(new ScrollHandler() {
 				@Override
@@ -537,7 +680,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 							if(LESSON_PAGE_INITIAL_LIMIT<partnerItemCount) {
 								isScrollable = false;
 								String gooruUid = AppClientFactory.getPlaceManager().getRequestParameter("pid");
-								AppClientFactory.getInjector().getLibraryService().getPartnerChildFolders(gooruUid, (pageNumber-1)*20, 20,parentId,SHARING_TYPE, null,new AsyncCallback<PartnerConceptListDo>() {
+								AppClientFactory.getInjector().getLibraryService().getPartnerChildFolders(gooruUid, (pageNumber-1)*20, 20,parentId,SHARING_TYPE, null,new SimpleAsyncCallback<PartnerConceptListDo>() {
 									@Override
 									public void onSuccess(PartnerConceptListDo result) {
 										LESSON_PAGE_INITIAL_LIMIT = LESSON_PAGE_INITIAL_LIMIT + result.getSearchResult().size();
@@ -545,25 +688,18 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 										if(LESSON_PAGE_INITIAL_LIMIT < partnerItemCount) {
 											isScrollable = true;
 										}
-										conceptList.add(new LibraryLessonUc(result.getSearchResult(),topicId,false, 0));
-									}
-									@Override
-									public void onFailure(Throwable caught) {
+										conceptList.add(new LibraryLessonUc(result.getSearchResult(),topicId,false, 0,libraryGooruOid));
 									}
 								});
 							}
 						} else {
-							AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 20, getPlaceToken(), new AsyncCallback<ArrayList<LessonDo>>() {
-								@Override
-								public void onFailure(Throwable caught) {
-									throw new RuntimeException("Not implemented");
-								}
+							AppClientFactory.getInjector().getLibraryService().getLessonsOnPagination(subject, ""+topicId, LESSON_PAGE_INITIAL_LIMIT, 20, getPlaceToken(), new SimpleAsyncCallback<ArrayList<LessonDo>>() {
 
 								@Override
 								public void onSuccess(ArrayList<LessonDo> lessonDoList) {
 									for(int i=0;i<lessonDoList.size();i++) {
 										isScrollable = false;
-										conceptList.add(new LibraryLessonUc(lessonDoList.get(i).getCollection(),topicId,false, 0));
+										conceptList.add(new LibraryLessonUc(lessonDoList.get(i).getCollection(),topicId,false, 0,libraryGooruOid));
 									}
 								}
 							});
@@ -577,21 +713,17 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				conceptSize = conceptDoList.size();
 			}
 			for(int i=0;i<conceptSize;i++) {
-				if(i==0) {
-					isLessonHighlighted = true;
-				} else {
-					isLessonHighlighted = false;
-				}
-				conceptList.add(new LibraryLessonUc(conceptDoList,topicId,isLessonHighlighted,(i+1)));
+				isLessonHighlighted = i==0?true:false;
+				conceptList.add(new LibraryLessonUc(conceptDoList,topicId,isLessonHighlighted,(i+1),libraryGooruOid));
 			}
 		}
 	}
-	
+
 	/**
-	 * 
-	 * @fileName : LibraryTopicListView.java
 	 *
-	 * @description : 
+	 * @fileName : OnSearchLinkClick.java
+	 *
+	 * @description :
 	 *
 	 *
 	 * @version : 1.0
@@ -609,21 +741,19 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 			} else {
 				MixpanelUtil.mixpanelEvent("LandingPage_search_topic");
 			}
-			AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.RESOURCE_SEARCH, updateParams(searchTitle));
-			
-
+			AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.SEARCH_COLLECTION, updateParams(searchTitle));
 		}
 	}
-	
+
 	/**
-	 * 
-	 * @function updateParams 
-	 * 
+	 *
+	 * @function updateParams
+	 *
 	 * @created_date : 04-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * 
+	 *
+	 *
 	 * @parm(s) : @param searchQuery
 	 * @parm(s) : @return
 	 *
@@ -639,123 +769,146 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 		Map<String, String> params = new HashMap<String,String>();
 		params.put("category", "All");
 		params.put("query", searchQuery);
-		params.put("pageSize", "8");
+		params.put("flt.collectionType","collection");
+		/*params.put("pageSize", "8");
 		params.put("pageNum", "1");
+		params.put(IsSearchView.RATINGS_FLT, "5,4,3,2,1,0");*/
 		return params;
 	}
 
 	/**
-	 * 
-	 * @function setConceptData 
-	 * 
+	 *
+	 * @function setConceptData
+	 *
 	 * @created_date : 04-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * 
-	 * @parm(s) : 
-	 * 
+	 *
+	 *
+	 * @parm(s) :
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
-	public void setConceptData(final ConceptDo conceptDo, Integer topicId, final String lessonId, String lessonLabel,String lessonCode) {
+	public void setConceptData(final ConceptDo conceptDo, Integer topicId, final String lessonId, String lessonLabel,String lessonCode,final String libraryGooruOid) {
 		setConceptDo(conceptDo);
 		this.lessonCode=lessonCode;
 		String subjectName = AppClientFactory.getPlaceManager().getRequestParameter(SUBJECT_NAME);
 		if(this.topicId==topicId) {
-		if(subjectName!=null && subjectName.equalsIgnoreCase(STANDARDS)) {
-			standardsDescription.clear();
-			InlineLabel headerLbl = new InlineLabel(GL1363+GL_SPL_SEMICOLON+" ");
-			headerLbl.getElement().getStyle().setFontWeight(FontWeight.BOLD);
-			if(lessonLabel.length() > 400)
-			{
-				lessonLabel = lessonLabel.substring(0, 400) + "...";
+			if(STANDARDS.equalsIgnoreCase(subjectName)) {
+				standardsDescription.clear();
+				InlineLabel headerLbl = new InlineLabel(i18n.GL1363()+i18n.GL_SPL_SEMICOLON()+" ");
+				headerLbl.getElement().getStyle().setFontWeight(FontWeight.BOLD);
+				InlineLabel textLbl = new InlineLabel("");
+				if(lessonLabel != null){
+					if(lessonLabel.length() > 400){
+						lessonLabel = lessonLabel.substring(0, 400) + "...";
+					}
+					textLbl = new InlineLabel(lessonLabel);
+				}else{
+					textLbl = new InlineLabel(conceptDo.getLabel());
+				}
+				standardsDescription.add(headerLbl);
+				standardsDescription.add(textLbl);
+				standardsDescription.setVisible(true);
+			} else {
+				standardsDescription.setVisible(false);
 			}
-			InlineLabel textLbl = new InlineLabel(lessonLabel);
-			standardsDescription.add(headerLbl);
-			standardsDescription.add(textLbl);
-			standardsDescription.setVisible(true);
-		} else {
-			standardsDescription.setVisible(false);
-		}
-		
-	
+
+
 			String id = null;
 			if(conceptDo.getId()!=null)	{
 				id=conceptDo.getId();
-			} 
+			}
 			else if(conceptDo.getGooruOid()!=null){
 				id=conceptDo.getGooruOid();
 			}
+
+
 			if(id!=null) {
 				collectionInfo.setVisible(true);
 				resourcesInside.setVisible(true);
 				noCollectionLbl.setVisible(false);
-				
-				try {
+				final String collectionType=StringUtil.isEmpty(conceptDo.getCollectionType())?null:conceptDo.getCollectionType();
+				StringUtil.setDefaultImages(collectionType, collectionImage, "high");
+					if(conceptDo.getThumbnails()!=null && conceptDo.getThumbnails().getUrl()!=null){
 					collectionImage.setUrl(StringUtil.formThumbnailName(conceptDo.getThumbnails().getUrl(),"-160x120."));
+					}else{
+						collectionImage.setUrl(DEFAULT_COLLECTION_IMAGE);
+						StringUtil.setDefaultImages(collectionType, collectionImage, "high");
+					}
 					collectionImage.addErrorHandler(new ErrorHandler() {
 						@Override
 						public void onError(ErrorEvent event) {
-							collectionImage.setUrl(DEFAULT_COLLECTION_IMAGE);
+							StringUtil.setDefaultImages(collectionType, collectionImage, "high");
 						}
 					});
+
 					if(imageHandler!=null) {
 						imageHandler.removeHandler();
 					}
 					if(titleHandler!=null) {
 						titleHandler.removeHandler();
 					}
-					imageHandler=collectionImage.addClickHandler(new CollectionOpenClickHandler(lessonId));
-					titleHandler=collectionTitleLbl.addClickHandler(new CollectionOpenClickHandler(lessonId));
-				} catch (Exception e) {
-					collectionImage.setUrl(DEFAULT_COLLECTION_IMAGE);
-				}
-				
-				try
-				{
-				collectionTitleLbl.setHTML(conceptDo.getTitle());
-				String description = conceptDo.getGoals();
-				if(description!=null&&description.length()>=97) {
-					String browesr = BrowserAgent.getWebBrowserClient();
-					if(browesr.contains("chrome")||browesr.contains("safari")) {
-						description = description.substring(0,97)+"..."; 
-					} else {
-						description = description.substring(0,85)+"...";
+					imageHandler=collectionImage.addClickHandler(new CollectionOpenClickHandler(lessonId,libraryGooruOid));
+					titleHandler=collectionTitleLbl.addClickHandler(new CollectionOpenClickHandler(lessonId,libraryGooruOid));
+				try{
+					collectionTitleLbl.setHTML(conceptDo.getTitle());
+					collectionTitleLbl.getElement().setAttribute("alt",conceptDo.getTitle());
+					collectionTitleLbl.getElement().setAttribute("title",conceptDo.getTitle());
+					String description = conceptDo.getGoals();
+					if(description!=null&&description.length()>=97) {
+						String browesr = BrowserAgent.getWebBrowserClient();
+						if(browesr.contains("chrome")||browesr.contains("safari")) {
+							description = description.substring(0,97)+"...";
+						} else {
+							description = description.substring(0,85)+"...";
+						}
 					}
+					collectionDescriptionLbl.setHTML(description);
+					collectionDescriptionLbl.getElement().setAttribute("alt",description);
+					collectionDescriptionLbl.getElement().setAttribute("title",description);
 				}
-				collectionDescriptionLbl.setHTML(description);
+				catch(Exception ex){
+					AppClientFactory.printSevereLogger("LibraryTopicListView setConceptData collectionTitleLbl:::"+ex.getMessage());
 				}
-				catch(Exception ex)
-				{
-					
-				}
-				setMetaDataInfo(conceptDo); 
+				setMetaDataInfo(conceptDo);
 				resourcesInside.clear();
 				ArrayList<LibraryCollectionItemDo> libraryResources =  conceptDo.getCollectionItems();
+				int resourceCount = 0;
 				if(libraryResources!=null) {
-					int resourceCount = libraryResources.size();
+					if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.COMMUNITY)){
+						resourceCount = libraryResources.size();
+					}else{
+						if(conceptDo.getItemCount()!=null){
+							resourceCount = conceptDo.getItemCount();
+						}else{
+							resourceCount = libraryResources.size();
+						}
+
+					}
 					int resources=resourceCount<=4?resourceCount:4;
-					final Label resourceCountLbl = new Label(resources+" "+GL_GRR_OF+" "+GL_GRR_THE+" "+resourceCount+" "+GL1094.toLowerCase());
+					final Label resourceCountLbl = new Label(resources+" "+i18n.GL_GRR_OF()+" "+i18n.GL_GRR_THE()+" "+resourceCount+" "+i18n.GL1094().toLowerCase());
 					resourcesInside.add(resourceCountLbl);
 					for(int i=0;i<resources;i++) {
 						try {
 							final LibraryCollectionItemDo libraryItem = libraryResources.get(i);
 							final LibraryResourceDo libraryResourceDo = libraryItem.getResource();
-							
+
+
 							String categoryString = "";
 							if(libraryResourceDo.getCategory()!=null) {
 								categoryString = libraryResourceDo.getCategory();
 							} else if(libraryResourceDo.getResourceFormat()!=null){
 								categoryString = libraryResourceDo.getResourceFormat().getDisplayName();
 							}
-							
+
 							final String category = categoryString;
 							final HTMLEventPanel resourcePanel = new HTMLEventPanel("");
 							resourcePanel.setStyleName(libraryStyle.resourceImage());
-							
+
 							final Image resourceImage = new Image();
 							resourceImage.setWidth("80px");
 							resourceImage.setHeight("60px");
@@ -764,34 +917,212 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 								String resourceTitle = libraryResourceDo.getTitle().replaceAll("\\<[^>]*>","");
 								libraryResourceDo.setTitle(resourceTitle);
 							} catch (Exception e){
+								AppClientFactory.printSevereLogger("LibraryTopicListView setConceptData resourceTitle::::::"+e);
 							}
 							resourceImage.setAltText(libraryResourceDo.getTitle());
 							resourceImage.setTitle(libraryResourceDo.getTitle());
-							
+
 							final String categoryImage=categoryString;
-							
-							String sourceAttribution = "";
-							if(libraryResourceDo.getResourceSource()!=null&&libraryResourceDo.getResourceSource().getAttribution()!=null) {
-								sourceAttribution = libraryResourceDo.getResourceSource().getAttribution();
+
+							final List<String> sourceAttribution = libraryResourceDo.getPublisher();
+							//							if(libraryResourceDo.getResourceSource()!=null&&libraryResourceDo.getResourceSource().getAttribution()!=null) {
+							//								sourceAttribution = libraryResourceDo.getResourceSource().getAttribution();
+							//							}
+							//							final String attribution = sourceAttribution;
+
+							String domainName = "";
+							if(libraryResourceDo.getResourceSource()!=null&&libraryResourceDo.getResourceSource().getDomainName()!=null) {
+								domainName = libraryResourceDo.getResourceSource().getDomainName();
 							}
-							final String attribution = sourceAttribution;
-							resourceImage.addMouseOverHandler(new MouseOverHandler() {
-							   	
+							final String domain = domainName;
+							final HTMLEventPanel resourceCategoryIcon = new HTMLEventPanel("");
+
+							if(!folderIdValGbl.isEmpty())
+							{
+
+								resourcePanel.getElement().setAttribute("folderId", folderIdValGbl);
+								resourceCategoryIcon.getElement().setAttribute("folderId", folderIdValGbl);
+							}
+
+							resourceCategoryIcon.addMouseOverHandler(new MouseOverHandler() {
+
 								@Override
 								public void onMouseOver(MouseOverEvent event) {
-									toolTipPopupPanel.clear();
-									toolTipPopupPanel.setWidget(new LibraryTopicCollectionToolTip(libraryResourceDo.getTitle(),categoryImage,attribution));
-									toolTipPopupPanel.setStyleName("");
-									toolTipPopupPanel.setPopupPosition(event.getRelativeElement().getAbsoluteLeft() - 2, event.getRelativeElement().getAbsoluteTop() + 55);
-									toolTipPopupPanel.show();
+									try
+									{
+										toolTipPopupPanel.clear();
+										toolTipPopupPanel.setWidget(new LibraryTopicCollectionToolTip(libraryResourceDo.getTitle(),categoryImage,sourceAttribution,libraryResourceDo.getRatings().getCount(),libraryResourceDo.getRatings().getAverage(),domain));
+										toolTipPopupPanel.setStyleName("");
+										toolTipPopupPanel.setPopupPosition(event.getRelativeElement().getAbsoluteLeft() - 2, event.getRelativeElement().getAbsoluteTop() + 55);
+										toolTipPopupPanel.show();
+									}
+									catch(Exception ex)
+									{
+										AppClientFactory.printSevereLogger(ex.getMessage());
+									}
 								}
 							});
-							
-							resourceImage.addMouseOutHandler(new MouseOutHandler() {
-								
+							resourceCategoryIcon.addMouseOutHandler(new MouseOutHandler() {
+
 								@Override
 								public void onMouseOut(MouseOutEvent event) {
-								toolTipPopupPanel.hide();
+									toolTipPopupPanel.hide();
+								}
+							});
+
+							resourceCategoryIcon.addClickHandler(new ClickHandler() {
+								@Override
+								public void onClick(ClickEvent event) {
+
+									try{
+										folderIdVal = ((HTMLEventPanel)event.getSource()).getElement().getAttribute("folderId");
+
+									}
+									catch(Exception ex){
+
+										folderIdVal = "";
+									}
+
+									String page = AppClientFactory.getPlaceManager().getRequestParameter(PAGE,"landing");
+									if(page.equals(COURSE_PAGE)) {
+										MixpanelUtil.mixpanelEvent("CoursePage_Plays_Resource");
+									} else {
+										MixpanelUtil.mixpanelEvent("LandingPage_Plays_Resource");
+									}
+									final Map<String, String> params = new HashMap<String, String>();
+									params.put("id", conceptDo.getGooruOid());
+
+									String resourceId = libraryItem.getCollectionItemId();
+									if(resourceId==null) {
+										resourceId = libraryResourceDo.getCollectionItemId();
+									}
+									params.put("rid", resourceId);
+
+
+									if(folderIdVal!=null && !folderIdVal.isEmpty())
+									{
+
+										AppClientFactory.getInjector().getfolderService().getTocFolders(folderIdVal,false, new SimpleAsyncCallback<FolderTocDo>() {
+											@Override
+											public void onSuccess(FolderTocDo folderListDo) {
+												if(folderListDo.getCollectionItems().size()>0)
+												{
+													String folderItemId = "";
+												for(int i=0;i<folderListDo.getCollectionItems().size();i++)
+												{
+													if(conceptDo.getGooruOid().equalsIgnoreCase(folderListDo.getCollectionItems().get(i).getGooruOid()))
+													{
+														folderItemId = folderListDo.getCollectionItems().get(i).getCollectionItemId();
+														params.put("folderId", folderIdVal);
+														params.put("folderItemId", folderListDo.getCollectionItems().get(i).getCollectionItemId());
+														AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+														PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+														AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+														break;
+													}
+												}
+												if(folderItemId.isEmpty())
+												{
+													params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+													params.put("lessonId", lessonId);
+													if(libraryGooruOid!=null){
+														params.put("lid", libraryGooruOid);
+													}
+													String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+													if(libraryEventId!=null){
+														params.put("eventid", libraryEventId);
+													}
+													if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+														params.put("library", getPlaceToken());
+													}
+													String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+													if(standardId!=null){
+														params.put("rootNodeId", standardId);
+													}
+
+													PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+													AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+												}
+												}
+												else
+												{
+
+													params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+													params.put("lessonId", lessonId);
+													if(libraryGooruOid!=null){
+														params.put("lid", libraryGooruOid);
+													}
+													String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+													if(libraryEventId!=null){
+														params.put("eventid", libraryEventId);
+													}
+													if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+														params.put("library", getPlaceToken());
+													}
+													String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+													if(standardId!=null){
+														params.put("rootNodeId", standardId);
+													}
+
+													PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+													AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+												}
+											}
+										});
+
+									}
+									else
+									{
+										params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+										params.put("lessonId", lessonId);
+										if(libraryGooruOid!=null){
+											params.put("lid", libraryGooruOid);
+										}
+										String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+										if(libraryEventId!=null){
+											params.put("eventid", libraryEventId);
+										}
+										if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+											params.put("library", getPlaceToken());
+										}
+										String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+										if(standardId!=null){
+											params.put("rootNodeId", standardId);
+										}
+
+										PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+										AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+									}
+
+
+
+								}
+							});
+
+							resourceImage.addMouseOverHandler(new MouseOverHandler() {
+
+								@Override
+								public void onMouseOver(MouseOverEvent event) {
+									try
+									{
+										toolTipPopupPanel.clear();
+										toolTipPopupPanel.setWidget(new LibraryTopicCollectionToolTip(libraryResourceDo.getTitle(),categoryImage,sourceAttribution,libraryResourceDo.getRatings().getCount(),libraryResourceDo.getRatings().getAverage(),domain));
+										toolTipPopupPanel.setStyleName("");
+										toolTipPopupPanel.setPopupPosition(event.getRelativeElement().getAbsoluteLeft() - 2, event.getRelativeElement().getAbsoluteTop() + 55);
+										toolTipPopupPanel.show();
+									}
+									catch(Exception ex)
+									{
+										AppClientFactory.printSevereLogger(ex.getMessage());
+									}
+								}
+							});
+
+							resourceImage.addMouseOutHandler(new MouseOutHandler() {
+
+								@Override
+								public void onMouseOut(MouseOutEvent event) {
+									toolTipPopupPanel.hide();
 								}
 							});
 							try {
@@ -800,7 +1131,11 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 									String thumbnailUrl = ResourceImageUtil.youtubeImageLink(youTubeIbStr,Window.Location.getProtocol());
 									resourceImage.setUrl(thumbnailUrl);
 								} else {
-									resourceImage.setUrl(libraryResourceDo.getThumbnails().getUrl());
+									if(libraryResourceDo.getThumbnails()!=null&&libraryResourceDo.getThumbnails().getUrl()!=null&&!(libraryResourceDo.getThumbnails().getUrl().isEmpty())) {
+										resourceImage.setUrl(libraryResourceDo.getThumbnails().getUrl());
+									} else {
+										resourceImage.setUrl(DEFULT_IMAGE_PREFIX +getDetaultResourceImage(category.toLowerCase()) + PNG);
+									}
 								}
 								resourceImage.addErrorHandler(new ErrorHandler() {
 									@Override
@@ -812,48 +1147,144 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 								resourceImage.setUrl(DEFULT_IMAGE_PREFIX + getDetaultResourceImage(category.toLowerCase()) + PNG);
 								resourceImage.setAltText(libraryResourceDo.getTitle());
 								resourceImage.setTitle(libraryResourceDo.getTitle());
+								AppClientFactory.printSevereLogger("LibraryTopicListView resourceImage:::"+e);
 							}
-							
+
 							resourcePanel.addClickHandler(new ClickHandler() {
 								@Override
 								public void onClick(ClickEvent event) {
+									try{
+										folderIdVal = ((HTMLEventPanel)event.getSource()).getElement().getAttribute("folderId");
+
+									}
+									catch(Exception ex){
+
+										folderIdVal = "";
+									}
+
 									String page = AppClientFactory.getPlaceManager().getRequestParameter(PAGE,"landing");
 									if(page.equals(COURSE_PAGE)) {
 										MixpanelUtil.mixpanelEvent("CoursePage_Plays_Resource");
 									} else {
 										MixpanelUtil.mixpanelEvent("LandingPage_Plays_Resource");
 									}
-									Map<String, String> params = new HashMap<String, String>();
+									final Map<String, String> params = new HashMap<String, String>();
 									params.put("id", conceptDo.getGooruOid());
-									
+
 									String resourceId = libraryItem.getCollectionItemId();
 									if(resourceId==null) {
 										resourceId = libraryResourceDo.getCollectionItemId();
 									}
 									params.put("rid", resourceId);
-									params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
-									params.put("lessonId", lessonId);
-									if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
-										params.put("library", getPlaceToken());
+
+
+									if(folderIdVal!=null && !folderIdVal.isEmpty())
+									{
+
+										AppClientFactory.getInjector().getfolderService().getTocFolders(folderIdVal,false, new SimpleAsyncCallback<FolderTocDo>() {
+											@Override
+											public void onSuccess(FolderTocDo folderListDo) {
+												if(folderListDo.getCollectionItems().size()>0)
+												{
+													String folderItemId = "";
+												for(int i=0;i<folderListDo.getCollectionItems().size();i++)
+												{
+													if(conceptDo.getGooruOid().equalsIgnoreCase(folderListDo.getCollectionItems().get(i).getGooruOid()))
+													{
+														folderItemId = folderListDo.getCollectionItems().get(i).getCollectionItemId();
+														params.put("folderId", folderIdVal);
+														params.put("folderItemId", folderListDo.getCollectionItems().get(i).getCollectionItemId());
+														AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+														PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+														AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+														break;
+													}
+												}
+												if(folderItemId.isEmpty())
+												{
+
+													params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+													params.put("lessonId", lessonId);
+													if(libraryGooruOid!=null){
+														params.put("lid", libraryGooruOid);
+													}
+													String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+													if(libraryEventId!=null){
+														params.put("eventid", libraryEventId);
+													}
+													if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+														params.put("library", getPlaceToken());
+													}
+													String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+													if(standardId!=null){
+														params.put("rootNodeId", standardId);
+													}
+
+													PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+													AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+												}
+												}
+												else
+												{
+
+													params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+													params.put("lessonId", lessonId);
+													if(libraryGooruOid!=null){
+														params.put("lid", libraryGooruOid);
+													}
+													String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+													if(libraryEventId!=null){
+														params.put("eventid", libraryEventId);
+													}
+													if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+														params.put("library", getPlaceToken());
+													}
+													String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+													if(standardId!=null){
+														params.put("rootNodeId", standardId);
+													}
+
+													PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+													AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+												}
+											}
+										});
+
 									}
-									String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
-									if(standardId!=null){
-										params.put("rootNodeId", standardId);
+									else
+									{
+										params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+										params.put("lessonId", lessonId);
+										if(libraryGooruOid!=null){
+											params.put("lid", libraryGooruOid);
+										}
+										String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+										if(libraryEventId!=null){
+											params.put("eventid", libraryEventId);
+										}
+										if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+											params.put("library", getPlaceToken());
+										}
+										String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+										if(standardId!=null){
+											params.put("rootNodeId", standardId);
+										}
+
+										PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+										AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
 									}
-									
-									PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.PREVIEW_PLAY, params);
-									AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+
 								}
 							});
-							
-							final HTMLPanel resourceCategoryIcon = new HTMLPanel("");
-							resourceCategoryIcon.addStyleName(UcCBundle.INSTANCE.css().resourceName());
+
+
+							resourceCategoryIcon.addStyleName("Uc-resourceName");
 							resourceCategoryIcon.addStyleName(getDetaultResourceImage(category.toLowerCase()) + SMALL);
 							resourcePanel.add(resourceImage);
 							resourcePanel.add(resourceCategoryIcon);
 							resourcesInside.add(resourcePanel);
 						} catch (Exception e){
-							e.printStackTrace();
+							AppClientFactory.printSevereLogger("LibraryTopicListView resourcesSize:::"+e);
 						}
 					}
 				}
@@ -866,8 +1297,11 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 		loadingImage.setVisible(false);
 		collectionViewer.setVisible(true);
 	}
-	
+
 	private void setMetaDataInfo(ConceptDo conceptDo) {
+		collectionImage.getElement().setAttribute("collid", conceptDo.getGooruOid());
+		collectionTitleLbl.getElement().setAttribute("collid", conceptDo.getGooruOid());
+		collectionTitleLbl.getElement().setAttribute(COLLECTION_TITLE,conceptDo.getTitle());
 		if(AppClientFactory.isAnonymous()){
 			standardsFloPanel.clear();
 			standardsFloPanel.setVisible(true);
@@ -878,7 +1312,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				List<StandardFo> standardFoList = conceptDo.getMetaInfo().getStandards();
 				List<Map<String, String>> standardMap = new ArrayList<Map<String, String>>();
 				List<Map<String, String>> tempStandardMap = new ArrayList<Map<String, String>>();
-				
+
 				ResourceSearchResultDo searchResultDo = new ResourceSearchResultDo();
 				for(int i=0;i<standardFoList.size();i++) {
 					if(isUserStandards(standardFoList.get(i).getCode())) {
@@ -889,7 +1323,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 							standards.put(STANDARD_DESCRIPTION, standardFoList.get(i).getDescription());
 							standardMap.add(standards);
 							tempStandardMap.add(standards);
-							
+
 							if(standardFoList.get(i).getCode() == lessonCode)
 							{
 								standardMap.clear();
@@ -909,7 +1343,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				}
 			}
 			}
-			else 
+			else
 			{
 				if(conceptDo.getStandards() != null){
 					standardsFloPanel.clear();
@@ -923,11 +1357,11 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 							}else{
 								standardMap.remove(removeCount);
 							}
-							
+
 						}
 						removeCount++;
 					}
-					
+
 					ResourceSearchResultDo searchResultDo = new ResourceSearchResultDo();
 					if(standardMap.size()<=0) {
 						standardsFloPanel.setVisible(false);
@@ -951,58 +1385,175 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 				}
 			}
 		} else {
-//			if(AppClientFactory.getPlaceManager().getRequestParameter("subject")!=null) {
 				if(AppClientFactory.getPlaceManager().getRequestParameter("libtype")!=null&&code.contains("CCSS")){
-				} 
+				}
 				else if(AppClientFactory.getPlaceManager().getRequestParameter("libtype")==null&&code.contains("TEKS")){
-				} 
+				}
 				else {
 					isUserStandards=true;
 				}
-//			}
 		}
 		return isUserStandards;
 	}
-	
+
 	public class CollectionOpenClickHandler implements ClickHandler {
 			private String lessonId;
-			
-			public CollectionOpenClickHandler(String lessonId) {
+			private String libraryId;
+			public CollectionOpenClickHandler(String lessonId,String libraryId) {
 				this.lessonId = lessonId;
+				this.libraryId=libraryId;
 			}
 			@Override
 			public void onClick(ClickEvent event) {
+				final String collectionType=StringUtil.isEmpty(conceptDo.getCollectionType())?null:conceptDo.getCollectionType();
+				try{
+					collectionIdVal = ((Image)event.getSource()).getElement().getAttribute("collid");
+					folderIdVal = ((Image)event.getSource()).getElement().getAttribute("folderId");
+
+				}
+				catch(Exception ex){
+					collectionIdVal = ((HTML)event.getSource()).getElement().getAttribute("collid");
+					folderIdVal = ((HTML)event.getSource()).getElement().getAttribute("folderId");
+					AppClientFactory.printSevereLogger(ex.getMessage());
+				}
+
 				String page = AppClientFactory.getPlaceManager().getRequestParameter(PAGE,"landing");
 				if(AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID)!=null){
-					MixpanelUtil.mixpanelEvent("standardlibrary_play_collection");	
+					MixpanelUtil.mixpanelEvent("standardlibrary_play_collection");
 				}
 				if(page.equals(COURSE_PAGE)) {
 					MixpanelUtil.mixpanelEvent("CoursePage_Plays_Collection");
 				} else {
 					MixpanelUtil.mixpanelEvent("LandingPage_Plays_Collection");
 				}
+
+				if(folderIdVal!= null && !folderIdVal.isEmpty())
+				{
+					final HashMap<String,String> params = new HashMap<String,String>();
+					params.put("id", collectionIdVal);
+
+					AppClientFactory.getInjector().getfolderService().getTocFolders(folderIdVal,false, new SimpleAsyncCallback<FolderTocDo>() {
+						@Override
+						public void onSuccess(FolderTocDo folderListDo) {
+							if(folderListDo.getCollectionItems().size()>0)
+							{
+							String folderItemId ="";
+							for(int i=0;i<folderListDo.getCollectionItems().size();i++)
+							{
+								if(collectionIdVal.equalsIgnoreCase(folderListDo.getCollectionItems().get(i).getGooruOid()))
+								{
+									folderItemId =folderListDo.getCollectionItems().get(i).getCollectionItemId();
+									params.put("folderId", folderIdVal);
+									params.put("folderItemId", folderListDo.getCollectionItems().get(i).getCollectionItemId());
+//									AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+									PlaceRequest placeRequest;
+									if(ASSESSMENT.equalsIgnoreCase(collectionType)){
+										placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.ASSESSMENT_PLAY, params);
+									}else{
+										placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(PlaceTokens.COLLECTION_PLAY, params);
+									}
+									AppClientFactory.getPlaceManager().revealPlace(false,placeRequest,true);
+									break;
+								}
+							}
+							if(folderItemId.isEmpty())
+							{
+								Map<String, String> params = new HashMap<String, String>();
+								params.put("id", collectionIdVal);
+								params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+								params.put("lessonId", lessonId);
+								if(libraryId!=null){
+									params.put("lid", libraryId);
+								}
+								String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+								if(libraryEventId!=null){
+									params.put("eventid", libraryEventId);
+								}
+								if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+									params.put("library", getPlaceToken());
+								}
+								String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+								if(standardId!=null){
+									params.put("rootNodeId", standardId);
+								}
+								if(ASSESSMENT.equalsIgnoreCase(collectionType)){
+									AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.ASSESSMENT_PLAY, params);
+								}else{
+									AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+								}
+
+							}
+							}
+							else
+							{
+								Map<String, String> params = new HashMap<String, String>();
+								params.put("id", collectionIdVal);
+								params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
+								params.put("lessonId", lessonId);
+								if(libraryId!=null){
+									params.put("lid", libraryId);
+								}
+								String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+								if(libraryEventId!=null){
+									params.put("eventid", libraryEventId);
+								}
+								if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
+									params.put("library", getPlaceToken());
+								}
+								String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
+								if(standardId!=null){
+									params.put("rootNodeId", standardId);
+								}
+								if(ASSESSMENT.equalsIgnoreCase(collectionType)){
+									AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.ASSESSMENT_PLAY, params);
+								}else{
+									AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+								}
+
+							}
+						}
+					});
+
+				}
+				else
+				{
 				Map<String, String> params = new HashMap<String, String>();
-				params.put("id", conceptDo.getGooruOid());
+				params.put("id", collectionIdVal);
 				params.put("subject", AppClientFactory.getPlaceManager().getRequestParameter("subject","featured"));
 				params.put("lessonId", lessonId);
-				if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY)) {
+				if(libraryId!=null){
+					params.put("lid", libraryId);
+				}
+				String libraryEventId=AppClientFactory.getPlaceManager().getLibaryEventId();
+				if(libraryEventId!=null){
+					params.put("eventid", libraryEventId);
+				}
+				if(getPlaceToken().equals(PlaceTokens.RUSD_LIBRARY) || getPlaceToken().equals(PlaceTokens.SAUSD_LIBRARY)) {
 					params.put("library", getPlaceToken());
 				}
 				String standardId = AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID);
 				if(standardId!=null){
 					params.put("rootNodeId", standardId);
 				}
-				AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.PREVIEW_PLAY, params);
+				if(ASSESSMENT.equalsIgnoreCase(collectionType)){
+					AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.ASSESSMENT_PLAY, params);
+				}else{
+					AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.COLLECTION_PLAY, params);
+				}
+
+				}
 			}
 	}
-	
+
 	OpenLessonConceptHandler openLessonConceptHandler = new OpenLessonConceptHandler() {
 		@Override
-		public void openLessonConcept(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode) {
-			setConceptData(conceptDo, topicId, lessonId, lessonLabel,lessonCode);
+		public void openLessonConcept(ConceptDo conceptDo, Integer topicId, String lessonId, String lessonLabel, String lessonCode,String libraryGooruOid) {
+			setConceptData(conceptDo, topicId, lessonId, lessonLabel,lessonCode,libraryGooruOid);
+			setConceptDoList(null);
+			addCollectionQuizTitleData("lesson");
 		}
 	};
-	
+
 	SetLoadingIconHandler setLoadingIconHandler = new SetLoadingIconHandler() {
 		@Override
 		public void setLoadingIcon(boolean isVisible, Integer topicIdCollection) {
@@ -1012,36 +1563,45 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 			}
 		}
 	};
-	
+
 	/**
-	 * 
-	 * @function onassignCollectionBtnClicked 
-	 * 
+	 *
+	 * @function onassignCollectionBtnClicked
+	 *
 	 * @created_date : 11-Dec-2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * 
+	 *
+	 *
 	 * @parm(s) : @param clickEvent
-	 * 
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
-	 * 
+	 *
 	 */
 	@UiHandler("assignCollectionBtn")
 	public void onassignCollectionBtnClicked(ClickEvent clickEvent) {
-		String collectionId = getConceptDo().getGooruOid();
+		String collectionId = collectionTitleLbl.getElement().getAttribute("collid");
+		PlayerDataLogEvents.triggerLibraryShareDataEvent(collectionId, libraryGooruOid);
+		toolTipPopupPanelNew.clear();
+		toolTipPopupPanelNew.hide();
+		final Map<String, String> params = StringUtil.splitQuery(Window.Location
+				.getHref());
+		if(params.containsKey(CUSTOMIZE)){
+			params.remove(CUSTOMIZE);
+		}
 		if(AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID)!=null){
-			MixpanelUtil.mixpanelEvent("standardlibrary_assign_collection");	
+			MixpanelUtil.mixpanelEvent("standardlibrary_assign_collection");
 		}
 		MixpanelUtil.mixpanelEvent("LandingPage_Assign_Collection");
 
 				if(!isAssignPopup){
 					isAssignPopup=true;
+				//final Map<String,String> params = new HashMap<String,String>();
 				AssignPopupVc successPopupVc = new AssignPopupVc(collectionId, getConceptDo().getTitle(), getConceptDo().getGoals()) {
-					
+
 					@Override
 					public void closePoup() {
 						Window.enableScrolling(true);
@@ -1050,77 +1610,163 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 					}
 				};
 				Window.scrollTo(0, 0);
-				successPopupVc.setWidth("500px");
-				successPopupVc.setHeight("auto");
+				if(!successPopupVc.isVisible()){
+					successPopupVc.show();
+					successPopupVc.center();
+				}
+				Window.enableScrolling(false);
 
-				successPopupVc.show();
-				successPopupVc.center();
-				if (AppClientFactory.isAnonymous()){
-				successPopupVc.setPopupPosition(successPopupVc.getAbsoluteLeft(), 30);
+				if (!BrowserAgent.isDevice() && AppClientFactory.isAnonymous()){
+
+					successPopupVc.setPopupPosition(0, (Window.getClientHeight()-625)/2);
+
+				}else if(!BrowserAgent.isDevice() && !AppClientFactory.isAnonymous()){
+					successPopupVc.setPopupPosition(0, (Window.getClientHeight()-527)/2);
+				}else {
+					successPopupVc.center();
 				}
-				else
-				{
-				successPopupVc.setPopupPosition(successPopupVc.getAbsoluteLeft(), 30);
-				}
-				
+				params.put(ASSIGN, "yes");
+				params.put("collectionId", collectionId);
+				PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(AppClientFactory.getCurrentPlaceToken(), params);
+				AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
 			}
-			
-		
-		
-				
 	}
-	
+
 	/**
-	 * 
-	 * @function oncustomizeCollectionBtnClicked 
-	 * 
-	 * @created_date : 11-Dec-2013
-	 * 
-	 * @description
-	 * 
-	 * 
-	 * @parm(s) : @param clickEvent
-	 * 
-	 * @return : void
 	 *
+	 * @function oncustomizeCollectionBtnClicked
+	 *
+	 * @created_date : 11-Dec-2013
+	 *
+	 * @description
+	 *
+	 *
+	 * @parm(s) : @param clickEvent
+	 *
+	 * @return : void
+	 *category
 	 * @throws : <Mentioned if any exceptions>
 	 *
 	 */
 	@UiHandler("customizeCollectionBtn")
 	public void oncustomizeCollectionBtnClicked(ClickEvent clickEvent) {
+		toolTipPopupPanelCustomize.clear();
+		toolTipPopupPanelCustomize.hide();
 		if(AppClientFactory.getPlaceManager().getRequestParameter(STANDARD_ID)!=null){
-			MixpanelUtil.mixpanelEvent("standardlibrary_customize_collection");	
+			MixpanelUtil.mixpanelEvent("standardlibrary_customize_collection");
 		}
-		String collectionId = getConceptDo().getGooruOid();
-		MixpanelUtil.mixpanelEvent("LandingPage_customize_collection");
+		final Map<String, String> params = StringUtil.splitQuery(Window.Location
+				.getHref());
+		if(params.containsKey(ASSIGN)){
+			params.remove(ASSIGN);
+		}
+		final String collectionId = collectionTitleLbl.getElement().getAttribute("collid");
 
-				if(!isCustomizePopup){
-					isCustomizePopup=true;
-				Boolean loginFlag = false;
-				if (AppClientFactory.isAnonymous()){
-					loginFlag = true;
-				}
-				else
-				{
-					loginFlag = false;
-				}
-				RenameAndCustomizeLibraryPopUp successPopupVc = new RenameAndCustomizeLibraryPopUp(collectionId, loginFlag, getConceptDo().getTitle()) {
+		final String collectionTitle = collectionTitleLbl.getElement().getAttribute(COLLECTION_TITLE);
+		MixpanelUtil.mixpanelEvent("LandingPage_customize_collection");
+		if(!isCustomizePopup){
+			isCustomizePopup=true;
+			Window.scrollTo(0, 0);
+			if(AppClientFactory.isAnonymous()){
+				LoginPopupUc loginPopupUc=new LoginPopupUc() {
+					@Override
+					public	void onLoginSuccess(){
+						Window.enableScrolling(false);
+						remixPresenterWidget.DisableMyCollectionsPanelData(false);
+						remixPresenterWidget.getLoadingImage();
+						remixPresenterWidget.getUserShelfCollectionsData(collectionId, "coursebuilder",collectionTitle);
+						remixPresenterWidget.getView().getAppPopUp().show();
+						isCustomizePopup = false;
+						remixPresenterWidget.getView().getAppPopUp().center();
+						remixPresenterWidget.getView().getAppPopUp().setGlassEnabled(true);
+					}
+				};
+				loginPopupUc.show();
+				loginPopupUc.setGlassEnabled(true);
+			}else{
+				remixPresenterWidget.DisableMyCollectionsPanelData(false);
+				remixPresenterWidget.getLoadingImage();
+				remixPresenterWidget.getUserShelfCollectionsData(collectionId, "coursebuilder",collectionTitle);
+				remixPresenterWidget.getView().getAppPopUp().show();
+				isCustomizePopup = false;
+				remixPresenterWidget.getView().getAppPopUp().center();
+				remixPresenterWidget.getView().getAppPopUp().setGlassEnabled(true);
+			}
+			/*if (!BrowserAgent.isDevice() && AppClientFactory.isAnonymous()){
+				successPopupVc.setWidth("500px");
+				successPopupVc.setHeight("515px");
+			}else if(!BrowserAgent.isDevice() && !AppClientFactory.isAnonymous()){
+				successPopupVc.setWidth("500px");
+				successPopupVc.setHeight("336px");
+			}
+			successPopupVc.show();
+			successPopupVc.center();*/
+
+			params.put(CUSTOMIZE, "yes");
+			params.put("collectionId", collectionId);
+			PlaceRequest placeRequest=AppClientFactory.getPlaceManager().preparePlaceRequest(AppClientFactory.getCurrentPlaceToken(), params);
+			AppClientFactory.getPlaceManager().revealPlace(false, placeRequest, true);
+
+		}
+
+	}
+	/**
+	 *
+	 * Showing Customize or Assign popup after login with gmail account.
+	 *
+	 */
+
+	private void showPopupAfterGmailSignin() {
+		String collectionId = getConceptDo().getGooruOid()!=null ? getConceptDo().getGooruOid():null;
+
+		String colleId = AppClientFactory.getPlaceManager().getRequestParameter("collectionId")!=null ? AppClientFactory.getPlaceManager().getRequestParameter("collectionId") : null;
+		String customize = AppClientFactory.getPlaceManager().getRequestParameter(CUSTOMIZE)!=null ? AppClientFactory.getPlaceManager().getRequestParameter(CUSTOMIZE) : null;
+		String assign = AppClientFactory.getPlaceManager().getRequestParameter(ASSIGN)!=null ? AppClientFactory.getPlaceManager().getRequestParameter(ASSIGN) : null;
+		String emailId = AppClientFactory.getPlaceManager().getRequestParameter("emailId")!=null ? AppClientFactory.getPlaceManager().getRequestParameter("emailId") : null;
+		final String collectionTitle=getConceptDo().getTitle();
+		if(customize!=null && customize.equals("yes") && emailId!=null){
+			if(colleId.equals(collectionId) && isVisible){
+				isVisible=false;
+				Window.scrollTo(0, 0);
+				remixPresenterWidget.DisableMyCollectionsPanelData(false);
+				remixPresenterWidget.getLoadingImage();
+				remixPresenterWidget.getUserShelfCollectionsData(collectionId, "coursebuilder",collectionTitle);
+				remixPresenterWidget.getView().getAppPopUp().show();
+				isCustomizePopup = false;
+				remixPresenterWidget.getView().getAppPopUp().center();
+				remixPresenterWidget.getView().getAppPopUp().setGlassEnabled(true);
+			}
+
+		}
+		if(assign!=null && assign.equals("yes") && emailId!=null){
+			final Map<String, String> params = StringUtil.splitQuery(Window.Location
+					.getHref());
+			if(colleId.equals(collectionId) && isVisible ){
+				isVisible=false;
+				AssignPopupVc successPopupVc = new AssignPopupVc(collectionId, getConceptDo().getTitle(), getConceptDo().getGoals()) {
 
 					@Override
 					public void closePoup() {
 						Window.enableScrolling(true);
-						this.hide();	
-						isCustomizePopup = false;
+						this.hide();
+						isAssignPopup=false;
 					}
 				};
 				Window.scrollTo(0, 0);
-				successPopupVc.setWidth("500px");
-				successPopupVc.setHeight("340px");
-				successPopupVc.show();
-				successPopupVc.center();
+				if(!successPopupVc.isVisible()){
+					successPopupVc.show();
+					successPopupVc.center();
+				}
+				if (AppClientFactory.isAnonymous()){
+					successPopupVc.setPopupPosition(successPopupVc.getAbsoluteLeft(), -30);
+				}
+				else
+				{
+					successPopupVc.center();
+				}
 			}
-		
-	}	
+		}
+	}
 
 	public void renderStandards(FlowPanel standardsContainer, ResourceSearchResultDo searchResultDo) {
 		if (searchResultDo.getStandards() != null) {
@@ -1139,7 +1785,7 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 					}
 				} else {
 					DownToolTipWidgetUc toolTipUc = new DownToolTipWidgetUc(new Label(stdCode), new Label(stdDec), standards);
-					toolTipUc.setStyleName(UcCBundle.INSTANCE.css().searchStandard());
+					toolTipUc.setStyleName("Uc-searchStandard");
 					standardsContainer.add(toolTipUc);
 				}
 				count++;
@@ -1164,76 +1810,218 @@ public class LibraryTopicListView extends Composite implements MessageProperties
 	private void setPlaceToken(String placeToken) {
 		this.placeToken = placeToken;
 	}
-	
+
 	private void setDefaultCollectionLbl() {
 		collectionInfo.setVisible(false);
 		resourcesInside.setVisible(false);
 		noCollectionLbl.setVisible(true);
 	}
-	
 
+	/**
+	 * Inner class implementing Mouse over handler and calling on mouse over of Assign button.
+	 *
+	 */
 	public class OnassignCollectionBtnMouseOver implements MouseOverHandler{
 
 		@Override
 		public void onMouseOver(MouseOverEvent event) {
 			toolTipPopupPanelNew.clear();
-			toolTipPopupPanelNew.setWidget(new GlobalToolTip(GL0676));
+			toolTipPopupPanelNew.setWidget(new GlobalToolTip(i18n.GL0676()));
 			toolTipPopupPanelNew.setStyleName("");
 			toolTipPopupPanelNew.setPopupPosition(assignCollectionBtn.getElement().getAbsoluteLeft()+8, assignCollectionBtn.getElement().getAbsoluteTop()+10);
 			toolTipPopupPanelNew.getElement().getStyle().setZIndex(999999);
 			toolTipPopupPanelNew.show();
 		}
-		
+
 	}
-	
+
+
+	/**
+	 * Inner class implementing Mouse out handler and calling on mouse out of Assign button.
+	 *
+	 */
 	public class OnassignCollectionBtnMouseOut implements MouseOutHandler{
 
 		@Override
 		public void onMouseOut(MouseOutEvent event) {
 			toolTipPopupPanelNew.hide();
 		}
-
-		
-		
 	}
-	
+
 	public class OncustomizeCollectionBtnMouseOver implements MouseOverHandler{
 
 		@Override
 		public void onMouseOver(MouseOverEvent event) {
-			toolTipPopupPanelNew.clear();
-			toolTipPopupPanelNew.setWidget(new GlobalToolTip(GL0677));
-			toolTipPopupPanelNew.setStyleName("");
-			toolTipPopupPanelNew.setPopupPosition(customizeCollectionBtn.getElement().getAbsoluteLeft()+18, customizeCollectionBtn.getElement().getAbsoluteTop()+10);
-			toolTipPopupPanelNew.getElement().getStyle().setZIndex(999999);
-			toolTipPopupPanelNew.show();
+			toolTipPopupPanelCustomize.clear();
+			toolTipPopupPanelCustomize.setWidget(new GlobalToolTip(i18n.GL0677()));
+			toolTipPopupPanelCustomize.setStyleName("");
+			toolTipPopupPanelCustomize.setPopupPosition(customizeCollectionBtn.getElement().getAbsoluteLeft()+18, customizeCollectionBtn.getElement().getAbsoluteTop()+10);
+			toolTipPopupPanelCustomize.getElement().getStyle().setZIndex(999999);
+			toolTipPopupPanelCustomize.show();
 		}
-		
+
 	}
-	
+
 	public class OncustomizeCollectionBtnMouseOut implements MouseOutHandler{
 
 		@Override
 		public void onMouseOut(MouseOutEvent event) {
+			toolTipPopupPanelCustomize.hide();
+		}
+	}
+
+	/**
+	 * Returns back with default equivalent category.
+	 * @param category
+	 * @return
+	 */
+	public String getDetaultResourceImage(String category){
+		String categoryIcon=StringUtil.getEquivalentCategory(category==null?"":category.toLowerCase());
+		return categoryIcon ;
+	}
+
+
+
+	UpdateRatingsInRealTimeHandler setRatingWidgetMetaData = new UpdateRatingsInRealTimeHandler() {
+
+		@Override
+		public void updateRatingInRealTime(String gooruOid, double average,Integer count) {
+
+		}
+	};
+
+	SetConceptQuizDataHandler setConceptQuizDataHandler = new SetConceptQuizDataHandler() {
+		@Override
+		public void setConceptQuizDataHandler(ArrayList<ConceptDo> conceptDoList, Integer topicId,
+				String lessonId, String lessonLabel, String lessonCode, String conceptId,String libraryGooruOid) {
+			setConceptDoList(conceptDoList);
+			for(int i = 0; i<conceptDoList.size();i++) {
+				if(conceptDoList.get(i).getGooruOid().equalsIgnoreCase(conceptId)) {
+					setConceptData(conceptDoList.get(i),topicId,lessonId,lessonLabel,lessonCode,libraryGooruOid);
+				}
+			}
+			addCollectionQuizTitleData(LESSON);
+		}
+	};
+
+	private void addCollectionQuizTitleData(String pageType) {
+		if(LESSON.equals(pageType)&&conceptDoList!=null&&conceptDoList.size()>0&&AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.DISCOVER)&&AppClientFactory.getPlaceManager().getRequestParameter("standardId")==null&&setQuizTabVisiblity(conceptDoList)) {
+			setCollectionQuizVisibility(true);
+			collectionTitle.addStyleName(libraryStyle.collectionQuizTabActive());
+			quizTitle.removeStyleName(libraryStyle.collectionQuizTabActive());
+		} else {
+			setCollectionQuizVisibility(false);
+		}
+	}
+
+	private void setCollectionQuizVisibility(boolean isVisible) {
+		collectionTitle.setVisible(isVisible);
+		quizTitle.setVisible(isVisible);
+	}
+
+	@UiHandler("collectionTitle")
+	public void clickCollectionTitle(ClickEvent event) {
+		collectionTitle.addStyleName(libraryStyle.collectionQuizTabActive());
+		quizTitle.removeStyleName(libraryStyle.collectionQuizTabActive());
+		setConceptDoData("collection");
+	}
+
+	@UiHandler("quizTitle")
+	public void clickQuizTitle(ClickEvent event) {
+		collectionTitle.removeStyleName(libraryStyle.collectionQuizTabActive());
+		quizTitle.addStyleName(libraryStyle.collectionQuizTabActive());
+		setConceptDoData("assessment");
+	}
+
+	private void setConceptDoData(String collectionType) {
+		for(int i = 0; i<conceptDoList.size();i++) {
+			if(conceptDoList.get(i).getCollectionType().equalsIgnoreCase(collectionType)) {
+				setConceptData(conceptDoList.get(i),topicDo.getCodeId(),null, topicDo.getLesson().get(0).getLabel(),topicDo.getLesson().get(0).getCode(),null);
+			}
+		}
+	}
+	public ArrayList<ConceptDo> getConceptDoList() {
+		return conceptDoList;
+	}
+	public void setConceptDoList(ArrayList<ConceptDo> conceptDoList) {
+		this.conceptDoList = conceptDoList;
+	}
+	public class assignTooltipBlur implements BlurHandler{
+
+		@Override
+		public void onBlur(BlurEvent event) {
+			toolTipPopupPanelCustomize.clear();
+			toolTipPopupPanelNew.clear();
+			toolTipPopupPanelCustomize.hide();
 			toolTipPopupPanelNew.hide();
 		}
 	}
-	public String getDetaultResourceImage(String category){
-		String categoryIcon=category;
-		if(category!=null){
-			if(category.equalsIgnoreCase("Lesson")||category.equalsIgnoreCase("Textbook")||category.equalsIgnoreCase("Handout"))
-			{
-				categoryIcon=category.replaceAll("Lesson", "Text").replaceAll("Textbook", "Text").replaceAll("Handout", "Text").replaceAll("lesson", "Text").replaceAll("textbook", "Text").replaceAll("handout", "Text");
-			}
-			if(category.equalsIgnoreCase("Slide"))
-			{
-				categoryIcon=category.replaceAll("Slide","Image").replaceAll("slide","Image");
-			}
-			if(category.equalsIgnoreCase("Exam") || category.equalsIgnoreCase("Challenge")||categoryIcon.equalsIgnoreCase("Website"))
-			{
-				categoryIcon=category.replaceAll("Exam","Webpage").replaceAll("Challenge", "Webpage").replaceAll("exam","Webpage").replaceAll("challenge", "Webpage");
-			}
+
+
+	/**
+	 * Displaying assign or customize pop up after gmail login.
+	 */
+	private void getPopupAfterGMLogin() {
+		Map<String, String> maps = StringUtil.splitQuery(Window.Location.getHref());
+		if(maps.containsKey("emailId")){
+			showPopupAfterGmailSignin();
 		}
-		return categoryIcon.toLowerCase();
+	}
+
+	/**
+	 * Gets the user taxonomy code if user has logged in.
+	 */
+	private void loggedInUserStdPrefCode() {
+		if(!AppClientFactory.isAnonymous()){
+			try {
+				if(AppClientFactory.getLoggedInUser().getMeta() != null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference() !=null && AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode() != null){
+					getStandardPrefCode(AppClientFactory.getLoggedInUser().getMeta().getTaxonomyPreference().getCode());
+				}
+			} catch (Exception e) {
+				AppClientFactory.printSevereLogger("LibraryTopicListView loggedInUserStdPrefCode:::"+e);
+			}
+		}else{
+			standardsFloPanel.setVisible(true);
+		}
+	}
+
+
+	/**
+	 * Sets an attributes for elements.
+	 */
+	private void setElementsAttributes(){
+		moreOnTopicText.getElement().setInnerHTML(i18n.GL1169());
+		moreOnTopicText.getElement().setAttribute("alt",i18n.GL1169());
+		moreOnTopicText.getElement().setAttribute("title",i18n.GL1169());
+
+		assignCollectionBtn.setText(i18n.GL0526());
+		assignCollectionBtn.getElement().setAttribute("alt",i18n.GL0526());
+		assignCollectionBtn.getElement().setAttribute("title",i18n.GL0526());
+
+		customizeCollectionBtn.setText(i18n.GL2037());
+		customizeCollectionBtn.getElement().setAttribute("alt",i18n.GL2037());
+		customizeCollectionBtn.getElement().setAttribute("title",i18n.GL2037());
+
+		noCollectionLbl.setText(i18n.GL1170());
+		noCollectionLbl.getElement().setAttribute("alt",i18n.GL1170());
+		noCollectionLbl.getElement().setAttribute("title",i18n.GL1170());
+	}
+	/**
+	 * This Inner class used to navigate to Folder TOC page when click on ViewAll button.
+	 */
+	public class ViewAllBtnClickEvent implements ClickHandler{
+		String folderId="";
+		public ViewAllBtnClickEvent(String folderId){
+			this.folderId=folderId;
+		}
+		@Override
+		public void onClick(ClickEvent event) {
+			Map<String, String> params = new HashMap<String, String>();
+			params.put("id", folderId);
+			if(getPlaceToken()!=PlaceTokens.PROFILE_PAGE){
+				params.put("libName", getPlaceToken());
+			}
+			AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.FOLDER_TOC,params);
+		}
 	}
 }

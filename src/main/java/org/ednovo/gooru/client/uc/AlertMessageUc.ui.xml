@@ -6,7 +6,6 @@
 		}
 		
 		.removePopupContainer {
-			border: 1px solid #CCCCCC;
 			height: 100px !important;
 			margin: -4px 4px 4px;
 		}
@@ -17,7 +16,7 @@
 		}
 		
 		.removeText {
-			padding: 10px;
+			padding: 15px;
 			width: 90%;
 		}
 	</ui:style>

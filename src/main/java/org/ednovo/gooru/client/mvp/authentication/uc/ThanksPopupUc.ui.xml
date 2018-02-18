@@ -4,18 +4,28 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:with type="org.ednovo.gooru.client.mvp.authentication.SignUpCBundle"
 		field="res" />
-	<g:HTMLPanel styleName="{res.css.popup} {res.css.imgBG}">
-		<g:HTMLPanel styleName="{res.css.popupInner}" ui:field="panelPopupInner">
-			<g:Label styleName="{res.css.popupHeader}" ui:field="lblLoginHeading"></g:Label>
-			<g:Label ui:field="lblClose"
-				styleName="{res.css.closeButton}"></g:Label>
-			<g:HTMLPanel styleName="{res.css.thanksPopupContent}">
+		<g:HTMLPanel styleName="LoginpopupMain">
+		<g:HTMLPanel styleName="LoginpopupInner"  ui:field="panelPopupInner">
+			<g:HTMLPanel styleName="LoginpopupHeader">
+				<g:HTMLPanel styleName="row">
+					<g:HTMLPanel styleName="col-md-8 col-xs-8">
+						<g:Label  ui:field="lblLoginHeading"></g:Label>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="col-md-4 col-xs-4 closeContainer">
+						<g:Anchor styleName="closeButton" ui:field="lblClose"></g:Anchor>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				</g:HTMLPanel>
+			   </g:HTMLPanel>
+
+			<g:HTMLPanel styleName="col-md-12 col-xs-12 {res.css.paddingClear}">
 				<g:HTMLPanel styleName="{res.css.popupContent}">
 					<g:Label styleName="{res.css.congratsHeader}" ui:field="lblCongratsHeader"/>
 					<g:Label styleName="{res.css.subheader}" ui:field="lblCheckYourEmail"/>
 					<g:Button styleName="primary {res.css.startUsingGooru}" ui:field="btnStartUsingGooru"/>
 				</g:HTMLPanel>
-				<g:HTMLPanel styleName="{res.css.footer}" ui:field="panelFooter">
+				<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+				<g:HTMLPanel styleName="col-md-12 col-xs-12 {res.css.footer}" ui:field="panelFooter">
 					<g:Label styleName="{res.css.h2}" ui:field="lblWhatsNext"/>
 					<g:Label ui:field="lblLearnHowTo"/>
 					<g:HTMLPanel styleName="{res.css.DOTSbuttons}">
@@ -36,6 +46,7 @@
 					<g:HTML styleName="{res.css.supportMessage}" ui:field="htmlSupport"/>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
+			<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder>

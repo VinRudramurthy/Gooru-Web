@@ -1,27 +1,33 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
-	<ui:with type="org.ednovo.gooru.client.mvp.home.LoginPopUpCBundle"
-		field="res" />
-    
-    <g:HTMLPanel styleName="{res.css.popup} {res.css.forgetImgBG}">
-		<g:HTMLPanel styleName="{res.css.popupInner}">
-			<g:Label styleName="{res.css.popupHeader}" ui:field="lblLoginHeading"></g:Label>
-			<panel:HTMLEventPanel ui:field="closeButton" styleName="{res.css.closeButton}"></panel:HTMLEventPanel>
-			<g:HTMLPanel styleName="{res.css.forgotPasswordSuccessPopupContent}">
-			    <g:Label styleName="{res.css.forgotPasswordSuccessText}" ui:field="lblDisplayTextMessage" />
-			    <g:Label styleName="{res.css.h1}" ui:field="lblTextMessageInfomation" />
-				<g:HTMLPanel styleName="{res.css.forgotPasswordSuceessButtonContainer}">
-				<g:Button ui:field="okBtnUc" styleName="primary {res.css.btnSubmit}"></g:Button>
-			
+    <g:HTMLPanel styleName="LoginpopupMain">
+		<g:HTMLPanel styleName="popupInner">
+		    <g:HTMLPanel styleName="LoginpopupHeader">
+		        <g:HTMLPanel styleName="row">
+		    		<g:Label styleName="col-md-9 col-xs-9" ui:field="lblLoginHeading"></g:Label>
+		    		<g:HTMLPanel styleName="col-md-3 col-xs-3 closeContainer">
+		    			<panel:HTMLEventPanel ui:field="closeButton" styleName="closeButton"></panel:HTMLEventPanel>
+		    		</g:HTMLPanel>
+				  	<g:HTMLPanel styleName="clearfix"/>
+		        </g:HTMLPanel>
+
+		    </g:HTMLPanel>
+
+			<g:HTMLPanel styleName="forgotPasswordSuccessPopupContent">
+			    <g:Label styleName="forgotPasswordSuccessText" ui:field="lblDisplayTextMessage" />
+			    <g:Label styleName="h1" ui:field="lblTextMessageInfomation" />
+				<g:HTMLPanel styleName="forgotPasswordSuceessButtonContainer">
+				<g:Button ui:field="okBtnUc" styleName="primary btnSubmit"></g:Button>
+
 			 </g:HTMLPanel>
 			</g:HTMLPanel>
-			<g:HTMLPanel styleName="{res.css.forgotPasswordBottomContainer}">
-			    <g:HTMLPanel styleName="{res.css.footerText}">
+			<g:HTMLPanel styleName="leaveRegistrationBottomContainer">
+			    <g:HTMLPanel styleName="footerText">
 			    <g:Label ui:field="queriesText"/>
 			    <g:InlineLabel ui:field="pleaseContactLbl"/><g:Anchor ui:field="supportlnk" target="_blank"></g:Anchor>
 			    </g:HTMLPanel>
 			</g:HTMLPanel>
 			</g:HTMLPanel>
 			</g:HTMLPanel>
-    </ui:UiBinder> 
+    </ui:UiBinder>

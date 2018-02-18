@@ -26,9 +26,9 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollaboratorsDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollaboratorsDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 
 /**
  * @author Search Team

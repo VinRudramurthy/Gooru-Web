@@ -1,0 +1,38 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel>
+		 <g:HTMLPanel styleName="skillsCategory">
+      <uc:UlPanel>
+        <uc:LiPanel><g:InlineHTML styleName="smallCircle greenCircle"></g:InlineHTML><g:InlineLabel  ui:field="spnHewlettDeeperLearningModel"/></uc:LiPanel>
+        <uc:LiPanel><g:InlineHTML styleName="smallCircle blueCircle"></g:InlineHTML><g:InlineLabel ui:field="spnConley4Keys"/></uc:LiPanel>
+        <uc:LiPanel><g:InlineHTML styleName="smallCircle yellowCircle"></g:InlineHTML><g:InlineLabel ui:field="spnP21Framework"/></uc:LiPanel>
+        <uc:LiPanel><g:InlineHTML styleName="smallCircle purpleCircle"></g:InlineHTML><g:InlineLabel ui:field="spnNationalResearchCenter"/></uc:LiPanel>
+      </uc:UlPanel>
+    </g:HTMLPanel>
+    <g:HTMLPanel styleName="skillsCategoryList">
+
+    <g:HTMLPanel styleName="less-gutter" ui:field="contentsDiv">
+      <g:HTMLPanel styleName="col-md-4 col-sm-4 col-xs-4 devider">
+     	 	<g:HTMLPanel styleName="dividerHeader"><g:InlineLabel ui:field="spnKeyCongitiveAndStrategiesTitle"/></g:HTMLPanel>
+	        <uc:UlPanel ui:field="ulCongitiveAndStrategies"/>
+      </g:HTMLPanel>
+   	  <g:HTMLPanel styleName="col-md-4 col-sm-4 col-xs-4 devider">
+     		 <g:HTMLPanel styleName="dividerHeader"><g:InlineLabel ui:field="spnKeyContentKnowledgeTitle"/></g:HTMLPanel>
+       		 <uc:UlPanel ui:field="ulKeyContentKnowledge"/>
+      </g:HTMLPanel>
+      <g:HTMLPanel styleName="col-md-4 col-sm-4 col-xs-4 devider">
+       		 <g:HTMLPanel styleName="dividerHeader"><g:InlineLabel ui:field="spnKeyLearningSkillsTitle"/></g:HTMLPanel>
+        	 <uc:UlPanel ui:field="ulKeyLearningSkills"/>
+      </g:HTMLPanel>
+
+      <g:HTMLPanel styleName="clearfix"/>
+      </g:HTMLPanel>
+      <g:HTMLPanel styleName="buttonGroup">
+      	<g:Button styleName="secondary" ui:field="cancelBtn" text="{i18n.GL0142}" title="{i18n.GL0142}"/>
+      	<g:Button styleName="primary" ui:field="addCenturyBtn" text="{i18n.GL0590}" title="{i18n.GL0590}"/>
+      </g:HTMLPanel>
+    </g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

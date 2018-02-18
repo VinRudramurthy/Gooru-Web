@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="errorStyle" src="CollectionNonExistStyle.css" />
+	<g:HTMLPanel styleName="{errorStyle.display}">
+	   
+ <g:HTMLPanel styleName="{errorStyle.player-bg}">
+   <g:HTMLPanel styleName="{errorStyle.resource-thumbnail}">
+       <g:Image styleName="{errorStyle.resource-image" ui:field="defaultImage"/>
+    </g:HTMLPanel>
+   
+   <g:Label styleName="{errorStyle.h3}" ui:field="lblNoLongerMessage"/>
+  <!--    <g:Label styleName="{errorStyle.h4}" ui:field="lblNextResourceMsg"/> -->
+     <g:HTMLPanel styleName="{errorStyle.desc}" ui:field="lblDesc">
+         <g:Anchor styleName="{errorStyle.readMore}" ui:field="ancLearnMore"></g:Anchor>
+     </g:HTMLPanel>
+   <!--  <div class="h3">Oops! Looks like this resource is no longer available! </div>
+    <div class="h4">Click the next arrow to keep going to the next resource! </div>
+    <div class="desc">You are seeing this page because this resource no longer exists or has been deleted by the owner.
+      <div class="readMore">Learn more.</div>
+    </div> -->
+</g:HTMLPanel>
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

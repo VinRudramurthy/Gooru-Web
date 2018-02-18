@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	<ui:style field="districtStyleUc" src="district.css"
+		type="org.ednovo.gooru.client.mvp.library.district.DistrictStyleBundle" />
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel>
+
+		<g:HTMLPanel ui:field="courseTabs" styleName="tabs" />
+
+		<g:HTMLPanel ui:field="landingBanner" />
+
+		<g:HTMLPanel ui:field="container">
+
+			<g:Label styleName="{districtStyleUc.pageTitle} {districtStyleUc.h2}"
+				ui:field="featuredCousesLbl"></g:Label>
+
+			<g:HTMLPanel ui:field="featuredCourseTabs" styleName="tabs">
+				<g:HTMLPanel ui:field="featuredCourses" />
+			</g:HTMLPanel>
+
+			<g:HTMLPanel ui:field="courseBanner">
+				<g:HTMLPanel ui:field="partnerLogo" />
+				<g:Image ui:field="courseImage" />
+				<g:Label styleName="{districtStyleUc.courseTitle}" ui:field="courseTitle" />
+			</g:HTMLPanel>
+
+			<g:HTMLPanel ui:field="featuredEducator">
+				<g:Image
+					styleName="{districtStyleUc.educatorPhoto} {districtStyleUc.courseContributorAlign}"
+					ui:field="educatorPhoto"></g:Image>
+				<g:Label ui:field="featuredContributor" styleName="{districtStyleUc.courseContributorAlign}"></g:Label>
+				<g:Anchor ui:field="featuredContributorsLink"
+					styleName="{districtStyleUc.courseContributorAlign}"></g:Anchor>
+			</g:HTMLPanel>
+
+			<g:HTMLPanel ui:field="leftNav" />
+
+			<g:HTMLPanel ui:field="scrollPanel" styleName="{districtStyleUc.scrollPanel}">
+			    <g:HTMLPanel
+					styleName="{districtStyleUc.topicBlockStyle} {districtStyleUc.topicTitleStyle}"
+					ui:field="folderListPanel">
+					<g:Label styleName="{districtStyleUc.topicListEllipsis}"
+						ui:field="folderTopicTitleLbl" />
+					<g:Button styleName="secondary" ui:field="listViewBtn"
+						text="{i18n.GL1946}" title="{i18n.GL1946}"></g:Button>
+				</g:HTMLPanel>
+				<g:HTMLPanel ui:field="libraryMetaDataContainer" />
+				<g:HTMLPanel ui:field="loadingIconPanel"
+					styleName="loadingImage {districtStyleUc.loadingIconTopic}"></g:HTMLPanel>
+								<g:HTMLPanel ui:field="contentScroll">
+
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+
+		</g:HTMLPanel>
+
+		<g:HTMLPanel ui:field="contributorsContainer" />
+		<sg:FooterUc />
+	</g:HTMLPanel>
+</ui:UiBinder>

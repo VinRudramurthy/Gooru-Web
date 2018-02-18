@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contributorDropDown{
+	display:inline-block;
+	margin:0 0;
+	font-family:Arial, Helvetica, sans-serif;
+	height:auto;
+	/* overflow-y:auto; */
+	background-color: #FFF !important;
+}
+
+#contributorDropDown .contributorPnl{
+	width:100%;
+	display: block;
+	border: 1px solid rgba(0,0,0,.15);
+}
+#contributorDropDown .contributorPnl .divider {
+  height: 1px;
+  margin: 9px 0 !important;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+ #contributorDropDown .contributorPnl li{
+	list-style:none;
+	margin:0 0;
+	padding:0 0;
+	display: inherit !important;
+	}
+	
+ #contributorDropDown .contributorPnl li .anchorPanel{
+	background:none !important;
+	border-left:none !important;
+	border-radius:0 0 !important;
+	display: block;
+ 	 padding: 5px 15px;
+	  clear: both;
+	  font-weight: 400;
+	  line-height: 1.42857143;
+	  white-space: nowrap;
+	   font-size: 14px;
+	  color: #777;
+	}
+ #contributorDropDown .contributorPnl li .anchorPanel:hover,#contributorDropDown .contributorPnl li .anchorPanel:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #88bbe1 !important;
+}
+#contributorDropDown .contributorPnl span{
+	margin-left:25px;
+}
+
+#contributorDropDown .contributorPnl .contributordropdown-header {
+	font-size:14px;
+	color:#777;
+	padding: 4px 10px 0px;
+}
+#gooruSearchMainContainer .authorDetails .contributorsStyle{
+	position:absolute;
+	background: white;
+}
+.userImageStyle{
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #87badd;
+}
+.noresultsStyle{
+	padding: 7px 20px;
+  	font-weight: bold;
+  	border: 1px solid #e5e5e5;
+}
+
+@media (max-width: 767px) {
+#contributorDropDown .contributorPnl{
+	min-width:100%;
+	width:230px;
+	display: block;
+}
+
+#contributorDropDown  .contributordropdown-header{
+	white-space:normal;
+}
+#contributorDropDown .contributorPnl .contributordropdown-header span {
+	display:block;
+	margin-left:0;
+}
+}

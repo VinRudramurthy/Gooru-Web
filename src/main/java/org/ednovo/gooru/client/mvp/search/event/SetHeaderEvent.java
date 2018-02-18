@@ -28,7 +28,7 @@
 package org.ednovo.gooru.client.mvp.search.event;
 
 
-import org.ednovo.gooru.shared.model.user.UserDo;
+import org.ednovo.gooru.application.shared.model.user.UserDo;
 
 import com.google.gwt.event.shared.GwtEvent;
 

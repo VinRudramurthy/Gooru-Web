@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -35,7 +35,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-public class UpdateQuestionImageView extends Composite implements MessageProperties{
+public class UpdateQuestionImageView extends Composite {
 	
 	private String thumbnailImageUrl=null;
 	@UiField Image updateQuestionImage;
@@ -48,13 +48,25 @@ public class UpdateQuestionImageView extends Composite implements MessagePropert
 	
 	private static UpdateQuestionImageViewUiBinder uiBinder=GWT.create(UpdateQuestionImageViewUiBinder.class);
 	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	
 	
 	public UpdateQuestionImageView(){
 		initWidget(uiBinder.createAndBindUi(this));
-		questionImageText.getElement().setInnerHTML(GL0860);
-		uploadImage.setText(GL0861);
-		removeImage.setText(GL0862);
+		questionImageText.getElement().setInnerHTML(i18n.GL0860());
+		questionImageText.getElement().setId("pnlUploadName");
+		questionImageText.getElement().setAttribute("alt", i18n.GL0860());
+		questionImageText.getElement().setAttribute("title", i18n.GL0860());
+		updateQuestionImage.getElement().setId("imgUpdateQuestionImage");
+		uploadImage.setText(i18n.GL0861());
+		uploadImage.getElement().setId("lblUploadImage");
+		uploadImage.getElement().setAttribute("alt", i18n.GL0861());
+		uploadImage.getElement().setAttribute("title", i18n.GL0861());
+		removeImage.setText(i18n.GL0862());
+		removeImage.getElement().setId("lblRemoveImage");
+		removeImage.getElement().setAttribute("alt", i18n.GL0862());
+		removeImage.getElement().setAttribute("title", i18n.GL0862());
 	}
 
 

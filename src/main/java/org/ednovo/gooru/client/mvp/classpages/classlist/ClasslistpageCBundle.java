@@ -32,8 +32,19 @@ import com.google.gwt.resources.client.CssResource.NotStrict;
 
 
 /**
- * @author Search Team
+ * 
+ * @fileName : ClasslistpageCBundle.java
  *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface ClasslistpageCBundle extends ClientBundle{
 	
@@ -47,25 +58,23 @@ public interface ClasslistpageCBundle extends ClientBundle{
 		
 		String teachTitle();
 		
-		String toggle();
-		
-		String publicPrivate();
-		
 		String teachDesc();
 		
 		String teachItalic();
 		String teachBold();
 		String assignDiv();
-		String assignTitle();
 		String subTitle();
 		String titleBold();
-		String assignTextArea();
-		String btn1();
 		String teachContentView();
 		String title();
 		String twoActions();
 		String manage();
 		String progress();
+		String manageStudents();
+		String progressStudents();
+		String manageDes();
+		String manageProgressStudents();
+		String classList();
 		
 		String assignSec();
 		String assignSecTitle();
@@ -73,17 +82,6 @@ public interface ClasslistpageCBundle extends ClientBundle{
 		String inputWidth();
 		
 		String shareTextboxLink();
-		String classTypeCheckbox();
-		
-		String ToggleButton();
-		String ToggleButtonuphovering();
-		String ToggleButtondown();
-		String ToggleButtondownhovering();
-		String toggleMainSpan();
-		String toggleSubContainer();
-		
-		String spanContainer();
-		String classlistCheckbox();
 		
 		//Invite Students css
 		String buttonContainer();
@@ -110,9 +108,6 @@ public interface ClasslistpageCBundle extends ClientBundle{
 		String emailIdCss();
 		String btnRemove();
 		
-		String emailButton();
-		String emailStyle();
-		
 		//New Features Class css
 		String teachPopupDisplay();
 		String existPopup();
@@ -122,17 +117,26 @@ public interface ClasslistpageCBundle extends ClientBundle{
 		String existPopupContent();
 		String threeActions();
 		String heading();
-		String publicImage();
 		String analystic();
-		String classList();
 		String buttonBlock();
 		String extra();
-		String checkboxContainer();
 		String seeMoreActive();
 		String seeMorePending();
 		
 		String checkboxStyle();
 		String activeMembersDesc();
+		
+		String privacyAlignStyle();
+		String visibilityDivContainer();
+		String radioBtnVisiblitySecondContainer();
+		String subBodyInviteContainer();
+		String leftInviteContainer();
+		String rightInviteContainer();
+		String inviteDivContainer();
+		String assignSecTitleheader();
+		
+		String manageText();
+		String regularRadioButton();
 	}
 	@NotStrict
 	@Source("classlistPage.css")

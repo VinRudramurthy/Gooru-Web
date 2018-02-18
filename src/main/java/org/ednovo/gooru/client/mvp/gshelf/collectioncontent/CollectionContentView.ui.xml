@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="pnlContentContainer">
+		<div class="resourcesButtonGroup">
+			<g:Label ui:field="lblTitle" styleName="lblTitle"/>
+			<g:Button styleName="primary" ui:field="btnAddResources" text="{i18n.GL3224}" />
+			<g:Button styleName="primary" ui:field="btnAddQuestions" text="{i18n.GL0309_1}" />
+			<tinyMce:TinyMCE width="1" height="1" ui:field="testTextArea" characterLimit="500"></tinyMce:TinyMCE>
+		</div>
+		<div class="coursesList">
+			<g:VerticalPanel styleName="tableDiv" ui:field="pnlReosurceList"/>
+		</div>
+		<div class="addCourse">
+<!-- 			<span>+</span> Add new <a href="">resource</a> or  <a href="">question</a>
+ -->	  <g:HTMLPanel ui:field="bottomPanel">
+ 			<g:InlineLabel text="{i18n.GL_SPL_PLUS} {i18n.GL0590}"></g:InlineLabel>
+			<g:Anchor text="{i18n.GL3217}" ui:field="ancAddResource"></g:Anchor>
+			<g:InlineLabel text="{i18n.GL0209}" ui:field="lblSpanOr"></g:InlineLabel>
+			<g:Anchor text="{i18n.GL3218}" ui:field="ancAddQuestion"></g:Anchor>
+		  </g:HTMLPanel>	
+		  <g:Label styleName="courseTextAdd" ui:field="lblLimitReached" />
+		</div>
+		<g:HTMLPanel ui:field="emptyContainerdiv"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

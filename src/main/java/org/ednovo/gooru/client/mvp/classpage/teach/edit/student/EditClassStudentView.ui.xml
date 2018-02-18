@@ -1,0 +1,113 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""></ui:style>
+ <g:HTMLPanel>
+	<!-- <g:HTMLPanel styleName="studentsMenuBlock no-gutter">
+	   <g:HTMLPanel styleName="col-md-6 col-sm-6">
+	      <g:HTMLPanel styleName="studentsLeftMenu">
+	         <ul>
+	            <uc:LiPanel ui:field="roasterPanel"><g:Anchor ui:field="roasterAnr"></g:Anchor></uc:LiPanel>
+	            <uc:LiPanel ui:field="reportPanel"><g:Anchor ui:field="reportPanelAnr"></g:Anchor></uc:LiPanel>
+	            <uc:LiPanel ui:field="collectionPanel"><g:Anchor ui:field="collRepoAnr"></g:Anchor></uc:LiPanel>
+	         </ul>
+	      </g:HTMLPanel>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="col-md-6 col-sm-6">
+	      <g:HTMLPanel styleName="scoreStatus">
+	         <g:HTMLPanel styleName="red">Below 60%</g:HTMLPanel>
+	         <g:HTMLPanel styleName="org">60%- 69%</g:HTMLPanel>
+	         <g:HTMLPanel styleName="yellowgreen">70%- 79%</g:HTMLPanel>
+	         <g:HTMLPanel styleName="lightgreen">80%- 89%</g:HTMLPanel>
+	         <g:HTMLPanel styleName="green">90%- 100%</g:HTMLPanel>
+	      </g:HTMLPanel>
+	   </g:HTMLPanel>
+	   <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	</g:HTMLPanel> -->
+	<g:HTMLPanel styleName="geryBackgroundBody">
+	   <g:FlowPanel ui:field="reportBox"></g:FlowPanel>
+	   <g:HTMLPanel styleName="rosterContainer" ui:field="roasterMainConatiner">
+	      <g:HTMLPanel styleName="classSettingsInner">
+	         <g:HTMLPanel styleName="col-md-3 col-sm-4">
+	            <uc:PPanel ui:field="classCodePanel"></uc:PPanel>
+	            <g:HTMLPanel styleName="rightWhiteBox"><g:InlineLabel ui:field="classCodeTxtPanel"></g:InlineLabel></g:HTMLPanel>
+	         </g:HTMLPanel>
+	         <g:HTMLPanel styleName="col-md-5 col-sm-6">
+	            <uc:PPanel ui:field="shareLnkPanel"></uc:PPanel>
+	            <g:TextBox ui:field="sharTxtBox" styleName="form-control"></g:TextBox>
+	            <g:TextBox ui:field="fullTxtBox" styleName="form-control"></g:TextBox>
+	         </g:HTMLPanel>
+	         <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	      </g:HTMLPanel>
+	      <g:HTMLPanel styleName="inviteStudents">
+	         <uc:H5Panel ui:field="inviteEmailTxt"></uc:H5Panel>
+	         <uc:PPanel ui:field="emailAddTxt"></uc:PPanel>
+	         <g:HTMLPanel styleName="inviteBox">
+	           <!--  <g:TextBox styleName="form-control" ui:field="inviteTxtBox"></g:TextBox> -->
+	            <g:HTMLPanel>
+				   <g:HTMLPanel ui:field="panelSuggestBox"></g:HTMLPanel>
+				   <g:Label ui:field="lblPleaseWait" styleName="pleaseWait" />
+				   <!-- <g:HTMLPanel ui:field="panelActions" styleName="">
+				      Tooltips
+				      <g:HTMLPanel styleName="tooltipContainer" ui:field="panelCode">
+				         <g:HTMLPanel styleName="arrowBorder"></g:HTMLPanel>
+				         <g:HTMLPanel styleName="arrow"></g:HTMLPanel>
+				         <g:Label styleName="tooltipContent" ui:field="lblText"></g:Label>
+				      </g:HTMLPanel>
+				   </g:HTMLPanel> -->
+				</g:HTMLPanel>
+				<g:Label ui:field="lblErrorMessage" styleName="errorMessage error" />
+	            <g:Button styleName="primary" ui:field="inviteBtn"></g:Button>
+	         </g:HTMLPanel>
+	      </g:HTMLPanel>
+	       <g:HTMLPanel styleName="joinedStudentsBlock" ui:field="pendindUserContainer">
+			   <g:HTMLPanel styleName="col-md-5 col-sm-4">
+			      <uc:H5Panel ui:field="studentPendingPanel"></uc:H5Panel>
+			     <!--  <g:Image ui:field="pendingImage"></g:Image> -->
+			   </g:HTMLPanel>
+			  <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+			   <g:HTMLPanel styleName="table-responsive"><g:VerticalPanel styleName="tableDiv" ui:field="pendingContainer"></g:VerticalPanel></g:HTMLPanel>
+			  <g:Anchor ui:field="ancPendingListSeeMore" styleName="seeMoreActive"/>
+			  <g:Label ui:field="lblPendingPleaseWait" styleName="systemMessage pleaseWait"/>
+		 </g:HTMLPanel>
+	      <g:HTMLPanel styleName="joinedStudentsBlock" ui:field="activeUserConatiner">
+			   <g:HTMLPanel styleName="col-md-5 col-sm-4">
+			      <uc:H5Panel ui:field="studentJoinPanel"></uc:H5Panel>
+			   </g:HTMLPanel>
+			   <g:HTMLPanel styleName="col-md-7 col-sm-8">
+			      <g:HTMLPanel styleName="indiactionText">
+			         <uc:PPanel ui:field="analyPanel"></uc:PPanel>
+			      </g:HTMLPanel>
+			   </g:HTMLPanel>
+			  <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+			  <g:HTMLPanel styleName="table-responsive"><g:VerticalPanel styleName="tableDiv" ui:field="tableContainer"></g:VerticalPanel></g:HTMLPanel>
+			  <g:Anchor ui:field="ancActiveListSeeMore" styleName="seeMoreActive"/>
+			  <g:Label ui:field="lblActivePleaseWait" styleName="pleaseWait"/>
+		 </g:HTMLPanel>
+	   </g:HTMLPanel>
+	  <!--  <g:HTMLPanel styleName="classReportMenuBlock no-gutter" ui:field="reportContainer">
+		   <g:HTMLPanel styleName="col-md-5 col-sm-7">
+		      <g:HTMLPanel styleName="classMenuLeft">
+		        <ul>
+		            <uc:LiPanel><g:Anchor ui:field="notePanel"></g:Anchor></uc:LiPanel>
+		        </ul>
+		      </g:HTMLPanel>
+		   </g:HTMLPanel>
+		   <g:HTMLPanel styleName="col-md-7 col-sm-5">
+		      <g:HTMLPanel styleName="classMenuRight">
+		         <g:HTMLPanel styleName="coureEditActions">
+		             <g:Image ui:field="studentImage"/><g:Anchor ui:field="studentAnr">Students</g:Anchor>
+		             <g:Button styleName="primary" ui:field="addStudentBtn"></g:Button>
+		             <g:Button styleName="primary" ui:field="connectCourseBtn"></g:Button>
+		             <g:InlineLabel styleName="courseLblStyle" ui:field="courseHeaderLbl"></g:InlineLabel><g:InlineLabel styleName="folderIcon"></g:InlineLabel><g:InlineLabel styleName="classTitle" ui:field="courseTitleLbl">4th Grade Math</g:InlineLabel>
+		        </g:HTMLPanel>
+		   </g:HTMLPanel>
+		</g:HTMLPanel>
+	   <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+	 </g:HTMLPanel> -->
+	</g:HTMLPanel>
+  </g:HTMLPanel>
+</ui:UiBinder>
+
+

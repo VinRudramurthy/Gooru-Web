@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<!-- <ui:style field= "style" src="ratingandreview.css"/> -->
+	<g:FlowPanel styleName="rating" ui:field="maincontainer">
+	    <g:InlineLabel styleName="ratingCountLabel" ui:field="avgRatingLabel"></g:InlineLabel>
+		<g:InlineLabel ui:field="star_1" styleName="star"></g:InlineLabel> 
+		<g:InlineLabel ui:field="star_2" styleName="star"></g:InlineLabel>
+		<g:InlineLabel ui:field="star_3" styleName="star"></g:InlineLabel>
+		<g:InlineLabel ui:field="star_4" styleName="star"></g:InlineLabel>
+		<g:InlineLabel ui:field="star_5" styleName="star"></g:InlineLabel>
+		<g:InlineLabel styleName="" ui:field="ratingCountOpenBrace"></g:InlineLabel>
+		<g:InlineLabel styleName="ratingCountLabel" ui:field="ratingCountLabel"></g:InlineLabel>
+		<g:InlineLabel styleName="" ui:field="ratingCountCloseBrace"></g:InlineLabel>
+	</g:FlowPanel>
+</ui:UiBinder>

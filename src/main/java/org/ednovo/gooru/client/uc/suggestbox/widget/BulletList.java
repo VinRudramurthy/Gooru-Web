@@ -31,4 +31,3 @@ public class BulletList extends ComplexPanel {
 		super.insert(w, getElement(), beforeIndex, true);
 	}
 }
-

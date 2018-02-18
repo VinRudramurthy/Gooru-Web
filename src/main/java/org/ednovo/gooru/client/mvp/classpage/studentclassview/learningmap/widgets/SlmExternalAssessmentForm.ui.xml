@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<ui:style src=""/>
+	<g:HTMLPanel>
+		<g:InlineLabel ui:field="scoreLbl"/><g:InlineLabel text="{i18n.GL3425}" styleName="errorMessage pull-right" ui:field="scoreErrorLbl"/>
+		<g:HTMLPanel styleName="textBoxPadding no-gutter">
+			<g:HTMLPanel styleName="col-md-10">
+				<g:TextBox styleName="pull-left form-control" ui:field="scoreTextBox"></g:TextBox>
+			</g:HTMLPanel>
+			<g:Label styleName="pull-right col-md-2 percentLbl">%</g:Label>
+			<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:InlineLabel ui:field="evidenceLbl"/><g:InlineLabel text="{i18n.GL0143}" styleName="errorMessage pull-right" ui:field="evidenceErrorLbl"/>
+		<g:TextArea styleName="form-control textBoxPadding" ui:field="evidence"></g:TextArea>
+		<panel:HTMLEventPanel styleName="list-group-item viewLink" ui:field="submit">
+			<g:Anchor ui:field="submitTxt" text="{i18n.GL0666}"></g:Anchor>
+			<g:Anchor ui:field="inProgressTxt"  text="{i18n.GL0808}"></g:Anchor>
+	    </panel:HTMLEventPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc"
+     xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src="" />
+    <g:HTMLPanel styleName="rowContainer no-gutter">
+		<uc:HTMLEventPanel styleName="cursorPointer col-md-3 col-sm-3" ui:field="unitBlock">
+		   <g:Label styleName="numaricOrder" ui:field="numericOrder"></g:Label>
+		   <g:HTMLPanel styleName="heighlightBlockUnitReports">
+		      <g:HTMLPanel styleName="lessonDetails">
+	             <span:H3Panel ui:field="unitCountName"></span:H3Panel>
+	             <span:PPanel ui:field="unitName"></span:PPanel>
+		      </g:HTMLPanel>
+		   </g:HTMLPanel>
+		</uc:HTMLEventPanel>
+        <g:HTMLPanel styleName="col-md-9 col-sm-9">
+           <g:HTMLPanel styleName="progressBlock">
+				<uc:HTMLEventPanel styleName="scrollLeftArrow cursorArrows cursorPointer" ui:field="leftArrow"></uc:HTMLEventPanel> 
+				<g:HTMLPanel styleName="circle-main-container line-height-70" ui:field="circleContainer"/>
+				<div class="clearfix"></div>
+				<uc:HTMLEventPanel styleName="scrollRightArrow cursorArrows cursorPointer" ui:field="rightArrow"></uc:HTMLEventPanel>
+             </g:HTMLPanel>
+        </g:HTMLPanel>
+        <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

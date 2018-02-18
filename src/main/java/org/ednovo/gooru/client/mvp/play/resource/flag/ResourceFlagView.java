@@ -28,15 +28,17 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ContentReportDo;
 import org.ednovo.gooru.client.mvp.play.collection.flag.FlagThankYouPopUpView;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ContentReportDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.EventBus;
@@ -46,6 +48,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.TextArea;
@@ -54,7 +57,7 @@ import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PopupViewWithUiHandlers;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
-public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHandler> implements IsResourceFlag,MessageProperties {
+public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHandler> implements IsResourceFlag {
 
 	private static FlaggingPopUpUiBinder uiBinder = GWT
 			.create(FlaggingPopUpUiBinder.class);
@@ -62,13 +65,16 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	interface FlaggingPopUpUiBinder extends
 			UiBinder<Widget, ResourceFlagView> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	@UiField HTMLEventPanel closeButton;
 	@UiField Button cancelButton,submitButton,submitButtonGray;
 	@UiField TextArea descriptionTextArea;
 	@UiField CheckBox checkBox1,checkBox2,checkBox3,checkBox4;
 	@UiField HTML titleText;
-	@UiField Label flagText,inappropriateText,unavailableText,inaccurateText,otherReasonText,provideMoreText;
+	@UiField Label flagText,provideMoreText;
+	@UiField InlineLabel  inappropriateText,unavailableText,inaccurateText,otherReasonText;
 	private FlagThankYouPopUpView thankYouToolTip=null;
 	int formateSize=0;
 	
@@ -77,7 +83,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	
 	public PopupPanel appPopUp;
 	private String resourceTitle;
-    private String resourceGooruId;
+    private String resourceGooruId,collectionItemId;
 	private String deleteContentReportGooruOids="";
 	
 	@Inject
@@ -85,19 +91,63 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 		super(eventBus);
 		appPopUp = new FlagPopupPanel(false);
 		appPopUp.setWidget(uiBinder.createAndBindUi(this));
-		cancelButton.setText(GL0608);
-		submitButton.setText(GL0486);
-		submitButtonGray.setText(GL0486);
+		cancelButton.setText(i18n.GL0608());
 		cancelButton.getElement().setAttribute("id", "cancelButton");
+		cancelButton.getElement().setAttribute("alt",i18n.GL0608());
+		cancelButton.getElement().setAttribute("title",i18n.GL0608());
+		
+		submitButton.setText(i18n.GL0486());
 		submitButton.getElement().setAttribute("id", "SubmitButton");
+		submitButton.getElement().setAttribute("alt",i18n.GL0486());
+		submitButton.getElement().setAttribute("title",i18n.GL0486());
+		
+		submitButtonGray.setText(i18n.GL0486());
+		submitButtonGray.getElement().setId("btnSubmitButtonGray");
+		submitButtonGray.getElement().setAttribute("alt",i18n.GL0486());
+		submitButtonGray.getElement().setAttribute("title",i18n.GL0486());
+		submitButtonGray.getElement().getStyle().setColor("#999");
 		submitButtonGray.setVisible(true);
 		submitButton.setVisible(false);
-		flagText.setText(GL0600);
-		inappropriateText.setText(GL0612);
-		inaccurateText.setText(GL0614);
-		unavailableText.setText(GL0613);
-		otherReasonText.setText(GL0606);
-		provideMoreText.setText(GL0607);
+		flagText.setText(i18n.GL0600());
+		flagText.getElement().setId("lblFlagText");
+		flagText.getElement().setAttribute("alt",i18n.GL0600());
+		flagText.getElement().setAttribute("title",i18n.GL0600());
+		
+		inappropriateText.setText(i18n.GL0612());
+		inappropriateText.getElement().setId("lblInappropriateText");
+		inappropriateText.getElement().setAttribute("alt",i18n.GL0612());
+		inappropriateText.getElement().setAttribute("title",i18n.GL0612());
+		
+		provideMoreText.getElement().getStyle().setMarginTop(25, Unit.PX);
+		
+		inaccurateText.setText(i18n.GL0614());
+		inaccurateText.getElement().setId("lblInaccurateText");
+		inaccurateText.getElement().setAttribute("alt",i18n.GL0614());
+		inaccurateText.getElement().setAttribute("title",i18n.GL0614());
+		
+		unavailableText.setText(i18n.GL0613());
+		unavailableText.getElement().setId("lblUnavailableText");
+		unavailableText.getElement().setAttribute("alt",i18n.GL0613());
+		unavailableText.getElement().setAttribute("title",i18n.GL0613());
+		
+		otherReasonText.setText(i18n.GL0606());
+		otherReasonText.getElement().setId("lblOtherReasonText");
+		otherReasonText.getElement().setAttribute("alt",i18n.GL0606());
+		otherReasonText.getElement().setAttribute("title",i18n.GL0606());
+		
+		provideMoreText.setText(i18n.GL0607());
+		provideMoreText.getElement().setId("lblProvideMoreText");
+		provideMoreText.getElement().setAttribute("alt",i18n.GL0607());
+		provideMoreText.getElement().setAttribute("title",i18n.GL0607());
+		
+		closeButton.getElement().setId("epnlCloseButton");
+		titleText.getElement().setId("htmlTitleText");
+		checkBox4.getElement().setId("chkCheckBox4");
+		checkBox3.getElement().setId("chkCheckBox3");
+		checkBox2.getElement().setId("chkCheckBox2");
+		checkBox1.getElement().setId("chkCheckBox1");
+		descriptionTextArea.getElement().setId("tatDescriptionTextArea");
+		StringUtil.setAttributes(descriptionTextArea, true);
 		closeButton.addClickHandler(new CloseFlagPopupEvent());
 	}
 	@UiHandler("cancelButton")
@@ -107,7 +157,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	@UiHandler("checkBox1")
 	public void onClickOfcheckBox1(ClickEvent event)
 	{
-	if(checkBox1.isChecked()||checkBox2.isChecked()||checkBox3.isChecked()||checkBox4.isChecked())
+	if(checkBox1.getValue()||checkBox2.getValue()||checkBox3.getValue()||checkBox4.getValue())
 		{
 			submitButtonGray.setVisible(false);
 			submitButton.setVisible(true);
@@ -122,7 +172,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	@UiHandler("checkBox2")
 	public void onClickOfcheckBox2(ClickEvent event)
 	{
-		if(checkBox2.isChecked()||checkBox3.isChecked()||checkBox4.isChecked()||checkBox1.isChecked()){
+		if(checkBox2.getValue()||checkBox3.getValue()||checkBox4.getValue()||checkBox1.getValue()){
 			submitButtonGray.setVisible(false);
 			submitButton.setVisible(true);
 		}
@@ -135,7 +185,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	@UiHandler("checkBox3")
 	public void onClickOfcheckBox3(ClickEvent event)
 	{
-		if(checkBox3.isChecked()||checkBox4.isChecked()||checkBox2.isChecked()||checkBox1.isChecked()){
+		if(checkBox3.getValue()||checkBox4.getValue()||checkBox2.getValue()||checkBox1.getValue()){
 			submitButtonGray.setVisible(false);
 			submitButton.setVisible(true);
 		}
@@ -149,7 +199,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	@UiHandler("checkBox4")
 	public void onClickOfcheckBox4(ClickEvent event)
 	{
-		if(checkBox4.isChecked()||checkBox3.isChecked()||checkBox2.isChecked()||checkBox1.isChecked()){
+		if(checkBox4.getValue()||checkBox3.getValue()||checkBox2.getValue()||checkBox1.getValue()){
 			submitButtonGray.setVisible(false);
 			submitButton.setVisible(true);
 		}
@@ -162,26 +212,23 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 	
 	@UiHandler("submitButton")
 	public void onClicksubmitButton(ClickEvent event){
-		if(checkBox1.isChecked())
+		if(checkBox1.getValue())
 		{
 			contentReportList.add("missing-concept");
 		}
-		if(checkBox2.isChecked())
+		if(checkBox2.getValue())
 		{
 			contentReportList.add("not-loading");
 		}
-		if(checkBox3.isChecked())
+		if(checkBox3.getValue())
 		{
 			contentReportList.add("inappropriate");
 		}
-		if(checkBox4.isChecked())
+		if(checkBox4.getValue())
 		{
-		
 			contentReportList.add("other");
 		}
-		getUiHandlers().createReport(resourceGooruId, descriptionTextArea.getText(), contentReportList, deleteContentReportGooruOids);
-		//getThankYouPopUp();
-		//resetFlagData();
+		getUiHandlers().createReport(resourceGooruId, descriptionTextArea.getText(), contentReportList, deleteContentReportGooruOids,collectionItemId);
 	}
 	
 	@Override
@@ -213,37 +260,44 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 
 	@Override
 	public void setFlagView(CollectionItemDo collectionItemDo) {
+		if(collectionItemDo!=null){
 		resourceTitle=collectionItemDo.getResourceTitle();
+		if(collectionItemDo.getResource()!=null){
 		resourceGooruId=collectionItemDo.getResource().getGooruOid();
+		}
+		collectionItemId=collectionItemDo.getCollectionItemId();
+		if(!StringUtil.isEmpty(resourceTitle)){
 		resourceTitle=resourceTitle.replaceAll("</p>", " ").replaceAll("<p>", "").replaceAll("<br data-mce-bogus=\"1\">", "").replaceAll("<br>", "").replaceAll("</br>", "");
-		titleText.setHTML(GL1430 +resourceTitle+" \" "+GL1431+"");
+		titleText.setHTML(i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		titleText.getElement().setAttribute("alt",i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		titleText.getElement().setAttribute("title",i18n.GL1430() +resourceTitle+" \" "+i18n.GL1431()+"");
+		}
+		}
 	}
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stubdd
-		
 	}
 
 	@Override
 	public void onLoad() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onUnload() {
-		// TODO Auto-generated method stub
-		
 	}
 	public void resetFlagData(){
-		checkBox1.setChecked(false);
-		checkBox2.setChecked(false);
-		checkBox3.setChecked(false);
-		checkBox4.setChecked(false);
+		checkBox1.setValue(false);
+		checkBox2.setValue(false);
+		checkBox3.setValue(false);
+		checkBox4.setValue(false);
 		descriptionTextArea.setText("");
+		descriptionTextArea.getElement().setAttribute("alt","");
+		descriptionTextArea.getElement().setAttribute("title","");
 		submitButtonGray.setVisible(true);
 		submitButton.setVisible(false);
+		contentReportList.clear();
+		deleteContentReportGooruOids="";
 	}
 	@Override
 	public void getreportData(ContentReportDo contentReportDo,String gooruFlagId) {
@@ -285,7 +339,7 @@ public class ResourceFlagView extends PopupViewWithUiHandlers<ResourceFlagUiHand
 		public FlagPopupPanel(boolean isAutoHide){
 			super(isAutoHide);
 			this.setGlassEnabled(true);
-			this.setStyleName("");
+			/*this.setStyleName("");*/
 			this.getGlassElement().getStyle().setZIndex(99999);
 			this.getElement().getStyle().setZIndex(99999);
 		}

@@ -30,8 +30,19 @@ package org.ednovo.gooru.client.mvp.classpages.event;
 import com.google.gwt.event.shared.GwtEvent;
 
 /**
- * @author Classpages Team
  * 
+ * @fileName : RefreshAssignmentsListEvent.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class RefreshAssignmentsListEvent extends GwtEvent<RefreshAssignmentsListEventHandler> {
 

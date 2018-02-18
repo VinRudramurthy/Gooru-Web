@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<g:AbsolutePanel ui:field="container"  width="410px" height="40px">
+			<g:FlowPanel styleName="answerDrag" ui:field="labelPanel">
+			     <g:HTML styleName="htAnswerChoiceDragIcon"></g:HTML>
+				<g:HTML styleName="answerDragTitle" ui:field="dragresourceTitle" />
+			</g:FlowPanel>
+	</g:AbsolutePanel>
+</ui:UiBinder> 

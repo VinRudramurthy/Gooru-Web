@@ -4,43 +4,43 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.play.collection.preview.home.assign.AssignPopUpCBundle"
 		field="res" />
+		<ui:style>
+		.addButtonContainer{
+			margin:50px 0;
+			}
+		</ui:style>
 
-		
-		<g:HTMLPanel styleName="{res.css.assign}" ui:field="panelAssign">
+		<g:HTMLPanel styleName="PopupMainVSmall" ui:field="panelAssign">
 		<g:HTMLPanel styleName="{res.css.assignContentLoginCustomize}">
 			<g:HTMLPanel styleName="{res.css.assignHeader}">
 				<g:HTMLPanel styleName="{res.css.assignTitle}" ui:field="customizeText"></g:HTMLPanel>
 				<g:Label ui:field="cancelButton"
 					styleName="{res.css.assignCloseMarker} {res.css.assignSprite} {res.css.assignCloseMark}"></g:Label>
+				<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 			</g:HTMLPanel>
 			<g:HTMLPanel styleName="{res.css.loadingImageMainDiv}" ui:field="loadingImageLabel">
 		      <g:Label  styleName="{res.css.loadingImageForSelfEditCustomize}" />
 		   </g:HTMLPanel>
 			<g:HTMLPanel  ui:field="popupcontentCustomize">
-			
 			<g:HTMLPanel ui:field="loginCustom" styleName="{res.css.conentLoginPop}">
-
-
 			</g:HTMLPanel>
-
-			<g:HTMLPanel ui:field="copyCollectionSuccess" styleName="{res.css.popupContent}">  
-
-      
-		<g:Label ui:field="lblpopupTitle" styleName="{res.css.popupTitle}"/>	
-		<g:Label styleName="{res.css.popupDesc}" ui:field="assignDes"/>	  
+		<g:HTMLPanel ui:field="copyCollectionSuccess" styleName="{res.css.popupContent}">
+		<g:Label ui:field="lblpopupTitle" styleName="{res.css.popupTitle}"/>
+		<g:Label styleName="{res.css.popupDesc}" ui:field="assignDes"/>
 
  		<g:HTMLPanel styleName="{res.css.popupTextbox}" ui:field="popupContentAssign">
  		 <g:Label styleName="{res.css.txtboxDesc}" ui:field="lbltxtBoxTitle"/>
         <g:TextBox styleName="{res.css.inputTextBoxSyle}" ui:field="copycollectionTextbox"></g:TextBox>
          <g:Label styleName="{res.css.txtboxerrorColor}" ui:field="errorLabel"/>
 		</g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.popupButtons}">
+		<g:HTMLPanel styleName="{res.css.popupButtons} {style.addButtonContainer}">
 			<g:Button ui:field="backtoLibrary" styleName="secondary"></g:Button>
 			<g:Button ui:field="editCollection" styleName="primary"></g:Button>
 			</g:HTMLPanel>
 			</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
+		<g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
 	</g:HTMLPanel>
 
-</ui:UiBinder> 
+</ui:UiBinder>

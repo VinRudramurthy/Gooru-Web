@@ -7,7 +7,7 @@
 		ui:field="panelCode">
 		<!-- <g:HTMLPanel styleName="{toolTip.arrowBorder}"></g:HTMLPanel> -->
 		<g:HTMLPanel styleName="{toolTip.arrow}"></g:HTMLPanel>
-		<g:HTMLPanel styleName="{toolTip.tooltipContent}">
+		<g:HTMLPanel styleName="{toolTip.tooltipContent}" ui:field="tootltipContent">
 			<g:HTMLPanel styleName="{toolTip.tooltipContentTitle}"
 				ui:field="lblTitle" />
 			<g:Anchor ui:field="lblLink"></g:Anchor>

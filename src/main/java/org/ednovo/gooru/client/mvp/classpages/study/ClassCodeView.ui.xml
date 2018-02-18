@@ -1,26 +1,84 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:twf="urn:import:org.ednovo.gooru.client.uc" xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui" 
+	xmlns:txt="urn:import:org.ednovo.gooru.client.uc" xmlns:sg="urn:import:org.ednovo.gooru.client.mvp.home">
 
 	<ui:style field="StudyStyle" src="StudyStyles.css" />
 
-	<g:HTMLPanel styleName="{StudyStyle.classPageContainer}">
-		<g:HTMLPanel styleName="{StudyStyle.classPageContentDiv}">
-			<g:HTMLPanel styleName="{StudyStyle.classPageContentDesc}" ui:field="enterClassCodeText"></g:HTMLPanel>
-			<g:HTMLPanel styleName="{StudyStyle.classPageSearchContainer}">
-				<g:HTMLPanel styleName="{StudyStyle.classPageSearchDesc}" ui:field="classCodelbl"></g:HTMLPanel>
-				<g:HTMLPanel>
-					<twf:TextBoxWithFocus styleName="{StudyStyle.classPageSearchInput}"
-						ui:field="tbCode" />
-				</g:HTMLPanel>
-				<g:Button styleName="primary"
-					ui:field="enterLbl"></g:Button>
-			</g:HTMLPanel>
-			<g:HTMLPanel styleName="{StudyStyle.clear}"></g:HTMLPanel>
-			<g:Label styleName="{StudyStyle.classPageOrangeText}"
-				ui:field="errorLbl" visible="false"></g:Label>
-		</g:HTMLPanel>
-		<sg:FooterUc />
+	<g:HTMLPanel styleName="">
+		<div id="myClassessLoggedout">
+		   <section class="myClasseBanner">
+		      <div class="classBannerImage"></div>
+		      <div class="container">
+		         <div class="row">
+		            <div class="classBannerCaptions">
+		               <txt:H1Panel ui:field="txtLearnH1"></txt:H1Panel>
+		               <txt:H3Panel ui:field="txtExploreH3"></txt:H3Panel>
+		            </div>
+		         </div>
+		      </div>
+		   </section>
+		   <div class="classBannerCodeBlockMain">
+		      <div class="container">
+		         <div class="row">
+		            <div class="classBannerCodeBlock">
+		               <div class="bannerCodeInner">
+		                  <txt:H4Panel ui:field="txtClassCodeH4"></txt:H4Panel>
+		                  <div class="searchBlockMyClasses">
+		                     <txt:TextBoxWithPlaceholder styleName="form-control" ui:field="txtCode"/>
+							 <g:Button styleName="primary" ui:field="btnEnter"></g:Button>
+							 <g:Button styleName="primary disabled" ui:field="disabledBtn"></g:Button>
+		                  </div>
+		               </div>
+		            </div>
+		         </div>
+		      </div>
+		   </div>
+		   <section class="learnYourOwnPace">
+		      <div class="container">
+		         <div class="row">
+		            <div class="col-md-5 col-sm-5 wow fadeInLeft">
+		               <txt:H3Panel ui:field="txtLearnH3"></txt:H3Panel>
+		               <txt:PPanel ui:field="txtStudyP" styleName="lead"></txt:PPanel>
+		            </div>
+		            <div class="col-md-7 col-sm-7 wow fadeInRight"><img src="../images/logout-page/desktop.png" class="img-responsive"/> </div>
+		            <div class="clearfix"></div>
+		         </div>
+		      </div>
+		   </section>
+		   <section class="getInstantFeedback">
+		      <div class="container">
+		         <div class="row">
+		            <div class="col-md-7 col-sm-7 wow fadeInLeft"> <img src="../images/logout-page/laptop.png" class="img-responsive"/> </div>
+		            <div class="col-md-5 col-sm-5 wow fadeInRight">
+		               <txt:H3Panel ui:field="txtFeedbackH3"></txt:H3Panel>
+		               <txt:PPanel styleName="lead" ui:field="txtQuizP"></txt:PPanel>
+		            </div>
+		            <div class="clearfix"></div>
+		         </div>
+		      </div>
+		   </section>
+		   <section class="teacherSupport no-gutter">
+		      <div class="container">
+		         <div class="row">
+		            <txt:H2Panel ui:field="txtTeacherH2"></txt:H2Panel>
+		            <div class="col-md-5 col-sm-5 teacherSupportDescriptionMain wow fadeInLeft">
+		               <div class="teacherSupportDescription">
+		                  <txt:H3Panel ui:field="txtScoreH3"></txt:H3Panel>
+		               	  <txt:PPanel styleName="lead" ui:field="txtTeachP"></txt:PPanel> 
+		                  <div class="signupGooruAccount">
+		                     <p><g:Anchor ui:field="signupAcr">Sign up</g:Anchor><g:InlineLabel styleName="margin-left-5">for a free Gooru account.</g:InlineLabel></p>
+							 <g:Button styleName="primary margin-top-20" ui:field="btnCreateClass"></g:Button>
+		                  </div>
+		               </div>
+		            </div>
+		            <div class="col-md-7 col-sm-7 teacherSupportScreen wow fadeInRight"> <img src="../images/logout-page/TeacherReport.png" class="img-responsive"/> </div>
+		            <div class="clearfix"></div>
+		         </div>
+		      </div>
+		   </section>
+		</div>
+		<sg:LogoutFooter />
 	</g:HTMLPanel>
 </ui:UiBinder>

@@ -1,1171 +1,569 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:style>
-		.termsOfUseDiv {
-			height: 428px;
-			width: 600px;
-		}
-		
-		.termsOfUserContainer {
-			width: 100%;
-		}
-		
-		.termsOfUserContainer .termsOfHeaderTitleDiv {
-			background: none repeat scroll 0 0 #515151;
-			font-size: 16px;
-			left: 0;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			/*clear: both;
-		    display: block;
-		    float: left;
-		    font-size: 16px;
-		    width: 100%;*/
-		}
-		
-		.termsOfUserContainer .termsOfHeaderTitleDiv .termsOfUserHeaderText {
-			color: #FFFFFF;
-			float: left;
-			font-size: 16px;
-			padding: 8px 8px 8px 15px;
-		}
-		
-		.termsOfUserContainer .termsOfUserMessageDiv {
-			clear: both;
-			float: left;
-			margin: 15px 5px 8px 0;
-			width: 95%;
-		}
-		
-		.termsOfUserContainer .termsOfUserMessageText {
-			color: #585858;
-			float: left;
-			font-size: 15px;
-			font-weight: bold;
-			width: 99%;
-		}
-		
-		.termsOfUserContainer .termsSubTitle {
-			float: left;
-			width: 99%;
-			text-decoration: underline;
-		}
-		
-		.termsOfUserContainer .termsBodyContainerDiv {
-			float: left;
-			height: 430px;
-			margin-left: 2%;
-			margin-top: 31px;
-			overflow-y: scroll;
-			padding-top: 10px;
-			width: 149%;
-		}
-		
-		.termsOfUserContainer .termsContentDiv {
-			float: left;
-			width: 100%;
-			clear: both;
-		}
-		
-		.termsOfUserContainer .termsTextLine {
-			clear: both;
-			float: left;
-			padding: 7px 0;
-			width: 100%;
-		}
-		
-		.termsButtonDiv {
-			float: left;
-			margin-left: 45%;
-			padding: 5px;
-			width: 55%;
-		}
-		
-		.termsButtonText {
-			background-color: #1076BB;
-			border-radius: 3px 3px 3px 3px;
-			color: #FFFFFF;
-			cursor: pointer;
-			float: left;
-			font-size: 12px;
-			font-weight: bold;
-			padding: 8px 15px;
-			text-align: center;
-		}
-		
-		.termsOfUserContainer {
-			width: 99.7%;
-		}
-		
-		.policySubTitle {
-			clear: both;
-			font-size: 17px;
-			font-weight: bold;
-			padding: 5px 0;
-		}
-		
-		.policyMessageDiv {
-			clear: both;
-			float: left;
-			margin: 15px 5px 8px 15px;
-			width: 98%;
-		}
-		
-		.policyTextLine {
-			clear: both;
-			float: left;
-			padding: 7px 0;
-			width: 99%;
-		}
-		
-		li.privacyList {
-			list-style: circle inside;
-			margin-left: 8px;
-			padding: 7px 0;
-		}
-		
-		.textContentDiv {
-			float: left;
-			width: 100%;
-		}
-		
-		.termsOfUseContert {
-			
-		}
-		
-		.termsOfPolicyContent {
-			
-		}
-		
-		.privacyCloseButton {
-			
-		}
-		.lastUpdated
-		{
-			margin-top: 13px;
-		}	
-	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="PopupMainLarge">
+		<g:HTMLPanel styleName="popupInnerGrey">
 	    <g:HTML>
-			<div class="{style.termsOfUseDiv}">
-				<div class="{style.termsOfUserContainer}">
-					<div class="{style.termsOfHeaderTitleDiv}">
-						<span class="{style.termsOfUserHeaderText}">Terms of Use</span>
+					 <div class="popupgreyHeader">
+				    <div class="row">
+						<div class="col-md-12 col-xs-12">Terms of Use</div>
 					</div>
-					<div class="{style.termsBodyContainerDiv}">
-						<div class="{style.termsContentDiv}">
-							<!-- <div class="policySubTitleTerms" id="termsOfUse" style="text-align:center;">
-								<b>GOORU WEBSITE TERMS OF USE</b>
-							</div> -->
-							<div class="lastUpdated">Last Updated Date: January 21, 2013</div>
-							<div class="{style.termsOfUseContert},{style.textContentDiv}">
+					<div class="clearfix"></div>
+				</div>
+					<div class="popupContentScroll">
+						<div class="policyTextHeade" id="termsOfUse">
+								<b>Gooru Terms of Use</b>
+							</div>
+							<div class="lastUpdated">Last Updated Date: August 8, 2014</div>
+							<br/>
+							<div class="privacyLinkText">
+							<a href="http://support.gooru.org/hc/en-us/articles/200688506" class="privacyLinkText" target="_blank">Community Guidelines</a>
+							</div>
+							<div class="textContentDiv">
 
-								<span class="{style.policyTextLine}" style="margin-top:20px;">
+								<span class="policyTextLine" res.css="margin-top:20px;">
 									Ednovo, Inc., referred to as Ednovo ("
-									Ednovo
+									<b>Ednovo</b>
 									" or "
-									we
+									<b>we</b>
 									") provides an online service that aggregates web resources, such as, videos, images, lesson plans, quizzes, questions, simulations and other
 									education material which can be accessed and used by students and teachers alike privately or in the classroom (the "
-									Services
+									<b>Services</b>
 									"). The Services are accessible through our website, accessible at
-									<!-- <a href="http://www.goorulearning.org">
-										<i class="privacyLinkText">http://www.goorulearning.org</i>
-									</a> -->
+									 <a href="http://www.gooru.org" target="_blank">
+										<i class="privacyLinkText">www.gooru.org</i>
+									</a>
 									(the "
-									Site
+									<b>Site</b>
 									") and as an application for tablet computing devices such as the Apple iPad (the "
-									Application
+									<b>Application</b>
 									"). Please read carefully the following terms and conditions ("
-									Terms of Use
-									"). These Terms of Use govern your access to and use of the Site, Services, Application and certain Content (defined below), and constitute a
+									<b>Terms of Use")</b> and  Community Guidelines.
+									These Terms of Use and <a href="http://support.gooru.org/hc/en-us/articles/200688506" class="privacyLinkText" target="_blank">Community Guidelines </a>govern your access to and use of the Site, Services, Application and certain Content (defined below), and constitute a
 									binding legal agreement between you and Ednovo.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Key Content-related Terms</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Collective Content</b>
-									" means, collectively, Gooru Content, Member Content, Gooru Quizzes, Gooru Public and Private Collections, and Linked to Content.
+									" means, collectively, Gooru Content, Member Content, Gooru Quizzes, Gooru Public and Private Collections ,  and Linked to Content.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Content</b>
 									" means text, graphics, images, music, software (excluding the Application), audio, video, information or other works of authorship.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Gooru Content</b>
-									" means Content that Ednovo makes available through the Site, Services or Application excluding (i) Member Content, (ii) Gooru Quizzes and
-									(iii) Linked to Content.
+									" means Content that Ednovo makes available through the Site, Services or Application excluding (i) Member Content, (ii) Gooru Quizzes and (iii) Linked to Content.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Gooru Quizzes"</b>
-									means Content that Ednovo makes available through the Site, Services or Application presented in a quiz format where a set of questions are
-									presented to a user, the user provides answers to those questions, and the answers are evaluated to indicate the user’s knowledge or
-									capability.
+									means Content that Ednovo makes available through the Site, Services or Application presented in a quiz format where a set of questions are presented to a user, the user provides answers to those questions, and the answers are evaluated to indicate the user’s knowledge or capability.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Linked to Content</b>
 									" means third party Content residing on a third party website that can be linked to through or from the Site or Application.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Member</b>
-									" means a person who completes Ednovo’s account registration process, as described under the "Account Registration" section below.
+									"means a person who completes the account registration process, as described under the “Account Registration” section below.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									"
 									<b>Member Content</b>
 									" means Content that a Member posts, uploads, publishes, submits or transmits to be made available through the Site, Services or Application.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
-									Certain areas of the Site (and your access to or use of certain Services, Application or Collective Content) may have different terms and
-									conditions posted or may require you to agree with and accept additional terms and conditions. If there is a conflict between these Terms of
-									Use and terms and conditions posted for a specific area of the Site, Services, Application or Collective Content, the latter terms and
-									conditions will take precedence with respect to your use of or access to that area of the Site, Services, Application
+								<span class="policyTextLine">
+									Certain areas of the Site (and your access to or use of certain Services, Application or Collective Content) may have different terms and conditions posted or may require you to agree with and accept additional terms and conditions.  If there is a conflict between these Terms of Use and terms and conditions posted for a specific area of the Site, Services, Application or Collective Content, the latter terms and conditions will take precedence with respect to your use of or access to that area of the Site, Services, Application
 									<sup>
 									</sup>
 									or Collective Content, as applicable.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
-									YOU ACKNOWLEDGE AND AGREE THAT, BY CLICKING ON THE "OK" BUTTON OR BY ACCESSING OR USING THE SITE, SERVICES OR APPLICATION,
+								<span class="policyTextLine">
+									YOU ACKNOWLEDGE AND AGREE THAT, BY CLICKING ON THE “OK” BUTTON OR BY ACCESSING OR USING THE SITE, SERVICES OR APPLICATION,
 									<sup>
 									</sup>
-									OR BY DOWNLOADING OR POSTING ANY CONTENT FROM OR ON THE SITE OR THROUGH THE SERVICES OR APPLICATION, YOU ARE INDICATING THAT YOU HAVE READ,
-									AND THAT YOU UNDERSTAND AND AGREE TO BE BOUND BY, THESE TERMS OF USE, WHETHER OR NOT YOU HAVE REGISTERED ON OR THROUGH THE SITE OR VIA THE
-									APPLICATION. IF YOU DO NOT AGREE TO THESE TERMS OF USE, THEN YOU HAVE NO RIGHT TO ACCESS OR USE THE SITE, SERVICES, APPLICATION OR COLLECTIVE
-									CONTENT. IF YOU ACCEPT OR AGREE TO THESE TERMS OF USE ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY YOU REPRESENT AND WARRANT THAT YOU HAVE
-									THE AUTHORITY TO BIND THAT COMPANY OR OTHER LEGAL ENTITY TO THESE TERMS OF USE AND, IN SUCH EVENT,"YOU" AND "YOUR" WILL REFER AND APPLY TO
-									THAT COMPANY OR OTHER LEGAL ENTITY.
+									OR BY DOWNLOADING OR POSTING ANY CONTENT FROM OR ON THE SITE OR THROUGH THE SERVICES OR APPLICATION, YOU ARE INDICATING THAT YOU HAVE READ, AND THAT YOU UNDERSTAND AND AGREE TO BE BOUND BY, THESE TERMS OF USE, WHETHER OR NOT YOU HAVE REGISTERED ON OR THROUGH THE SITE OR VIA THE APPLICATION.  IF YOU DO NOT AGREE TO THESE TERMS OF USE, THEN YOU HAVE NO RIGHT TO ACCESS OR USE THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT.  IF YOU ACCEPT OR AGREE TO THESE TERMS OF USE ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT AND WARRANT THAT YOU HAVE THE AUTHORITY TO BIND THAT COMPANY OR OTHER LEGAL ENTITY TO THESE TERMS OF USE AND, IN SUCH EVENT, “YOU” AND “YOUR” WILL REFER AND APPLY TO THAT COMPANY OR OTHER LEGAL ENTITY.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Modification</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									Ednovo reserves the right, at its sole discretion, to modify, discontinue or terminate the Site, Services or Application
 									<sup>
 									</sup>
-									or to modify these Terms of Use, at any time and without prior notice. If we modify these Terms of Use we will post the modification on the
-									Site or via the Application or provide you with notice of the modification. We will also update the "Last Updated Date" at the top of these
-									Terms of Use. By continuing to access or use the Site, Services or Application after we have posted a modification on the Site or via the
-									Application or have provided you with notice of a modification, you are indicating that you agree to be bound by the modified Terms of Use.
-									If the modified Terms of Use are not acceptable to you, your only recourse is to cease using the Site, Services and Application.
+									 or Application or to modify these Terms of Use, at any time and without prior notice.  If we modify these Terms of Use we will post the modification on the Site or via the Application or provide you with notice of the modification. We will also update the “Last Updated Date” at the top of these Terms of Use. By continuing to access or use the Site, Services or Application after we have posted a modification on the Site or via the Application or have provided you with notice of a modification, you are indicating that you agree to be bound by the modified Terms of Use. If the modified Terms of Use are not acceptable to you, your only recourse is to cease using the Site, Services and Application.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Eligibility</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									Certain features of the Site, Services and Application are only available to you if you become a Member. Anyone can become a Member by
-									creating an Account, as described below. If you are under the age of 13, you will need to obtain consent from your parent or guardian before
-									you can have an Account. If you are under the age of 13, you may be restricted from using some functionality of the Site, Service and
-									Application.
+								<span class="policyTextLine">
+									Certain features of the Site, Services and Application are only available to you if you become a Member.  Anyone can become a Member by creating an Account, as described below. If you are under the age of 13, you will need to obtain consent from your parent or guardian before you can have an Account.  If you are under the age of 13, you may be restricted from using some functionality of the Site, Service and Application.
 									<sup>
 									</sup>
 									If you are a parent or guardian and you provide consent to your child’s use of the Site, Service and Application
 									<sup>
 									</sup>
 									you agree to be bound by these Terms of Use in respect of their use of the Site, Service and Application.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Account Registration</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									In order to access certain features of the Site, Services and Application and to post any Member Content on the Site or through the Services
-									or Application you must register to create an account ("
+								<span class="policyTextLine">
+									In order to access certain features of the Site, Services and Application and to post any Member Content on the Site or through the Services or Application you must register to create an account ("
 									<b>Account</b>
 									") and become a Member.
-								</span>
 
-								<span class="{style.policyTextLine}">You agree to provide accurate, current and complete information during the registration process, including information about
-									your age, and to update such information to keep it accurate, current and complete. Ednovo reserves the right to suspend or terminate your
-									Account if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete. You are
-									responsible for safeguarding your password. You agree that you will not disclose your password to any third party and that you will take sole
-									responsibility for any activities or actions under your Account, whether or not you have authorized such activities or actions. You will
-									immediately notify Ednovo of any unauthorized use of your Account.</span>
+								</span>
+								<span class="policyTextLine">You agree to provide accurate, current and complete information during the registration process, including information about your age, and to update such information to keep it accurate, current and complete.  Ednovo reserves the right to suspend or terminate your Account if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete.  You are responsible for safeguarding your password.  You agree that you will not disclose your password to any third party and that you will take sole responsibility for any activities or actions under your Account, whether or not you have authorized such activities or actions.  You will immediately notify Ednovo of any unauthorized use of your Account.</span>
 							</div>
 
-							<div class="{style.termsOfPolicyContent}, {style.textContentDiv}">
-								<div class="policySubTitle" id="privacyPolicyDiv">Privacy</div>
-								<span class="{style.policyTextLine}">
+							<div class="textContentDiv">
+								<div class="policySubTitle" id="privacyPolicyDiv"><b>Privacy</b></div>
+								<span class="policyTextLine">
 									See Ednovo’s Privacy Policy at
-									<a class="privacyLinkText" href="http://www.goorulearning.org">http://www.goorulearning.org</a>
+									<a class="privacyLinkText" href="http://www.gooru.org" target="_blank">http://www.gooru.org</a>
 									for information and notices concerning Ednovo’s collection and use of your personal information.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Ownership</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									The Site, Services, Application and Collective Content are protected by copyright, trademark, and other laws of the United States and foreign
-									countries. You acknowledge and agree that the Site, Services, Application,
+								<span class="policyTextLine">
+									The Site, Services, Application and Collective Content are protected by copyright, trademark, and other laws of the United States and foreign countries.  You acknowledge and agree that the Site, Services, Application,
 									<sup>
 									</sup>
-								    public and private Collective Content, including all associated intellectual property rights, are the exclusive property of Ednovo and its licensors. You
-									will not remove, alter or obscure any copyright, trademark, service mark or other proprietary rights notices incorporated in or accompanying
-									the Site, Services, Application
+								    public and private Collective Content, including all associated intellectual property rights, are the exclusive property of Ednovo and its licensors. You will not remove, alter or obscure any copyright, trademark, service mark or other proprietary rights notices incorporated in or accompanying the Site, Services, Application
 									<sup>
 									</sup>
 									or Collective Content.
 								</span>
 
-								<span class="{style.policyTextLine}">
-									<a name="_DV_M75"></a>
-									<a name="_DV_M76"></a>
-									<b>License Granted by Ednovo to Gooru Quizzes </b>
+								<span class="policyTextLine">
+									<b>License Granted by Ednovo to Gooru Content on gooru.org</b>
 								</span>
 
-								<span class="{style.policyTextLine}">Subject to your compliance with the terms and conditions of these Terms of Use, Ednovo grants you a limited, non-exclusive,
-									non-transferable license to access and use any Gooru Quizzes solely for your personal and non-commercial purposes. The Site, Services or
-									Application allow you to copy and customize Gooru Quizzes within your Account. However, you may not copy, modify, transfer, distribute copies
-									of or create derivative works based upon the Gooru Quizzes other than as made possible by the Site, Services and Application. You have no
-									right to sublicense the license rights granted in this section. </span>
-
-								<span class="{style.policyTextLine}">
-									<b>License Granted by Ednovo to Gooru Content </b>
+								<span class="policyTextLine">
+									Subject to your compliance with the terms and conditions of these Terms of Use, Ednovo grants you the right to access and use the content you create using Gooru pursuant to the terms and conditions of the Creative Commons CC0 1.0 Universal license located at
+									<a href="http://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank" class="privacyLinkText">http://creativecommons.org/publicdomain/zero/1.0/legalcode.</a>
+									Content creation in Gooru includes the ability to create assessments using the Gooru assessment authoring tool, the ability to upload documents to the Gooru platform, and the ability to create and save Gooru Collections, multi-media playlists of web resources. Documents uploaded to the platform inherit the CC0 1.0 license. Web resources within Gooru playlists do not inherit the Gooru license and have a wide range of terms of use, but the arrangement of content and associated narration inherit the CC0 1.0 license.
 								</span>
 
-								<span class="{style.policyTextLine}">
-									Subject to your compliance with the terms and conditions of these Terms of Use, Ednovo grants you the right to access and use the Gooru
-									Content pursuant to the terms and conditions of the Creative Commons Attribution- ShareAlike 3.0 Unported license located at
-									<a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank" class="privacyLinkText">http://creativecommons.org/licenses/by-sa/3.0/legalcode.</a>
+								<span class="policyTextLine">
+									<b>License Granted by Ednovo to Gooru Content on partners.gooru.org and about.gooru.org </b>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
+									Subject to your compliance with the terms and conditions of these Terms of use, Ednovo grants you the right to access and remix Gooru training materials and collateral published by Ednovo at
+									<a href="http://partners.gooru.org" target="_blank" class="privacyLinkText">partners.gooru.org</a> and <a href="http://about.gooru.org" target="_blank" class="privacyLinkText">about.gooru.org</a>
+									pursuant to the terms and conditions of the Creative Commons Attribution 4.0 International license located at
+									<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="privacyLinkText">https://creativecommons.org/licenses/by/4.0/</a>
+									. Gooru collateral includes all materials available for download on about.gooru.org.
+								</span>
+
+								<span class="policyTextLine">
 									<b>Linked to Content Notice and Third-Party Website Content Accuracy</b>
 								</span>
 
-								<span class="{style.policyTextLine}">The Site, Services or Application may contain Linked to Content. Ednovo does not own and is not responsible for the Linked to
-									Content nor its content accuracy. The Linked to Content is subject to the terms and conditions of the third party which offers the Linked to Content. Please review
-									those terms and conditions to learn about the conditions in accordance with which you can access and use such Linked to Content. </span>
+								<span class="policyTextLine">The Site, Services or Application may contain Linked to Content. Ednovo does not own and is not responsible for the Linked to Content nor its content accuracy.  The Linked to Content is subject to the terms and conditions of the third-party which offers the Linked to Content.  Please review those terms and conditions to learn about the conditions in accordance with which you can access and use such Linked to Content.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>License granted by Member</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<a name="_DV_M77"></a>
-									￼We permit Members to post, upload, publish, submit or transmit Member Content. By making available any Member Content on or through the
-									Site, Services or Application, you hereby grant to any persons or entities who want to access and use your Member Content the right to access
-									and use your Member Content pursuant to the terms and conditions of the Creative Commons Attribution- ShareAlike 3.0 Unported license located
-									at
-									<a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank" class="privacyLinkText"> http://creativecommons.org/licenses/by-sa/3.0/legalcode.</a>
-									You also grant Ednovo all right necessary to make your Member Content available via the Site, Services or Application.
+									￼We permit Members to post, upload, publish, submit or transmit Member Content. By making available any Member Content on or through the Site, Services or Application, you hereby grant to any persons or entities who want to access and use your Member Content the right to access and use your Member Content pursuant to the terms and conditions of the Creative Commons CC0 1.0 Universal license license located at
+									<a href="http://creativecommons.org/publicdomain/zero/1.0/legalcode" target="_blank" class="privacyLinkText">http://creativecommons.org/publicdomain/zero/1.0/legalcode.</a>
+ 									You also grant Ednovo all rights necessary to make your Member Content available via the Site, Services or Application.								</span>
+
+								<span class="policyTextLine">You acknowledge and agree that you are solely responsible for all Member Content that you make available through the Site, Services or Application. Accordingly, you represent and warrant that: (i) you either are the sole and exclusive owner of all Member Content that you make available through the Site, Services or Application, or you have all rights, licenses, consents and releases that are necessary to grant to Ednovo the rights in such Member Content, as contemplated under these Terms of Use; and (ii) neither the Member Content nor your posting, uploading, publication, submission or transmittal of the Member Content or Ednovo’s use of the Member Content (or any portion thereof) on, through or by means of the Site, Services or Application will infringe, misappropriate or violate a third party’s patent, copyright, trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity or privacy, or result in the violation of any applicable law or regulation.
+
 								</span>
 
-								<span class="{style.policyTextLine}">You acknowledge and agree that you are solely responsible for all Member Content that you make available through the Site,
-									Services or Application. Accordingly, you represent and warrant that: (i) you either are the sole and exclusive owner of all Member Content
-									that you make available through the Site, Services or Application, or you have all rights, licenses, consents and releases that are necessary
-									to grant to Ednovo the rights in such Member Content, as contemplated under these Terms of Use; and (ii) neither the Member Content nor your
-									posting, uploading, publication, submission or transmittal of the Member Content or Ednovo’s use of the Member Content (or any portion
-									thereof) on, through or by means of the Site, Services or Application will infringe, misappropriate or violate a third party’s patent,
-									copyright, trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity or privacy, or result in the
-									violation of any applicable law
-									or regulation.
-								</span>
-
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Rights in App Granted by Ednovo</b>
 								</span>
 
-								<span class="{style.policyTextLine}">Subject to your compliance with these Terms, Ednovo grants you a limited non-exclusive, non-transferable, non-sublicensable
-									license to download and install a copy of the Application on a mobile device that you own or control and to run such copy of the Application.
-									Ednovo reserves all rights in and to the Application not expressly granted to you under these Terms.</span>
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">Subject to your compliance with these Terms, Ednovo grants you a limited non-exclusive, non-transferable, non-sublicensable license to download and install a copy of the Application on a mobile device that you own or control and to run such copy of the Application. Ednovo reserves all rights in and to the Application not expressly granted to you under these Terms.</span>
+
+								<span class="policyTextLine">
 									<b>Additional Terms for App Store Apps</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									If you download the Application through or from any app store or distribution platform (like the Apple App Store or Google Play) where the
-									Application is made available (each, an("
+								<span class="policyTextLine">
+									If you download the Application through or from any app store or distribution platform (like the Apple App Store or Google Play)  where the Application is made available (each, an"
 									<b>App Provider</b>
-									")).then you acknowledge and agree that:
+									"), then you acknowledge and agree that:
+
 								</span>
 								<ul>
 									<li>
-										<span class="{style.policyTextLine}">
-											These Terms are concluded between you and Ednovo, and not with the App Provider, and that Ednovo (not the App Provider), is solely responsible
-											for the Application.</span>
+										<span class="policyTextLine">
+											These Terms are concluded between you and Ednovo, and not with the App Provider, and that Ednovo (not the App Provider), is solely responsible for the Application.</span>
 									</li>
 
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											The App Provider has no obligation to furnish any maintenance and support services with respect to the Application.</span>
 									</li>
 
 									<li>
-										<span class="{style.policyTextLine}">
-											In the event of any failure of the Application to conform to any applicable warranty, you may notify the App Provider, and the App Provider
-											will refund the purchase price for the Application to you (if applicable) and to the maximum extent permitted by applicable law, the App
-											Provider will have no other warranty obligation whatsoever with respect to the Application. Any other claims, losses, liabilities, damages,
-											costs or expenses attributable to any failure to conform to any warranty will be the sole responsibility of Ednovo.</span>
+										<span class="policyTextLine">
+											In the event of any failure of the Application to conform to any applicable warranty, you may notify the App Provider, and the App Provider will refund the purchase price for the Application to you (if applicable) and to the maximum extent permitted by applicable law, the App Provider will have no other warranty obligation whatsoever with respect to the Application. Any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty will be the sole responsibility of Ednovo.
+											</span>
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											The App Provider is not responsible for addressing any claims you have or any claims of any third party relating to the Application or your
-											possession and use of the Application, including, but not limited to: (i) product liability claims; (ii) any claim that the Application
-											fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection or similar
-											legislation.</span>
+										<span class="policyTextLine">
+											The App Provider is not responsible for addressing any claims you have or any claims of any third-party relating to the Application or your possession and use of the Application, including, but not limited to: (i) product liability claims; (ii) any claim that the Application fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection or similar legislation.
+										</span>
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											In the event of any third party claim that the Application or your possession and use of that Application infringes that third party’s
-											intellectual property rights, Ednovo will be solely responsible for the investigation, defense, settlement and discharge of any such
-											intellectual property infringement claim to the extent required by these Terms
+										<span class="policyTextLine">
+											In the event of any third-party claim that the Application or your possession and use of that Application infringes that third-party’s intellectual property rights, Ednovo will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim to the extent required by these Terms.
+
 										</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											The App Provider and its subsidiaries are third party beneficiaries of these Terms as related to your license of the Application, and that,
-											upon your acceptance of the terms and conditions of these Terms, the App Provider will have the right (and will be deemed to have accepted
-											the right) to enforce these Terms as related to your license of the Application against you as a third party beneficiary thereof.
+										<span class="policyTextLine">
+											The App Provider and its subsidiaries are third-party beneficiaries of these Terms as related to your license of the Application, and that, upon your acceptance of the terms and conditions of these Terms, the App Provider will have the right (and will be deemed to have accepted the right) to enforce these Terms as related to your license of the Application against you as a third-party beneficiary thereof.
+
 										</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											You must also comply with all applicable third party terms of service when using the Application.</span>
+										<span class="policyTextLine">
+											You must also comply with all applicable third-party terms of service when using the Application.</span>
 									</li>
+
 									<li>
-										<span class="{style.policyTextLine}">
-											You must also comply with all applicable third party terms of service when using the Application
-										</span>
-									</li>
-									<li>
-										<span class="{style.policyTextLine}">
-											You agree to comply with all U.S. and foreign export laws and regulations to ensure that neither the Application nor any technical data
-											related thereto nor any direct product thereof is exported or re-exported directly or indirectly in violation of, or used for any purposes
-											prohibited by, such laws and regulations. By using the Application you represent and warrant that: (i) you are not located in a country
-											that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a "terrorist supporting" country; and
-											(ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</span>
+										<span class="policyTextLine">
+											You agree to comply with all U.S. and foreign export laws and regulations to ensure that neither the Application nor any technical data related thereto nor any direct product thereof is exported or re-exported directly or indirectly in violation of, or used for any purposes prohibited by, such laws and regulations. By using the Application you represent and warrant that: (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</span>
 									</li>
 								</ul>
-								<span class="{style.policyTextLine}">You may not: (i) copy, modify or create derivative works based on the Application; (ii) distribute, transfer, sublicense,
-									lease, lend or rent the Application to any third party; (iii) reverse engineer, decompile or disassemble the Application; or (iv) make the
-									functionality of the Application available to multiple users through any means.</span>
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">You may not: (i) copy, modify or create derivative works based on the Application; (ii) distribute, transfer, sublicense, lease, lend or rent the Application to any third party; (iii) reverse engineer, decompile or disassemble the Application; or (iv) make the functionality of the Application available to multiple users through any means.</span>
+								<span class="policyTextLine">
 									<b>Feedback</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									We welcome and encourage you to provide feedback, comments and suggestions for improvements to the Site, Services or Application("
+								<span class="policyTextLine">
+									We welcome and encourage you to provide feedback, comments and suggestions for improvements to the Site, Services or Application ("
 									<b>Feedback</b>
 									"). You may submit Feedback by emailing us at
-									<a href="mailto:support@goorulearning.org" target="_blank"><i class="privacyLinkText">support@goorulearning.org</i></a>
-									or through the "Help" section of the Site. You acknowledge and agree that if you submit any Feedback to us, you hereby grant to us a
-									non-exclusive, worldwide, perpetual, irrevocable, fully-paid, royalty-free, sub-licensable and transferable license under any and all
-									intellectual property rights that you own or control to use, copy, modify, create derivative works based upon and otherwise exploit the
-									Feedback for any purpose.
+									<a href="mailto:support@gooru.org" target="_blank"><i class="privacyLinkText">support@gooru.org</i></a>
+									or through the “Help” section of the Site.  You acknowledge and agree that if you submit any Feedback to us, you hereby grant to us a non-exclusive, worldwide, perpetual, irrevocable, fully-paid, royalty-free, sub-licensable and transferable license under any and all intellectual property rights that you own or control to use, copy, modify, create derivative works based upon and otherwise exploit the Feedback for any purpose.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>General Prohibitions</b>
 								</span>
 
-								<span class="{style.policyTextLine}">You agree not to do any of the following:</span>
+								<span class="policyTextLine">You agree not to do any of the following:</span>
 
 								<ul>
 									<li>
-										<span class="{style.policyTextLine}">
-											Post, upload, publish, submit or transmit any Content that: (i) infringes, misappropriates or violates a third party’s patent, copyright,
-											trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity or
-											privacy; (ii) violates, or encourages any conduct that would violate, any applicable law or regulation or would give rise to civil liability; (iii)
-											is fraudulent, false, misleading or deceptive; (iv) is defamatory, obscene, pornographic, vulgar or offensive; (v) promotes discrimination,
-											bigotry, racism, hatred, harassment or harm against any individual or group; (vi) is violent or threatening or promotes violence or actions
-											that are threatening to any person or entity; or (vii) promotes illegal or harmful activities or substances.</span>
+										<span class="policyTextLine">
+											Post, upload, publish, submit or transmit any Content that: (i) infringes, misappropriates or violates a third-party’s patent, copyright, trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity or privacy; (ii) violates, or encourages any conduct that would violate, any applicable law or regulation or would give rise to civil liability; (iii) is fraudulent, false, misleading or deceptive; (iv) is defamatory, obscene, pornographic, vulgar or offensive; (v) promotes discrimination, bigotry, racism, hatred, harassment or harm against any individual or group; (vi) is violent or threatening or promotes violence or actions that are threatening to any person or entity; or (vii) promotes illegal or harmful activities or substances;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Use, display, mirror or frame the Site or Application, or any individual element within the Site or Services, Ednovo’s name, any Ednovo
-											trademark, logo or other proprietary information, or the layout and design of any page or form contained on a page, without Ednovo’s
-											express written consent;</span>
+										<span class="policyTextLine">
+											Use, display, mirror or frame the Site or Application, or any individual element within the Site or Services, Ednovo’s name, any Ednovo trademark, logo or other proprietary information, or the layout and design of any page or form contained on a page, without Ednovo’s express written consent;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Access, tamper with, or use non-public areas of the Site or Application, Ednovo’s computer systems, or the technical delivery systems of Ednovo’s
-											providers;</span>
+										<span class="policyTextLine">
+											Access, tamper with, or use non-public areas of the Site or Application, Ednovo’s computer systems, or the technical delivery systems of Ednovo’s providers;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											Attempt to probe, scan, or test the vulnerability of any Ednovo system or network or breach any security or authentication measures;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Avoid, bypass, remove, deactivate, impair, descramble or otherwise circumvent any technological measure implemented by Ednovo or any of Ednovo’s
-											providers or any other third party (including another user) to protect the Site, Services, Application or Collective Content;</span>
+										<span class="policyTextLine">
+											Avoid, bypass, remove, deactivate, impair, descramble or otherwise circumvent any technological measure implemented by Ednovo or any of Ednovo’s providers or any other third-party (including another user) to protect the Site, Services, Application or Collective Content;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Attempt to access or search the Site, Services, Application or Collective Content or download Collective Content from the Site, Services or
-											Application through the use of any engine, software, tool, agent, device or mechanism (including spiders, robots, crawlers, data mining
-											tools or the like) other than the software and/or search agents provided by Ednovo or other generally available third party web browsers;</span>
+										<span class="policyTextLine">
+											Attempt to access or search the Site, Services, Application or Collective Content or download Collective Content from the Site, Services or Application through the use of any engine, software, tool, agent, device or mechanism (including spiders, robots, crawlers, data mining tools or the like) other than the software and/or search agents provided by Ednovo or other generally available third-party web browsers;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											Send any unsolicited or unauthorized advertising, promotional materials, email, junk mail, spam, chain letters or other form of solicitation;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Use any meta tags or other hidden text or metadata utilizing a Ednovo trademark, logo URL or product name without Ednovo’s express written
-											consent;</span>
+										<span class="policyTextLine">
+											Use any meta tags or other hidden text or metadata utilizing a Ednovo trademark, logo URL or product name without Ednovo’s express written consent;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Use the Site, Services, Application or Collective Content for any commercial purpose or the benefit of any third party or in any manner not
-											permitted by these Terms of Use;</span>
+										<span class="policyTextLine">
+											Use the Site, Services, Application or Collective Content for any commercial purpose or the benefit of any third-party or in any manner not permitted by these Terms of Use;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Forge any TCP/IP packet header or any part of the header information in any email or newsgroup posting, or in any way use the Site, Services,
-											Application or Collective Content to send altered, deceptive or false source-identifying information;</span>
+										<span class="policyTextLine">
+											Forge any TCP/IP packet header or any part of the header information in any email or newsgroup posting, or in any way use the Site, Services, Application or Collective Content to send altered, deceptive or false source-identifying information;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Attempt to decipher, decompile, disassemble or reverse engineer any of the software used to provide the Site, Services, Application or Collective
-											Content;</span>
+										<span class="policyTextLine">
+											Attempt to decipher, decompile, disassemble or reverse engineer any of the software used to provide the Site, Services, Application or Collective Content;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Interfere with, or attempt to interfere with, the access of any user, host or network, including, without limitation, sending a virus, overloading,
-											flooding, spamming, or mail-bombing the Site, Services or Application;</span>
+										<span class="policyTextLine">
+											Interfere with, or attempt to interfere with, the access of any user, host or network, including, without limitation, sending a virus, overloading, flooding, spamming, or mail-bombing the Site, Services or Application;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
-											Collect or store any personally identifiable information from the Site, Services or Application from other users of the Site, Services or
-											Application without their express permission;</span>
+										<span class="policyTextLine">
+											Collect or store any personally identifiable information from the Site, Services or Application from other users of the Site, Services or Application without their express permission;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											Impersonate or misrepresent your affiliation with any person or entity;</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											Violate any applicable law or regulation; or</span>
 
 									</li>
 									<li>
-										<span class="{style.policyTextLine}">
+										<span class="policyTextLine">
 											Encourage or enable any other individual to do any of the foregoing.</span>
 
 									</li>
 								</ul>
 
-								<span class="{style.policyTextLine}">Ednovo has the right to investigate and prosecute violations of any of the above to the fullest extent of the law. Ednovo may
-									involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms of Use. You acknowledge that Ednovo has
-									no obligation to monitor your access to or use of the Site, Services, Application or Collective Content or to review or edit any Collective
-									Content, but has the right to do so for the purpose of operating the Site, Services and Application, to ensure your compliance with these
-									Terms of Use, or to comply with applicable law or the order or requirement of a court, administrative agency or other governmental body.
-									Ednovo reserves the right, at any time and without prior notice, to remove or disable access to any Collective Content that Ednovo, at its
-									sole discretion, considers to be in violation of these Terms of Use for any reason or no reason, including but not limited to, Member Content
-									or otherwise harmful to
-									the Site, Services or Application.</span>
+								<span class="policyTextLine">Ednovo has the right to investigate and prosecute violations of any of the above to the fullest extent of the law.  Ednovo may involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms of Use. You acknowledge that Ednovo has no obligation to monitor your access to or use of the Site, Services, Application or Collective Content or to review or edit any Collective Content, but has the right to do so for the purpose of operating the Site, Services and Application, to ensure your compliance with these Terms of Use, or to comply with applicable law or the order or requirement of a court, administrative agency or other governmental body. Ednovo reserves the right, at any time and without prior notice, to remove or disable access to any Collective Content that Ednovo, at its sole discretion, considers to be in violation of these Terms of Use for any reason or no reason, including but not limited to, Member Content or otherwise harmful to the Site, Services or Application.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Copyright and IP Policy</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									Ednovo respects copyright law and expects its users to do the same. It is Ednovo’s policy to terminate in appropriate circumstances Members
-									or other account holders who repeatedly infringe the rights of copyright holders. Please see Ednovo’s Copyright and IP Policy at
-									<a href="http://www.goorulearning.org" class="privacyLinkText">http://www.goorulearning.org</a>
+								<span class="policyTextLine">
+									Ednovo respects copyright law and expects its users to do the same.  It is Ednovo’s policy to terminate in appropriate circumstances Members or other account holders who repeatedly infringe the rights of copyright holders.  Please see Ednovo’s Copyright and IP Policy at
+									<a href="http://www.gooru.org" class="privacyLinkText" target="_blank">http://www.gooru.org </a>
 									located on the “Copyright Policy” link at the bottom of each landing page, for further information.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Links Accuracy and Non-Endorsement</b>
 								</span>
 
-								<span class="{style.policyTextLine}"> As noted above, the Site, Services or Application may contain links to third-party websites or resources. You acknowledge
-									and agree that Ednovo is not responsible or liable for: (i) the availability or accuracy of such websites or resources; or (ii) the Content,
-									products, or services on or available from such websites or resources. Links to such websites or resources do not imply any endorsement by
-									Ednovo of such websites or resources or the content, products, or services available from such websites or resources. You acknowledge sole
-									responsibility for and assume all risk arising from your use of any such websites or resources or the Content, products, or services on or
-									available from such websites or resources.</span>
+								<span class="policyTextLine"> As noted above, the Site, Services or Application may contain links to third-party websites or resources.  You acknowledge and agree that Ednovo is not responsible or liable for: (i) the availability or accuracy of such websites or resources; or (ii) the Content, products, or services on or available from such websites or resources.  Links to such websites or resources do not imply any endorsement by Ednovo of such websites or resources or the content, products, or services available from such websites or resources.  You acknowledge sole responsibility for and assume all risk arising from your use of any such websites or resources or the Content, products, or services on or available from such websites or resources.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Termination and Account Cancellation</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									If you breach any of these Terms of Use, Ednovo will have the right to suspend or disable your Account or terminate these Terms of Use, at
-									its sole discretion and without prior notice to you. Ednovo reserves the right to revoke your access to and use of the Site, Services,
-									Application and Collective Content at any time, with or without cause. In the event Ednovo terminates these Terms of Use for your breach, you
-									will remain liable for all amounts due hereunder. You may cancel your Account at any time by sending an email to
-									<a href="mailto:support@goorulearning.org" target="_blank" class="privacyLinkText">support@goorulearning.org</a>
+								<span class="policyTextLine">
+									If you breach any of these Terms of Use, Ednovo will have the right to suspend or disable your Account or terminate these Terms of Use, at its sole discretion and without prior notice to you.  Ednovo reserves the right to revoke your access to and use of the Site, Services, Application and Collective Content at any time, with or without cause.  In the event Ednovo terminates these Terms of Use for your breach, you will remain liable for all amounts due hereunder.  You may cancel your Account at any time by sending an email to
+									<a href="mailto:support@gooru.org" target="_blank"><i class="privacyLinkText"> support@gooru.org</i></a>
 									<i>.</i>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Disclaimers</b>
 								</span>
 
-								<span class="{style.policyTextLine}">THE SITE, SERVICES, APPLICATION, GOORU CONTENT AND GOORU QUIZZES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER
-									EXPRESS OR IMPLIED. WITHOUT LIMITING THE FOREGOING, EDNOVO EXPLICITLY DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-									PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. EDNOVO MAKES NO WARRANTY
-									THAT THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR
-									ERROR-FREE BASIS. EDNOVO MAKES NO WARRANTY REGARDING THE QUALITY OF ANY PRODUCTS, SERVICES OR COLLECTIVE CONTENT PURCHASED OR OBTAINED
-									THROUGH THE SITE, SERVICES OR APPLICATION OR THE ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY CONTENT OBTAINED
-									THROUGH THE SITE, SERVICES OR APPLICATION.</span>
+								<span class="policyTextLine">THE SITE, SERVICES, APPLICATION, GOORU CONTENT AND GOORU QUIZZES ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED.  WITHOUT LIMITING THE FOREGOING, EDNOVO EXPLICITLY DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. EDNOVO MAKES NO WARRANTY THAT THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS.  EDNOVO MAKES NO WARRANTY REGARDING THE QUALITY OF ANY PRODUCTS, SERVICES OR COLLECTIVE CONTENT PURCHASED OR OBTAINED THROUGH THE SITE, SERVICES OR APPLICATION OR THE ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY CONTENT OBTAINED THROUGH THE SITE, SERVICES OR APPLICATION.</span>
 
-								<span class="{style.policyTextLine}">NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM EDNOVO OR THROUGH THE SITE, SERVICES, APPLICATION OR
-									COLLECTIVE CONTENT, WILL CREATE ANY WARRANTY FROM EDNOVO NOT EXPRESSLY MADE HEREIN.</span>
+								<span class="policyTextLine">NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM EDNOVO OR THROUGH THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT, WILL CREATE ANY WARRANTY FROM EDNOVO NOT EXPRESSLY MADE HEREIN.</span>
 
-								<span class="{style.policyTextLine}">YOU ARE SOLELY RESPONSIBLE FOR ALL OF YOUR COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE, SERVICES AND
-									APPLICATION AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION. YOU
-									UNDERSTAND THAT EDNOVO DOES NOT SCREEN OR INQUIRE INTO THE BACKGROUND OF ANY USERS OF THE SITE, SERVICES OR APPLICATION, NOR DOES EDNOVO MAKE
-									ANY ATTEMPT TO VERIFY THE STATEMENTS OF USERS OF THE SITE, SERVICES OR APPLICATION. EDNOVO MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE
-									CONDUCT OF USERS OF THE SITE, SERVICES OR APPLICATION OR THEIR COMPATIBILITY WITH ANY CURRENT OR FUTURE USERS OF THE SITE, SERVICES OR
-									APPLICATION. YOU AGREE TO TAKE REASONABLE PRECAUTIONS IN ALL COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE, SERVICES AND
-									APPLICATION AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION,
-									PARTICULARLY IF YOU DECIDE TO MEET
-									OFFLINE OR IN PERSON.</span>
+								<span class="policyTextLine">YOU ARE SOLELY RESPONSIBLE FOR ALL OF YOUR COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE, SERVICES AND APPLICATION AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION.  YOU UNDERSTAND THAT EDNOVO DOES NOT SCREEN OR INQUIRE INTO THE BACKGROUND OF ANY USERS OF THE SITE, SERVICES OR APPLICATION, NOR DOES EDNOVO MAKE ANY ATTEMPT TO VERIFY THE STATEMENTS OF USERS OF THE SITE, SERVICES OR APPLICATION.  EDNOVO MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE CONDUCT OF USERS OF THE SITE, SERVICES OR APPLICATION OR THEIR COMPATIBILITY WITH ANY CURRENT OR FUTURE USERS OF THE SITE, SERVICES OR APPLICATION.  YOU AGREE TO TAKE REASONABLE PRECAUTIONS IN ALL COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE, SERVICES AND APPLICATION AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION, PARTICULARLY IF YOU DECIDE TO MEET OFFLINE OR IN PERSON.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Indemnity</b>
 								</span>
 
-								<span class="{style.policyTextLine}">You agree to defend, indemnify, and hold Ednovo, its officers, directors, employees and agents, harmless from and against any
-									claims, liabilities, damages, losses, and expenses, including, without limitation, reasonable legal and accounting fees, arising out of or in
-									any way connected with your access to or use of the Site, Services, Application or Collective Content, or your violation of these Terms of
-									Use.</span>
+								<span class="policyTextLine">You agree to defend, indemnify, and hold Ednovo, its officers, directors, employees and agents, harmless from and against any claims, liabilities, damages, losses, and expenses, including, without limitation, reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the Site, Services, Application or Collective Content, or your violation of these Terms of Use.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Limitation of Liability</b>
 								</span>
 
-								<span class="{style.policyTextLine}">YOU ACKNOWLEDGE AND AGREE THAT, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE ENTIRE RISK ARISING OUT OF YOUR ACCESS TO AND USE
-									OF THE SITE, SERVICES, APPLICATION AND COLLECTIVE CONTENT REMAINS WITH YOU. NEITHER EDNOVO NOR ANY OTHER PERSON OR ENTITY INVOLVED IN
-									CREATING, PRODUCING,OR DEVLIVERING THE SITE, SERVICES, APPLICATION, GOORU CONTENT OR GOORU QUIZZES CONTENT WILL BE LIABLE FOR ANY INCIDENTAL,
-									SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR LOSS OF GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE
-									OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY DAMAGES FOR PERSONAL OR BODILY INJURY OR EMOTIONAL DISTRESS
-									ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OF USE OR FROM THE USE OF OR INABILITY TO USE THE SITE, SERVICES, APPLICATION OR COLLECTIVE
-									CONTENT, OR FROM ANY COMMUNICATIONS, INTERACTIONS OR MEETINGS WITH OTHER USERS OF the SITE, SERVICES OR APPLICATION OR OTHER PERSONS WITH
-									WHOM YOU COMMUNICATE OR
-									INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION WHETHER BASED ON WARRENTY, CONTRACT,TORT(INCLUDING NEGLIGENCE), PRODUCT
-									LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT EDNOVO HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY
-									SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.</span>
+								<span class="policyTextLine">YOU ACKNOWLEDGE AND AGREE THAT, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE ENTIRE RISK ARISING OUT OF YOUR ACCESS TO AND USE OF THE SITE, SERVICES, APPLICATION AND COLLECTIVE CONTENT REMAINS WITH YOU.  NEITHER EDNOVO NOR ANY OTHER PERSON OR ENTITY INVOLVED IN CREATING, PRODUCING, OR DELIVERING THE SITE, SERVICES, APPLICATION, COLLECTIVE CONTENT, GOORU CONTENT OR GOORU QUIZZES CONTENT WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR LOSS OF GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY DAMAGES FOR PERSONAL OR BODILY INJURY OR EMOTIONAL DISTRESS ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OF USE OR FROM THE USE OR OR INABILITY TO USE THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT, OR FROM ANY COMMUNICATIONS, INTERACTIONS OR MEETINGS WITH OTHER USERS OF the SITE, SERVICES OR APPLICATION OR OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE, SERVICES OR APPLICATION WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT EDNOVO HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.</span>
 
-								<span class="{style.policyTextLine}">
-									IN NO EVENT WILL EDNOVO'S AGGREGATE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OF USE OR FROM THE USE OF OR INABILITY TO USE
-									THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT EXCEED THE AMOUNTS YOU HAVE PAID OR ARE PAYABLE BY YOU TO EDNOVO FOR USE OF THE SITE,
-									SERVICES, APPLICATION OR COLLECTIVE CONTENT, IF APPLICABLE, OR ONE HUNDRED DOLLARS ($100), IF YOU ARE REGISTERED FOR A FREE ACCOUNT OR
-									OTHERWISE USE THE SITE, SERVICES OR APPLICATION WITHOUT ANY PAYMENT OBLIGATION TO EDNOVO, AS APPLICABLE. THE LIMITATIONS OF DAMAGES SET FORTH
-									ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN EDNOVO AND YOU. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR
-									LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</span>
+								<span class="policyTextLine">
+									IN NO EVENT WILL EDNOVO’S AGGREGATE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OF USE OR FROM THE USE OF OR INABILITY TO USE THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT EXCEED THE AMOUNTS YOU HAVE PAID OR ARE PAYABLE BY YOU TO EDNOVO FOR USE OF THE SITE, SERVICES, APPLICATION OR COLLECTIVE CONTENT, IF APPLICABLE, OR ONE HUNDRED DOLLARS ($100), IF YOU ARE REGISTERED FOR A FREE ACCOUNT OR OTHERWISE USE THE SITE, SERVICES OR APPLICATION WITHOUT ANY PAYMENT OBLIGATION TO EDNOVO, AS APPLICABLE.  THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN EDNOVO AND YOU.  SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Proprietary Rights Notices</b>
 								</span>
 
-								<span class="{style.policyTextLine}">All trademarks, service marks, logos, trade names and any other proprietary designations of Ednovo used herein are trademarks
-									or registered trademarks of Ednovo. Any other trademarks, service marks, logos, trade names and any other proprietary designations are the
-									trademarks or registered trademarks of their respective parties.</span>
+								<span class="policyTextLine">All trademarks, service marks, logos, trade names and any other proprietary designations of Ednovo used herein are trademarks or registered trademarks of Ednovo.  Any other trademarks, service marks, logos, trade names and any other proprietary designations are the trademarks or registered trademarks of their respective parties.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Controlling Law and Jurisdiction</b>
 								</span>
 
-								<span class="{style.policyTextLine}">These Terms of Use and any action related thereto will be governed by the laws of the State of California without regard to
-									its conflict of laws provisions. The exclusive jurisdiction and venue of any action to prevent the actual or threatened infringement,
-									misappropriation or violation of a party’s copyrights, trademarks, trade secrets, patents or other intellectual property rights will be the
-									state and federal courts located in the Northern District of California and each of the parties hereto waives any objection to jurisdiction
-									and venue in such courts.</span>
+								<span class="policyTextLine">These Terms of Use and any action related thereto will be governed by the laws of the State of California without regard to its conflict of laws provisions.  The exclusive jurisdiction and venue of any action to prevent the actual or threatened infringement, misappropriation or violation of a party’s copyrights, trademarks, trade secrets, patents or other intellectual property rights will be the state and federal courts located in the Northern District of California and each of the parties hereto waives any objection to jurisdiction and venue in such courts.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Entire Agreement</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									As between Ednovo and you, these Terms of Use (and the Creative Commons "Attribution- ShareAlike 3.0 Unported license located at
+								<span class="policyTextLine">
+									As between Ednovo and you, these Terms of Use (and the Creative Commons “Attribution- ShareAlike 3.0 Unported license located at
 									<a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank" class="privacyLinkText">http://creativecommons.org/licenses/by-sa/3.0/legalcode</a>
 									for your use of Gooru Content and the Creative Commons Attribution- ShareAlike 3.0 Unported license located at
-									<a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode" class="privacyLinkText">http://creativecommons.org/licenses/by-sa/3.0/legalcode</a>
-									for Ednovo’s use of Member Content) constitute the entire and exclusive understanding and agreement between Ednovo and you regarding the
-									Site, Services, Application and Collective Content, and these Terms of Use supersede and replace any and all prior oral or written
-									understandings or agreements between Ednovo and you regarding the Site, Services, Application and Collective Content.
+									<a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode" class="privacyLinkText" target="_blank">http://creativecommons.org/licenses/by-sa/3.0/legalcode</a>
+									for Ednovo’s use of Member Content) constitute the entire and exclusive understanding and agreement between Ednovo and you regarding the Site, Services, Application and Collective Content, and these Terms of Use supersede and replace any and all prior oral or written understandings or agreements between Ednovo and you regarding the Site, Services, Application and Collective Content.
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Assignment</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									<b>You may not assign or transfer these Terms of Use, by operation of law or otherwise, without Ednovo’s prior written consent. Any attempt
-										by you to assign or transfer these Terms of Use, without such consent, will be null and of no effect. Ednovo may assign or transfer these
-										Terms of Use, at its sole discretion, without restriction. Subject to the foregoing, these Terms of Use will bind and inure to the benefit
-										of the parties, their successors and permitted assigns.</b>
+								<span class="policyTextLine">
+										You may not assign or transfer these Terms of Use, by operation of law or otherwise, without Ednovo’s prior written consent.  Any attempt by you to assign or transfer these Terms of Use, without such consent, will be null and of no effect.  Ednovo may assign or transfer these Terms of Use, at its sole discretion, without restriction.  Subject to the foregoing, these Terms of Use will bind and inure to the benefit of the parties, their successors and permitted assigns.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Notices</b>
 								</span>
 
-								<span class="{style.policyTextLine}">Any notices or other communications permitted or required hereunder, including those regarding modifications to these Terms
-									of Use, will be given by Ednovo (i) via email (in each case to the address that you provide); (ii) by posting to the Site; or (iii) via the
-									Application. For notices made by e-mail, the date of receipt will be deemed the date on which such notice is transmitted.</span>
+								<span class="policyTextLine">Any notices or other communications permitted or required hereunder, including those regarding modifications to these Terms of Use, will be given by Ednovo (i) via email (in each case to the address that you provide); (ii) by posting to the Site; or (iii) via the Application.  For notices made by e-mail, the date of receipt will be deemed the date on which such notice is transmitted.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Dispute Resolution</b>
 								</span>
 
-								<span class="{style.policyTextLine}">
-									You and Ednovo agree that any dispute, claim or controversy arising out of or relating to these Terms of Use or the breach, termination,
-									enforcement, interpretation or validity thereof or the use of the Site or Services(collectively, "
+								<span class="policyTextLine">
+								You and Ednovo agree that any dispute, claim or controversy arising out of or relating to these Terms of Use or the breach, termination, enforcement, interpretation or validity thereof or the use of the Site or Services(collectively, "
 									<b>Disputes</b>
-									") will be settled by binding arbitration, except that each party retains the right to bring an individual action in small claims court and
-									the right to seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened infringement,
-									misappropriation or violation of a party’s copyrights, trademarks, trade secrets, patents or other intellectual property rights.
-									<b>You acknowledge and agree that you and Ednovo </b>
-									<b> are each waiving the right to a trial by jury or to participate as a plaintiff or class member in any purported class action or
-										representative proceeding.s </b>
-									Further, unless both you and Ednovo otherwise agree in writing, the arbitrator may not consolidate more than
-									one person's claims, and may not otherwise preside over any form of any class or representative proceeding. If this specific paragraph is held
-									unenforceable, then the entirety of this "Dispute Resolution" section will be deemed void. Except as provided in the preceding sentence, this
-									"Dispute Resolution" section will survive any termination of these Terms.
+									") will be settled by binding arbitration, except that each party retains the right to bring an individual action in small claims court and the right to seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation or violation of a party’s copyrights, trademarks, trade secrets, patents or other intellectual property rights.
+									<b>You acknowledge and agree that you and Ednovo are each waiving the right to a trial by jury or to participate as a plaintiff or class member in any purported class action or representative proceeding.  </b>
+									Further, unless both you and Ednovo otherwise agree in writing, the arbitrator may not consolidate more than one person's claims, and may not otherwise preside over any form of any class or representative proceeding.  If this specific paragraph is held unenforceable, then the entirety of this “Dispute Resolution” section will be deemed void.  Except as provided in the preceding sentence, this “Dispute Resolution” section will survive any termination of these Terms.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Arbitration Rules and Governing Law.</u>
 									The arbitration will be administered by the American Arbitration Association ("
 									<b>AAA</b>
 									"
 									<b>) </b>
-									in accordance with the Commercial Arbitration Rules and the Supplementary Procedures for Consumer Related Disputes (the "
+									in accordance with the Commercial Arbitration Rules and the Supplementary Procedures for Consumer Related Disputes  (the "
 									<b>AAA Rules</b>
-									") then in effect, except as modified by this "Dispute Resolution" section. (The AAA Rules are available at
-									<a class="privacyLinkText" href="http://www.adr.org/arb_med">www.adr.org/arb_med</a>
-									or by calling the AAA at 1-800-778-7879.) The Federal Arbitration Act will govern the interpretation and enforcement of this Section.
+									") then in effect, except as modified by this “Dispute Resolution” section.  (The AAA Rules are available at
+									<a class="privacyLinkText" href="http://www.adr.org/arb_med" target="_blank">www.adr.org/arb_med</a>
+									or by calling the AAA at 1-800-778-7879.)  The Federal Arbitration Act will govern the interpretation and enforcement of this Section.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Arbitration Process</u>
-									. A party who desires to initiate arbitration must provide the other party with a written Demand for Arbitration as specified in the AAA
-									Rules. (The AAA provides a form Demand for Arbitration at
-									<a class="privacyLinkText" href="http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_004175">http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_004175</a>
+									.  A party who desires to initiate arbitration must provide the other party with a written Demand for Arbitration as specified in the AAA Rules.  (The AAA provides a form Demand for Arbitration at
+									<a class="privacyLinkText" href="http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_004175" target="_blank">http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_004175</a>
 									and a separate form for California residents at
 									<a class="privacyLinkText" href="http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_015822" target="_blank">http://www.adr.org/aaa/ShowPDF?doc=ADRSTG_015822</a>
-									.) The arbitrator will be either a retired judge or an attorney licensed to practice law in the state of California and will be selected by
-									the parties from the AAA’s roster of consumer dispute arbitrators. If the parties are unable to agree upon an arbitrator within seven (7)
-									days of delivery of the Demand for Arbitration, then the AAA will appoint the arbitrator in accordance with the AAA Rules.
+									.) The arbitrator will be either a retired judge or an attorney licensed to practice law in the state of California and will be selected by the parties from the AAA’s roster of consumer dispute arbitrators.  If the parties are unable to agree upon an arbitrator within seven (7) days of delivery of the Demand for Arbitration, then the AAA will appoint the arbitrator in accordance with the AAA Rules.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Arbitration Location and Procedure.</u>
-									Unless you and Ednovo otherwise agree, the arbitration will be conducted in the county where you reside. If your claim does not exceed
-									$10,000, then the arbitration will be conducted solely on the basis of documents you and Ednovo submit to the arbitrator, unless you request
-									a hearing or the arbitrator determines that a hearing is necessary. If your claim exceeds $10,000, your right to a hearing will be determined
-									by the AAA Rules. Subject to the AAA Rules, the arbitrator will have the discretion to direct a reasonable exchange of information by the
-									parties, consistent with the expedited nature of the arbitration.
+									 Unless you and Ednovo otherwise agree, the arbitration will be conducted in the county where you reside.  If your claim does not exceed $10,000, then the arbitration will be conducted solely on the basis of documents you and Ednovo submit to the arbitrator, unless you request a hearing or the arbitrator determines that a hearing is necessary.  If your claim exceeds $10,000, your right to a hearing will be determined by the AAA Rules.  Subject to the AAA Rules, the arbitrator will have the discretion to direct a reasonable exchange of information by the parties, consistent with the expedited nature of the arbitration.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Arbitrator’s Decision.</u>
-									The arbitrator will render an award within the time frame specified in the AAA Rules. The arbitrator’s decision will include the essential
-									findings and conclusions upon which the arbitrator based the award. Judgment on the arbitration award may be entered in any court having
-									jurisdiction thereof. The arbitrator’s award damages must be consistent with the terms of the "Limitation of Liability" section above as to
-									the types and the amounts of damages for which a party may be held liable. The arbitrator may award declaratory or injunctive relief only in
-									favor of the claimant and only to the extent necessary to provide relief warranted by the claimant’s individual claim. If you prevail in
-									arbitration you will be entitled to an award of attorneys’ fees and expenses, to the extent provided under applicable law. Ednovo will not
-									seek, and hereby waives all rights it may have under applicable law to recover, attorneys’ fees and expenses if it
-									prevails in arbitration.
+									The arbitrator will render an award within the time frame specified in the AAA Rules.  The arbitrator’s decision will include the essential findings and conclusions upon which the arbitrator based the award.  Judgment on the arbitration award may be entered in any court having jurisdiction thereof.  The arbitrator’s award damages must be consistent with the terms of the “Limitation of Liability” section above as to the types and the amounts of damages for which a party may be held liable.  The arbitrator may award declaratory or injunctive relief only in favor of the claimant and only to the extent necessary to provide relief warranted by the claimant’s individual claim.  If you prevail in arbitration you will be entitled to an award of attorneys’ fees and expenses, to the extent provided under applicable law.  Ednovo will not seek, and hereby waives all rights it may have under applicable law to recover, attorneys’ fees and expenses if it prevails in arbitration.
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Fees.</u>
-									Your responsibility to pay any AAA filing, administrative and arbitrator fees will be solely as set forth in the AAA Rules. However, if your
-									claim for damages does not exceed $75,000, Ednovo will pay all such fees unless the arbitrator finds that either the substance of your claim
-									or the relief sought in your Demand for Arbitration was frivolous or was brought for an improper purpose (as measured by the standards set
-									forth in Federal Rule of Civil Procedure 11(b)).
+									Your responsibility to pay any AAA filing, administrative and arbitrator fees will be solely as set forth in the AAA Rules.  However, if your claim for damages does not exceed $75,000, Ednovo will pay all such fees unless the arbitrator finds that either the substance of your claim or the relief sought in your Demand for Arbitration was frivolous or was brought for an improper purpose (as measured by the standards set forth in Federal Rule of Civil Procedure 11(b)).
+
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<u>Changes.</u>
-									Notwithstanding the provisions of the "Modification" section above, if Ednovo changes this "Dispute Resolution" section after the date you
-									first accepted these Terms of Use (or accepted any subsequent changes to these Terms of Use), you may reject any such change by sending us
-									written notice (including by email to
-									<a href="mailto:info@goorulearning.org" class="privacyLinkText">info@goorulearning.org</a>
-									) within 30 days of the date such change became effective, as indicated in the "Last Updated Date" above or in the date of Ednovo’s email to
-									you notifying you of such change. By rejecting any change, you are agreeing that you will arbitrate any Dispute between you and Ednovo in
-									accordance with the provisions of this "Dispute Resolution" section as of the date you first accepted these Terms of Use (or accepted any
-									subsequent changes to these Terms of Use).
-									<b>]</b>
+								Notwithstanding the provisions of the “Modification” section above, if Ednovo changes this “Dispute Resolution” section after the date you first accepted these Terms of Use (or accepted any subsequent changes to these Terms of Use), you may reject any such change by sending us written notice (including by email to
+									info@gooru.org
+									) within 30 days of the date such change became effective, as indicated in the “Last Updated Date” above or in the date of Ednovo’s email to you notifying you of such change.  By rejecting any change, you are agreeing that you will arbitrate any Dispute between you and Ednovo in accordance with the provisions of this “Dispute Resolution” section as of the date you first accepted these Terms of Use (or accepted any subsequent changes to these Terms of Use).
+
+
+									<b></b>
 								</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>General</b>
 								</span>
 
-								<span class="{style.policyTextLine}">The failure of Ednovo to enforce any right or provision of these Terms of Use will not constitute a waiver of future
-									enforcement of that right or provision. The waiver of any such right or provision will be effective only if in writing and signed by a duly
-									authorized representative of Ednovo. Except as expressly set forth in these Terms of Use, the exercise by either party of any of its remedies
-									under these Terms of Use will be without prejudice to its other remedies under these Terms of Use or otherwise. If for any reason a court of
-									competent jurisdiction finds any provision of these Terms of Use invalid or unenforceable, that provision will be enforced to the maximum
-									extent permissible and the other provisions of these Terms of Use will remain in full force and effect.</span>
+								<span class="policyTextLine">The failure of Ednovo to enforce any right or provision of these Terms of Use will not constitute a waiver of future enforcement of that right or provision.  The waiver of any such right or provision will be effective only if in writing and signed by a duly authorized representative of Ednovo.  Except as expressly set forth in these Terms of Use, the exercise by either party of any of its remedies under these Terms of Use will be without prejudice to its other remedies under these Terms of Use or otherwise.  If for any reason a court of competent jurisdiction finds any provision of these Terms of Use invalid or unenforceable, that provision will be enforced to the maximum extent permissible and the other provisions of these Terms of Use will remain in full force and effect.</span>
 
-								<span class="{style.policyTextLine}">
+								<span class="policyTextLine">
 									<b>Contacting Ednovo</b>
 								</span>
-
-								<span class="{style.policyTextLine}">If you have any questions about these Terms of Use or any App Store Sourced Application, please contact Ednovo at </span>
-
-								<span class="{style.policyTextLine}">
-									<a class="privacyLinkText" href="mailto:info@goorulearning.org">info@goorulearning.org</a>
+									<br></br>
+								<span class="policyTextLine">If you have any questions about these Terms of Use or any Application, please contact Ednovo at: </span>
+								<br></br>
+								<span  class="contactUs">
+									<a class="privacyLinkText" href="mailto:info@gooru.org" target="_blank">info@gooru.org</a>
 								</span>
 
-								<span class="{style.policyTextLine}">1032 Elwell Court, Suite 210, </span>
-
-								<span class="{style.policyTextLine}">Palo Alto, CA 94304 </span>
-
-								<span class="{style.policyTextLine}">650-331-0219.</span>
+								<span class="contactUs">1032 Elwell Court, Suite 210 </span>
+								<span class="contactUs">Palo Alto, CA, 94303 </span>
+								<span class="contactUs">(650) 331-0219</span>
 								<br />
-
 							</div>
 							<br></br>
+						<!-- <span class="policyTextLine">Effective [January 21, 2013]</span> -->
 
-
-						
-
-							<span class="{style.policyTextLine}">Effective [January 21, 2013]</span>
-
-							<!-- <span>
-								Ednovo, Inc.(
-								<b>"Ednovo", "our" "us"</b>
-								or
-								<b>"we"</b>
-								) provides this Privacy Policy to inform you of our policies and procedures regarding the collection, use and disclosure of personal
-								information we receive from users of
-								<a href="http://www.goorulearning.org" class="privacyLinkText">http://www.goorulearning.org</a>
-								(this "
-								<b>Site</b>
-								") or our application for tablet computing devices such as the Apple iPad (the "
-								<b>Application</b>
-								").This Privacy Policy applies only to information that you provide to us through this Site and Application. This Privacy Policy may be
-								updated from time to time. We will notify you of any material changes by posting the new Privacy Policy on the Site. You are advised to
-								consult this policy regularly for any changes. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the
-								same meanings as in our Ednovo Terms of Use, accessible at
-								<b>http://www.goorulearning.org</b>
-							</span>
-							<span class="{style.policyTextLine}">As used in this policy, the terms "using" and "processing" information include using cookies on a computer, subjecting the
-								information to statistical or other analysis and using or handling information in any way, including, but not limited to collecting, storing,
-								evaluating, modifying, deleting, using, combining, disclosing and transferring information within our organization or among our affiliates
-								within the United States or internationally.
-							</span> -->
-
-							<!-- <span class="{style.policyTextLine}">
-								<b>Information Collection and Use</b>
-							</span>
-
-							<span class="{style.policyTextLine}">
-								Our primary goals in collecting information are to provide and improve our Site, Application, services, features and content, to administer
-								your use thereof (together, the("
-								<b>Gooru Service</b>
-								")and to enable users to enjoy and easily navigate the Site and Application.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<u>Personally Identifiable Information.</u>
-							</span>
-
-							<ul class="privacyPolicy">
-								<li class="{style.privacyList}">
-									<span class="policyTextLineNew">
-										When you choose to register to create an account on the Site and Application we will ask you for personally identifiable information. This
-										refers to information about you that can be used to contact or identify you ("
-										<b>Personal Information</b>
-										") .
-										Personal Information includes, but is not limited to, your name, email address, age, username and password, date of birth, gender and grade level in
-										school. We will only ask about your grade level if you are age 13 or older.
-									</span>
-								</li>
-
-
-								<li class="{style.privacyList}">
-									<span class="policyTextLineNew">
-										We also collect the other information that you provide in connection with your use of the Site and Application (e.g., without limitation,
-										search terms entered, pages viewed, and school network information) ("
-										<b>Non-Identifying Information</b>
-										").
-									</span>
-								</li>
-
-
-								<li class="{style.privacyList}">
-									<span class="policyTextLineNew">
-										We use your Personal Information (in some cases, in conjunction with your Non-Identifying Information) to provide the Gooru Service and
-										administer your inquiries.
-									</span>
-								</li>
-
-								<li class="{style.privacyList}">
-									<span class="policyTextLineNew">
-										Certain Non-Identifying Information would be considered a part of your Personal Information if it were combined with other identifiers (for
-										example, combining your IP address with your school network information) in a way that enables you to be identified. But the same pieces of
-										information are considered Non-Identifying Information when they are taken alone or combined only with other non-identifying information
-										(for example, your viewing preferences). We may combine your Personal Information with Non-Identifying Information and aggregate it with
-										information collected from other Gooru Users (defined below) to attempt to provide you with a better experience, to improve the quality and
-										value of the Gooru Service and to analyze and understand how our Site and Application and Gooru Service are used. We may also use the
-										combined information without aggregating it to serve you specifically, for instance to deliver a product to you according to your
-										preferences or restrictions.
-									</span>
-								</li>
-
-								<li class="{style.privacyList}">
-									<span class="policyTextLineNew">
-										We also use your Personal Information to contact you with newsletters or
-										other information that may be of interest to you. If you decide at any time that you no longer wish to receive such communications from us,
-										please follow the unsubscribe instructions provided in any of the communications.
-										(See "
-										<b>Changing or Deleting Information,</b>
-										" below.)
-									</span>
-								</li>
-							</ul>
-
-
-							<span class="{style.policyTextLine}">
-								<u>Log Data.</u>
-								When you visit the Site and Application, whether you are a customer of Ednovo or are just browsing the Site and Application (any of these, a "
-								<b>Gooru User</b>
-								"), our servers automatically record information that your browser sends whenever you visit a website
-								("
-								<b>Log Data</b>
-								").This Log Data may include information such as your computer’s Internet Protocol ("
-								<b>IP</b>
-								") address, browser type or the webpage you were visiting before you came to our Site and Application, pages of our Site and Application that
-								you visit, the time spent on those pages, information you search for on our Site and Application, access times and dates, and other
-								statistics. We use this information to monitor and analyze use of the Site and Application and the Gooru Service and for the Site and
-								Application’s technical administration, to increase our Site and Application’s functionality and user-friendliness, and to better tailor it to
-								our visitors’ needs. We also use this information to verify that visitors to the Site and Application meet the criteria required to process
-								their requests. We do not treat Log Data as Personal Information or use it in association with other Personal Information, though we may
-								aggregate, analyze and evaluate such information for the same purposes as
-								stated above regarding other Non-Identifying Information.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<b>Cookies</b>
-							</span>
-
-
-							<span class="{style.policyTextLine}">Like many websites, we use "cookies" to collect information. A cookie is a small data file that we transfer to your computer’s
-								hard disk for record-keeping purposes. We use cookies for two purposes. First, we utilize persistent cookies to save your registration ID and
-								login password for future logins to the Site. Second, we utilize session ID cookies to enable certain features of the Site, to better
-								understand how you interact with the Site and to monitor aggregate usage and web traffic routing on the Site. Unlike persistent cookies,
-								session cookies are deleted from your computer when you log off from the Site and Service and then close your browser. Third parties providing
-								services on Ednovo’s behalf may also place or read cookies on your browser. You can instruct your browser, by changing its options, to stop
-								accepting cookies or to prompt you before accepting a cookie from the websites you visit. If you do not accept cookies, however, you may not
-								be able to use
-								all portions of the Site or all functionality of the Gooru Service.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<b>Phishing</b>
-							</span>
-
-							<span class="{style.policyTextLine}">Identity theft and the practice currently known as "phishing" are of great concern to Ednovo. Safeguarding information to help
-								protect you from identity theft is a top priority. We do not and will not, at any time, request your identification in a non-secure or
-								unsolicited e-mail or telephone communication. For more information about phishing, visit the Federal Trade Commission’s website.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<b>Information Sharing and Disclosure</b>
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<u>Aggregate Information and Non-Identifying Information.</u>
-								We may share aggregated information that does not include Personal Information and we may otherwise disclose Non-Identifying Information and
-								Log Data with third parties for industry analysis, demographic profiling and other purposes. Any aggregated information shared in these
-								contexts will not contain your Personal Information
-							</span>
-
-							<span class="{style.policyTextLine}">
-								If you access the Gooru Services via a third party, that third party may have provided us with Personal Information about you.
-								In such instances we may share Non-Identifying Information that we collect about you with the third party.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<u>
-									Service Providers</u>
-								We may employ third party companies and individuals to facilitate our Gooru Service, to provide the Gooru Service on our behalf, to perform
-								Site-related services (e.g., without limitation, maintenance services, database management, web analytics and improvement of the Site’s
-								features) or to assist us in analyzing how our Site and Application and Gooru Service are used. These third parties have access to your
-								Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<u>Compliance with Laws and Law Enforcement.</u>
-								Ednovo cooperates with government and law enforcement officials and private parties to enforce and comply with the law. We will disclose any
-								information about you to government or law enforcement officials or private parties as we, in our sole discretion, believe necessary or
-								appropriate to respond to claims and legal process (including but not limited to subpoenas), to protect the property and rights of Ednovo or a
-								third party, to protect the safety of the public or any person, or to prevent or stop activity we may consider to be, or to pose a risk of
-								being, illegal, unethical or legally actionable activity.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<u>Business Transfers.</u>
-								Ednovo may sell, transfer or otherwise share some or all of its assets, including your Personal Information, in connection with a merger,
-								acquisition, reorganization or sale of assets or in the event of bankruptcy.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<b>Changing or Deleting Your Information</b>
-							</span>
-
-							<span class="{style.policyTextLine}">
-								All Ednovo Users may delete the Personal Information provided via the Site and Application by contacting us. If you would like us to delete
-								your account in our system, please contact us at
-								<a href="mailto:support@goorulearning.org" target="_blank" class="privacyLinkText">support@goorulearning.org</a>
-								with a request that we delete your Personal Information from our database. We will use commercially reasonable efforts to honor your request.
-								We may retain an archived copy of your records as required by law or for legitimate business purposes.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								<b>Security</b>
-							</span>
-
-							<span class="{style.policyTextLine}">Ednovo is very concerned with safeguarding your information. We employ reasonable physical, technological, and administrative
-								security measures and attempt to ensure they are applicable under the circumstances. No method of transmission over the Internet, or method of
-								electronic storage, is 100% secure, however. Therefore, while we strive to use commercially acceptable means to protect your personal
-								information, we cannot guarantee its absolute security.
-							</span>
-
-							<span class="{style.policyTextLine}">
-								We will make any legally required disclosures of any breach of the security, confidentiality, or integrity of your unencrypted
-								electronically stored "personal data" (as defined in applicable state statutes on security breach notification) to you via email or
-								conspicuous posting on this Site in the most expedient time possible and without unreasonable delay, insofar as consistent with (i) the
-								legitimate needs of law enforcement or (ii) any measures necessary to determine the scope of the breach and restore the reasonable integrity
-								of the data system</span>
-
-
-							<span class="{style.policyTextLine}">
-								<b>International Transfer</b>
-							</span>
-
-
-							<span class="{style.policyTextLine}">Your information may be transferred to — and maintained on — computers located outside of your state, province, country or
-								other governmental jurisdiction where the privacy laws may not be as protective as those in your jurisdiction. If you are located outside the
-								United States and choose to provide information to us, Ednovo transfers Personal Information to the United States and processes it there. Your
-								consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</span>
-
-
-							<span class="{style.policyTextLine}">
-								<b>
-									Links to Other Sites
-								</b>
-							</span>
-
-							<span class="{style.policyTextLine}">
-								Our Site and Application contains links to other websites. If you choose to click on a third party link, you will be directed
-								to that third party’s website. The fact that we link to a website is not an endorsement, authorization or representation of our affiliation
-								with that third party, nor is it an endorsement of their privacy or information security policies or practices. We do not exercise control
-								over third party websites. These other websites may place their own cookies or other files on your computer, or collect data or solicit
-								personal information from you. Other sites follow different rules regarding the use or disclosure of the personal information you submit to
-								them. We encourage you to read the privacy policies or statements of the other websites you visit.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<b>Children's Privacy</b>
-							</span>
-
-							<span class="{style.policyTextLine}">The Site, Services and Application do not condition a child's participation in an online activity on the child providing more
-								Personal Information than is reasonably necessary for that activity.</span>
-
-
-							<span class="{style.policyTextLine}">
-								<u>How Children's Personal Information is Collected.</u>
-								We do not collect information about children unless they attempt to register for an Account. When registering for an Account, the child will
-								be directly asked for his or her date of birth (to determine age) and a parent or guardian’s email address. We will send an email to the
-								parent or guardian’s email address with instructions about how to register for an Account and to create a child’s Account. If the parent or
-								guardian does not respond, all information collected from the child is deleted. Once the parent or guardian registers, he or she can set up a
-								child Account and create a username, password and, optionally, provide the gender of the child.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<u>How Personal Information about Children is Used.</u>
-								To the extent any Personal Information is collected about children, it is used for the internal operations of the website and online services,
-								i.e., to provide the Gooru Service and administer inquiries, and as permitted by law.
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<u>Parental Notification and Consent.</u>
-								If a parent or guardian consents and later decides to revoke his or her consent, the child’s information and Account can be deleted or
-								deactivated by emailing a request to
-								<a href="mailto:support@goorulearning.org" target="_blank" class="privacyLinkText">support@goorulearning.org</a>
-							</span>
-
-
-							<span class="{style.policyTextLine}">
-								<u>Parental/Guardian Review.</u>
-								As a parent or guardian, you may review your child’s activity on the Site, Services or Application by [logging into the child Account or] by
-								sending a written request to Ednovo at the physical address below.
-							</span> -->
-
-							<!-- <span class="{style.policyTextLine}">
-								<b>Contacting Us</b>
-							</span>
-
-							<span class="{style.policyTextLine}">
-								If you have any questions about this Privacy Policy, please contact us at
-								<a href="mailto:legal@goorulearning.org" target="_blank" class="privacyLinkText">legal@goorulearning.org</a>
-							</span>
-
-
-							<span class="{style.policyTextLine}">1032 Elwell Court, Suite 210, </span>
-
-							<span class="{style.policyTextLine}">Palo Alto, CA 94304 </span>
-
-							<span class="{style.policyTextLine}">650-331-0219.</span> -->
-
-						</div>
-					</div>
 				</div>
-			</div>
-		</g:HTML>
-		<g:FlowPanel styleName="{style.termsButtonDiv}">
-			<g:Button styleName="{style.privacyCloseButton} {style.termsButtonText}" ui:field="privacyCloseBtn">OK</g:Button>
+			</g:HTML>
+		<g:FlowPanel styleName="popupgreyFooter">
+		    <g:HTMLPanel styleName="privacyCloseButton">
+		    	<g:Button styleName="primary" ui:field="privacyCloseBtn">OK</g:Button>
+		    </g:HTMLPanel>
+
 		</g:FlowPanel>
-		
 		</g:HTMLPanel>
-</ui:UiBinder> 
+		</g:HTMLPanel>
+</ui:UiBinder>

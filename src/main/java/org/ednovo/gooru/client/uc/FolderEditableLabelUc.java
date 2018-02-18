@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -24,7 +24,8 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.uc;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.KeyUpEvent;
@@ -46,12 +47,13 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
  *
  */
-public class FolderEditableLabelUc extends Composite implements HasValue<String>,MessageProperties {
+public class FolderEditableLabelUc extends Composite implements HasValue<String>{
 
 	private static EditableLabelUc1UiBinder uiBinder = GWT.create(EditableLabelUc1UiBinder.class);
 
 	interface EditableLabelUc1UiBinder extends UiBinder<Widget, FolderEditableLabelUc> {
 	}
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	@UiField
 	protected Label editLabel;
@@ -64,66 +66,28 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 
 	@UiField
 	protected FocusPanel focusPanel;
-	
+
 	protected String placeholder = "";
 
 	protected String text;
-	
 
-	@UiField(provided = true)
-	UcCBundle res;
 
 	/**
 	 * Class constructor
 	 */
 	public FolderEditableLabelUc() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
+		focusPanel.getElement().setId("focuspnlFocusPanel");
+		deckPanel.getElement().setId("dpnlDeckPanel");
+		editLabel.getElement().setId("lblEditLabel");
+		editTextBox.getElement().setId("txtEditTextBox");
+		StringUtil.setAttributes(editTextBox, true);
 		deckPanel.showWidget(0);
-		/*focusPanel.addFocusHandler(new FocusHandler() {
-			@Override
-			public void onFocus(FocusEvent event) {
-				switchToEdit();
-			}
-		});
 
-		focusPanel.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				switchToEdit();
-			}
-		});
 
-		editLabel.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				switchToEdit();
-			}
-		});
-
-		editTextBox.addBlurHandler(new BlurHandler() {
-			@Override
-			public void onBlur(BlurEvent event) {
-				switchToLabel();
-			}
-		});
-
-		editTextBox.addKeyPressHandler(new KeyPressHandler() {
-
-			@Override
-			public void onKeyPress(KeyPressEvent event) {
-
-				if (event.getCharCode() == KeyCodes.KEY_ENTER) {
-					switchToLabel();
-				} else if (event.getCharCode() == KeyCodes.KEY_ESCAPE) {
-					editTextBox.setText(editLabel.getText()); // reset to the original value
-				}
-			}
-		});*/
-		
 		editTextBox.addKeyUpHandler(new ValidateConfirmText());
 	}
-	
+
 	private class ValidateConfirmText implements KeyUpHandler {
 
 		@Override
@@ -131,14 +95,16 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 			checkCharacterLimit(editTextBox.getText());
 		}
 	}
-	
+
 	/**
-	 * Change to editable view 
+	 * Change to editable view
 	 */
 	public void switchToEdit() {
 		if (deckPanel.getVisibleWidget() == 1)
 			return;
 		editTextBox.setText(getValue());
+		editTextBox.getElement().setAttribute("alt", getValue());
+		editTextBox.getElement().setAttribute("title", getValue());
 		deckPanel.showWidget(1);
 		editTextBox.setFocus(true);
 		editTextBox.addStyleName("shelfEditTitleForFolders");
@@ -154,7 +120,7 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 		if(editTextBox.getText().length() > 0){
 			setValue(editTextBox.getText(), true); // fires events, too
 		}else{
-			new AlertContentUc(GL0061,GL1026+GL_SPL_EXCLAMATION);
+			new AlertContentUc(i18n.GL0061(),i18n.GL1026()+i18n.GL_SPL_EXCLAMATION());
 			return;
 		}
 		deckPanel.showWidget(0);
@@ -172,16 +138,18 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 	 * @param text
 	 */
 	public void onEditDisabled(String text) {
-		
+
 	}
-	
+
 	// Override this method to catch on blur
 	/**
 	 * @param text
 	 */
 	public void checkCharacterLimit(String text) {
-		
+
 	}
+
+
 
 	@Override
 	public HandlerRegistration addValueChangeHandler(ValueChangeHandler<String> handler) {
@@ -196,7 +164,11 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 	@Override
 	public void setValue(String value) {
 		editLabel.setText(value);
+		editLabel.getElement().setAttribute("alt", value);
+		editLabel.getElement().setAttribute("title", value);
 		editTextBox.setText(value);
+		editTextBox.getElement().setAttribute("alt", value);
+		editTextBox.getElement().setAttribute("title", value);
 	}
 
 	/**
@@ -225,8 +197,8 @@ public class FolderEditableLabelUc extends Composite implements HasValue<String>
 			ValueChangeEvent.fireIfNotEqual(this, getValue(), value);
 		setValue(value);
 	}
-	
+
 	public TextBox getTextBoxSource(){
-		return editTextBox; 
+		return editTextBox;
 	}
 }

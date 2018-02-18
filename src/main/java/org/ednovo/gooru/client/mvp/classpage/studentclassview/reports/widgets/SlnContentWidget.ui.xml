@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+    <ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+    <ui:style src="" />
+	<g:HTMLPanel styleName="itemList" ui:field="contentPanel">
+	   <div class="progressReportBlock">
+	      <div class="wrapCirclesViews">
+	         <p><g:Image ui:field="contentImageStyle"></g:Image></p>
+	         <g:HTMLPanel styleName="viewsDetails marginTop" ui:field="assessmentCountData"><span:SpanPanel ui:field="assessmentViews"></span:SpanPanel> Attempts</g:HTMLPanel>
+	         <g:HTMLPanel styleName="viewsDetails marginTop" ui:field="collectionCountData"><span:SpanPanel ui:field="collectionViews"></span:SpanPanel> Views</g:HTMLPanel>
+	      </div>
+	      <div class="wrapCircles">
+	         <g:HTMLPanel styleName="progress-radial" ui:field="assessmentRadial">
+	            <div class="overlay"><span><span:SmallPanel text="{i18n.GL3469_29}"></span:SmallPanel><g:Label ui:field="score"></g:Label></span></div>
+	         </g:HTMLPanel>
+	         <g:HTMLPanel styleName="progress-radial blue-progress-0" ui:field="collectionRadial">
+	            <div class="overlay">
+	                <span><span:EmPanel ui:field="timeSpent"></span:EmPanel></span>
+	            </div>
+	      	 </g:HTMLPanel>
+	      </div>
+	   </div>
+	</g:HTMLPanel>
+</ui:UiBinder>

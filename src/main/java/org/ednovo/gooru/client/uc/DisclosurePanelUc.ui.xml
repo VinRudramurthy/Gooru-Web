@@ -1,17 +1,16 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:bt="urn:import:org.ednovo.gooru.client.uc">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
-	<g:DisclosurePanel styleName="{res.css.disclosurePanelUc}" open="true" animationEnabled="true" ui:field="filterPanel">
+	<g:DisclosurePanel styleName="Uc-disclosurePanelUc" open="true" animationEnabled="true" ui:field="filterPanel">
 		<g:customHeader>
 			<g:FocusPanel ui:field="headerPanel">
-				<g:FlowPanel styleName="{res.css.disclosurePanelUcHeader}">
+				<g:FlowPanel styleName="Uc-disclosurePanelUcHeader">
 					<g:SimplePanel width="10px" ui:field="imagePanel" styleName="floatLeft" >
-						<g:Image styleName="{res.css.disclosurePanelUcHeaderImgOpen}" ui:field="titleImg" />
+						<g:Image styleName="Uc-disclosurePanelUcHeaderImgOpen" ui:field="titleImg" />
 					</g:SimplePanel>
-					<g:Label styleName="{res.css.disclosurePanelUcHeaderText}" ui:field="titleLbl" />
+					<g:Label styleName="Uc-disclosurePanelUcHeaderText" ui:field="titleLbl" />
 				</g:FlowPanel>
 			</g:FocusPanel>
 		</g:customHeader>
 		<g:FlowPanel ui:field="contentPanel"/>
 	</g:DisclosurePanel>
-</ui:UiBinder> 
+</ui:UiBinder>

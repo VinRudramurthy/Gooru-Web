@@ -30,11 +30,40 @@ package org.ednovo.gooru.client.mvp.classpages.event;
 import com.google.gwt.event.shared.EventHandler;
 
 /**
- * @author Classpages Team
  * 
+ * @fileName : RefreshAssignmentsListEventHandler.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface RefreshAssignmentsListEventHandler extends EventHandler {
-
+	/**
+	 * 
+	 * @function refreshAssignmentsList 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param isPostDeleteAssignment
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	void refreshAssignmentsList(boolean isPostDeleteAssignment);
 
 }

@@ -1,0 +1,5034 @@
+/* CSS Document */
+
+#gShelfMainContainer .floderLeftContainer{
+	background:#f0f0f0;
+	margin-right:15px;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.05);
+	min-height:500px;
+	margin-bottom:-9999px;
+	padding-bottom:9999px;
+	position: fixed;
+	width:235px;
+}
+#gooruSearchMainContainer .copyPopupPanel:before {
+	  position: absolute;
+	  top: 0;
+	  left:0;
+	  display: inline-block;
+	  border-right: 0;
+	  border-bottom: 0;
+	  border-left: 0;
+	  border-bottom-color:0;
+	  content: '';
+}
+#gooruSearchMainContainer .copyPopupPanel {
+	 min-width: 50px !important;
+	margin-top: -6px !important;
+}
+#gooruSearchMainContainer .copyPopupPanel:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 0;
+	content: '';
+}
+
+#gShelfMainContainer .floderRightContainer{
+	background:#ffffff;
+	box-shadow:0 0 6px rgba(0, 0, 0, 0.05);
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu{
+	background:#ffffff;
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu a{
+	color:#999999;
+	font-weight:bold;
+	display:table-cell;
+	width:1%;
+	overflow:hidden;
+	padding:15px 15px;
+	text-align:center;
+	border-right:1px solid #dddddd;
+	position:relative;
+	background: white;
+	box-shadow: none;
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu a:hover, .floderLeftContainer .myCousesTabMenu a:focus{
+	text-decoration:none;
+	color:#4e9746;
+	opacity:1;
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu a.mycollectionMenu:hover, .floderLeftContainer .myCousesTabMenu a.mycollectionMenu:focus{
+	text-decoration:none;
+	color:#1076bb;
+	opacity:1;
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu a.mycourseMenu.active {
+  color: #4e9746;
+  border-bottom: 8px solid #4e9746;
+}
+#gShelfMainContainer .floderLeftContainer .myCousesTabMenu a.mycollectionMenu.active {
+  color: #1076bb;
+  border-bottom: 8px solid #1076bb;
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader.createCollectionColor {
+  background: #87badd;
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader.createassessmentColor {
+  background: #fdc876;
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader.createCollectionColor span.plus {
+  background: #87badd;
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader.createassessmentColor span.plus {
+  background: #fdc876;
+}
+
+
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader{
+    background: #a6cba2;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader span {
+    float: left;
+    padding: 17px 20px;
+    cursor: pointer;
+}
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader span.plus {
+    float: right;
+    height: 52px;
+    width: 52px;
+}
+
+#gShelfMainContainer .floderLeftContainer .myCoursesLeftMainHeader span.plus {
+    background: #a6cba2;
+    color: #ffffff;
+    display: block;
+    font-size: 33px;
+    font-weight: normal;
+    line-height: 52px;
+    padding: 0;
+    text-align: center;
+	cursor:pointer;
+}
+
+
+#gShelfMainContainer .floderRightContainer .coursesPrimaryHeader{
+	padding:0 0;
+	border-bottom:1px solid #dddddd;
+}
+#gShelfMainContainer .floderRightContainer .coursesPrimaryHeader h3{
+	padding:16px 0;
+	font-size:20px;
+	font-weight:bold;
+	color:#515151;
+	margin:0 0;
+}
+#gShelfMainContainer .floatRightBlock, .textRightBlock{
+	text-align:right;
+}
+#gShelfMainContainer .floderRightContainer .coursesPrimaryHeader .createCourseButton{
+	margin:12px 0;
+}
+
+#gShelfMainContainer button.success {
+	background:#7ab075;
+	border:none;
+  border-radius: 4px 4px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  padding: 7px 9px 7px 9px;
+}
+#gShelfMainContainer button.success:hover {
+  background:#65a15f;
+  color: #ffffff;
+  cursor: pointer;
+}
+#gShelfMainContainer .createCourseButton button.success {
+	padding: 8px 12px;
+}
+
+
+#gShelfMainContainer .equifier{
+	overflow:hidden;
+}
+#gShelfMainContainer .folderBlock{
+	background:#f0f0f0;
+}
+#gShelfMainContainer .folderBlock .folderBlockHeader{
+
+	padding:12px 0;
+}
+#gShelfMainContainer .gradeContainer{
+ background: #333333;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));
+  background: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+  background: -o-linear-gradient(top, #ffffff, #f5f5f5);
+}
+#gShelfMainContainer .greyBackground{
+	background:#e8e7e7;
+}
+
+#gShelfMainContainer .folderBlock  .folderMainHeading{
+	padding:5px 0;
+
+	font-size:17px;
+	color:#515151;
+}
+#gShelfMainContainer .folderBlock  .folderMainHeading span.folderIcon{
+		background:url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -226px -372px;
+		width:40px;
+		height:25px;
+		display:inline-block;
+		vertical-align:middle;
+}
+#gShelfMainContainer .collectionScrlPanel {
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	min-height:430px;
+	width:235px;
+	background: none repeat scroll 0% 0% rgb(240, 240, 240);
+}
+#gShelfMainContainer .collectionScrlPanel > div{
+	height: 100%
+}
+
+#gShelfMainContainer .floderLeftContainer .createMenu{
+	display: inline-block;
+	margin: 0;
+	text-align: right;
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+	vertical-align: bottom;
+}
+
+#gShelfMainContainer .floderLeftContainer .createMenu .btn{
+	font-size:12px;
+}
+
+#gShelfMainContainer .floderLeftContainer .createMenu .plus {
+	display: block;
+	background: #4d99cd;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+}
+
+#gShelfMainContainer .floderLeftContainer .createMenu .btn, #gShelfMainContainer .floderLeftContainer .createMenu .plus{
+	height: 40px;
+}
+#gShelfMainContainer .floderLeftContainer .folderLeftMainHeader {
+	color: #515151;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 12px 12px;
+	background: #f0f0f0;
+	cursor: pointer;
+}
+
+#gShelfMainContainer .floderLeftContainer .folderLeftMainHeader.active {
+	background-color: white;
+	border-left: 8px solid #515151;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-radius: 4px;
+	margin-left: -7px;
+    z-index:10;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+#gShelfMainContainer .courseNameBlock{
+	position:relative;
+	padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+}
+
+#gShelfMainContainer .courseNameBlock p{
+	margin-bottom:8px;
+	color:#515151;
+}
+
+#gShelfMainContainer .courseNameBlock .form-control{
+	border:1px solid #87badd;
+}
+#gShelfMainContainer .tagCoursePanel{
+	padding:15px 15px;
+}
+
+#gShelfMainContainer .tagCoursePanel p{
+	color:#515151;
+	margin: 0 0 10px;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelHeader{
+	text-align:center;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelHeader button{
+	width:75%;
+	font-size:13px;
+	font-weight:bold;
+}
+
+button.btn-disabled{
+	background-color:#dddddd;
+	color:#ffffff;
+}
+
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody{
+	border:1px solid #dddddd;
+	margin-top:15px;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody .courseGroupBlock{
+	overflow:hidden;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody .courseGroupLeft{
+	border-right:1px solid #dddddd;
+	margin-bottom:-500px;
+	padding-bottom:500px;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul{
+	margin:0 0;
+	padding:0 0;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul li{
+	margin:0 0;
+	padding:0 0;
+	list-style:none;
+	border-bottom:1px solid #ffffff;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul li a{
+	display:block;
+	margin:0 0;
+	color:#515151;
+	padding:8px 15px;
+	font-size:12px;
+
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul li a:hover, #gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul li a:focus{
+	background:#87badd;
+	color:#333333;
+	text-decoration:none;
+	opacity:1;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody ul li.active a{
+	background:#87badd;
+	color:#333333;
+	text-decoration:none;
+}
+
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter{
+	margin:15px 0;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter .filterTags{
+	margin: 0 0;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter .filterTags ul li a {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 0 0 0 22px;
+}
+#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter .filterTags ul li{
+	margin:0 15px 0 0;
+}
+#gShelfMainContainer .tagCourseOptions .row div{
+	padding-right: 15px !important;
+	padding-left: 7px !important;
+}
+#gShelfMainContainer .tagCourseOptions a.list-group-item{
+	padding:6px 15px;
+}
+#gShelfMainContainer .tagCourseOptions a.list-group-item:hover{
+	opacity:1;
+}
+#gShelfMainContainer .tagCourseOptions .list-group-item.active, #gShelfMainContainer .tagCourseOptions .list-group-item.active:focus, #gShelfMainContainer .tagCourseOptions .list-group-item.active:hover {
+    background:#87badd;
+    background-color: #87badd;
+    border-color: #87badd;
+    color: #515151;
+	opacity:1;
+    z-index: 2;
+}
+
+#gShelfMainContainer .stepsButtonGroup{
+	text-align:center;
+	margin:15px 15px;
+}
+#gShelfMainContainer .createMenu {
+	margin-right:15px;
+	margin-bottom:8px;
+	margin-top:6px;
+}
+#gShelfMainContainer .createMenu .btn-left{
+	width:84%;
+	text-align:left;
+}
+#gShelfMainContainer .createMenu .btn-right{
+	width:16%;
+	border-left:2px solid #eeeeee !important;
+}
+#gShelfMainContainer .createMenu .btn-default {
+    border-color: transparent;
+
+}
+
+#gShelfMainContainer .createMenu .btn-default.active, #gShelfMainContainer .createMenu .btn-default.focus, #gShelfMainContainer .createMenu .btn-default:active, #gShelfMainContainer .createMenu .btn-default:focus, #gShelfMainContainer .createMenu .btn-default:hover, #gShelfMainContainer .createMenu .open > .dropdown-toggle.btn-default {
+    background-color:#ffffff;
+    border-color:transparent;
+    color: #333;
+	box-shadow:none;
+}
+#gShelfMainContainer .createMenu .open > .dropdown-menu{
+	width:100%;
+	text-align: left;
+}
+#gShelfMainContainer .createMenu .caret {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px dashed;
+
+}
+#gShelfMainContainer .folderLeftActionBtn{
+	font-size:13px;
+	font-weight:bold;
+}
+
+#gShelfMainContainer .folderLeftActionBtn{
+	padding:10px 15px;
+}
+
+
+#gShelfMainContainer .folderListBlock  ul{
+	margin:0 0;
+	padding:0 0;
+}
+
+#gShelfMainContainer .folderListBlock  ul li{
+	margin:0 0;
+	padding:0 0;
+	list-style:none;
+	border-bottom:1px solid #ffffff;
+}
+
+#gShelfMainContainer .folderListBlock  ul li a{
+	padding:15px 15px 15px 55px;
+			background:#f0f0f0 url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -215px -360px;
+			display:block;
+			color:#515151;
+			font-size:13px;
+
+}
+
+
+#gShelfMainContainer .folderListBlock ul li a:hover, #gShelfMainContainer .folderListBlock ul li a:focus{
+		background:#ffffff url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -215px -316px;
+	color:#515151;
+	text-decoration:none;
+	opacity:1;
+
+}
+#gShelfMainContainer .folderListBlock ul li.active a{
+		background:#ffffff url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -215px -318px;
+	color:#515151;
+	text-decoration:none;
+}
+
+#gShelfMainContainer .folderBlockSitemap{
+	background:#f6f6f6;
+	border-top:1px solid #ffffff;
+}
+
+
+/*////////////////////// Folder tree styles ///////////////////*/
+
+#gShelfMainContainer .folderLevel {
+    background-color:#f0f0f0;
+    border-top:1px solid white;
+    border-bottom:1px solid #ddd;
+    height: 50px;
+    line-height: 50px;
+   /*  padding-right:15px; */
+    position:relative;
+    box-sizing:content-box;
+    width: 100%;
+}
+#gShelfMainContainer .folderLevel.active {
+	background-color: white !important;
+	/* border-left: 8px solid #515151; */
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-radius: 4px;
+	/* margin-left: -7px; */
+    z-index:10;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+#gShelfMainContainer .folderLevel.justAdded {
+    background-color:#E1F0D1 !important;
+}
+
+#gShelfMainContainer .folderLevel .title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: transparent !important;
+}
+
+#gShelfMainContainer .folderLevel { /* grandparent level - default */
+    padding-left:70px;
+}
+
+#gShelfMainContainer .folderLevel.parent {
+    padding-left:98px;
+}
+
+#gShelfMainContainer .folderLevel.child {
+    padding-left:126px;
+}
+
+#gShelfMainContainer .folderLevel.collectionChild {
+    padding-left:154px;
+}
+#gShelfMainContainer .folderLevel.course{ /* grandparent level - default */
+    padding-left:70px;
+}
+
+#gShelfMainContainer .folderLevel.unit {
+    padding-left:98px;
+}
+
+#gShelfMainContainer .folderLevel.lesson {
+    padding-left:126px;
+}
+
+#gShelfMainContainer .folderLevel.collectionChild {
+    padding-left:154px;
+}
+
+/*////////////////////// positioning with folder icon ///////////////////*/
+
+
+#gShelfMainContainer .folderLevel { /* grandparent level - default */
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 23px 13px;
+}
+
+#gShelfMainContainer .folderLevel.course {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/c-close.png') no-repeat 23px 13px;
+}
+#gShelfMainContainer .folderLevel.unit {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/u-close.png') no-repeat 51px 13px;
+}
+#gShelfMainContainer .folderLevel.lesson {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/l-close.png') no-repeat 79px 13px;
+}
+
+#gShelfMainContainer .folderLevel.parent {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 51px 13px;
+}
+
+#gShelfMainContainer .folderLevel.child {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 79px 13px;
+}
+
+#gShelfMainContainer .folderLevel.collectionChild {
+    background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 107px 13px;
+}
+
+/*////////////////////// other images ///////////////////*/
+
+
+#gShelfMainContainer .folderLevel.open {
+    background-image: url('${cdn.endpoint}/images/folders/panel/folder-icon-open.png');
+}
+#gShelfMainContainer .folderLevel.course.open {
+    background-image: url('${cdn.endpoint}/images/folders/panel/c-open.png')!important;
+}
+#gShelfMainContainer .folderLevel.unit.open {
+    background-image: url('${cdn.endpoint}/images/folders/panel/u-open.png')!important;
+}
+#gShelfMainContainer .folderLevel.lesson.open {
+    background-image: url('${cdn.endpoint}/images/folders/panel/l-open.png')!important;
+}
+#gShelfMainContainer .folderLevel.collection {
+    background-image: url('${cdn.endpoint}/images/folders/panel/collection-icon.png') !important;
+}
+
+#gShelfMainContainer .folderLevel.assessment {
+    background-image: url('${cdn.endpoint}/images/folders/panel/assessment-type.png') !important;
+}
+
+#gShelfMainContainer .folderLevel.publicIcon.collection {
+    background-image: url('${cdn.endpoint}/images/folders/panel/collection-icon-public.png') !important;
+}
+
+#gShelfMainContainer .folderLevel.assesstpublicIcon.assessment {
+    background-image: url('${cdn.endpoint}/images/folders/panel/assessment-icon-public.png') !important;
+}
+
+#gShelfMainContainer .folderLevel .editButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 12px 12px 12px 75px;
+    line-height: normal;
+    display:none;
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 1%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(1%,rgba(255,255,255,0)), color-stop(51%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
+}
+
+#gShelfMainContainer .folderLevel:hover {
+	background-color: white !important;
+	cursor: pointer !important;
+	margin: 0px;
+	color: #515151 !important;
+}
+
+#gShelfMainContainer .folderLevel:hover .arrow {
+    display:block;
+}
+
+#gShelfMainContainer .folderLevel:hover .editButton {
+    display:none;
+    height:26px;
+}
+#gShelfMainContainer .emptyHoverContainer {
+    position: absolute;
+    top: 24px;
+    left: 50px;
+}
+
+#gShelfMainContainer .emptyHover {
+    width: 21px;
+    height: 20px;
+}
+#gShelfMainContainer .emptyHover:hover + .tooltipContainer  {
+	visibility:visible;
+    opacity:1;
+    display:block;
+}
+
+
+#gShelfMainContainer .folderLevel.parent .emptyHoverContainer {
+    left:77px;
+}
+
+#gShelfMainContainer .folderLevel.child .emptyHoverContainer {
+    left:105px;
+}
+
+.ActionItemsNew{
+	display:table;
+}
+.ActionItemsNew .deleteButton, .ActionItemsNew .copyButton{
+	display:table-cell;
+	vertical-align:middle;
+}
+.ActionItemsNew .deleteButton span{
+	display:block;
+	vertical-align:middle;
+}
+.ActionItemsNew .copyButton span{
+	display:block;
+	vertical-align:middle;
+}
+.ActionItemsNew a{
+	display:block;
+	text-align:center;
+	font-size:11px;
+	padding:6px 8px;
+}
+#shareContentInClass{
+	padding:0 15px;
+}
+#shareContentInClass .siteInfo {
+	border-bottom:1px solid #dddddd;
+	padding:0 0 15px 0;
+}
+#shareContentInClass .ButtonRight {
+	text-align:right;
+}
+#shareContentInClass .siteInfo p {
+	color:#1076bb;
+	font-size:13px;
+	margin-bottom:5px;
+}
+#shareContentInClass .siteInfo p.small{
+	font-size:12px;
+	color:#515151;
+}
+#shareContentInClass .tableItems{
+	display:table;
+	width:100%;
+	border-collapse: collapse;
+}
+#shareContentInClass .tableItems .unitRow{
+	width: 720px;
+}
+#shareContentInClass .tableItems .tableRow{
+	display:table-row;
+	border-bottom:1px solid #dddddd;
+	border-collapse:separate;
+}
+#shareContentInClass .tableItems .tableCell{
+	display:table-cell;
+	padding:8px 0;
+	width: 400px;
+}
+#shareContentInClass .tableItems .statusTab{
+	text-align:right;
+}
+#shareContentInClass .tableItems .statusTab a{
+	display:inline-block;
+	border-right:1px solid #dddddd;
+	padding:0 10px 0 0;
+	vertical-align:middle;
+}
+#shareContentInClass .tableItems .statusTab .dottedButton{
+	width:22px;
+	height:22px;
+	background:#d8d8d8;
+	border-radius:50% 50%;
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:10px;
+	cursor: pointer;
+}
+#shareContentInClass .tableItems .statusTab .dottedButton.green{
+	background:#7ab075;
+}
+#shareContentInClass .tableItems .unitLessonDetailsTab.levelTwo{
+	margin-left:25px;
+}
+#shareContentInClass .tableItems .unitLessonDetailsTab.levelThree{
+	margin-left:50px;
+}
+#shareContentInClass .tableItems .unitLessonDetailsTab.cursor {
+	cursor: pointer;
+}
+.pageSubHeader{
+	padding:0 15px 15px 15px;
+	border-bottom:1px solid #dddddd;
+	margin-bottom:15px;
+	font-size:22px;
+	color:#515151;
+}
+@media (max-width: 767px) {
+
+	#gShelfMainContainer .floderLeftContainer{
+		margin-right:0;
+		position: fixed;
+	}
+	#gShelfMainContainer .tagCoursePanel .tagCoursePanelHeader button{
+		margin-bottom:2px;
+		width:100%;
+	}
+	#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter .filterTags ul li {
+    	margin: 0 10px 10px 0;
+	}
+	#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody .courseGroupLeft {
+	    border-right:none;
+		background:#f5f5f5;
+	}
+	#gShelfMainContainer .createMenu {
+	    margin-right: 15px;
+	    margin-left:15px;
+	}
+	#gShelfMainContainer .tagCoursePanel .tagCoursePanelBody .courseGroupRight{
+			  border-top: 1px solid #dddddd;
+			  background:#ffffff;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+		#gShelfMainContainer .tagCoursePanel .tagCoursePanelHeader button {
+		    font-size: 13px;
+		    font-weight: bold;
+		    width: 100%;
+		}
+		#gShelfMainContainer .tagCoursePanel .tagCoursePanelFooter .filterTags ul li {
+		    margin: 0 10px 10px 0;
+		}
+}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+#gShelfMainContainer .btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 10px solid #f6f6f6;
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  left: 100%;
+  z-index: 3;
+}
+#gShelfMainContainer .btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+#gShelfMainContainer .btn-breadcrumb .btn {
+  padding:15px 15px 15px 24px;
+}
+#gShelfMainContainer .btn-breadcrumb .btn:first-child {
+  padding:15px 15px 15px 15px;
+}
+#gShelfMainContainer .btn-breadcrumb .btn:last-child {
+  padding:15px 18px 15px 24px;
+}
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default{
+	background-color:transparent;
+	border-color:transparent;
+	border-radius:0 0;
+	font-size:13px;
+}
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default:hover, #gShelfMainContainer .btn-breadcrumb .btn.btn-default:focus {
+
+	box-shadow:none;
+}
+
+/** Default button **/
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 11px solid #f6f6f6;
+}
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 11px solid #ffffff;
+}
+/*.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #b4d1b1;
+}*/
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 11px solid #ffffff;
+}
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default.active {
+	background-color:#b4d1b1;
+	box-shadow:none;
+}
+#gShelfMainContainer .btn-breadcrumb .btn.btn-default.active:not(:last-child)::after {
+    border-left: 11px solid #b4d1b1;
+}
+/* The responsive part */
+
+#gShelfMainContainer .btn-breadcrumb > * > div {
+    /* With less: .text-overflow(); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#gShelfMainContainer .btn-breadcrumb > *:nth-child(n+2) {
+  display:none;
+}
+
+
+/* === For phones =================================== */
+@media (max-width: 767px) {
+   #gShelfMainContainer .btn-breadcrumb > *:nth-last-child(-n+2) {
+        display:block;
+    }
+   #gShelfMainContainer .btn-breadcrumb > * div {
+        max-width: 60px;
+    }
+}
+
+/* === For tablets ================================== */
+@media (min-width: 768px) and (max-width:991px) {
+   #gShelfMainContainer .btn-breadcrumb > *:nth-last-child(-n+4) {
+        display:block;
+    }
+    #gShelfMainContainer .btn-breadcrumb > * div {
+        max-width: 100px;
+    }
+}
+
+/* === For desktops ================================== */
+@media (min-width: 992px) {
+    #gShelfMainContainer .btn-breadcrumb > *:nth-last-child(-n+6) {
+        display:block;
+    }
+    #gShelfMainContainer .btn-breadcrumb > * div {
+        max-width: 170px;
+    }
+}
+
+
+/* === For Course list Css start ================================== */
+
+#gShelfCousesList{
+	padding-bottom:50px;
+	min-height:450px;
+	height: auto;
+	overflow-y:auto;
+}
+#gShelfCousesList .courseHeader{
+	padding:20px 15px;
+	background:#f0f0f0;
+}
+#gShelfCousesList .coursesList::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+#gShelfCousesList .coursesList::-webkit-scrollbar-thumb {
+	background-color: #bdbebd;
+	-webkit-border-radius: 2ex;
+}
+#gShelfCousesList .courseHeader h2{
+	font-size:22px;
+	font-weight:bold;
+	color:#515151;
+	margin:0 0;
+}
+#gShelfCousesList .tableDiv{
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+}
+#myCollectionsListViewLoaddingImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#gShelfCousesList .tableRow{
+	display:table-row;
+	width:100%;
+	border-bottom:1px solid #dddddd;
+}
+
+#gShelfCousesList .tableColumn{
+	display:table-cell;
+	padding:4px 10px;
+	vertical-align:middle;
+
+}
+#gShelfCousesList .tableColumn:first-child{
+	width: 8%;
+	font-weight: bold;
+	padding: 18px;
+	font-size: 18px;
+}
+#gShelfCousesList .tableColumn:nth-child(2){
+	background:#f9fcfe;
+	padding:10px 15px;
+	width:40%;
+	cursor:pointer;
+}
+#gShelfCousesList .tableColumn:last-child{
+	width:6%;
+}
+#gShelfCousesList .tableColumn .courseImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/c-close.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .unitImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/u-close.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .lessonImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/l-close.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .courseImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/c-close.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .unitImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/u-close.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .folderImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+}
+#gShelfCousesList .tableColumn .collectionImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/collection-icon.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+	border: 0;
+}
+#gShelfCousesList .tableColumn .assessmentImage{
+	background: #f9fcfe url('${cdn.endpoint}/images/folders/panel/assessment-type.png') no-repeat 0px 0px;
+	height: 25px;
+	width: 45px;
+	float: left;
+	margin-top: 4%;
+	border: 0;
+}
+#gShelfCousesList .tableMainHeader h3{
+	margin:0 0 2px 0;
+	font-size:17px;
+	font-weight:bold;
+	color:#515151;
+	margin-left: 26%;
+	word-break: break-word;
+}
+#gShelfCousesList .tableMainHeader p{
+	margin:0 0;
+	margin-left: 26%;
+	color:#515151;
+}
+#gShelfCousesList .tableListOrder .topArrow {
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -360px;
+	width:16px;
+	height:10px;
+	display:inline-block;
+	margin-bottom:-3px;
+	cursor: pointer;
+}
+#gShelfCousesList .tableListOrder{
+	text-align:center;
+}
+#gShelfCousesList .tableListOrder .btnMoveToEdit{
+	width:96px;
+	background: #DDDDDD;
+	border: none;
+	height: 35px;
+	color:#4d99cd;
+}
+#gShelfCousesList .tableListOrder .form-control{
+	height:24px;
+	padding:6px 2px;
+	font-size:12px;
+	border-radius: 4px;
+	text-align: center;
+}
+#gShelfCousesList .tableListOrder .bottomArrow {
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -381px;
+	width:16px;
+	height:10px;
+	display:inline-block;
+	cursor: pointer;
+}
+#gShelfCousesList .tableListTags span{
+	margin-left:10px;
+}
+
+#gShelfCousesList .addCourse{
+	padding:15px 25px;
+	font-size:18px;
+	color:#515151;
+	border:1px dashed #dddddd;
+	margin:1px 1px;
+	position:relative;
+	/* cursor:pointer; */
+}
+#gShelfCousesList .addCourse .courseTextAdd{
+	display:inline-block;
+	cursor:pointer;
+}
+#gShelfCousesList .addCourse .pnlCreate{
+	display: inline-block;
+}
+#gShelfCousesList .addCourse input{
+    bottom: 0;
+    height: 55px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+	cursor:pointer;
+}
+@media (max-width: 767px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+/* === For Course list Css end ================================== */
+
+/* === For Course info Css start ================================== */
+
+#gShelfCourseInfo .courseHeader {
+	background: #f0f0f0;
+}
+#gShelfCourseInfo .courseCreateContainer {
+	background: white;
+	border-bottom:1px solid #ddd;
+	height: 48px;
+}
+
+#gShelfCourseInfo .courseCreateContainer .lblTitle{
+	float: left;
+	display: inline-block;
+	padding: 9px;
+	font-size: 20px;
+	margin-left: 8px;
+	color: #222;
+}
+
+#gShelfCourseInfo .scrollCourseContainer{
+	height:500px;
+	overflow-y:auto;
+}
+#gShelfCourseInfo .courseCreateContainer .createButton{
+	margin-top: 1%;
+	float: right;
+	margin-right: 2%;
+}
+#gShelfCourseInfo .breadcrumbMain .active{
+	padding:20px 25px;
+	display:inline-block;
+	font-size:17px;
+	color:#515151;
+	position:relative;
+
+}
+#gShelfCourseInfo .breadcrumbMain .active:hover,#gShelfCourseInfo .breadcrumbMain .active:focus{
+	opacity:1;
+	text-decoration:none;
+}
+#gShelfCourseInfo .breadcrumbMain div.active{
+	background:#cddeea;
+	box-shadow: none;
+}
+
+#gShelfCourseInfo .breadcrumbMain div.active:after{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 32px solid transparent;
+	border-bottom: 34px solid transparent;
+
+	border-left: 20px solid #cddeea;
+	right:-20px;
+	top:0;
+	 z-index:97;
+}
+
+#gShelfCourseInfo .breadcrumbMain div.active:before{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 32px solid transparent;
+	border-bottom: 34px solid transparent;
+
+	border-left: 20px solid #f0f0f0;
+	right:-22px;
+	top:0;
+	 z-index:97;
+}
+
+#gShelfCourseInfo .equifier {
+	overflow: hidden;
+}
+
+#gShelfCourseInfo .folderBlock {
+	background: #f0f0f0;
+}
+
+#gShelfCourseInfo .folderBlock .folderBlockHeader {
+	padding: 12px 0;
+}
+
+#gShelfCourseInfo .folderBlock  .folderMainHeading {
+	padding: 5px 0;
+	font-size: 17px;
+	color: #515151;
+}
+
+#gShelfCourseInfo .folderBlock  .folderMainHeading span.folderIcon {
+	background: url(${cdn.endpoint}/images/gooru-sprite.png) no-repeat -226px -372px;
+	width: 40px;
+	height: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .courseNameBlock {
+	position: relative;
+	padding: 15px 15px 20px 15px;
+}
+
+#gShelfCourseInfo .courseNameBlock p {
+	margin-bottom: 8px;
+	color: #515151;
+}
+
+#gShelfCourseInfo .courseNameBlock .form-control {
+	border: 1px solid #87badd;
+}
+
+#gShelfCourseInfo .tagCoursePanel {
+	padding: 15px 15px;
+}
+
+#gShelfCourseInfo .tagCoursePanel p {
+	color: #515151;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader {
+	text-align: center;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader button {
+	width: 100%;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+button.btn-disabled {
+	background-color: #dddddd;
+	color: #ffffff;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody {
+	border: 1px solid #dddddd;
+	margin-top: 2%;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .courseGroupBlock
+	{
+	overflow: hidden;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .courseGroupLeft {
+	border-right: 1px solid #dddddd;
+	margin-bottom: -500px;
+	padding-bottom: 500px;
+}
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .subHeading {
+	color: #515151;
+	padding: 8px 15px;
+	display: inline-block;
+	margin: 0;
+	font-weight: bold;
+}
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .pnlBackGround {
+	background-color: #EFEDED;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul li {
+	margin: 0 0;
+	padding: 0 0;
+	list-style: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul li a {
+	display: block;
+	margin: 0 0;
+	color: #515151;
+	padding: 8px 15px;
+	font-size: 12px;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul li a:hover,#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul li a:focus{
+	background: #87badd;
+	color: #333333;
+	text-decoration: none;
+	opacity: 1;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody ul li.active a {
+	background: #87badd;
+	color: #333333;
+	text-decoration: none;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter {
+	margin: 15px 0;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags {
+	margin: 0 0;
+}
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags ul li div{
+	float: left;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags ul li a{
+	color: #ffffff;
+	font-size: 12px;
+	padding: 0 0 0 22px;
+	float: left;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags ul li{
+	margin: 0 15px 0 0;
+}
+
+#gShelfCourseInfo .tagCourseOptions a.list-group-item {
+	padding: 6px 15px;
+}
+
+#gShelfCourseInfo .tagCourseOptions a.list-group-item:hover {
+	opacity: 1;
+}
+
+#gShelfCourseInfo .tagCourseOptions .list-group-item.active,#gShelfCourseInfo .tagCourseOptions .list-group-item.active:focus,#gShelfCourseInfo .tagCourseOptions .list-group-item.active:hover{
+	background-color: #87badd;
+	border-color: #87badd;
+	color: #515151;
+	opacity: 1;
+	z-index: 2;
+}
+
+#gShelfCourseInfo .stepsButtonGroup {
+	text-align: center;
+	margin: 15px 15px;
+}
+
+#gShelfCourseInfo .createMenu {
+	margin-right: 15px;
+	margin-bottom: 8px;
+	margin-top: 6px;
+}
+
+#gShelfCourseInfo .createMenu .btn-left {
+	width: 84%;
+	text-align: left;
+}
+
+#gShelfCourseInfo .createMenu .btn-right {
+	width: 16%;
+}
+
+#gShelfCourseInfo .createMenu .btn-default {
+	border-color: transparent;
+}
+
+#gShelfCourseInfo .createMenu .btn-default.active,#gShelfCourseInfo .createMenu .btn-default.focus,#gShelfCourseInfo .createMenu .btn-default:active,#gShelfCourseInfo .createMenu .btn-default:focus,#gShelfCourseInfo .createMenu .btn-default:hover,#gShelfCourseInfo .createMenu .open>.dropdown-toggle.btn-default{
+	background-color: #ffffff;
+	border-color: transparent;
+	color: #333;
+	box-shadow: none;
+}
+
+#gShelfCourseInfo .createMenu .open>.dropdown-menu {
+	border-radius: 0;
+	margin-top: -1px;
+	width: 100%;
+	padding: 0 0;
+}
+
+#gShelfCourseInfo .createMenu .open>.dropdown-menu a {
+	padding: 10px 20px;
+}
+
+#gShelfCourseInfo .createMenu .open>.dropdown-menu a {
+	font-size: 13px;
+	color: #515151;
+}
+
+#gShelfCourseInfo .createMenu .caret {
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px dashed;
+}
+
+#gShelfCourseInfo .folderLeftActionBtn {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#gShelfCourseInfo .folderLeftActionBtn {
+	padding: 10px 15px;
+}
+
+#gShelfCourseInfo .folderListBlock  ul {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+#gShelfCourseInfo .folderListBlock  ul li {
+	margin: 0 0;
+	padding: 0 0;
+	list-style: none;
+	border-bottom: 1px solid #ffffff;
+}
+
+#gShelfCourseInfo .folderListBlock  ul li a {
+	padding: 15px 15px 15px 15px;
+	background: #f0f0f0;
+	display: block;
+	color: #515151;
+	font-size: 13px;
+}
+
+#gShelfCourseInfo .folderListBlock ul li a:hover,.folderListBlock ul li a:focus{
+	background: #ffffff;
+	color: #515151;
+	text-decoration: none;
+	opacity: 1;
+}
+
+#gShelfCourseInfo .folderListBlock ul li.active a {
+	background: #ffffff;
+	color: #515151;
+	text-decoration: none;
+}
+
+#gShelfCourseInfo .folderBlockSitemap {
+	background: #f6f6f6;
+	border-top: 0px;
+}
+#gShelfMainContainer .lblCollectionTitle {
+	height: 56px;
+	text-align: left;
+	background: #ffffff;
+	box-shadow: 0 0 6px rgba(0,0,0,0.05);
+	/* vertical-align: middle; */
+	margin: 0;
+	padding: 11px;
+	font-size: 22px;
+}
+#gShelfMainContainer .lblCollectionSubTitle {
+	display: inline-block;
+	text-overflow: ellipsis;
+	width: 80%;
+	white-space: nowrap;
+	vertical-align: middle;
+	overflow: hidden;
+}
+#gShelfMainContainer .lastEditedBy {
+	text-align: right;
+	background: #ffffff;
+	font-size: 12px;
+	margin-top: -33px;
+}
+#gShelfCourseInfo .folderBlockSitemap {
+	background: #f6f6f6;
+}
+#gShelfCourseInfo .deleteButton{
+	display: inline-block;
+	float: right;
+}
+#gShelfCourseInfo .actions .deleteButton{
+	display: inline-block;
+	float: none;
+	vertical-align: middle;
+}
+#gShelfCourseInfo .folderBlockSitemap .deleteButton a {
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	color: #1076bb;
+}
+#gShelfCourseInfo .folderBlockSitemap a {
+	padding: 16px 25px;
+	display: inline-block;
+	color: #515151;
+	font-size: 13px;
+	transition: all 0.5s ease-in-out 0s;
+	-moz-trnsition: all 0.5s ease-in-out 0s;
+	-webkit-transition: all 0.5s ease-in-out 0s;
+	-o-transition: all 0.5s ease-in-out 0s;
+}
+
+#gShelfCourseInfo .folderBlockSitemap a:hover,#gShelfCourseInfo .folderBlockSitemap a:focus
+	{
+	background: #d8d8d8;
+	color: #333333;
+	text-decoration: none;
+	margin: 0px;
+	border: 0px;
+}
+
+#gShelfCourseInfo .folderBlockSitemap a.active {
+	background: #d8d8d8;
+	color: #333333;
+	text-decoration: none;
+	margin: 0px;
+	border: 0px;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader .btn {
+	padding: 12px 12px;
+	box-shadow: none;
+	border-radius: 0 0;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader .btn-default {
+	background-color: #efeeee;
+	color: #999999;
+	border: none;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader .btn-default.active
+	{
+	background-color: #d7e8f4;
+	color: #1076bb;
+}
+
+#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader {
+	border: 1px solid #dddddd;
+	border-bottom-width: 0;
+	border-radius: 5px;
+}
+
+#gShelfCourseInfo .courseFolderOpenIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px
+		-449px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .unitFolderOpenIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px
+		-484px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .courseFolderCloseIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px
+		-449px;
+	width: 36px;
+	height: 28px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .unitFolderCloseIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px
+		-484px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .breadCrumbTitle {
+	display: inline-block;
+	width: 96px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .breadcrumbsCollectionIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -229px -519px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.breadcrumbsCollectionIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -229px -519px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#gShelfCourseInfo .breadcrumbsAssessmentIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -229px -554px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.breadcrumbsAssessmentIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -229px -554px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+#gShelfCourseInfo .filterTags ul li {
+  background: #87badd none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  list-style: outside none none;
+  margin: 0;
+  padding: 8px 10px;
+  margin-left: 5px;
+}
+#gShelfCourseInfo .filterTags ul li div{
+	float: left;
+}
+#gShelfCourseInfo .filterTags ul li a{
+	color: #fff;
+	font-size: 12px;
+	padding: 0 0 0 22px;
+	float: left;
+}
+
+@media(max-width:767px){
+	#gShelfCourseInfo .floderLeftContainer {
+		margin-right: 0;
+	}
+
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader button {
+		margin-bottom: 2px;
+		width: 100%;
+	}
+
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags ul li
+		{
+		margin: 0 10px 10px 0;
+	}
+
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .courseGroupLeft {
+		border-right: none;
+		background: #f5f5f5;
+	}
+
+	#gShelfCourseInfo .createMenu {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelBody .courseGroupRight
+	{
+		border-top: 1px solid #dddddd;
+		background: #ffffff;
+	}
+
+}
+@media(min-width:768px) and (max-width:991px){
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelHeader button {
+		font-size: 13px;
+		font-weight: bold;
+		width: 100%;
+	}
+	#gShelfCourseInfo .tagCoursePanel .tagCoursePanelFooter .filterTags ul li
+		{
+		margin: 0 10px 10px 0;
+	}
+}
+@media ( min-width : 992px) and (max-width: 1199px) {
+}
+
+@media ( min-width : 1200px) {
+}
+
+/* === For Course info Css end ================================== */
+/* === For Lesson info Css start ================================== */
+#pnlLessonInfo .floderRightContainer .courseHeader {
+	background:#f0f0f0;
+}
+#pnlLessonInfo .gliphIconImage {
+  background: url("${cdn.endpoint}/images/gridicon.png") no-repeat scroll 0 0 transparent;
+  width: 11px;
+  height: 12px;
+}
+#pnlLessonInfo li:hover{
+background: none repeat scroll 0% 0% rgb(195, 221, 238);
+}
+#pnlLessonInfo .liPanelStyle
+{
+text-align: left;
+font-weight: bold;
+padding-left: 10px;
+font-size: 9pt;
+}
+#pnlLessonInfo .liPanelStylenonBold
+{
+text-align: left;
+padding-left: 10px;
+font-size: 9pt;
+padding-bottom: 10px;
+}
+#pnlLessonInfo .courseNameBlock{
+	border-bottom:1px solid #dddddd;
+	padding:15px 15px 15px 15px;
+}
+#pnlLessonInfo .questionsBlock{
+
+	padding:15px 0;
+		border-bottom:1px solid #dddddd;
+}
+#pnlLessonInfo .questionsBlock p{
+	margin-bottom:5px;
+	color:#515151;
+}
+#pnlLessonInfo .dropDownRight{
+	text-align:right !important;
+	padding-right:6px;
+}
+#pnlLessonInfo .dropDownRight .btn{
+	font-size:12px;
+}
+#pnlLessonInfo .unitCoverBlock{
+	padding:15px 0;
+}
+
+#pnlLessonInfo .unitCoverBody{
+	padding:15px 15px;
+}
+#pnlLessonInfo .unitCoverList {
+	border:1px solid #dddddd;
+	border-radius:3px 3px;
+}
+
+#pnlLessonInfo .unitCoverList ul {
+    margin: 0;
+    padding: 0;
+}
+#pnlLessonInfo .unitCoverList ul li {
+
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+#pnlLessonInfo .unitCoverList ul li a {
+    color: #515151;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 15px;
+}
+#pnlLessonInfo .unitCoverList ul li a:hover, #info .unitCoverList ul li a:focus {
+    background: #87badd none repeat scroll 0 0;
+    color: #333333;
+    opacity: 1;
+    text-decoration: none;
+}
+#pnlLessonInfo .unitCoverListLeft{
+	border-right:1px solid #dddddd;
+}
+#pnlLessonInfo .unitCoverListMiddle{
+	border-right:1px solid #dddddd;
+}
+
+#pnlLessonInfo .unitCoverListLeft, #info .unitCoverListMiddle, #info .unitCoverListRight{
+	min-height:398px;
+}
+
+#pnlLessonInfo .unitCoverListRight ul li{
+	font-style:italic;
+}
+#pnlLessonInfo .unitCoverListRight ul li:first-child{
+	font-style:normal;
+}
+
+#pnlLessonInfo .fractionDetailsTable .dropDownRight .dropdown-menu{
+	left:auto;
+	right:0;
+}
+
+
+@media (max-width: 767px) {
+
+#pnlLessonInfo .unitCoverListLeft, #info .unitCoverListMiddle, #info .unitCoverListRight{
+	min-height:inherit;
+}
+#pnlLessonInfo .unitCoverListLeft{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#pnlLessonInfo .unitCoverListMiddle{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#pnlLessonInfo .breadcrumbMain a{
+	font-size:13px;
+	padding:20px 20px
+}
+#pnlLessonInfo .folderBlockSitemap a{
+	padding:16px 18px;
+}
+}
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+
+#pnlLessonInfo .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 16px solid #f6f6f6;
+}
+#pnlLessonInfo .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+/*.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #b4d1b1;
+}*/
+#pnlLessonInfo .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+#pnlLessonInfo .btn-breadcrumb .btn.btn-default.active {
+	background-color:#cddeea;
+	box-shadow:none;
+}
+#pnlLessonInfo .btn-breadcrumb .btn.btn-default.active:not(:last-child)::after {
+    border-left: 16px solid #cddeea;
+}
+/* The responsive part */
+
+#pnlLessonInfo .btn-breadcrumb > * > div {
+    /* With less: .text-overflow(); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#pnlLessonInfo .btn-breadcrumb > *:nth-child(n+2) {
+  display:none;
+}
+
+/* === For phones =================================== */
+@media (max-width: 767px) {
+    #pnlLessonInfo .btn-breadcrumb > *:nth-last-child(-n+2) {
+        display:block;
+    }
+    #pnlLessonInfo .btn-breadcrumb > * div {
+        max-width: 60px;
+    }
+}
+
+/* === For tablets ================================== */
+@media (min-width: 768px) and (max-width:991px) {
+    #pnlLessonInfo .btn-breadcrumb > *:nth-last-child(-n+4) {
+        display:block;
+    }
+    #pnlLessonInfo .btn-breadcrumb > * div {
+        max-width: 100px;
+    }
+}
+
+/* === For desktops ================================== */
+@media (min-width: 992px) {
+    #pnlLessonInfo .btn-breadcrumb > *:nth-last-child(-n+6) {
+        display:block;
+    }
+    #pnlLessonInfo .btn-breadcrumb > * div {
+        max-width: 170px;
+    }
+}
+
+*/
+
+#pnlLessonInfo .deleteButton{
+	text-align:right;
+}
+
+#pnlLessonInfo .deleteButton a{
+	color:#1076bb;
+	border-left:1px solid #dddddd;
+}
+#pnlLessonInfo .lessonCover{
+	padding-top:15px;
+}
+#pnlLessonInfo .lessonCover .panel-heading{
+	background-color:transparent;
+	font-size:13px;
+	font-weight:bold;
+	color:#515151;
+	padding:10px 10px;
+
+}
+#pnlLessonInfo .lessonCover .panel-body{
+	padding:0 0;
+}
+#pnlLessonInfo .lessonCover .panel-body .active{
+	background: #87badd;
+	color: #333333;
+	text-decoration: none;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks{
+
+	border-bottom:1px solid #dddddd;
+}
+
+#pnlLessonInfo .lessonCover .fractionBlocks .fractionMultiBlock{
+	padding:10px 10px;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks .fractionMultiBlock.active{
+	background:#c3ddee;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks p{
+	margin:0 0;
+	text-align:left;
+	padding-left:10px;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks .frLeft{
+	font-size:17px;
+	color:#515151;
+	text-align:left;
+	word-wrap: break-word !important;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks .singleBlock{
+
+		padding:10px 10px;
+}
+#pnlLessonInfo .lessonCover .fractionBlocks .singleBlock p{
+	color:#515151;
+	font-weight:bold;
+}
+#pnlLessonInfo .unitCoverHeader .dropDownRight .btn-primary{
+	background-color:#87badd;
+	border:1px solid #ffffff;
+}
+#pnlLessonInfo .unitCoverHeader{
+	text-align:left;
+	padding-left:16px;
+}
+
+#pnlLessonInfo .dropDownRight{
+	text-align:center;
+}
+@media (max-width: 767px) {
+	#pnlLessonInfo .stepsButtonGroup{
+		text-align:center;
+	}
+#pnlLessonInfo .stepsButtonGroup button{
+	display:block;
+	width:100%;
+	margin-bottom:5px;
+}
+#pnlLessonInfo .breadcrumbMain a{
+	margin-bottom:2px;
+}
+#pnlLessonInfo .folderBlockSitemap a {
+
+    padding: 16px;
+
+}
+
+#pnlLessonInfo .dropDownRight .btn{
+	padding:6px 6px;
+}
+}
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+
+/* === For Lesson info Css end ================================== */
+
+/* == For Standards======*/
+
+#standardsDetails  header{
+	position:relative;
+}
+#standardsDetails  header.standerdHeader{
+	padding:8px 0;
+	border-radius:4px 4px 0 0;
+	-webkit-border-radius:4px 4px 0 0;
+	-moz-border-radius:4px 4px 0 0;
+	border-top:1px solid #ffffff;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#515151));
+	background: -webkit-linear-gradient(top, #666666, #515151);
+		background: -moz-linear-gradient(top, #666666, #515151);
+	background: -ms-linear-gradient(top, #666666, #515151);
+	background: -o-linear-gradient(top, #666666, #515151);
+
+
+
+}
+#standardsDetails .filterTags {
+  display: inline-block;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+#standardsDetails .filterTags ul li {
+  background: #87badd none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  list-style: outside none none;
+  margin: 0;
+  padding: 8px 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+#standardsDetails .filterTags ul li div{
+ display: inline-block;
+}
+#standardsDetails .filterTags ul li a{
+	padding-left:7px;
+	color: #ffffff;
+}
+
+#standardsDetails .filterTags ul li a:visited, #standardsDetails .filterTags ul li a:active {
+	color: #ffffff;
+}
+
+#standardsDetails  .standerdTxt{
+	font-size:18px;
+	color:#ffffff;
+	font-weight:normal;
+	padding:4px 15px;
+}
+#standardsDetails  .greyBox{
+	background:#dddddd;
+	padding:10px 15px;
+}
+#standardsDetails  .greyBox p{
+	margin:0 0;
+	color:#515151;
+}
+#standardsDetails  .standerdHeader .closeBtn{
+	margin-top:5px;
+	text-align:right;
+}
+
+#standardsDetails  .standarBodyContainer{
+	background:#ffffff;
+	padding:0 0;
+}
+#standardsDetails .buttonGroupContainer{
+	padding:10px 0;
+}
+#standardsDetails  .listGroup{
+	margin:0 0 0  0;
+	border-bottom:1px solid #cccccc;
+
+}
+#standardsDetails .tagCoursePanelFooter{
+	margin:15px 0;
+}
+#standardsDetails .tagCoursePanelFooter .filterTags{
+	margin: 0 0;
+}
+#standardsDetails .tagCoursePanelFooter .filterTags ul li a {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 0 0 0 22px;
+}
+#standardsDetails .tagCoursePanelFooter .filterTags ul li{
+	margin:0 15px 0 0;
+}
+#standardsDetails  .standarFooterContainer{
+	background:#ffffff;
+	border-radius:0 0 4px 4px;
+	-webkit-border-radius:0 0 4px 4px;
+	-moz-border-radius:0 0 4px 4px;
+}
+#standardsDetails  .listGroup .border-right{
+	padding-left:0 !important;
+	padding-right:0 !important;
+	border-right:1px solid #cccccc;
+
+}
+
+#standardsDetails  .listGroup ul li a{
+	color:#515151;
+	padding:6px 10px;
+	display:block;
+}
+
+#standardsDetails  .listGroup ul li a:hover{
+	color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+	opacity:1;
+
+}
+#standardsDetails .addButton{
+	text-align:right;
+	float: right;
+}
+#standardsDetails  .listGroup ul li.active a,.listGroup ul li.focus a{
+		color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+}
+#standardsDetails  .listGroup ul li a:active,.listGroup ul li a:focus{
+		color:#515151;
+	background:#cfe3f1;
+	text-decoration:none;
+}
+#standardsDetails .listGroup .listGroupLast ul li a{
+	color:#000000;
+}
+
+@media (min-width: 240px) and (max-width: 319px){
+	#standardsDetails .listGroup .border-right{
+		min-height:inherit;
+	}
+	#standardsDetails .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 479px) {
+#standardsDetails .listGroup .border-right{
+		min-height:inherit;
+	}
+	#standardsDetails .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+	#standardsDetails .listGroup .border-right{
+		min-height:inherit;
+	}
+	#standardsDetails .listGroup .border-right{
+		border-right:none;
+		border-bottom:1px solid #cccccc;
+	}
+}
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+/* == For Standards end======*/
+
+/* Css for collection edit*/
+@charset "utf-8";
+/* CSS Document */
+#resourceEdit{
+	padding-bottom:50px;
+	min-height:450px;
+}
+
+
+#resourceEdit .breadcrumbMain{
+	background:#cddeea;
+}
+
+#resourceEdit .resourcesButtonGroup{
+	padding:10px 15px;
+	text-align:right;
+	border-bottom:1px solid #dddddd;
+}
+#resourceEdit .resourcesButtonGroup .lblTitle{
+	float: left;
+	display: inline-block;
+	padding: 9px;
+	font-size: 20px;
+	margin-left: 8px;
+	color: #222;
+}
+#resourceEdit .breadcrumbMain a{
+	padding:16px 5px 16px 20px;
+	display:inline-block;
+	font-size:17px;
+	color:#515151;
+	position:relative;
+
+}
+#resourceEdit .breadcrumbMain a:hover, #resourceEdit .breadcrumbMain a:focus{
+	opacity:1;
+	text-decoration:none;
+}
+#resourceEdit .breadcrumbMain a.active{
+	background:#cddeea;
+}
+
+#resourceEdit .breadcrumbMain a.active:after{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 29px solid transparent;
+	border-bottom: 29px solid transparent;
+
+	border-left: 15px solid #cddeea;
+	right:-15px;
+	top:0;
+	z-index:999;
+}
+
+#resourceEdit .breadcrumbMain a.active:before{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 29px solid transparent;
+	border-bottom: 29px solid transparent;
+
+	border-left: 15px solid #fff;
+	right:-17px;
+	top:0;
+	z-index:99;
+}
+
+#resourceEdit .courseFolderOpenIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px -449px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#resourceEdit .unitFolderOpenIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px -484px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#resourceEdit .courseFolderCloseIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -449px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#resourceEdit .unitFolderCloseIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -484px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#resourceEdit .lessonFolderCloseIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -520px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#resourceEdit .floderRightContainer .courseHeader {
+	background:#f0f0f0;
+}
+
+
+
+#resourceEdit .courseHeader{
+
+	background:#fff;
+}
+#resourceEdit .deleteButton {
+	display:inline-block;
+}
+#resourceEdit .deleteButton a {
+    border-left: 1px solid #dddddd;
+       border-right: 1px solid #dddddd;
+    color: #1076bb;
+}
+#resourceEdit  .actionItems{
+	margin:8px 18px !important;
+}
+#resourceEdit  .actionItems .btn-default{
+	background-color:#999999;
+	color:#ffffff;
+	border:none;
+}
+#resourceEdit  .actionItems .dropdown-menu:before {
+    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 9px;
+    position: absolute;
+    top: -7px;
+}
+
+#resourceEdit  .actionItems .dropdown-menu:after {
+    border-bottom: 6px solid #ffffff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: "";
+    display: inline-block;
+    right: 10px;
+    position: absolute;
+    top: -6px;
+}
+#resourceEdit .folderBlockSitemap a:hover,#resourceEdit  .folderBlockSitemap a:focus {
+    background: #d8d8d8 none repeat scroll 0 0;
+    color: #333333;
+    text-decoration: none;
+}
+#resourceEdit .courseHeader h2{
+	font-size:22px;
+		padding:20px 15px;
+	font-weight:bold;
+	color:#515151;
+	margin:0 0;
+}
+#resourceEdit .tableDiv{
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+}
+
+#resourceEdit .tableRow{
+	display:table-row;
+	width:100%;
+	border-bottom:1px solid #dddddd;
+}
+
+#resourceEdit .tableColumn{
+	display:table-cell;
+	padding:4px 10px;
+	vertical-align:top;
+	width:40%;
+}
+
+#resourceEdit .tableColumn:first-child{
+	background:#f9fcfe;
+	padding:10px 15px;
+	width:35%;
+}
+#resourceEdit .tableColumn #fpnlActionVerPanel .updateButton{
+	width: 60%;
+	margin-bottom: 10px;
+	margin-top: 9px;
+}
+#resourceEdit .tableColumn #fpnlActionVerPanel{
+	float: right;
+}
+#resourceEdit .tableColumn .resourceNarrationContainer .narrationText{
+	width: 100%;
+	height: 60px;
+	border: 1px solid #999;
+	color: #515151;
+	resize: none !important;
+	font-size: inherit;
+	line-height: inherit;
+}
+#resourceEdit .tableColumn:last-child{
+    width: 188px;
+}
+#resourceEdit .tableColumn .tableListTags .reviewsIcon, #resourceEdit .tableColumn .tableListTags .reviewsText{
+	float:left;
+}
+
+#resourceEdit .tableColumn .tableListTags .reviewsIcon, #resourceEdit .tableColumn .tableListTags .timeIcon{
+	width:25px;
+	text-align:center;
+}
+#resourceEdit .tableColumn .tableListTags .reviewsText{
+	width:84%;
+	margin-left:1em;
+	margin-bottom:1em;
+	line-height:15px;
+}
+
+
+#resourceEdit .tableColumn .tableListTags .timeIcon, #resourceEdit .tableColumn .tableListTags .timeText{
+	float:left;
+	margin:0 0;
+}
+
+#resourceEdit .tableColumn .tableListTags .timeIcon, #resourceEdit .tableColumn .tableListTags .editButton {
+    margin: 0 0 !important;
+}
+
+#resourceEdit .tableColumn .editButton .btn-default{
+	background-color:#dddddd;
+	color:#515151;
+	font-size:12px;
+}
+#resourceEdit .tableColumn .editButton .btn{
+	padding:8px 15px;
+}
+#resourceEdit .tableColumn .editButton .dropdown-menu{
+	font-size:12px;
+	min-width:100px;
+	float:right !important;
+	right:0;
+	left:auto;
+}
+#resourceEdit .tableColumn .editButton{
+	margin:12px 10px;
+	vertical-align:top;
+}
+#resourceEdit .tableColumn .tableListTags{
+	padding:12px 0;
+}
+#resourceEdit .tableColumn .tableListTags .timeText{
+	width:84%;
+	margin-left:1em;
+}
+#resourceEdit .tableColumn .tableListTags .pdfEdiContainerLeft input{
+	width: 28px;
+	height: 23px;
+	text-align: right;
+	padding-right: 1px;
+	margin-left: 6px;
+	margin-right: 11px;
+}
+#resourceEdit .tableColumn .tableListTags .pdfEdiContainerLeft .errorMsgLabel{
+	color: #fbb03b;
+	text-align: center;
+}
+#resourceEdit .tableColumn .tableListTags .pdfEdiContainerLeft{
+	float: left;
+	font-weight: bold;
+}
+#resourceEdit .tableColumn .tableListTags .styleForLbl{
+	color: #515151;
+	font-size: 12px;
+	float: left;
+	padding-top: 5px;
+	padding-left: 0;
+	padding-right: 5px;
+	font-weight: bold;
+}
+#resourceEdit .tableColumn .tableListTags .timeText .youtubeText {
+	float: left;
+}
+#resourceEdit .tableMainHeader .resourceNumber{
+	margin:0 0 2px 0;
+	font-size:26px;
+	font-weight:bold;
+	color:#515151;
+	display:inline-block;
+	vertical-align:middle;
+	min-width:22px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock{
+	margin:0 0 0 0;
+	color:#515151;
+display:inline-block;
+vertical-align:middle;
+	width:75%;
+
+}
+#resourceEdit .tableMainHeader .resourceNameBlock .resourceTitle{
+	float:left;
+	width:75%;
+	cursor:pointer
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span{
+	margin-right:8px;
+	cursor:pointer
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.webpageIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll 0px -220px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.videoIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll 0px 4px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.textIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll 0px -53px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.interactiveIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll 0 -27px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.questionIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll -1px -140px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.imageIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll -1px -251px;
+}
+#resourceEdit .tableMainHeader .resourceNameBlock span.audioIcon{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	float:left;
+	background:url("${cdn.endpoint}/images/resource-type-icons.png") no-repeat scroll 0px -275px;
+}
+
+#resourceEdit .tableListOrder .topArrow {
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -360px;
+	width:16px;
+	height:10px;
+	display:inline-block;
+	margin-bottom:-3px;
+	cursor: pointer;
+}
+#resourceEdit .tableListOrder{
+	margin:8px 0 12px 45px;
+	display:inline-block;
+    text-align: center;
+    width: 26px;
+}
+#resourceEdit .tableListOrder .form-control{
+	height:24px;
+	padding:6px 2px;
+	font-size:12px;
+	text-align:center;
+	border-radius: 4px;
+}
+#resourceEdit .tableListOrder .bottomArrow {
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -381px;
+	width:16px;
+	height:10px;
+	display:inline-block;
+	cursor: pointer;
+}
+#resourceEdit .tableListTags span{
+	margin-left:10px;
+}
+#resourceEdit .addCourse{
+	padding:15px 25px;
+	font-size:18px;
+	color:#515151;
+	border:1px dashed #dddddd;
+	margin:1px 1px;
+	position:relative;
+	cursor:pointer;
+}
+
+#resourceEdit .addCourse input{
+ bottom: 0;
+    height: 55px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+	cursor:pointer;
+}
+@media (min-width: 240px) and (max-width: 319px){
+	#resourceEdit .tableColumn .tableListTags .reviewsText{
+		width:80%;
+	}
+	#resourceEdit .tableColumn .tableListTags .timeText{
+		width:80%;
+	}
+	#resourceEdit .folderBlockSitemap a:first-child{
+			margin-left:0;
+	}
+	#resourceEdit .folderBlockSitemap a {
+		margin-left:-3px;
+	}
+	#resourceEdit .AcItem{
+			text-align:center;
+	}
+	#resourceEdit .menuLinks{
+		border-bottom:1px solid #dddddd;
+		text-align:center;
+	}
+	#resourceEdit .tableColumn{
+		display:table;
+	}
+	#resourceEdit .tableColumn:first-child{
+		width:100%;
+	}
+		#resourceEdit .tableMainHeader{
+			padding:10px 20px;
+		}
+		#resourceEdit .tableColumn .tableListTags{
+			padding:10px 20px;
+		}
+		#resourceEdit .tableColumn{
+			display:block;
+		}
+		#resourceEdit .tableColumn:last-child{
+			border-top:1px solid #dddddd;
+			width:100%;
+			text-align:left;
+			background:#fafafa;
+		}
+		#resourceEdit .tableListOrder{
+			margin: 0 0;
+		}
+		#resourceEdit .tableColumn .editButton{
+			margin:12px 10px 12px 20px;
+		}
+		#resourceEdit  .actionItems .dropdown-menu:before {
+		    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+		    border-left: 7px solid transparent;
+		    border-right: 7px solid transparent;
+		    content: "";
+		    display: inline-block;
+		    right: 9px;
+			left:auto;
+		    position: absolute;
+		    top: -7px;
+		}
+		#resourceEdit  .actionItems .dropdown-menu:after {
+		    border-bottom: 6px solid #ffffff;
+		    border-left: 6px solid transparent;
+		    border-right: 6px solid transparent;
+		    content: "";
+		    display: inline-block;
+		    right: 10px;
+			left:auto;
+		    position: absolute;
+		    top: -6px;
+		}
+		#resourceEdit .breadcrumbMain a{
+			width:100%;
+			border-bottom:1px solid #ffffff;
+		}
+		#resourceEdit .breadcrumbMain a.active:before{
+			content:normal;
+		}
+		.folderBlockSitemap a{
+			padding:16px 18px;
+		}
+		#resourceEdit .actionItems .dropdown-menu{
+			left:auto;
+			right:0;
+		}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+		#resourceEdit .folderBlockSitemap a:first-child{
+			margin-left:0;
+		}
+		#resourceEdit .folderBlockSitemap a {
+				margin-left:-3px;
+		}
+		#resourceEdit .AcItem{
+			text-align:center;
+		}
+		#resourceEdit .menuLinks{
+			border-bottom:1px solid #dddddd;
+			text-align:center;
+		}
+		#resourceEdit .tableColumn{
+			display:table;
+		}
+		#resourceEdit .tableColumn:first-child{
+			width:100%;
+		}
+		#resourceEdit .tableMainHeader{
+			padding:10px 20px;
+		}
+		#resourceEdit .tableColumn .tableListTags{
+			padding:10px 20px;
+		}
+		#resourceEdit .tableColumn{
+			display:block;
+		}
+		#resourceEdit .tableColumn:last-child{
+			border-top:1px solid #dddddd;
+			width:100%;
+			text-align:left;
+			background:#fafafa;
+		}
+		#resourceEdit .tableListOrder{
+			margin: 0 0;
+		}
+		#resourceEdit .tableColumn .editButton{
+			margin:12px 10px 12px 20px;
+		}
+		#resourceEdit .breadcrumbMain a{
+			font-size:12px;
+		}
+		#resourceEdit  .actionItems .dropdown-menu:before {
+		    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+		    border-left: 7px solid transparent;
+		    border-right: 7px solid transparent;
+		    content: "";
+		    display: inline-block;
+		    left: 9px;
+			right:auto;
+		    position: absolute;
+		    top: -7px;
+		}
+		#resourceEdit  .actionItems .dropdown-menu:after {
+		    border-bottom: 6px solid #ffffff;
+		    border-left: 6px solid transparent;
+		    border-right: 6px solid transparent;
+		    content: "";
+		    display: inline-block;
+		    left: 10px;
+			right:auto;
+		    position: absolute;
+		    top: -6px;
+		}
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+	#resourceEdit .menuLinks{
+		width:60%;
+		float:left;
+	}
+	#resourceEdit .AcItem{
+		width:40%;
+			float:left;
+			text-align:right;
+	}
+	.folderBlockSitemap a{
+		padding:16px 12px;
+	}
+	#resourceEdit .tableMainHeader .resourceNameBlock .resourceTitle{
+		width:62%;
+	}
+	#resourceEdit .tableColumn:last-child{
+		width:auto;
+	}
+	#resourceEdit .tableListOrder {
+		display:block;
+
+	    margin: 0 auto;
+	    text-align: center;
+	    width: 26px;
+	}
+	#resourceEdit .tableColumn .tableListTags .reviewsText{
+		width:75%;
+	}
+	#resourceEdit .tableColumn .tableListTags .timeText{
+		width:75%;
+	}
+
+	#resourceEdit .actionItems .dropdown-menu{
+		left:auto;
+		right:0;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+		#resourceEdit .tableColumn .tableListTags .reviewsText{
+			width:76%;
+		}
+		#resourceEdit .tableColumn .tableListTags .timeText{
+			width:76%;
+		}
+		#resourceEdit .tableMainHeader .resourceNameBlock .resourceTitle{
+			width:73%;
+		}
+		#resourceEdit .breadcrumbMain a {
+		    color: #515151;
+		    display: inline-block;
+		    font-size: 12px;
+		    padding: 16px 5px 16px 15px;
+		    position: relative;
+		}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+
+
+
+/* Css for collection edit end*/
+/*unit info starts*/
+.breadcrumbMain a{
+	padding:20px 25px;
+	display:inline-block;
+	font-size:17px;
+	color:#515151;
+	position:relative;
+
+}
+.breadcrumbMain a:hover, .breadcrumbMain a:focus{
+	opacity:1;
+	text-decoration:none;
+}
+.breadcrumbMain a.active{
+	background:#cddeea;
+}
+
+.breadcrumbMain a.active:after{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 32px solid transparent;
+	border-bottom: 34px solid transparent;
+
+	border-left: 20px solid #cddeea;
+	right:-20px;
+	top:0;
+	z-index:999;
+}
+
+.breadcrumbMain a.active:before{
+	content:"";
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-top: 32px solid transparent;
+	border-bottom: 34px solid transparent;
+
+	border-left: 20px solid #f0f0f0;
+	right:-22px;
+	top:0;
+	z-index:99;
+}
+
+.courseFolderOpenIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px -449px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.unitFolderOpenIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -230px -484px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.courseFolderCloseIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -449px;
+	width:36px;
+	height:28px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.unitFolderCloseIcon{
+	background:url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -278px -484px;
+	width:36px;
+	height:24px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.lessonFolderCloseIcon {
+	background: url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -279px
+		-520px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.floderRightContainer .courseHeader {
+	background:#f0f0f0;
+}
+
+#unitinfo .courseNameBlock{
+	border-bottom:1px solid #dddddd;
+	padding:15px 15px 15px 15px;
+}
+#unitinfo .gliphIconImage {
+    background: url("${cdn.endpoint}/images/gridicon.png") no-repeat scroll 0px 0px transparent;
+    width: 11px;
+    height: 12px;
+}
+#unitinfo .scrollCourseContainer{
+	height:500px;
+	overflow-y:auto;
+}
+#unitinfo .unitCoverHeader .dropDownRight .btn-primary {
+    background-color: rgb(135, 186, 221);
+    border: 1px solid rgb(255, 255, 255);
+}
+#unitinfo .containerHeight{
+	height: 424px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#unitinfo .questionsBlock{
+
+	padding:15px 0;
+		border-bottom:1px solid #dddddd;
+}
+#unitinfo .questionsBlockTextArea{
+padding-right: 15px !important;
+padding-left: 15px !important;
+}
+#unitinfo .questionsBlock p{
+	margin-bottom:5px;
+	color:#515151;
+}
+#unitinfo .dropDownRight{
+	text-align:right;
+}
+#unitinfo .dropDownRight .btn{
+	font-size:12px;
+}
+#unitinfo .unitCoverBlock{
+	padding:15px 0;
+}
+
+#unitinfo .unitCoverBody{
+	padding:15px 15px;
+}
+#unitinfo .unitCoverList{
+	border:1px solid #dddddd;
+	border-radius:3px 3px;
+}
+#unitinfo .unitCoverList .pnlGradeDescription{
+	border-left: 1px solid #ddd;
+}
+#unitinfo .unitCoverList .pnlGradeDescription .pnlGradeDescInnerContainer{
+	padding: 20px;
+	background: #f7f7f7;
+	border: 10px solid #fff;
+	height: 440px;
+	overflow-y: auto;
+}
+#unitinfo .unitCoverList ul {
+    margin: 0;
+    padding: 0;
+}
+#unitinfo .unitCoverList ul li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+#unitinfo .unitCoverList ul li.active a{
+    background: #87badd;
+	color: #333;
+}
+#unitinfo .unitCoverList ul li a {
+    color: #515151;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 15px;
+}
+#unitinfo .unitCoverList ul li a:hover, #unitinfo .unitCoverList ul li a:focus {
+    background: #87badd none repeat scroll 0 0;
+    color: #333333;
+    opacity: 1;
+    text-decoration: none;
+}
+#unitinfo .unitCoverListLeft{
+	border-right:1px solid #dddddd;
+}
+#unitinfo .unitCoverListMiddle{
+	border-right:1px solid #dddddd;
+}
+
+#unitinfo .unitCoverListLeft, #unitinfo .unitCoverListMiddle, #unitinfo .unitCoverListRight{
+	min-height:398px;
+}
+
+#unitinfo .unitCoverListRight ul li{
+	font-style:italic;
+}
+#unitinfo .unitCoverListRight ul li:first-child{
+	font-style:normal;
+}
+@media (max-width: 767px) {
+
+#unitinfo .unitCoverListLeft, #unitinfo .unitCoverListMiddle, #unitinfo .unitCoverListRight{
+	min-height:inherit;
+}
+#unitinfo .unitCoverListLeft{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#unitinfo .unitCoverListMiddle{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#unitinfo .breadcrumbMain a{
+	font-size:13px;
+	padding:20px 20px
+}
+#unitinfo .folderBlockSitemap a{
+	padding:16px 18px;
+}
+}
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 10px solid #f6f6f6;
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+.btn-breadcrumb .btn {
+  padding:15px 15px 15px 24px;
+}
+.btn-breadcrumb .btn:first-child {
+  padding:15px 15px 15px 15px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding:15px 18px 15px 24px;
+}
+.btn-breadcrumb .btn.btn-default{
+	background-color:transparent;
+	border-color:transparent;
+	border-radius:0 0;
+	font-size:13px;
+}
+.btn-breadcrumb .btn.btn-default:hover, .btn-breadcrumb .btn.btn-default:focus {
+
+	box-shadow:none;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 16px solid #f6f6f6;
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+/*.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #b4d1b1;
+}*/
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+.btn-breadcrumb .btn.btn-default.active {
+	background-color:#cddeea;
+	box-shadow:none;
+}
+.btn-breadcrumb .btn.btn-default.active:not(:last-child)::after {
+    border-left: 16px solid #cddeea;
+}
+/* The responsive part */
+
+.btn-breadcrumb > * > div {
+    /* With less: .text-overflow(); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-breadcrumb > *:nth-child(n+2) {
+  display:none;
+}
+
+/* === For phones =================================== */
+@media (max-width: 767px) {
+    .btn-breadcrumb > *:nth-last-child(-n+2) {
+        display:block;
+    }
+    .btn-breadcrumb > * div {
+        max-width: 60px;
+    }
+}
+
+/* === For tablets ================================== */
+@media (min-width: 768px) and (max-width:991px) {
+    .btn-breadcrumb > *:nth-last-child(-n+4) {
+        display:block;
+    }
+    .btn-breadcrumb > * div {
+        max-width: 100px;
+    }
+}
+
+/* === For desktops ================================== */
+@media (min-width: 992px) {
+    .btn-breadcrumb > *:nth-last-child(-n+6) {
+        display:block;
+    }
+    .btn-breadcrumb > * div {
+        max-width: 170px;
+    }
+}
+
+*/
+/*unit info ends*/
+
+/* === For Collection info Css start ================================== */
+
+
+
+#pnlCollectionInfo .collectionTitleDetails .form-control {
+    border: 1px solid #87badd;
+}
+
+
+#pnlCollectionInfo .collectionImageDetails {
+border-bottom: 1px solid #dddddd;
+    display: table;
+    padding: 15px;
+    width: 100%;
+}
+
+
+#pnlCollectionInfo .collectionImageDetails p{
+	margin:0 0 5px 0;
+}
+
+
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail{
+display: table-cell;
+  	  width: 120px;
+}
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail .thimbnailImage{
+	position:relative;
+
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail{
+display: table-cell;
+  	  width: 120px;
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail .thimbnailImage{
+	position:relative;
+
+}
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail .thimbnailImage img{
+	width: 120px;
+	height:90px;
+	border-left:10px solid #1076bb;
+}
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail .thimbnailImage .cropImage{
+	cursor: pointer;
+	padding: 25px;
+	position: relative;
+	top: 9px;
+	margin: 0 0 26px 0;
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail .thimbnailImage .cropImage{
+	cursor: pointer;
+	padding: 25px;
+	position: relative;
+	top: 9px;
+	margin: 0 0 26px 0;
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail .thimbnailImage img{
+	width: 120px;
+	height:90px;
+	border-left: 10px solid #feae29;
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail .thimbnailImage .thunailHover{
+	position:absolute;
+	top:25px;
+	left:5px;
+	right:5px;
+	bottom:0;
+	display:none;
+}
+#pnlCollectionInfo .collectionImageDetails .assessmentThumbnail .thimbnailImage:hover .thunailHover{
+	display:block;
+}
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail .thimbnailImage .thunailHover{
+	position:absolute;
+	top:25px;
+	left:5px;
+	right:5px;
+	bottom:0;
+	display:none;
+}
+#pnlCollectionInfo .collectionImageDetails .collectionThumbnail .thimbnailImage:hover .thunailHover{
+	display:block;
+}
+#pnlCollectionInfo .collectionImageDetails .learningObjective{
+display: table-cell;
+	padding-left:50px;
+}
+
+
+
+#pnlCollectionInfo .collectionCoverBlock {
+    padding: 15px 0;
+	    border-bottom: 1px solid #dddddd;
+}
+
+
+#pnlCollectionInfo .fractionDetailsTable {
+    padding: 15px;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .panel-heading {
+    background-color: transparent;
+
+}
+
+#pnlCollectionInfo .fractionDetailsTable .panel-heading  h3{
+	font-size:18px;
+	font-weight:bold;
+	margin:5px 0;
+}
+
+#pnlCollectionInfo .fractionDetailsTable  .dropDownRight{
+	text-align:right;
+}
+#pnlCollectionInfo .fractionDetailsTable  .dropDownRight .btn, #pnlCollectionInfo .fractionDetailsTable  .dropDownRight .dropdown-menu > li > a {
+    font-size: 12px;
+}
+
+#pnlCollectionInfo .fractionDetailsTable  .dropDownRight .dropdown-menu{
+	left:auto;
+	right:0;
+}
+#pnlCollectionInfo .fractionDetailsTable  .dropDownRight .dropdown-menu li{
+	padding:5px 15px;
+	cursor: pointer;
+}
+#pnlCollectionInfo .fractionDetailsTable  .dropDownRight .btn-primary {
+    background-color: #87badd;
+    border: 1px solid transparent;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .panel-body {
+    padding: 0;
+}
+#pnlCollectionInfo .fractionDetailsTable .fractionBlocks {
+
+}
+#pnlCollectionInfo .fractionDetailsTable .fractionMultiBlock {
+    padding: 10px;
+	border-bottom:1px solid #dddddd;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .singleBlock {
+    padding: 10px;
+	border-bottom:1px solid #dddddd;
+}
+#pnlCollectionInfo .fractionDetailsTable .singleBlock p{
+	margin:0 0;
+	font-weight:bold;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .fractionBlocks .frLeft {
+    color: #515151;
+    font-size: 17px;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .fractionBlocks .subFractions{
+	margin-left:40px;
+}
+#standardsContainerBswn .filterTags {
+    margin: 0 8px;
+    vertical-align: middle;
+    clear:both;
+}
+#standardsContainerBswn .filterTags ul {
+    margin: 0;
+    padding: 0;
+}
+#standardsContainerBswn .filterTags ul li {
+    background: #87badd none repeat scroll 0 0;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    list-style: outside none none;
+    margin: 0;
+    padding: 8px 10px;
+    margin-right: 3px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+#standardsContainerBswn .filterTags ul li a {
+    color: #ffffff;
+    font-size: 10px;
+    padding: 0 0 0 5px;
+}
+#pnlCollectionInfo .filterTags {
+    margin: 0 8px;
+    vertical-align: middle;
+}
+#pnlCollectionInfo .filterTags ul {
+    margin: 0;
+    padding: 0;
+}
+#pnlCollectionInfo .filterTags ul li {
+    background: #87badd none repeat scroll 0 0;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    list-style: outside none none;
+    margin: 0;
+    padding: 8px 10px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+#pnlCollectionInfo .filterTags ul li a {
+    color: #ffffff;
+    font-size: 10px;
+    padding: 0 0 0 5px;
+}
+#pnlCollectionInfo .tagCourseOptions {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px;
+}
+#pnlCollectionInfo .tagCourseOptions  .list-group-item{
+	padding:6px 15px;
+}
+#pnlCollectionInfo .tagCourseOptions .list-group-item.active, #pnlCollectionInfo .tagCourseOptions .list-group-item.active:focus, #pnlCollectionInfo .tagCourseOptions .list-group-item.active:hover {
+    background-color: #c3ddee;
+    border-color:transparent;
+	color:#515151;
+    z-index: 2;
+}
+#pnlCollectionInfo .addOptions{
+	padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+}
+#pnlCollectionInfo .addOptions a{
+	border:1px solid #dddddd;
+	border-radius:4px 4px;
+	padding:8px 6px;
+	display:inline-block;
+	margin-bottom:3px;
+}
+#pnlCollectionInfo .addOptions a:hover, #pnlCollectionInfo .addOptions a:focus{
+	text-decoration:none;
+}
+#pnlCollectionInfo .stepsButtonGroup {
+    margin: 15px;
+    text-align: center;
+}
+
+
+@media (min-width: 240px) and (max-width: 319px) {
+.myCollectionLeftSidebar{
+		margin-right:0;
+	}
+	.myCollectionSubMenu a{
+		padding:16px 5px;
+	}
+	.myCollectionSubMenu .actionItems {
+    margin: 8px 3px !important;
+}
+.myCollectionSubMenu .actionItems .dropdown-menu{
+	left:auto;
+	right:0;
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight{
+	text-align:center;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight .btn{
+overflow: hidden;
+    text-overflow: ellipsis;
+    width: 110px;
+
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight  .btn-group > .btn + .dropdown-toggle {
+    padding-left: 6px;
+    padding-right: 6px;
+	width:30px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+	.myCollectionLeftSidebar{
+		margin-right:0;
+	}
+	.myCollectionSubMenu a{
+		padding:16px 5px;
+	}
+	.myCollectionSubMenu .actionItems {
+    margin: 8px 3px !important;
+}
+.myCollectionSubMenu .actionItems .dropdown-menu{
+	left:auto;
+	right:0;
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight{
+	text-align:center;
+}
+
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight .btn{
+overflow: hidden;
+    text-overflow: ellipsis;
+    width: 110px;
+
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight  .btn-group > .btn + .dropdown-toggle {
+    padding-left: 6px;
+    padding-right: 6px;
+	width:30px;
+}
+}
+
+@media (min-width: 480px) and (max-width: 767px){
+	.myCollectionSubMenu a{
+		padding:16px 10px;
+	}
+		.myCollectionSubMenu .actionItems {
+
+}
+.myCollectionSubMenu .actionItems .dropdown-menu{
+	left:auto;
+	right:0;
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight {
+    text-align: left;
+}
+.myCollectionSubMenu .AcItem{
+	text-align:right;
+}
+}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		.myCollectionLeftSidebar .myCollectionMainHeader span {
+    float: left;
+    padding: 8px 10px;
+}
+.myCollectionLeftSidebar .myCollectionMainHeader span.plus {
+
+    font-size: 40px;
+    line-height: 40px;
+
+}
+.myCollectionLeftSidebar .myCollectionMainHeader span.plus {
+
+    height: 40px;
+    width: 40px;
+}
+.folderListBlock ul li a{
+	padding:10px 10px;
+}
+#pnlCollectionInfo .fractionDetailsTable .dropDownRight{
+	text-align:left;
+}
+	}
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+#pnlCollectionInfo .collectionTitleDetails {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px;
+}
+#pnlCollectionInfo .floderRightContainer .courseHeader {
+	background:#f0f0f0;
+}
+#pnlCollectionInfo .gliphIconImage {
+  background: url("${cdn.endpoint}/images/gridicon.png") no-repeat scroll 0 0 transparent;
+  width: 11px;
+  height: 12px;
+}
+#pnlCollectionInfo li:hover{
+background: none repeat scroll 0% 0% rgb(195, 221, 238);
+}
+#pnlCollectionInfo .liPanelStyle
+{
+text-align: left;
+font-weight: bold;
+font-size: 9pt;
+}
+#pnlCollectionInfo .liPanelStylenonBold
+{
+text-align: left;
+
+font-size: 9pt;
+
+}
+
+#pnlCollectionInfo .courseNameBlock{
+	border-bottom:1px solid #dddddd;
+	padding:15px 15px 15px 15px;
+}
+#pnlCollectionInfo .questionsBlock{
+
+	padding:15px 0;
+		border-bottom:1px solid #dddddd;
+}
+#pnlCollectionInfo .questionsBlockTextArea{
+padding-right: 15px !important;
+padding-left: 15px !important;
+width:100% !important;
+}
+#pnlCollectionInfo .questionsBlock p{
+	margin-bottom:5px;
+	color:#515151;
+}
+#pnlCollectionInfo .dropDownRight{
+	text-align:right;
+}
+#pnlCollectionInfo .dropDownRight .btn{
+	font-size:12px;
+}
+#pnlCollectionInfo .unitCoverBlock{
+	padding:15px 0;
+}
+
+#pnlCollectionInfo .unitCoverBody{
+	padding:15px 15px;
+}
+#pnlCollectionInfo .unitCoverList {
+	border:1px solid #dddddd;
+	border-radius:3px 3px;
+}
+
+#pnlCollectionInfo .unitCoverList ul {
+    margin: 0;
+    padding: 0;
+}
+#pnlCollectionInfo .unitCoverList ul li {
+
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+#pnlCollectionInfo .unitCoverList ul li a {
+    color: #515151;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 15px;
+}
+#pnlCollectionInfo .unitCoverList ul li a:hover, #info .unitCoverList ul li a:focus {
+    background: #87badd none repeat scroll 0 0;
+    color: #333333;
+    opacity: 1;
+    text-decoration: none;
+}
+#pnlCollectionInfo .unitCoverListLeft{
+	border-right:1px solid #dddddd;
+}
+#pnlCollectionInfo .unitCoverListMiddle{
+	border-right:1px solid #dddddd;
+}
+
+#pnlCollectionInfo .unitCoverListLeft, #info .unitCoverListMiddle, #info .unitCoverListRight{
+	min-height:398px;
+}
+
+#pnlCollectionInfo .unitCoverListRight ul li{
+	font-style:italic;
+}
+#pnlCollectionInfo .unitCoverListRight ul li:first-child{
+	font-style:normal;
+}
+@media (max-width: 767px) {
+
+#pnlCollectionInfo .unitCoverListLeft, #info .unitCoverListMiddle, #info .unitCoverListRight{
+	min-height:inherit;
+}
+#pnlCollectionInfo .unitCoverListLeft{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#pnlCollectionInfo .unitCoverListMiddle{
+	border-right:none;
+		border-bottom:1px solid #dddddd;
+}
+#pnlCollectionInfo .breadcrumbMain a{
+	font-size:13px;
+	padding:20px 20px
+}
+#pnlCollectionInfo .folderBlockSitemap a{
+	padding:16px 18px;
+}
+}
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+#pnlCollectionInfo .collectionTitleDetails {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px;
+}
+
+#pnlCollectionInfo .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 16px solid #f6f6f6;
+}
+#pnlCollectionInfo .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+/*.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #b4d1b1;
+}*/
+#pnlCollectionInfo .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 16px solid #ffffff;
+}
+#pnlCollectionInfo .btn-breadcrumb .btn.btn-default.active {
+	background-color:#cddeea;
+	box-shadow:none;
+}
+#pnlCollectionInfo .btn-breadcrumb .btn.btn-default.active:not(:last-child)::after {
+    border-left: 16px solid #cddeea;
+}
+/* The responsive part */
+
+#pnlCollectionInfo .btn-breadcrumb > * > div {
+    /* With less: .text-overflow(); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#pnlCollectionInfo .btn-breadcrumb > *:nth-child(n+2) {
+  display:none;
+}
+
+/* === For phones =================================== */
+@media (max-width: 767px) {
+    #pnlCollectionInfo .btn-breadcrumb > *:nth-last-child(-n+2) {
+        display:block;
+    }
+    #pnlCollectionInfo .btn-breadcrumb > * div {
+        max-width: 60px;
+    }
+}
+
+/* === For tablets ================================== */
+@media (min-width: 768px) and (max-width:991px) {
+    #pnlCollectionInfo .btn-breadcrumb > *:nth-last-child(-n+4) {
+        display:block;
+    }
+    #pnlCollectionInfo .btn-breadcrumb > * div {
+        max-width: 100px;
+    }
+}
+
+/* === For desktops ================================== */
+@media (min-width: 992px) {
+    #pnlCollectionInfo .btn-breadcrumb > *:nth-last-child(-n+6) {
+        display:block;
+    }
+    #pnlCollectionInfo .btn-breadcrumb > * div {
+        max-width: 170px;
+    }
+}
+
+*/
+
+#pnlCollectionInfo .deleteButton{
+	text-align:right;
+}
+
+#pnlCollectionInfo .deleteButton a{
+	color:#1076bb;
+	border-left:1px solid #dddddd;
+}
+#pnlCollectionInfo .lessonCover{
+	padding:15px 15px;
+}
+#pnlCollectionInfo .lessonCover .panel-heading{
+	background-color:transparent;
+	font-size:13px;
+	font-weight:bold;
+	color:#515151;
+	padding:10px 10px;
+
+}
+#pnlCollectionInfo .lessonCover .panel-body{
+	padding:0 0;
+	border: 1px solid rgb(221, 221, 221);
+}
+#pnlCollectionInfo .lessonCover .panel-body .active{
+	background: #87badd;
+	color: #333333;
+	text-decoration: none;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks{
+
+	border-bottom:1px solid #dddddd;
+}
+
+#pnlCollectionInfo .lessonCover .fractionBlocks .fractionMultiBlock{
+	padding:10px 10px;
+}
+
+#pnlCollectionInfo .lessonCover .fractionBlocks .fractionMultiBlock.active{
+	background:#c3ddee;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks p{
+	margin:0 0;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks .frLeft{
+	font-size:17px;
+	color:#515151;
+	word-break:break-all;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks .frRight p{
+	padding-left:15px;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks .singleBlock{
+
+		padding:10px 10px;
+}
+#pnlCollectionInfo .lessonCover .fractionBlocks .singleBlock p{
+	color:#515151;
+	font-weight:bold;
+}
+#pnlCollectionInfo .unitCoverHeader .dropDownRight .btn-primary{
+	background-color:#87badd;
+	border:1px solid #ffffff;
+}
+#pnlCollectionInfo .unitCoverHeader{
+	text-align:left;
+	padding-left: 17px;
+}
+
+@media (max-width: 767px) {
+	#pnlCollectionInfo .stepsButtonGroup{
+		text-align:center;
+	}
+#pnlCollectionInfo .stepsButtonGroup button{
+	display:block;
+	width:100%;
+	margin-bottom:5px;
+}
+#pnlCollectionInfo .breadcrumbMain a{
+	margin-bottom:2px;
+}
+#pnlCollectionInfo .folderBlockSitemap a {
+
+    padding: 16px;
+
+}
+
+#pnlCollectionInfo .dropDownRight .btn{
+	padding:6px 6px;
+}
+}
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+
+
+	}
+
+
+
+		@media (min-width: 992px) and (max-width: 1199px) {
+
+
+
+		}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+
+
+
+
+}
+
+#pnlCollectionInfo .collectionTitleDetails {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px;
+}
+#pnlCollectionInfo .createMenu .btn-default.active, #gShelfMainContainer .createMenu .btn-default.focus, #gShelfMainContainer .createMenu .btn-default:active, #gShelfMainContainer .createMenu .btn-default:focus, #gShelfMainContainer .createMenu .btn-default:hover, #gShelfMainContainer .createMenu .open > .dropdown-toggle.btn-default {
+    background-color:#ffffff;
+    border-color:transparent;
+    color: #333;
+	box-shadow:none;
+}
+#pnlCollectionInfo .createMenu .open > .dropdown-menu{
+	width:100%;
+	text-align: left;
+}
+#pnlCollectionInfo .createMenu .caret {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px dashed;
+
+}
+/* === For Collection info Css end ================================== */
+
+/* === For Collection Share Css Start ================================== */
+.shareColContainer .shareThisCollection{
+	padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+}
+.shareColContainer .shareThisCollection p{
+	margin:0 0 5px 0;
+}
+.shareColContainer .shareThisCollection .form-control,.shareColContainer .shareThisCollection .linkFormat{
+	width:75%;
+}
+.shareColContainer .shareThisCollection .linkFormat{
+	text-align:right;
+	display:block;
+	color:#1076bb;
+
+}
+.shareColContainer .shareThisCollection .linkFormat a:hover, .shareColContainer .shareThisCollection .linkFormat a:focus{
+	color:#1f66ac;
+	text-decoration:none;
+	opacity:1;
+}
+.shareColContainer .collectionVisibility{
+		padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+}
+.shareColContainer .collectionVisibility p{
+	margin:0 0 5px 0;
+}
+.shareColContainer .collectionVisibility a{
+	color:#515151;
+	border:2px solid transparent;
+	display:block;
+	border-radius:4px 4px;
+	padding:10px 10px;
+	width:75%;
+	margin-bottom:20px;
+
+}
+.shareColContainer .inActive {
+	opacity: 0.6;
+}
+
+.shareColContainer .collectionVisibility a:hover, .shareColContainer .collectionVisibility a:focus{
+
+	border:2px solid #87badd;
+	opacity:1;
+	text-decoration:none;
+
+}
+.shareColContainer .collectionVisibility .visibilityHeader{
+	font-size:18px;
+	margin-bottom:10px;
+}
+
+
+.shareColContainer .addCollaborators{
+	padding:15px 15px;
+	border-bottom:1px solid #dddddd;
+	margin-right:15%;
+}
+.shareColContainer .addCollaborators .inviteBox{
+	position:relative;
+}
+.shareColContainer .addCollaborators .inviteBox .form-control{
+	width:90%;
+	font-size:12px;
+}
+.shareColContainer .addCollaborators .inviteBox button{
+position:absolute;
+top:1px;
+right:1px;
+}
+
+.shareColContainer h5{
+	font-size:13px;
+	font-weight:bold;
+	margin:0 0 8px 0;
+}
+	.shareColContainer .currentCollaborators{
+		background:#f8fafb;
+		padding:15px 15px;
+		border-bottom:1px solid #dddddd;
+	}
+
+
+	 .shareColContainer .currentCollaborators .tableDiv
+    {
+        display: table;
+    }
+
+
+   .shareColContainer .currentCollaborators  .tablerow
+    {
+        display: table-row;
+    }
+   .shareColContainer .currentCollaborators  .tablecell
+    {
+        display: table-cell;
+		border:none;
+		padding:10px 10px;
+    }
+
+	.shareColContainer .currentCollaborators .collaboratorsImage img{
+		width:43px;
+		height:43px;
+		border-radius:50% 50%;
+		border:2px solid #87badd;
+	}
+
+		.shareColContainer .currentCollaborators .collaboratorsImage{
+			width:90px;
+		}
+
+		.shareColContainer .currentCollaborators .collaboratorsName{
+			width:120px;
+		}
+ @media (min-width: 240px) and (max-width: 319px) {
+	.shareColContainer .shareThisCollection .form-control, .shareColContainer .shareThisCollection .linkFormat{
+		width:100%;
+	}
+	.shareColContainer .collectionVisibility a{
+		width:100%;
+		padding:5px 4px;
+	}
+	.shareColContainer .addCollaborators{
+		margin-right:0;
+	}
+	.shareColContainer .currentCollaborators .collaboratorsImage{
+		width:auto;
+	}
+	.shareColContainer .currentCollaborators .collaboratorsName {
+    width: auto;
+}
+.shareColContainer .addCollaborators .inviteBox .form-control{
+	width:85%;
+}
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+	 .shareColContainer .shareThisCollection .form-control, .shareColContainer .shareThisCollection .linkFormat{
+		width:100%;
+	}
+	.shareColContainer .collectionVisibility a{
+		width:100%;
+	}
+	.shareColContainer .addCollaborators{
+		margin-right:0;
+	}
+	.shareColContainer .currentCollaborators .collaboratorsImage{
+		width:auto;
+	}
+	.shareColContainer .currentCollaborators .collaboratorsName {
+    width: auto;
+}
+.shareColContainer .addCollaborators .inviteBox .form-control{
+	width:85%;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	 .shareColContainer .addCollaborators .inviteBox .form-control{
+	width:85%;
+}
+ }
+  @media (min-width: 768px) and (max-width: 991px) {
+	  .shareColContainer .collectionVisibility a{
+		  width:100%;
+	  }
+  }
+ @media (min-width: 992px) and (max-width: 1199px) {
+}
+ @media (min-width: 1200px) {
+}
+
+
+@media all and (min-width: 50px)   {  body  { font-size:0.1em;  } }
+@media all and (min-width: 100px)  {  body  { font-size:0.2em;  } }
+@media all and (min-width: 200px)  {  body  { font-size:0.4em;  } }
+@media all and (min-width: 300px)  {  body  { font-size:0.6em;  } }
+@media all and (min-width: 400px)  {  body  { font-size:0.8em;  } }
+@media all and (min-width: 500px)  {  body  { font-size:1.0em;  } }
+@media all and (min-width: 600px)  {  body  { font-size:1.2em;  } }
+@media all and (min-width: 700px)  {  body  { font-size:1.4em;  } }
+@media all and (min-width: 800px)  {  body  { font-size:1.6em;  } }
+@media all and (min-width: 900px)  {  body  { font-size:1.8em;  } }
+@media all and (min-width: 1000px) {  body  { font-size:2.0em;  } }
+@media all and (min-width: 1100px) {  body  { font-size:2.2em;  } }
+@media all and (min-width: 1200px) {  body  { font-size:2.4em;  } }
+@media all and (min-width: 1300px) {  body  { font-size:2.6em;  } }
+@media all and (min-width: 1400px) {  body  { font-size:2.8em;  } }
+@media all and (min-width: 1500px) {  body  { font-size:3.0em;  } }
+@media all and (min-width: 1500px) {  body  { font-size:3.2em;  } }
+@media all and (min-width: 1600px) {  body  { font-size:3.4em;  } }
+@media all and (min-width: 1700px) {  body  { font-size:3.6em;  } }
+
+/* === For Collection Share Css end ================================== */
+
+/* === Assessment popup start ================================== */
+#addAssessmentPopup {
+	padding:25px 0;
+}
+#addAssessmentPopup .modal-dialog{
+	width:438px;
+	margin:0 auto;
+}
+#addAssessmentPopup .modal-header{
+	background-color:#515151;
+	color:#ffffff;
+	border-radius:6px 6px 0 0;
+	margin-top:-2px;
+
+}
+#addAssessmentPopup .close{
+	font-size:35px;
+	color:#ffffff;
+	opacity:1;
+}
+#addAssessmentPopup .modal-footer button.primary{
+	padding:7px 20px;
+}
+
+#addAssessmentPopup .modal-body{
+	padding:0 0;
+}
+#addAssessmentPopup .indications{
+	background:#dddddd;
+	padding:6px 15px;
+}
+#addAssessmentPopup .assessmentInnerBlock{
+	padding:20px 0;
+	border-bottom:1px solid #dddddd;
+}
+#addAssessmentPopup .assessmentInnerBlock button.primary{
+	padding:10px 5px;
+}
+#addAssessmentPopup .assessmentInnerBlock:last-child{
+	border-bottom:none;
+}
+#addAssessmentPopup .assessmentInnerBlock p{
+	margin:0 0;
+}
+#addAssessmentPopup .noteText{
+	padding:15px 0 30px 0;
+}
+@media (min-width: 240px) and (max-width: 319px){
+	#addAssessmentPopup .modal-dialog{
+		width:auto;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	.colxs6-reset{
+		width:100% !important;
+	}
+
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	#addAssessmentPopup .modal-dialog{
+		width:auto;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	.colxs6-reset{
+		width:100% !important;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px)  {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+/* === Assessment popup start ================================== */
+
+/* === Assessment info start ================================== */
+
+#pnlExternalAssessmentContainter .folderBlockSitemap .AcItem {
+	text-align: right;
+}
+#pnlExternalAssessmentContainter  .breadcrumbMain a.active:last-child:before {
+	border-bottom: none;
+	border-left: none;
+}
+#pnlExternalAssessmentContainter .existingAssessment .assessmentTitle,#pnlExternalAssessmentContainter .existingAssessment .assessmentURL,#pnlExternalAssessmentContainter .assessmentTitle,#pnlExternalAssessmentContainter .existingAssessment .assessmentDescription{
+	padding: 10px 15px;
+	border-bottom: 1px solid #dddddd;
+}
+#pnlExternalAssessmentContainter .existingAssessment input,textarea{
+	border-radius:4px;
+}
+#pnlExternalAssessmentContainter .existingAssessment p{
+	margin: 0 0 10px;
+}
+#pnlExternalAssessmentContainter .existingAssessment .assessmentPrivacy,#pnlExternalAssessmentContainter .existingAssessment .assessmentRequires{
+		padding: 15px 15px;
+	border-bottom: 1px solid #dddddd;
+}
+#pnlExternalAssessmentContainter .existingAssessment .assessmentPrivacy p,#pnlExternalAssessmentContainter .existingAssessment .assessmentRequires p{
+	margin:3px 0;
+}
+#pnlExternalAssessmentContainter .floderLeftContainer .folderLeftMainHeader {
+	padding: 0 0 !important;
+}
+#pnlExternalAssessmentContainter .floderLeftContainer .folderLeftMainHeader span {
+	float: left;
+	padding: 13px 15px;
+}
+#pnlExternalAssessmentContainter .floderLeftContainer .folderLeftMainHeader span.plus {
+	background: #4d99cd none repeat scroll 0 0;
+	color: #ffffff;
+	display: block;
+	font-size: 40px;
+	font-weight: normal;
+	line-height: 52px;
+	padding: 0;
+	text-align: center;
+}
+#pnlExternalAssessmentContainter .floderLeftContainer .folderLeftMainHeader span.plus {
+	float: right;
+	height: 52px;
+	width: 52px;
+}
+#pnlExternalAssessmentContainter .setPaddingLeft{
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+}
+#pnlExternalAssessmentContainter .saveButton{
+	min-height: 66px;
+	height: auto;
+}
+#pnlExternalAssessmentContainter  input[type=radio].css-checkbox {
+	position: absolute;
+	z-index: -1000;
+	left: -1000px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+#pnlExternalAssessmentContainter  input[type=radio].css-checkbox + div.css-label {
+	padding-left: 23px;
+	height: 18px;
+	display: inline-block;
+	line-height: 18px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 12px;
+	font-weight: normal;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-left: 25px;
+	margin-bottom:0;
+}
+#pnlExternalAssessmentContainter .setSelected {
+	background-position: 0 -18px !important;
+}
+#pnlExternalAssessmentContainter div.css-label {
+	background-image: url(${cdn.endpoint}/images/radioButtons.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#pnlExternalAssessmentContainter .existingAssessment .assessmentPrivacy div.css-label img {
+	width: 18px;
+	height: 18px;
+}
+@media (min-width: 240px) and (max-width: 319px) {
+	 #pnlExternalAssessmentContainter  .assessmentSubmenu .menuLinks{
+		 text-align:left;
+		 border-bottom:none;
+	 }
+	 #pnlExternalAssessmentContainter  .assessmentSubmenu .AcItem {
+	    text-align: right;
+	}
+	input.css-checkbox[type="radio"] + div.css-label{
+		margin-left:0;
+	}
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+	 #pnlExternalAssessmentContainter .assessmentSubmenu .menuLinks{
+		 text-align:left;
+		 border-bottom:none;
+	 }
+	 #pnlExternalAssessmentContainter  .assessmentSubmenu .AcItem {
+	    text-align: right;
+	}
+	#pnlExternalAssessmentContainter input.css-checkbox[type="radio"] + div.css-label{
+		margin-left:0;
+	}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+	 #pnlExternalAssessmentContainter .assessmentSubmenu .menuLinks{
+			 text-align:left;
+			 border-bottom:none;
+	   }
+		#pnlExternalAssessmentContainter .assessmentSubmenu .AcItem {
+		    text-align: right;
+		}
+		#pnlExternalAssessmentContainter input.css-checkbox[type="radio"] + div.css-label{
+			margin-left:0;
+		}
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+}
+ @media (min-width: 1200px) {
+}
+/* === Assessment info end ================================== */
+
+/* === Course Share Start ================================== */
+
+.shareMainContainer  label.custom-select {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+}
+.shareMainContainer p {
+	margin: 0 0 10px;
+}
+.shareMainContainer .custom-select select {
+	display: inline-block;
+	border: 1px solid #dddddd;
+	padding: 8px 8px 8px 4px;
+	margin: 0;
+	font: inherit;
+	font-weight: normal;
+	outline: none; /* remove focus ring from Webkit */
+	line-height: 1.2;
+	background: #ffffff;
+	width: 73%;
+	-webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	height:40px;
+}
+
+    /* for Webkit's CSS-only solution */
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+.shareMainContainer  .custom-select select {
+	padding-right: 30px;
+}
+}
+
+/* Select arrow styling */
+.shareMainContainer  .custom-select:after {
+	content:"";
+	position: relative;
+	top: 0;
+	right: 82px;
+	bottom: 0;
+	font-size: 60%;
+	line-height: 30px;
+	padding: 6px 7px;
+	width:23px;
+	background: #ffffff url("${cdn.endpoint}/images/downarrow.png") no-repeat 0px 5px;
+	color: #515151;
+	pointer-events: none;
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+	/* border:1px solid #dddddd; */
+	border-left:0px solid #dddddd;
+}
+.no-pointer-events .custom-select:after {
+	content: none;
+}
+
+.custom-select select option {color:#6666;font-weight:bold; padding:8px 10px}
+
+.shareMainContainer {
+	min-height: 500px;
+	margin-top: 10px;
+}
+
+.shareMainContainer .selectClassBlock{
+	padding: 20px;
+	width: 100%;
+	display: inline-block;
+	margin-top: 70px;
+	/* width: 47%; */
+	/* border-right: 1px solid #ddd; */
+	/* border-bottom:1px solid #dddddd; */
+}
+
+.shareMainContainer .courseDetailsContainer{
+	padding:15px 5px;
+}
+.shareMainContainer .courseDetailsContainerBorder{
+	margin: 10px 5px;
+	padding: 10px;
+	border: 1px dashed #ddd;
+}
+.shareMainContainer .assign2Class .assignCourseBlock{
+	padding: 15px 15px !important;
+}
+
+.shareMainContainer .createClassStyle{
+	display: inline-block;
+	margin-top: 4px;
+	margin: 5% 24%;
+}
+
+.shareMainContainer .errorMsgStyle{
+	font-size: 12px;
+	height: 11px;
+	margin-top: 11px;
+	color: #fab03a;
+	font-style: italic;
+}
+.shareMainContainer .marginBottom{
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+ .shareMainContainer .classListStyle{
+	 width: 100%;
+	border-top: 2px solid #ddd;
+	margin-top: 5px;
+ }
+
+.shareMainContainer  button.primary{
+	margin-left: 5px;
+	margin: 5% 33%;
+}
+
+@media (max-width: 767px) {
+	.shareMainContainer  label.custom-select{
+		width:100%;
+	}
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+}
+ @media (min-width: 1200px) {
+}
+
+/* ======== Course Share end =========== */
+
+/* ========Empty course builder css start =========== */
+#coursesGetting .gettingStartedMain h1 {
+	color: #515151;
+	font-family: "Arvo", serif;
+	font-size: 24px;
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+}
+#coursesGetting .gettingStartedMain .emptyClass {
+	background: url("${cdn.endpoint}/images/GettingStarted.png") repeat;
+	border-radius: 4px;
+	box-shadow: 0 0 4px #cccccc;
+	margin: 0 auto 50px;
+	padding: 50px 20px 20px;
+	width: 660px;
+}
+#coursesGetting .gettingStartedMain .emptyClass .addCourse {
+	margin-bottom: 35px;
+	margin-right: 60px;
+}
+#coursesGetting .gettingStartedMain .emptyClass .addStudents {
+	margin-right: 60px;
+}
+#coursesGetting .gettingStartedMain .emptyClass p {
+	margin: 0 0 5px;
+}
+#coursesGetting .gettingStartedMain .findout {
+	margin: 60px 0 0;
+	text-align: right;
+}
+ @media (min-width: 240px) and (max-width: 319px) {
+#coursesGetting .gettingStartedMain .emptyClass {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: auto;
+	padding: 20px 20px;
+}
+#coursesGetting .gettingStartedMain .emptyClass .addCourse {
+	margin: 0 0 30px 0;
+}
+#coursesGetting .gettingStartedMain .emptyClass .addStudents {
+	margin: 0 0 30px 0;
+}
+#coursesGetting .gettingStartedMain .findout {
+	margin: 40px 0 0;
+	text-align: center;
+}
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+#coursesGetting .gettingStartedMain .emptyClass {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: auto;
+}
+#coursesGetting.gettingStartedMain .emptyClass .addCourse {
+	margin: 0 50px 30px;
+}
+#coursesGetting .gettingStartedMain .findout {
+	margin: 40px 0 0;
+	text-align: center;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+#coursesGetting .gettingStartedMain .emptyClass {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: auto;
+}
+#coursesGetting .gettingStartedMain .emptyClass .addCourse {
+	margin: 0 0px 30px;
+}
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+#coursesGetting .gettingStartedMain .emptyClass {
+	margin: 0 15px 15px 30px;
+	width: auto;
+}
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+}
+ @media (min-width: 1200px) {
+}
+/* ========Empty course builder css end =========== */
+
+/* Tooltip css */
+
+#gShelfMainContainer .tooltipContainer {
+	width: 150px;
+	position: absolute;
+	left:-33px;
+    top:20px;
+	z-index:9999;
+	margin-top: 0px;
+    opacity: 0;
+	visibility: hidden;
+    -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -o-transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+#gShelfMainContainer .tooltipContainer .arrowBorder {
+ 	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent #DDD transparent;
+	position: relative;
+	top: 0px;
+    left:-31px;
+	border-top: none;
+}
+
+#gShelfMainContainer .tooltipContainer .arrow {
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	top: -9px;
+    left:-31px;
+	border-top: none;
+	z-index: 100;
+    display:block !important; /* to override folder level arrow */
+    background:none; /* to override folder level arrow */
+}
+
+#gShelfMainContainer .tooltipContent {
+	text-align:left;
+	color: #515151;
+	font-size: 12px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 10px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	position: relative;
+	top: -10px;
+	width: 130px;
+	float:left;
+    line-height:1.2em;
+    cursor:default;
+    white-space: normal;
+}
+/* //////////////////////////////////// overrides ////////////////////////////////////////*/
+
+#gShelfMainContainer .tooltipContainer .arrow:hover {
+    background:none; /* to override folder level arrow */
+    cursor:default; /* to override folder level arrow */
+}
+
+#gShelfMainContainer .folderLevel.child .tooltipContainer .arrow, .folderLevel.parent .tooltipContainer .arrow {
+    left:20px; /* to override folder level arrow */
+}
+
+
+/** Folder Course Tree Style in Add Course Popup **/
+
+#gShelfMainContainer .courseLevel {
+    background-color:#f0f0f0;
+    border-top:1px solid white;
+   /*  border-bottom:1px solid #ddd; */
+    height: 50px;
+    line-height: 50px;
+   /*  padding-right:15px; */
+    position:relative;
+    box-sizing:content-box;
+    width: 100%;
+}
+#gShelfMainContainer .courseLevel.active {
+	background-color: white !important;
+	/* border-left: 8px solid #515151; */
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-radius: 4px;
+	/* margin-left: -7px; */
+    z-index:10;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+#gShelfMainContainer .courseLevel .title {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: transparent !important;
+}
+
+#gShelfMainContainer .courseLevel { /* grandparent level - default */
+    /* background: #f0f0f0 url('${cdn.endpoint}/images/folders/panel/folder-icon.png') no-repeat 33px 13px; */
+    background:#f0f0f0 url('${cdn.endpoint}/g-folder-small.png') no-repeat 33px 13px; ;
+}
+
+#gShelfMainContainer .courseLevel.course{ /* grandparent level - default */
+    padding-left:80px;
+}
+
+#gShelfMainContainer .courseLevel.course {
+    background: #f0f0f0 url('${cdn.endpoint}/images/course-folder-closed.png') no-repeat 33px 13px; ;
+}
+
+/* getting started for collection empty*/
+
+
+
+#GettingStartedBuildingCollection h2 {
+    color: #515151;
+    font-family: "Arvo",serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0 40px;
+    text-align: center;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps .stepsBlockInner {
+    display: inline-block;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#GettingStartedBuildingCollection .buildingCollectionSteps .stepsBlockInner .numaricCircle::before {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    content: "";
+    height: 35px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 35px;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps .stepsBlockInner .numaricCircle {
+    background: #4e9746 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    height: 39px;
+    line-height: 40px;
+    margin-right: 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 39px;
+}
+
+#GettingStartedBuildingCollection .buildingCollectionSteps .stepsBlockInner .StepsContent {
+    display: inline-block;
+    vertical-align: middle;
+    width: 76%;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps .stepsBlockInner .StepsContent h3 {
+    color: #4e9746;
+    font-family: "Arvo",serif;
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps{
+	margin-left:12px;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps .resoursesbuttonGroup{
+	text-align:center;
+}
+#GettingStartedBuildingCollection .buildingCollectionSteps .resoursesbuttonGroup p{
+	margin-top:15px;
+}
+@media (min-width: 240px) and (max-width: 319px) {
+ .folderBlockSitemap a {
+    display: table-cell;
+    padding: 16px 8px;
+    width: 1%;
+	text-align:center;
+}
+
+
+.folderBlockSitemap .AcItem {
+    text-align: center;
+}
+.deleteButton{
+	vertical-align:middle;
+}
+.menuLinks {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+.folderBlockSitemap .AcItem{
+	text-align:center !important;
+}
+.actionItems .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+/* Not Required Above CSS */
+
+
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+	 .folderBlockSitemap a {
+    display: table-cell;
+    padding: 16px 8px;
+    width: 1%;
+	text-align:center;
+}
+
+
+.folderBlockSitemap .AcItem {
+    text-align: center;
+}
+.deleteButton{
+	vertical-align:middle;
+}
+.menuLinks {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+.folderBlockSitemap .AcItem{
+	text-align:center !important;
+}
+.actionItems .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+/* Not Required Above CSS */
+
+
+
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+.folderBlockSitemap .menuLinks {
+    float: left;
+    width: 60%;
+}
+.folderBlockSitemap .AcItem {
+    float: left;
+    text-align: right;
+    width: 40%;
+}
+.folderBlockSitemap a{
+	padding:16px 14px;
+}
+.actionItems .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+/* Not Required Above CSS */
+
+
+
+.imgAlign{
+	text-align:center;
+}
+.imgAlign .img-responsive{
+	display:inline-block !important;
+}
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+}
+ @media (min-width: 1200px) {
+}
+#myAllCorsesNullCase {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.myAllCoursesBackground {
+    background: #ffffff url("${cdn.endpoint}/images/myclassesGettingStarted-bg.png") no-repeat center bottom;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #dddddd;
+}
+#myAllCorsesNullCase h2 {
+    text-align: center;
+    margin: 30px 0 40px 0;
+    color: #515151;
+    font-family: "Arvo", serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps {
+    border-right: 1px solid #979797;
+    margin-left: 10px;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner {
+    display: inline-block;
+    margin-bottom: 30px;
+    width: 100%;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner .numaricCircle:before {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    content: "";
+    height: 35px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 35px;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner .StepsContent {
+    display: inline-block;
+    vertical-align: middle;
+    width: 76%;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner .numaricCircle {
+    background: #4e9746;
+    border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    height: 39px;
+    line-height: 40px;
+    margin-right: 12px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 39px;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner .StepsContent h3 {
+    color: #4e9746;
+    font-family: "Arvo", serif;
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup {
+    text-align: center;
+    margin: 20px 0;
+}
+#myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup button.primary {
+    padding: 9px 20px;
+    margin-bottom: 15px;
+}
+@media (min-width: 240px) and (max-width: 319px) {
+    #myAllCorsesNullCase .CorsesNullCaseSteps {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup {
+        margin: 0 0 20px;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    #myAllCorsesNullCase .CorsesNullCaseSteps {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup {
+        margin: 0 0 20px;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    #myAllCorsesNullCase .CorsesNullCaseSteps {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup {
+        margin: 0 0 20px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #myAllCorsesNullCase .CorsesNullCaseSteps {
+        margin-left: 0;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner {
+        margin-bottom: 15px;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .stepsBlockInner .StepsContent h3 {
+        font-size: 18px;
+    }
+    #myAllCorsesNullCase .CorsesNullCaseSteps .coursesbuttonGroup {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+    @media (min-width: 992px) and (max-width: 1199px) {} @media (min-width: 1200px) {}
+
+
+

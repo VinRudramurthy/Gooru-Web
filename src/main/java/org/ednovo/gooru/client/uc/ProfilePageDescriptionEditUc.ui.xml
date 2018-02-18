@@ -1,15 +1,14 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
 	<g:HTMLPanel>
-	<g:FocusPanel ui:field="focusPanel" styleName="{res.css.profilePageEditDecsription}">
+	<g:FocusPanel ui:field="focusPanel" styleName="Uc-profilePageEditDecsription">
 		<g:DeckPanel ui:field="deckPanel">
-			<g:HTMLPanel ui:field="editLabel" styleName="{res.css.profilePageEditDecsription}"/>
-			<g:TextArea styleName="{res.css.profilePageTextAreaDecsription}" ui:field="editTextBox" />
+			<g:HTMLPanel ui:field="editLabel" styleName="Uc-profilePageEditDecsription"/>
+			<g:TextArea styleName="Uc-profilePageTextAreaDecsription" ui:field="editTextBox" />
 		</g:DeckPanel>
 	</g:FocusPanel>
 	<g:Label  ui:field="errorLabelForEditText"></g:Label>
-	<g:Label ui:field="errorLabel" styleName="{res.css.errorValidation}"></g:Label>
+	<g:Label ui:field="errorLabel" styleName="Uc-errorValidation"></g:Label>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

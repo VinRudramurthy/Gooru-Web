@@ -4,9 +4,12 @@
 
 	<ui:style field="libraryStyle" src="library.css" type="org.ednovo.gooru.client.mvp.home.library.LibraryStyleBundle" />
 	<g:HTMLPanel ui:field="landingBannerInner">
-	    <g:HTMLPanel ui:field="partnerLogo" styleName="{libraryStyle.partnerLogo}"/>
-		<g:Label styleName="{libraryStyle.header}" ui:field="headerTag"></g:Label>
-		<g:Label styleName="{libraryStyle.subheader}" ui:field="subHeaderTag"></g:Label>
+	    <g:HTMLPanel styleName="{libraryStyle.headerPanel}">
+		    <g:HTMLPanel ui:field="partnerLogo"/>
+			<g:Label styleName="{libraryStyle.header}" ui:field="headerTag"></g:Label>
+			<g:Label styleName="{libraryStyle.subheader}" ui:field="subHeaderTag"></g:Label>
+<!-- 			<g:Button styleName="primary {libraryStyle.signUpButton}" ui:field="btnSignUp"></g:Button>
+ -->	    </g:HTMLPanel>
 		<g:HTMLPanel styleName="{libraryStyle.fourSteps}" ui:field="fourSteps">
 			<g:HTMLPanel styleName="{libraryStyle.step}">
 				<g:HTMLPanel styleName="{libraryStyle.libraryBannerImage}">

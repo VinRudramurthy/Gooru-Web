@@ -1,0 +1,316 @@
+@charset "utf-8";
+/* CSS Document */
+#folderTocMainPnl a,#folderTocMainPnl a:hover,#folderTocMainPnl a:focus,#folderTocMainPnl a:active {
+	outline: none;
+}
+#folderTocMainPnl header {
+	background: #333333;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151),
+		to(#464646));
+	background: -webkit-linear-gradient(top, #515151, #464646);
+	background: -moz-linear-gradient(top, #515151, #464646);
+	background: -ms-linear-gradient(top, #515151, #464646);
+	background: -o-linear-gradient(top, #515151, #464646);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99999;
+	background: -moz-linear-gradient(center top, #515151, #464646) repeat
+		scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+#folderTocMainPnl button.primary {
+	background: #1076bb;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c98cc),
+		to(#1076bb));
+	background: -webkit-linear-gradient(top, #4c98cc, #1076bb);
+	background: -moz-linear-gradient(top, #4c98cc, #1076bb);
+	background: -ms-linear-gradient(top, #4c98cc, #1076bb);
+	background: -o-linear-gradient(top, #4c98cc, #1076bb);
+	border: 1px solid #1076bb;
+	border-radius: 4px 4px;
+	color: #ffffff;
+	display: inline-block;
+	font-family: Arial, sans-serif;
+	padding: 7px 9px 7px 9px;
+}
+
+#folderTocMainPnl button.primary:hover {
+	background: none repeat scroll 0 0 #1076bb;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#folderTocMainPnl .logo {
+	margin: 7px 0;
+}
+
+#folderTocMainPnl .searchboxFolder .formControl {
+	border-radius: 35px 35px;
+	width: 330px;
+	border: none;
+	height: 30px;
+	background: #999999 url(../images/searchIcon.png) no-repeat right 6px;
+	display: inline-block;
+	margin: 10px 0;
+}
+
+#folderTocMainPnl .searchboxFolder button {
+	background-color: transparent;
+	padding: 5px 5px;
+	border: 1px solid #999999;
+	border-radius: 6px 6px;
+}
+
+#folderTocMainPnl .signupBtn {
+	text-align: right;
+	margin: 10px 0;
+}
+
+#folderTocMainPnl .signupBtn button {
+	font-weight: bold;
+}
+
+#folderTocMainPnl .signupBtn a {
+	color: #ffffff;
+	font-weight: 600;
+	padding: 0 20px;
+}
+
+#folderTocMainPnl .signupBtn a:hover,#folderTocMainPnl .signupBtn a:focus,#folderTocMainPnl .signupBtn a:active {
+	color: #999999;
+	text-decoration: none;
+}
+
+#folderTocMainPnl .whitebg {
+	background: #ffffff;
+	box-shadow: 0 0 10px #cccccc;
+	padding: 25px 25px;
+}
+
+#folderTocMainPnl .pageHeader {
+	margin: 0 0 8px 0;
+	color:#515151;
+	font-size:20pt;
+	background:url(../images/folders/panel/folder-small-icon.png) no-repeat 0px 4px;
+	padding-left: 30px;
+	float: left;
+	word-break: break-word;
+}
+
+#folderTocMainPnl .marginDiv {
+	margin: 0 35px;
+}
+
+#folderTocMainPnl .perTaskContainer {
+	padding: 30px 0;
+}
+
+#folderTocMainPnl .marginDiv h4 {
+	color: #1076bb;
+	font-weight: bold;
+	font-size:16px;
+	line-height: 5px;
+	display: inline-block;
+	margin-top:10px;
+}
+#folderTocMainPnl .folderTitleContainer{
+	padding-left:0;
+}
+
+#folderTocMainPnl .categoryFilterContainer .filterCheckBox label {
+	background: url("../images/resource-type-icons.png") no-repeat scroll 0
+		0 transparent;
+	padding: 3px 31px;
+}
+
+#folderTocMainPnl .video {
+	background-position: 0 0 !important;
+}
+
+#folderTocMainPnl .webpage {
+	background-position: 0 -223px !important;
+}
+
+#folderTocMainPnl .interactives {
+	background-position: 0 -27px !important;
+}
+
+#folderTocMainPnl .questions {
+	background-position: 0 -139px !important;
+}
+
+#folderTocMainPnl .images {
+	background-position: 0 -251px !important;
+}
+
+#folderTocMainPnl .texts {
+	background-position: 0 -55px !important;
+}
+
+#folderTocMainPnl .audio {
+	background-position: 0 -279px !important;
+}
+
+#folderTocMainPnl .perTaskContainer ul {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+#folderTocMainPnl .perTaskContainer ul li {
+	margin: 10px 0;
+	background: url("../images/resource-type-icons.png") no-repeat scroll 0
+		0 transparent;
+	padding: 3px 31px;
+	list-style: none;
+}
+
+/*Share css */
+
+#folderTocMainPnl .tocShareContainer{
+	clear: both;
+	border-bottom: 2px solid #e1dfda;
+	margin-bottom: 10px;
+	padding-bottom: 2px;
+}
+#folderTocMainPnl .tocShareBtn{
+	clear: both;
+	display: inline-block;
+	background-color: #e1dfda;
+	padding: 9px;
+}
+#folderTocMainPnl .tocShareTxb{
+	clear: both;
+	display: inline-block;
+	border: 4px solid #e1dfda !important;
+	padding: 5px 4px;
+	margin-left: -4px;
+	width:140px;
+}
+
+@media ( min-width : 240px) and (max-width: 319px) {
+	#folderTocMainPnl header {
+		position: relative;
+	}
+	#folderTocMainPnl .marginDiv {
+		margin: 0 10px;
+	}
+	#folderTocMainPnl .logo {
+		text-align: center;
+	}
+	#folderTocMainPnl .searchboxFolder .formControl {
+		width: 85%;
+	}
+	#folderTocMainPnl .searchboxFolder {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	#folderTocMainPnl .signupBtn {
+		margin: 0 0;
+		padding: 8px 0;
+		border-top: 1px solid #444444;
+		background: #333333;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151),
+			to(#464646));
+		background: -webkit-linear-gradient(top, #515151, #464646);
+		background: -moz-linear-gradient(top, #515151, #464646);
+		background: -ms-linear-gradient(top, #515151, #464646);
+		background: -o-linear-gradient(top, #515151, #464646);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		text-align: center;
+	}
+	#folderTocMainPnl .bodyContainer {
+		padding-top: 0;
+	}
+}
+
+@media ( min-width : 320px) and (max-width: 479px) {
+	#folderTocMainPnl header {
+		position: relative;
+	}
+	#folderTocMainPnl .marginDiv {
+		margin: 0 10px;
+	}
+	#folderTocMainPnl .logo {
+		text-align: center;
+	}
+	#folderTocMainPnl .searchboxFolder {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	#folderTocMainPnl .searchboxFolder .formControl {
+		width: 85%;
+	}
+	#folderTocMainPnl .signupBtn {
+		margin: 0 0;
+		padding: 8px 0;
+		border-top: 1px solid #444444;
+		background: #333333;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151),
+			to(#464646));
+		background: -webkit-linear-gradient(top, #515151, #464646);
+		background: -moz-linear-gradient(top, #515151, #464646);
+		background: -ms-linear-gradient(top, #515151, #464646);
+		background: -o-linear-gradient(top, #515151, #464646);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		text-align: center;
+	}
+	#folderTocMainPnl .bodyContainer {
+		padding-top: 0;
+	}
+}
+
+@media ( min-width : 480px) and (max-width: 767px) {
+	#folderTocMainPnl header {
+		position: relative;
+	}
+	#folderTocMainPnl .marginDiv {
+		margin: 0 10px;
+	}
+	#folderTocMainPnl .signupBtn {
+		margin: 0 0;
+		padding: 8px 0;
+		border-top: 1px solid #444444;
+		background: #333333;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#515151),to(#464646));
+		background: -webkit-linear-gradient(top, #515151, #464646);
+		background: -moz-linear-gradient(top, #515151, #464646);
+		background: -ms-linear-gradient(top, #515151, #464646);
+		background: -o-linear-gradient(top, #515151, #464646);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		text-align: center;
+	}
+	#folderTocMainPnl .bodyContainer {
+		padding-top: 0;
+	}
+	#folderTocMainPnl .searchboxFolder {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	#folderTocMainPnl .logo {
+		text-align: center;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 992px) {
+	#folderTocMainPnl .searchboxFolder .formControl {
+		width: 85%;
+	}
+}
+#folderTocMainPnl .lblFolderMetadata{
+	font-size: 12px;
+	color: #515151;
+	line-height: 1.42857143;
+	font-family: Arial, Helvetica, sans-serif !important;
+	white-space: pre-line;
+	margin-bottom:10px;
+	margin-top:-12px;
+}
+#folderTocMainPnl .lblFolderTitles{
+	font-weight: bold;
+}
+#folderTocMainPnl .btnBackToPrevious{
+	float:right;
+	margin-bottom: 15px;
+}

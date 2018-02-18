@@ -1,0 +1,15 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+     xmlns:span="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src="" />
+	<span:HTMLEventPanel styleName="pull-right" ui:field="contentPanel">
+		<span:HTMLEventPanel styleName="timeWidget col-md-6">
+			<uc:PPanel ui:field="timeMessage"></uc:PPanel>
+		    <uc:H3Panel ui:field="timeSpent"></uc:H3Panel>
+		</span:HTMLEventPanel>
+		<span:HTMLEventPanel styleName="scoreWidget col-md-6" ui:field="scorePanel">
+			<uc:PPanel ui:field="scoreMessage"></uc:PPanel>
+		    <uc:H3Panel ui:field="score"></uc:H3Panel>
+		</span:HTMLEventPanel>
+	</span:HTMLEventPanel>
+</ui:UiBinder>

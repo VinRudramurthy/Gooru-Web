@@ -1,11 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
-<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
-	<g:FlowPanel styleName="{res.css.collectionThumbnail}" ui:field="collectionThumbnail">
-		<g:Image styleName="{res.css.collectionThumbnails}" ui:field="image" />
-		<!-- <g:FlowPanel styleName="{res.css.collectionHover}">
-			<g:Label styleName="{res.css.playIcon}" />
-		</g:FlowPanel> -->
+	<g:FlowPanel styleName="iu-resourceThumbnail Uc-collectionThumbnail1" ui:field="collectionThumbnail">
+		<g:Image styleName="Uc-collectionThumbnails" ui:field="image" />
 		<g:Hidden ui:field="collectionGooruOid" />
 	</g:FlowPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

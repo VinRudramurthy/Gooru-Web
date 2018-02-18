@@ -32,9 +32,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.ClasspageListDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.classpages.ClasspageListPopupViewCBundle;
 import org.ednovo.gooru.client.mvp.classpages.event.RefreshClasspageListEvent;
 import org.ednovo.gooru.client.mvp.classpages.event.RefreshClasspageListHandler;
@@ -49,9 +52,6 @@ import org.ednovo.gooru.client.mvp.socialshare.SentEmailSuccessVc;
 import org.ednovo.gooru.client.uc.AlertMessageUc;
 import org.ednovo.gooru.client.uc.TextBoxWithPlaceholder;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.content.ClasspageListDo;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Document;
@@ -77,10 +77,12 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Gooru Team
  *
  */
-public class StudyNowToolTip extends PopupPanel implements MessageProperties {
+public class StudyNowToolTip extends PopupPanel {
 
 	private static StudyNowToolTipUiBinder uiBinder = GWT
 			.create(StudyNowToolTipUiBinder.class);
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class); 
 
 	interface StudyNowToolTipUiBinder extends UiBinder<Widget, StudyNowToolTip> {
 	}
@@ -91,7 +93,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 
 	@UiField Button enterLbl,disabledBtn;
 	
-	@UiField HTMLPanel tooltipPanel;
+	@UiField HTMLPanel tooltipPanel,panelCode;
 	
 	@UiField
 	ScrollPanel spanelCollectionList;
@@ -138,12 +140,23 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 		this.res = ClasspageListPopupViewCBundle.INSTANCE;
 		res.css().ensureInjected();
 		tooltipPanel.getElement().getStyle().setTop(14, Unit.PX);
-		enterLbl.setText(GL1065);
-		lblTitle.setText(GL0474);
+		panelCode.getElement().setId("pnlPanelCode");
+		tooltipPanel.getElement().setId("pnlTooltipPanel");
+		enterLbl.setText(i18n.GL1065());
+		enterLbl.getElement().setId("btnEnterLbl");	
+		enterLbl.getElement().setAttribute("alt", i18n.GL1065());
+		enterLbl.getElement().setAttribute("title", i18n.GL1065());
+		lblTitle.setText(i18n.GL0474());
+		lblTitle.getElement().setId("lblLblTitle");
+		lblTitle.getElement().setAttribute("alt", i18n.GL0474());
+		lblTitle.getElement().setAttribute("title", i18n.GL0474());
+		lblLoading.getElement().setId("lblLblLoading");
+		spanelCollectionList.getElement().setId("sbSpanelCollectionList");
 		classCodeTxtBox.setText("");
 		classCodeTxtBox.getElement().setAttribute("maxlength", "10");
 		classCodeTxtBox.getElement().setId("txtClassCode");
-		classCodeTxtBox.setPlaceholder(GL0184);
+		classCodeTxtBox.setPlaceholder(i18n.GL0184());
+		classStudyList.getElement().setId("vpnlClassStudyList");
 //		lblLoading.setText(GL0110+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP+GL_SPL_FULLSTOP);
 		
 		if(!AppClientFactory.isAnonymous()) {
@@ -205,7 +218,10 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 				}
 			}
 		};
-		disabledBtn.setText(GL1065);
+		disabledBtn.setText(i18n.GL1065());
+		disabledBtn.getElement().setId("btnDisabledBtn");
+		disabledBtn.getElement().setAttribute("alt", i18n.GL1065());
+		disabledBtn.getElement().setAttribute("title", i18n.GL1065());
 		disabledBtn.setVisible(false);
 		RootPanel.get().addDomHandler(rootHandler, ClickEvent.getType());
 
@@ -217,7 +233,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 		public void onClick(ClickEvent event) {
 			setEnterLblVisbility(true);
 			if (classCodeTxtBox.getText().trim().equalsIgnoreCase("") || classCodeTxtBox.getText().trim() == null){
-				alertMessageUc=new AlertMessageUc(GL0061, new Label(GL0243));
+				alertMessageUc=new AlertMessageUc(i18n.GL0061(), new Label(i18n.GL0243()));
 				ClickHandler alertHandler=new ClickHandler() {
 
 					@Override
@@ -244,6 +260,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 
 				@Override
 				public void onFailure(Throwable caught) {
+					super.onFailure(caught);
 					setEnterLblVisbility(false);
 				}
 				
@@ -253,7 +270,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 					 if(result.getGooruOid()==null){
 						 Window.enableScrolling(false);
 						 AppClientFactory.fireEvent(new SetHeaderZIndexEvent(98, false));
-						alertMessageUc=new AlertMessageUc(GL0061, new Label(GL0244));
+						alertMessageUc=new AlertMessageUc(i18n.GL0061(), new Label(i18n.GL0244()));
 						ClickHandler alertHandler=new ClickHandler() {
 
 							@Override
@@ -327,7 +344,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 							if(alertMessageUc!=null)
 							alertMessageUc.hide();
 							
-							StudentAssignmentView.setPrivatePageActive();
+							//StudentAssignmentView.setPrivatePageActive();
 
 						}
 						else if(result.getStatus().equalsIgnoreCase("pending")) 
@@ -347,15 +364,15 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 							if(alertMessageUc!=null)
 							alertMessageUc.hide();
 							
-							StudentAssignmentView.setPrivatePagePending();
+							//StudentAssignmentView.setPrivatePagePending();
 
 						}
 						else 
 						{
 							       if(AppClientFactory.isAnonymous()){
-							    	   new SentEmailSuccessVc(GL1177, GL1535);
+							    	   new SentEmailSuccessVc(i18n.GL1177(), i18n.GL1535());
 							       }else{
-							    	   new SentEmailSuccessVc(GL1177, GL1535_1);
+							    	   new SentEmailSuccessVc(i18n.GL1177(), i18n.GL1535_1());
 							       }
 						}
 						
@@ -380,7 +397,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 						if(alertMessageUc!=null)
 						alertMessageUc.hide();
 						
-							if(result.getCreator().getGooruUId().equalsIgnoreCase(AppClientFactory.getGooruUid()))
+							/*if(result.getCreator().getGooruUId().equalsIgnoreCase(AppClientFactory.getGooruUid()))
 							{
 								StudentAssignmentView.setPublicPage();
 							}
@@ -391,7 +408,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 							else 
 							{
 								StudentAssignmentView.setPublicPagePending();
-							}	
+							}	*/
 						
 				}
 					 setEnterLblVisbility(false);
@@ -403,7 +420,7 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 
 	public void getStudyClassList(String offSet) {
 		setStudyClassList(null);
-		AppClientFactory.getInjector().getClasspageService().v2GetUserClasses(String.valueOf(limit), offSet,
+		AppClientFactory.getInjector().getClasspageService().v2GetUserClasses(String.valueOf(limit), offSet,String.valueOf(Math.random()),
 				new SimpleAsyncCallback<ClasspageListDo >() {
 					@Override
 					public void onSuccess(ClasspageListDo result) {
@@ -414,45 +431,59 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 				});
 	}
 	
-	private void setStudyClassList(ClasspageListDo classList) {
-		lblLoading.setVisible(false);
-		isApiCalling = false;
-		if(classList!=null){
-			resultSize=classpageListDo.getSearchResults()!=null?classpageListDo.getSearchResults().size():0;
-		}else{
-			resultSize =0;
-		}
-		if(resultSize>0) {
-			lblTitle.setVisible(false);
-			classStudyList.setVisible(true);
-			spanelCollectionList.setVisible(true);
-			if (toClear) {
-				classStudyList.clear();
-				toClear = false;
-				classpageList.clear();
-				listClasspage.clear();
-			}
-			for(int i = 0; i<resultSize;i++) {
-//				Label className = new Label("classList "+i);
-				String classpageId = classpageListDo.getSearchResults().get(i).getGooruOid();
-				classpageList.put(classpageId, classpageListDo.getSearchResults().get(i));
-				listClasspage.add(classpageId);
-				/*className.setStyleName("studyNowToolTipLbl");
-				if(i==0) {
-					className.getElement().getStyle().setMarginTop(2, Unit.PX);
-				}
-				className.addClickHandler(new OnEnterClassCodeClick());
-				classStudyList.add(className);*/
-			}
-			generateClasspageList();
-		} else {
-			/*offSet = tmpOffSet;
-			Element element=Document.get().getElementById("lblLoading");
-			if(element!=null){
-				element.removeFromParent();
-			}*/
-//			lblTitle.setVisible(true);
-		}
+	private void setStudyClassList(final ClasspageListDo classList) {
+		
+		AppClientFactory.getInjector().getClasspageService().v2GetUserClasses(String.valueOf(limit), String.valueOf(0),String.valueOf(Math.random()),
+				new SimpleAsyncCallback<ClasspageListDo >() {
+					@Override
+					public void onSuccess(ClasspageListDo result) {
+						classpageListDo = result;
+						totalHitCount=result.getTotalHitCount();
+												
+						lblLoading.setVisible(false);
+						isApiCalling = false;
+						if(classList!=null){
+							resultSize=classpageListDo.getSearchResults()!=null?classpageListDo.getSearchResults().size():0;
+						}else{
+							resultSize =0;
+						}
+						if(resultSize>0) {
+							lblTitle.setVisible(false);
+							classStudyList.setVisible(true);
+							spanelCollectionList.setVisible(true);
+							if (toClear) {
+								classStudyList.clear();
+								toClear = false;
+								classpageList.clear();
+								listClasspage.clear();
+							}
+							listClasspage.clear();
+							for(int i = 0; i<resultSize;i++) 
+							{
+//								Label className = new Label("classList "+i);
+								String classpageId = classpageListDo.getSearchResults().get(i).getClassUid();
+								classpageList.put(classpageId, classpageListDo.getSearchResults().get(i));
+								listClasspage.add(classpageId);
+								/*className.setStyleName("studyNowToolTipLbl");
+								if(i==0) {
+									className.getElement().getStyle().setMarginTop(2, Unit.PX);
+								}
+								className.addClickHandler(new OnEnterClassCodeClick());
+								classStudyList.add(className);*/
+							}
+							generateClasspageList();
+						} else {
+							/*offSet = tmpOffSet;
+							Element element=Document.get().getElementById("lblLoading");
+							if(element!=null){
+								element.removeFromParent();
+							}*/
+//							lblTitle.setVisible(true);
+						}
+					}
+				});
+		
+		
 	}
 	
 	public void generateClasspageList(){
@@ -462,6 +493,19 @@ public class StudyNowToolTip extends PopupPanel implements MessageProperties {
 			classStudyList.add(createClasspageTitleLabel(
 				classpageTitle, listClasspage.get(i), false));
 		}
+	}
+	
+	public void refreshClasslist()
+	{
+		AppClientFactory.getInjector().getClasspageService().v2GetUserClasses(String.valueOf(limit), String.valueOf(offSet),String.valueOf(Math.random()),
+				new SimpleAsyncCallback<ClasspageListDo >() {
+					@Override
+					public void onSuccess(ClasspageListDo result) {
+						classpageListDo = result;
+						totalHitCount=result.getTotalHitCount();
+						setStudyClassList(result);
+					}
+				});
 	}
 	
 	

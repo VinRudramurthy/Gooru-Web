@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -27,11 +27,13 @@ package org.ednovo.gooru.client.uc;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.BlurEvent;
 import com.google.gwt.event.dom.client.BlurHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
@@ -55,7 +57,7 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * @fileName : EditableLabelUc.java
  *
- * @description : 
+ * @description :
  *
  *
  * @version : 5.5
@@ -64,15 +66,17 @@ import com.google.gwt.user.client.ui.Widget;
  *
  * @Author Gooru Team
  *
- * @Reviewer: 
+ * @Reviewer:
  */
-public class EditableLabelUc extends Composite implements HasValue<String>,MessageProperties {
+public class EditableLabelUc extends Composite implements HasValue<String> {
 
 	private static EditableLabelUcUiBinder uiBinder = GWT
 			.create(EditableLabelUcUiBinder.class);
 
 	interface EditableLabelUcUiBinder extends UiBinder<Widget, EditableLabelUc> {
 	}
+
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	@UiField
 	protected Label editLabel;
@@ -89,48 +93,49 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 	protected String placeholder = "";
 
 	protected String text;
-	
-	boolean isHavingBadWords=false;
 
-	@UiField(provided = true)
-	UcCBundle res;
+	boolean isHavingBadWords=false;
 
 	/**
 	 * Class constructor
 	 */
 	public EditableLabelUc() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
 		deckPanel.showWidget(0);
+		focusPanel.getElement().setId("focuspnlFocusPanel");
+		deckPanel.getElement().setId("dpnlDeckPanel");
+		editLabel.getElement().setId("lblEditLabel");
+		editTextBox.getElement().setId("txtEditTextBox");
+		StringUtil.setAttributes(editTextBox, true);
 		/*
 		 * focusPanel.addFocusHandler(new FocusHandler() {
-		 * 
+		 *
 		 * @Override public void onFocus(FocusEvent event) { switchToEdit(); }
 		 * });
-		 * 
+		 *
 		 * focusPanel.addClickHandler(new ClickHandler() {
-		 * 
+		 *
 		 * @Override public void onClick(ClickEvent event) { switchToEdit(); }
 		 * });
-		 * 
+		 *
 		 * editLabel.addClickHandler(new ClickHandler() {
-		 * 
+		 *
 		 * @Override public void onClick(ClickEvent event) { switchToEdit(); }
 		 * });
-		 * 
+		 *
 		 * editTextBox.addBlurHandler(new BlurHandler() {
-		 * 
+		 *
 		 * @Override public void onBlur(BlurEvent event) { switchToLabel(); }
 		 * });
 		 */
 		editTextBox.addBlurHandler(new BlurHandler() {
-			
+
 			@Override
 			public void onBlur(BlurEvent event) {
 				Map<String, String> parms = new HashMap<String, String>();
 				parms.put("text", editTextBox.getText());
 				AppClientFactory.getInjector().getResourceService().checkProfanity(parms, new SimpleAsyncCallback<Boolean>() {
-					
+
 					@Override
 					public void onSuccess(Boolean value) {
 						isHavingBadWords = value;
@@ -140,7 +145,7 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 						}else{
 							showProfanityError(false);
 							setValue(editTextBox.getText(), true); // fires events, too
-							
+
 							editTextBox.getElement().getStyle().clearBackgroundColor();
 							editTextBox.getElement().getStyle().setBorderColor("#ccc");
 
@@ -160,7 +165,7 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 					Map<String, String> parms = new HashMap<String, String>();
 					parms.put("text", editTextBox.getText());
 					AppClientFactory.getInjector().getResourceService().checkProfanity(parms, new SimpleAsyncCallback<Boolean>() {
-						
+
 						@Override
 						public void onSuccess(Boolean value) {
 							isHavingBadWords = value;
@@ -177,6 +182,8 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 					});
 				} else if (event.getCharCode() == KeyCodes.KEY_ESCAPE) {
 					editTextBox.setText(editLabel.getText()); // reset to the original value
+					editTextBox.getElement().setAttribute("alt", editLabel.getText());
+					editTextBox.getElement().setAttribute("title", editLabel.getText());
 				}
 			}
 		});
@@ -205,11 +212,14 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 		if (deckPanel.getVisibleWidget() == 1)
 			return;
 		editTextBox.setText(getValue());
+		editTextBox.getElement().setAttribute("alt", getValue());
+		editTextBox.getElement().setAttribute("title", getValue());
 		deckPanel.showWidget(1);
 		editTextBox.setFocus(true);
 		editTextBox.addStyleName("shelfEditTitle");
 		editTextBox.setMaxLength(50);
 		editTextBox.getElement().getStyle().setBorderColor("#ccc");
+		editTextBox.getElement().getStyle().setHeight(20, Unit.PX);
 	}
 
 	/**
@@ -218,13 +228,14 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 	public void switchToLabel() {
 		if (deckPanel.getVisibleWidget() == 0)
 			return;
-		if (editTextBox.getText().length() > 0 && !isHavingBadWords) {			
+		if (editTextBox.getText().length() > 0 && !isHavingBadWords) {
 			setValue(editTextBox.getText(), true); // fires events, too
 		} else {
 			if (isHavingBadWords){
 				editTextBox.getElement().getStyle().setBorderColor("orange");
 			}else{
-				new AlertContentUc(GL0061,GL1026+GL_SPL_EXCLAMATION);
+//				new AlertContentUc(i18n.GL0061(),i18n.GL1026()+i18n.GL_SPL_EXCLAMATION());
+				showErrorMessage(i18n.GL1026()+i18n.GL_SPL_EXCLAMATION());
 			}
 			return;
 		}
@@ -242,6 +253,11 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 		deckPanel.showWidget(0);
 	}
 
+
+	public void showErrorMessage(String message){
+
+	}
+
 	// Override this method to catch on blur
 	/**
 	 * @param text
@@ -257,15 +273,15 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 	public void checkCharacterLimit(String text) {
 
 	}
-	
+
 	// Override this method to catch on blur
 	/**
 	 * @param text
 	 */
 	public void showProfanityError(boolean value) {
 	}
-	
-	
+
+
 
 	@Override
 	public HandlerRegistration addValueChangeHandler(
@@ -281,7 +297,11 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 	@Override
 	public void setValue(String value) {
 		editLabel.setText(value);
+		editLabel.getElement().setAttribute("alt", value);
+		editLabel.getElement().setAttribute("title", value);
 		editTextBox.setText(value);
+		editTextBox.getElement().setAttribute("alt", value);
+		editTextBox.getElement().setAttribute("title", value);
 	}
 
 	/**
@@ -310,7 +330,7 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 			ValueChangeEvent.fireIfNotEqual(this, getValue(), value);
 		setValue(value);
 	}
-	
+
 	public void setFocus(){
 		editTextBox.setFocus(true);
 	}
@@ -318,6 +338,9 @@ public class EditableLabelUc extends Composite implements HasValue<String>,Messa
 	public TextBox getTextBoxSource() {
 		return editTextBox;
 	}
-	
-	
+	public Label getLabelField() {
+		return editLabel;
+	}
+
+
 }

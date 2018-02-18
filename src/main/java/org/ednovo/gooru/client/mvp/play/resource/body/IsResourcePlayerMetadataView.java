@@ -24,10 +24,17 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.resource.body;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ReactionDo;
+import java.util.List;
+import java.util.Map;
 
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ReactionDo;
+import org.ednovo.gooru.application.shared.model.content.ResourceTagsDo;
+import org.ednovo.gooru.application.shared.model.content.StarRatingsDo;
+import org.ednovo.gooru.client.htmltags.SectionTag;
+
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
@@ -35,9 +42,31 @@ public interface IsResourcePlayerMetadataView extends IsViewWithHandlers<Resourc
 	public void showResourceWidget(CollectionItemDo collectionItemDo,PlaceRequest nextResoruceRequest,PlaceRequest previousResourceRequest);
 	public void showResourceWidget(CollectionItemDo collectionItemDo);
 	public void showResourceWidget(PlaceRequest previousResourceRequest);
-	public FlowPanel getResourceWidgetContainer();
-	
+	public SectionTag getResourceWidgetContainer();
+	public SectionTag getCollectionContainer();
 	public void setReaction(ReactionDo reactionDo, String gooruReactionId); 
 	
 	public void setDefaultReaction();
+	public void setUserStarRatings(StarRatingsDo result, boolean showThankYouToolTip);
+	public void setDefaultUserStarRatings();   
+	public void removeRatingContainer(boolean flag);
+	public void postReview(String assocGooruOId, String userReview, Integer score, boolean isUpdate);
+	public void hideThankYouPopUp();
+	public void setRatingMetaData(String assocGooruOid, Integer score,String review, double average, Integer count);  
+	public void displaySuccessPopup();
+	public void updateRatingOnSearch(StarRatingsDo starRatingsDo);
+	public void clearAllStarsForAnnonymous();
+	public void childLoggedIn(boolean isChild);
+	public void deleteRatingsValue(); 
+	public void setGoogleDriveFileStatusCode(Integer statusCode);
+	public void displayResourceTags(List<ResourceTagsDo> resourceTagsList);
+	public void checkYoutubeAccessControls(Map<String, String> result);
+	public Button getNarrationButton();
+	public Button getFullScreenButton();
+	public void clearMarginTop();
+	public void setMarginTop();
+	public void setPreviousRating(double previousRating);
+	public double getPreviousRating();
+	public void setFullScreen(boolean isFullScreen,FlowPanel pnlFullScreenNarration);
+	public void displaySelectedStandards(List<Map<String, String>> standListArray);
 }

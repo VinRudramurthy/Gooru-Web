@@ -5,20 +5,24 @@
 	xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui"
 	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
 	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
-	ui:generateLocales='default'>
+	ui:generateLocales='default'
+	xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
 <ui:style field= "addWebResourceStyle" src="addResource.css" type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add.AddResourceBundle"/>
 	
 		
 	<g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerContainer}">
-	    		<g:Label  ui:field="hintsTextLblVal" styleName="{addWebResourceStyle.addResourceFormTitle}"/>  
+	      <g:HTMLPanel styleName="{addWebResourceStyle.addblockHeaderContainer}">
+	     <uc:HTMLEventPanel styleName="{addWebResourceStyle.eHeader}" ui:field="eHearderIconHint"></uc:HTMLEventPanel>
+	    		<g:Label  ui:field="hintsTextLblVal" styleName="{addWebResourceStyle.addResourceFormTitle}"/>
+	    		</g:HTMLPanel>  
               <g:Label styleName="{addWebResourceStyle.addResourceFormAlphaText}" ui:field="hintNumLbl"></g:Label>
-              <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerInputControl} answerChoiceAndHintsTextcontainer">
+              <g:HTMLPanel styleName="hintAnswerInputControl answerChoiceAndHintsTextcontainer">
                 <tinyMce:TinyMCE ui:field="hintTextBox" characterLimit="150"></tinyMce:TinyMCE>
                 <!-- <g:TextBox ui:field="hintTextBox" maxLength="150" styleName="{addWebResourceStyle.addResourceFormAnswerInputText}"/>  -->
                 <g:HTMLPanel styleName="{addWebResourceStyle.addResourceFormAnswerDeletebg}" ui:field="deleteButtonContainer">             
            			
                 </g:HTMLPanel>     
               </g:HTMLPanel>
-               <g:Label text="" ui:field="errorMessageforHints" styleName="{addWebResourceStyle.addResourceFormInputBottomText}"/>
+               <g:Label text="" ui:field="errorMessageforHints" styleName="{addWebResourceStyle.hintsErrorValidation}"/>
        </g:HTMLPanel>
 </ui:UiBinder>

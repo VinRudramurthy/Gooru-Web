@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""></ui:style>
+	<g:HTMLPanel styleName="contentTableRowInner">
+		<g:HTMLPanel styleName="contentTableCellInner">
+		   <uc:PPanel ui:field="titlePanel"></uc:PPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="contentTableCellInner">
+		   <g:HTMLPanel styleName="squaredOne">
+		      <g:CheckBox ui:field="visiblityLbl"></g:CheckBox>
+		      <uc:LabelUc></uc:LabelUc>
+		   </g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
+
+

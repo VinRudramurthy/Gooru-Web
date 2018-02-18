@@ -1,0 +1,38 @@
+.advancedOptionContainer{
+	display:inline-block;
+	width:360px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.setupHeader{
+	color:#999999;
+	margin-bottom:3px;
+	font-size:12px;
+}
+
+.setupBoxes{
+	display:inline-block;
+	margin-bottom:4px;
+	margin-left:-1px;
+}
+.setupBoxes a{
+	display:block;
+	border:1px solid #dddddd;
+	padding:5px 5px 5px 18px;
+	font-size:13px;
+	color:#1076bb;
+	background:#ffffff url(../images/NewResourcePopup/sprite-new-resource.png) no-repeat -4px 2px;
+	text-decoration:none;
+}
+
+.setupBoxes a:hover{
+	text-decoration:none;
+	border-color:#1076bb;
+}
+.setupBoxes.active a, .setupBoxes .active a:hover{
+	text-decoration:none;
+	background:#ffffff url(../images/NewResourcePopup/sprite-new-resource.png) no-repeat -4px -24px;
+	/* z-index:999999; */
+	position:relative;
+	border-color:#4c9645;
+	color:#4c9645;
+}

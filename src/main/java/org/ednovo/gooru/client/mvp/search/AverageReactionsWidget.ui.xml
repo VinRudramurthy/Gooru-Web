@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="style" src="searchRatingAndReview.css"/>
+	
+				    <g:HTMLPanel styleName="{style.leftPanel}" ui:field="averageReactionsPanel">
+				      <g:HTMLPanel styleName="{style.progressbarMain} {style.clearfix}" ui:field="emoticsOneImage">
+				        <div class="{style.emotic}"> <img src="../images/searchAnalyticsImages/emotics1.png" /> </div>
+				        <div class="{style.numaric}"> 3 </div>
+				        <div class="{style.progress}">
+				          <div class="{style.pBar}" style="width:30%"> </div>
+				        </div>
+				      </g:HTMLPanel>
+				      <g:HTMLPanel styleName="{style.progressbarMain} {style.clearfix}" ui:field="emoticsTwoImage">
+				        <div class="{style.emotic}"> <img src="../images/searchAnalyticsImages/emotics2.png" /> </div>
+				        <div class="{style.numaric}"> 4 </div>
+				        <div class="{style.progress}">
+				          <div class="{style.pBar}" style="width:40%"> </div>
+				        </div>
+				      </g:HTMLPanel>
+				      <g:HTMLPanel styleName="{style.progressbarMain} {style.clearfix}" ui:field="emoticsThreeImage">
+				        <div class="{style.emotic}"> <img src="../images/searchAnalyticsImages/emotics3.png" /> </div>
+				        <div class="{style.numaric}"> 9 </div>
+				        <div class="{style.progress}">
+				          <div class="{style.pBar}" style="width:90%"> </div>
+				        </div>
+				      </g:HTMLPanel>
+				      <g:HTMLPanel styleName="{style.progressbarMain} {style.clearfix}" ui:field="emoticsFourImage">
+				        <div class="{style.emotic}"> <img src="../images/searchAnalyticsImages/emotics4.png" /> </div>
+				        <div class="{style.numaric}"> 7 </div>
+				        <div class="{style.progress}">
+				          <div class="{style.pBar}" style="width:70%"> </div>
+				        </div>
+				      </g:HTMLPanel>
+				      <g:HTMLPanel styleName="{style.progressbarMain} {style.clearfix}" ui:field="emoticsFiveImage">
+				        <div class="{style.emotic}"> <img src="../images/searchAnalyticsImages/emotics5.png" /> </div>
+				        <div class="{style.numaric}"> 8 </div>
+				        <div class="{style.progress}">
+				          <div class="{style.pBar}" style="width:80%"> </div>
+				        </div>
+				      </g:HTMLPanel>
+				    </g:HTMLPanel>
+</ui:UiBinder> 

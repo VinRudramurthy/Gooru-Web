@@ -33,7 +33,7 @@ package org.ednovo.gooru.client.mvp.home.event;
  */
 public enum HeaderTabType {
 
-	DISCOVER("discover"), ORGANIZE("organize"), TEACH("teach"), STUDY("study"), USERNAME("username"), NONE("others");
+	DISCOVER("discover"), ORGANIZE("mycollections"), TEACH("teach"), STUDY("myclasses"), USERNAME("username"), NONE("others"), HOME("home");
 
 	String type;
 

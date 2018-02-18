@@ -62,8 +62,6 @@ public interface CollectionCollaboratorsCBundle extends ClientBundle{
 		String collaboratorPanelTitle();
 		String radioButtonContainer();
 		String panelCollaborators();
-		String radioButton();
-		String radioButtonSelected();
 		String usernameCss();
 		String emailIdCss();
 		String radioButtonImg();
@@ -101,6 +99,10 @@ public interface CollectionCollaboratorsCBundle extends ClientBundle{
 		String pleaseWait();
 		String deleteTextBox();
 		String deleteContainer();
+		String tag();
+		String deleteTextLable();
+		
+		String privacyAlignStyle();
 	}
 	@Source("CollectionCollaborators.css")
 	CollaboratorsCss css();

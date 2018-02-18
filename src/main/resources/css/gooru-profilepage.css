@@ -1,0 +1,757 @@
+#gooruProfilePage .profileMainContainer {
+	width:1200px;
+	margin:0 auto;
+}
+
+#gooruProfilePage .profileContainer {
+	width:1000px;
+	margin:auto;
+}
+
+#gooruProfilePage .userMetaDataContainer {
+	width: 1000px;
+	float:left;
+	margin-top:28px;
+	background: white;
+}
+
+#gooruProfilePage .avatar {
+	width:174px;
+	height:175px;
+	position: relative;
+	background-color:white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	float:left;
+}
+
+#gooruProfilePage .aboutUserText {
+	width: 80%;
+	float: right;
+	padding: 10px;
+	margin-top:5px;
+	box-sizing:content-box;
+
+}
+
+#gooruProfilePage .userName {
+	font-size: 18px;
+	font-weight: bold;
+	color: rgba(100,100,100, 0.8);
+	text-shadow: 1px 2px 2px #EEE, 0 0 0 #000, 1px 2px 2px #EEE;
+	background-color: transparent;
+	float: left;
+	padding: 4px;
+}
+
+#gooruProfilePage .rightPanel  .username {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#gooruProfilePage .roleStyle {
+	display: inline-block;
+	font-size: 16px;
+	padding-left: 14px;
+	float: left;
+	padding-top: 5px;
+}
+
+#gooruProfilePage .aboutUserTextRight {
+	float: right;
+}
+
+#gooruProfilePage .gooruProfileOnOffContainer {
+	float: right;
+	clear: right;
+	text-align: center;
+}
+
+#gooruProfilePage .qmark {
+	position: relative;
+	display: inline-block;
+	float: left;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-top: 7px;
+	background: url('${cdn.endpoint}/images/mos/questionmark.png') no-repeat;
+	margin-left: 5px;
+}
+
+#gooruProfilePage .profileVisiblityPopup {
+	position: absolute;
+	left: -93px;
+	top: 14px;
+	display: none;
+	text-align: left;
+	z-index: 999;
+}
+
+#gooruProfilePage .userLibraryPopup {
+	position: absolute;
+	left: -142px;
+	top: 14px;
+	display: none;
+	z-index: 10000;
+}
+
+#gooruProfilePage .qmark:hover .profileVisiblityPopup {
+	display: block;
+}
+#gooruProfilePage .qmark:hover .userLibraryPopup {
+	display: block;
+}
+
+#gooruProfilePage .bubble-arrow-style {
+	width: 0;
+	height: 0;
+	border: 10px solid;
+	border-color: transparent transparent white transparent;
+	position: relative;
+	top: 1px;
+	margin: auto;
+	border-top: none;
+	z-index: 100000;
+	left: 0;
+	right: 0;
+}
+
+#gooruProfilePage .standards-inner {
+	color: #515151;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	font-size: 12px;
+	padding: 30px;
+	width: 369px;
+	min-height: 110px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+#gooruProfilePage .standards li div.standards-inner {
+	color:#515151;
+	background-color:white;
+	border: 1px solid #ddd;
+	font-size:12px;
+	padding:10px;
+	-moz-box-shadow:     0 0 10px rgba(0,0,0,.2);
+	-webkit-box-shadow:  0 0 10px rgba(0,0,0,.2);
+	box-shadow:          0 0 10px rgba(0,0,0,.2);
+	border-radius: 4px;
+}
+
+#gooruProfilePage .standards li:hover div.standard-popup {
+	display:block;
+}
+
+#gooruProfilePage .standards li div.standard-popup {
+	display:none;
+	position:absolute;
+	left:-50px;
+	top:20px;
+	width: 150px;
+}
+
+#gooruProfilePage .standards-Popup {
+	width: 200px;
+	height: 138px;
+	padding: 20px;
+}
+
+#gooruProfilePage .gooruSocialButtonsContainer {
+	float: left;
+}
+
+#gooruProfilePage .gooru-social-buttons {
+	float: right;
+	clear: right;
+	width: 115px;
+	margin-top: -10px;
+	margin-left: 10px;
+}
+
+#gooruProfilePage .floatLeft{
+	float:left;
+	margin-top:-5px;
+}
+
+#gooruProfilePage .userMetadata {
+	width: 800px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+#gooruProfilePage .metaDataContainer {
+	float: left;
+	max-width: 700px;
+	margin-bottom: 5px;
+}
+
+#gooruProfilePage .edit-Button {
+	color: #1076bb;
+	border-radius: 4px;
+	padding: 7px 9px;
+	border: none;
+	font-family: Arial, sans-serif;
+	display: inline-block;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #ddd;
+	float:left;
+}
+#gooruProfilePage .edit-Button:hover {
+	cursor: pointer;
+	background: #eee;
+}
+
+#gooruProfilePage .userCount {
+	float: left;
+	text-align: center;
+	margin-right: 5px;
+	overflow: hidden;
+    height: 25px;
+ }
+
+ #gooruProfilePage .moreGradeCourseLbl {
+	margin-top: 8px;
+	margin-right: 5px;
+	margin-left: 0px;
+	float: left;
+	color: #4c98cc;
+	cursor: pointer;
+}
+
+
+#gooruProfilePage .moreGradeCourseLbl:hover {
+	cursor: pointer;
+}
+
+#gooruProfilePage .userCourse {
+	float:left;
+	position: relative;
+	text-align: center;
+	height: 25px;
+	overflow: hidden;
+}
+
+
+#gooruProfilePage .gradeCourseEditBtnContainer {
+	float: left;
+	width: 50px;
+	height: 25px;
+	margin-left: 10px;
+}
+
+
+#gooruProfilePage .userCoursePopup {
+	position: absolute;
+    top: 43px;
+    left: 73px;
+    width: 392px;
+    padding: 25px;
+    background:#fff;
+	background-color:rgb(255,255,255);
+	border-color:rgb(221,221,221);
+	border-width:1px;
+	border-style:solid;
+	-moz-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
+	-webkit-box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
+	box-shadow:0px 0px 2px 1px rgba(221,221,221,0.5);
+	z-index: 1;
+	box-sizing:content-box;
+}
+
+#gooruProfilePage .paddinBottom15 {
+	padding-bottom: 15px;
+	font-size: 14px;
+}
+
+#gooruProfilePage .profileGradeInfoContainer {
+	float: left;
+	width: 385px;
+}
+
+#gooruProfilePage .profileGradeInfoTitleContainer {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+
+#gooruProfilePage .profileGradeInfoTitle {
+	font-size: 14px;
+	color: #515151;
+}
+
+#gooruProfilePage .profileGradeContentContainer {
+	float: left;
+	width: 393px;
+	margin-top: -10px;
+}
+
+#gooruProfilePage .gradeBoxStyle {
+	float: left;
+}
+
+#gooruProfilePage .profileGradeHigherContainer {
+	float: left;
+	width: 135px;
+}
+
+#gooruProfilePage .profileCourseInfoTitle {
+	font-size: 14px;
+	color: #515151;
+	padding-top: 13px;
+}
+
+#gooruProfilePage .floatLeftCollectionInputBox {
+	display: inline-block;
+	float: left;
+}
+
+#gooruProfilePage .addCourseBtnStyle {
+	margin: 5px 9px;
+}
+
+#gooruProfilePage .addedCoursesList {
+	float: left;
+	width: 385px;
+	margin: 20px 0 10px 0;
+	background: #F0F0F0;
+
+}
+
+#gooruProfilePage .coursePoupSaveBtnContainer {
+	width: 125px;
+	margin: 0 auto;
+}
+
+#gooruProfilePage .coursePopupCancelLbl {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: #1076bb;
+	text-align: left;
+	padding: 0 0 0 3px;
+	cursor: pointer;
+	float: left;
+	margin-top: 6px;
+	border-radius: 4px;
+	padding: 7px 9px 8px 9px;
+	display: inline-block;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #ddd;
+}
+#gooruProfilePage .coursePopupCancelLbl:hover {
+	background:#eee;
+}
+
+#gooruProfilePage .bioMainContainer {
+	float: left;
+	padding-top: 10px;
+	border-top: 1px solid #999;
+}
+
+#gooruProfilePage .bioRightContainer {
+	float: left;
+	width: 795px;
+}
+
+
+#gooruProfilePage .userBio {
+	padding-top: 0px;
+	line-height: 140% !important;
+	width: 794px;
+}
+
+#gooruProfilePage .profilePageEditBioPanel {
+	position: relative;
+}
+
+#gooruProfilePage .profileDescCharLimit{
+	float: right;
+	margin-right: 141px;
+	color: #999;
+}
+
+#gooruProfilePage .bioTextAreaContainer {
+	width: 755px;
+	float: left;
+}
+
+#gooruProfilePage .userinfoContainer{
+	clear: both;
+	float: left;
+	height: 45px;
+	position: relative;
+	width: 100%;
+	margin: 0 !important;
+	color: #515151 !important;
+	border-bottom: 1px solid #ddd !important;
+	border-top: 1px solid #eee !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#ededed)) !important;
+	background: -moz-linear-gradient(center top, #fdfdfd, #ededed) repeat scroll 0 0 transparent !important;
+	background-color: #ededed;
+	padding: 0 !important;
+}
+
+
+#gooruProfilePage .tabContent{
+	width: 70%;
+	margin: 0 auto;
+	padding-left: 90px;
+}
+
+#gooruProfilePage .userContent {
+	float: left;
+	border-bottom:1px solid #ddd;
+}
+
+#gooruProfilePage .userNameForCollection{
+	font-size: 18px;
+	font-weight: bold;
+	color: rgba(100,100,100, 0.8);
+	text-shadow: 1px 2px 2px #EEE, 0 0 0 #000, 1px 2px 2px #EEE;
+	background-color: transparent;
+	float: left;
+	margin-top: 10px;
+}
+
+#gooruProfilePage .popup-left {
+	left: 27px;
+	top: -47px;
+}
+
+#gooruProfilePage .arrow-left {
+	left: -188px;
+	top: 50px;
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+}
+
+#gooruProfilePage .marginTop10 {
+	margin-top: -10px;
+}
+
+#gooruProfilePage .userNameborder {
+	width: 100%;
+	float: left;
+	height: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+#gooruProfilePage .tabs li.active {
+	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#F5F5F5));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #DDD, #F5F5F5);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #DDD, #F5F5F5);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #DDD, #F5F5F5);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #DDD, #F5F5F5);
+}
+
+#gooruProfilePage .tabs li:hover {
+	background-color:#efefef;
+	cursor: pointer;
+}
+
+#gooruProfilePage .tabs li.deactivated {
+	color:#999;
+}
+
+#gooruProfilePage .search-result-box .tabs {
+	margin: 10px -10px -10px -10px;
+	opacity:0;
+}
+
+#gooruProfilePage .search-result-box:hover .tabs, #gooruProfilePage .tabs.active {
+	opacity:1;
+}
+
+#gooruProfilePage .search-result-box .tabs li {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#gooruProfilePage .tabs {
+	height: 35px;
+	width: 100%;
+	border:1px solid #ddd;
+	display: none;
+	background: rgb(239,239,239); /* Old browsers */
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
+}
+
+#gooruProfilePage .tabs li {
+	display:inline-block;
+	padding:10px 20px;
+}
+
+#gooruProfilePage .tabs li:hover.deactivated {
+	background-color:transparent;
+	cursor: default;
+}
+
+#gooruProfilePage .loadingImage{
+	background: url("${cdn.endpoint}/images/core/B-Dot.gif");
+	width: 200px;
+	height: 175px;
+	margin: 0 auto;
+}
+
+#gooruProfilePage .profileOffConatinerStyle{
+	width: 97%;
+	margin: 0 auto;
+	padding-top: 20px;
+	color: #515151;
+}
+
+#gooruProfilePage .tabAlign{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#gooruProfilePage .followingBtn
+{
+color: #FFF;
+background-color: #1076BB;
+border-radius: 4px;
+padding: 6px 10px 8px 10px;
+font-size: 13px;
+padding-left: 33px;
+border: 1px solid #1076BB;
+font-family: Arial, sans-serif;
+background: #1076BB;
+background: url('../images/buttons/tick-mark.png') 8px 6px no-repeat, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+background: url('../images/buttons/tick-mark.png') 8px 6px no-repeat, -webkit-linear-gradient(top, #4C98CC, #1076BB);
+background: url('../images/buttons/tick-mark.png') 8px 6px no-repeat, -moz-linear-gradient(top, #4C98CC, #1076BB);
+background: url('../images/buttons/tick-mark.png') 8px 6px no-repeat, -ms-linear-gradient(top, #4C98CC, #1076BB);
+background: url('../images/buttons/tick-mark.png') 8px 6px no-repeat, -o-linear-gradient(top, #4C98CC, #1076BB);
+text-align: center;
+
+}
+
+#gooruProfilePage .followingBtn:hover
+{
+	cursor: pointer;
+}
+
+#gooruProfilePage .margin5 {
+	margin: 5px !important;
+	padding: 5px !important;
+}
+
+#gooruProfilePage .blackPrimaryButton{
+	color: #fff;
+	border-radius: 4px;
+	padding: 7px 9px 8px 10px;
+	border: none;
+	font-family: Arial, sans-serif;
+	display: inline-block;
+	background-color: #515151;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#515151), to(#333));
+	background: -webkit-linear-gradient(top, #515151, #333);
+	background: -moz-linear-gradient(top, #515151, #333);
+	background: -ms-linear-gradient(top, #515151, #333);
+	background: -o-linear-gradient(top, #515151, #333);
+	float: left;
+	width: 100px;
+
+
+}
+#gooruProfilePage .blackPrimaryButton:hover{
+	cursor: pointer;
+	background: #393939;
+}
+
+#gooruProfilePage .folderMetadata {
+	margin-bottom:40px;
+}
+
+#gooruProfilePage .folderTitle {
+	font-size:16px;
+	margin-bottom:10px;
+}
+
+
+
+#gooruProfilePage .profileMetaDataTabTitle {
+	padding: 3px;
+	text-align: center;
+	cursor: pointer !important;
+	display: inline-block;
+	box-sizing: border-box;
+	height: 45px;
+	width: 150px;
+	margin-right: -3px;
+	padding: 9px 3.4%;
+}
+
+#gooruProfilePage .profileMetaDataTabTitle:hover {
+	background: none repeat scroll 0 0 #EFEFEF !important;
+	box-shadow: none !important;
+}
+
+#gooruProfilePage .userprofilecount {
+	font-weight: bold;
+	color: #1076bb;
+	font-size: 13px;
+}
+
+#gooruProfilePage .profileMetaDataTabTitleDisabled {
+	color: #999;
+	background-color: transparent;
+	cursor: default !important;
+	float: left;
+	padding: 9px 3.4%;
+	text-align: center;
+	display: inline-block;
+	box-sizing: border-box;
+	height: 45px;
+	width: 150px;
+	margin-right: -3px;
+}
+
+#gooruProfilePage .profileMetaDataTabTitleActive, #gooruProfilePage .profileMetaDataTabTitleActive:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#f5f5f5)) !important;
+	background: -moz-linear-gradient(top, #ddd, #f5f5f5) !important;
+	box-shadow: inset 0 0 10px rgba(0,0,0,.1) !important;
+    cursor: default !important;
+	float: left;
+	padding: 10px 5.5%;
+	text-align: center;
+}
+
+#gooruProfilePage .shareLinkFlowPanel {
+	margin-top: 20px;
+    margin-left: 71px;
+}
+
+
+.pppInfoAddButton {
+	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat
+		scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
+		to(#1076BB) );
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background-image: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background-color: #1076BB;
+	border: medium none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-ms-border-radius: 4px 4px 4px 4px;
+	-khtml-border-radius: 4px 4px 4px 4px;
+	-o-border-radius: 4px 4px 4px 4px;
+	color: #ffffff !important;
+	display: inline-block;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	padding: 7px 9px;
+	margin: 6px;
+	border:1px solid #1076BB;
+	/*width: 60px;*/
+}
+
+.pppInfoAddButton:HOVER {
+	background: #1076BB;;
+	color: #ffffff !important;
+	cursor: pointer;
+}
+
+
+.pppTabsLi {
+	display:inline-block;
+	padding:10px 20px;
+	cursor: pointer;
+	color: #515151;
+	background: rgb(239,239,239); /* Old browsers */
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
+
+}
+
+.pppTabsLi:hover {
+	color: #515151;
+	text-decoration: none;
+}
+
+
+.pppTabsLiActive {
+	display: inline-block;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: #515151;
+	-moz-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	box-shadow: inset 0 5px 16px 0px rgba(0,0,0,.1);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#F5F5F5));
+	background: -webkit-linear-gradient(top, #DDD, #F5F5F5);
+	background: -moz-linear-gradient(top, #DDD, #F5F5F5);
+	background: -ms-linear-gradient(top, #DDD, #F5F5F5);
+	background: -o-linear-gradient(top, #DDD, #F5F5F5);
+}
+
+.pppTabsLiActive:hover {
+	color: #515151;
+	text-decoration: none;
+	cursor:default;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc" xmlns:ucp="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc.suggestbox.widget">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
+	<g:HTMLPanel styleName="tableRow">
+		<g:HTMLPanel styleName="tableColumn">
+			<div class="tableMainHeader">
+				<g:Label ui:field="lblIndex"></g:Label>
+			</div>
+		</g:HTMLPanel>
+		<ucp:HTMLEventPanel styleName="tableColumn" ui:field="pnlTitleContainer">
+			<div class="tableMainHeader">
+				<g:Label ui:field="lblImage"/>
+				<panel:H3Panel ui:field="h3CourseTitle"/>
+				<uc:Paragraph ui:field="pTitle"></uc:Paragraph>
+			</div>
+		</ucp:HTMLEventPanel>
+		<div class="tableColumn">
+			<div class="tableListTags">
+				<g:InlineLabel ui:field="spnUnitsCount"/>
+				<g:InlineLabel ui:field="spnLessonsCount"/>
+				<g:InlineLabel ui:field="spnCollectionsCount"/>
+				<g:InlineLabel ui:field="spnAssessmentsCount"/>
+				<g:InlineLabel ui:field="spnResourcesCount"/>
+				<g:InlineLabel ui:field="spnQuestionsCount"/>
+			</div>
+		</div>
+		<div class="tableColumn">
+			<g:HTMLPanel ui:field="pnlArrows" styleName="tableListOrder">
+				<g:Label styleName="topArrow sprite" ui:field="lblTopArrow"/>
+				<div class="numInput">
+					<g:TextBox styleName="form-control" maxLength="3" ui:field="txtMoveTextBox"/>
+				</div>
+				<g:Label styleName="bottomArrow sprite" ui:field="lblDownArrow"/>
+			</g:HTMLPanel>
+			<g:HTMLPanel ui:field="pnlMoveToEdit" styleName="tableListOrder">
+				<div class="numInput">
+					<g:Button styleName="primary btnMoveToEdit" ui:field="btnMoveToEdit" text="{i18n.GL3332}" title="{i18n.GL3332}"/>
+				</div>
+			</g:HTMLPanel>
+		</div>
+</g:HTMLPanel>
+</ui:UiBinder> 

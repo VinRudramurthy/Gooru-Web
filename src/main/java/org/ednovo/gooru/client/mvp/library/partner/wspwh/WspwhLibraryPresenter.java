@@ -24,11 +24,12 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.library.partner.wspwh;
 
-import org.ednovo.gooru.client.AppPlaceKeeper;
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.client.gin.BasePlacePresenter;
+import org.ednovo.gooru.application.client.AppPlaceKeeper;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.BasePlacePresenter;
 import org.ednovo.gooru.client.mvp.authentication.SignUpPresenter;
+import org.ednovo.gooru.client.mvp.home.AlmostDoneUc;
 import org.ednovo.gooru.client.mvp.home.register.UserRegistrationPresenter;
 import org.ednovo.gooru.client.mvp.library.partner.PartnerLibraryPresenter;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
@@ -79,20 +80,27 @@ public class WspwhLibraryPresenter extends BasePlacePresenter<IsWspwhLibraryView
 	@Override
 	public void onReveal() {
 		super.onReveal();
+		Window.scrollTo(0, 0);
 	}
 	
 	@Override
 	public void onReset() {
 		super.onReset();
 	}
-	
+	@Override
+	public void onHide() {
+		super.onHide();
+		AppClientFactory.getPlaceManager().resetLibraryEventData(PlaceTokens.WSPWH);
+	}
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
-		clearSlot(TYPE_FOLDERS_SLOT);
-		setInSlot(TYPE_FOLDERS_SLOT, partnerLibraryPresenter);
-		partnerLibraryPresenter.setPartnerWidget();
-		
+		long startTime = System.currentTimeMillis();
+		if (AppClientFactory.getPlaceManager().refreshPlace()) {
+			clearSlot(TYPE_FOLDERS_SLOT);
+			setInSlot(TYPE_FOLDERS_SLOT, partnerLibraryPresenter);
+			partnerLibraryPresenter.setPartnerWidget();
+		}
 		if (getPlaceManager().getRequestParameter(CALLBACK) != null && getPlaceManager().getRequestParameter(CALLBACK).equalsIgnoreCase("signup")) {
 		    //To show SignUp (Registration popup)
 		    if (AppClientFactory.isAnonymous()){
@@ -104,11 +112,20 @@ public class WspwhLibraryPresenter extends BasePlacePresenter<IsWspwhLibraryView
 		        addToPopupSlot(signUpViewPresenter);
 		    }
 		}
+		
+		int flag = AppClientFactory.getLoggedInUser().getViewFlag();
+		final String loginType = AppClientFactory.getLoggedInUser().getLoginType() !=null ? AppClientFactory.getLoggedInUser().getLoginType() : "";
+		if(!AppClientFactory.isAnonymous() && flag==0 &&  !loginType.equalsIgnoreCase("Credential")) {
+			AlmostDoneUc update = new AlmostDoneUc(AppClientFactory.getLoggedInUser().getEmailId(), AppClientFactory.getLoggedInUser());
+			update.setGlassEnabled(true);
+			update.show();
+			update.center();
+		}
 	}
 	
 	@Override
 	public String getViewToken() {
-		return PlaceTokens.HOME;
+		return PlaceTokens.DISCOVER;
 	}
 
 }

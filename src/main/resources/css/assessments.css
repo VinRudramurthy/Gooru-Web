@@ -1,0 +1,830 @@
+#fpnlAssessmentsMainContianer .player-buttonsContainer .playerAssessmentTitle{
+	font-size: 20px;
+	padding: 0px;
+	width: 210px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#fpnlAssessmentsMainContianer .assessmentsProgressContainerMain{
+	width: 100%;
+}
+
+#fpnlAssessmentsMainContianer .maincontainer {
+	background-color: white;
+	text-align: center;
+}
+
+#fpnlAssessmentsMainContianer .summary_title {
+	float: left;
+	text-align: center;
+	width: 100%;
+	font-size: 24px;
+	font-weight: bold;
+	color: #515151;
+	margin-top: 3%;
+	/* margin-left: 14%; */
+}
+
+#fpnlAssessmentsMainContianer .htmlpanlProgress {
+	overflow: hidden;
+	width: 100%;
+	margin: 2%;
+	clear:both;
+	/* border-right: 1px solid #eee;
+	border-left: 1px solid #eee; */
+}
+#fpnlAssessmentsMainContianer .pnlSummary{
+	width:98%;
+}
+
+#fpnlAssessmentsMainContianer .filterDropDown {
+	border: 1px solid #ddd;
+	cursor: pointer;
+	background-color: white;
+	color: rgb(81, 81, 81);
+	padding: 5px 0px 5px 5px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	display: inline-block;
+	text-indent: 0.01px;
+	text-overflow: '';
+	margin-top: 20px;
+}
+#fpnlAssessmentsMainContianer .filterDropDownSessions {
+	border: 1px solid #ddd;
+	cursor: pointer;
+	background-color: white;
+	color: rgb(81, 81, 81);
+	padding: 5px 0px 5px 5px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	display: inline-block;
+	text-indent: 0.01px;
+	text-overflow: '';
+}
+
+#fpnlAssessmentsMainContianer .collectionSummaryDetailsWrapper {
+	font-size: 13px;
+	padding: 10px 0;
+	margin: -1px 0;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	clear: both;
+}
+#fpnlAssessmentsMainContianer .container{}
+#fpnlAssessmentsMainContianer .collectionsProgressContainerMain{
+	width: 100%;
+}
+#fpnlAssessmentsMainContianer .left_container {
+	width: 100%;
+	float: left;
+}
+
+#fpnlAssessmentsMainContianer .collection_teacher_img {
+	float: left;
+	width: 7%;
+}
+
+#fpnlAssessmentsMainContianer .collection_details_teacher {
+	width: 65%;
+	float: left;
+	margin-left: 12px;
+	text-align: left;
+}
+
+#fpnlAssessmentsMainContianer .question_resource_details {
+	line-height: 30px;
+	display: inline-block;
+}
+
+#fpnlAssessmentsMainContianer .resource_in_collection_teacher_summary {
+	width: 25%;
+	float: left;
+}
+
+#fpnlAssessmentsMainContianer .collectionLastAccessed {
+	font-weight: bold;
+}
+
+#fpnlAssessmentsMainContianer .gooru_session_data_content {
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+	clear: both;
+	color: #515151;
+	float: left;
+	font-size: 14px;
+	width: 100%;
+}
+
+#fpnlAssessmentsMainContianer .left_session {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+
+#fpnlAssessmentsMainContianer .collection_last_accessed {
+	margin-top: 0px;
+	width: 100%;
+	padding-top: 0px;
+	float: left;
+	clear: both;
+	font-size: 13px;
+}
+
+#fpnlAssessmentsMainContianer .right_session {
+	float: right;
+	width: 25%;
+	display: block;
+}
+
+#fpnlAssessmentsMainContianer .d_filter_session_text {
+	clear: both;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	/* width: 40%; */
+	width: 39%;
+}
+
+#fpnlAssessmentsMainContianer .session_data {
+	float: left;
+	margin-top: 5px;
+	width: 60%;
+}
+#fpnlAssessmentsMainContianer .loadingImageMainDiv {
+	width: 100%;
+    height: 300px;
+	position: relative;
+	/* background-color: #FFF; */
+	/* opacity: 0.4; */
+	top: 0px;
+    left: 0px;
+    z-index:1;
+}
+
+#fpnlAssessmentsMainContianer .loadingImageForSelfEdit {
+	background: url("${cdn.endpoint}/images/core/B-Dot.gif");
+	width: 166px;
+	height: 170px;
+	margin: 0 auto;
+	margin-top: 65px;
+	position: absolute;
+	z-index: 5;
+	margin-left: 375px;
+}
+#fpnlAssessmentsMainContianer .sessionpnl{
+	line-height: 39px;
+	width: 73%;
+	padding:0;
+}
+#fpnlAssessmentsMainContianer .collection_session_panel{
+	width:27%;
+}
+#fpnlAssessmentsMainContianer .collection_image{
+	width:11%;
+}
+
+/* Request for Login */
+.requestToLoginPopupStyle {
+	z-index: 999999;
+	background-color: black;
+	opacity: 0.3;
+	filter:literal(" alpha(opacity = 30)");
+}
+
+
+
+.requestLogin .buttonActions{
+	text-align: center;
+	padding: 10px;
+}
+
+
+.messaage{
+	padding: 56px;
+	text-align: center;
+}
+.container1{
+	text-align: center;
+	padding: 20px;
+}
+
+.buttonSpacing{
+	margin-right: 20px;
+}
+
+.loginAssessmentOrangeBtn {
+	border: none;
+	border-radius: 4px 4px;
+	color: #ffffff;
+	padding: 10px 14px 10px 15px;
+	font-weight: bold;
+	background: 10px rgba(255,255,255,.5);
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+}
+.submitLightOrange {
+	border: none;
+	border-radius: 4px 4px;
+	color: #ffffff;
+	padding: 10px 14px 10px 44px;
+	font-weight: bold;
+	background: url(${cdn.endpoint}/images/player/submitIcon.png) no-repeat 10px rgba(255,255,255,.5);
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+}
+.download-icon{
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings' !important;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.download-icon:before {
+	content: "\e026";
+}
+
+.submitContainer{
+	float: right;
+}
+
+/* summary start */
+
+.studentAssessmentReportViewContainer .headerLinksContainer {
+	background: #515151;
+	border-bottom: 1px solid #dddddd;
+}
+.studentAssessmentBodyBlock {
+	background: #fff;
+	border-radius: 0 0 6px 6px;
+}
+
+.headerBackLinkBox{
+	margin: 5px auto;
+}
+
+.studentAssessmentReportViewContainer .headerBackLinkBox div {
+	color: #fafafa;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+}
+.studentAssessmentReportViewContainer .headerBackLinkBox div:hover, .studentAssessmentReportViewContainer .headerBackLinkBox div:focus {
+	text-decoration: none;
+}
+.studentAssessmentReportViewContainer .headerBackLinkBox  div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.studentAssessmentReportViewContainer .headerBackLinkBox  div.left-arrow {
+	background: rgba(0, 0, 0, 0) url("${cdn.endpoint}/images/gooru-sprite.png") no-repeat scroll -320px -326px;
+	height: 25px;
+	width: 25px;
+}
+.studentAssessmentReportViewContainer .scoreBrief {
+	padding: 0 15px;
+	background: #ffffff;
+	border-bottom: 1px solid #dddddd;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .thumbnailImage, .studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	display: inline-block;
+	vertical-align: middle;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .thumbnailImage {
+	width: 95px;
+	height: 60px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .thumbnailImage.orgBorder img {
+	border-left: 5px solid #fdb128;
+	width: 90px;
+	height: 60px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .thumbnailImage.blueBorder img {
+    border-left: 5px solid #0074be;
+	width: 90px;
+	height: 60px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	border-right: 1px solid #dddddd;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	width: 75%;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription h3 {
+	font-size: 16px;
+	color: #0074be;
+	margin: 0 0 6px 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore {
+	text-align: center;
+}
+.studentAssessmentReportViewContainer .scoreBrief .external-assessment {
+	text-align: left;
+	margin-left: 20px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .external-assessment .anchor{
+	word-wrap: break-word;
+}
+.studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore .no-border{
+	border-right: 0px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore h4, .studentAssessmentReportViewContainer .scoreBrief h2 {
+	margin: 0 0 6px 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief h2.blue {
+	font-weight: bold;
+	color: #4897ce;
+}
+.studentAssessmentReportViewContainer .scoreBrief p {
+	margin: 0 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	padding: 0 12px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews {
+	display: inline-block;
+	width: 48%;
+	text-align: left;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews p {
+	margin: 0 0;
+	line-height: 16px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .progress-radial {
+	margin: 0 auto;
+	float: none;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .progress-radial .overlay span {
+	line-height: 15px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCircles {
+	width: 100%;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	padding: 0 12px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock div.custom-select {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock .custom-select select {
+	display: inline-block;
+	border: 1px solid #dddddd;
+	padding: 8px 8px 8px 4px;
+	margin: 0;
+	font: inherit;
+	font-weight: normal;
+	outline: none; /* remove focus ring from Webkit */
+	line-height: 1.2;
+	background: #ffffff;
+	width: 100%;
+	-webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	height: 40px;
+}
+
+    /* for Webkit's CSS-only solution */
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock .custom-select select {
+	padding-right: 30px;
+}
+}
+/* Select arrow styling */
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock .custom-select:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -1px;
+	bottom: 0;
+	font-size: 60%;
+	line-height: 30px;
+	padding: 6px 7px;
+	width: 23px;
+	background: #ffffff url("${cdn.endpoint}/images/downarrow.png") no-repeat 0px 14px;
+	color: #515151;
+	pointer-events: none;
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+	border: 1px solid #dddddd;
+	border-left: 0px solid #dddddd;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock .no-pointer-events .custom-select:after {
+	content: none;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock select option {
+	color: #515151;
+	padding: 8px 10px
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock p {
+	line-height: 14px;
+	font-size: 11.5px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: 112px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails {
+	padding: 24px 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore {
+	padding: 14px 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+.headerLinksContainer .btn {
+	padding: 15px 15px;
+	font-size: 12px;
+}
+.headerLinksContainer .btn-default.active, .headerLinksContainer .btn-default.focus, .headerLinksContainer .btn-default:active, .headerLinksContainer .btn-default:focus, .headerLinksContainer .btn-default:hover, .headerLinksContainer .open > .dropdown-toggle.btn-default {
+	background-color: #85b9df;
+	border-color: #dddddd;
+	color: #ffffff;
+	box-shadow: none;
+}
+.headerLinksContainer .printOptions {
+	text-align: right;
+	margin: 8px 0;
+}
+.headerLinksContainer .printOptions button.secondary.printIcon:before{
+     background: #999999;
+    content: "";
+    height: 36px;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+.headerLinksContainer .printOptions button.secondary.printIcon {
+    background: #dddddd  url("${cdn.endpoint}/images/printIcon.png") no-repeat 7px 7px;
+    padding:10px 14px 10px 48px;
+    margin-right: 3px;
+    position:relative;
+}
+.headerLinksContainer .printOptions button.secondary.printIcon:hover{
+        background: #c5c1c1 url("${cdn.endpoint}/images/printIcon.png") no-repeat 7px 7px;
+}
+
+.headerLinksContainer .printOptions button.secondary.downloadIcon {
+    background: #dddddd  url("${cdn.endpoint}/images/downloadIcon.png") no-repeat 7px 7px;
+    padding:10px 14px 10px 48px;
+    position:relative;
+}
+.headerLinksContainer .printOptions button.secondary.downloadIcon:hover{
+        background: #c5c1c1 url("${cdn.endpoint}/images/downloadIcon.png") no-repeat 7px 7px;
+}
+
+.headerLinksContainer .printOptions button.secondary.downloadIcon:before{
+     background: #999999;
+    content: "";
+    height: 36px;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+
+.headerLinksContainer .printOptions button.secondary {
+	padding: 0 10px;
+	color: #515151;
+}
+.headerLinksContainer .printOptions button.secondary span.printIcon {
+	background: url("${cdn.endpoint}/images/printIcon.png") no-repeat -1px 5px;
+	width: 35px;
+	height: 35px;
+	margin-right: 6px;
+	display: inline-block;
+	vertical-align: middle;
+	border-right: 1px solid #979797;
+}
+.headerLinksContainer .printOptions button.secondary span.downloadIcon {
+	background: url("${cdn.endpoint}/images/downloadIcon.png") no-repeat -1px 5px;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 6px;
+	border-right: 1px solid #979797;
+}
+.studentAssessmentReportViewContainer .questionsTable {
+	background: #fff;
+	padding: 20px 20px 20px 20px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd3-reset {
+	width: 21% !important;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd2-reset {
+	width: 20.6667% !important;
+}
+@media (min-width: 240px) and (max-width: 319px) {
+.studentAssessmentReportViewContainer .scoreBrief {
+	padding: 0 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	width: 62%;
+	margin-left: 8px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	border-right: none;
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 10px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: inherit;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd3-reset, .studentAssessmentReportViewContainer .scoreBrief .colmd2-reset {
+	width: 100% !important;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews {
+	width: 70%;
+}
+.headerLinksContainer  {
+	text-align: center;
+}
+.headerLinksContainer .printOptions {
+	text-align: center;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .progress-radial .overlay span {
+	font-size: 12px;
+	line-height: 15px;
+	margin: 12px 0;
+}
+}
+ @media (min-width: 320px) and (max-width: 479px) {
+.studentAssessmentReportViewContainer .scoreBrief {
+	padding: 0 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	width: 64%;
+	margin-left: 8px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	border-right: none;
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 10px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: inherit;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd3-reset, .studentAssessmentReportViewContainer .scoreBrief .colmd2-reset {
+	width: 100% !important;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews {
+	width: 73%;
+}
+.headerLinksContainer .printOptions {
+	text-align: center;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .progress-radial .overlay span {
+	font-size: 12px;
+	line-height: 15px;
+	margin: 12px 0;
+}
+}
+ @media (min-width: 480px) and (max-width: 767px) {
+.studentAssessmentReportViewContainer .scoreBrief {
+	padding: 0 0;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	width: 64%;
+	margin-left: 8px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	border-right: none;
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 10px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: inherit;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd3-reset, .studentAssessmentReportViewContainer .scoreBrief .colmd2-reset {
+	width: 50% !important;
+	float: left;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic {
+	border-bottom: none;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews {
+	width: 62%;
+}
+.headerLinksContainer .printOptions {
+	text-align: center;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .progress-radial .overlay span {
+	font-size: 12px;
+	line-height: 15px;
+	margin: 12px 0;
+}
+}
+
+/*@media (max-width: 767px) {
+
+
+}*/
+
+
+
+	@media (min-width: 768px) and (max-width: 991px) {
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails .lessionDescription {
+	width: 54%;
+	margin-left: 8px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd3-reset {
+	width: 27% !important;
+	float: left;
+}
+.studentAssessmentReportViewContainer .scoreBrief .colmd2-reset {
+	float: left;
+	width: 20.6667% !important;
+}
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: 142px;
+}
+}
+ @media (min-width: 992px) and (max-width: 1199px) {
+.studentAssessmentReportViewContainer .scoreBrief .lessonDetails, .studentAssessmentReportViewContainer .scoreBrief .totalIndividualScore, .studentAssessmentReportViewContainer .scoreBrief .infoGraphic, .studentAssessmentReportViewContainer .scoreBrief .attemptsBlock {
+	min-height: 125px;
+}
+.studentAssessmentReportViewContainer .scoreBrief .infoGraphic .wrapCirclesViews {
+	width: 47%;
+}
+}
+ @media (min-width: 1200px) {
+}
+.alignCenterAndBackground {
+	background-color: inherit !important;
+	text-align: center;
+	width: auto;
+}
+.alignLeft {
+	text-align: left;
+}
+.setMarginAuto {
+	margin: 0 auto;
+	text-align: center;
+}
+.displayMessageTextForScoredQuestions {
+	border-bottom: 1px solid #eee;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 24px;
+	text-align: center;
+}
+/* start .tableStyle */
+
+.scrollingReportTable {
+    position: relative;
+}
+.scrollReportTBL {
+    width: 1000px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 1px;
+}
+.headcol {
+    position: absolute;
+    width: 10em;
+    left: 0;
+    top: auto;
+    border-right: 0px none black;
+    border-top-width: 0px;
+    /*only relevant for first row*/
+
+    margin-top: -1px;
+    /*compensate for top border*/
+
+    border: none;
+    height: 35px;
+}
+.long {} .headcol img {
+    width: 27px;
+    height: 27px;
+}
+th.headcol {
+    padding: 3px 4px !important;
+    background: #f8fafb;
+}
+th.headcol.whitebg {
+    background: #ffffff;
+}
+.reportTableStyle {
+    margin-bottom: 0 !important;
+}
+.reportTableStyle thead {
+    background: #fff;
+}
+.reportTableStyle > thead:first-child > tr:first-child > th {
+    border: 1px solid #ddd;
+    background: #fff;
+}
+.reportTableStyle tr.green {
+    background: #d2e5cf;
+}
+.reportTableStyle tr.white {
+    background: #fff;
+}
+
+.reportTableStyle td img {
+    text-align:center;
+}
+
+.reportTableStyle td:nth-child(4) {
+    text-align:center;
+}
+.reportTableStyle tr.green td {
+	 border: 1px solid #c5d8c2;
+}
+
+
+/* end .tableStyle */
+.loadingImageMainDiv {
+	width: 100%;
+	height: 300px;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.loadingImageForSummary {
+	background: url(../images/core/B-Dot.gif);
+	width: 166px;
+	height: 170px;
+	margin: 0 auto;
+	margin-top: 65px;
+	z-index: 5;
+}
+
+
+/* Summary report */
+.questionsTable #report-student-assessment-report_wrapper .dataTables_scrollHead table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc{
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-color: #ffffff !important;
+	cursor: pointer;
+	padding: 10px 2px 10px 2px;
+	font-weight: bold;
+}
+
+
+#report-student-assessment-report thead tr .headingLabel{
+	font-weight: bold;
+
+}
+table#report-student-assessment-report th{
+	background: #f8fafb;
+}
+
+
+.headerLinksContainer .titleContainer{
+	margin: 5px auto;
+  	line-height: 33px;
+}
+
+.studentAssessmentBodyBlock .displayCollectionIcons {
+	display: table;
+	margin: 20px 20px 0px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	overflow: hidden;
+}
+
+.studentAssessmentBodyBlock .displayCollectionIcons .element {
+	display: table-cell;
+	padding: 19px 32px;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.studentAssessmentBodyBlock .displayCollectionIcons .element:last-child {
+	border-right: none;
+}
+.studentAssessmentBodyBlock .displayCollectionIcons .element.active {
+	background: #85b9df none repeat scroll 0 0;
+	color: #fff;
+}
+.alignCenterAndBackground {
+	background-color: inherit !important;
+	text-align: center;
+	width: auto;
+}
+

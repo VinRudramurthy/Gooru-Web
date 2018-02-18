@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,18 +23,29 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.ednovo.gooru.client.mvp.classpages.event;
 
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.mvp.shelf.event.RefreshType;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
 
 import com.google.gwt.event.shared.GwtEvent;
 
 /**
- * @author Classpages Team
- * 
+ *
+ * @fileName : RefreshClasspageResourceItemListEvent.java
+ *
+ * @description :
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 07-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class RefreshClasspageResourceItemListEvent extends GwtEvent<RefreshClasspageResourceItemListHandler> {
 
@@ -48,7 +59,7 @@ public class RefreshClasspageResourceItemListEvent extends GwtEvent<RefreshClass
 	 * Class constructor , assign collection object and refresh type
 	 */
 	public RefreshClasspageResourceItemListEvent(CollectionDo collection, RefreshType refreshType) {
-		
+
 		this.collection = collection;
 		this.refreshType = refreshType;
 	}
@@ -60,7 +71,7 @@ public class RefreshClasspageResourceItemListEvent extends GwtEvent<RefreshClass
 
 	@Override
 	protected void dispatch(RefreshClasspageResourceItemListHandler handler) {
-		
+
 		handler.refreshClasspageResourceItemList(collection, refreshType);
 	}
 

@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -24,10 +24,13 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.share;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 import org.ednovo.gooru.client.mvp.socialshare.SocialShareView;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.ClientConstants;
 import org.ednovo.gooru.shared.util.ResourceImageUtil;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -41,7 +44,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class SocialShareWidget extends Composite implements MessageProperties {
+public abstract class SocialShareWidget extends Composite implements ClientConstants{
 
 	private static SocialShareWidgetUiBinder uiBinder = GWT
 			.create(SocialShareWidgetUiBinder.class);
@@ -49,35 +52,47 @@ public abstract class SocialShareWidget extends Composite implements MessageProp
 	interface SocialShareWidgetUiBinder extends
 			UiBinder<Widget, SocialShareWidget> {
 	}
-	
+
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+
 	@UiField Button fbButton,twitterButton,emailButton;
 	@UiField Image resourceHiddenImage;
-	
+
 	private String resourceDescription=null,resourceThumbnail=null;
-	
+
 	private String category="";
-	
+
 	private CollectionItemDo collectionItemDo;
 
 	public SocialShareWidget(String resourceDescription,String resourceThumbnail,String category) {
 		initWidget(uiBinder.createAndBindUi(this));
-		fbButton.setText(GL0646);
-		twitterButton.setText(GL0647);
-		emailButton.setText(GL0212);
+		fbButton.setText(i18n.GL0646());
+		fbButton.getElement().setId("btnFbButton");
+		fbButton.getElement().setAttribute("alt",i18n.GL0646());
+		fbButton.getElement().setAttribute("title",i18n.GL0646());
+
+		twitterButton.setText(i18n.GL0647());
+		twitterButton.getElement().setId("btnTwitterButton");
+		twitterButton.getElement().setAttribute("alt",i18n.GL0647());
+		twitterButton.getElement().setAttribute("title",i18n.GL0647());
+
+		emailButton.setText(i18n.GL0212());
+		emailButton.getElement().setId("btnEmailButton");
+		emailButton.getElement().setAttribute("alt",i18n.GL0212());
+		emailButton.getElement().setAttribute("title",i18n.GL0212());
+		resourceHiddenImage.getElement().setId("imgResourceHiddenImage");
 		this.resourceDescription=resourceDescription;
 		this.resourceThumbnail=resourceThumbnail;
 		this.category=category;
-		if(category.equals("collection")){
-			//setThumbnaiUrl();
+		if(COLLECTION.equals(category)){
 		}
 	}
 	public SocialShareWidget(String resourceDescription,String resourceThumbnail,String category,CollectionItemDo collectionItemDo){
 		this(resourceDescription,resourceThumbnail,collectionItemDo.getResource().getCategory());
 		this.collectionItemDo=collectionItemDo;
-		//setThumbnaiUrl();
 	}
 	public String getResourceDescription(){
-		if(resourceDescription!=null&&!resourceDescription.equals("")&&!resourceDescription.equals("null")){
+		if(!StringUtil.isEmpty(resourceDescription)&&!resourceDescription.equals("null")){
 			return this.resourceDescription;
 		}else{
 			return "";
@@ -85,21 +100,18 @@ public abstract class SocialShareWidget extends Composite implements MessageProp
 	}
 	@Override
 	public void onLoad(){
-		if(category.equals("collection")){
+		if(COLLECTION.equals(category)){
 			resourceHiddenImage.setUrl(resourceThumbnail);
 		}else{
-			if(collectionItemDo.getResource().getResourceType().getName().equalsIgnoreCase("assessment-question")){
+			if(ASSESSMENT_QUESTION.equalsIgnoreCase(collectionItemDo.getResource().getResourceType().getName())){
 				resourceThumbnail=getQuestionImage();
 				resourceHiddenImage.setUrl(resourceThumbnail);
-				System.out.println("resourceThumbnail==>"+resourceThumbnail);
-			}else if(collectionItemDo.getResource().getResourceType().getName().equalsIgnoreCase("video/youtube")){
+			}else if(VIDEO_YOUTUBE.equalsIgnoreCase(collectionItemDo.getResource().getResourceType().getName())){
 				resourceThumbnail=ResourceImageUtil.youtubeImageLink(ResourceImageUtil.getYoutubeVideoId(collectionItemDo.getResource().getUrl()),Window.Location.getProtocol());
 				resourceHiddenImage.setUrl(resourceThumbnail);
-				System.out.println("resourceThumbnail==>"+resourceThumbnail);
 			}else{
-				resourceThumbnail=collectionItemDo.getResource().getThumbnails().getUrl();
+				resourceThumbnail=collectionItemDo.getResource().getThumbnails() != null ? collectionItemDo.getResource().getThumbnails().getUrl() : "";
 				resourceHiddenImage.setUrl(resourceThumbnail);
-				System.out.println("resourceThumbnail==>"+resourceThumbnail);
 			}
 		}
 	}
@@ -108,20 +120,20 @@ public abstract class SocialShareWidget extends Composite implements MessageProp
 		String assetName="";
 		try{
 			if(collectionItemDo.getResource().getAssets()!=null&&collectionItemDo.getResource().getAssets().size()>0){
-				assetName=collectionItemDo.getResource().getAssets().get(0).getAsset().getName();
+				assetName=collectionItemDo.getResource().getAssets().get(0).getAsset()!=null?(collectionItemDo.getResource().getAssets().get(0).getAsset().getName()!=null?collectionItemDo.getResource().getAssets().get(0).getAsset().getName():""):"";
 				thumbnailImage=collectionItemDo.getResource().getAssetURI()+collectionItemDo.getResource().getFolder()+assetName;
-			}else{
-				thumbnailImage=collectionItemDo.getResource().getThumbnails().getUrl();
+			}else if(collectionItemDo.getResource() != null && collectionItemDo.getResource().getThumbnails() != null && collectionItemDo.getResource().getThumbnails().getUrl() != null){
+				thumbnailImage=collectionItemDo.getResource().getThumbnails() != null ? collectionItemDo.getResource().getThumbnails().getUrl() : "";
 			}
 		}catch(Exception e){
-			
+			AppClientFactory.printSevereLogger("SocialShareWidget : getQuestionImage : "+e.getMessage());
 		}
 		return thumbnailImage!=null?thumbnailImage:"";
 	}
 	public String getThumbnailUrl(){
 		return resourceThumbnail;
 	}
-	
+
 	@UiHandler("fbButton")
 	public void onClickFbButton(ClickEvent clickEvent) {
 		onFacebook();
@@ -131,39 +143,41 @@ public abstract class SocialShareWidget extends Composite implements MessageProp
 	public void onClickTwitterButton(ClickEvent clickEvent) {
 		onTwitter();
 	}
-	
+
 	@UiHandler("emailButton")
 	public void onClickEmailButton(ClickEvent clickEvent) {
 		onEmail();
 	}
-	
+
 	@UiHandler("resourceHiddenImage")
 	public void setDefaultThumnialUrl(ErrorEvent event){
-		if (category.equalsIgnoreCase("collection")) {
+		if (COLLECTION.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_IMAGE;
-		} else if (category.equalsIgnoreCase("video")) {
+		} else if (VIDEO.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_VIMAGE;
-		} else if (category.equalsIgnoreCase("question")) {
+		} else if (QUESTION.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_QIMAGE;
-		} else if (category.equalsIgnoreCase("interactive")) {
+		} else if (INTERACTIVE.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_IIMAGE;
-		} else if (category.equalsIgnoreCase("website")||category.equalsIgnoreCase("exam")||category.equalsIgnoreCase("webpage")) {
+		} else if (WEBSITE.equalsIgnoreCase(category)||EXAM.equalsIgnoreCase(category)||WEBPAGE.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_WIMAGE;
-		} else if (category.equalsIgnoreCase("slide")||category.equalsIgnoreCase("image")){
+		} else if (SLIDE.equalsIgnoreCase(category)||IMAGE.equalsIgnoreCase(category)){
 			resourceThumbnail=SocialShareView.DEFULT_ITYPEIMAGE;
-		} else if (category.equalsIgnoreCase("textbook")||category.equalsIgnoreCase("handout")||category.equalsIgnoreCase("lesson")||category.equalsIgnoreCase("text")) {
+		} else if (TEXTBOOK.equalsIgnoreCase(category)||HANDOUT.equalsIgnoreCase(category)||LESSON.equalsIgnoreCase(category)||TEXT.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_TEXTIMAGE;
-		} else if (category.equalsIgnoreCase("audio")) {
+		} else if (AUDIO.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_AIMAGE;
-		} else if (category.equalsIgnoreCase("other")) {
+		} else if (OTHER.equalsIgnoreCase(category)) {
 			resourceThumbnail=SocialShareView.DEFULT_OIMAGE;
 		}
-		resourceHiddenImage.setUrl(resourceThumbnail);
+		if(!resourceThumbnail.isEmpty()){
+			resourceHiddenImage.setUrl(resourceThumbnail);
+		}
 		resourceThumbnail=resourceHiddenImage.getUrl();
 	}
 	public abstract void onFacebook();
 
 	public abstract void onTwitter();
-	
+
 	public abstract void onEmail();
 }

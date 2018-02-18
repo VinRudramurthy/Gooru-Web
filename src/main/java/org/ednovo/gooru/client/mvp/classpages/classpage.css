@@ -170,34 +170,6 @@ float: left;
 	color: #515151;
 	margin-bottom: 10px;
 }
-
-.myClassPageClickingArrowImage {
-	float: left;
-	background: url(../images/Classpage/pointing-arrow.png);
-	width: 45px;
-	height: 67px;
-	clear: both;
-	margin-left: 66px;
-}
-
-.myClassPageCloseBtn {
-	float: right;
-	background: url(../images/Classpage/content-close-btn-nornal.png);
-	width: 22px;
-	height: 22px;
-	cursor: pointer;
-	margin: 4px 4px 0px 0px;
-}
-
-.myClassPageCloseBtn:HOVER {
-	float: right;
-	background: url(../images/Classpage/content-close-btn.png);
-	width: 16px;
-	height: 16px;
-	cursor: pointer;
-	margin: 6px 9px 0px 0px;
-}
-
 .myClassPageCreateClasspageContainer {
 	float: left;
 	width: 160px;

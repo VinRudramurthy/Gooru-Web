@@ -28,12 +28,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.client.SimpleAsyncCallback;
 import org.ednovo.gooru.client.mvp.profilepage.event.RefreshProfileListEvent;
 import org.ednovo.gooru.client.mvp.profilepage.event.RequestCollectionOpenEvent;
 import org.ednovo.gooru.client.mvp.profilepage.event.RequestFolderOpenEvent;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -41,7 +42,6 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
@@ -107,11 +107,20 @@ public class ProfilePageCollectionFolder extends FocusPanel implements ClickHand
 		titleFocPanel.getElement().getStyle().setPaddingLeft(15, Unit.PX);
 		titleFocPanel.setStyleName(res.css().foldersLi());
 		wrapperFocPanel.addClickHandler(this);
+		titleFocPanel.getElement().setId("focuspnlTitleFocPanel");
+		folderIcon.getElement().setId("fpnlFolderIcon");
+		collectionIcon.getElement().setId("fpnlCollectionIcon");
+		titleLbl.getElement().setId("htmlTitleLbl");
+		disPanel.getElement().setId("discpnlDisPanel");
+		wrapperFocPanel.getElement().setId("focuspnlWrapperFocPanel");
+		contentVerPanel.getElement().setId("vpnlContentVerPanel");
 	}
 
 	public void setData(CollectionItemDo collectionItemDo) {
 		this.collectionItemDo = collectionItemDo;
 		titleLbl.setHTML(this.collectionItemDo.getResource().getTitle());
+		titleLbl.getElement().setAttribute("alt",this.collectionItemDo.getResource().getTitle());
+		titleLbl.getElement().setAttribute("title",this.collectionItemDo.getResource().getTitle());
 		titleLbl.getElement().getStyle().setWidth(280, Unit.PX);
 		if (this.collectionItemDo.getResource().getResourceType().getName().equalsIgnoreCase("folder")) {
 			collectionIcon.removeFromParent();
@@ -169,11 +178,7 @@ public class ProfilePageCollectionFolder extends FocusPanel implements ClickHand
 	}
 
 	public void setInnerFolderContent() {
-		AppClientFactory.getInjector().getProfilePageService().getFolders(this.collectionItemDo.getResource().getGooruOid(), new AsyncCallback<List<CollectionItemDo>>() {
-			@Override
-			public void onFailure(Throwable caught) {
-
-			}
+		AppClientFactory.getInjector().getProfilePageService().getFolders(this.collectionItemDo.getResource().getGooruOid(), new SimpleAsyncCallback<List<CollectionItemDo>>() {
 			@Override
 			public void onSuccess(List<CollectionItemDo> collectionItems) {
 				contentVerPanel.clear();

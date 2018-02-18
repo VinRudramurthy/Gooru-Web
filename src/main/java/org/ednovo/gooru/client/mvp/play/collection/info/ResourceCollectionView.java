@@ -26,12 +26,13 @@ package org.ednovo.gooru.client.mvp.play.collection.info;
 
 import java.util.List;
 
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.search.ResourceSearchResultDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.uc.PlayerBundle;
 import org.ednovo.gooru.client.uc.ToolTipPopUp;
-import org.ednovo.gooru.shared.model.search.ResourceSearchResultDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
@@ -44,7 +45,6 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -53,7 +53,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ResourceCollectionView extends Composite implements MessageProperties{
+public class ResourceCollectionView extends Composite{
 	
 	@UiField HTMLPanel imageContainer;
 	
@@ -74,38 +74,50 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 	private static ResourceCollectionViewUiBinder uiBinder = GWT.create(ResourceCollectionViewUiBinder.class);
 
 	interface ResourceCollectionViewUiBinder extends UiBinder<Widget, ResourceCollectionView> {
-		
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 	
 	public ResourceCollectionView(){
 		initWidget(uiBinder.createAndBindUi(this));
-		createdByText.setText(GL0622);
+		createdByText.setText(i18n.GL0622());
+		createdByText.getElement().setAttribute("alt",i18n.GL0622());
+		createdByText.getElement().setAttribute("title",i18n.GL0622());
+		setId();
 	}
-	
+	public void setId(){
+		createdByText.getElement().setId("lblCreatedByText");
+		imageContainer.getElement().setId("pnlImageContainer");
+		collectionThumbnail.getElement().setId("imgCollectionThumbnail");
+		collectionTitle.getElement().setId("lnkCollectionTitle");
+		userName.getElement().setId("lblUserName");
+		metadataContainer.getElement().setId("pnlMetadataContainer");
+	}
 	@UiConstructor
 	public ResourceCollectionView(final ResourceSearchResultDo resourceSearchResultDo){
 		initWidget(uiBinder.createAndBindUi(this));
-		createdByText.setText(GL0622);
+		createdByText.setText(i18n.GL0622());
+		createdByText.getElement().setAttribute("alt",i18n.GL0622());
+		createdByText.getElement().setAttribute("title",i18n.GL0622());
 		this.resourceSearchResultDo=resourceSearchResultDo;
-		setCollectionTitle(resourceSearchResultDo.getResourceTitle());
+		setCollectionTitle(resourceSearchResultDo.getResourceTitle()!=null?resourceSearchResultDo.getResourceTitle():"");
 		//This is used for to enable partner names hyperlinks (FTE, Lessonopoly, and Autodesk)
-		
-		String ownerUserName = resourceSearchResultDo.getOwner().getUsername();
-		
-		if(StringUtil.isPartnerUser(ownerUserName)) {
-			AppClientFactory.getInjector().getPlayerAppService().getUserProfileVisibility(resourceSearchResultDo.getGooruOid(), new SimpleAsyncCallback<Boolean>() {
+		setId();
+			AppClientFactory.getInjector().getPlayerAppService().getUserProfileVisibility(resourceSearchResultDo.getGooruUId(), new SimpleAsyncCallback<Boolean>() {
 				@Override
 				public void onSuccess(Boolean result) {
 					if(result){
-						setUserNameDisplay(resourceSearchResultDo.getOwner().getUsername());
+						setUserNameDisplay((resourceSearchResultDo.getOwner()!=null&&resourceSearchResultDo.getOwner().getUsername()!=null)?resourceSearchResultDo.getOwner().getUsername():"");
 						setUserProfileName(resourceSearchResultDo.getGooruUId());
 					}else{
-						setUserNameDisplay(resourceSearchResultDo.getOwner().getUsername());
+						setUserNameDisplay((resourceSearchResultDo.getOwner()!=null&&resourceSearchResultDo.getOwner().getUsername()!=null)?resourceSearchResultDo.getOwner().getUsername():"");
 					}
 				}
 			});
-		}else{
-			setUserNameDisplay(resourceSearchResultDo.getOwner().getUsername());
+		
+		if(resourceSearchResultDo.getOwner().isProfileUserVisibility()){
+			setUserNameDisplay((resourceSearchResultDo.getOwner()!=null&&resourceSearchResultDo.getOwner().getUsername()!=null)?resourceSearchResultDo.getOwner().getUsername():"");
+			setUserProfileName(resourceSearchResultDo.getGooruUId());
 		}
 		setCollectionMetadata();
 		setCollectionLink();
@@ -120,16 +132,30 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 	}
 	
 	public void setCollectionMetadata(){
+		int resourceCount = resourceSearchResultDo.getResourceCount();
+		int questionCount = resourceSearchResultDo.getQuestionCount();
 		metadataContainer.clear();
 		metadataContainer.add(getCourseNames());
 		metadataContainer.add(getViewsLabel());
-		metadataContainer.add(getSeparator());
-		metadataContainer.add(setResourceCount());
+		if(resourceCount>0 || (resourceCount==0&&questionCount==0)){
+			metadataContainer.add(getSeparator());
+			metadataContainer.add(setResourceCount(resourceCount));
+		}
+		if(questionCount>0) {
+			metadataContainer.add(getSeparator());
+			metadataContainer.add(setQuestionCount(questionCount));
+		}
 	}
+	
 	public void setUserProfileName(String gooruUid) {
 		Anchor anchor=new Anchor();
-		String userNameText=userName.getText();
-		anchor.setHref("#"+userNameText);
+		String userNameText=resourceSearchResultDo.getOwner().getUsername();
+		if(StringUtil.isPartnerUser(userNameText)){
+			anchor.setHref("#"+userNameText);
+		}else{
+            String token= "#"+PlaceTokens.PROFILE_PAGE+"&id="+gooruUid;
+			anchor.setHref(token);
+		}
 		anchor.setText(userNameText);
 		anchor.setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().setUserText());
 		anchor.setTarget("_blank");
@@ -158,16 +184,17 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 	
 	private Widget getToolTipwidgets(List<String> coursesList) {
 		FlowPanel toolTipwidgets = new FlowPanel();
-		for(int i=1;i<coursesList.size();i++){
-			Label courseLabel = new Label(coursesList.get(i));
-			toolTipwidgets.add(courseLabel);
+		if(coursesList!=null && coursesList.size()>0){
+			for(int i=1;i<coursesList.size();i++){
+				Label courseLabel = new Label(coursesList.get(i));
+				toolTipwidgets.add(courseLabel);
+			}
 		}
 		return toolTipwidgets;
 	}
 
-	
 	private Label getViewsLabel(){
-		String views=resourceSearchResultDo.getTotalViews()==1?resourceSearchResultDo.getTotalViews()+" "+GL1428:resourceSearchResultDo.getTotalViews()+" "+GL1099;
+		String views=resourceSearchResultDo.getTotalViews()==1?resourceSearchResultDo.getTotalViews()+" "+i18n.GL1428():resourceSearchResultDo.getTotalViews()+" "+i18n.GL1099();
 		Label viewsLabel=new Label(views);
 		viewsLabel.setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().getCourseTitle());
 		return viewsLabel;
@@ -179,21 +206,32 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 		return separator;
 	}
 	
-	private Label setResourceCount(){
-		String resourcesCount=resourceSearchResultDo.getNoOfResources()==1?resourceSearchResultDo.getNoOfResources()+" "+GL1110:resourceSearchResultDo.getNoOfResources()+" "+GL0174;
+	private Label setResourceCount(int count){
+		String resourcesCount=count==1?count+" "+i18n.GL1110():count+" "+i18n.GL0174();
 		Label resourceCountLabel=new Label(resourcesCount);
+		resourceCountLabel.setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().getResourceCount());
+		return resourceCountLabel;
+	}
+
+	private Label setQuestionCount(int count){
+		String questionCount=count==1?count+" "+i18n.GL0308():count+" "+i18n.GL1042();
+		Label resourceCountLabel=new Label(questionCount);
 		resourceCountLabel.setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().getResourceCount());
 		return resourceCountLabel;
 	}
 
 	@UiHandler("collectionThumbnail")
 	public void setDefaultCollectionThumbnail(ErrorEvent event){
-			collectionThumbnail.setUrl("images/default-collection-image-160x120.png");
+		collectionThumbnail.setUrl("images/default-collection-image-160x120.png");
 	}
 	
 	@Override
 	public void onLoad(){
-		collectionThumbnail.setUrl(resourceSearchResultDo.getUrl());
+		if(resourceSearchResultDo.getUrl()==null){
+			collectionThumbnail.setUrl("images/default-collection-image-160x120.png");
+		}else{
+			collectionThumbnail.setUrl(resourceSearchResultDo.getUrl());
+		}
 	}
 	
 	public void setCollectionLink(){
@@ -219,17 +257,14 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 	public class MouseOverShowToolTip implements MouseOverHandler
 	{
 		Widget widget;
-		
 		public MouseOverShowToolTip(Widget coursewidget) {
 			this.widget = coursewidget;
 		}
-
 		@Override
 		public void onMouseOver(MouseOverEvent event) {
 			toolTip = new ToolTipPopUp(widget,(event.getRelativeElement().getAbsoluteLeft()-45),(event.getRelativeElement().getAbsoluteTop()+22)); 
 			toolTip.show();
 		}
-		
 	}
 	
 	public class MouseOutHideToolTip implements MouseOutHandler
@@ -238,7 +273,5 @@ public class ResourceCollectionView extends Composite implements MessageProperti
 		public void onMouseOut(MouseOutEvent event) {
 			toolTip.hide();
 		}
-		
 	}
-	
 }

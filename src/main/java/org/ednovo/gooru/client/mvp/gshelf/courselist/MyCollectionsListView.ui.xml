@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:event="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="courseListContainer">
+		<g:HTMLPanel styleName="courseHeader" ui:field="pnlH2TitleContainer">
+			<panel:H2Panel styleName="inlineBlock" ui:field="h2Title" />
+			<g:HTMLPanel styleName="inlineBlock" ui:field="collectionLevelPnl">
+			    <g:Button styleName="primary createButton" ui:field="createCollectionBtn" text="{i18n.GL1451}" title="{i18n.GL1451}" />
+			    <g:Button styleName="primary createButton" ui:field="createAssessmentBtn" text="{i18n.GL3024}" title="{i18n.GL3024}"  />
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="courseCreateContainer" ui:field="pnlCreateContainer">
+			<g:Label ui:field="lblTitle" styleName="lblTitle"/>
+			<g:Button styleName="primary createButton" ui:field="btnCreate" />
+			<g:Button styleName="primary createButton" ui:field="btnCreateQuestion" />
+			<g:Button styleName="primary createButton" ui:field="btnCreateResource" />
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="listScrollPanel" styleName="coursesList">
+			<g:HTMLPanel ui:field="pnlMainButtonsContainer">
+				<g:VerticalPanel styleName="tableDiv" ui:field="pnlCourseList" />
+				<g:HTMLPanel ui:field="pnlAddContainer" styleName="addCourse">
+					<event:HTMLEventPanel styleName="courseTextAdd" ui:field="createPanel">
+						<g:InlineLabel styleName="courseTextAdd" text="{i18n.GL_SPL_PLUS} {i18n.GL1335}"></g:InlineLabel>
+						<g:Label styleName="courseTextAdd" ui:field="lblAddNew" />
+					</event:HTMLEventPanel>
+					<g:Label styleName="courseTextAdd" ui:field="lblLimitReached" />
+					<g:HTMLPanel ui:field="pnlCreate" styleName="pnlCreate">
+					    <g:InlineLabel styleName="pnlCreate" text="{i18n.GL_SPL_PLUS} {i18n.GL1335}"></g:InlineLabel>
+						<g:Anchor ui:field="lblAddNewForResource" styleName="courseTextAdd" />
+						or
+						<g:Anchor ui:field="lblAddNewForQuestion" styleName="courseTextAdd" />
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	<g:HTMLPanel ui:field="emptyContainerDiv"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

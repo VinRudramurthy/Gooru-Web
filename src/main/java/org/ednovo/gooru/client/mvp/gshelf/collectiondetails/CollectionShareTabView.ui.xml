@@ -1,0 +1,100 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	 <g:HTMLPanel styleName="shareColContainer">
+            <div class="shareThisCollection">
+              <h5><g:Label ui:field="shareLbl"></g:Label></h5>
+              <p>
+                <g:TextArea styleName="form-control" ui:field="shareTextArea" readOnly="true"></g:TextArea>
+              </p>
+              <div class="linkFormat"><g:Anchor ui:field="bitlyLink">Bit.ly</g:Anchor> <span class="devider">|</span> <g:Anchor ui:field="embedLink">Embed</g:Anchor></div>
+            </div>
+            <div class="collectionVisibility no-gutter">
+              <h5><g:Label ui:field="visiblityLbl"></g:Label></h5>
+              <panel:HTMLEventPanel styleName="col-md-4 col-xs-4 col-sm-4" ui:field="publicShareFloPanel"> <a>
+                <div class="visibilityHeader"><img src="images/signup/Public_Selected.png"></img> Public</div>
+                <p>Allows others to find and learn from your collection</p>
+                </a> </panel:HTMLEventPanel>
+              <panel:HTMLEventPanel styleName="col-md-4 col-xs-4 col-sm-4" ui:field="linkShareFloPanel"> <a>
+                <div class="visibilityHeader"><img src="images/sharableIcon.png"/> Sharable</div>
+                <p>Allows you to share with only those who have a link</p>
+                </a> </panel:HTMLEventPanel>
+              <panel:HTMLEventPanel styleName="col-md-4 col-xs-4 col-sm-4" ui:field="privateShareFloPanel"> <a>
+                <div class="visibilityHeader"><img src="images/signup/Private_Selected.png"/> Private</div>
+                <p>Only you can see this collection</p>
+                </a> </panel:HTMLEventPanel>
+              <div class="clearfix"></div>
+              <p>
+              <!--   <button class="primary" type="submit">Publish</button> -->
+                <g:HTMLPanel ui:field="rbPublicPanel">
+			    <g:Button styleName="primary" ui:field="rbPublic" text="{i18n.GL1921}"/>
+			    <g:Label ui:field="lblPublishPending" text="{i18n.GL1924}"/>
+				</g:HTMLPanel>
+              </p>
+              <g:HTMLPanel styleName="publishPanel" ui:field="publishedPanel">
+			    <g:Image url="images/right-mark.png" styleName="inlineBlock"></g:Image>
+			    <g:Label styleName="inlineBlock" ui:field="lblPublish" text="{i18n.GL1942}">Published</g:Label>
+		   	</g:HTMLPanel>
+            </div>
+            <g:HTMLPanel ui:field="collaboratorPanel"></g:HTMLPanel>
+            <!-- <div class="addCollaborators">
+              <h5>Add Collaborators</h5>
+              <p>Teaching is more fun with friends! Use this page to add up to 20 collaborators. Anyone added as a collaborator will have permission to edit this collection.</p>
+              <p>(Note: Only the original creator of this collection can add collaborators or delete this collection)</p>
+              <div class="inviteBox">
+                <input type="text" value="" placeholder="Seperate email address with a comma or space" class="form-control" maxlength="3"></input>
+                <button class="primary" type="submit">Invite</button>
+              </div>
+            </div>
+            <div class="currentCollaborators">
+              <div class="tableDiv">
+                <div class="tablerow">
+                  <div class="tablecell collaboratorsImage"> <img src="images/user.png"/> </div>
+                  <div class="tablecell collaboratorsName">
+                    <p>Ksanchez</p>
+                  </div>
+                  <div class="tablecell collaboratorsID">
+                    <p>ksanchez@cogillith.gov</p>
+                  </div>
+                </div>
+                <div class="tablerow">
+                  <div class="tablecell collaboratorsImage"> <img src="images/user.png"/> </div>
+                  <div class="tablecell collaboratorsName">
+                    <p>Ksanchez</p>
+                  </div>
+                  <div class="tablecell collaboratorsID">
+                    <p>ksanchez@cogillith.gov</p>
+                  </div>
+                </div>
+                <div class="tablerow">
+                  <div class="tablecell collaboratorsImage"> <img src="images/user.png"/> </div>
+                  <div class="tablecell collaboratorsName">
+                    <p>Ksanchez</p>
+                  </div>
+                  <div class="tablecell collaboratorsID">
+                    <p>ksanchez@cogillith.gov</p>
+                  </div>
+                </div>
+                <div class="tablerow">
+                  <div class="tablecell collaboratorsImage"> <img src="images/user.png"/> </div>
+                  <div class="tablecell collaboratorsName">
+                    <p>Ksanchez</p>
+                  </div>
+                  <div class="tablecell collaboratorsID">
+                    <p>ksanchez@cogillith.gov</p>
+                  </div>
+                </div>
+                <div class="tablerow">
+                  <div class="tablecell collaboratorsImage"> <img src="images/user.png"/> </div>
+                  <div class="tablecell collaboratorsName">
+                    <p>Ksanchez</p>
+                  </div>
+                  <div class="tablecell collaboratorsID">
+                    <p>ksanchez@cogillith.gov</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </g:HTMLPanel>
+</ui:UiBinder>

@@ -30,8 +30,19 @@ package org.ednovo.gooru.client.event;
 import com.google.gwt.event.shared.EventHandler;
 
 /**
- * @author Search Team
  * 
+ * @fileName : InvokeLoginHandler.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public interface InvokeLoginHandler extends EventHandler {
 

@@ -33,7 +33,7 @@
 	background: url(images/sprites.png) no-repeat;
 }
 .addResourceFormRightInnerMainDiv {
-	padding: 0px 0px 0px 10px;
+	padding: 0px 20px 0px 10px;
 }
 .addResourceArrowleftContainer {
 	float: right;
@@ -112,7 +112,7 @@ user agent stylesheetdiv {
 	/* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
 	box-shadow: inset 0px 0px 0px rgba(0,0,0,0.2);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ffffffff,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endColorstr=#ffffffff, GradientType=0);
+
 }
 .addResourceUrlbg:hover {
 	/* Firefox v3.6+ */
@@ -131,7 +131,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endCo
 	/* Firefox v4.0+ , Safari v5.1+ , Chrome v10.0+, IE v10+ and by Opera v10.5+ */
 	box-shadow: inset -2px 1px 4px rgba(0,0,0,0.2);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ffffffff,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endColorstr=#ffffffff, GradientType=0);
+
 }
 .addResourceUrlbgTitle {
 	font-family: Arial, Helvetica, sans-serif;
@@ -142,14 +142,14 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endCo
 	padding: 8px 0px 5px 10px;
 }
 .addResourceFormRightOuterDiv {
-	float: left;
-	width: 72.5%;
+	/* float: left;
+	width: 75%; */
 	padding: 0px 0px 0px 10px;
 	border-left: 1px solid rgb(221,221,221);
 	background-color:white;
 	overflow-y: auto !important;
     overflow-x: hidden !important;
-	max-height: 567px;
+	max-height: 500px;
 	min-height:300px;
 }
 .addResourceEditFormOuterDiv {
@@ -164,10 +164,19 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endCo
 }
 .addResourceFormTitle {
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: rgb(81,81,81);
+	text-align: left;
+	display: inline-block;
+	padding: 0px 0px 7px 0px;
+}
+.addResourceDepthOfKnoweldgeFormTitle{
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: rgb(81,81,81);
 	text-align: left;
 	padding: 0px 0px 2px 0px;
+	display: inline-block;
 }
 .addResourceFormTitleChoiceOuterdiv {
 	margin: -10px 0px 20px 0px;
@@ -177,13 +186,12 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endCo
 }
 .addResourceFormTitleChoiceContainer {
 margin: 20px 0px 0px 0px;
-float: left;
 width: 100%;
 }
 .addResourceFormTitleChoice {
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	color: rgb(81,81,81);
 	text-align: left;
 }
@@ -194,7 +202,7 @@ width: 100%;
 	text-align: left;
 	position: static;
 	float: right;
-	margin-right: 22px;
+	margin-left: 160px;
 }
 .addResourceFormAnswerContainerOuter {
 	clear: both;
@@ -207,7 +215,7 @@ width: 100%;
 .addResourceFormAnswerContainer {
 	float: left;
 	width:100%;
-	margin: 20px 0px 0px 0px;
+	margin: 29px 0px 0px 0px;
 }
 .addResourceFormAnswerContainerAlign {
 	margin: 0px 0px 0px 0px;
@@ -234,12 +242,23 @@ width: 100%;
 }
 .addResourceFormAnswerInputControl {
 	float: left;
-	width: 75%;
+	width: 87%;
 	height: 30px;
 	border-color: rgb(221,221,221);
 	border-width: 1px;
 	border-style: solid;
 	position: relative;
+	box-sizing:content-box;
+}
+.addResourceMultipleAnswerInputControl {
+	float: left;
+	width: 80%;
+	height: 30px;
+	border-color: rgb(221,221,221);
+	border-width: 1px;
+	border-style: solid;
+	position: relative;
+	box-sizing:content-box;
 }
 .addResourceFormAnswerTextAlign {
 	font-size: 12px;
@@ -256,7 +275,7 @@ width: 100%;
 }
 .addResourceFormAnswerMarkbg {
 	float: right;
-	margin-right: 28px;
+	margin-right: 1%;
 	padding: 3px 0px 0px 3px;
 }
 .addResourceFormAnswerMarker {
@@ -295,7 +314,9 @@ width: 100%;
 	border-style: solid;
 	height: 85px!important;
 	min-height: 85px!important;
-	width:302px !important;
+	width:100%;
+	margin-top: 5px;
+	box-sizing:content-box;
 
 }
 .addResourceFormInputTextField {
@@ -344,8 +365,18 @@ width: 100%;
 	/* margin-right: 72px;
 	float: right;
 	width:230px; */
-	margin-right: 61px;
+	margin-right: 10%;
 	float: right;
+}
+.addResourceFormInputBottomTextAnswerChoice {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(250,176,58);
+	text-align: right;
+	/* margin-right: 72px;
+	float: right;
+	width:230px; */
+	margin-right: 61px;
 }
 .addResourceThumbImageContainer {
 	position: relative;
@@ -511,11 +542,11 @@ width: 100%;
 	margin: 4px 2px 2px 4px;
 }
 .addResourceButtonContainer {
-	float:left;
-	margin: 27px 0px 15px 105px;
+	text-align: right;
+	margin-top: 23px;
 }
 .addResourceOk {
-	float: left;
+	display: inline-block;
 }
 .addResourceAddTitle {
 
@@ -631,20 +662,33 @@ width: 100%;
 .addResourceFormInputBottomTextOuterdiv {
 	clear: both;
 }
+
+.addImageTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	float: left;
+	cursor: pointer;
+	color: #1076ba;
+	border: 1px solid #1076ba;
+	padding: 6px 12px;
+	margin: 11px 73px 0 0;
+	text-align: center;
+}
+
 .addResourceBottmTitle {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	float: right;
 	cursor: pointer;
 	color: rgb(16,118,186);
-	text-align: right;
+	text-align: left;
+	float:left;
 	padding: 0px 0px 0px 0px;
-	margin:11px 73px 0px 0px;
 }
 .addResourceBottmTitleAlign {
 }
 .addResourceThumbimgContainer {
 	width: 100%;
+	display: inline-block;
 }
 .addResourceThumbimgHeading {
 	font-family: Arial, Helvetica, sans-serif;
@@ -652,7 +696,8 @@ width: 100%;
 	line-height: 120%;
 	color: rgb(81,81,81);
 	text-align: left;
-	padding: 15px 0px 5px 0px;
+	padding: 0px 0px 5px 0px;
+	display: inline-block;
 }
 .addResourceThumbimg {
 	float: left;
@@ -696,7 +741,7 @@ width: 100%;
 	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
 	border-radius: 4px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd,endColorstr=#ff999999,GradientType=0)";
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffdddddd, endColorstr=#ff999999, GradientType=0);
+
 }
 
 /*image css*/
@@ -706,7 +751,7 @@ width: 100%;
 }
 .addResourceThumbimgHeading {
 font-family: Arial, Helvetica, sans-serif;
-font-size: 12px;
+font-size: 13px;
 line-height: 120%;
 color: rgb(81,81,81);
 text-align: left;
@@ -746,10 +791,12 @@ width: 114px;
 /** Search Popup CSS **/
 .addResourceFormOuterDiv {
 	background-color: white;
-	width: 378px;
-	float: left;
 	padding: 15px 10px;
 	border-left: 1px solid rgb(221,221,221);
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	max-height: 567px;
+	min-height: 300px;
 }
 
 .addSearchResourceFormContainer {
@@ -924,8 +971,17 @@ width: 114px;
 .suggestedResources {
 	margin: 25px 0px;
 	overflow: hidden;
-	width: 390px;
+	/* width: 390px; */
+	border-bottom: none;
+	border-left: none;
+	border-style: solid;
+	border-color: #ddd;
+	border-left: none;
+	border-bottom: none;
+	padding-bottom: 10px;
+	padding-right: 8px;
 }
+
 .addResourceButtonGray{
 	height: 30px;
 	background: -webkit-linear-gradient(top, #bbb, #999);
@@ -951,7 +1007,7 @@ width: 114px;
 .questionTypeHeaderStyle{
 	margin-top: 10px;
 	font-family: Arial, sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: bold;
 	color: #515151;
 }
@@ -961,7 +1017,6 @@ width: 114px;
 	font-size: 12px;
 	font-style: italic;
 	color: #999;
-	width: 362px;
 }
 .tinyMceToolBarButton{
 	color: #1076BB;
@@ -987,7 +1042,8 @@ width: 114px;
 	background: #EEE;
 }
 .questionTextContainerStyle{
-	width:80%;
+	display: inline-block;
+	/* width:80%; */
 }
 
 .addSearchTitleText {
@@ -1024,33 +1080,133 @@ width: 114px;
 }
 .resourceRightsCheckBox
 {
-	float: left;
-	margin-left: -3px;
-	margin-top: 30px;	
+	display: inline-block;
+}
+.resourceRightsCheckBox input[type="checkbox"]{
+margin: 1px 0;
+vertical-align: middle;
 }
 .resourceRightsContainer {
-	margin-left: 45px;
-	width: 100%;
-	margin-top:17px;
+	text-align: left;
+	margin-top:32px;
 	display: inline-block;
 }
 .ownResourceFormDeclarationText {
-	float: left;
-	margin-top: 29px;
+	display: inline-block;
 	font-size: 13px;
 }
-.ownResourceFormRightsContent {
-	position: relative;
+
+.yesNoTextStyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	text-align: center;
+	position: static;
 	float: left;
-	width: 20px;
-	height: 20px;
+	margin-left: 14px;
+}
+.charLimitStyle{
+	display: inline-block;
+	color: #999;
+	float: right;
+  	margin-top: 5px;
+}
+.charLimitExplanationStyle{
+	color: #999;
+	float: right;
+  	margin-top: 5px;
+}
+.hintsErrorValidation{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgb(250,176,58);
+	margin-top: 5px;
+	float: right;
+}
+.marginDivBlock {
+	display: inline-block;
+}
+.advancedOptionsTabs {
+	color: #1076B8;
+	padding: 5px 18px;
+	border: 1px solid #DDDDDD;
+	background: #fff url(../images/NewResourcePopup/sprite-new-resource.png) no-repeat -4px 2px;
+	display: inline-block;
+    margin-top: 10px;
+}
+.advancedOptionsTabs:hover {
+	border-color: #1076bb;
+}
+.advancedOptions {
+	float: left;
+	margin-bottom: 3px;
+}
+.eHeader{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#515151;
+	padding:0 0 0 18px;
+	/* margin-bottom:8px; */
+	background:#ffffff url(../images/NewResourcePopup/sprite-new-resourcenew.png) no-repeat -7px -70px;
+	height: 13px;
+	display: inline-block;
 	cursor: pointer;
-	margin: 27px 10px 0px 3px;
-	background: url(images/Classpage/sprite-classpage-type.png) no-repeat
-		left top;
-	background-position: 0px -46px;
+}
+.advancedOptionsTabActive {
+	background: #fff url(../images/NewResourcePopup/sprite-new-resource.png)
+		no-repeat -4px -24px;
+	position: relative;
+	padding: 5px 18px;
+    display: inline-block;
+    margin-top: 10px;
+	border: 1px solid #4c9645;
+	color: #4c9645;
+}
+.advancedOptionsTabActive:hover {
+	border-color: #4c9645;
+}
+.advancedOptionsContainer {
+	margin-top: 10px;
+}
+.advancedOptionsHeading {
+	text-align: left;
+	color: #999;
+	font-size: 11px;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 6px;
+}
+.addAdvancedHeaderTextContainer {
+	text-align: center;
+	position:relative;
+	color: #999;
+	font-size: 11px;
+	width: 100%;
+	display: inline-block;
+}
+.addAdvancedHeaderTextContainer > div {
+	padding: 6px 6px;
+	background: #fff;
+	display: inline-block;
+	position: relative;
+	z-index: 99;
 }
 
-.ownResourceFormRightsContent:hover {
-	cursor: pointer;
+.addAdvancedHeaderTextContainer:before{
+	position:absolute;
+	content:"";
+	height:1px;
+	background: #ddd;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 11px;
+}
+.addblockHeaderContainer {
+	display: inline-block;
+	width:100%;
+}
+
+.addResourceContainer{
+	float: right;
 }

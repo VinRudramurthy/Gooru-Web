@@ -1,0 +1,45 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui"
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys='com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator'
+	ui:generateLocales='default'>
+<ui:with type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.AddSetupAdvancedCBundle"
+		field="res"></ui:with>
+	<g:HTMLPanel>
+			<div class="{res.css.advancedOptionContainer}">
+				<g:HTMLPanel styleName="{res.css.setupHeader}" ui:field="setUpLabel"></g:HTMLPanel>
+		
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="educationUseAdvancedContainer">
+						<g:Anchor ui:field="educationUseAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+		
+						<g:HTMLPanel styleName="{res.css.setupBoxes}"  ui:field="momentsOfLearningAdvancedContainer">
+						<g:Anchor ui:field="momentsOfLearningAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+		
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="standardsAdvancedContainer">
+							<g:Anchor ui:field="standardsAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+						
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="centuryAdvancedContainer">
+							<g:Anchor ui:field="centuryAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+		
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="accessHazardAdvancedContainer">
+						<g:Anchor ui:field="accessHazardAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+		
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="mediaFeatureAdvancedContainer">
+						<g:Anchor ui:field="mediaFeatureAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+						
+						<g:HTMLPanel styleName="{res.css.setupBoxes}" ui:field="mobileFreindlyAdvancedContainer">
+						<g:Anchor ui:field="mobileFreindlyAdvancedPnl"></g:Anchor>
+						</g:HTMLPanel>
+		
+				</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,11 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+     xmlns:span="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src="" />
+	<span:HTMLEventPanel styleName="divcontainer" ui:field="contentPanel">
+		<g:HTMLPanel ui:field="borderLine">
+			<uc:H3Panel ui:field="statusCount"></uc:H3Panel>
+			<uc:PPanel ui:field="message"></uc:PPanel>
+		</g:HTMLPanel>
+	</span:HTMLEventPanel>
+</ui:UiBinder>

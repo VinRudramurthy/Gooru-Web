@@ -24,12 +24,14 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators.vc;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.mvp.shelf.collection.tab.collaborators.CollectionCollaboratorsCBundle;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Float;
+import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.dom.client.Style.Visibility;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -37,6 +39,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -45,7 +48,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author BLR Team
  * 
  */
-public abstract class SuccessPopupViewVc extends PopupPanel implements MessageProperties {
+public abstract class SuccessPopupViewVc extends PopupPanel {
  
 	
 	@UiField(provided = true)
@@ -54,7 +57,9 @@ public abstract class SuccessPopupViewVc extends PopupPanel implements MessagePr
 	@UiField
 	Button btnPositive;
 	
-	@UiField Label lblTitle, lblDescription;
+	@UiField Label lblTitle, lblDescription,tagImageForTagging;
+	
+	@UiField HTMLPanel imgSuccessIcon;
 	
 	@UiTemplate("SuccessPopupViewVc.ui.xml")
 	interface Binder extends UiBinder<Widget, SuccessPopupViewVc> {
@@ -72,11 +77,14 @@ public abstract class SuccessPopupViewVc extends PopupPanel implements MessagePr
 		collaborators.css().ensureInjected();
 		add(binder.createAndBindUi(this));
 		this.setGlassEnabled(true);
-
+		tagImageForTagging.getElement().getStyle().setVisibility(Visibility.HIDDEN);
 		Window.enableScrolling(false);
         AppClientFactory.fireEvent(new SetHeaderZIndexEvent(99, false));
                 
         setElementId();
+        lblTitle.getElement().getStyle().setFloat(Float.LEFT);
+        tagImageForTagging.getElement().getStyle().setLeft(5, Unit.PX);
+        tagImageForTagging.getElement().getStyle().setBottom(0, Unit.PX);
         
 		this.center();
 
@@ -101,6 +109,10 @@ public abstract class SuccessPopupViewVc extends PopupPanel implements MessagePr
 	
 	private void setElementId() {
 		btnPositive.getElement().setId("btnPositive");
+		lblTitle.getElement().setId("lblTitle");
+		tagImageForTagging.getElement().setId("lblTagImageForTagging");
+		imgSuccessIcon.getElement().setId("pnlImgSuccessIcon");
+		lblDescription.getElement().setId("lblDescription");
 	}
 
 	/* Setters */
@@ -125,6 +137,8 @@ public abstract class SuccessPopupViewVc extends PopupPanel implements MessagePr
 	 */
 	public void setPositiveButtonText(String text) {
 		btnPositive.setText(text);
+		btnPositive.getElement().setAttribute("alt",text);
+		btnPositive.getElement().setAttribute("title",text);
 	}
 	
 	/**
@@ -148,8 +162,12 @@ public abstract class SuccessPopupViewVc extends PopupPanel implements MessagePr
 	 */
 	public void setPopupTitle(String title) {
 		lblTitle.setText(title);
+		lblTitle.getElement().setAttribute("alt",title);
+		lblTitle.getElement().setAttribute("title",title);
 	}
-	
+	public void enableTaggingImage() {
+		tagImageForTagging.getElement().getStyle().setVisibility(Visibility.VISIBLE);
+	}
 	public void setDescText(String desc){
 		lblDescription.getElement().setInnerHTML(desc);
 	}

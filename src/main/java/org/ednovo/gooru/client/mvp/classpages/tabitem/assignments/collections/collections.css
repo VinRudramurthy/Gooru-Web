@@ -1,6 +1,6 @@
 .classpageContainer {
-	float:left;
-	width: 998px;
+	float:right;
+	width: 960px;
 	margin-bottom:20px;
 	background-color: rgb(255,255,255);
 	border-color: rgb(234,234,234);
@@ -30,7 +30,8 @@
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-top-left-radius: 4px;
 	-webkit-border-top-right-radius: 4px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FDFDFD', EndColorStr='#EDEDED');
+   
+   
 }
 .headerLeft {
 	display: inline-block;
@@ -246,4 +247,49 @@ a.AnalyticsDropdownAnchor{
 	margin-top:8px;
 	font-style: italic;;
 	color:#999;
+}
+.assignmentIndex{
+	float: left;
+	font-size: 20px;
+	color: #515151;
+	margin-top: 10px;
+	width: 22px;
+}
+.assignmentContainerHt{
+	min-height:260px;
+}
+
+.circle{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	/* margin: -8px 2px 0px 2px; */
+	background: #B9BBCA;
+	border-radius: 20px;
+	/* display: inline-block; */
+	float: left;
+	position: relative;
+	display: inline-block;
+	float: left;
+	vertical-align: top;
+	margin-top: 11px;
+}
+
+
+.assignmentNumbers{
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	margin: 5px auto;
+	font-weight: bold;
+	
+}
+.completedStatus{
+	background: #A3CBA0;
+}
+.directionsCharLimit{
+	display: inline;
+	float: right;
+	margin-right: 165px;
+	color: #999;
 }

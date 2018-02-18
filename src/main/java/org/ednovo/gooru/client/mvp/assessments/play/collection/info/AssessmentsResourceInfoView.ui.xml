@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.header" xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field= "playerStyle" src="resourceinfo.css"/>
+   <g:HTMLPanel styleName="{playerStyle.resource-info-backgroundContainer} addResourcePopup text-left">
+   <g:HTMLPanel styleName="container" ui:field="resouceInfoContainer">
+  	<g:FlowPanel styleName="row">
+	     <uc:HTMLEventPanel styleName="{playerStyle.resource-info-bottomImageContainer}" ui:field="hideButton">
+	      	<g:Label styleName="{playerStyle.resource-info-hideImage}" ui:field="hideImageLabel"/>
+	      	<g:Label styleName="{playerStyle.resource-info-hideText}" ui:field="hideText"></g:Label>
+	 	</uc:HTMLEventPanel>
+	    <g:Label styleName="{playerStyle.resource-info-name}" ui:field="resourceInfoText"></g:Label>
+    <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+    </g:FlowPanel>
+ 		<g:FlowPanel ui:field="resourceInfoContainerPanel" styleName="row {playerStyle.resource-info-container}">
+	    <g:HTMLPanel styleName="col-md-6 col-sm-6 resources-info-metadata-wrapper">
+	      <g:HTMLPanel styleName="resources-info-metadata-innerwrapper">
+	              <g:Label styleName="{playerStyle.resource-image}" ui:field="resourceTypeImage"/>
+	  					<g:HTML ui:field="lblcollectionName"></g:HTML>
+	  					<g:Button styleName="green {playerStyle.btnGreen}" ui:field="addTagsBtn"></g:Button>
+	       <g:HTMLPanel styleName="{playerStyle.resource-info-type-image}">
+	       		<g:HTMLPanel styleName="{playerStyle.ipadFriendlyIconNone}" ui:field="mobileFriendly"></g:HTMLPanel>
+	       		   <g:FlowPanel ui:field="ratingWidgetPanel"></g:FlowPanel>
+	       		<g:Label styleName="{playerStyle.resource-info-title-viewTitle2}" ui:field="lblresourceType"/>
+	       		<g:HTML  ui:field="resourceInfoSeparator"/>
+	       		<g:Label styleName="{playerStyle.resource-info-title-viewTitle}" ui:field="resourceView"> </g:Label>
+	       		<g:HTML  ui:field="resourcetypeSeparator" />
+	       		<g:Label styleName="{playerStyle.resource-info-title-viewTitle1}" ui:field="timeRequiredLabel"> </g:Label>
+	       			<g:Label styleName="{playerStyle.resource-info-title-view}" ui:field="timeRequiredvalue"> </g:Label>
+	       			  <!-- <g:HTML ui:field="resourceInfoSeparatorTimeLbl"/>	 -->
+	         </g:HTMLPanel>
+
+	         <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}">
+	             <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="learningobjectiveText" ></g:Label>
+	        </g:HTMLPanel>
+	        <g:HTMLPanel styleName="{playerStyle.resource-info-description}">
+	         <g:HTMLPanel styleName="{playerStyle.resource-info-more-titleDesc}"  ui:field="resourceDescriptionTitle"/>
+	           <g:HTMLPanel styleName="{playerStyle.resource-info-about}" ui:field="resourceDescription"/>
+	        </g:HTMLPanel>
+
+	         <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}">
+
+	     	 <g:Label styleName="{playerStyle.resource-info-more-titleboarder}" ui:field="generalLbl"></g:Label>
+	      </g:HTMLPanel>
+
+	         <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="gradesPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="gradeTitle"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="gradesText"/>
+	  		</g:HTMLPanel>
+
+	           <g:HTMLPanel ui:field="coursePanel">
+	        <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="courseText"></g:Label>
+	        <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="courseInfo"></g:HTMLPanel>
+	    	  </g:HTMLPanel>
+
+	    	<g:HTMLPanel styleName="{playerStyle.resource-info-stand-content}" ui:field="centuryContentContainer">
+	           <g:Label styleName="{playerStyle.resource-info-stand-text}" ui:field="centuryText"></g:Label>
+	           <g:Label styleName="{playerStyle.resource-info-stand-title}" ui:field="centuryInfo"/>
+	        </g:HTMLPanel>
+	 		<g:FlowPanel ui:field="centuryInfoConatiner" styleName="{playerStyle.resource-info-century-wrapper}"/>
+
+	 		<g:HTMLPanel styleName="{playerStyle.resource-info-stand-content}" ui:field="standardsContentContainer">
+	           <g:Label styleName="{playerStyle.resource-info-stand-text}" ui:field="standardsText"></g:Label>
+	           <g:Label styleName="{playerStyle.resource-info-stand-title}" ui:field="standaInfo"/>
+	        </g:HTMLPanel>
+	 		<g:FlowPanel ui:field="standardsInfoConatiner" styleName="{playerStyle.resource-info-stand-wrapper}"/>
+
+	 		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}">
+	             <g:Label styleName="{playerStyle.resource-info-stand-text}" ui:field="originalUrlTitle" ></g:Label>
+	        </g:HTMLPanel>
+	        <g:HTMLPanel styleName="{playerStyle.resource-info-description}" ui:field="originalUrlText">
+	        </g:HTMLPanel>
+
+	    	<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="thumbnailPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-stand-text}" ui:field="thumbnailText"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title}" ui:field="thumbnailurlValue"/>
+	  		</g:HTMLPanel>
+
+	      <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="aggregatorPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="aggregatorText"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="aggregatorVal"/>
+	  		</g:HTMLPanel>
+
+	       	<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="publisherPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="publisherText"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="lblPublisher"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="hostPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="hostLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="hostType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:FlowPanel styleName="{playerStyle.resource-info-more-left-wrapper}" ui:field="licenceContainer">
+	           <!-- <g:HTMLPanel styleName="{playerStyle.resource-info-more-leftinner-wrapper}"> -->
+	              <g:HTMLPanel styleName="{playerStyle.resource-info-rights-wrapper}">
+	                  <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="legalText"></g:Label>
+	                  <g:HTMLPanel ui:field="rightsLogoContainer" styleName="{playerStyle.resource-info-rights-text}"></g:HTMLPanel>
+	              </g:HTMLPanel>
+	          <!--  </g:HTMLPanel> -->
+	        </g:FlowPanel>
+
+	        <!-- <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="licenceCodePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="licenceCodeLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="licenceCodeType"/>
+	  		</g:HTMLPanel> -->
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="oerPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="oerLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-oer}" ui:field="oerAvailability"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}">
+	      	 <g:Label styleName="{playerStyle.resource-info-more-titleboarder}" ui:field="educationallLbl"></g:Label>
+	       </g:HTMLPanel>
+
+	       <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="eduAllignPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="eduAllignLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="eduAllignType"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="eduUsePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="eduUseLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="eduUseType"/>
+	  		</g:HTMLPanel>
+
+	        <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="eduRolePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="eduRoleLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="eduRoleType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="interactivityTypePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="interactiveLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="interactiveType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="ageRangePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="ageRangeLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="ageRangeType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="dKnowledgePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="dKnowledgeLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title}" ui:field="dKnowledgeType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="momentsoflearningPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="momentsoflearningLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title}" ui:field="momentsoflearningType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="readingLevelPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="readingLevelLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="readingLevelType"/>
+	  		</g:HTMLPanel>
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="schoolLevelPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="schoolLevelLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="schoolLevelType"/>
+	  		</g:HTMLPanel>
+
+	  		<!-- <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="gooruSubjectPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="gooruSubjectLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="gooruSubjectInfo"/>
+	  		</g:HTMLPanel> -->
+
+	  		<!-- <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="CourseNumberPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="CourseNumberLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title}" ui:field="CourseNumberInfo"/>
+	  		</g:HTMLPanel> -->
+
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}">
+	      	 <g:Label styleName="{playerStyle.resource-info-more-titleboarder}" ui:field="resourceInfoLbl"></g:Label>
+	       </g:HTMLPanel>
+
+	  		  <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="dateCreatedPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="dateCreatedLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="createdDateInfo"/>
+	  		</g:HTMLPanel>
+
+	    	 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="countryCodePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="countryCodeLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="countryCodeType"/>
+	  		</g:HTMLPanel>
+
+	     	<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="languagePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="languageLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="languageType"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="DataTypePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="dataTypeLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="dataTypeFormat"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="authorPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="authorLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="authorName"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="copyRightPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="copyRightLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="copyRightType"/>
+	  		</g:HTMLPanel>
+
+	  		 <!--  <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="contributorPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="contributorTitle"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="contributorName"/>
+	  		</g:HTMLPanel> -->
+
+	  		 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="keyWordsPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="keywordsTitle"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="keywordsInfo"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="addsPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="addsTitle"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="addsInfo"/>
+	  		</g:HTMLPanel>
+
+	  		<g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="accessibilityPanel">
+	      	 <g:Label styleName="{playerStyle.resource-info-more-titleboarder}" ui:field="accesibilityLbl"></g:Label>
+	       </g:HTMLPanel>
+
+	  	  <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="mobileFriendlyPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="mbFriendlyLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="mbFriendlyText"/>
+	  	  </g:HTMLPanel>
+
+	  	  <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="accessModePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="accessModelLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="accessModeType"/>
+	  	  </g:HTMLPanel>
+
+	  	  <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="mediaFeaturePanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="mediaFeatureLbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title-grades}" ui:field="mediaFeatureType"/>
+	  	  </g:HTMLPanel>
+
+	   	 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="controlPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="controlLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="controlType"/>
+	  	 </g:HTMLPanel>
+
+	  	 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="accessHazardPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="acessHazardlLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title-grades}" ui:field="acessHazardType"/>
+	  	 </g:HTMLPanel>
+
+	  	 <!-- <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="hasAdaptationPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="hasAdaptationLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="hasAdaptationType"/>
+	  	 </g:HTMLPanel>
+
+	  	 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="isAdaptationPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="isAdaptationLbl"></g:Label>
+	          		 <g:Label styleName="{playerStyle.resource-info-title}" ui:field="isAdaptationType"/>
+	  	 </g:HTMLPanel>
+
+	  	 <g:HTMLPanel styleName="{playerStyle.resource-info-publishContainer}" ui:field="accessibilityAPIPanel">
+	       			 <g:Label styleName="{playerStyle.resource-info-more-title}" ui:field="accessibilityAPILbl"></g:Label>
+	          		 <g:HTMLPanel styleName="{playerStyle.resource-info-title}" ui:field="accessibilityAPIType"/>
+	  	 </g:HTMLPanel> -->
+
+	      <!-- <g:HTMLPanel styleName="{playerStyle.gradeContainer}"> -->
+	      <!--  <g:HTMLPanel styleName="{playerStyle.resource-info-grade-wrapper}">
+	                    <g:HTMLPanel styleName="{playerStyle.resource-info-grade-content}">
+	                    <g:HTMLPanel ui:field="staticGradeText" styleName="{playerStyle.resource-info-grade-text}"/>
+	                 </g:HTMLPanel>
+	       </g:HTMLPanel> -->
+
+
+
+	  <!--  </g:HTMLPanel> -->
+
+	       </g:HTMLPanel>
+	    </g:HTMLPanel>
+	    <g:HTMLPanel styleName="col-md-6 col-sm-6 resources-info-collections-wrapper">
+	       	 <g:HTMLPanel styleName="{playerStyle.resource-info-collections-count}" ui:field="collectionsText"></g:HTMLPanel>
+	       	 <g:Label styleName="{playerStyle.resource-info-collections-count}" ui:field="collectionsCount"></g:Label>
+	       	 <g:ScrollPanel ui:field="scrollPanel" styleName="playerResourceRightSection">
+	           	<g:HTMLPanel ui:field="reosourceReleatedCollections"></g:HTMLPanel>
+	          </g:ScrollPanel>
+         </g:HTMLPanel>
+         <g:HTMLPanel styleName="clearfix"/>
+    </g:FlowPanel>
+    </g:HTMLPanel>
+  </g:HTMLPanel>
+
+</ui:UiBinder>

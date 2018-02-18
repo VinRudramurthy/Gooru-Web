@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="ProfilePageTagStyle" src="profile-page-Tag-style.css"></ui:style>
+	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{ProfilePageTagStyle.profilepageTagContentText}">
+		<g:Label ui:field="TagTextMessage"></g:Label>
+	</g:HTMLPanel>
+	<g:HTMLPanel styleName="{ProfilePageTagStyle.contentContainer}">
+		<g:Label styleName="{ProfilePageTagStyle.backlink}" ui:field="tagMessage" />
+		<g:HTMLPanel styleName="{ProfilePageTagStyle.content-inner}">
+			<g:HTMLPanel styleName="{ProfilePageTagStyle.tagBg}" ui:field="tagContainer">
+				<g:HTMLPanel styleName="{ProfilePageTagStyle.tagTitle}">
+					<g:Label styleName="{ProfilePageTagStyle.taglabel}" ui:field="tagType"></g:Label>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{ProfilePageTagStyle.tagRight}">
+					<g:Label styleName="{ProfilePageTagStyle.taglabel}" ui:field="tagCount"></g:Label>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		<g:ScrollPanel ui:field="tagScrollPanel" styleName="{ProfilePageTagStyle.scrollStyle}">
+			<g:HTMLPanel styleName="{ProfilePageTagStyle.tagresults}"
+				ui:field="userTagsResourceContainerConatiner"></g:HTMLPanel>
+			</g:ScrollPanel>
+		</g:HTMLPanel>
+		
+	</g:HTMLPanel>
+	
+</g:HTMLPanel>
+</ui:UiBinder> 

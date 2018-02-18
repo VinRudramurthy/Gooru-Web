@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="errorStyle" src="errorstyle.css"  />
+	<g:FlowPanel styleName="{errorStyle.display} {errorStyle.popup-bg}">
+		<g:FlowPanel styleName="{errorStyle.popup}">
+			<g:FlowPanel styleName="{errorStyle.popup-inner}">
+				<g:Label styleName="{errorStyle.popup-header}">This is a Pop-Up Header</g:Label>
+				<g:Label styleName="{errorStyle.popup-content}">This is pop-up content.</g:Label>
+			</g:FlowPanel>
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

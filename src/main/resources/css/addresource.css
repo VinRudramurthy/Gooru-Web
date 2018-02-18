@@ -1,0 +1,1257 @@
+@charset "utf-8";
+/* CSS Document */
+#mainPanel .collectionPlayerAddResourcesContent {
+	width: 100%;
+	height: 30px;
+}
+
+#mainPanel .collectionPlayerAddResourcesIconContainer {
+	margin: 0 auto;
+	height: 30px;
+	text-align:center;
+}
+
+#mainPanel .collectionPlayerAddResourcesIconHolder {
+	float: left;
+	width: 80px;
+	height: 60px;
+}
+
+#mainPanel .collectionPlayerAddResourcesIcon {
+	float: left;
+	margin-top: 6px;
+	width: 80px;
+	height: 60px;
+	position:relative;
+}
+
+#mainPanel .collectionPlayerAddResourcesSmallIcon {
+	position: absolute;
+	margin-top: 39px;
+	margin-left: -54px;
+}
+
+#mainPanel .collectionPlayerAddResourcesText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+	margin-left: 10px;
+	/* float: left; */
+}
+
+#mainPanel .collectionPlayerAddResourcesCollectionInstead {
+	float: right;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6c889A;
+	margin-right: 127px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#mainPanel .collectionPlayerAddResourcesCollectionInstead:hover{
+	opacity: 0.6;
+}
+
+#mainPanel .collectionPlayerExistingCollectionContainer {
+/* 	width: 960px; */
+/* 	height: 85px;
+	background-color: #FFF;
+ */	margin: 0 auto;
+
+}
+#mainPanel .collectionPlayerExistingCollectionContainerAdd {
+	width: 960px;
+	height: 85px;
+	background-color: #F0F0F0;
+	margin: 0 auto;
+
+}
+
+#mainPanel .collectionPlayerExistingCollectionContent {
+	/* width: 960px;
+	margin-left: 266px; */
+	min-height: 36px;
+	height: auto;
+	padding: 3px 0px 0 0px;
+	text-align:center;
+	width:315px;
+	margin:0 auto;
+}
+
+#mainPanel .collectionPlayerExistingCollectionText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	float: left;
+	margin-top: 6px;
+}
+
+#mainPanel .collectionPlayerExistingCollectionInputContainer {
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+    position:absolute;
+	/* width: 312px; */
+}
+
+#mainPanel .collectionPlayerExistingCollectionInput {
+	width: 324px;
+	height: 24px;
+	float: left;
+	font-size: 12px;
+	margin-left: 10px;
+	border: 1px solid #CCC;
+}
+
+#mainPanel .collectionPlayerExistingAddButton {
+	float: right;
+	min-width: 60px;
+	display: inline-block;
+}
+#mainPanel .collectionPlayerExistingAddButtonText:hover{
+	background: #1076BB;
+}
+
+#mainPanel .collectionPlayerExistingAddButtonText {
+	font-size: 12px;
+	position: relative;
+	text-align: center;
+	background-color: #1076BB;
+	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#4C98CC), to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background-image: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	border: 0 none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-ms-border-radius: 4px 4px 4px 4px;
+	-khtml-border-radius: 4px 4px 4px 4px;
+	-o-border-radius: 4px 4px 4px 4px;
+	color: white;
+	cursor: pointer;
+	font-size: 12px;
+	padding: 8px 9px;
+	display: inline-block;
+	margin-left: 255px;
+	margin-top: -1px;
+}
+
+#mainPanel .collectionPlayerNewColletionText {
+	/* width: 150px; */
+	height: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1076BB;
+	margin-right: 148px;
+	cursor: pointer;
+	text-align:center;
+}
+
+/* info css */
+/* CSS Document */
+#mainPanel .collectionxPlayerResourcesWrapper {
+	width: 940px;
+	height: 802px;
+	background-color: #f0f0f0;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerResourcesLeftSection {
+	width: 374px;
+	min-height: 780px;
+	height: auto;
+	margin-top: 22px;
+	margin-left: 19px;
+	float: left;
+	border-right: 1px dashed #aaaaaa;
+}
+
+#mainPanel .collectionxPlayerResourcesRightSection {
+	width: 506px;
+	min-height: 760px;
+	height: auto;
+	float: left;
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+#mainPanel .collectionxPlayerIntractiveIcon {
+	width: 27px;
+	height: 20px;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerChapterName {
+	float: left;
+	color: #515151;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 10px;
+	margin-top: 2px;
+}
+
+#mainPanel .collectionxPlayerBullet {
+	width: 5px;
+	height: 5px;
+	float: left;
+	background-color: #4e9746;
+	margin-left: 7px;
+	margin-top: 7px;
+}
+
+#mainPanel .collectionxPlayerBulletTwo {
+	width: 5px;
+	height: 5px;
+	float: left;
+	background-color: #4e9746;
+	margin-left: 7px;
+	margin-top: 7px;
+	margin-right: 7px;
+}
+
+#mainPanel .collectionxPlayerLessionName {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	float: left;
+	margin-left: 7px;
+	margin-top: 2px;
+}
+
+#mainPanel .collecionxplayerLessionDescribtion {
+	width: 100%;
+	float: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #515151;
+	margin-top: 10px;
+}
+
+#mainPanel .collectionxPlayerMoreInformation {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	font-weight: bold;
+	margin-top: 17px;
+}
+
+#mainPanel .collectionxPlayerResourcesTitle {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	font-weight: bold;
+}
+
+#mainPanel .collectionxPlayerResourcesChapterTitles {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	font-weight: bold;
+	width: 280px;
+	margin-left: 10px;
+}
+
+#mainPanel .collectionxPlayerMoreInformationLeftContainer {
+	width: 194px;
+	float: left;
+	clear: both;
+}
+
+#mainPanel .collectionxPlayerMoreInforamtionLeftContent {
+	width: 194px;
+	min-height: 100px;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerMoreInformationOneSetInfo {
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#mainPanel .collectionxPlayerMoreInfoHomeIcon {
+	float: left;
+	width: 23px;
+	height: 21px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectionxPlayerMoreInforamtionText {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+}
+
+#mainPanel .collectionxPlayerMoreInforamtionTextBlue {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1076b9;
+	width: 130px;
+}
+
+#mainPanel .collectionxPlayerMoreInformationRightContainer {
+	width: 174px;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerMoreInformationRightOneSetInfo {
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+}
+
+#mainPanel .collectionxPlayerMoreInformationViewIcon {
+	float: left;
+	width: 23px;
+	height: 21px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectionxPlayerMoreInformationLikesIcon {
+	float: left;
+	width: 23px;
+	height: 21px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectioinxPlayerMoreInformationShareIcon {
+	float: left;
+	width: 23px;
+	height: 21px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectioinxPlayerMoreInformationStudyIcon {
+	float: left;
+	width: 22px;
+	height: 18px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectioinxPlayerMoreInformationMeachineIcon {
+	float: left;
+	width: 22px;
+	height: 18px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectioinxPlayerMoreInformationStandardsIcon {
+	float: left;
+	width: 57px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+#mainPanel .collectioinxPlayerMoreInformationEorIcon {
+	width: 57px;
+	height: 20px;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerMoreInforamtionTimeIcon {
+	float: left;
+	width: 23px;
+	height: 21px;
+	margin-right: 17px;
+}
+
+#mainPanel .collectionxPlayerChapterBgIcon {
+	width: 120px;
+	float: left;
+	height: 90px;
+	background-image: url(../images/chapter-icon.png);
+}
+
+#mainPanel .collectionxPlayerChapterBlueBar {
+	width: 8px;
+	height: 90px;
+	float: left;
+	background-image: url(../images/chapter-icon-blue-bar.png);
+}
+
+#mainPanel .collectionxPlayerResourecesContainer {
+	width: 417px;
+	height: 90px;
+	float: left;
+	margin-top: 20px;
+}
+
+#mainPanel .collectionxPlayerResourcesAuthorName {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	width: 240px;
+	margin-left: 10px;
+	color: #999999;
+	margin-top: 5px;
+}
+
+#mainPanel .collectionxPlayerResourceDetails {
+	width: 270px;
+	margin-left: 10px;
+	float: left;
+	margin-top: 5px;
+}
+
+#mainPanel .collectionxPlayerDetailsResourceTitle {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #999999;
+	margin-right: 5px;
+}
+
+#mainPanel .collectionxPlayerDetailsResourceView {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #999999;
+	margin-right: 5px;
+}
+
+#mainPanel .left {
+	float: left;
+}
+
+#mainPanel .collectionxPlayerResouresSmallNumberImage {
+	float: left;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+#mainPanel .collectionxPlayerResouresCount {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #4f9747;
+	float: left;
+}
+
+/* New Popup css */
+#mainPanel .popupNewCollection {
+	width: 212px;
+	margin-left: 51px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #999999;
+}
+
+#mainPanel .popupBirthday {
+	width: 212px;
+	margin-left: 21px;
+}
+
+#mainPanel .leftAndWidth {
+	float: left;
+	width: 43px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+}
+
+#mainPanel .popupNewCollectionDownArrow {
+	position: absolute;
+	margin-top: -16px;
+	margin-left: 292px;
+	cursor: pointer;
+}
+
+#mainPanel .popupEmail {
+	width: 212px;
+	margin-left: 32px;
+}
+
+#mainPanel .popupNewCollectionUserInput {
+	width: 448px;
+	float: left;
+	margin: 22px 0px 0px 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+}
+
+#mainPanel .popupNewCollectionUserInputTwo {
+	width: 448px;
+	float: left;
+	margin: 12px 0px 0px 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+}
+
+#mainPanel .popupNewCollectionWrapper {
+	width: 460px;
+	height: 225px;
+	margin: 0 auto;
+	border: 1px solid #dddddd;
+	background-color: #FFF;
+}
+
+#mainPanel .popupRegisterWrapper {
+	width: 505px;
+	height: 261px;
+	margin: 0 auto;
+	border: 1px solid #dddddd;
+	background-color: #FFF;
+}
+
+#mainPanel .popupNewCollectionContainer {
+	width: 452px;
+	height: 217px;
+	margin: 3px;
+	border: 1px solid #dddddd;
+	background-color: #FFF;
+}
+
+#mainPanel .popupRegisterContainer {
+	width: 497px;
+	height: 252px;
+	margin: 3px;
+	border: 1px solid #dddddd;
+	background-color: #FFF;
+}
+
+#mainPanel .popupNewCollectionHeader {
+	width: 452px;
+	height: 34px;
+	float: left;
+	background-color: #515151;
+}
+
+#mainPanel .popupNewCollectionHeaderTitle {
+	float: left;
+	font: 19px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 9px 0px 0px 10px;
+	color: #FFF;
+}
+
+#mainPanel .popupNewCollectionDescribtion {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #515151;
+	width: 448px;
+	margin: 16px 0px 0px 16px;
+}
+
+#mainPanel .popupNewCollectionButtonContainer {
+	width: 125px;
+	margin: 0 auto;
+}
+
+#mainPanel .popupNewCollectionSendButton {
+	float: left;
+	width: 61px;
+	height: 33px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+#mainPanel .popNewCollectionOkButton {
+	float: left;
+	cursor: pointer;
+	margin-top: 20px;
+	width: 42px;
+	height: 31px;
+}
+
+#mainPanel .popupNewCollectionQuestionMark {
+	float: right;
+	color: #1076bb;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-right: 120px;
+	margin-top: 3px;
+}
+
+#mainPanel .popupNewCollectionSendButton {
+	float: left;
+	width: 50px;
+	height: 33px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+#mainPanel .popupNewCollectionCancelButton {
+	float: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #1076bb;
+	margin: 26px 0px 0px 17px;
+	cursor: pointer;
+}
+
+/* SUMMARY.CSS */
+/* CSS Document */
+#mainPanel .collectionXPlayerSegmentWrapper {
+	width: 1150px;
+	min-height: 500px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#mainPanel .collectionXPlayerSegmentHeader {
+	width: 1150px;
+	height: 57px;
+	float: left;
+	background-color: #515151;
+}
+
+#mainPanel .collectionXPlayerSegmentHeaderTitle {
+	float: left;
+	font-size: 24px;
+	color: #FFF;
+	width: 801px;
+	margin: 17px 0px 0px 26px;
+}
+
+#mainPanel .collectionxPlayerSummaryBottomDescription {
+	float: left;
+	margin-left: 130px;
+	font-size: 12px;
+	font-family: arial;
+	color: #FFF;
+	margin-top: -13px;
+}
+
+#mainPanel .collectionxPlayerSummaryWrapper {
+	width: 940px;
+	margin: 0 auto;
+	min-height: 886px;
+	height: auto;
+	background-color: #111111;
+}
+
+#mainPanel .collectionxPlayerSummaryTitle {
+	width: 402px;
+	margin: 0 auto;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 21px;
+}
+
+#mainPanel .collectionxPlayerSummaryTitleText {
+	float: left;
+	margin-top: 40px;
+}
+
+#mainPanel .collectionxPlayerRefreshContainer {
+	width: 40px;
+	height: 44px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#mainPanel .collectionxPlayerRefreshImage {
+	float: left;
+	width: 27px;
+	height: 27px;
+	cursor: pointer;
+}
+
+#mainPanel .collectionxPlayerRefreshText {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionTitle {
+	float: left;
+	width: 93%;
+	margin-left: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	color: #1076bb;
+	margin-top: 40px;
+}
+
+#mainPanel .collectionxPlayerSummaryAnswerCorrectlyContainer {
+	float: left;
+	width: 93%;
+	height: 43px;
+	margin-left: 40px;
+	margin-top: 18px;
+}
+
+#mainPanel .collectionxPlayerSummaryAnswerCorrectlyText {
+	font-size: 12px;
+	float: left;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#mainPanel .collectionxPlayerSummaryAnswerCorrectlyBoxContainer {
+	float: left;
+	clear: both;
+	margin-top: 3px;
+}
+
+#mainPanel .collectionxPlayerSummaryAnswerCorrectlyBoxGray {
+	width: 400px;
+	height: 22px;
+	float: left;
+	background-color: #999999;
+}
+
+#mainPanel .collectionxPlayerSummaryAnserCorrectlyBoxGreen {
+	float: left;
+	background-color: #4e9746;
+	height: 22px;
+	width: 202px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionContainer {
+	float: left;
+	margin-top: 40px;
+	width: 861px;
+	height: 134px;
+	margin-left: 40px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionImage {
+	float: left;
+	width: 80px;
+	height: 60px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerContainer {
+	width: 766px;
+	height: 130px;
+	float: left;
+	margin-left: 15px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerWrongImage {
+	float: left;
+	width: 12px;
+	height: 15px;
+	margin-right: 7px;
+	margin-left: -18px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerRigntImage {
+	float: left;
+	width: 15px;
+	height: 16px;
+	margin-right: 7px;
+	margin-left: -22px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerQuestion {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	margin-left: 18px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerOptionOneContainer {
+	float: left;
+	width: 700px;
+	clear: both;
+	margin-top: 7px;
+	margin-left: 18px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerOrder {
+	float: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	margin-right: 15px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerOptions {
+	float: left;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerOptionContainer {
+	float: left;
+	width: 700px;
+	clear: both;
+	margin-left: 18px;
+}
+
+#mainPanel .collectionxPlayerSummaryQuestionAndAnswerDescribtion {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1076bb;
+	margin-top: 8px;
+}
+
+#mainPanel .collectionxPlayerSummaryStudyMoreContainer {
+	width: 90%;
+	min-height: 90px;
+	height: auto;
+	float: left;
+	margin-top: 20px;
+}
+
+#mainPanel .collectionxPlayerSummaryAuthorName {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	width: 80%;
+	margin-left: 10px;
+	color: #FFF;
+	margin-top: 5px;
+}
+
+#mainPanel .collectionxPlayerSummaryPartDetails {
+	width: 270px;
+	margin-left: 10px;
+	float: left;
+	margin-top: 5px;
+	color: #FFF;
+}
+
+#mainPanel .collectionxPlayerChapterBgIcon2 {
+	width: 120px;
+	float: left;
+	height: 90px;
+	background-image: url(../images-2/chapter-icon.png);
+}
+
+#mainPanel .collectionxPlayerChapterBlueBar2 {
+	width: 8px;
+	height: 90px;
+	float: left;
+	background-image: url(../images-2/chapter-icon-blue-bar.png);
+}
+
+#mainPanel .collectionxPlayerDetailsSummaryTitle {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+#mainPanel .collectionxPlayerBulletTwo {
+	width: 5px;
+	height: 5px;
+	float: left;
+	background-color: #4e9746;
+	margin-left: 7px;
+	margin-top: 7px;
+	margin-right: 7px;
+}
+
+#mainPanel .collectionxPlayerDetailsSummaryView {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+#mainPanel .collectionxPlayerBulletTwo {
+	width: 5px;
+	height: 5px;
+	float: left;
+	background-color: #4e9746;
+	margin-left: 7px;
+	margin-top: 7px;
+	margin-right: 7px;
+}
+
+#mainPanel .left {
+	float: left;
+}
+
+#mainPanel .collectionxPlayerResouresSmallNumberImage {
+	float: left;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+#mainPanel .collectionxPlayerResouresCount {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #4f9747;
+	float: left;
+}
+
+#mainPanel .collectionxPlayerSummaryStudyMoreChapterTitles {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1076bb;
+	width: 80%;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#mainPanel .collectionAddingStyles {
+	font-style: italic;
+	margin-left: 33px;
+}
+
+#mainPanel .resourceAdditionErrorStyle {
+	font-style: italic;
+	margin-left: 12px;
+	font-style: italic;
+	color: #FBB03B;
+	display: none;
+	font-size: 11px;
+}
+
+#mainPanel .collectionAddedToShelf {
+	float: left;
+	margin-left: -335px;
+	margin-top: 10px;
+	font-size: 12px;
+	color: green;
+	width: 314px !important;
+}
+
+#mainPanel .collectionAddedToShelfText {
+	font-size: 12px;
+	color: green;
+	display: none;
+	margin-top:25px;
+}
+#mainPanel .dropdownListPlaceHolder{
+	background-color: white;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #DDD;
+	background: white url("../images/dropdown-menu-arrow.png") no-repeat right center;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	display: block;
+	width: 240px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+}
+#mainPanel .dropdownListContainer{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	z-index:9999;
+	background-color: #F9F9F9;
+}
+#mainPanel .dropdownListContainerScrollPanel{
+	border: 1px solid #DDD;
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	z-index:9999;
+	max-height:86px;
+	background-color: #f9f9f9;
+	width: 242px;
+}
+
+#mainPanel .dropdownListItemContainer{
+	padding: 5px;
+	background: white;
+	margin: 0px;
+	font-family: Arial, sans-serif;
+	color: #515151;
+	font-size: 12px;
+}
+
+#mainPanel .dropdownListItemContainer:hover{
+	background-color: #CFE3F1;
+	cursor: pointer;
+}
+/*Scroll bar style for default scrolls*/
+#mainPanel .dropdownListContainerScrollPanel::-webkit-scrollbar {
+	width: 8px;
+} /* this targets the default scrollbar (compulsory) */
+#mainPanel .dropdownListContainerScrollPanel::-webkit-scrollbar-track {
+	background-color: white;
+	width: 15px;
+}
+/* the new scrollbar will have a flat appearance with the set background color */
+#mainPanel .dropdownListContainerScrollPanel::-webkit-scrollbar-thumb { /*background-color: rgba(0, 0, 0, 0.2);*/
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 15px;
+} /* this will style the thumb, ignoring the track */
+#mainPanel .dropdownListContainerScrollPanel::-webkit-scrollbar-button {
+	background-color: #DDDDDD;
+	width: 0px;
+	height: 0px;
+}
+/* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+#mainPanel .dropdownListContainerScrollPanel::-webkit-scrollbar-corner {
+	background-color: red;
+}
+#mainPanel .addingLabelText{
+	margin-left: 343px;
+	margin-top: 5px;
+	color: white;
+	display: none;
+}
+#mainPanel .resourceTypeSmallImage{
+	position: absolute;
+	margin-top: 73px;
+	z-index:99;
+}
+#mainPanel .errorLabelText{
+	margin-left: 782px;
+	float: left;
+	margin-top: -12px;
+	font-style: italic;
+	color: #FBB03B;
+    font-size: 12px;
+
+}
+
+#mainPanel .successMessageContainer{
+	margin: 0 auto;
+/* 	width: 960px; */
+}
+#mainPanel .successMessageLabelText{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 120%;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 7px;
+	padding-top: 5px;
+}
+#mainPanel .workSpaceLinkContainer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: #1076BA;
+	text-align: center;
+	margin-top: 12px;
+	height: 45px;
+}
+#mainPanel .workSpaceLinkText{
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6c889A;
+}
+#mainPanel .workSpaceLinkText:hover{
+	/* color: #4C98CC; */
+	opacity:0.6;
+	text-decoration: none;
+}
+#mainPanel .addCollectionInsteadLabelContainer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 120%;
+	color: #1076BA;
+	text-align: center;
+}
+#mainPanel .horizontalLineStyle{
+	width: 70%;
+	margin: 0 auto;
+	background-color: transparent;
+	border-bottom: 1px solid #DDD;
+}
+#mainPanel .addCollectionInsteadLabelText{
+	float: right;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #1076BB;
+	cursor: pointer;
+	margin-right: 138px;
+	margin-top: -15px;
+}
+#mainPanel .addCollectionInsteadLabelText:hover{
+	color: #4C98CC;
+}
+#mainPanel .addCollectionContainer{
+/* 	width:960px; */
+	margin:0 auto;
+}
+
+#mainPanel .addButtonHideLbl {
+	float: right;
+	padding-right: 20px;
+	font-size: 12px;
+	color: #1076bb;
+	padding-top: 2px;
+	cursor: pointer;
+}
+
+#mainPanel .addButtonHideLbl:hover {
+	color: #87badd;
+}
+
+#mainPanel .dropdownListPlaceHolder{
+	background:url("../images/dropdownMenuArrow.png") no-repeat;
+	background-color: white;
+	background-position: right center;
+	text-align:left;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	display: block;
+	width: 240px;
+	height: auto;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+}
+#mainPanel .resource-info-bottomImageContainer{
+	text-align: center;
+	padding-top: 10px;
+	cursor: pointer;
+	padding-bottom:5px;
+	width: 45px;
+	margin: 0 auto;
+}
+#mainPanel .resource-info-hideImage{
+	display: inline-block;
+	background-image: url("${cdn.endpoint}/images/hide_arrow.png");
+	width: 10px;
+	color: #fff;
+	height:6px;
+}
+#mainPanel .resource-info-hideText{
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	margin-left: 4px;
+}
+#mainPanel .addNewLabel{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #6c889A;
+}
+#mainPanel .addNewLabel:hover{
+	cursor: pointer;
+	opactity:0.6;
+}
+#mainPanel .resource-info-bottomImageContainer{
+	text-align: center;
+	padding-top: 7px;
+	cursor: pointer;
+	width: 45px;
+	margin: 0 auto;
+}
+#mainPanel .resource-info-hideImage{
+	display: inline-block;
+	background-image: url("${cdn.endpoint}/images/hide_arrow.png");
+	width: 10px;
+	color: #fff;
+	height:6px;
+}
+#mainPanel .resource-info-hideText{
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	margin-left: 4px;
+}
+
+/* Add Tags */
+.at-mediaFeature{
+	width: 243px;
+	text-align: left;
+}
+.at-browseInput{
+  float:left;
+  width: 42% !important;
+}
+
+.at-tag {
+	display: inline-block;
+	vertical-align: top;
+	width: 25px;
+	height: 21px;
+	cursor: pointer;
+	background: url(../images/tag.png) left no-repeat;
+}
+
+.at-standardMaxHide {
+	display: none;
+}
+
+.at-collectionStandardsMargin {
+	margin-top: 10px;
+}
+.at-clearfix {
+	clear: both;
+}
+.at-scrollPanelContainerInstructional{
+	background-color:rgb(255,255,255);
+	width:245px;
+	height:80px;
+	border-color:rgb(221,221,221);
+	border-width:1px;
+	/* Firefox v1.0+ */
+	-moz-border-radius:1px;
+	/* Safari v3.0+ and by Chrome v0.2+ */
+	-webkit-border-radius:1px;
+	/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+	border-radius:1px;
+	border-style:solid;
+	top: 33px;
+	left: -1px;
+	z-index: 99999;
+	overflow-x:hidden !important;
+	position:absolute !important;
+}
+
+.at-OnButtonDeActive {
+	font-size: 12px;
+	width: 57px;
+	height: 29px;
+	cursor: pointer;
+	text-align: center;
+	margin-top: 5px;
+	background: #EFEFEF;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FDFDFD), to(#DDD));
+	background: -webkit-linear-gradient(top, #FDFDFD, #DDD);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #DDD;
+	margin-left:-4px;
+}
+.at-OnButtonDeActive:hover, .at-OffButtonsDeActive:hover {
+	cursor: pointer;
+	background: #EEE;
+}
+
+.at-selected {
+	padding: 5px 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	background: #a6cba2;
+}
+
+.at-select {
+	position: relative;
+	padding: 5px 10px;
+	padding-left: 5px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	background: #a6cba2;
+}
+.at-OffButtonsActive {
+	font-size: 12px;
+	width: 57px;
+	height: 29px;
+	cursor: pointer;
+	border: none;
+	margin-left: -4px;
+	background: #a6cba2;
+}
+
+/* End - Add Tags */
+

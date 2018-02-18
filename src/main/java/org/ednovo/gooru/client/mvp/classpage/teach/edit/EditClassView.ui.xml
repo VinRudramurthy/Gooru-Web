@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc"
+	xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style src=" "></ui:style>
+	<!-- <g:HTMLPanel styleName="container">
+	<g:HTMLPanel styleName="row"> -->
+		<!-- <g:HTMLPanel styleName="whiteBG">
+			<g:HTMLPanel styleName="getStarted" ui:field="startPanel">
+				<h1>Get Started</h1>
+				<g:Button styleName="primary" ui:field="addCourseBtn">Add a Course</g:Button>
+				<g:HTMLPanel styleName="videoBlock">
+				<img src="images/Classpage/tutorialVideo.png" class="img-responsive" />
+				</g:HTMLPanel>
+				<g:Anchor>Link to Support Center</g:Anchor>
+			</g:HTMLPanel>
+		</g:HTMLPanel> -->
+	<!-- </g:HTMLPanel>
+</g:HTMLPanel> -->
+		<g:HTMLPanel styleName="whiteBG">
+		   <g:HTMLPanel styleName="gettingStartedMain">
+		      <h1>Getting Started</h1>
+		      <g:HTMLPanel styleName="emptyClass">
+		         <div class="col-md-5 col-sm-5 ">
+		            <div class="addCourse">
+		               <uc:PPanel ui:field="classPanel"></uc:PPanel>
+		                <uc:PPanel><g:Button styleName="primary btn-block" ui:field="addCourseBtn"></g:Button></uc:PPanel>
+		            </div>
+		            <div class="addStudents">
+		                <uc:PPanel ui:field="studentsPanel"></uc:PPanel>
+		                <uc:PPanel><g:Button styleName="primary btn-block" ui:field="addStudentsBtn"></g:Button></uc:PPanel>
+		            </div>
+		         </div>
+		         <div class="col-md-7 col-sm-7 ">
+		            <div class="measureStudents">
+		               <uc:PPanel ui:field="notesPanel"></uc:PPanel>
+		               <span><img src="images/students.png" class="img-responsive"/></span>
+		            </div>
+		         </div>
+		         <div class="clearfix"></div>
+		         <div class="findout">
+		            <uc:PPanel><g:Anchor ui:field="moreLink"></g:Anchor></uc:PPanel>
+		         </div>
+		      </g:HTMLPanel>
+		      <div class="clearfix"></div>
+		   </g:HTMLPanel>
+		</g:HTMLPanel>
+</ui:UiBinder> 
+
+
+
+
+
+

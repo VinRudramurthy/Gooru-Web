@@ -26,12 +26,13 @@ package org.ednovo.gooru.client.mvp.play.resource.question;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.shared.model.player.AnswerAttemptDo;
 import org.ednovo.gooru.shared.util.AttemptedAnswersDo;
 
 public interface QuestionResourceUiHandlers extends BaseUiHandlers{
-	public void createSessionItemAttempt(int answerId,String answerAttemptStatus);
-	public void createSesstionItemAttemptOe(String answerId,String attemptStatus,String answerText);
+	public void createSessionItemAttempt(String contentGooruOid,int answerId,String answerAttemptStatus);
+	public void createSesstionItemAttemptOe(String contentGooruOid,String answerId,String attemptStatus,String answerText);
 	public void setAttemptStatus(String collectionItemId,AttemptedAnswersDo attemptAnswerDo);
 	public void setAnswerAttemptSequence(int attemptSequence,int attemptStatus,int answerId);
 	public void setOeQuestionAnswerText(String answerText);
@@ -40,10 +41,14 @@ public interface QuestionResourceUiHandlers extends BaseUiHandlers{
 	public void saveOeQuestionAnswerDataLogEvent();
 	public void setUserAttemptedQuestionTypeAndStatus(boolean isUserAttemptedResult,int questionType);
 	public void setAnswerIdWithTime(Integer answerId,Integer attemptStatus,Integer attemptSequence);
+	public void setAnswerIdWithTimeForMa(List<Integer> answerId,Integer attemptStatus,Integer attemptSequence);
+	public void setAnswerIdWithTimeForHT(List<Integer> answerId,Integer attemptStatus,Integer attemptSequence);
 	public void setExplanationIdWithTime(String explanaion);
 	public void setHintIdWithTime(Integer hintId);
 	public void setResourceScore(Integer score);
 	public void triggerSaveOeAnswerTextDataEvent();
 	public void setFibAnswerIdsWithTime(List<Integer> attemptAnswerIds,List<Integer> attemptTrySequenceArray,List<Integer> attemptStatusArray);
 	public void increaseUserAttemptCount();
+	public void isOeAnswerSubmited(boolean isOeAnswerSubmited);
+	public void userAttemptedAnswerObject(List<AnswerAttemptDo> answerOptionAttemptList);
 }

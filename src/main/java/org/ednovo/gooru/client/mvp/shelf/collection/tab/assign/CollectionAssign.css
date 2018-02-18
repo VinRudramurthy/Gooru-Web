@@ -51,7 +51,7 @@
 	margin-top:30px;
 	margin-bottom:30px;
 	float: left;
-width: 50%;
+	width: 50%;
 }
 
 .labelTitlePrivateText{
@@ -64,7 +64,7 @@ width: 50%;
 }
 .labelTitleText{
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:18px;
+	font-size:16px;
 	line-height:120%;
 	color:rgb(81,81,81);
 	text-align:left;	
@@ -145,7 +145,7 @@ width: 50%;
 	white-space: nowrap !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 98%;
+	width: 100%;
 }
 .classpageTitleText:hover {
  	background-color: #CFE3F1;
@@ -165,11 +165,12 @@ width: 50%;
 	white-space: nowrap !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 281px;
+	width: 245px;
 }
 
 
 .disableAssignButon{
+	margin-top: 20px;
 	display: inline-block;
 	clear: both;
 	float: right;
@@ -191,7 +192,6 @@ width: 50%;
 	background: #1076BB;
 	clear: both;
 	float: right;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1076BB', endColorstr='#1076BB');
 }
 .activeAssignButton{
 	color: white;
@@ -209,7 +209,6 @@ width: 50%;
 	clear: both;
 	float: right;
 	background-color: #1076bb;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C98CC', endColorstr='#1076BB');
 }
 
 .errorMessage{
@@ -303,7 +302,6 @@ width: 50%;
 	background: -moz-linear-gradient(top, #666, #515151);
 	background: -ms-linear-gradient(top, #666, #515151);
 	background: -o-linear-gradient(top, #666, #515151);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666', EndColorStr='#515151');
 }
 
 .assignTitle {
@@ -425,6 +423,9 @@ width: 50%;
 	padding-left: 5px;
 	margin-left: 100px;
 	position: absolute;
+}
+.charLimitStyle{
+	float:right;
 }
 
 /*End Success popup */

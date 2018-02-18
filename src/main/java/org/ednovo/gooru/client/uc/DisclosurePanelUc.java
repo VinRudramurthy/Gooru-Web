@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,11 +23,11 @@
  *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * 
+ *
  */
 package org.ednovo.gooru.client.uc;
 
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -46,11 +46,13 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * @author Search Team
- * 
+ *
  */
-public class DisclosurePanelUc extends Composite implements ClickHandler,MessageProperties {
+public class DisclosurePanelUc extends Composite implements ClickHandler {
 
 	private static DisclosurePanelUcUiBinder uiBinder = GWT.create(DisclosurePanelUcUiBinder.class);
+
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface DisclosurePanelUcUiBinder extends UiBinder<Widget, DisclosurePanelUc> {
 	}
@@ -73,22 +75,28 @@ public class DisclosurePanelUc extends Composite implements ClickHandler,Message
 	@UiField
 	SimplePanel imagePanel;
 
-	@UiField(provided = true)
-	UcCBundle res;
-
 	/**
 	 * Class constructor
 	 */
 	public DisclosurePanelUc() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
-		titleImg.setAltText(GL1023);
+		filterPanel.getElement().setId("discpnlFilterPanel");
+		headerPanel.getElement().setId("focuspnlHeaderPanel");
+		imagePanel.getElement().setId("spnlImagePanel");
+		titleImg.setAltText(i18n.GL1023());
+		titleImg.getElement().setId("imgTitleImg");
+		titleImg.getElement().setAttribute("alt", i18n.GL1023());
+		titleImg.getElement().setAttribute("title", i18n.GL1023());
+		titleLbl.getElement().setId("lblTitleLbl");
+		contentPanel.getElement().setId("fpnlContentPanel");
 		titleImg.setUrl("images/Collection-Search/dropdown-arrow-active.png");
 		headerPanel.addClickHandler(this);
 	}
 
 	public void setHeaderTitle(String title) {
 		titleLbl.setText(title);
+		titleLbl.getElement().setAttribute("alt", title);
+		titleLbl.getElement().setAttribute("title", title);
 	}
 
 	/**
@@ -109,10 +117,10 @@ public class DisclosurePanelUc extends Composite implements ClickHandler,Message
 	public void onClick(ClickEvent event) {
 		if (!filterPanel.isOpen()) {
 			titleImg.setUrl("images/Collection-Search/dropdown-arrow-active.png");
-			imagePanel.setStyleName(res.css().disclosurePanelUcHeaderImgOpen());
+			imagePanel.setStyleName("Uc-disclosurePanelUcHeaderImgOpen");
 		} else {
 			titleImg.setUrl("images/Collection-Search/dropdown-arrow.png");
-			imagePanel.setStyleName(res.css().disclosurePanelUcHeaderImgClose());
+			imagePanel.setStyleName("Uc-disclosurePanelUcHeaderImgClose");
 		}
 	}
 

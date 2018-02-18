@@ -1,0 +1,35 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel styleName="shareMainContainer" ui:field="shareMainContainer">
+	    <g:HTMLPanel ui:field="classPanel">
+			<g:HTMLPanel ui:field="assinPnl" styleName="assign2Class col-md-6 col-sm-6">
+				<g:HTMLPanel styleName="assignCourseBlock">
+					<h3>Assign this course to your Classes</h3>
+					<ul>
+						<li>
+							<span class="bluedot"></span>
+							<em>Once you assign this course to a class, you will no longer be able to delete questions in assignments.
+							    This ensures that scores for your students are accurately represented in reports.</em>
+						</li>
+						<li>
+							<span class="greendot"></span>
+							<em>Any edits you make to the content after assigning to a class may affect the reports that you see for your students.</em>
+						</li>
+					</ul>
+					<g:Button styleName="primary" ui:field="courseBtn" text="{i18n.GL3588}"></g:Button>
+					<g:Anchor ui:field="createClassAchr" styleName="createClassStyle">Create new class in My Classes</g:Anchor>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			<div class="clearfix"></div>
+			<g:HTMLPanel styleName="courseDetailsContainer no-gutter" ui:field="courseDetailsContainer">
+	            <g:HTMLPanel ui:field="associatedClassesPnl">
+					<h3>This course is assigned to students in these classes:</h3>
+					<g:VerticalPanel styleName="classListStyle" ui:field="classListPnl"></g:VerticalPanel>
+					<h4 class="courseDetailsContainerBorder">+ Add Class</h4>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+	    </g:HTMLPanel>
+	    <g:HTMLPanel ui:field="contentVisibilityPanel"></g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

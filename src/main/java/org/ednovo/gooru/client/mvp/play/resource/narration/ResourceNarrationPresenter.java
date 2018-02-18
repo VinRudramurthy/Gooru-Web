@@ -26,10 +26,10 @@ package org.ednovo.gooru.client.mvp.play.resource.narration;
 
 
 
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
 
-import com.google.inject.Inject;
 import com.google.gwt.event.shared.EventBus;
+import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
 
 public class ResourceNarrationPresenter extends PresenterWidget<IsResourceNarrationView> implements ResourceNarrationUiHandlers{
@@ -41,10 +41,6 @@ public class ResourceNarrationPresenter extends PresenterWidget<IsResourceNarrat
 	}
 	public void setNarrationMetadata(CollectionItemDo collectionItemDo,String userName,String gooruUid){
 		getView().setNarrationMetadata(collectionItemDo,userName,gooruUid);
-	}
-	
-	public void showAddToolTip(){
-		getView().showAddToolTip();
 	}
 
 }

@@ -30,6 +30,7 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.CssResource.NotStrict;
 
 /**
  * @author Search Team
@@ -120,6 +121,8 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 		String shelfResourceSequencePanel();
 
 		String reorderLabelContainer();
+		
+		String reorderLabelContainerRFormat();
 
 		String newResourceLabel();
 
@@ -212,14 +215,21 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 		String myFolderCollectionUrlbgTitle();
 		String myFolderCollectionFormContainer();
 		String myFolderCollectionFormContent();
+		String myEducationalFormContent();
+		String myEducationArrowleftContainer();
 		String myFolderCollectionFormTitle();
 		String myFolderCollectionFormInputControl();
+		String myEducationFormInputControl();
 		String myFolderCollectionFormInputNoneborder();
 		String myFolderCollectionCategoryDiv();
 		String myFolderCollectionCategoryInputDiv();
+		String myFolderCollectionCategoryInputDivRFormat();
+		String myEducationPanelInputDiv();
+		String myEducationDropdown();
 		String myFolderCollectionCategoryDivText();
 		String myFolderCollectionFormInputBottomText();
 		String myFolderCollectionThumbImageContainer();
+		String standardsInEditResource();
 		String myFolderCollectionThumbImageDesc();
 		String myFolderCollectionThumbRect();
 		String myFolderCollectionThumbArrLContainer();
@@ -230,6 +240,7 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 		String myFolderCollectionThumbOrtext();
 		String myFolderCollectionThumbUploadImagetext();
 		String myFolderCollectionRefreshMainContainer();
+		String myFolderCollectionRefreshMainContainerWeb();
 		String myFolderCollectionRefreshContainer();
 		String myFolderCollectionRefreshInnerContainer();
 		String myFolderCollectionRefreshIcon();
@@ -354,6 +365,8 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 	    String loadingImageMainDiv();
 	    
 		String loadingImageForResource();
+		
+		String loadingImageForResource1();
 
 		String copyPopupResourcesButtonContainerClick();
 
@@ -361,7 +374,6 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 		String addResourceImgDesc();
 
 		String addButtonTitle();
-		String assessmentDownnArrow();
 		String assessmentPopup();
 		String assessmentPopupList();
 		String assessmentAddContainer();
@@ -454,8 +466,56 @@ public interface CollectionEditResourceCBundle extends ClientBundle {
 		String additionalText();
 		String updateTextStyle();
 		String myshelfCollectionresourceDropdown();
+		String myEducationalPanelSubTitles();
+		String myEducationQuestionDropdown();
+		String myEducationEditDropdown();
+		
+		String shelfFoldereDragdropSpacer();
+		String myFolderCollectionFolderUpdateDropdownPanel();
+		String loadingpanelImage();
+        String dDriveSlides();
+        
+        String driveWebContainer();
+        String errorMsgLabel();
+        String editpdfContainer();
+        String stopPdfLbl();
+        String h5();
+        String li();
+        String clearfix();
+        String dropdownContainerInstructional();
+        String placeHolderText();
+        String arrowInstructional();
+        String scrollPanelContainerInstructional();
+        String selectsection();
+        String fRight();
+        String OnButtonDeActive();
+        String accessHazard();
+        String charLimit();
+        /**
+         * Following line is commented for hotfix
+         */
+        /*String upDownBtn();*/
+        
+        String coursePopupStyle();
+        String generateImage();
+        String generateMessage();
+        String myFolderCollectionThumbOrtextWeb();
+        String generateImageContainer();
+        String  myFolderCollectionThumbRectWeb();
+        String eHeader();
+        String eInput();
+        String advncedOption();
+        String shelfGradeInfoBottomWeb();
+        String myFolderCollectionFolderVideoInnerdivRFormat();
+        String myFolderCollectionFolderVideoOuterContainerRFormat();
+        String myFolderCollectionFolderDropdownRFormat();
+        String setBorder();
+        
+        String urlTopPadding();
+           
 	}
-
+	
+	@NotStrict
 	@Source("CollectionEditResource.css")
 	CollectionEditResourceCss css();
 

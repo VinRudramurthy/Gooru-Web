@@ -1,0 +1,73 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"  xmlns:panel="urn:import:org.ednovo.gooru.client.uc">
+
+	<g:HTMLPanel styleName="row">
+		<div id="popupSteps">
+			<div class="popupPanelMain">
+				<div class="popupPanelHeader">
+
+					<div class="row">
+						<g:Label ui:field="lblTitle" styleName="col-md-9 col-xs-9 col-sm-9">Are you sure?</g:Label>
+						<div class="col-md-3 col-xs-3 col-sm-3 closeButtonpopupSteps">
+							<g:Image url="images/closeBig.png" ui:field="closeBtn"/>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+
+				<div class="popupPanelBody popupOrgBoxCheck">
+					<div class="alertIconPopup">
+						<img src="images/alert-icon-copy-2.png"/>
+					</div>
+					<div class="indicationHeader lastStep">
+						<panel:H3Panel ui:field="h3Panel"></panel:H3Panel>
+						<panel:H5Panel ui:field="h5Panel"></panel:H5Panel>
+					</div>
+
+					<div class="checkboxesBlock">
+						<g:SimpleCheckBox styleName="css-checkbox" ui:field="chkBox1"></g:SimpleCheckBox>
+						<panel:LabelPanel styleName="css-label" ui:field="checkboxG12"></panel:LabelPanel>
+						<!-- <g:Label styleName="css-label">All share links will be inaccessible</g:Label> -->
+					</div>
+
+					<div class="checkboxesBlock">
+						<g:SimpleCheckBox styleName="css-checkbox" ui:field="chkBox2"></g:SimpleCheckBox>
+						<panel:LabelPanel styleName="css-label" ui:field="checkboxG13"></panel:LabelPanel>
+						<!-- <g:Label styleName="css-label">All content will be inaccessible to the classes tied to it</g:Label> -->
+					</div>
+
+
+					<div class="checkboxesBlock">
+						<g:SimpleCheckBox styleName="css-checkbox" ui:field="chkBox3"></g:SimpleCheckBox>
+						<panel:LabelPanel styleName="css-label" ui:field="checkboxG14"></panel:LabelPanel>
+						<!-- <g:Label styleName="css-label">All content in this folder will be deleted</g:Label> -->
+					</div>
+
+					<div class="popupTextBoxesBlock">
+						<panel:PPanel ui:field="paragraphPnl"></panel:PPanel>
+						<panel:PPanel>
+							<g:TextBox ui:field="txtConfirmAction" styleName="form-control"></g:TextBox>
+						</panel:PPanel>
+					</div>
+
+				</div>
+				<div class="popupPanelFooter">
+					<div class="row">
+						<div class="col-md-5"></div>
+						<div class="col-md-7 deleteButtons">
+						    <g:Label styleName="pleaseWaitMessage" ui:field="lblRemoving"/>
+							<g:Button ui:field="btnNegitive" styleName="secondary">Cancel</g:Button>
+							<g:Button ui:field="btnPositive" styleName="assessmentButton">Delete Forever</g:Button>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<ui:style field="fc" src="featured.css" type="org.ednovo.gooru.client.mvp.community.contributors.ContributorsCBundle" />
+	<g:HTMLPanel ui:field="panelFeaturedContributors" styleName="{fc.panelFeaturedContributors}">
+	    <g:Label ui:field="lblPleaseWait" styleName="{fc.loading}" text="{i18n.GL3206}"></g:Label>
+	    <g:HTMLPanel ui:field="panelContributorsList" styleName="{fc.contriburotsListContainer}">
+	    </g:HTMLPanel>
+	    <g:Anchor ui:field="ancView" styleName="{fc.viewMore}"></g:Anchor>
+	</g:HTMLPanel>
+</ui:UiBinder>

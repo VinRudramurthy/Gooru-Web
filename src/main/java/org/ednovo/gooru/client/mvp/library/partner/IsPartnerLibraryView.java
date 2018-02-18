@@ -26,8 +26,8 @@ package org.ednovo.gooru.client.mvp.library.partner;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.library.PartnerFolderDo;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.library.PartnerFolderDo;
 
 /**
  * @author Search Team
@@ -47,9 +47,11 @@ public interface IsPartnerLibraryView extends IsViewWithHandlers<PartnerLibraryU
 	 */
 	public void setUnitList(ArrayList<PartnerFolderDo> folderList);
 
-	public void setTopicListData(ArrayList<PartnerFolderDo> searchResult, String folderId);
+	public void setTopicListData(ArrayList<PartnerFolderDo> searchResult, String folderId,String libraryGooruOid);
 	
 	public void loadingPanel(boolean isVisible);
 	
 	public void clearPanels();
+ 
+	void getComingSoonText(boolean isVisible);
 }

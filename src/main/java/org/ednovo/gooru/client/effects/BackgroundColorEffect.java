@@ -31,8 +31,19 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.Timer;
 
 /**
- * @author Search Team
  * 
+ * @fileName : BackgroundColorEffect.java
+ *
+ * @description : 
+ *	This class is responsible for Showing background color effects.
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2013
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
  */
 public class BackgroundColorEffect extends Timer {
 

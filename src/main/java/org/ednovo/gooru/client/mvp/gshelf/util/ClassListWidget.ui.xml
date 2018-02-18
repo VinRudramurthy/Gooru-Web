@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""/>
+	<g:HTMLPanel styleName="marginBottom">
+			<g:HTMLPanel styleName="col-md-6 col-sm-6 col-xs-5">
+	            <g:Anchor ui:field="classNameAnch"></g:Anchor>
+	            <span:SpanPanel ui:field="studentCount"></span:SpanPanel>
+			</g:HTMLPanel>
+			<div class="col-md-6 col-sm-6 col-xs-7">
+				<g:HTMLPanel styleName="text-right">
+					<g:Anchor ui:field="editClassAnch">Select content to publish</g:Anchor> 
+				</g:HTMLPanel>
+			</div>
+			<div class="clearfix"></div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

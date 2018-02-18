@@ -39,23 +39,41 @@ package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add;
 */
 
 
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.ResourceServiceAsync;
+import org.ednovo.gooru.application.shared.model.code.CodeDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.CollectionQuestionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ExistsResourceDo;
+import org.ednovo.gooru.application.shared.model.content.ListValuesDo;
+import org.ednovo.gooru.application.shared.model.content.ResourceMetaInfoDo;
+import org.ednovo.gooru.application.shared.model.content.StandardFo;
+import org.ednovo.gooru.application.shared.model.drive.GoogleDriveItemDo;
+import org.ednovo.gooru.application.shared.model.user.MediaUploadDo;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.client.mvp.gshelf.util.LiPanelWithClose;
+import org.ednovo.gooru.client.mvp.home.library.events.StandardPreferenceSettingEvent;
 import org.ednovo.gooru.client.mvp.image.upload.ImageUploadPresenter;
-import org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.IsCollectionResourceTabView;
+import org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add.drive.DrivePresenter;
+import org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.addquestion.QuestionTypePresenter;
 import org.ednovo.gooru.client.mvp.shelf.event.AddResouceImageEvent;
-import org.ednovo.gooru.client.service.ResourceServiceAsync;
+import org.ednovo.gooru.client.mvp.shelf.event.InsertCollectionItemInAddResourceEvent;
+import org.ednovo.gooru.client.mvp.shelf.event.RefreshType;
+import org.ednovo.gooru.client.mvp.standards.StandardsPopupPresenter;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.CollectionQuestionItemDo;
-import org.ednovo.gooru.shared.model.content.ExistsResourceDo;
-import org.ednovo.gooru.shared.model.content.ResourceMetaInfoDo;
-import org.ednovo.gooru.shared.model.user.MediaUploadDo;
+import org.ednovo.gooru.shared.util.GooruConstants;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
 
@@ -63,7 +81,7 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	
 	private ImageUploadPresenter imageUploadPresenter;
 	
-//	private ExistsResourcePresenter alreadyExistsResourcePresenter;
+	StandardsPopupPresenter standardsPopupPresenter;
 	
 	private SimpleAsyncCallback<CollectionDo> collectionAsyncCallback;
 	
@@ -73,13 +91,39 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	
 	private SimpleAsyncCallback<ResourceMetaInfoDo> resoureMetaInfoAsyncCallback;
 	
+	private SimpleAsyncCallback<ResourceMetaInfoDo> resoureMetaInfoImageAsyncCallback;
+	
 	private SimpleAsyncCallback<ExistsResourceDo> resoureCheckAsyncCallback;
 	
 	private SimpleAsyncCallback<CollectionItemDo> addQuestionResourceAsyncCallback;
 	
 	private SimpleAsyncCallback<CollectionItemDo> updateQuestionResourceAsyncCallback;
 	
+	private SimpleAsyncCallback<CollectionItemDo> v2UpdateQuestionResourceAsyncCallback;
+	
 	private SimpleAsyncCallback<Void> removeQuestionImageAsyncCallback; 
+	
+	private static final String KEY_OER = "resourceLicense";
+	private static final String VAL_OER = "OER";
+	private boolean isQuestionResource = false;
+	private boolean isUserResource = false;
+	
+	private static final String USER_META_ACTIVE_FLAG = "0";
+	
+	private boolean isCCSSAvailable =false;
+	private boolean isNGSSAvailable =false;
+	private boolean isTEKSAvailable =false;
+	private boolean isCAAvailable =false;
+	
+	
+	private static final String O1_LEVEL = "o1";
+	
+	private static final String O2_LEVEL = "o2";
+	
+	private static final String O3_LEVEL = "o3";
+	
+	private static final String ID = "id";
+	
 	
 	public SimpleAsyncCallback<CollectionItemDo> getAddQuestionResourceAsyncCallback() {
 		return addQuestionResourceAsyncCallback;
@@ -90,26 +134,35 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 		this.addQuestionResourceAsyncCallback = addQuestionResourceAsyncCallback;
 	}
 
-	IsCollectionResourceTabView isCollResourceTabView=null;
-	
+	private DrivePresenter drivePresenter=null;
+
+	public DrivePresenter getDrivePresenter() {
+		return drivePresenter;
+	}
+
+	public void setDrivePresenter(DrivePresenter drivePresenter) {
+		this.drivePresenter = drivePresenter;
+	}
+
+	@Inject QuestionTypePresenter questionTypePresenter;
+
 	@Inject
 	private ResourceServiceAsync resourceService;
-	
+
 	CollectionDo collectionDo;
-	
+
 	String clickType;
-	
+
 	@Inject
-	public AddResourcePresenter(IsCollectionResourceTabView isCollResourceTabView, EventBus eventBus, IsAddResourceView view,ImageUploadPresenter imageUploadPresenter) {
+	public AddResourcePresenter(EventBus eventBus, IsAddResourceView view,ImageUploadPresenter imageUploadPresenter,DrivePresenter drivePresenter,QuestionTypePresenter questionTypePresenter,StandardsPopupPresenter standardsPopupPresenter) {
 		super(eventBus, view);
 		this.setImageUploadPresenter(imageUploadPresenter);
+		this.questionTypePresenter=questionTypePresenter;
+		this.standardsPopupPresenter=standardsPopupPresenter;
 		getView().setUiHandlers(this);
 		addRegisteredHandler(AddResouceImageEvent.TYPE, this);
-		
-		this.isCollResourceTabView = isCollResourceTabView;
-//		,ExistsResourcePresenter alreadyExistsResourcePresenter
-//		this.alreadyExistsResourcePresenter = alreadyExistsResourcePresenter;
 
+		this.drivePresenter=drivePresenter;
 	}
 
 	@Override
@@ -120,8 +173,8 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 		imageUploadPresenter.setEditResourceImage(false);
 		imageUploadPresenter.setUserOwnResourceImage(false);
 		imageUploadPresenter.setEditUserOwnResourceImage(false);
+		imageUploadPresenter.setAnswerImage(false);
 		imageUploadPresenter.getView().isFromEditQuestion(true);
-		
 	}
 	
 	@Override
@@ -132,6 +185,7 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 		imageUploadPresenter.setEditResourceImage(false);
 		imageUploadPresenter.setEditUserOwnResourceImage(false);
 		imageUploadPresenter.setUserOwnResourceImage(true);
+		imageUploadPresenter.setAnswerImage(false);
 		imageUploadPresenter.getView().isFromEditQuestion(true);
 	}
 	@Override
@@ -142,6 +196,7 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 		imageUploadPresenter.setEditResourceImage(false);
 		imageUploadPresenter.setUserOwnResourceImage(false);
 		imageUploadPresenter.setEditUserOwnResourceImage(false);
+		imageUploadPresenter.setAnswerImage(false);
 		imageUploadPresenter.getView().isFromEditQuestion(true);
 	}
 	
@@ -155,7 +210,16 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
         imageUploadPresenter.setQuestionImage(false);
         imageUploadPresenter.setUserOwnResourceImage(false);
         imageUploadPresenter.setEditUserOwnResourceImage(false);
+        imageUploadPresenter.setAnswerImage(false);
         imageUploadPresenter.getView().isFromEditQuestion(true);
+	}
+	@Override
+	public void showStandardsPopup(String standardVal, String standardsDesc,List<LiPanelWithClose> collectionLiPanelWithCloseArray) {
+		Window.enableScrolling(false);
+		standardsPopupPresenter.callStandardsBasedonTypeService(standardVal,standardsDesc);
+		standardsPopupPresenter.setAddResourcePresenter(this);
+		standardsPopupPresenter.setAlreadySelectedItems(collectionLiPanelWithCloseArray);
+		addToPopupSlot(standardsPopupPresenter);
 	}
 
 	public ImageUploadPresenter getImageUploadPresenter() {
@@ -165,45 +229,36 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	public void setImageUploadPresenter(ImageUploadPresenter imageUploadPresenter) {
 		this.imageUploadPresenter = imageUploadPresenter;
 	}
-	
-//	public void setImageUrl(String fileName,boolean isQuestionImage){
-//		getView().setImageUrl(fileName,isQuestionImage);
-//	}
-
 	@Override
 	public void setResourceImageUrl(String fileName,String fileNameWithoutRepository,boolean isQuestionImage,boolean isUserOwnResourceImage) {
-	    getView().setImageUrl(fileName,fileNameWithoutRepository,isQuestionImage,isUserOwnResourceImage);	
+	    getView().setImageUrl(fileName,fileNameWithoutRepository,isQuestionImage,isUserOwnResourceImage);
 	}
 
 	@Override
 	protected void onBind() {
 		super.onBind();
-		
-		setUserResourceCollectionItemAsyncCallback(new AsyncCallback<CollectionItemDo>() {
-
+		setUserResourceCollectionItemAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
 			@Override
 			public void onSuccess(CollectionItemDo result) {
 				getView().hide();
-				isCollResourceTabView.insertData(result);
+				AppClientFactory.fireEvent(new InsertCollectionItemInAddResourceEvent(result, RefreshType.INSERT));
 			}
-
 			@Override
 			public void onFailure(Throwable caught) {
+				super.onFailure(caught);
 				Window.enableScrolling(true);
 			}
 		});
-		
-		setCollectionItemAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
 
+		setCollectionItemAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
 			@Override
 			public void onSuccess(CollectionItemDo result) {
-				
 				getView().hide();
-				isCollResourceTabView.insertData(result);
+				AppClientFactory.fireEvent(new InsertCollectionItemInAddResourceEvent(result, RefreshType.INSERT));
+				/**
+				 * Dis-abled for 6.5 release
+				 */
 				MixpanelUtil.AddResourceByUrl();
-				
-//				updateShare("private");
-				
 			}
 		});
 		setResoureMetaInfoAsyncCallback(new SimpleAsyncCallback<ResourceMetaInfoDo>() {
@@ -215,50 +270,84 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 			}
 		});
 		
+		setResoureMetaInfoImageAsyncCallback(new SimpleAsyncCallback<ResourceMetaInfoDo>() {
+
+			@Override
+			public void onSuccess(ResourceMetaInfoDo result) {
+				getView().setPopupImageData(result);
+
+			}
+		});
+		
 		setResoureCheckAsyncCallback(new SimpleAsyncCallback<ExistsResourceDo>() {
 			@Override
 			public void onSuccess(ExistsResourceDo result) {
 				
-				if (result.getNativeurl()!=null)
-					getView().setExistingResourceData(result, getCollectionDo());
+				if (result.getSharing()!=null)
+					if(GooruConstants.PUBLIC.equals(result.getSharing())){
+						getView().setExistingResourceData(result, getCollectionDo());
+					}
+					
 			}
 		});
 		setAddQuestionResourceAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
             @Override
             public void onSuccess(CollectionItemDo result) {
             		getView().hide();
-                    isCollResourceTabView.insertData(result);
+            		AppClientFactory.fireEvent(new InsertCollectionItemInAddResourceEvent(result, RefreshType.INSERT));
+            		/**
+    				 *  dis-abled tagging Quest resource for 6.5 release
+    				 */
                     MixpanelUtil.AddQuestion();
+            }
+            @Override
+            public void onFailure(Throwable caught) {
+            	// TODO Auto-generated method stub
+            	super.onFailure(caught);
+            	AppClientFactory.getClientLogger().log(Level.SEVERE, caught.getMessage(), caught);
             }
 		});
 		setRemoveQuestionImageAsyncCallback(new SimpleAsyncCallback<Void>(){
 			@Override
 			public void onSuccess(Void result) {
 				getView().removeQuestionEditImage();
-			}	
+			}
 		});
 		setUpdateQuestionResourceAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
             @Override
             public void onSuccess(CollectionItemDo result) {
             		getView().hide();
-                    isCollResourceTabView.updateCollectionItem(result);
-                    //MixpanelUtil.AddQuestion();
+                    MixpanelUtil.AddQuestion();
             }
 		});
-		
+
+		setV2UpdateQuestionResourceAsyncCallback(new SimpleAsyncCallback<CollectionItemDo>() {
+            @Override
+            public void onSuccess(CollectionItemDo result) {
+            		getView().hide();
+                    MixpanelUtil.AddQuestion();
+                    AppClientFactory.fireEvent(new InsertCollectionItemInAddResourceEvent(result, RefreshType.UPDATE));
+            }
+		});
 	}
-	@Override
-	public void addResource(String idStr, String urlStr,String titleStr, String descriptionStr, String categoryStr, String thumbnailImgSrcStr, Integer endTime) {
+	native void redirect(String url)
+    /*-{
+            $wnd.location.reload();
+    }-*/;
 	
-		getResourceService().addNewResource("", collectionDo.getGooruOid(), urlStr, titleStr, descriptionStr, categoryStr, thumbnailImgSrcStr, endTime, getCollectionItemAsyncCallback());
-		
+	public void addResource(String idStr, String urlStr,String titleStr, String descriptionStr, String categoryStr, String thumbnailImgSrcStr, Integer endTime,String edcuationalUse,String momentsOfLearning,List<CodeDo> standards,List<StandardFo> centurySkills, String hostName,List<String> tagList,Map<String,List<Integer>> hazardsMap,String mediaType) {
+		getResourceService().addNewResource("", collectionDo.getGooruOid(), urlStr, titleStr, descriptionStr, categoryStr, thumbnailImgSrcStr, endTime,edcuationalUse,momentsOfLearning,standards,centurySkills,hostName,tagList,hazardsMap,mediaType, getCollectionItemAsyncCallback());
+
 	}
 	
 	@Override
 	public void getResourceMetaInfo(String url){
 		getResourceService().getResourceMetaInfo(url, resoureMetaInfoAsyncCallback);
 	}
-	
+	@Override
+	public void getResourceImageInfo(String url) {
+		getResourceService().getResourceMetaInfo(url, resoureMetaInfoImageAsyncCallback);
+	}
 	@Override
 	public void getResourceExists(String url){
 		getResourceService().checkResourceExists(url, resoureCheckAsyncCallback);
@@ -267,7 +356,13 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	public SimpleAsyncCallback<ResourceMetaInfoDo> getResoureMetaInfoAsyncCallback() {
 		return resoureMetaInfoAsyncCallback;
 	}
-	
+	public SimpleAsyncCallback<ResourceMetaInfoDo> getResoureMetaInfoImageAsyncCallback() {
+		return resoureMetaInfoImageAsyncCallback;
+	}
+	public void setResoureMetaInfoImageAsyncCallback(
+			SimpleAsyncCallback<ResourceMetaInfoDo> resoureMetaInfoImageAsyncCallback) {
+		this.resoureMetaInfoImageAsyncCallback = resoureMetaInfoImageAsyncCallback;
+	}
 	public void setResoureMetaInfoAsyncCallback(
 			SimpleAsyncCallback<ResourceMetaInfoDo> resoureMetaInfoAsyncCallback) {
 		this.resoureMetaInfoAsyncCallback = resoureMetaInfoAsyncCallback;
@@ -288,18 +383,6 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	public void setResourceService(ResourceServiceAsync resourceService) {
 		this.resourceService = resourceService;
 	}
-
-	/*@Override
-	public void updateShare(String shareType) {
-		AppClientFactory.getInjector().getResourceService().updateCollectionMetadata(collectionDo.getGooruOid(), null, null, null, shareType, null, null, null, null, new SimpleAsyncCallback<CollectionDo>() {
-
-			@Override
-			public void onSuccess(CollectionDo result) {
-				collectionDo = result;
-				getView().hide();
-			}
-		});
-	}*/
 	public CollectionDo getCollectionDo() {
 		return collectionDo;
 	}
@@ -330,11 +413,6 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	@Override
 	public void addQeustionResource(String mediaFileName, CollectionQuestionItemDo collectionQuestionItemDo) {
 		getResourceService().addQuestionResource(collectionDo.getGooruOid(), mediaFileName, collectionQuestionItemDo, getAddQuestionResourceAsyncCallback());
-		
-	}
-	@Override
-	public void updateQuestionResource(CollectionItemDo collectionItemDo,CollectionQuestionItemDo collectionQuestionItemDo,String thumbnailUrl) {
-		getResourceService().updateQuestionResource(collectionItemDo, collectionQuestionItemDo,thumbnailUrl, getUpdateQuestionResourceAsyncCallback());
 	}
 
 	@Override
@@ -345,17 +423,14 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 	public void setCollectionDoAndType(CollectionDo collectionDo, String clickType) {
 		this.collectionDo = collectionDo;
 		this.clickType=clickType;
+		getView().setCollectionDo(collectionDo);
 		getView().setPopup(clickType);
+		getDepthOfKnowledges();
 	}
 
 	@Override
 	public void isShortenUrl(final String userUrlStr) {
-		AppClientFactory.getInjector().getResourceService().checkShortenUrl(userUrlStr.trim(),new AsyncCallback<String>(){
-			@Override
-			public void onFailure(Throwable caught) {
-				
-			}
-
+		AppClientFactory.getInjector().getResourceService().checkShortenUrl(userUrlStr.trim(),new SimpleAsyncCallback<String>(){
 			@Override
 			public void onSuccess(String result) {
 				if(result.equalsIgnoreCase("True")){
@@ -424,10 +499,85 @@ public class AddResourcePresenter extends PresenterWidget<IsAddResourceView> imp
 		return updateQuestionResourceAsyncCallback;
 	}
 
+	private SimpleAsyncCallback<CollectionItemDo> getV2UpdateQuestionResourceAsyncCallback() {
+		return v2UpdateQuestionResourceAsyncCallback;
+	}
+	
 	public void setUpdateQuestionResourceAsyncCallback(
 			SimpleAsyncCallback<CollectionItemDo> updateQuestionResourceAsyncCallback) {
 		this.updateQuestionResourceAsyncCallback = updateQuestionResourceAsyncCallback;
 	}
 
+	public void setV2UpdateQuestionResourceAsyncCallback(
+			SimpleAsyncCallback<CollectionItemDo> v2UpdateQuestionResourceAsyncCallback) {
+		this.v2UpdateQuestionResourceAsyncCallback = v2UpdateQuestionResourceAsyncCallback;
+	}
+	
+	@Override
+	public void showDriveResoureView(HTMLPanel tabContainer) {
+			drivePresenter.setAddResourcePresenter(this);
+			drivePresenter.getGoogleDriveFiles(null, null, true);
+			drivePresenter.setBreadCrumbLabel(null,null);
+		tabContainer.add(drivePresenter.getWidget());
+		tabContainer.getElement().setId("pnlTabViewContainer");
+	}
+	
+	public void showAddWebResourceWidget(boolean isGoogleDriveFile,FlowPanel googleDriveContainer,GoogleDriveItemDo googleDriveItemDo){
+		googleDriveContainer.clear();
+		getView().showAddWebResourceWidget(isGoogleDriveFile,googleDriveContainer,googleDriveItemDo);
+	}
+	@Override
+	public void v2UpdateQuestionResource(CollectionItemDo collectionItemDo,CollectionQuestionItemDo collectionQuestionItemDo, String thumbnailUrl) {
+		getResourceService().v2UpdateQuestionResource(collectionItemDo, collectionQuestionItemDo,thumbnailUrl, getV2UpdateQuestionResourceAsyncCallback());
+	}
+
+	@Override
+	public void addSelectedQuestionType(String type,CollectionQuestionItemDo collectionQuestionItemDo) {
+		if(type.equalsIgnoreCase("HS_TXT") || type.equalsIgnoreCase("HS_IMG")){
+		questionTypePresenter.getView().resetFields(type);
+		questionTypePresenter.getView().getAddStandards();
+		if(getView().checkQuestionSlot()){
+		addToSlot(SLOT_QUESTION_TYPE, questionTypePresenter);
+		}
+		questionTypePresenter.ImageUpload(imageUploadPresenter,getView(),collectionDo);
+		
+		if(collectionQuestionItemDo!=null){
+			questionTypePresenter.getView().setMetadata(collectionQuestionItemDo);
+		}
+		
+		}else {
+			CollectionQuestionItemDo questionMetadataDo=null;
+			if(!getView().checkQuestionSlot()){
+			 questionMetadataDo=questionTypePresenter.getView().getMetadata();
+			}
+			clearSlot(SLOT_QUESTION_TYPE);
+			getView().clearQuestionSlot();
+			getView().questionMetadata(questionMetadataDo);
+		}
+	}
+
+	@Override
+	public void setEditQuestionData(CollectionItemDo collectionItemDo) {
+		
+		questionTypePresenter.getView().editQuestion(collectionItemDo);
+	}
+
+	@Override
+	public void setHSEditData() {
+		questionTypePresenter.getView().setEditData();
+	}
+	@Override
+	public void getDepthOfKnowledges(){
+		AppClientFactory.getInjector().getfolderService().getDepthOfKnowledgesList(new SimpleAsyncCallback<List<ListValuesDo>>() {
+			@Override
+			public void onSuccess(List<ListValuesDo> result) {
+				getView().setDepthOfKnowledges(result);
+			}
+		});
+	}
+
+   	public void setSelectedStandards(List<Map<String,String>> standListArray){
+   		getView().displaySelectedStandards(standListArray);
+   	}
 }
 

@@ -25,12 +25,11 @@
 package org.ednovo.gooru.client.mvp.play.error;
 
 
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -54,13 +53,15 @@ import com.google.gwt.user.client.ui.Widget;
 * 
 * @Reviewer: Gooru Team.
 */
-public class CollectionNonExistView extends Composite implements MessageProperties{
+public class CollectionNonExistView extends Composite{
 	
 	public interface CollectionNonExistViewUiBinder extends UiBinder<Widget,CollectionNonExistView>{
 		
 	}
 	
 	public static CollectionNonExistViewUiBinder collectionNonExistViewUiBinder=GWT.create(CollectionNonExistViewUiBinder.class);
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 	
 	@UiField public FlowPanel feautredCollectionContainer;
 	@UiField Button btnLibrary;
@@ -72,14 +73,34 @@ public class CollectionNonExistView extends Composite implements MessageProperti
 	 */
 	public CollectionNonExistView(){
 		initWidget(collectionNonExistViewUiBinder.createAndBindUi(this));
-		btnLibrary.setText(GL0506);
-		noLongerText.getElement().setInnerHTML(GL0655);
-		recycleImage.setUrl("images/recycle.png");
-		madePrivateOrDeletedText.getElement().setInnerHTML(GL0656);
-		meanTimetext.getElement().setInnerHTML(GL0657);
-		btnLibrary.setText(GL0506);
-		btnLibrary.getElement().getStyle().setMarginLeft(50, Unit.PX);
-//		getFeaturedCollections();
+		btnLibrary.setText(i18n.GL1831());
+		btnLibrary.getElement().setId("btnLibrary");
+		btnLibrary.getElement().setAttribute("alt",i18n.GL1831());
+		btnLibrary.getElement().setAttribute("title",i18n.GL1831());
+		
+		noLongerText.getElement().setInnerHTML(i18n.GL0655());
+		noLongerText.getElement().setId("pnlNoLongerText");
+		noLongerText.getElement().setAttribute("alt",i18n.GL0655());
+		noLongerText.getElement().setAttribute("title",i18n.GL0655());
+		
+		recycleImage.setUrl("images/collection_error.png");
+		madePrivateOrDeletedText.getElement().setInnerHTML(i18n.GL0656());
+		madePrivateOrDeletedText.getElement().setId("pnlMadePrivateOrDeletedText");
+		madePrivateOrDeletedText.getElement().setAttribute("alt",i18n.GL0656());
+		madePrivateOrDeletedText.getElement().setAttribute("title",i18n.GL0656());
+		
+		meanTimetext.getElement().setInnerHTML(i18n.GL0657());
+		meanTimetext.getElement().setId("pnlMeanTimetext");
+		meanTimetext.getElement().setAttribute("alt",i18n.GL0657());
+		meanTimetext.getElement().setAttribute("title",i18n.GL0657());
+		
+		btnLibrary.setText(i18n.GL1831());
+		btnLibrary.getElement().setAttribute("alt",i18n.GL1831());
+		btnLibrary.getElement().setAttribute("title",i18n.GL1831());
+		
+		feautredCollectionContainer.getElement().setId("fpnlFeautredCollectionContainer");
+		
+		recycleImage.getElement().setId("imgRecycleImage");
 	}
 	
 	/**
@@ -88,39 +109,7 @@ public class CollectionNonExistView extends Composite implements MessageProperti
 	 */
 	@UiHandler("btnLibrary")
 	public void onClickOnLibrary(ClickEvent clickEvent){
-		AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.HOME);
+		AppClientFactory.getPlaceManager().revealPlace(PlaceTokens.DISCOVER);
 		
 	}
-	
-	
-	/*
-	*//**
-	 * Gets all featured collections from API.s
-	 *//*
-	private void getFeaturedCollections(){
-		AppClientFactory.getInjector().getPlayerAppService().getFeaturedContent(new SimpleAsyncCallback<ArrayList<FeaturedContentDo>>() {
-			@Override
-			public void onSuccess(ArrayList<FeaturedContentDo> featuredContentList) {
-				showFeaturedContent(featuredContentList);
-			}
-		});
-	}
-	*//**
-	 * Sets all list featured collection, received as response from an API.
-	 * @param featuredContentList {@link List}
-	 *//*
-	 private void showFeaturedContent(List<FeaturedContentDo> featuredContentList){
-	    	if(featuredContentList.size()>0){
-	    		FlowPanel featuredContentContainer=new FlowPanel();
-	    		for(int i=0;i<featuredContentList.size();i++){
-	    			if(i<4){
-		    			FeaturedContentDo featuredContentDo=featuredContentList.get(i);
-		    			featuredContentContainer.add(new FeaturedCollectionView(featuredContentDo.getCollectionTitle(), featuredContentDo.getCollectionThumbnailUrl(),featuredContentDo.getCollectionGooruOid()));
-	    			}
-	    		}
-	    		feautredCollectionContainer.clear();
-	    		feautredCollectionContainer.add(featuredContentContainer);
-	    	}
-	    }
-	*/
 }

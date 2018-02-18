@@ -1,512 +1,754 @@
-
-.collectionXPlayerSegmentWrapper {
-	width: 1150px;
-	min-height: 500px;
-	height: auto;
-	margin: 0 auto;
+.container {
+    min-height:100%;
+    width:1000px;
+    margin:auto;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+     margin-top:50px;
+}
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+.leftPanel {
+    width: 100%;
+   /*  min-height:100%; */
+   	min-height:650px;
+    float:left;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+   /*  padding:30px; */
+    background:white;
+    border-right:1px solid #ddd;
+    padding-bottom:20px;
+}
+.rightPanel {
+    width:240px;
+   /*  height:100%; */
+    min-height:650px;
+    float:right;
+    padding: 30px 20px 20px 20px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 
-.collectionXPlayerSegmentHeader {
-	width: 1150px;
-	height: 57px;
-	float: left;
-	background-color: #515151;
+.hrShadow {
+    width:100%;
+    height:33px;
+    background:url('images/hrShadow.png') repeat;
+   /*  margin-left:-30px; */
+    margin-top:50px
 }
 
-.collectionXPlayerSegmentHeaderTitle {
-	float: left;
-	font-size: 24px;
+.commentField {
+	/* max-width: 490px; */
+	max-height: 80px;
+    float:left;
+    font-size: 12px;
+    margin-right:10px;
+    min-height: 80px;
+	/* min-width: 490px; */
+	border: 1px solid #dddddd;
+	padding: 5px;
+	resize: none;
+}
+
+.infoSection{
+    margin-top:15px;
+    padding-bottom:15px;
+    border-bottom:1px solid #ddd;
+}
+.infoSection:last-child {
+    border-bottom:none;
+}
+.infoSection:first-child {
+    margin-top:0px;
+}
+.rightPanel .infoSection h3{
+	margin-bottom:10px;
+}
+.rightPanel  .userImageContainer {
+    margin-right:10px;
+    width:40px;
+    height:40px;
+    border-radius:40px;
+    display:inline-block;
+    vertical-align:middle;
+    border:3px solid #87BADD;
+}
+.rightPanel .userImage{
+    width:40px;
+    height:40px;
+     border-radius:40px;
+    display:inline-block;
+    vertical-align:middle;
+}
+.rightPanel  .username {
+    display:inline-block;
+    vertical-align:middle;
+}
+.standard {
+    background-color:#515151;
+    color:white;
+    display:inline-block;
+    padding:3px 5px;
+    border-radius:4px;
+    margin-bottom:5px;
+    font-size:10px;
+    font-weight:bold
+}
+.rightPanel .relatedConcepts a {
+    display:block;
+    margin:1px 0px;
+}
+.rightPanel a.flagCollection {
+    color: #515151;
+    padding-left:30px;
+    background:url('images/flag.png') no-repeat;
+}
+
+.flagCollection {
+    color: #515151;
+    padding-left:30px;
+    background:url('images/flag.png') no-repeat;
+}
+.rightPanel a.flaggedCollection {
+    color: #999;
+    padding-left:30px;
+    background:url('images/flagged.png') no-repeat;
+}
+.flaggedCollection {
+    color: #999;
+    padding-left:30px;
+    background:url('images/flagged.png') no-repeat;
+}
+.rightPanel a.flaggedCollection:hover {
+    opacity:1;
+    cursor:default;
+}
+.flaggedCollection:hover {
+    opacity:1;
+    cursor:default;
+}
+.courseTitle{
+	
+}
+.views{
+	font-size: 1.17em;
+	font-weight: bold;
+}
+.nextSteps{
+	background-color: white;
+	border: 1px solid #DDD;
+	text-align: center;
+	padding: 15px;
+	margin: 10px 0px 10px 0px;
+}
+.nextSteps .h2{
+	background: url('images/whatnext_banner.png') no-repeat;
+	height: 35px;
+	margin-top: -30px;
 	color: #FFF;
-	width: 801px;
-	margin: 17px 0px 0px 26px;
-}
-
-.collectionxPlayerSummaryBottomDescription {
-	float: left;
-	margin-left: 130px;
-	font-size: 12px;
-	font-family: arial;
-	color: #FFF;
-	margin-top: -13px;
-}
-.collection-share-view-text{
-	margin-left: 283px; 
-	font-size: 12px;
-	color:#515151;
-}
-
-
-.collectionxPlayerSummaryWrapper {
-	width: 960px;
-	margin: 0 auto;
-	min-height: 600px;
-	height: auto;
-	background-color: #f0f0f0;
-	float: left;
-	position:relative;
-}
-
-.collectionxPlayerSummaryTitle {
-	width: 402px;
-	margin: 0 auto;
-	color: #515151;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 21px;
-}
-
-.collectionxPlayerSummaryTitleText {
-	padding-top: 40px;
-}
-
-.collectionxPlayerRefreshContainer {
-	width: 100px;
-	height: 44px;
-	margin: 0 auto;
-}
-
-.collectionPlayerReplayContainer {
-	background: #f0f0f0;
-}
-
-.collectionxPlayerShareContainer {
-	margin: 0 auto;
-	background: #f0f0f0;
-}
-
-.collectionxPlayerRefreshImage {
-	float: left;
-	cursor: pointer;
-	margin-top: 15px;
-	width: 100px;
-	opacity: 1.0;
-}
-
-.collectionxPlayerRefreshImage:hover {
-	opacity: 0.6;
-}
-
-.collectionPlayerSummaryShareContainer {
-	height: 80px;
-	width:82%;
-	margin-left: 90px;
-	padding: 15px 0px 15px 0px;
-}
-
-.collectionPlayerSummaryShareTextBox {
-	width: 294px;
-	float: left;
-	height: 25px;
-	padding-left: 10px;
 	font-size: 14px;
-	color: #414141;
+	padding-top: 7px;
+	margin-bottom:10px;
 }
-
-.collectionxPlayerRefreshText {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #1076bb;
-	font-size: 16px;
-	cursor: pointer;
-	margin-right: 10px;
-	margin-top: 3px;
-}
-
-.collectionxPlayerShareText {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #FFF;
+.nextSteps h3{
+	font-weight: normal;
 	font-size: 12px;
-	cursor: pointer;
-	margin-right: 10px;
-	/* margin-left: 6px; */
+	margin-bottom: 10px;
+	font-family: Arial, sans-serif !important;
+}
+.nextSteps a{
+	display: block;
+	margin: 10px 0px;
+}
+.commentsSection{
+	padding:30px;
+}
+ .userPhoto {
+    margin-right:10px;
+    width:40px;
+    height:40px;
+    border-radius:40px;
+    float:left;
+    border:3px solid #87BADD;
+    background-color:#f0f0f0;
+}
+
+.commentsSection .username {
+    font-weight:bold;
+    display:inline-block;
+    margin-right:10px;
+    float:left;
+}
+
+.commentsSection .addComment,
+.commentsSection .editComment {
+    margin-top:30px
+}
+
+.loginMessaging {
+   width: 100%;
+	/* min-height: 100px; */
+	height: 100px;
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	color: #999;
+	/* line-height: 100px; */
+	text-align: center;
+	padding: 5px;
+	line-height: 6.25em;
+	vertical-align: middle;
+}
+
+.commentsSection .addComment button#post,
+.commentsSection .editComment button#post,
+.commentsSection .editComment button#cancel {
+    float:left;
+}
+
+.marginTop10 {
 	margin-top: 10px;
-	padding-bottom: 4px;
 }
 
-.collectionxPlayerSummaryQuestionTitle {
+.successPostMsg {
+	text-align: center;
+	height: 80px;
 	float: left;
-	width: 93%;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 22px;
-	color: #ffffff;
-	margin-top: 40px;
-	margin-left: 110px; 
+	padding-top: 30px;
+	border: 1px solid #dddddd;
 }
 
-.collectionxPlayerSummaryAnswerCorrectlyContainer {
-	float: left;
-	width: 93%;
-	height: 43px;
-	margin-top: 18px;
-	margin-left: 114px; 
+.deleteMsg {
+	border-bottom: 1px solid #ddd;
+	padding: 30px 0px;
+	transition: height 1s ease;
+	position: relative;
+	background: #f0f0f0;
+	text-align: center;
 }
 
-.collectionxPlayerSummaryAnswerCorrectlyText {
-	font-size: 12px;
-	float: left;
-	color: #FFF;
-	font-family: Arial, Helvetica, sans-serif;
+.commentsH2 {
+	margin-bottom: 10px;
+	display: inline-block;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.standard_section{
+	display:inline-block;
 }
 
-.collectionxPlayerSummaryAnswerCorrectlyBoxContainer {
-	float: left;
+.seeMore {
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+	transition: height 1s ease;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	color: #1076BB;
+	cursor: pointer;
+}
+
+.seeMore:hover {
+	opacity: 0.5;
+}
+
+.errorMessage {
+	float: right;
+	margin-right: 80px;
+	margin-top: 10px;
+}
+.errorMessageCommentsSection {
+	float: right;
+	margin-top: 10px;
+}
+
+.conceptTitle {
+	color: #1076bb;
+	cursor: pointer;
+	padding: 1px 0px;
+}
+
+.conceptTitle:hover {
+	opacity: 0.7;
+}
+
+.marginBotton10Px{
+	margin-bottom: 10px;
+}
+
+
+/*///////////////////////////////////// insights iFrame ////////////////*/
+
+.insightsFrame {	 	
+    clear:both;
+    min-height: 100px;
+	max-height: 100%;
+	width: 900px;
+	padding: 20px;
+	background-color: #EEE;
+	margin: 0 auto;
+	background: none repeat scroll 0 0 #F2F1F1;
+    padding-bottom:30px;
+    border-top:1px solid #ddd;
+    -webkit-box-shadow: inset 0 12px 30px -6px #eee;
+    -moz-box-shadow: inset 0 12px 30px -6px #eee;
+    box-shadow: inset 0 12px 30px -6px #eee;
+}
+
+.insightsFrameContainer {	 	
+ /*    min-height: 100px;
+	max-height: 100%;
+	width: 900px;
+	background-color: #EEE;
+	margin: 0 auto;
+	background: none repeat scroll 0 0 #F2F1F1; */
+}
+
+.insightsFrame .buttonGroup {
+    float:right;
+}
+
+.insightsFrame .buttonGroup button {
+    padding:4px;
+    font-size:16px;
+}
+
+.insightsFrame h3 {
+    text-align:center;
+    clear:both;
+}
+
+.insightsFrame .emptyMessage {
+	clear:both;
+    color:#999;
+    font-style:italic;
+    text-align:center;
+}
+
+.loginStatus .loggingIcon {
+    width:20px;
+    height:20px;
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    margin-right:5px;
+    margin-left:-5px;
+}
+
+.loginStatus.loggedOut .loggingIcon {
+    opacity:.6;
+}
+
+.loginStatus .loggingIcon .progress {
+    background-color: white;
+    border-radius:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.loginStatus .loggingIcon .remainingTrack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    clip: rect(0px, 10px, 20px, 0px);
+}
+
+.loginStatus .loggingIcon .trackInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color:#46873F;
+    opacity:.8;
+    clip: rect(0px, 10px, 10px, 0px);
+}
+
+.loginStatus.loggedOut .loggingIcon .remainingTrack {
+    display:none;
+}
+
+.loginStatus .loggingIcon .innerDot {
+    border:5px solid #46873F;
+    background-color:white;
+    width:6px;
+    height:6px;
+    position:absolute;
+    top:2px;
+    right:2px;
+    border-radius:100%;
+}
+
+.ribbon {
+ 	font-size: 16px !important;
+ 	/* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+ 	width: 50%;
+ 	position: relative;
+ 	background: #87BADD;
+ 	color: #fff;
+ 	text-align: center;
+ 	padding: .5em 1em; /* Adjust to suit */
+ 	margin: -2.5em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+.ribbon:before, .ribbon:after {
+ 	content: "";
+ 	position: absolute;
+ 	display: block;
+	bottom: -.5em;
+	border: 1em solid #579ECF;
+	z-index: -1;
+}
+.ribbon:before {
+	left: -1.2em;
+	border-right-width: 1.2em;
+	border-left-color: transparent;
+}
+.ribbon:after {
+	right: -1.2em;
+	border-left-width: 1.2em;
+	border-right-color: transparent;
+}
+.ribbon .ribbonContent:before, .ribbon .ribbonContent:after {
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #1076BB transparent transparent transparent;
+	bottom: -.5em;
+}
+.ribbon .ribbonContent:before {
+	left: 0;
+	border-width: .5em 0 0 1em;
+}
+.ribbon .ribbonContent:after {
+	right: 0;
+ 	border-width: .5em 1em 0 0;
+}
+
+.classInfo {
+    background:white;
+    border:1px solid #ddd;
+    padding:15px;
+    position:relative;
+    z-index:0;
+    margin-top:15px;
+}
+
+.collectionSummary{
+	text-align: center;
 	clear: both;
-	margin-top: 3px;
+	font-size: 14px;
+	font-weight: bold;
 }
 
-.collectionxPlayerSummaryAnswerCorrectlyBoxGray {
-	width: 400px;
-	height: 22px;
-	float: left;
-	background-color: #999999;
+.classInfoRibbon{
+	text-align: center;
 }
 
-.collectionxPlayerSummaryAnserCorrectlyBoxGreen {
-	float: left;
-	background-color: #4e9746;
-	height: 22px;
+.classInfoRibbon .h2{
+	background: url('images/whatnext_banner.png') no-repeat;
+	height: 35px;
+	margin-top: -30px;
+	color: #FFF;
+	font-size: 14px;
+	padding-top: 7px;
+	margin-bottom:10px;
+}
+.insightsFrameContent{
+	width:100%;
+	min-height: 500px;
+	height:100%;
+}
+.messageContainer{
+	padding: 35px 15px;
+	background: #f1f0f0;
+	text-align: center;
+}
+.messageTextHeader{
+	padding: 10px;
+	font-size: 24px;
+	color:#515151;
+	font-weight: bold;
+}
+.messagecontentText{
+	font-size: 12px;
+	color:#999;
+	font-style: italic;
+}
+.clearBoth{
+	clear: both;
+}
+.mutedText{
+	color:#EEEEEE;
 }
 
-.collectionxPlayerSummaryQuestionContainer {
+.collections{
+	/* background:#333333; 
+	padding:15px 0;*/
+	padding: 0 0 27px 0;
+}
+.Playlast{
+	min-height:140px;
+}
+.colleDescriptionBig{
+	font-weight:bold;
+	font-size:20px;
+	margin-bottom: 30px;
+	color:#ffffff
+}
+.whitebg{
+	background:#ffffff;
+	padding-left:0;
+	padding-right:0;
+	display:inline-block;
+	width:100%;
+}
+.block{
+	/* padding: 30px 0; */
+	padding: 11px 0;
+}
+.timespend{
+	display: inline-block;
+	margin-bottom: -133px;
+	position: relative;
+	margin-left: 15px;
+	margin-right: 15px;
+	z-index: 99;
+}
+.playImg{
+	display: inline-block;
 	float: left;
-	margin-top: 40px;
-	width: 861px;
-	/* margin-left: 40px; */
-	margin-left: 62px;
+	margin-right: 25px;
+	width: 220px;
+	height: 160px;
+	position: relative;
+}
+.playRight {
+   display: inline-block;
+	float: left;
+}
+.playBlockTop{
+	min-height:100px;
+}
+.PlayBox{
+	   display: inline-block;
+	   width:145px;
+	   text-align:center;
+	   vertical-align:top;
+}
+.PlayBoxTime{
+	  display: inline-block;
+	   width:125px;
+	   text-align:center;
+	   vertical-align:top;
 }
 
-.collectionxPlayerSummaryQuestionImage {
-	float: left;
+.PlayBox .smallTxt, .PlayBoxTime .smallTxt{
+	font-size:14px;
+	color:#ffffff;
+	margin-bottom:7px;
+}
+
+.PlayBox .bigTxt{
+	font-size:53px;
+	color:#ffffff;
+	display:inline-block;
+}
+.PlayBox .smallerTxt{
+	font-size:33px;
+	color:#ffffff;
+		display:inline-block;
+}
+.whatsnext{
+	display: inline-block;
+	width:220px;
+	padding-left:25px;
+	border-left:1px solid #444444;
+
+}
+.whatsnext .smallTxt{
+	font-size:15px;
+	font-weight:bold;
+	color:#ffffff;
+	margin-bottom:8px;
+		display:block;
+}
+.whatsnext  img{
+	float:left;
+	margin-right:8px;
 	width: 80px;
 	height: 60px;
-	margin-top: 20px;
+	cursor: pointer;
 }
 
-.collectionxPlayerSummaryQuestionAndAnswerContainer {
-	width: 766px;
-	float: left;
-	margin-left: 15px;
-	margin-top: 10px;
+.whatsnext .bigTxt{
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	margin-bottom:7px;
 }
-
-.collectionxPlayerSummaryQuestionAndAnswerWrongImage {
-	float: left;
-	width: 12px;
-	height: 15px;
-	margin-right: 7px;
-	margin-left: -18px;
+.whatsnext .smallerTxt{
+	font-size:13px;
+	font-weight:bold;
+	color:#ffffff;
 }
-
-.collectionxPlayerSummaryQuestionAndAnswerRigntImage {
-	float: left;
-	width: 15px;
-	height: 16px;
-	margin-right: 7px;
-	margin-left: -22px;
+.playBlockbottom .buttons{
+	margin-top:25px;
 }
-
-.collectionxPlayerSummaryQuestionAndAnswerQuestion {
+.collectionImageContainer {
+	width: 230px;
+	height: 160px;
 	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #FFF;
-	margin-left: 18px;
-}
-
-.collectionxPlayerSummaryQuestionAndAnswerOptionOneContainer {
-	float: left;
-	width: 700px;
-	clear: both;
-	margin-top: 7px;
-	margin-left: 18px;
-}
-
-.collectionxPlayerSummaryQuestionAndAnswerOrder {
-	float: left;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #FFF;
 	margin-right: 15px;
 }
-
-.collectionxPlayerSummaryQuestionAndAnswerOptions {
-	float: left;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #FFF;
-}
-
-.collectionxPlayerSummaryQuestionAndAnswerOptionContainer {
-	float: left;
-	width: 700px;
-	clear: both;
-	margin-left: 18px;
-}
-
-.collectionxPlayerSummaryQuestionAndAnswerDescribtion {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #4E9746;
-	margin-top: 8px;
-	margin-left: 17px;
-}
-
-.collectionxPlayerSummaryStudyMoreContainer {
-	width: 90%;
-	min-height: 90px;
-	height: auto;
-	float: left;
-	margin-top: 20px;
-}
-
-.collectionxPlayerSummaryAuthorName {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: italic;
-	width: 80%;
-	margin-left: 10px;
-	color: #FFF;
-	margin-top: 5px;
-}
-
-.collectionxPlayerSummaryPartDetails {
-	width: 270px;
-	margin-left: 10px;
-	float: left;
-	margin-top: 5px;
-	color: #FFF;
-}
-
-.collectionxPlayerChapterBgIcon2 {
-	width: 120px;
-	float: left;
-	height: 90px;
-	background-image: url(../images-2/chapter-icon.png);
-}
-
-.collectionxPlayerChapterBlueBar2 {
-	width: 8px;
-	height: 90px;
-	float: left;
-	background-image: url(../images-2/chapter-icon-blue-bar.png);
-}
-
-.collectionxPlayerDetailsSummaryTitle {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	margin-right: 5px;
-}
-
-.collectionxPlayerBulletTwo {
-	width: 5px;
-	height: 5px;
-	float: left;
-	background-color: #4e9746;
-	margin-left: 7px;
-	margin-top: 7px;
-	margin-right: 7px;
-}
-
-.collectionxPlayerDetailsSummaryView {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	margin-right: 5px;
-}
-
-.collectionxPlayerBulletTwo {
-	width: 5px;
-	height: 5px;
-	float: left;
-	background-color: #4e9746;
-	margin-left: 7px;
-	margin-top: 7px;
-	margin-right: 7px;
-}
-
-.left {
+.collectionImage {
+	width: 220px;
+	height: 160px;
+	border-left: 10px solid #1076bb;
 	float: left;
 }
-
-.collectionxPlayerResouresSmallNumberImage {
-	float: left;
-	margin-top: 4px;
-	margin-right: 5px;
-}
-
-.collectionxPlayerResouresCount {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #4f9747;
+.assessmentImage {
+	width: 220px;
+	height: 160px;
+	border-left: 10px solid #feae29;
 	float: left;
 }
-
-.collectionxPlayerSummaryStudyMoreChapterTitles {
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #1076bb;
-	width: 80%;
-	font-weight: bold;
-	margin-left: 10px;
-}
-.collectionPlayerInputSeparatorLine
-{
-float: left;
-margin-right: 20px;
-width: 1px;
-height: 25px;
-background-color: #999;
-margin-left: 20px;
-margin-top: 14px;
-	
-}
-.socialMediaBigIcon
-{
-/* margin-top: 22px;  */
-margin-top:10px;
-float: left; 
-font-size: 12px;
-font-family: Arial, Helvetica, sans-serif;
-color: #FFF;
-}
-.collectionPlayerSumShareContainer{
-	float:left;
-}
-
-.cpIconsContainer {
-	width: 378px;
-	float: right;
-}
-
-.cpSummaryText {
-	float: left;
-	color: #515151;
-	font-size: 12px;
-	margin-top: 3px;
-	margin-right: 8px;
-}
-
-.cpPrintEmailIcon {
-	float: left;
-	margin-left: 5px;
+.collectionreplay {
+	width: 230px;
+	height: 160px;
+	box-sizing: border-box;
+	text-indent: -234px;
+	position: relative;
+	background: url(images/replay.png) center 30px no-repeat, rgba(0, 0, 0, 0.6);
+	transition: background-color 0.5s ease;
+	color: white;
+	text-align: center;
 	cursor: pointer;
 }
-.printElementContainer {
-	padding-top: 5px;
-	float: left;
-	width: 960px;
-	background: white;
-	border-top: 1px solid #ddd;
+.collectionreplayText {
+	padding-top: 85px;
 }
-.ftmSummaryPageContainer {
-	margin-top: 10px;
-	display: inline-block;
+.buttonmargin{
+	margin-left:10px;
 }
-
-/*collection summary style*/
-
-.collection-summary-wrapper{
-	float: left;
-	min-height: 60px;
-	width: 860px;
-	margin-left: 100px;
-	margin-top: 20px;
+.timeTextBig{
+	color:#fff;
+	font-size:23px;
 }
-.collection-summary-thumbnail-wrapper{
-	width: 110px;
-	display: inline;
-	height: 60px;
-	padding-left: 10px;
+.timeTextSmall{
+	color:#fff;
+	font-size:18px;
 }
-.collection-summary-serial-num{
-	width: 20px;
-	float: left;
-	padding-right: 10px;
-	font-size: 26px;
-	padding-top: 10px;
-	color: #515151;
-	display: inline;
-}
-.collection-summary-thumbnail{
-	float: left;
-	width: 80px;
-	height: 60px;
-}
-
-.collection-summary-content-wrapper{
-	width: 614px;
-	display: inline-block;
-}
-.collection-summary-question-text{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #515151;
-	margin-left: 48px;
-	font-weight: bold;
-	margin-bottom: 5px;
-}
-.collection-summary-answer{
-	width: 700px;
-	margin: 0 0 5px 48px;
-}
-.collection-summary-answer-option{
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #999;
-	margin-top: 3px;
-	display: inline;
+.depthofKnow{
 	
 }
-.collection-summary-answer-text{
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
+.reactionCanExplain{
+	background: url(/images/emotics.png) no-repeat;
+	background-position: -7px -101px;
+	width: 35px;
+	height: 35px;
+}
+.reactionCanUnderstand{
+	background: url(/images/emotics.png) no-repeat;
+	background-position: -53px -101px;
+	width: 35px;
+	height: 35px;
+}
+.reactionDonotUnderstand{
+	background: url(/images/emotics.png) no-repeat;
+	background-position: -142px -101px;
+	width: 35px;
+	height: 35px;
+}
+.reactionMeh{
+	background: url(/images/emotics.png) no-repeat;
+	background-position: -96px -101px;
+	width: 35px;
+	height: 35px;
+}
+.reactionNeedHelp{
+	background: url(/images/emotics.png) no-repeat;
+	background-position: -187px -101px;
+	width: 35px;
+	height: 35px;
+}
+
+.commentsCharLimit{
+	text-align: right;
 	color: #999;
-	word-wrap: break-word;
-	margin: 3px 0px 0px 3px;
-	width: 558px;
-	display: inline;
+	margin-top:-10px;
 }
-.collection-summary-explanation-text{
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #4E9746;
-	word-wrap: break-word;
-	margin: 3px 0px 0px 48px;
-	width: 558px;
-	padding-bottom: 20px;
+
+.collectionEnd{
+	background:#333333;
+	padding:6px 0;
+	min-height:180px;
+}
+.commentsTable{
+	width:100%;
+}
+.avatarblock{
+	width:72%;
+/*	margin:25px 0;*/
+	padding:35px 0;
+	border-bottom:1px solid #dedede;
+}
+.padding20{
+	padding:20px;
+}
+.onoffbtns{
+	display:inline-block;
+	margin-left:15px;
+}
+
+.switchContainer {
+ 	 position: relative;
 	display: inline-block;
+	vertical-align: top;
+	width: 59px;
+	height: 28px;
+	padding: 3px;
+	vertical-align: middle;
+	background-color: white;
+	border-radius: 18px;
+	cursor: pointer;
 }
-.collection-email-icon{
-	margin-top: 3px;
+.paddingClear{
+	padding:0;
+}
+.resourceCountStyle{
+	font-size: 13px;
+	font-weight: bold;
+	color: #ffffff;
+	display: inline-block;
+	margin-top: 14px;
 	margin-right: 10px;
-	width:20px;
-	height:25px;
-	float:left;
-	background:url("images/emailIcon.png") no-repeat;
 }
-
-.collection-print-icon{
-	width:20px;
-	height:20px;
-	float:left;
-	background:url("images/printIcon.png") no-repeat;
-}
-
-.collection-print-icon:hover,.collection-email-icon:hover{
-	opacity:0.7;
-	cursor:pointer;
-}
-
-.replayButtonNormal {
-	background: url("images/player_images.png") no-repeat;
-	background-position: -254px -37px;
-	width: 26px;
-	height: 25px;
+.displayBlock{
 	display: inline-block;
+	width: 100%;
 }
-
-
-
+.summary {
+	margin-top: -62px;
+	position: relative;
+	display: inline-block;
+	width:100%;
+}

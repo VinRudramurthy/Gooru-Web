@@ -5,14 +5,13 @@
 	<ui:with
 		type="org.ednovo.gooru.client.mvp.home.library.assign.AssignPopUpCBundle"
 		field="res" />
-	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="mainContainer">
 		<g:HTMLPanel ui:field="panelTitleContainer">
 			<g:Label ui:field="lblAssignCollectionTitle" styleName="{res.css.labelTitleText}"></g:Label>
 			<g:Label ui:field="lblAssignCollectionPrivate" styleName="{res.css.labelTitlePrivateText}"></g:Label>
 		</g:HTMLPanel>
 		<g:HTMLPanel ui:field="panelNoClasspages">
-			<g:Image  styleName="{res.css.noClassPageBanner}" ui:field="lblNoClassPageImage"></g:Image>
-
+			<g:Image  ui:field="lblNoClassPageImage"></g:Image>
 			<g:Label ui:field="lblNoClassPage" styleName="{res.css.labeldNoClassPageText}">
 			</g:Label>
 			<g:Label ui:field="lblNoClassPageMsg" styleName="{res.css.labeldNoClassPageText}">
@@ -22,47 +21,37 @@
 	      <g:Label  styleName="{res.css.loadingImageForSelfEdit}" />
 	   	</g:HTMLPanel>
 		<g:HTMLPanel ui:field="htmlPanelContainer">
-			<g:HTMLPanel styleName="{res.css.controlsContainer}"
-				ui:field="controlsContainer">
-
-				<g:HTMLPanel>
-
-					<g:Label ui:field="lblClasspages" styleName="{res.css.labelText}"></g:Label>
-
-					<g:HTMLPanel styleName="{res.css.dropdownContainer}">
-						<g:Label ui:field="lblClasspagePlaceHolder" styleName="{res.css.placeHolderText}"></g:Label>
-						<g:Label ui:field="lblClasspagesArrow" styleName="{res.css.arrow}"></g:Label>
-						<g:ScrollPanel ui:field="spanelClasspagesPanel"
-							styleName="{res.css.scrollPanelContainer}">
-							<g:HTMLPanel ui:field="htmlClasspagesListContainer"
-								styleName="">
-							</g:HTMLPanel>
-						</g:ScrollPanel>
-					</g:HTMLPanel>
+			<g:HTMLPanel styleName="{res.css.controlsContainer}"	ui:field="controlsContainer">
+			<g:Label ui:field="lblClasspages" styleName="col-md-4 col-sm-4 {res.css.marginTop}"></g:Label>
+			<g:HTMLPanel styleName="col-md-8 col-sm-8 {res.css.marginTop}">
+				<g:HTMLPanel styleName="{res.css.dropdownContainer}">
+			    <g:Label ui:field="lblClasspagePlaceHolder" styleName="{res.css.placeHolderText}"></g:Label>
+				<g:Label ui:field="lblClasspagesArrow" styleName="{res.css.arrow}"></g:Label>
+				<g:ScrollPanel ui:field="spanelClasspagesPanel"			styleName="{res.css.scrollPanelContainer}">
+					<g:HTMLPanel ui:field="htmlClasspagesListContainer"></g:HTMLPanel>
+				</g:ScrollPanel>
 				</g:HTMLPanel>
-				
-	<g:HTMLPanel styleName="{res.css.duedateContainer}">
-		<g:HTMLPanel styleName="{res.css.duedateDiv}">
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="clearfix"/>
+		<g:HTMLPanel styleName="col-md-4 col-sm-4 {res.css.marginTop}">
 			<g:Label ui:field="lblDuedate" styleName="{res.css.duedateDivLabel}"></g:Label>
 				<g:Label ui:field="lblDuedateOptional" styleName="{res.css.duedateDivLabel}"></g:Label>
 		</g:HTMLPanel>
-		<g:HTMLPanel ui:field="duedateContainer" styleName="{res.css.directionsTextAreaContainer}">
-			</g:HTMLPanel>
-	</g:HTMLPanel>
-	
-	<g:HTMLPanel styleName="{res.css.assignmentsContainer}">
-		<g:HTMLPanel styleName="{res.css.directionsDiv}">
-		<g:Label ui:field="lblDirections" styleName="{res.css.directionsDivLabel}"></g:Label>
-		<g:Label ui:field="lblDirectionsOptional" styleName="{res.css.directionsDivLabel}"></g:Label>
-		</g:HTMLPanel>
-		<g:HTMLPanel>
-		<g:TextArea ui:field="textAreaVal" styleName="{res.css.directionsTextArea}"></g:TextArea>
-		<g:Label ui:field="directionsErrorLbl" styleName="{res.css.directionsErrorLbl}"></g:Label>
-		</g:HTMLPanel>
-	</g:HTMLPanel>
-	
 
-		<!-- 		<g:HTMLPanel styleName="{res.css.assignmentsContainer}">
+		<g:HTMLPanel ui:field="duedateContainer" styleName="col-md-8 col-sm-8 {res.css.marginTop}"></g:HTMLPanel>
+			<g:Label ui:field="lblDirectionCharLimit" styleName="{res.css.directionsChrLimit}"></g:Label>
+		<g:HTMLPanel styleName="{res.css.assignmentsContainer}">
+		<g:HTMLPanel styleName="col-md-4 col-sm-4 {res.css.directionsDiv} {res.css.marginTop}">
+			<g:Label ui:field="lblDirections" styleName="{res.css.directionsDivLabel}"></g:Label>
+			<g:Label ui:field="lblDirectionsOptional" styleName="{res.css.directionsDivLabel}"></g:Label>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="col-md-8 col-sm-8 {res.css.marginTop}">
+			<g:TextArea ui:field="textAreaVal" styleName="form-control form_control"></g:TextArea>
+			<g:Label ui:field="directionsErrorLbl" styleName="{res.css.directionsErrorLbl}"></g:Label>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="clearfix">
+		</g:HTMLPanel>
+	<!-- 		<g:HTMLPanel styleName="{res.css.assignmentsContainer}">
 					<g:Label ui:field="lblAssignments" styleName="{res.css.labelText}"></g:Label>
 					<g:Label ui:field="lblNoAssignments" styleName="{res.css.noAssignments}"></g:Label>
 					<g:HTMLPanel styleName="{res.css.dropdownContainer}"
@@ -77,19 +66,19 @@
 						<g:Label styleName="{res.css.errorMessage}" ui:field="lblAssignmentErrorMsg"></g:Label>
 					</g:HTMLPanel>
 				</g:HTMLPanel> -->
-
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+		<g:HTMLPanel ui:field="assignContainer">
+				<uc:BlueButtonUc ui:field="btnAssign"></uc:BlueButtonUc>
 			</g:HTMLPanel>
-			<uc:BlueButtonUc ui:field="btnAssign"></uc:BlueButtonUc>
 
 			<g:HTMLPanel ui:field="assignMoreCpContainer">
-				<g:InlineLabel ui:field="assignMoreCpLbl"
-					styleName="{res.css.labelTextSucees} {res.css.cpSuccessMsg}"></g:InlineLabel> 
+				<g:InlineLabel ui:field="assignMoreCpLbl"	styleName="{res.css.labelTextSucees} {res.css.cpSuccessMsg}"></g:InlineLabel>
 					<g:InlineLabel ui:field="ancClasspageTitle" styleName="{res.css.assignmentLabel}"/>
 					<g:HTMLPanel styleName="{res.css.buttonWidth}">
-					<g:Button styleName="primary {res.css.assignClassPageBtn}"
-					ui:field="classPageBtn"></g:Button>
+					<g:Button styleName="primary {res.css.assignClassPageBtn}"		ui:field="classPageBtn"></g:Button>
 					</g:HTMLPanel>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

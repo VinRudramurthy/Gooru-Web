@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags"
+	xmlns:metadata="urn:import:org.ednovo.gooru.client.mvp.assessments.play.collection.body">
+	<ui:style field= "playerStyle" src="collectionplayermetadata.css" type="org.ednovo.gooru.client.mvp.assessments.play.collection.body.AssessmentsPlayerStyleBundle" />
+	<ui:style>
+		.commentsBtnContainer {
+			padding-left:10px;
+		}
+	</ui:style>
+	    <g:FlowPanel ui:field="studyMainContianer" styleName="container metatDataContainer">
+	    	<g:HTMLPanel  styleName="row">
+	    		<g:HTMLPanel  styleName="greybackground">
+     	      		 <g:FlowPanel styleName="col-md-9 col-sm-12 player-leftPanel" ui:field="leftPanelContainer">
+     	      		     <g:HTMLPanel>
+			            	<html5:SectionTag ui:field="metadataContainer" styleName="{playerStyle.block}"></html5:SectionTag>
+							
+							 </g:HTMLPanel>
+						</g:FlowPanel>
+						<metadata:AssessmentsMetadataWidget ui:field="rightPanelMetadata"></metadata:AssessmentsMetadataWidget>
+       				 <g:HTMLPanel styleName="clear"></g:HTMLPanel>
+       			</g:HTMLPanel>
+       		</g:HTMLPanel>
+        </g:FlowPanel>
+</ui:UiBinder>

@@ -65,10 +65,18 @@ public class UpdateQuestionAnswerChoice extends Composite implements HasMouseOut
    }
    public UpdateQuestionAnswerChoice(String labelname){
 	   initWidget(uiBinder.createAndBindUi(this));
+	   labelChoice.getElement().setId("lblLabelChoice");
 		labelChoice.setText(labelname);
+		labelChoice.getElement().setAttribute("alt", labelname);
+		labelChoice.getElement().setAttribute("title", labelname);
+		answerTextBoxContainer.getElement().setId("pnlAnswerTextBoxContainer");
+		answerTextBox.getElement().setId("tinyMCEAnswerTextBox");
 		ansChoiceDeleteButton.setStyleName(editQuestionStyle.addResourceFormAnswerDelete());
 		ansChoiceDeleteButton.getElement().getStyle().setDisplay(Display.NONE);
+		deleteButtonContainer.getElement().setId("pnlDeleteButtonContainer");
 		deleteButtonContainer.add(ansChoiceDeleteButton);
+		optionSelectedButton.getElement().setId("lblOptionSelectedButton");
+		errorMessageforAnswerChoice.getElement().setId("errlblErrorMessageforAnswerChoice");
    }
    
    public  UpdateQuestionAnswerChoice(int childWidgetCount,String richTextValue,int isMultipleChoiceQuestion){
@@ -80,6 +88,12 @@ public class UpdateQuestionAnswerChoice extends Composite implements HasMouseOut
 		ansChoiceDeleteButton.getElement().getStyle().setDisplay(Display.NONE);
 		deleteButtonContainer.add(ansChoiceDeleteButton);
 	   }
+	   labelChoice.getElement().setId("lblLabelChoice");
+	   answerTextBoxContainer.getElement().setId("pnlAnswerTextBoxContainer");
+		answerTextBox.getElement().setId("tinyMCEAnswerTextBox");
+		deleteButtonContainer.getElement().setId("pnlDeleteButtonContainer");
+		optionSelectedButton.getElement().setId("lblOptionSelectedButton");
+		errorMessageforAnswerChoice.getElement().setId("errlblErrorMessageforAnswerChoice");
    }
    public void onLoad(){
 	   super.onLoad();
@@ -96,10 +110,14 @@ public class UpdateQuestionAnswerChoice extends Composite implements HasMouseOut
    public void setRichTextData(){
 	   if(richTextValue!=null){
 		   answerTextBox.setText(richTextValue);
+		   answerTextBox.getElement().setAttribute("alt", richTextValue);
+		   answerTextBox.getElement().setAttribute("title", richTextValue);
 	   }	   
    }
    public void setLabelName(String labelName){
 		labelChoice.setText(labelName);
+		labelChoice.getElement().setAttribute("alt", labelName);
+		labelChoice.getElement().setAttribute("title", labelName);
 	}
    public HandlerRegistration addMouseOverHandler(MouseOverHandler handler) {
 		// TODO Auto-generated method stub

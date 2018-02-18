@@ -24,9 +24,9 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.error;
 
-import org.ednovo.gooru.client.AppPlaceKeeper;
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.BasePlacePresenter;
+import org.ednovo.gooru.application.client.AppPlaceKeeper;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.BasePlacePresenter;
 
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.View;

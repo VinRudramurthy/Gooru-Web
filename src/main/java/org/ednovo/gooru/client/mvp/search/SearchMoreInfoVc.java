@@ -26,11 +26,16 @@ package org.ednovo.gooru.client.mvp.search;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.TagDo;
+import org.ednovo.gooru.application.shared.model.search.ResourceSearchResultDo;
+import org.ednovo.gooru.application.shared.model.search.SearchDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.dnd.AppMirageDragContainer;
 import org.ednovo.gooru.client.mvp.resource.dnd.ResourceDragController;
 import org.ednovo.gooru.client.uc.DownToolTipWidgetUc;
@@ -38,17 +43,12 @@ import org.ednovo.gooru.client.uc.ErrorMessagePanel;
 import org.ednovo.gooru.client.uc.LicencegItemVc;
 import org.ednovo.gooru.client.uc.StandardSgItemVc;
 import org.ednovo.gooru.client.uc.tooltip.ToolTip;
-import org.ednovo.gooru.shared.model.content.TagDo;
-import org.ednovo.gooru.shared.model.search.ResourceSearchResultDo;
-import org.ednovo.gooru.shared.model.search.SearchDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.dom.client.Style.Position;
-import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.MouseOutEvent;
 import com.google.gwt.event.dom.client.MouseOutHandler;
 import com.google.gwt.event.dom.client.MouseOverEvent;
@@ -70,22 +70,24 @@ import com.google.gwt.user.client.ui.Widget;
  * @param <T>
  * @param <C>
  */
-public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C extends ResourceSearchResultDo>	extends FocusPanel implements MessageProperties{
+public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C extends ResourceSearchResultDo>	extends FocusPanel{
 
 	protected static SearchMoreInfoVcUiBinder uiBinder = GWT
 			.create(SearchMoreInfoVcUiBinder.class);
+	
+	static MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface SearchMoreInfoVcUiBinder extends
 			UiBinder<Widget, SearchMoreInfoVc<?, ?>> {
 	}
 
 	@UiField
-	public MoreInfoFieldVc resourceSearchGradeFieldVc,resourceSearchRightsFieldVc,gradeFieldVc,tagsFieldVc,timeFieldVc,likesFieldVc,shareField,rightsFieldVc;
+	public MoreInfoFieldVc resourceSearchGradeFieldVc,resourceSearchRightsFieldVc;
 
 
 
 	@UiField
-	public Label countLbl, countLblTxt,rightsLbl,lblNotFriendly,moreInfotext;
+	public Label countLbl, countLblTxt,rightsLbl,lblNotFriendly;
 
 	@UiField Image imgQuestionImage;
 	
@@ -103,7 +105,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 	public AppMirageDragContainer usedInResourcesPanel;
 
 	@UiField
-	FlowPanel metaInfoFloPanel,resourceMoreInfoRightPanel;
+	FlowPanel resourceMoreInfoRightPanel;
 
 	@UiField(provided = true)
 	SearchMoreInfoVcCBundle res;
@@ -116,9 +118,9 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 
 	private SearchDo<C> usedInSearchDo;
 
-	protected static final String OER_DESCRIPTION = GL1092;
+	protected static final String OER_DESCRIPTION = i18n.GL1092();
 
-	protected static final String OER_TITLE = GL1093;
+	protected static final String OER_TITLE = i18n.GL1093();
 
 	private static final String OER_PNG_IMG = "oer.png";
 
@@ -128,9 +130,11 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 
 	private static final String NULL = "null";
 	
-	private static final String ALL_GRADES = GL1467.toUpperCase();
+	private static final String ALL_GRADES = i18n.GL1467().toUpperCase();
 	
 	ToolTip toolTip = null;
+	
+	private HashMap<String, SimpleResourceVc> simpleResourceMap=new HashMap<String, SimpleResourceVc>();
 	
 	public SearchMoreInfoVc(){
 		
@@ -145,6 +149,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 	 * @param searchDragController
 	 *            instance of {@link ResourceDragController}
 	 */
+	
 	
 	public SearchMoreInfoVc(final ResourceDragController searchDragController,	boolean isResourceSearch) {
 		this.res = SearchMoreInfoVcCBundle.INSTANCE;
@@ -162,19 +167,18 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 		}
 		
 		setWidget(uiBinder.createAndBindUi(this));
-		moreInfotext.setText(GL0726);
-		gradeFieldVc.setToolTip(GL0325);
-		tagsFieldVc.setToolTip(GL0727);
-		timeFieldVc.setToolTip(GL0728);
-		likesFieldVc.setToolTip(GL0729);
-		shareField.setToolTip(GL0526);
-		rightsFieldVc.setToolTip(GL0730);
-		rightsLbl.setText(GL0731);
-		resourceSearchRightsFieldVc.setToolTip(GL0730);
-		imgQuestionImage.setTitle(GL0732);
-		imgQuestionImage.setAltText(GL0732);
+
+		rightsLbl.setText("");
+		rightsLbl.getElement().setAttribute("alt","");
+		rightsLbl.getElement().setAttribute("title","");
+		
+		resourceSearchRightsFieldVc.setToolTip(i18n.GL0730());
+		imgQuestionImage.setTitle(i18n.GL0732());
+		imgQuestionImage.setAltText(i18n.GL0732());
 		imgQuestionImage.setUrl("images/mos/questionmark.png");
-		resourceSearchGradeFieldVc.setToolTip(GL0325);
+		resourceSearchGradeFieldVc.setToolTip(i18n.GL0325());
+		rightsLbl.setVisible(false);
+		
 
 		setUsedInResourcesAsyncCallback(new SimpleAsyncCallback<SearchDo<C>>() {
 
@@ -184,6 +188,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 //				usedInResourcesPanel.clear();
 				usedInResourcesPanel.setClonnable(true);
 				usedInSearchDo = result;
+				simpleResourceMap.clear();
 				setUsedInResources(result.getSearchResults());
 			}
 		});
@@ -208,9 +213,9 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			
 		}
 	
-		rightsLbl.setVisible(false);
+		/*rightsLbl.setVisible(false);
 		if(AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
-			metaInfoFloPanel.setVisible(false);
+		//	metaInfoFloPanel.setVisible(false);
 			rightsLbl.setVisible(true);
 			resourceScrPanel.setStyleName(res.css().moreInfoResourceSearceRightScrollPanel());
 			resourceMoreInfoRightPanel.getElement().getStyle().setWidth(489, Unit.PX);
@@ -219,8 +224,17 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 		else{
 			metaInfoFloPanel.setVisible(true);
 			shareField.setVisible(false);
-		}
+		}*/
 		setHandler();
+		
+		rightsLbl.getElement().setId("lblRightsLbl");
+		resourceScrPanel.getElement().setId("sbResourceScrPanel");
+		resourceMoreInfoRightPanel.getElement().setId("fpnlResourceMoreInfoRightPanel");
+		countLblTxt.getElement().setId("lblCountLblTxt");
+		countLbl.getElement().setId("lblCountLbl");
+		lblNotFriendly.getElement().setId("lblNotFriendly");
+		imgQuestionImage.getElement().setId("imgQuestionImage");
+		messageInfo.getElement().setId("errlblMessageInfo");
 	}
 
 	public void setHandler(){
@@ -228,8 +242,8 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			
 			@Override
 			public void onMouseOver(MouseOverEvent event) {
-				toolTip = new ToolTip(GL0454+""+"<img src='/images/mos/ipadFriendly.png' style='margin-top:0px;'/>"+" "+GL04431);
-				
+				toolTip = new ToolTip(i18n.GL0454()+""+" "+i18n.GL04431()+" "+" ");
+				toolTip.getTootltipContent().getElement().setAttribute("style", "width: 258px;");
 				toolTip.getElement().getStyle().setBackgroundColor("transparent");
 				toolTip.getElement().getStyle().setPosition(Position.ABSOLUTE);
 				toolTip.setPopupPosition(imgQuestionImage.getAbsoluteLeft()-(50+22), imgQuestionImage.getAbsoluteTop()+22);
@@ -327,9 +341,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			
 			
 			List<Integer> gradeListInt = new ArrayList<Integer>();
-			finalGradeStringB.append(gradeListSize > 1 ? GL1320_1+GL_SPL_SEMICOLON+" " : GL0325+GL_SPL_SEMICOLON+" ");
-			
-
+			finalGradeStringB.append(gradeListSize > 1 ? i18n.GL1320_1()+i18n.GL_SPL_SEMICOLON()+" " : i18n.GL0325()+i18n.GL_SPL_SEMICOLON()+" ");
 			
 			
 			for (String eachGrade1 : gradeList) {
@@ -360,8 +372,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 						}
 
 					} catch (Exception e) {
-						//gradeListInt.add(0);
-						e.printStackTrace();
+						AppClientFactory.printSevereLogger("SearchMoreInfoVC setData:::"+e);
 					}
 				}
 			}
@@ -390,16 +401,16 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 
 			grade = finalGradeStringB.toString();
 			
-			if(!AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
+/*			if(!AppClientFactory.getCurrentPlaceToken().equalsIgnoreCase(PlaceTokens.RESOURCE_SEARCH)){
 				if(!gradeFieldVc.getElement().toString().contains("Grade:")) {
 					gradeFieldVc.setHtmlTxt(grade);
 				}
-			}
+			}*/
 			
 		} else {
-			gradeFieldVc.setHtmlTxt(null);
+			//gradeFieldVc.setHtmlTxt(null);
 		}
-		timeFieldVc.setHtmlTxt(StringUtil.getValidString(searchResultDo.getAverageTime(), null));
+		//timeFieldVc.setHtmlTxt(StringUtil.getValidString(searchResultDo.getAverageTime(), null));
 //		likesFieldVc.setHtmlTxt(StringUtil.getValidStringWithSuffix(searchResultDo.getVotesUp() + "", "0", " likes"));
 		/*if (searchResultDo.getLicense() != null	&& searchResultDo.getLicense().getIcon() != null&& searchResultDo.getLicense().getIcon().isEmpty()) {
 
@@ -414,14 +425,15 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			rightsLbl.setVisible(false);
 
 		}
-		else{
+/*		else{
 			rightsFieldVc.contentFloPanel.setVisible(false);
 			rightsFieldVc.imageIconSimPanel.setVisible(false);
-		}
+		}*/
 		if (searchResultDo.getLicense() != null	&& searchResultDo.getLicense().getIcon() != null&& !searchResultDo.getLicense().getIcon().equals(NULL)) {
 			Image image = new Image(searchResultDo.getAssetURI()+ searchResultDo.getLicense().getIcon());
-			image.setAltText(GL0730);
-			image.setTitle(GL0730);
+			image.setAltText(i18n.GL0730());
+			image.setTitle(i18n.GL0730());
+			//rightsLbl.getElement().setAttribute("style", "padding-left: 309px;");
 			StandardSgItemVc standardItem = null;
 			LicencegItemVc licencegItemVcObj=null;
 			if (searchResultDo.getLicense().getCode() != null&& !searchResultDo.getLicense().getCode().equalsIgnoreCase(NULL)) {
@@ -431,37 +443,35 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			DownToolTipWidgetUc widget = new DownToolTipWidgetUc(image,	standardItem);
 			DownToolTipWidgetUc widget1 = new DownToolTipWidgetUc(image,licencegItemVcObj);
 			widget1.setStyleName("rightsToolTip");
-			if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){
+			/*if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){
 				rightsLbl.setVisible(true);
 				resourceSearchRightsFieldVc.addWidget(widget1);
 				widget.setStyleName("rightsToolTip");
 				resourceSearchRightsFieldVc.addWidget(widget);
 			}else{
-				rightsFieldVc.addWidget(widget1);
+				//rightsFieldVc.addWidget(widget1);
 				widget.setStyleName("rightsToolTip");
-				rightsFieldVc.addWidget(widget);
-			}
-			
-			
+				//rightsFieldVc.addWidget(widget);
+			}*/
 			
 		} else if (searchResultDo.getLicense() != null	&& searchResultDo.getLicense().getTag() == OER|| (searchResultDo.getUrl() != null && searchResultDo.getUrl().indexOf(OERCOMMONS_ORG) >= 0)) {
 			Image image = new Image(LICENSE_FOLDER + OER_PNG_IMG);
-			image.setAltText(GL1098);
-			image.setTitle(GL1098);
+			image.setAltText(i18n.GL1098());
+			image.setTitle(i18n.GL1098());
 			StandardSgItemVc standardItem = new StandardSgItemVc(OER_TITLE,	OER_DESCRIPTION);
 			standardItem.setHeight("100px");
 			DownToolTipWidgetUc widget = new DownToolTipWidgetUc(image,	standardItem);
 			widget.setStyleName("rightsToolTip");
-			if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){
+			/*if(AppClientFactory.getCurrentPlaceToken().equals(PlaceTokens.RESOURCE_SEARCH)){
 				rightsLbl.setVisible(true);
 				resourceSearchRightsFieldVc.addWidget(widget);
 			}else{
-				rightsFieldVc.addWidget(widget);
-			}
+				//rightsFieldVc.addWidget(widget);
+			}*/
 			
 		} else {
 			rightsLbl.setVisible(false);
-			rightsFieldVc.setHtmlTxt(null);
+			//rightsFieldVc.setHtmlTxt(null);
 			resourceSearchRightsFieldVc.setHtmlTxt(null);
 		}
 		if (searchResultDo.getTagSet() != null
@@ -478,9 +488,9 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 						.tagText());
 				label.setStyleName("tagToolStyle");
 				tagList.append((tagIndex > 0 ? ", " : "") + tag.getLabel());
-				if (tagIndex < 4) {
+	/*			if (tagIndex < 4) {
 					tagsFieldVc.addWidget(label);
-				}
+				}*/
 				tagIndex++;
 			}
 
@@ -491,14 +501,14 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 						new Label("+" + (tagIndex - 4)), toolTipInfo);
 				toolTipUc.setStyleName(SearchResultWrapperCBundle.INSTANCE
 						.css().blueLink());
-				tagsFieldVc.addWidget(toolTipUc);
-			} else {
+		/*		tagsFieldVc.addWidget(toolTipUc);*/
+			} /*else {
 				tagsFieldVc.setHtmlTxt(null);
-			}
+			}*/
 
-		} else {
+		} /*else {
 			tagsFieldVc.setHtmlTxt(null);
-		}
+		}*/
 	}
 	
 	
@@ -554,6 +564,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 			
 			
 		} catch (Exception e) {
+			AppClientFactory.printSevereLogger("SearchMoreInfoVc formatGrades:::"+e);
 		}
 		return grade.toString();
 	}
@@ -582,17 +593,6 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 		return gradeStr.toString();
 	}
 
-	/*
-	 * private String generateGradeIfHypen(String grade){ String gradeList[];
-	 * StringBuilder gradeStr = new StringBuilder(); gradeList =
-	 * grade.split("-"); if (gradeList.length>=2){ int start =1; try{ start =
-	 * Integer.parseInt(gradeList[0]); }catch(Exception e){ e.printStackTrace();
-	 * } int end = Integer.parseInt(gradeList[1]); if ( start < end){ for (int i
-	 * = start; i<=end; i++){ if (i==end){ gradeStr.append(i); }else{
-	 * gradeStr.append(i).append(","); } } } }else{
-	 * gradeStr.append(Integer.parseInt(gradeList[0])); } return
-	 * gradeStr.toString(); }
-	 */
 	public List<Integer> sortList(List<Integer> list) {
 
 		int listSize = list.size();
@@ -610,6 +610,8 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 
 		return list;
 	}
+	
+	
 
 	/**
 	 * Set resource that used in any collection
@@ -646,7 +648,7 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 	 *            instance of {@link MoreInfoFieldVc}
 	 */
 	public void addMoreInfoField(MoreInfoFieldVc moreInfoField) {
-		metaInfoFloPanel.add(moreInfoField);
+	//	metaInfoFloPanel.add(moreInfoField);
 	}
 
 	/**
@@ -657,6 +659,8 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 	 */
 	public void setResourceCount(String text) {
 		countLbl.setText(text);
+		countLbl.getElement().setAttribute("alt",text);
+		countLbl.getElement().setAttribute("title",text);
 	}
 
 	/**
@@ -667,6 +671,8 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 	 */
 	public void setResourceCountTxt(String text) {
 		countLblTxt.setText(text);
+		countLblTxt.getElement().setAttribute("alt",text);
+		countLblTxt.getElement().setAttribute("title",text);
 	}
 
 	/**
@@ -680,24 +686,34 @@ public abstract class SearchMoreInfoVc<T extends ResourceSearchResultDo, C exten
 		return usedInResourcesPanel;
 	}
 
-	/**
+/*	*//**
 	 * @return rightsFiled instance of {@link MoreInfoFieldVc}
-	 */
+	 *//*
 	public MoreInfoFieldVc getRightsField() {
 		return rightsFieldVc;
 	}
 
-	/**
+	*//**
 	 * @return likesFiled instance of {@link MoreInfoFieldVc}
-	 */
+	 *//*
 	public MoreInfoFieldVc getLikesField() {
 		return likesFieldVc;
-	}
+	}*/
 
 	
 	public void setNotFriendly(String text){
 		lblNotFriendly.setText(text);
+		lblNotFriendly.getElement().setAttribute("alt",text);
+		lblNotFriendly.getElement().setAttribute("title",text);
 	}
+	public HashMap<String, SimpleResourceVc> getSimpleResourceMap() {
+		return simpleResourceMap;
+	}
+
+	public void setSimpleResourceMap(HashMap<String, SimpleResourceVc> simpleResourceMap) {
+		this.simpleResourceMap = simpleResourceMap;
+	}
+
 	public void showNotFriendly(boolean visibility){
 		lblNotFriendly.setVisible(visibility);
 		imgQuestionImage.setVisible(visibility);

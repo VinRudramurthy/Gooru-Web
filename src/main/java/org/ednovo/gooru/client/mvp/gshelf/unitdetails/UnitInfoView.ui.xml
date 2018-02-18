@@ -1,0 +1,102 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui"
+	xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
+	<ui:with field="i18n"
+		type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<g:HTMLPanel ui:field="unitInfo">
+		<div id="unitinfo">
+			<div class="courseNameBlock">
+				<uc:PPanel ui:field="unitNamePpanel"></uc:PPanel>
+				<p>
+					<g:TextBox styleName="form-control" ui:field="unitTitle"
+						maxLength="50" />
+					<g:Label ui:field="lblErrorMessage" styleName="errorMessage text-right"></g:Label>
+				</p>
+			</div>
+
+			<div class="questionsBlock">
+				<div class="col-md-6 col-sm-6 questionsBlockTextArea">
+					<uc:PPanel ui:field="bigIdeasPPanel"></uc:PPanel>
+					<p>
+						<g:TextArea styleName="form-control" ui:field="txaBigIdeas" />
+						<g:Label ui:field="lblErrorMessageForBig" styleName="errorMessage text-right"></g:Label>
+					</p>
+				</div>
+				<div class="col-md-6 col-sm-6 questionsBlockTextArea">
+					<uc:PPanel ui:field="essentialQuestPPanel"></uc:PPanel>
+					<p>
+						<g:TextArea styleName="form-control" ui:field="txaEssentialQuestions" />
+						<g:Label ui:field="lblErrorMessageForEssential" styleName="errorMessage text-right"></g:Label>
+					</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="unitCoverBlock">
+				<div class="unitCoverHeader">
+					<div class="col-md-6 col-sm-6 col-xs-6 questionsBlockTextArea">
+						<uc:PPanel ui:field="unitCoverPPanel"></uc:PPanel>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 questionsBlockTextArea">
+						<div class="dropDownRight">
+							<div class="btn-group">
+								<g:Button styleName="btn btn-primary" ui:field="taxonomyBtn"
+									text="{i18n.GL3486}"></g:Button>
+								<panel:HTMLEventPanel styleName="btn btn-primary dropdown-toggle"
+									ui:field="taxonomyToggleBtn">
+									<g:InlineLabel styleName="glyphicon gliphIconImage"></g:InlineLabel>
+									<g:InlineLabel styleName="sr-only"></g:InlineLabel>
+								</panel:HTMLEventPanel>
+
+								<!-- <ul role="menu" class="dropdown-menu pull-right"> <li><a href="#">This 
+									will be replaced with popup</a></li> </ul> -->
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="unitCoverBody">
+					<div class="unitCoverList no-gutter">
+						<div class="col-md-3 col-sm-3">
+							<div class="unitCoverListLeft containerHeight">
+
+								<uc:UlPanel ui:field="ulMainGradePanel" />
+							</div>
+						</div>
+						<g:ScrollPanel ui:field="scrollCoursediv"
+							styleName="col-md-4 col-sm-4 scrollCourseContainer">
+							<g:HTMLPanel ui:field="pnlGradeContainer" />
+						</g:ScrollPanel>
+						<div class="col-md-5 col-sm-5 pnlGradeDescription">
+							<g:HTMLPanel ui:field="pnlGradeDescContainer"
+								styleName="pnlGradeDescInnerContainer" />
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="tagCoursePanelFooter">
+				<div class="filterTags">
+					<uc:UlPanel ui:field="ulSelectedItems" />
+				</div>
+				<g:Label styleName="col-sm-12 errorMessage" ui:field="lblUnitErrorMsg"/>
+			</div>
+
+			<div class="stepsButtonGroup">
+				<g:Button styleName="secondary" ui:field="saveUnitBtn"
+					text="{i18n.GL3362}" />
+				<g:Button styleName="primary marginRight" ui:field="nextCreateLessonBtn"
+					text="{i18n.GL3363}" />
+			</div>
+			
+			<g:HTMLPanel ui:field="spinnerIconContainer" styleName="spinnerContainer" visible="false">
+				<g:HTMLPanel styleName="loadingImage spinnerDisplayPosition"></g:HTMLPanel>
+			</g:HTMLPanel>
+			
+			<div class="clearfix"></div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

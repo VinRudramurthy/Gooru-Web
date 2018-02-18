@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.library.partner.lessonopoly;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
 
 /**
  * @author Search Team

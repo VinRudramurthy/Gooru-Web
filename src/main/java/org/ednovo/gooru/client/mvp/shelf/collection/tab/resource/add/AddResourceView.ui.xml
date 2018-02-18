@@ -1,11 +1,11 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
-	<ui:with
-		type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with type="org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.item.CollectionEditResourceCBundle"
 		field="res"></ui:with>
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties"/>
 	<g:FlowPanel>
-		<g:HTMLPanel styleName="{res.css.myFolderCollectionPopupOuterdiv}">
+		<g:HTMLPanel ui:field="popUpMain" styleName="AssessmentPopupMain">
 			<g:HTMLPanel styleName="{res.css.myFolderCollectionPopupContainer}">
 				<g:HTMLPanel styleName="{res.css.myFolderCollectionPopup}">
 					<g:HTMLPanel styleName="{res.css.myFolderCollectionBlackBg}">
@@ -16,38 +16,38 @@
 								ui:field="addResourceCloseButton"></g:Label>
 						</g:HTMLPanel>
 					</g:HTMLPanel>
-					<g:HTMLPanel styleName="{res.css.myFolderCollectionUrlContent}" ui:field="addResourceTabContainer">
-					
+					<g:HTMLPanel styleName="col-md-2 col-sm-2 colmdPadding {res.css.myFolderCollectionUrlContent}" ui:field="addResourceTabContainer">
 					    <uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="urlTabButton">
 							<g:Anchor  ui:field="fromweb" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
 						</uc:HTMLEventPanel>
-						
+
 						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="myComputerTabButton">
 							<g:Anchor ui:field="fromfile" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
 						</uc:HTMLEventPanel>
-						
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="myDriveButton">
+							<g:Anchor ui:field="googleDrive" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
+						</uc:HTMLEventPanel>
+
 						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="searchTabButton">
 							<g:Anchor ui:field="fromwsearch" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
 						</uc:HTMLEventPanel>
-						
-						
-						
 						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="questionTabButton">
 							<g:RadioButton name="questionTypeGrouop" ui:field="multipleChoiceRadioButton"
 								checked="true" styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
 							<g:Anchor ui:field="multiplechoice" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
 						</uc:HTMLEventPanel>
-						
-						<!-- <uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="multipleAnswerTabButton">
 							<g:RadioButton name="questionTypeGrouop" ui:field="multipleAnswerRadioButton"
 									styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
-							<g:Anchor styleName="{res.css.myFolderCollectionUrlbgTitle}">Multiple Answer</g:Anchor>
-						</uc:HTMLEventPanel> -->
+							<g:Anchor styleName="{res.css.myFolderCollectionUrlbgTitle}" ui:field="multipleAnswerAnc"></g:Anchor>
+						</uc:HTMLEventPanel>
 						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
 							ui:field="trueOrFlaseButton">
 							<g:RadioButton name="questionTypeGrouop" ui:field="trueOrFalseRadioButton"
@@ -66,11 +66,94 @@
 								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
 							<g:Anchor  ui:field="openended" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
 						</uc:HTMLEventPanel>
+
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="hotTextROTabButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="hotTextRORadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="hotTextRO" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
+						</uc:HTMLEventPanel>
+
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="hotTextHLTabButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="hotTextHLRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="hotTextHL" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
+						</uc:HTMLEventPanel>
+
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="hotSpotImageTabButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="hotSpotImgRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="hotSpotImg" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
+						</uc:HTMLEventPanel>
+
+
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="hotSpotWordTabButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="hotSpotWordRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="hotSpotWord" styleName="{res.css.myFolderCollectionUrlbgTitle}"></g:Anchor>
+						</uc:HTMLEventPanel>
+
+
+
+
+						<!-- <uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="singleCorrectResponseButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="singleCorrectResponseRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="singleCorrectResponseText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3016}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}" ui:field="multipleSelectButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="multipleSelectRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="multipleSelectText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3017}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="evidenceBasedResponseButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="evidenceBasedResponseRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="evidenceBasedResponseText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3018}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="hotTextButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="hotTextRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="hotTextRadioText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3019}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="reorderTextButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="reorderTextRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="reorderTextText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3020}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="matchingTablesButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="matchingTablesRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="matchingTablesText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3021}"></g:Anchor>
+						</uc:HTMLEventPanel> -->
+						<!-- <uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="shortTextResponseButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="shortTextResponseRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="shortTextResponseText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3022}"></g:Anchor>
+						</uc:HTMLEventPanel>
+						<uc:HTMLEventPanel styleName="{res.css.buttonDeSelected}"
+							ui:field="writtenResponseButton">
+							<g:RadioButton name="questionTypeGrouop" ui:field="writtenResponseRadioButton"
+								styleName="{res.css.questionRadioButtonStyle}"></g:RadioButton>
+							<g:Anchor  ui:field="writtenResponseText" styleName="{res.css.myFolderCollectionUrlbgTitle}" text="{i18n.GL3023}"></g:Anchor>
+						</uc:HTMLEventPanel> -->
 					</g:HTMLPanel>
-					<g:HTMLPanel ui:field="tabViewContainer">
+					<g:HTMLPanel ui:field="tabViewContainer" styleName="col-md-10 col-sm-10 colmdPadding">
 					</g:HTMLPanel>
+					<g:SimplePanel ui:field="questionContainerPnl" styleName="col-md-10 col-sm-10 colmdPadding questionRightMain"></g:SimplePanel>
 				</g:HTMLPanel>
 			</g:HTMLPanel>
+			<g:HTMLPanel styleName="clearfix"/>
+
 		</g:HTMLPanel>
 	</g:FlowPanel>
 </ui:UiBinder>

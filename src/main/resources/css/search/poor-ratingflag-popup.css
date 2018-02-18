@@ -1,0 +1,693 @@
+@charset "utf-8";
+/* CSS Document */
+
+#fpnlWrapperContainerField .playerflagpopupwrapper
+{
+	width:418px;
+	float: left;
+	margin:0 auto;
+	background-color:#FFF;
+}
+#fpnlWrapperContainerField .playerflagpopupinnerwrapper
+{
+	width:410px;
+	float:left;
+	background-color:#FFF;
+	border:1px solid #DDDDDD;
+	margin:3px;
+}
+#fpnlWrapperContainerField .playerflagpopupheader
+{
+	float:left;
+	width:100%;
+	height:38px;
+	background-color: #515151;
+	background: rgb(102,102,102); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(81,81,81,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,102,102,1)), color-stop(100%,rgba(81,81,81,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(81,81,81,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(81,81,81,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(81,81,81,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(102,102,102,1) 0%,rgba(81,81,81,1) 100%); /* W3C */
+
+}
+#fpnlWrapperContainerField .playerflagpopupheaderCloseBtn
+{
+	float:right;
+	width:15px;
+	height:15px;
+	margin:10px 10px 0px 0px;
+}
+#fpnlWrapperContainerField .playerflagpopupheaderCloseBtn:hover
+{
+	cursor:pointer;
+	opacity:.5;
+}
+#fpnlWrapperContainerField .playerflagpopupheadertitle
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	padding: 10px 5px 5px 15px;
+	float: left;
+}
+#fpnlWrapperContainerField .playerflagcontentcontainer
+{
+	margin:0px 0px 0px 28px;
+	float:left;
+	width:382px;
+	/*height:291px;*/
+}
+#fpnlWrapperContainerField .playerflagcontentcontainerThankYou
+{
+	margin: 0 auto;
+	width:382px;
+	margin-top: 52px;
+
+}
+#fpnlWrapperContainerField .playerflagcontenttext
+{
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	width: 280px;
+}
+#fpnlWrapperContainerField .playerflagcontent
+{
+	/* float:left; */
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	margin-top:11px;
+	margin-left: 20px;
+	/* width: 345px; */
+
+}
+#fpnlWrapperContainerField .playerflagcontentTextdescription
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	margin-top:11px;
+	text-align:left;
+	width: 319px;
+
+}
+
+#fpnlWrapperContainerField .playerflagcontentTextCollectiondescription
+{
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	margin-top:11px;
+	margin-left: 7px;
+	width: 345px;
+}
+
+#fpnlWrapperContainerField .playerflagcontentTextResourcedescription
+{
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	margin-top:11px;
+	margin-left: 7px;
+	width: 345px;
+}
+#fpnlWrapperContainerField .playerflagcontentChooseResource
+{
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	margin-top:11px;
+	margin-left: 0px;
+	width: 345px;
+}
+#fpnlWrapperContainerField .playerflagradiobutton, radio
+{
+	clear: both;
+	float: left;
+}
+ input[type="checkbox"] {
+	float:left;
+}
+#fpnlWrapperContainerField .playerflagtextarea
+{
+	float: left;
+	width: 358px;
+	height: 81px;
+	max-width: 358px;
+	max-height: 81px;
+	color: #999;
+	margin: 7px;
+	border-color: #ddd;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#fpnlWrapperContainerField .playerflagbuttoncontainer
+{
+	width:151px;
+	float:left;
+	height:32px;
+	margin-left: 140px;
+	margin-bottom: 8px;
+}
+#fpnlWrapperContainerField .resourcePlayerflagbuttoncontainer
+{
+	width:151px;
+	float:left;
+	height:32px;
+	margin: 0px 0px 0px 120px;
+	margin-bottom: 8px;
+}
+#fpnlWrapperContainerField .playerflagbuttoncancel
+{
+	float:left;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-right:10px;
+	color: #1076BB;
+	padding: 7px 9px;
+	border-radius: 4px;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #ddd;
+	text-decoration:none;
+}
+
+#fpnlWrapperContainerField .playerflagbuttoncancel:hover
+{
+	background:#eee;
+	cursor:pointer;
+}
+
+#fpnlWrapperContainerField .playerflagbuttonsubmit
+{
+	float:left;
+	background-color:#1076bb;
+	color:#FFF;
+	padding: 7px 9px;
+	font-family: Arial, sans-serif;
+	font-size:12px;
+	display: inline-block;
+	border: 1px solid #1076BB;
+
+	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat
+		scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
+		to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background-image: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background-color: #1076BB;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-ms-border-radius: 4px 4px 4px 4px;
+	-khtml-border-radius: 4px 4px 4px 4px;
+	-o-border-radius: 4px 4px 4px 4px;
+	text-decoration:none;
+	cursor: pointer;
+
+
+}
+#fpnlWrapperContainerField .playerflagbuttonsubmit:hover
+{
+	background: #1076BB;
+	color: #FFFFFF !important;
+}
+#fpnlWrapperContainerField .playerflagbuttoncancelGray
+{
+	float:left;
+	color:#999;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding: 7px 9px;
+	border-radius: 4px;
+	background: #999;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#ddd));
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #ddd;
+	text-decoration:none;
+	cursor: default;
+
+}
+#fpnlWrapperContainerField .playerflagbuttonOk
+{
+	float:left;
+	background-color:#1076bb;
+	color:#FFF;
+	padding: 7px 9px;
+	font-family: Arial, sans-serif;
+	font-size:12px;
+	display: inline-block;
+	border: 1px solid #1076BB;
+	background: -moz-linear-gradient(center top, #4C98CC, #1076BB) repeat
+		scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC),
+		to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background-image: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	background-color: #1076BB;
+	border: 0 none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-ms-border-radius: 4px 4px 4px 4px;
+	-khtml-border-radius: 4px 4px 4px 4px;
+	-o-border-radius: 4px 4px 4px 4px;
+	text-decoration:none;
+	width:37px;
+	margin:0 auto;
+	height:32px;
+	cursor: pointer;
+	margin-top: 18px;
+	margin-left: 170px;
+
+}
+#fpnlWrapperContainerField .playerflagbuttonOk:hover
+{
+background: #1076BB;
+color: #FFFFFF !important;
+}
+#select
+{
+	width:302px;
+	height:30px;
+	float: left;
+	border:1px solid #DDDDDD;
+	margin-top: 8px;
+	padding: 0px 0px 0px 6px;
+
+}
+#fpnlWrapperContainerField .downarrow
+{
+	width:302px;
+	height:30px;
+	float:left;
+	cursor:pointer;
+	border:1px solid #DDDDDD;
+	margin-top: 8px;
+	padding: 0px 0px 0px 6px;
+	background-color: #fff !important;
+	color: #515151;
+}
+#fpnlWrapperContainerField .leftalign
+{
+	float:left;
+}
+#fpnlWrapperContainerField .flagresourcesinnerwrapper
+{
+	width:569px !important;
+	float:left!important;
+	margin:3px !important;
+	border: 1px solid #DDD;
+	background-color: #fff;
+}
+#fpnlWrapperContainerField .flagresourceleftpart
+{
+	float:left;
+	width:169px;
+	height:398px;
+	border-right:1px solid #DDDDDD;
+}
+#fpnlWrapperContainerField .flagresourcenmenutext
+{
+	padding:8px;
+	text-align:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color:#515151;
+}
+/*open ended question css*/
+#fpnlWrapperContainerField .endedquestionheader {
+width: 100%;
+background-color: #515151;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+height: 39px;
+}
+
+#fpnlWrapperContainerField .endedquestionheaderflagtext {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+float: left;
+padding: 11px 0px 0px 11px;
+color: #FFF;
+}
+
+#fpnlWrapperContainerField .flagresourceleftpart {
+float: left;
+width: 169px;
+height: 398px;
+border-right: 1px solid #DDDDDD;
+background-color: #e5e5e5;
+}
+
+#fpnlWrapperContainerField .flagbuttonDeSelected {
+width: 100%;
+height: 36px;
+border-bottom: 1px solid #DDD;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #eee;
+background: white;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
+background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
+background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
+background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
+
+}
+
+#fpnlWrapperContainerField .flagbuttonDeSelected:hover {
+background:#e5e5e5;
+box-shadow: none;
+cursor:pointer;
+}
+#fpnlWrapperContainerField .flagresourcenmenutext {
+padding: 8px;
+text-align: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+color: #515151;
+}
+
+#fpnlWrapperContainerField .flagButtonselected {
+box-shadow: inset 0 0 10px rgba(0,0,0,.1);
+border-top: 1px solid #ccc;
+border-bottom: 1px solid #ddd;
+height: 36px;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#efefef));
+background: -webkit-linear-gradient(top, #cccccc, #efefef);
+background: -moz-linear-gradient(top, #cccccc, #efefef);
+background: -ms-linear-gradient(top, #cccccc, #efefef);
+background: -o-linear-gradient(top, #cccccc, #efefef);
+
+}
+#fpnlWrapperContainerField .flagButtonselected:hover {
+cursor:default !important;
+}
+
+#fpnlWrapperContainerField .endedquestionrightpart {
+float: right;
+width: 376px;
+/*height: 397px;*/
+}
+
+#fpnlWrapperContainerField .playerflagcollectionresourcescontentcontainer {
+margin: 14px 0px 0px -6px;
+float: left;
+width: 382px;
+}
+
+#fpnlWrapperContainerField .playerflagcontenttext {
+float: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #515151;
+width: 360px;
+word-wrap: break-word;
+}
+
+#fpnlWrapperContainerField .playerflagcontenttextCollectionTitle {
+float: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #515151;
+width: 360px;
+word-wrap: break-word;
+margin-top:10px;
+}
+
+/*add new resource into flag styles*/
+#fpnlWrapperContainerField .endedquestionwrapper {
+width: 575px !important;
+height: 439px !important;
+margin: 0 auto;
+}
+
+#fpnlWrapperContainerField .endedquestionheader {
+width: 100%;
+background-color: #515151;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+height: 39px;
+}
+
+#fpnlWrapperContainerField .endedquestionheaderflagtext {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+float: left;
+padding: 11px 0px 0px 11px;
+color: #FFF;
+}
+
+#fpnlWrapperContainerField .flagresourceleftpart {
+float: left;
+width: 169px;
+height: 471px;
+border-right: 1px solid #DDDDDD;
+}
+
+#fpnlWrapperContainerField .endedquestionmenu {
+background: rgb(253,253,253);
+background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(253,253,253,1) 0%,rgba(237,237,237,1) 100%);
+
+width: 100%;
+height: 36px;
+border-bottom: 1px solid #DDD;
+cursor: pointer;
+}
+
+#fpnlWrapperContainerField .flagresourcenmenutext {
+padding: 8px;
+text-align: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+color: #515151;
+}
+
+#fpnlWrapperContainerField .endedquestionmenuselected {
+background: rgb(255,255,255);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(226,226,226,1) 6%, rgba(240,240,240,1) 90%, rgba(221,221,221,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(6%,rgba(226,226,226,1)), color-stop(90%,rgba(240,240,240,1)), color-stop(100%,rgba(221,221,221,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(226,226,226,1) 6%,rgba(240,240,240,1) 90%,rgba(221,221,221,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(226,226,226,1) 6%,rgba(240,240,240,1) 90%,rgba(221,221,221,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(226,226,226,1) 6%,rgba(240,240,240,1) 90%,rgba(221,221,221,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(226,226,226,1) 6%,rgba(240,240,240,1) 90%,rgba(221,221,221,1) 100%);
+
+width: 99%;
+height: 36px;
+border: 1px solid #DDD;
+cursor: pointer;
+}
+
+#fpnlWrapperContainerField .endedquestionrightpart {
+float: right;
+width: 376px;
+/*height: 397px;*/
+}
+
+#fpnlWrapperContainerField .playerflagcontenttext {
+float: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #515151;
+}
+/*Thank you popup*/
+#fpnlWrapperContainerField .thankyoupopupwrapper
+{
+	width:418px !important;
+	height:162px !important;
+	margin:0 auto;
+	background-color:#FFF;
+}
+#fpnlWrapperContainerField .thankyoupopupinnerwrapper
+{
+	width:410px !important;
+	height:156px !important;
+	float:left;
+	background-color:#FFF;
+	border:1px solid #DDDDDD;
+	margin:3px;
+}
+#fpnlWrapperContainerField .thankyoubuttoncontainer
+{
+	width:37px;
+	margin:0 auto;
+	height:32px;
+}
+#fpnlWrapperContainerField .playerflagcontentthankyou
+{
+	clear: both;
+	width:100%;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#515151;
+	text-align: left;
+}
+#fpnlWrapperContainerField .thankyouflagbuttonsubmit
+{
+	float:left;
+	background-color:#1076bb;
+	color:#FFF;
+	padding: 7px 9px;
+	font-family: Arial, sans-serif;
+	font-size:12px;
+	display: inline-block;
+	border: 1px solid #1076BB;
+	background: #1076BB;
+	border-radius: 4px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4C98CC), to(#1076BB));
+	background: -webkit-linear-gradient(top, #4C98CC, #1076BB);
+	background: -moz-linear-gradient(top, #4C98CC, #1076BB);
+	background: -ms-linear-gradient(top, #4C98CC, #1076BB);
+	background: -o-linear-gradient(top, #4C98CC, #1076BB);
+	text-decoration:none;
+	margin-top: 20px;
+}
+#fpnlWrapperContainerField .glassStyle{
+	background-color:#000;
+	opacity:0.3;
+	z-index:100000;
+}
+#fpnlWrapperContainerField .ckeckBoxPlyerStyle
+{
+width: 17px;
+height: 17px;
+float: left;
+margin-top: 10px;
+vertical-align: top;
+}
+#fpnlWrapperContainerField .collectionPlayerExistingCollectionInputContainer{
+	width: 324px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 1px;
+	margin-top: 3px;
+}
+  #fpnlWrapperContainerField .dropdownListPlaceHolder{
+	background:url(../images/dropdownMenuArrow.png) no-repeat;
+	background-color: white;
+	background-position: right center;
+	color: #999;
+	padding: 5px 25px 5px 5px;
+	border-bottom: 1px solid #DDD;
+	border: 1px solid #DDD;
+	cursor: pointer;
+	display: block;
+	width: 280px;
+	height: auto;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif, Calibri;
+}
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel{
+	border: 1px solid #DDD;
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	z-index:9999;
+	max-height:86px;
+	width: 310px;
+	position:absolute !important;
+}
+/*Scroll bar style for default scrolls*/
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel::-webkit-scrollbar {
+	width: 8px;
+} /* this targets the default scrollbar (compulsory) */
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel::-webkit-scrollbar-track {
+	background-color: white;
+	width: 15px;
+}
+/* the new scrollbar will have a flat appearance with the set background color */
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel::-webkit-scrollbar-thumb { /*background-color: rgba(0, 0, 0, 0.2);*/
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 15px;
+} /* this will style the thumb, ignoring the track */
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel::-webkit-scrollbar-button {
+	background-color: #DDDDDD;
+	width: 0px;
+	height: 0px;
+}
+/* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+#fpnlWrapperContainerField .dropdownListContainerScrollPanel::-webkit-scrollbar-corner {
+	background-color: red;
+}
+#fpnlWrapperContainerField .dropdownListContainer{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	z-index:9999;
+}
+#fpnlWrapperContainerField .dropdownListItemContainer{
+	padding: 5px;
+	background: white;
+	margin: 0px;
+	font-family: Arial, sans-serif;
+	color: #515151;
+	font-size: 12px;
+}
+
+#fpnlWrapperContainerField .dropdownListItemContainer:hover{
+	background-color: #CFE3F1;
+	cursor: pointer;
+}
+
+#fpnlWrapperContainerField .emailThankYouLbl {
+	color: #1076bb;
+	font-size: 16px;
+	text-align: center;
+}
+
+#fpnlWrapperContainerField .emailIdLbl {
+	text-align: center;
+	margin-top: 5px;
+	font-size: 12px
+}
+
+#fpnlWrapperContainerField .reviewTxtareaTitle{
+	font-weight: bold;
+	clear: both;
+	position: relative;
+	top: 10px;
+}
+
+#fpnlWrapperContainerField .poorRatingTxtarea{
+	width: 100%;
+	height: 150px;
+	display: block;
+	display: block;
+	resize: none;
+	padding: 5px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	margin-top: 14px;
+}
+
+#fpnlWrapperContainerField .ratingPoorSubHeader{
+	font-size: 12px;
+	margin-top: 11px;
+	margin-bottom: 5px;
+}

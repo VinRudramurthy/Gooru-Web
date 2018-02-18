@@ -1,28 +1,41 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
 	<ui:with type="org.ednovo.gooru.client.mvp.authentication.SignUpCBundle"
 		field="res" />
-	<g:HTMLPanel styleName="{res.css.popup} {res.css.imgBG}">
-		<g:HTMLPanel styleName="{res.css.popupInnerLeaveReg}">
-			<g:Label styleName="{res.css.popupHeader}" ui:field="lblTitle"/>
-			<g:Label styleName="{res.css.closeButton}" ui:field="lblCancel"></g:Label>
+	<g:HTMLPanel styleName="LoginpopupMain">
+		<g:HTMLPanel styleName="popupInnerLeaveReg">
+		    <g:HTMLPanel styleName="LoginpopupHeader">
+		        <g:HTMLPanel styleName="row">
+		            <g:HTMLPanel styleName="col-md-9 col-xs-9">
+		        		<g:Label  ui:field="lblTitle"/>
+		            </g:HTMLPanel>
+		    	    <g:HTMLPanel styleName="col-md-3 col-xs-3 closeContainer">
+		    	    	<g:Anchor styleName="closeButton" ui:field="lblCancel"></g:Anchor>
+		    	    </g:HTMLPanel>
+					<g:HTMLPanel styleName="clearfix"/>
+		        </g:HTMLPanel>
+		    </g:HTMLPanel>
+
 			<g:HTMLPanel ui:field="panelSignUp">
-				<g:HTMLPanel styleName="{res.css.popupContentLeaveRegistration}">
-					<g:Label styleName="{res.css.h1} {res.css.green}"  ui:field="lblHeading" />
-					<g:Label styleName="{res.css.h2}" ui:field="lblSubHeading" />
+				<g:HTMLPanel styleName="popupContentLeaveRegistration">
+					<g:Label styleName="SignUp-green-h1"  ui:field="lblHeading" />
+					<g:Label styleName="SignUp-h2" ui:field="lblSubHeading" />
 				</g:HTMLPanel>
 			</g:HTMLPanel>
-			<g:HTMLPanel styleName="{res.css.leaveRegistrationButtonContainer}">
+			<g:HTMLPanel styleName="leaveRegistrationButtonContainer">
 				<g:Button ui:field="btnLeave" styleName="secondary"></g:Button>
 				<g:Button ui:field="btnContinue" styleName="primary"></g:Button>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.leaveRegistrationBottomContainer}">
-			    <g:HTMLPanel styleName="{res.css.leaveRegistarionFooterText}">
-			    <g:Label ui:field="quriesText" />
+		<g:HTMLPanel styleName="leaveRegistrationBottomContainer">
+		    	<g:HTMLPanel styleName="leaveRegistarionFooterText">
+			    <gg:PPanel>
+			   		 <g:Label ui:field="quriesText" />
 			    <g:InlineLabel ui:field="pleaseContactText"/><g:Anchor ui:field="supportLink" target="_blank"></g:Anchor>
+			    </gg:PPanel>
+
 			    </g:HTMLPanel>
 			</g:HTMLPanel>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

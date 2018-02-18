@@ -24,7 +24,8 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.image.upload;
 
-import org.ednovo.gooru.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.client.gin.BaseUiHandlers;
+import org.ednovo.gooru.application.shared.model.user.MediaUploadDo;
 
 import com.google.gwt.event.shared.EventHandler;
 
@@ -40,13 +41,7 @@ public interface ImageUploadUiHandlers extends BaseUiHandlers, EventHandler {
 	 * </p> 
 	 */
 	void imageWebUpload(String imageUrl);
-	/**
-	 * @param gooruOid 
-	 * <p>it's unique id for resource saving/updating the image</p>
-	 * @param fileName 
-	 * <p>This is filename of the  image which will get after image upload completes. </p>
-	 */
-	void saveImage(String gooruOid, String fileName);
+
 	/**
 	 * 
 	 * @param fileName
@@ -60,7 +55,7 @@ public interface ImageUploadUiHandlers extends BaseUiHandlers, EventHandler {
 	 * @param yPostion
 	 * <p>y-coordinates  of the  crop  selection</p>
 	 */
-	void cropImage(String fileName, String height, String width,  String xPostion, String yPostion,String imageUrl);
+	void cropImage(MediaUploadDo mediaUploadDo, String height, String width,  String xPostion, String yPostion);
 	/**
 	 * @param response 
 	 * <p>
@@ -71,4 +66,9 @@ public interface ImageUploadUiHandlers extends BaseUiHandlers, EventHandler {
 	void imageFileUpload(String response);
 	
 	public void uploadGooruDefaultImage(String imageURL);
+	void saveImage(String gooruOid, String fileName, String resourceId);
+
+	void saveImageCollection(String gooruOid, String fileName);
+	
+	void setUploadData(String filename);
 }

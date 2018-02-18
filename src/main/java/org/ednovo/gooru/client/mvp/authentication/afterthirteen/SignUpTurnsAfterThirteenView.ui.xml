@@ -19,8 +19,7 @@
 							<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
 							<g:HTMLPanel styleName="{res.css.tooltipContent}"
 								ui:field="tooltipContent">
-								<g:Label styleName="{res.css.tooltipContentTitle}"
-									ui:field="lblfeaturesTitle" />
+								<g:Label styleName="{res.css.tooltipContentTitle}"	ui:field="lblfeaturesTitle" />
 								<g:Label ui:field="lblfeaturesTitleDes1" />
 								<g:Label ui:field="lblfeaturesTitleDes2" />
 								<g:Label ui:field="lblfeaturesTitleDes3" />

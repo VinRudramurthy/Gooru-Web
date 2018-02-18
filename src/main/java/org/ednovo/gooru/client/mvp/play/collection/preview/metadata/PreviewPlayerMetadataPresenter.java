@@ -27,26 +27,27 @@ package org.ednovo.gooru.client.mvp.play.collection.preview.metadata;
 
 import java.util.ArrayList;
 
-import org.ednovo.gooru.client.PlaceTokens;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.LibraryServiceAsync;
+import org.ednovo.gooru.application.client.service.PlayerAppServiceAsync;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
+import org.ednovo.gooru.application.shared.model.content.ContentReportDo;
+import org.ednovo.gooru.application.shared.model.library.ConceptDo;
+import org.ednovo.gooru.application.shared.model.player.CommentsDo;
+import org.ednovo.gooru.application.shared.model.player.CommentsListDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.play.collection.event.EditCommentChildViewEvent;
 import org.ednovo.gooru.client.mvp.play.collection.event.SetPlayerLoginStatusEvent;
 import org.ednovo.gooru.client.mvp.play.collection.event.UpdateCommentChildViewEvent;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.preview.end.PreviewEndPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.preview.home.PreviewHomePresenter;
-import org.ednovo.gooru.client.service.LibraryServiceAsync;
-import org.ednovo.gooru.client.service.PlayerAppServiceAsync;
 import org.ednovo.gooru.client.uc.PlayerBundle;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
-import org.ednovo.gooru.shared.model.content.ContentReportDo;
-import org.ednovo.gooru.shared.model.library.ConceptDo;
-import org.ednovo.gooru.shared.model.player.CommentsDo;
-import org.ednovo.gooru.shared.model.player.CommentsListDo;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
 
@@ -80,9 +81,9 @@ public class PreviewPlayerMetadataPresenter extends PresenterWidget<IsPreviewPla
 	
 	private static final String INITIAL_OFFSET = "0";
 	
-	private boolean isCommentsLoaded = false;
-	
 	private static final String PAGE = "course-page";
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 	
 	@Inject
 	public PreviewPlayerMetadataPresenter(EventBus eventBus, IsPreviewPlayerMetadataView view,PreviewHomePresenter previewHomePresenter,
@@ -203,14 +204,10 @@ public class PreviewPlayerMetadataPresenter extends PresenterWidget<IsPreviewPla
 	}
 	@Override
 	public void editCommentChildView(String commentUid, String commentText, String action) {
-		this.playerAppService.updateCollectionCommentbyCommentUid(commentUid, commentText, new AsyncCallback<CommentsDo>() {
+		this.playerAppService.updateCollectionCommentbyCommentUid(commentUid, commentText, new SimpleAsyncCallback<CommentsDo>() {
 			@Override
 			public void onSuccess(CommentsDo result) {
 				getView().updateCommentChildView("", EDIT);
-			}
-			@Override
-			public void onFailure(Throwable caught) {
-				
 			}
 		});
 	}
@@ -225,40 +222,37 @@ public class PreviewPlayerMetadataPresenter extends PresenterWidget<IsPreviewPla
 		playerAppService.getContentReport(collectionDo.getGooruOid(), AppClientFactory.getGooruUid(), new SimpleAsyncCallback<ArrayList<ContentReportDo>>() {
 			@Override
 			public void onSuccess(ArrayList<ContentReportDo> result) {
-				String gooruFlagId="";
-				if(result.size()==0){
-					getView().getFlagButton().setText(GL0556);
-					getView().getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().previewCoverFlagImageOrange());
-					getView().getFlagButton().setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().playerPreviewCoverFlagImage());
-				}else{
-					for(int i =0;i<result.size();i++){
-						gooruFlagId = gooruFlagId+result.get(i).getDeleteContentGooruOid();
-						getView().getFlagButton().setText(GL0557);
-						getView().getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().playerPreviewCoverFlagImage());
-						getView().getFlagButton().setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().previewCoverFlagImageOrange());
-						
+					String gooruFlagId="";
+					if(result!=null && result.size()==0){
+							getView().getFlagButton().setText(i18n.GL0556());
+							getView().getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().previewCoverFlagImageOrange());
+							getView().getFlagButton().setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().playerPreviewCoverFlagImage());
+					}else{
+						if(result!=null&&result.size()>0){
+							for(int i=0;i<result.size();i++){
+								if(result.get(i).getDeleteContentGooruOid()!=null){
+									gooruFlagId = gooruFlagId+result.get(i).getDeleteContentGooruOid();
+								}
+								getView().getFlagButton().setText(i18n.GL0557());
+								getView().getFlagButton().removeStyleName(PlayerBundle.INSTANCE.getPlayerStyle().playerPreviewCoverFlagImage());
+								getView().getFlagButton().setStyleName(PlayerBundle.INSTANCE.getPlayerStyle().previewCoverFlagImageOrange());
+							}
+						}
 					}
-			}
-			}
-		});
-		
+				}
+			});
 	}
 
 	public void setRelatedConcepts(CollectionDo collectionDo) {
 		final String subject = AppClientFactory.getPlaceManager().getRequestParameter("subject");
 		final String lessonId = AppClientFactory.getPlaceManager().getRequestParameter("lessonId", "123");
-		final String libraryType = AppClientFactory.getPlaceManager().getRequestParameter("library", PlaceTokens.HOME);
-		
+		final String libraryType = AppClientFactory.getPlaceManager().getRequestParameter("library", PlaceTokens.DISCOVER);
 		if(subject!=null) {
-			this.libraryService.getLibraryCollections(subject, lessonId, libraryType, new AsyncCallback<ArrayList<ConceptDo>>() {
+			this.libraryService.getLibraryCollections(subject, lessonId, libraryType, new SimpleAsyncCallback<ArrayList<ConceptDo>>() {
 				@Override
 				public void onSuccess(ArrayList<ConceptDo> conceptDoList) {
 					getView().isConceptsContainerVisible(true);
 					getView().setRelatedConceptsContent(conceptDoList, PAGE, subject, lessonId, libraryType);
-				}
-				@Override
-				public void onFailure(Throwable caught) {
-					
 				}
 			});
 		} else {
@@ -274,6 +268,9 @@ public class PreviewPlayerMetadataPresenter extends PresenterWidget<IsPreviewPla
 		this.previewPlayerPresenter = previewPlayerPresenter;
 		if(previewEndPresenter!=null){
 			previewEndPresenter.setPreviewPlayerPresenter(previewPlayerPresenter);
+		}
+		if(previewHomePresenter!=null){
+			previewHomePresenter.setPreviewPlayerPresenter(previewPlayerPresenter);
 		}
 	}
 }

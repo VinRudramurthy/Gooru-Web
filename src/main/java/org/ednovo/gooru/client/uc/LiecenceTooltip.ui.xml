@@ -1,0 +1,14 @@
+	<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+	<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="style" src="ToolTip.css"></ui:style>
+	<g:FlowPanel styleName="{style.organizeContainer}">
+      	<g:HTMLPanel ui:field="popupArrow" styleName="{style.PopupArrow}"></g:HTMLPanel>
+      	<g:HTMLPanel styleName="{style.content}">
+       	<g:Label ui:field="codeLabel"/>
+      
+        <g:Label ui:field="descLabel"/>
+        </g:HTMLPanel>
+       	<g:HTMLPanel ui:field="downPopupArrow" ></g:HTMLPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

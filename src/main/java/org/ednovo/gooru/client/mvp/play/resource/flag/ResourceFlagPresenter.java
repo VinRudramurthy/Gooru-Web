@@ -27,18 +27,18 @@ package org.ednovo.gooru.client.mvp.play.resource.flag;
 
 import java.util.ArrayList;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.service.PlayerAppServiceAsync;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ContentReportDo;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.play.collection.CollectionPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
 import org.ednovo.gooru.client.mvp.play.resource.ResourcePlayerPresenter;
-import org.ednovo.gooru.client.service.PlayerAppServiceAsync;
-import org.ednovo.gooru.client.uc.HTMLEventPanel;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ContentReportDo;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
+import org.ednovo.gooru.client.util.PlayerDataLogEvents;
 
 import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.PresenterWidget;
@@ -80,7 +80,8 @@ public class ResourceFlagPresenter extends PresenterWidget<IsResourceFlag> imple
 	@Override
 	public void createReport(final String associatedGooruOid, String freeText,
 			ArrayList<String> contentReportList,
-			String deleteContentReportGooruOids) {
+			String deleteContentReportGooruOids,String collectionItemId) {
+			ItemFlagDataLogEvent( associatedGooruOid, freeText, contentReportList,collectionItemId);
 			playerAppService.createContentReport(associatedGooruOid, freeText, contentReportList, deleteContentReportGooruOids, new SimpleAsyncCallback<ContentReportDo>() {
 			@Override
 			public void onSuccess(ContentReportDo result) {
@@ -98,32 +99,34 @@ public class ResourceFlagPresenter extends PresenterWidget<IsResourceFlag> imple
 	}
 	@Override
 	public void getContentReport(String associatedGooruOid) {
-		playerAppService.getContentReport(associatedGooruOid, AppClientFactory.getGooruUid(), new AsyncCallback<ArrayList<ContentReportDo>>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-				
-			}
-
+		playerAppService.getContentReport(associatedGooruOid, AppClientFactory.getGooruUid(), new SimpleAsyncCallback<ArrayList<ContentReportDo>>() {
 			@Override
 			public void onSuccess(ArrayList<ContentReportDo> result) {
 				String gooruFlagId="";
-				if(result.size()==0){
-					//getView().setDefaultView();
-				}else{
+				if(result!=null && result.size()>0){
 					for(int i =0;i<result.size();i++){
-						gooruFlagId = gooruFlagId+result.get(i).getDeleteContentGooruOid();
-						if(result.size()!=(i+1)){
-							gooruFlagId=gooruFlagId+",";
-							getView().getreportData(result.get(0), gooruFlagId);
-						}
+						 if(result.get(i).getDeleteContentGooruOid()!=null){
+						  gooruFlagId = gooruFlagId+result.get(i).getDeleteContentGooruOid();
+						  if(result.size()!=(i+1)){
+								gooruFlagId=gooruFlagId+",";
+								getView().getreportData(result.get(0), gooruFlagId);
+							}
+						 }
 					}
-			}
+				}else{
+				}
 			}
 		});
-
-		
+	}
+	
+	public void ItemFlagDataLogEvent(String associatedGooruOid,String freeText,ArrayList<String> contentReportList,String collectionItemId){
+	   if(isPreviewPlayer){
+		   previewPlayerPresenter.triggerItemFlagDataLogEvent(PlayerDataLogEvents.getUnixTime(),PlayerDataLogEvents.RESOURCE,freeText,contentReportList,associatedGooruOid, collectionItemId);
+	   }else if(isCollectionPlayer){
+		   collectionPlayerPresenter.triggerItemFlagDataLogEvent(PlayerDataLogEvents.getUnixTime(),PlayerDataLogEvents.RESOURCE,freeText,contentReportList,associatedGooruOid, collectionItemId);
+	   }else if(isResourcePlayer){
+		   resourcePlayerPresenter.triggerItemFlagDataLogEvent(PlayerDataLogEvents.getUnixTime(),PlayerDataLogEvents.RESOURCE,freeText,contentReportList,associatedGooruOid, ""); 
+	   }
 	}
 	public HTMLEventPanel getResourceFlagCloseButton()
 	{

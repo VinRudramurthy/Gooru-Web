@@ -42,16 +42,16 @@ package org.ednovo.gooru.client.mvp.settings;
 
 import java.util.List;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.code.LibraryCodeDo;
+import org.ednovo.gooru.application.shared.model.user.ProfileDo;
+import org.ednovo.gooru.application.shared.model.user.SettingDo;
+import org.ednovo.gooru.application.shared.model.user.V2UserDo;
 import org.ednovo.gooru.client.uc.ProfileBiographyEditUC;
 import org.ednovo.gooru.client.uc.SettingEditLabelUc;
 import org.ednovo.gooru.client.uc.SettingEmailEditLabelUc;
 import org.ednovo.gooru.client.uc.SettingLastNameEditLabelUC;
 import org.ednovo.gooru.client.ui.HTMLEventPanel;
-import org.ednovo.gooru.shared.model.code.LibraryCodeDo;
-import org.ednovo.gooru.shared.model.user.ProfileDo;
-import org.ednovo.gooru.shared.model.user.SettingDo;
-import org.ednovo.gooru.shared.model.user.V2UserDo;
 
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FocusPanel;
@@ -218,4 +218,64 @@ public interface IsUserSettingsView extends IsViewWithHandlers<UserSettingsUiHan
 	Button getstandardsEditButton();
 	HTMLPanel getuserStandardDefaultView();
 	public void hideEmailContainer();
+	/**
+	 * @function googleDirveStatus 
+	 * 
+	 * @created_date : Jul 2, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	void googleDirveStatus(boolean isConnected);
+	
+	/**
+	 * @function setConnectedAs 
+	 * 
+	 * @created_date : Oct 27, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @param	:	connectedEmailId
+	 * 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	public void setConnectedAs(String connectedEmailId);
+	
+	/**
+	 * 
+	 * @function displayAdminPortal 
+	 * 
+	 * @created_date : 30-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	public void displayAdminPortal();
 }

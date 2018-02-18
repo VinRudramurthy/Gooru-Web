@@ -24,8 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.library.partner.ngc;
 
-import org.ednovo.gooru.client.gin.BaseViewWithHandlers;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.client.gin.BaseViewWithHandlers;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -37,7 +36,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Search Team
 ` * 
  */
-public class NgcLibraryView extends BaseViewWithHandlers<NgcLibraryUiHandlers> implements IsNgcLibraryView, MessageProperties {
+public class NgcLibraryView extends BaseViewWithHandlers<NgcLibraryUiHandlers> implements IsNgcLibraryView{
 
 	@UiField SimplePanel partnerPanel;
 	
@@ -48,6 +47,7 @@ public class NgcLibraryView extends BaseViewWithHandlers<NgcLibraryUiHandlers> i
 
 	public NgcLibraryView() {
 		setWidget(uiBinder.createAndBindUi(this));
+		partnerPanel.getElement().setId("spnlPartnerPanel");
 	}
 	
 	@Override

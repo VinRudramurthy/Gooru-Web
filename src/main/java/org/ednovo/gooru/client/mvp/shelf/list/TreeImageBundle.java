@@ -20,6 +20,6 @@ import com.google.gwt.resources.client.ImageResource;
  */
 public interface TreeImageBundle extends ClientBundle {
 	   public static final TreeImageBundle INSTANCE =  GWT.create(TreeImageBundle.class);
-	   @Source("images/spacer.gif")
+	   @Source("spacer.gif")
 	   public ImageResource leaf();
 }

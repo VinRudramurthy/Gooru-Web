@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2013 Ednovo d/b/a Gooru. All rights reserved.
- * 
+ *
  *  http://www.goorulearning.org/
- * 
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the
  *  "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  *  distribute, sublicense, and/or sell copies of the Software, and to
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be
  *  included in all copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -27,9 +27,10 @@ package org.ednovo.gooru.client.uc;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.SimpleAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.shared.util.StringUtil;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.BlurEvent;
@@ -53,10 +54,12 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
 public class AssignmentEditLabelUc extends Composite implements
-		HasValue<String>,MessageProperties {
+		HasValue<String> {
 
 	private static AssignmentEditLabelUcUiBinder uiBinder = GWT
 			.create(AssignmentEditLabelUcUiBinder.class);
+
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface AssignmentEditLabelUcUiBinder extends
 			UiBinder<Widget, AssignmentEditLabelUc> {
@@ -74,44 +77,51 @@ public class AssignmentEditLabelUc extends Composite implements
 	@UiField
 	protected FocusPanel focusPanel;
 
+	@UiField
+	Label errorLabel;
+
 	protected String placeholder = "";
 
 	protected String text;
-	@UiField Label errorLabel;
+
 
 	// static boolean pencilVisiblity = true;
 
 	boolean isHavingBadWords=false;
-	
-	@UiField(provided = true)
-	UcCBundle res;
+
 
 	public AssignmentEditLabelUc() {
-		this.res = UcCBundle.INSTANCE;
 		initWidget(uiBinder.createAndBindUi(this));
-		errorLabel.setText(GL0173);
+
+		setIds();
+		errorLabel.setText(i18n.GL0173());
+		errorLabel.getElement().setId("errlblErrorLabel");
+		errorLabel.getElement().setAttribute("alt", i18n.GL0173());
+		errorLabel.getElement().setAttribute("title", i18n.GL0173());
 		errorLabel.setVisible(false);
 		deckPanel.showWidget(0);
 
-		
+
 		editTextBox.addBlurHandler(new BlurHandler() {
-			
+
 			@Override
 			public void onBlur(BlurEvent event) {
 				Map<String, String> parms = new HashMap<String, String>();
 				parms.put("text", editTextBox.getText());
 				AppClientFactory.getInjector().getResourceService().checkProfanity(parms, new SimpleAsyncCallback<Boolean>() {
-					
+
 					@Override
 					public void onSuccess(Boolean value) {
 						isHavingBadWords = value;
 						if (value){
 							editTextBox.getElement().getStyle().setBorderColor("orange");
-							errorLabel.setText(GL0554);
+							errorLabel.setText(i18n.GL0554());
+							errorLabel.getElement().setAttribute("alt", i18n.GL0554());
+							errorLabel.getElement().setAttribute("title", i18n.GL0554());
 							errorLabel.setVisible(true);
 						}else{
 							setValue(editTextBox.getText(), true); // fires events, too
-							
+
 							editTextBox.getElement().getStyle().clearBackgroundColor();
 							editTextBox.getElement().getStyle().setBorderColor("#ccc");
 							errorLabel.setVisible(false);
@@ -130,13 +140,15 @@ public class AssignmentEditLabelUc extends Composite implements
 					Map<String, String> parms = new HashMap<String, String>();
 					parms.put("text", editTextBox.getText());
 					AppClientFactory.getInjector().getResourceService().checkProfanity(parms, new SimpleAsyncCallback<Boolean>() {
-						
+
 						@Override
 						public void onSuccess(Boolean value) {
 							isHavingBadWords = value;
 							if (value){
 								editTextBox.getElement().getStyle().setBorderColor("orange");
-								errorLabel.setText(GL0554);
+								errorLabel.setText(i18n.GL0554());
+								errorLabel.getElement().setAttribute("alt", i18n.GL0554());
+								errorLabel.getElement().setAttribute("title", i18n.GL0554());
 								errorLabel.setVisible(true);
 							}else{
 								switchToLabel();
@@ -148,12 +160,23 @@ public class AssignmentEditLabelUc extends Composite implements
 					});
 				} else if (event.getCharCode() == KeyCodes.KEY_ESCAPE) {
 					editTextBox.setText(editLabel.getText()); // reset to the original value
+					editTextBox.getElement().setAttribute("alt", editLabel.getText());
+					editTextBox.getElement().setAttribute("title", editLabel.getText());
 				}
 			}
 		});
-		
+
 		editTextBox.addKeyUpHandler(new ValidateConfirmText());
 
+	}
+
+	public void setIds() {
+		focusPanel.getElement().setId("fpnlFocusPanel");
+		deckPanel.getElement().setId("dpnlDeckPanel");
+		editLabel.getElement().setId("lblEditLabel");
+		editTextBox.getElement().setId("txtEditTextBox");
+		editTextBox.getElement().getStyle().setColor("black");
+		StringUtil.setAttributes(editTextBox, true);
 	}
 
 	private class ValidateConfirmText implements KeyUpHandler {
@@ -180,7 +203,9 @@ public class AssignmentEditLabelUc extends Composite implements
 
 		if (deckPanel.getVisibleWidget() == 1)
 			return;
-		editTextBox.setText(getValue());	
+		editTextBox.setText(getValue());
+		editTextBox.getElement().setAttribute("alt", getValue());
+		editTextBox.getElement().setAttribute("title", getValue());
 		deckPanel.showWidget(1);
 		editTextBox.setFocus(true);
 		editTextBox.addStyleName("shelfEditTitleForAssignment");
@@ -201,11 +226,15 @@ public class AssignmentEditLabelUc extends Composite implements
 		if (editTextBox.getText().trim().length() > 0) {
 			setValue(editTextBox.getText(), true); // fires events, too
 		}else {
-			
+
 			if (isHavingBadWords){
-				errorLabel.setText(GL0554);
+				errorLabel.setText(i18n.GL0554());
+				errorLabel.getElement().setAttribute("alt", i18n.GL0554());
+				errorLabel.getElement().setAttribute("title", i18n.GL0554());
 			}else{
-				errorLabel.setText(GL0173);
+				errorLabel.setText(i18n.GL0173());
+				errorLabel.getElement().setAttribute("alt", i18n.GL0173());
+				errorLabel.getElement().setAttribute("title", i18n.GL0173());
 			}
 			errorLabel.setVisible(true);
 //			new AlertContentUc("Oops", "Title Shouldn't be empty!");
@@ -233,6 +262,8 @@ public class AssignmentEditLabelUc extends Composite implements
 	public void cancel() {
 		deckPanel.showWidget(0);
 		editTextBox.setText(editLabel.getText());
+		editTextBox.getElement().setAttribute("alt", editLabel.getText());
+		editTextBox.getElement().setAttribute("title",editLabel.getText());
 		errorLabel.setVisible(false);
 	}
 
@@ -252,26 +283,26 @@ public class AssignmentEditLabelUc extends Composite implements
 
 	}
 	/**
-	 * 
-	 * @function checkEmptyTitle 
-	 * 
+	 *
+	 * @function checkEmptyTitle
+	 *
 	 * @created_date : Aug 22, 2013
-	 * 
+	 *
 	 * @description
-	 * 
-	 * 
+	 *
+	 *
 	 * @parm(s) : @param text
-	 * 
+	 *
 	 * @return : void
 	 *
 	 * @throws : <Mentioned if any exceptions>
 	 *
-	 * 
+	 *
 	 *
 	 *
 	 */
 	/*public void checkEmptyTitle(String text){
-		
+
 	}*/
 
 	@Override
@@ -290,7 +321,11 @@ public class AssignmentEditLabelUc extends Composite implements
 
 		editLabel.setText(value.length() > 50 ? value.substring(0, 50) + "..."
 				: value);
+		editLabel.getElement().setAttribute("alt", value);
+		editLabel.getElement().setAttribute("title", value);
 		editTextBox.setText(value);
+		editTextBox.getElement().setAttribute("alt", value);
+		editTextBox.getElement().setAttribute("title", value);
 	}
 
 	/**

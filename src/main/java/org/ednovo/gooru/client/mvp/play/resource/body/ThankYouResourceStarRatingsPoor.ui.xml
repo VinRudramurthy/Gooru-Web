@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:htmlevents="urn:import:org.ednovo.gooru.client.ui">
+	
+	<g:HTMLPanel ui:field="poorRatingsMainPanel">
+		<g:HTMLPanel styleName="ratingPoorConfirmationContainer">
+			<g:HTMLPanel styleName="arrowBorder hidden-xs"></g:HTMLPanel>
+			<g:HTMLPanel styleName="arrow hidden-xs"></g:HTMLPanel>
+			<g:Label ui:field="poorRatingHeaderLbl" styleName ="ratingPoorHeader"></g:Label>
+			<g:Label ui:field="poorRatingSubHeaderLbl" styleName ="ratingPoorSubHeader"></g:Label>
+			<g:HTMLPanel styleName="playerflagradiobutton">
+				<g:CheckBox ui:field="resourceCheckBox3"
+					styleName="ckeckBoxPlyerStyle"/>
+				<g:Label styleName="playerflagcontent"
+					ui:field="incorporateresourceText"></g:Label>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="playerflagradiobutton">
+				<g:CheckBox ui:field="resourceCheckBox2"
+					styleName="ckeckBoxPlyerStyle" />
+				<g:Label styleName="playerflagcontent"
+					ui:field="unavailableresourceText"></g:Label>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="playerflagradiobutton">
+				<g:CheckBox ui:field="resourceCheckBox1"
+					styleName="ckeckBoxPlyerStyle" />
+				<g:Label styleName="playerflagcontent"
+					ui:field="inaccurateTextresource"></g:Label>
+			</g:HTMLPanel>
+
+
+			<div class="playerflagradiobutton">
+				<g:CheckBox ui:field="resourceCheckBox4"
+					styleName="ckeckBoxPlyerStyle" />
+				<g:Label styleName="playerflagcontent"
+					ui:field="otherReason"></g:Label>
+			</div>
+			<g:Label styleName="reviewTxtareaTitle" ui:field="reviewTextAreaTitle"></g:Label>
+			<g:TextArea styleName="poorRatingTxtarea" ui:field="ratingCommentTxtArea"></g:TextArea>
+			<g:Label ui:field="mandatoryDescLblForSwareWords"></g:Label>
+			<g:Label styleName="errorLblBottomText" ui:field="errorLbl"></g:Label>
+			<g:HTMLPanel styleName="ratingPoorSaveCancelContainer"
+				ui:field="buttonsContainer">
+				<g:Button ui:field="btnSkip" styleName="secondary"></g:Button>
+				<g:Button ui:field="btnPost" styleName="primary btnSpace"></g:Button>
+			</g:HTMLPanel>
+			<g:Label styleName="savePostLbl" ui:field="saveAndPsotLbl"></g:Label>
+		</g:HTMLPanel>
+
+
+	</g:HTMLPanel>
+
+</ui:UiBinder>

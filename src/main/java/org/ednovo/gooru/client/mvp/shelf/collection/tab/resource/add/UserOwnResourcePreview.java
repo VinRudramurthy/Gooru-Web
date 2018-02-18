@@ -24,10 +24,10 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.shelf.collection.tab.resource.add;
 
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
 import org.ednovo.gooru.client.mvp.search.event.SetHeaderZIndexEvent;
 import org.ednovo.gooru.client.uc.BlueButtonUc;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Display;
@@ -42,22 +42,11 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class UserOwnResourcePreview extends PopupPanel implements MessageProperties {
-	
-	/*@UiField Label shareMsgTitle,descriptionTxt,filePathValueLbl,filePathLbl;
-	
-	@UiField HTMLPanel shareAlertPopup, buttonContainer,descriptionTxtContainer,filePathTxtContainer;
-
-	@UiField BlueButtonUc okButton, goBackBtn;*/
-	
+public abstract class UserOwnResourcePreview extends PopupPanel {
 	@UiField BlueButtonUc okButton, goBackBtn;
-	
-	
 	@UiField Label descriptionTxtValueLbl,filePathValueLbl,resourceTitleValueLbl,categoryValueLbl,thumbnailLbl,previewCloseButton;
-	
 	@UiField
 	public Image setThumbnailImage;
-	
 	@UiField HTMLPanel actionPanel;
 	
 	/** 
@@ -91,29 +80,67 @@ public abstract class UserOwnResourcePreview extends PopupPanel implements Messa
 	@UiField HTMLPanel areYouSureText;
 	
 	private static UserOwnResourcePreviewUiBinder uiBinder = GWT.create(UserOwnResourcePreviewUiBinder.class);
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface UserOwnResourcePreviewUiBinder extends UiBinder<Widget, UserOwnResourcePreview> {
 	}
 
 	public UserOwnResourcePreview() {
 		setWidget(uiBinder.createAndBindUi(this));
-		areYouSureText.getElement().setInnerHTML(GL0363);
-		messageText.setText(GL0928);
-		uploadedSuccessText.setText(GL0929);
-		titleText.setText(GL0318);
-		descriptionText.setText(GL0904);
-		categoryText.setText(GL0721);
-		thumbnailLbl.setText(GL0911);
-		goBackBtn.setText(GL0841);
-		okButton.setText(GL_GRR_YES);
-		lblConfirmAdding.setText(GL0591.toLowerCase());
+		areYouSureText.getElement().setInnerHTML(i18n.GL0363());
+		areYouSureText.getElement().setId("pnlAreYouSureText");
+		areYouSureText.getElement().setAttribute("alt", i18n.GL0363());
+		areYouSureText.getElement().setAttribute("title", i18n.GL0363());
+		messageText.setText(i18n.GL0928());
+		messageText.getElement().setId("lblMessageText");
+		messageText.getElement().setAttribute("alt", i18n.GL0928());
+		messageText.getElement().setAttribute("title", i18n.GL0928());
+		uploadedSuccessText.setText(i18n.GL0929());
+		uploadedSuccessText.getElement().setId("lblUploadedSuccessText");
+		uploadedSuccessText.getElement().setAttribute("alt",i18n.GL0929());
+		uploadedSuccessText.getElement().setAttribute("title", i18n.GL0929());
+		titleText.setText(i18n.GL0318());
+		titleText.getElement().setId("lblTitleText");
+		titleText.getElement().setAttribute("alt",i18n.GL0318());
+		titleText.getElement().setAttribute("title", i18n.GL0318());
+		descriptionText.setText(i18n.GL0904());
+		descriptionText.getElement().setId("lblDescriptionText");
+		descriptionText.getElement().setAttribute("alt",i18n.GL0904());
+		descriptionText.getElement().setAttribute("title", i18n.GL0904());
+		categoryText.setText(i18n.GL0721());
+		categoryText.getElement().setId("lblCategoryText");
+		categoryText.getElement().setAttribute("alt",i18n.GL0721());
+		categoryText.getElement().setAttribute("title", i18n.GL0721());
+		thumbnailLbl.setText(i18n.GL0911());
+		thumbnailLbl.getElement().setId("lblThumbnailLbl");
+		thumbnailLbl.getElement().setAttribute("alt",i18n.GL0911());
+		thumbnailLbl.getElement().setAttribute("title", i18n.GL0911());
+		goBackBtn.setText(i18n.GL0841());
+		goBackBtn.getElement().setId("bluebtnGoBackBtn");
+		goBackBtn.getElement().setAttribute("alt",i18n.GL0841());
+		goBackBtn.getElement().setAttribute("title", i18n.GL0841());
+		okButton.setText(i18n.GL_GRR_YES());
+		okButton.getElement().setId("bluebtnOkButton");
+		okButton.getElement().setAttribute("alt",i18n.GL_GRR_YES());
+		okButton.getElement().setAttribute("title", i18n.GL_GRR_YES());
+		lblConfirmAdding.setText(i18n.GL0591().toLowerCase());
+		lblConfirmAdding.getElement().setId("lblLblConfirmAdding");
+		lblConfirmAdding.getElement().setAttribute("alt",i18n.GL0591().toLowerCase());
+		lblConfirmAdding.getElement().setAttribute("title", i18n.GL0591().toLowerCase());
 		lblConfirmAdding.getElement().getStyle().setDisplay(Display.NONE);
+		actionPanel.getElement().setId("pnlActionPanel");
 		actionPanel.getElement().getStyle().setDisplay(Display.BLOCK);
+		previewCloseButton.getElement().setId("lblPreviewCloseButton");
+		filePathValueLbl.getElement().setId("lblFilePathValueLbl");
+		resourceTitleValueLbl.getElement().setId("lblResourceTitleValueLbl");
+		descriptionTxtValueLbl.getElement().setId("lblDescriptionTxtValueLbl");
+		categoryValueLbl.getElement().setId("lblCategoryValueLbl");
+		setThumbnailImage.getElement().setId("imgSetThumbnailImage");
 	}
 	
 	@UiHandler("previewCloseButton")
 	public void onClickClosePreviewBtn(ClickEvent event){
-		Window.enableScrolling(true);
 		AppClientFactory.fireEvent(new SetHeaderZIndexEvent(0, true));
 		hide();
 		closeAppPopUp();

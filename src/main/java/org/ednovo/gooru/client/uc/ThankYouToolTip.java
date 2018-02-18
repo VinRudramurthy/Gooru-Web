@@ -25,8 +25,9 @@
 package org.ednovo.gooru.client.uc;
 
 
-import org.ednovo.gooru.player.resource.client.view.resourceplayer.flag.FlagBundle;
-import org.ednovo.gooru.shared.util.MessageProperties;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.client.mvp.play.collection.flag.FlagBundle;
+import org.ednovo.gooru.client.ui.HTMLEventPanel;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -41,13 +42,16 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ThankYouToolTip extends PopupPanel implements MessageProperties {
+public class ThankYouToolTip extends PopupPanel{
 
 	private static ThankYouToolTipUiBinder uiBinder = GWT
 			.create(ThankYouToolTipUiBinder.class);
 
 	interface ThankYouToolTipUiBinder extends UiBinder<Widget, ThankYouToolTip> {
 	}
+	
+	private MessageProperties i18n = GWT.create(MessageProperties.class);
+	
 	@UiField
 	HTMLEventPanel closeButton;
 	
@@ -66,11 +70,28 @@ public class ThankYouToolTip extends PopupPanel implements MessageProperties {
 		this.setGlassStyleName(FlagBundle.IMAGEBUNDLEINSTANCE.flagstyle().glassStyle());
 		setGlassEnabled(true);
 		FlagBundle.IMAGEBUNDLEINSTANCE.flagstyle().ensureInjected();
-		successPopupTitle.setText(GL0600);
-		popUpCloseButton.setAltText(GL1050);
-		successPopupMessage.setText(GL0615);
-		emailConfirmationText.setText(GL0648);
-		okButton.setText(GL0190);
+		successPopupTitle.setText(i18n.GL0600());
+		successPopupTitle.getElement().setId("lblSuccessPopupTitle");
+		successPopupTitle.getElement().setAttribute("alt", i18n.GL0600());
+		successPopupTitle.getElement().setAttribute("title", i18n.GL0600());
+		closeButton.getElement().setId("epnlCloseButton");
+		popUpCloseButton.getElement().setId("imgPopUpCloseButton");
+		popUpCloseButton.getElement().setAttribute("alt", i18n.GL1050());
+		popUpCloseButton.getElement().setAttribute("title", i18n.GL1050());
+		popUpCloseButton.setAltText(i18n.GL1050());
+		successPopupMessage.setText(i18n.GL0615());
+		successPopupMessage.getElement().setId("lblSuccessPopupMessage");
+		successPopupMessage.getElement().setAttribute("alt", i18n.GL0615());
+		successPopupMessage.getElement().setAttribute("title", i18n.GL0615());
+		emailPopupThanksmsg.getElement().setId("pnlEmailPopupThanksmsg");
+		emailConfirmationText.setText(i18n.GL0648());
+		emailConfirmationText.getElement().setId("lblEmailConfirmationText");
+		emailConfirmationText.getElement().setAttribute("alt", i18n.GL0648());
+		emailConfirmationText.getElement().setAttribute("title", i18n.GL0648());
+		emailIdLbl.getElement().setId("lblEmailIdLbl");
+		okButton.setText(i18n.GL0190());
+		okButton.getElement().setAttribute("alt", i18n.GL0190());
+		okButton.getElement().setAttribute("title", i18n.GL0190());
 		popUpCloseButton.setResource(FlagBundle.IMAGEBUNDLEINSTANCE.closeFlagPopUpImages());
 		okButton.getElement().setAttribute("id","okButton");
 		successPopupMessage.setVisible(true);
@@ -80,9 +101,13 @@ public class ThankYouToolTip extends PopupPanel implements MessageProperties {
 	
 	public void setTitleData(String title, String emailId) {
 		successPopupTitle.setText(title);
+		successPopupTitle.getElement().setAttribute("alt", title);
+		successPopupTitle.getElement().setAttribute("title", title);
 		successPopupMessage.setVisible(false);
 		emailPopupThanksmsg.setVisible(true);
 		emailIdLbl.setText(emailId);
+		emailIdLbl.getElement().setAttribute("alt", emailId);
+		emailIdLbl.getElement().setAttribute("title", emailId);
 
 	}
 	

@@ -24,16 +24,15 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.search;
 
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.search.AutoSuggestKeywordSearchDo;
+import org.ednovo.gooru.application.shared.model.search.SearchDo;
 import org.ednovo.gooru.client.SearchAsyncCallback;
-import org.ednovo.gooru.client.gin.AppClientFactory;
 import org.ednovo.gooru.client.mvp.search.event.SearchEvent;
-import org.ednovo.gooru.client.service.SearchServiceAsync;
 import org.ednovo.gooru.client.uc.AppMultiWordSuggestOracle;
 import org.ednovo.gooru.client.uc.AppSuggestBox;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.search.AutoSuggestKeywordSearchDo;
-import org.ednovo.gooru.shared.model.search.SearchDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -53,13 +52,12 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SuggestOracle;
 import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
 
 /**
  * @author Search Team
  *
  */
-public class SearchBarVc extends Composite implements SelectionHandler<SuggestOracle.Suggestion>,MessageProperties{
+public class SearchBarVc extends Composite implements SelectionHandler<SuggestOracle.Suggestion>{
 	
 	private SearchDo<AutoSuggestKeywordSearchDo> autoSuggestKeywordDo = new SearchDo<AutoSuggestKeywordSearchDo>();
 	private SearchAsyncCallback<SearchDo<AutoSuggestKeywordSearchDo>> autoKeyWordSuggestionAsyncCallback;
@@ -67,6 +65,7 @@ public class SearchBarVc extends Composite implements SelectionHandler<SuggestOr
 	private String initialSearchQuery = "";
 	private final String QUERY = "query";
 	private static SearchBarVcUiBinder uiBinder = GWT.create(SearchBarVcUiBinder.class);
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 	interface SearchBarVcUiBinder extends UiBinder<Widget, SearchBarVc> {
 	}
 
@@ -75,7 +74,7 @@ public class SearchBarVc extends Composite implements SelectionHandler<SuggestOr
 	@UiField Button searchBtn;
 		private AppMultiWordSuggestOracle autokeySuggestOracle;
 		String searchData="";
-		private String GOORU_SEARCH=GL0146;
+		private String GOORU_SEARCH=i18n.GL0146();
 	/**
 	 * Class constructor, crates new {@link KeyUpHandler}
 	 */
@@ -89,7 +88,7 @@ public class SearchBarVc extends Composite implements SelectionHandler<SuggestOr
 			}
 
 			@Override
-			public void keyAction(String text) {
+			public void keyAction(String text,KeyUpEvent event) {
 				MixpanelUtil.Search_autocomplete_select();
 				autokeySuggestOracle.clear();
 				autoSuggestKeywordDo.setQuery(text);
@@ -104,7 +103,7 @@ public class SearchBarVc extends Composite implements SelectionHandler<SuggestOr
 					autoSuggestKeywordDo.setType("");
 					autoSuggestKeywordDo.setType("collection");
 				}
-				if (text != null && text.trim().length() > 0) {
+				if (text != null && text.trim().length() > 2) {
 					requestAutoSuggestKeyword(autoSuggestKeywordDo);
 				}
 				else
@@ -122,10 +121,10 @@ public class SearchBarVc extends Composite implements SelectionHandler<SuggestOr
 		searchTxtBox.addKeyUpHandler(new SearchKeyUpHandler());
 		
 		initialSearchQuery = AppClientFactory.getPlaceManager().getRequestParameter(QUERY);
-		searchTxtBox.getTextBox().getElement().setAttribute("placeholder",GL0448);
+		searchTxtBox.getTextBox().getElement().setAttribute("placeholder",i18n.GL0448());
 		Cookies.setCookie("searchvalue", initialSearchQuery);
 		searchTxtBox.getElement().setId("txtSearch");
-		searchBtn.setText(GL0176);
+		searchBtn.setText(i18n.GL0176());
 		searchBtn.getElement().setId("btnSearch");
 	
 	}

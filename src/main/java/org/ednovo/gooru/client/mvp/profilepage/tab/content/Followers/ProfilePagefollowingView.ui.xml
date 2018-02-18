@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field="ProfilePageStyle" src="profile-page-Following-style.css"></ui:style>
+	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{ProfilePageStyle.profilepageFollwoingContentText}">
+	    <g:InlineLabel styleName="{ProfilePageStyle.inlineStyle}" ui:field="follwingTextMessage"/>
+	    <g:InlineLabel styleName="{ProfilePageStyle.inlineStyle}" ui:field="follwingTextMessageDes"/>
+	</g:HTMLPanel>
+
+		<g:HTMLPanel styleName="{ProfilePageStyle.profilepageFollwoingContent}" ui:field="userConatiner">
+		 </g:HTMLPanel>
+
+	
+			<g:HTMLPanel styleName="{ProfilePageStyle.centerAlignBtn}">
+						<g:Button styleName="secondary" ui:field="seeMorebtn">See More</g:Button>
+					</g:HTMLPanel>
+	
+	</g:HTMLPanel>
+</ui:UiBinder> 

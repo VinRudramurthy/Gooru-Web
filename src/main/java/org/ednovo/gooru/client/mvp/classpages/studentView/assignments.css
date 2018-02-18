@@ -15,8 +15,8 @@
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: rgb(81, 81, 81);
-	margin: margin:     10px 0px 0px 5px;
-	width: 90%;
+	margin:10px 0px 0px 5px;
+	width:90%;
 }
 
 .myAssigntmentTitlePanel {
@@ -78,7 +78,6 @@
 
 .myClasspageMyCollectionBg {
 	float: left;
-/* 	background: url(../images/Classpage/assignments/mycollection.png); */
 	width: 142px;
 	height: 27px; /*margin:50px 0px 0px 287px;*/
 }
@@ -361,13 +360,3 @@
 	display: block;
 }
 
-.playIcon {
-	background: url("images/Collection-Search/play-icon.png") no-repeat
-		scroll 0 0 transparent;
-	cursor: pointer;
-	height: 16px;
-	left: 53px;
-	position: relative;
-	top: 38px;
-	width: 12px;
-}

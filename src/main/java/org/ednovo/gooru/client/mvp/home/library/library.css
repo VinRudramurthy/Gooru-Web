@@ -1,7 +1,3 @@
-* {
-	-webkit-font-smoothing: antialiased !important;
-}
-
 .pageTitle {
 	font-size: 38px;
 	font-weight: bold;
@@ -20,7 +16,7 @@
 	border:none;
 	position:fixed;
 	width:100%;
-	z-index: 98;
+	z-index: 96 !important;
 	-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -41,6 +37,12 @@
 	font-size:14px;
 	border-left:1px solid #ddd;
 	cursor:default;
+	width: 9.1%;
+	box-sizing:content-box;
+	margin: 0px -2px;
+	color: #515151 !important;
+	border-top: 0px;
+  	border-bottom: 0px;
 }
 
 #courseTabs .tabsLi.math {
@@ -62,7 +64,7 @@
 	background:white;
 	border:1px solid #ddd;
 	border-top:none;
-	width:100%; 
+	width:100%;
 	font-size:12px;
 }
 
@@ -94,7 +96,7 @@
 	background: -moz-linear-gradient(top, #CFE3F1, #ADD0E8);
 	background: -ms-linear-gradient(top, #CFE3F1, #ADD0E8);
 	background: -o-linear-gradient(top, #CFE3F1, #ADD0E8);
-	padding:0px 35px !important;
+	padding:0px 37px !important;
 }
 
 #courseTabs .singleLink.last:hover {
@@ -127,10 +129,23 @@
 }
 
 
-
+#courseTabs .gradeOption {
+	border-bottom: 1px solid #999;
+	padding: 10px 0px 4px 0px;
+	margin: 0px 6px;
+	width: 93%;
+	font-weight: bold;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	float: left;
+	white-space: normal;
+	line-height: 1.2em;
+	cursor: default;
+}
 
 #container {
-	width:1000px;
+	/* width:1000px; */
 	margin:auto;
 	position: relative;
 }
@@ -139,6 +154,7 @@
 	width:100%;
 	height:300px;
 	position:relative;
+	margin:0px auto;
 }
 
 #courseBanner .courseTitle {
@@ -150,7 +166,7 @@
 	padding:15px 0px;
 	position:absolute;
 	bottom:0px;
-	width: 100%;	
+	width: 100%;
 }
 
 #featuredEducator {
@@ -181,6 +197,7 @@
 	margin-top:-1px;
 	cursor:pointer;
 	transition: background-color 0.5s ease;
+	box-sizing:content-box;
 }
 
 .unitLiActive {
@@ -195,6 +212,7 @@
 	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
 	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-sizing:content-box;
 }
 
 .unitLi:hover {
@@ -247,9 +265,6 @@
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
 
-	/* IE 6-9 */	
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FDFDFD', EndColorStr='#EDEDED');
-
 }
 
 #contentScroll .topicBlock .searchLink {
@@ -295,7 +310,6 @@
 	float:left;
 	height:223px;
 	overflow-y:scroll;
-	-moz-scrollbars-vertical;
 }
 
 #contentScroll .topicBlock .conceptList .lessonTitle {
@@ -335,6 +349,7 @@
 	float:left;
 	padding:20px;
 	width: 53%;
+	box-sizing:content-box;
 }
 
 #contentScroll .topicBlock .collectionInfo .collectionImage {
@@ -512,7 +527,7 @@
 
 #landingBanner {
 	width:100%;
-	height:330px;
+	height:230px;
 	background: url("../images/library/banner.png");
 	position:relative;
 	margin-bottom:0px;
@@ -533,7 +548,7 @@
 	bottom: 0px;
 	width: 100%;
 	text-align: center;
-	text-shadow: none;	
+	text-shadow: none;
 }
 
 #landingBanner .fourSteps .step {
@@ -587,11 +602,17 @@
 
 #featuredCourseTabs .tabsLi {
 	width: 160px;
+	border: 0px;
 	border-right: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	margin-left: 0px;
 	height: 113px;
 	vertical-align: top;
+	box-sizing:content-box;
+	margin: 0px;
+	color: #515151 !important;
+	border-top: 0px;
+  	border-bottom: 0px;
 }
 
 #featuredCourseTabs .courseTitle {
@@ -607,7 +628,6 @@
 }
 
 #featuredCourseTabs .courseImage.chemistry {
-	/**background: url("../images/library/chemistry.png") no-repeat;**/
 }
 
 #featuredCourseTabs .courseImage.math {
@@ -818,7 +838,7 @@
 	bottom: 0px;
 	width: 100%;
 	text-align: center;
-	text-shadow: none;	
+	text-shadow: none;
 }
 
 #landingRusdBanner .fourSteps .step {
@@ -860,14 +880,24 @@
 	text-align:center;
 	margin-top:10px;
 }
-.partnerLogo {
+.rusdPartnerLogo {
 	background: url("../images/library/rusd-logo.png");
 	width: 122px;
 	height: 45px;
 	position: absolute;
-	top: 61px;
-	right: 188px;
+	top: 90px;
+	right: 9px;
 }
+
+.episdPartnerLogo {
+	background: url("../images/library/episd-logo.png");
+	width: 122px;
+	height: 45px;
+	position: absolute;
+	top: 90px;
+	right: 9px;
+}
+
 .resourcesInsideSubStyle {
 	width: 263px !important;
 	padding-left: 20px !important;
@@ -898,7 +928,7 @@
     clear: both;
     height:0px;
 }
-	
+
 .unitOption {
     padding:0px 15px;
 }
@@ -954,5 +984,349 @@ margin-bottom: 15px;
 	padding: 0 19px !important;
 }
 
-/* end 
- */
+.lessonTitleProfile {
+	padding: 8px 63px;
+	margin: 7px 0px;
+	font-weight:bold;
+	cursor:default;
+		/* Old browsers */
+	background: rgb(239,239,239);
+
+	/* Safari 4-5, Chrome 1-9 */
+	background: url('../images/folders/panel/folder-icon-open.png') no-repeat 24px 8px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(FFFFFF), to(FFFFFF));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: url('../images/folders/panel/folder-icon-open.png') no-repeat 24px 8px, -webkit-linear-gradient(top, #FFFFFF, #FFFFFF);
+
+	/* Firefox 3.6+ */
+	background: url('../images/folders/panel/folder-icon-open.png') no-repeat 24px 8px, -moz-linear-gradient(top, #FFFFFF, #FFFFFF);
+
+	/* IE 10 */
+	background: url('../images/folders/panel/folder-icon-open.png') no-repeat 24px 8px, -ms-linear-gradient(top, #FFFFFF, #FFFFFF);
+
+	/* Opera 11.10+ */
+	background: url('../images/folders/panel/folder-icon-open.png') no-repeat 24px 8px, -o-linear-gradient(top, #FFFFFF, #FFFFFF);
+
+}
+
+.collectionSmall {
+	background: url('../images/folders/panel/collection-icon-small.png') 50px 0px no-repeat;
+}
+.conceptTitleLeft {
+	padding-left: 85px;
+}
+
+#landingSausdBanner {
+	width:100%;
+	height:315px;
+	background: url("../images/library/landing-image-sausd.png");
+	position:relative;
+	margin-bottom:30px;
+	text-shadow: 2px 2px 5px rgba(0,0,0,.1);
+}
+
+#landingBannerInner {
+	background: url("../images/library/landing-banner-gradient.png") bottom no-repeat;
+	background-size:contain;
+	height:100%;
+}
+
+#landingSausdBanner .fourSteps {
+	color: white;
+	background-color:#000000;
+	padding: 25px 0px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	text-shadow: none;
+}
+
+#landingSausdBanner .fourSteps .step {
+	vertical-align: top;
+	display: inline-block;
+	width: 243px;
+	height: 41px;
+	margin-right: 13px;
+	text-align: left;
+}
+
+#landingSausdBanner .fourSteps .last.step {
+	margin-right:0px;
+	border-right: none;
+}
+
+#landingSausdBanner .fourSteps .step i {
+	font-size:30px;
+	float:left;
+	margin-right:10px;
+}
+
+#landingSausdBanner .fourSteps span {
+	font-size:14px;
+	font-weight:bold;
+}
+
+#landingSausdBanner .header {
+	color:white;
+	font-size:38px;
+	font-weight:bold;
+	text-align:center;
+	padding-top:124px;
+}
+
+#landingSausdBanner .subheader {
+	color:white;
+	font-size:16px;
+	text-align:center;
+	margin-top:10px;
+}
+.sausdPartnerLogo {
+	background: url("../images/library/sausd-logo.png") no-repeat;
+	width: 77px;
+	height: 78px;
+	position: absolute;
+	top: 103px;
+	right: 188px;
+}
+.collectionQuizTab {
+	float: left;
+	text-align: center;
+	width: 28.5%;
+	padding: 5px;
+	font-size: 15px;
+	cursor: pointer;
+	background: #f0f0f0;
+}
+.collectionQuizTab:hover {
+	background: #ffffff;
+}
+.collectionQuizTabActive {
+	background: #ffffff;
+}
+.headerPanel {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+.signUpButton{
+	width: 110px;
+	height: 35px;
+}
+
+.bodyContainer{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+
+
+.lpsPartnerLogo {
+	background: url("../images/library/district/lps-logo.png");
+	width: 133px;
+	height: 133px;
+	position: absolute;
+	top: 61px;
+	right: 575px;
+}
+
+.lpsHeader {
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	height: 19px;
+	margin-top: -83px;
+}
+
+
+.coreDistrictLogo {
+	background: url("../images/library/district/core-logo.png");
+	width: 250px;
+	height: 60px;
+	position: absolute;
+	top: 106px;
+	right: 565px;
+}
+
+.coreDistrictHeader {
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	height: 19px;
+	margin-top: -83px;
+}
+
+.comingSoonText {
+	margin-top: 150px;
+	text-align: center;
+	font-size: 30px;
+	color: #1076BB;
+}
+
+.districtSpecificPartnersMainCore{
+	width: 100%;
+	height: 250px;
+	margin-top: 86px;
+	background-image: url(../images/library/district/landing-image-rusd_orange.png);
+}
+.districtSpecificPartnersInnerMainCore{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.districtSpecificPartnerLogoCore{
+	background: url(../images/library/district/core-logo.png);
+width: 250px;
+height: 55px;
+float: right;
+margin-left: auto;
+margin-right: auto;
+margin-top: 23px;
+}
+.districtLibraryHeaderTextCore{
+	color: white;
+font-size: 38px;
+font-weight: bold;
+text-align: center;
+padding-top: 100px;
+/* height: 45px; */
+}
+.districtLibrarySubHeaderTextCore{
+	color: white;
+font-size: 16px;
+text-align: center;
+margin-top: 10px;
+/* height: 19px; */
+}
+.districtSpecificPartnersMainlps{
+	width: 100%;
+	height: 250px;
+	margin-top: 86px;
+	background-image: url(../images/library/district/landing-image-rusd_purple.png);
+}
+.districtSpecificPartnersInnerMainlps{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.districtSpecificPartnerLogolps{
+background: url(../images/library/district/lps-logo.png);
+width: 133px;
+height: 133px;
+float: right;
+margin-left: auto;
+margin-right: 5px;
+margin-top: 60px;
+}
+.districtLibraryHeaderTextlps{
+color: white;
+font-size: 38px;
+font-weight: bold;
+text-align: center;
+padding-top: 100px;
+/* height: 45px; */
+margin-left: 96px;
+}
+.districtLibrarySubHeaderTextlps{
+color: white;
+font-size: 16px;
+text-align: center;
+margin-top: 10px;
+/* height: 19px; */
+margin-left: 82px;
+}
+.topicBlockStyle{
+	background-color:white;
+	border:1px solid #ddd;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	border-radius:4px;
+	float:left;
+	margin-bottom:25px;
+	width: 700px;
+
+}
+.topicTitleStyle{
+	font-size:14px;
+	padding:15px;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+	border-bottom:1px solid #ddd;
+	margin-left: 38px;
+
+	/* Old browsers */
+	background: rgb(239,239,239);
+
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#EDEDED));
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* IE 10 */
+	background: -ms-linear-gradient(top, #FDFDFD, #EDEDED);
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top, #FDFDFD, #EDEDED);
+
+}
+.listViewBtnStyle{
+	float:right;
+	margin: -25px -7px 0 0;
+}
+
+.yesdHeader {
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	height: 19px;
+	margin-top: -83px;
+}
+
+.districtSpecificPartnerLogoYesd {
+	background: url(../images/library/district/YumaOne-Logo.png) no-repeat;
+	width: 250px;
+	height: 133px;
+	float: right;
+	margin-left: auto;
+	margin-right: -170px;
+	margin-top: 50px;
+}
+
+
+.districtSpecificPartnersMainYesd{
+	width: 100%;
+	height: 275px;
+	margin-top: 66px;
+	background: url(../images/library/district/YumaOneBanner.png)no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+}
+
+.districtSpecificPartnersInnerMainYesd{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.districtLibraryHeaderTextYesd {
+	color: white;
+	font-size: 38px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 100px;
+	/* height: 45px; */
+}
+
+.districtLibrarySubHeaderTextYesd{
+	color: white;
+font-size: 16px;
+text-align: center;
+margin-top: 10px;
+/* height: 19px; */
+}

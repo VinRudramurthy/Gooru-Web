@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc" xmlns:tinyMce="urn:import:org.ednovo.gooru.client.ui">
+	
+    
+ <g:HTMLPanel styleName="hsQAnsContainer">
+	<g:Label styleName="htQLabelNum" ui:field="labelChoice"></g:Label>
+	
+	<g:HTMLPanel styleName="hsQAnswerInputControl answerChoiceAndHintsTextcontainer"	ui:field="tinyOrTextBoxConatiner">
+		<tinyMce:TinyMCE ui:field="answerTextBox"	characterLimit="150"></tinyMce:TinyMCE>
+		<g:HTMLPanel styleName="addAnswerDeletebg"	ui:field="deleteButtonContainer"></g:HTMLPanel>
+	</g:HTMLPanel>
+	
+              <g:HTMLPanel styleName="answerMarkbg">
+                       <g:Label styleName="answerMarkDeselected" ui:field="optionSelectedButton"></g:Label>
+              </g:HTMLPanel>
+	
+	<g:Label text="" ui:field="errorMessageforAnswerChoice"	styleName="errorMessage inlineBlock" />
+</g:HTMLPanel>	
+
+</ui:UiBinder>

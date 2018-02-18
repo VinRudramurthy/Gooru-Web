@@ -49,6 +49,7 @@ public interface SignUpCBundle extends ClientBundle {
 	
 	public interface SignUp extends CssResource{
 		
+		String iconPosition();
 		String emphasis();
 
 		String popupGlass();
@@ -157,19 +158,7 @@ public interface SignUpCBundle extends ClientBundle {
 
 		String supportMessage();
 
-		String tileContainer();;
-
 		String DOTSbuttons();
-
-		String discover();
-
-		String organize();
-
-		String teach();
-
-		String study(); 
-		
-		String tile();
 
 		String h6();
 
@@ -385,6 +374,7 @@ public interface SignUpCBundle extends ClientBundle {
 		String subjectOptionELA();
 
 		String signUpPopUpGlassCss();
+		String paddingClear();
 	}
 	@Source("SignUp.css")
 	SignUp css();

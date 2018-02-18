@@ -130,6 +130,8 @@ public interface CollectionAssignCBundle extends ClientBundle{
 		String directionsTextArea();
 		
 		String duedateContainer();
+		
+		String charLimitStyle();
 	}
 	@Source("CollectionAssign.css")
 	CollectionAssignCss css();

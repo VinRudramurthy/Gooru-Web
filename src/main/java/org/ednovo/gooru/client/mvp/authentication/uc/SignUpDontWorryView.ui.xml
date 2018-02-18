@@ -13,13 +13,13 @@
 					<g:Label styleName="{res.css.h2DontWHeader}" ui:field="lblSubHeading" />
 				</g:HTMLPanel>
 				</g:HTMLPanel>
-				
+
 			<g:HTMLPanel styleName="{res.css.leaveRegistrationButtonContainer}">
 				<g:Button ui:field="btnGoToSetting" styleName="secondary"></g:Button>
 				<g:Button ui:field="btnOk" styleName="primary"></g:Button>
 			</g:HTMLPanel>
 				</g:HTMLPanel>
-				
+
 		<g:HTMLPanel styleName="{res.css.leaveRegistrationBottomContainer}">
 			    <g:HTMLPanel styleName="{res.css.leaveRegistarionFooterText}">
 			    <g:Label ui:field="quriesText"/>
@@ -27,4 +27,4 @@
 			    </g:HTMLPanel>
 			</g:HTMLPanel>
 				</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

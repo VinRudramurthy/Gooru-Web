@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header">
+	<ui:style field= "playerStyle" src="resourcetocview.css"/>
+	<g:FlowPanel styleName="{playerStyle.resource-container-tooltip} hidden-xs hidden-sm" ui:field="tocResourceContainer">
+		 <g:FlowPanel styleName="{playerStyle.toolTip}">
+            <g:Label styleName="{playerStyle.resourceNumber}" ui:field="resourceIndex"></g:Label>
+            <g:FlowPanel styleName="{playerStyle.resourceInfo}">
+                <g:HTML styleName="{playerStyle.title} navigationText" ui:field="resourceHoverTitle"></g:HTML>
+                <g:Label styleName="{playerStyle.type}" ui:field="resourceCategory"></g:Label>
+                <g:FlowPanel styleName="{playerStyle.source}" ui:field="resourceSourceName"></g:FlowPanel>
+            </g:FlowPanel>
+             <g:FlowPanel styleName="{playerStyle.ratingsDiv}"  ui:field="ratingWidgetPanel"></g:FlowPanel>
+        </g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder>

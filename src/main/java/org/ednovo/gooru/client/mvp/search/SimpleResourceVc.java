@@ -24,20 +24,21 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.search;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.ednovo.gooru.client.PlaceTokens;
-import org.ednovo.gooru.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.client.PlaceTokens;
+import org.ednovo.gooru.application.client.gin.AppClientFactory;
+import org.ednovo.gooru.application.shared.i18n.MessageProperties;
+import org.ednovo.gooru.application.shared.model.search.CollectionItemSearchResultDo;
+import org.ednovo.gooru.application.shared.model.search.ResourceSearchResultDo;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggable;
 import org.ednovo.gooru.client.mvp.dnd.IsDraggableMirage;
+import org.ednovo.gooru.client.mvp.rating.RatingWidgetView;
+import org.ednovo.gooru.client.mvp.rating.events.OpenReviewPopUpEvent;
+import org.ednovo.gooru.client.mvp.rating.events.UpdateRatingsInRealTimeEvent;
+import org.ednovo.gooru.client.mvp.rating.events.UpdateRatingsInRealTimeHandler;
 import org.ednovo.gooru.client.mvp.resource.dnd.ResourceDragWithImgUc;
 import org.ednovo.gooru.client.uc.ResourceImageUc;
 import org.ednovo.gooru.client.uc.tooltip.ToolTip;
 import org.ednovo.gooru.client.util.MixpanelUtil;
-import org.ednovo.gooru.shared.model.search.CollectionItemSearchResultDo;
-import org.ednovo.gooru.shared.model.search.ResourceSearchResultDo;
-import org.ednovo.gooru.shared.util.MessageProperties;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
@@ -61,15 +62,16 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 
 /**
  * @author Search Team
  *
  */
-public class SimpleResourceVc extends Composite implements IsDraggable,MessageProperties {
+public class SimpleResourceVc extends Composite implements IsDraggable {
 
 	private static SimpleResourceVcUiBinder uiBinder = GWT.create(SimpleResourceVcUiBinder.class);
+	
+	MessageProperties i18n = GWT.create(MessageProperties.class);
 
 	interface SimpleResourceVcUiBinder extends UiBinder<Widget, SimpleResourceVc> {
 	}
@@ -77,7 +79,7 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	@UiField
 	HTML resourceTitleLbl;
 	
-	@UiField HTMLPanel resourceTitleContainer;
+	@UiField HTMLPanel resourceTitleContainer,mainContainer;
 
 	@UiField
 	ResourceImageUc resourceImageUc;
@@ -86,17 +88,19 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	Label positionLbl;
 
 	@UiField
-	FlowPanel metaDataFloPanel;
+	FlowPanel resourceTitlePanel,internalPanel1,metaDataFloPanel,ratingWidgetPanel;
 	
-	@UiField Image imgNotFriendly;
+	@UiField Image imgNotFriendly, imgOER;
 
 	ToolTip toolTip = null;
 	
 	private ResourceSearchResultDo resourceSearchResultDo;
-	
+	private RatingWidgetView ratingWidgetView=null;
 	private CollectionItemSearchResultDo collectionItemSearchResultDo;
 	
 	private static final String VIEWS_PREFIX_NAME = "Views";  
+	
+	private Label viewCountLabel=null;
 
 	/**
 	 * Class constructor, calls resource search result setData method
@@ -106,10 +110,26 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	public SimpleResourceVc(CollectionItemSearchResultDo resourceSearchResultDo, int position) {
 		initWidget(uiBinder.createAndBindUi(this));
 		positionLbl.setText(position + "");
-		imgNotFriendly.setTitle(GL0737);
-		imgNotFriendly.setAltText(GL0737);
-		imgNotFriendly.setUrl("images/mos/ipadFriendly.png");
+		positionLbl.getElement().setId("lblPositionLbl");
+		positionLbl.getElement().setAttribute("alt",position + "");
+		positionLbl.getElement().setAttribute("title",position + "");
+		mainContainer.getElement().getStyle().setPaddingBottom(10, Unit.PX);
+			
+		
+		imgOER.setUrl("images/oer_icon.png");
+		imgOER.getElement().setAttribute("id", i18n.GL1834());
+		imgOER.getElement().setAttribute("alt", i18n.GL1834());
+		imgOER.getElement().setAttribute("title", i18n.GL1834());
+		
 		setData(resourceSearchResultDo);
+		
+		internalPanel1.getElement().setId("fpnlInternalPanel1");
+		resourceTitlePanel.getElement().setId("fpnlResourceTitlePanel");
+		resourceTitleContainer.getElement().setId("pnlResourceTitleContainer");
+		resourceTitleLbl.getElement().setId("pnlResourceTitleLbl");
+		metaDataFloPanel.getElement().setId("fpnlMetaDataFloPanel");
+		ratingWidgetPanel.getElement().setId("fpnlRatingWidgetPanel");
+		AppClientFactory.getEventBus().addHandler(UpdateRatingsInRealTimeEvent.TYPE,setRatingWidgetMetaData);
 	}
 
 	/**
@@ -117,10 +137,12 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	 * @param resourceSearchResultDo instance of {@link ResourceSearchResultDo}
 	 */
 	public void setData(CollectionItemSearchResultDo resourceSearchResultDo) {
+		
 		this.resourceSearchResultDo = resourceSearchResultDo;
 		this.collectionItemSearchResultDo = resourceSearchResultDo;
-		/*resourceTitleLbl.setText(StringUtil.truncateText(resourceSearchResultDo.getResourceTitle(), 30));*/
 		resourceTitleLbl.setHTML(resourceSearchResultDo.getResourceTitle());
+		resourceTitleLbl.getElement().setAttribute("alt",resourceSearchResultDo.getResourceTitle());
+		resourceTitleLbl.getElement().setAttribute("title",resourceSearchResultDo.getResourceTitle());
 		setResourcePlayLink();
 		final String gooruOid = resourceSearchResultDo.getCollectionItemId();
 		final String collectionId = resourceSearchResultDo.getCollectionId();
@@ -138,28 +160,29 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 		});
 		
 		SearchUiUtil.renderMetaData(metaDataFloPanel, resourceSearchResultDo.getCourseNames(), 30);
-		SearchUiUtil.renderMetaData(metaDataFloPanel, resourceSearchResultDo.getTotalViews() + "", " " + VIEWS_PREFIX_NAME);  
-//		resourceImageUc.renderSearch(resourceSearchResultDo.getCategory(), resourceSearchResultDo.getUrl(), null, resourceSearchResultDo.getCollectionItemId(), PLAYER_NAME,resourceSearchResultDo.getResourceTitle(), false,collectionId);
+		viewCountLabel=SearchUiUtil.renderMetaData(metaDataFloPanel, resourceSearchResultDo.getTotalViews() + "", " " + VIEWS_PREFIX_NAME);  
 		
 		resourceImageUc.renderSearch(resourceSearchResultDo.getCategory(), resourceSearchResultDo.getUrl(), null, resourceSearchResultDo.getCollectionItemId(), resourceSearchResultDo.getResourceTitle(), false, resourceSearchResultDo.getNarration(),collectionItemSearchResultDo.getCollectionId());
 		String mediaType = resourceSearchResultDo.getMediaType();
 		
-		boolean setVisibility = mediaType !=null ?  mediaType.equalsIgnoreCase("not_iPad_friendly") ? true : false : false;
-		
+		boolean setVisibility = mediaType !=null ?  mediaType.equalsIgnoreCase("iPad_friendly") ? true : false : true;
+		resourceTitleLbl.getElement().getStyle().setFloat(Float.LEFT);
+		resourceTitleContainer.getElement().getStyle().setFloat(Float.LEFT);
 		if (resourceTitleLbl.getText().length() > 30){
-			resourceTitleLbl.getElement().getStyle().setWidth(210, Unit.PX);
-			resourceTitleLbl.getElement().getStyle().setFloat(Float.LEFT);
+			String resourceTitleText=resourceTitleLbl.getText();
+			resourceTitleText=resourceTitleText.substring(0, 26)+"...";
+			resourceTitleLbl.setText(resourceTitleText);
+			//resourceTitleLbl.getElement().getStyle().setWidth(210, Unit.PX);
 		}else{
 			resourceTitleLbl.getElement().getStyle().clearWidth();
-			resourceTitleLbl.getElement().getStyle().clearFloat();
 		}
 		
 		imgNotFriendly.addMouseOverHandler(new MouseOverHandler() {
 			
 			@Override
 			public void onMouseOver(MouseOverEvent event) {
-				
-				toolTip = new ToolTip(GL0454+""+"<img src='/images/mos/ipadFriendly.png' style='margin-top:0px;'/>"+" "+GL04431);
+				toolTip = new ToolTip(i18n.GL0454()+""+" "+i18n.GL04431()+" "+" ");
+				toolTip.getTootltipContent().getElement().setAttribute("style", "width: 258px;");
 				toolTip.getElement().getStyle().setBackgroundColor("transparent");
 				toolTip.getElement().getStyle().setPosition(Position.ABSOLUTE);
 				toolTip.setPopupPosition(imgNotFriendly.getAbsoluteLeft()-(50+22), imgNotFriendly.getAbsoluteTop()+22);
@@ -179,10 +202,72 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 				  }
 			}
 		});
-		imgNotFriendly.setVisible(setVisibility);
+		if(setVisibility)
+		{
+			imgNotFriendly.getElement().setId("imgImgFriendly");
+			imgNotFriendly.setTitle(i18n.GL0737_1());
+			imgNotFriendly.setAltText(i18n.GL0737_1());
+			imgNotFriendly.setUrl("images/mos/MobileFriendly.png");
+		}else
+		{
+			imgNotFriendly.getElement().setId("imgImgNotFriendly");
+			imgNotFriendly.setTitle(i18n.GL0737());
+			imgNotFriendly.setAltText(i18n.GL0737());
+			imgNotFriendly.setUrl("images/mos/mobileunfriendly.png");
+		}
 		
+		boolean oerVisibility = resourceSearchResultDo.getLicense() !=null &&  resourceSearchResultDo.getLicense().getCode() !=null ? resourceSearchResultDo.getLicense().getCode().contains("CC") ? true : false : false;
+
+		imgOER.setVisible(oerVisibility);
+		setAvgRatingWidget(resourceSearchResultDo);
+	}
+	private void setAvgRatingWidget(CollectionItemSearchResultDo resourceSearchResultDo) {
+		ratingWidgetView=new RatingWidgetView();
+		if(resourceSearchResultDo.getRatings()!=null){
+			if(resourceSearchResultDo.getRatings().getCount()!=null && resourceSearchResultDo.getRatings().getCount()!= 0){
+				ratingWidgetView.getRatingCountOpenBrace().setText(i18n. GL_SPL_OPEN_SMALL_BRACKET());
+				ratingWidgetView.getRatingCountLabel().setText(resourceSearchResultDo.getRatings().getCount().toString());
+				ratingWidgetView.getRatingCountCloseBrace().setText(i18n. GL_SPL_CLOSE_SMALL_BRACKET());
+				ratingWidgetView.setAvgStarRating(resourceSearchResultDo.getRatings().getAverage());
+			}
+		}
+		ratingWidgetPanel.clear();
+		ratingWidgetPanel.add(ratingWidgetView);
 	}
 	
+	UpdateRatingsInRealTimeHandler setRatingWidgetMetaData = new UpdateRatingsInRealTimeHandler() {	
+
+		@Override
+		public void updateRatingInRealTime(String gooruOid, double average,Integer count) {
+			if(collectionItemSearchResultDo.getGooruOid()!=null && collectionItemSearchResultDo.getGooruOid().equals(gooruOid)){
+				collectionItemSearchResultDo.getRatings().setCount(count);
+				collectionItemSearchResultDo.getRatings().setAverage(average);
+				setAvgRatingWidget(collectionItemSearchResultDo);
+			}
+		}
+	};
+	
+	public void updateResourceViewCount(String viewCount){
+		if(viewCountLabel!=null){
+			viewCountLabel.setText(viewCount+ " " + VIEWS_PREFIX_NAME);  
+		}
+	}
+
+	/**
+	 * 
+	 * Inner class implementing {@link ClickEvent}
+	 *
+	 */
+	private class ShowRatingPopupEvent implements ClickHandler{
+		@Override
+		public void onClick(ClickEvent event) {
+			/**
+			 * OnClick of count label event to invoke Review pop-pup
+			 */
+			AppClientFactory.fireEvent(new OpenReviewPopUpEvent(resourceSearchResultDo.getGooruOid(),collectionItemSearchResultDo.getResourceTitle(),resourceSearchResultDo.getOwner().getUsername())); 
+
+		}
+	}
 	public void setResourcePlayLink(){
 		Anchor resourceAnchor=new Anchor();
 		resourceAnchor.setHref(getResourceLink());
@@ -194,10 +279,10 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	public String getResourceLink(){
 		String collectionId=collectionItemSearchResultDo.getCollectionId();
 		if(collectionItemSearchResultDo.getNarration()!=null&&!collectionItemSearchResultDo.getNarration().trim().equals("")){
-			String resourceLink="#"+PlaceTokens.PREVIEW_PLAY+"&id="+collectionId+"&rid="+collectionItemSearchResultDo.getCollectionItemId()+"&tab=narration";
+			String resourceLink="#"+PlaceTokens.COLLECTION_PLAY+"&id="+collectionId+"&rid="+collectionItemSearchResultDo.getCollectionItemId()+"&tab=narration";
 			return resourceLink;
 		}else{
-			String resourceLink="#"+PlaceTokens.PREVIEW_PLAY+"&id="+collectionId+"&rid="+collectionItemSearchResultDo.getCollectionItemId();
+			String resourceLink="#"+PlaceTokens.COLLECTION_PLAY+"&id="+collectionId+"&rid="+collectionItemSearchResultDo.getCollectionItemId();
 			return resourceLink;
 		}
 	}
@@ -236,4 +321,6 @@ public class SimpleResourceVc extends Composite implements IsDraggable,MessagePr
 	public int getDragLeftCorrection() {
 		return 11;
 	}
+	
+	
 }

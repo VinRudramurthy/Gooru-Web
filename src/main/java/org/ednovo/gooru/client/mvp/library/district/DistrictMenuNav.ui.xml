@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:style field="districtStyleUc" src="district.css" type="org.ednovo.gooru.client.mvp.library.district.DistrictStyleBundle" />
+	<g:HTMLPanel styleName="{districtStyleUc.tabsInner}" ui:field="tabsInner">
+	      <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="sciencePanel">
+		     <g:Label ui:field="scienceText"></g:Label>   
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="scienceCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+	      <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi {districtStyleUc.math}" ui:field="mathPanel">
+	       	 <g:Label ui:field="mathText"></g:Label>   
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="mathCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+	      <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="socialPanel">
+	          <g:Label ui:field="socialSciencesText"></g:Label>
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="socialCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+	      <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="elaPanel">
+	         <g:Label ui:field="languageArtsText"></g:Label>  
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="elaCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+	      <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="learnPanel">
+	      	 <g:Label ui:field="learnText"></g:Label> 
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="learnCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+	       <panel:HTMLEventPanel styleName="{districtStyleUc.tabsLi} tabsLi" ui:field="aboutPanel">
+	      	 <g:Label ui:field="aboutText"></g:Label> 
+	         <g:HTMLPanel styleName="{districtStyleUc.dropdown}" ui:field="aboutCourses"/>
+	      </panel:HTMLEventPanel>
+	      
+          <g:Anchor styleName="{districtStyleUc.tabsLi} tabsLi {districtStyleUc.singleLink} {districtStyleUc.last}" ui:field="aboutGooruAnr"></g:Anchor>
+	</g:HTMLPanel>
+</ui:UiBinder>

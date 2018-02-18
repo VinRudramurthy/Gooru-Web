@@ -26,8 +26,8 @@ package org.ednovo.gooru.client.mvp.play.collection.preview.end;
 
 
 
+import org.ednovo.gooru.application.shared.model.content.CollectionDo;
 import org.ednovo.gooru.client.mvp.play.collection.preview.PreviewPlayerPresenter;
-import org.ednovo.gooru.shared.model.content.CollectionDo;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.inject.Inject;
@@ -56,6 +56,14 @@ public class PreviewEndPresenter extends PresenterWidget<IsPreviewEndView> imple
 	}
 	public void setPreviewPlayerPresenter(PreviewPlayerPresenter previewPlayerPresenter) {
 		this.previewPlayerPresenter = previewPlayerPresenter;
+	}
+	@Override
+	public void triggerCollectionShareDataEvent(String collectionId,
+			String itemType, String shareType, boolean confirmStatus) {
+		if(previewPlayerPresenter!=null){
+			previewPlayerPresenter.triggerCollectionShareDataEvent( collectionId, itemType,  shareType,  confirmStatus);
+		}
+		
 	}
 
 }

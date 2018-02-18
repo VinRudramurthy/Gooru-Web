@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+xmlns:panel="urn:import:org.ednovo.gooru.client.ui" xmlns:html5="urn:import:org.ednovo.gooru.client.htmltags">
+	<ui:style field= "headerStyle" src="collectionHeader.css" type="org.ednovo.gooru.client.mvp.assessments.play.collection.header.StudyPlayerHeaderView.StudyPlayerStyle"/>
+	<ui:with type="org.ednovo.gooru.client.uc.PlayerBundle" field="palyerBundle" />
+	<ui:with type="org.ednovo.gooru.application.shared.i18n.MessageProperties" field="i18n"/>
+	<html5:HeaderTag styleName="{headerStyle.studyPlayer}">
+		<g:HTMLPanel styleName="container">
+			<g:HTMLPanel styleName="row">
+				<g:HTMLPanel styleName="col-md-7 col-xs-8 col-sm-9">
+					<g:HTML styleName="player-resource-title" ui:field="resourceTitle"></g:HTML>
+				</g:HTMLPanel>
+				<g:FlowPanel  styleName="col-md-5 col-xs-4 col-sm-3 logStatus">
+					<panel:HTMLEventPanel styleName="player-loginStatus {headerStyle.loginStatus} {headerStyle.loggedIn}" ui:field="authorContainer">
+			            <g:InlineLabel styleName="" ui:field="wishLabel"></g:InlineLabel>
+			            <g:InlineLabel styleName="{headerStyle.username}" ui:field="loginUserName"></g:InlineLabel>
+			            <g:InlineLabel styleName="" ui:field="wishingText"></g:InlineLabel>
+			            <g:FlowPanel styleName="{headerStyle.toolTip}">
+		            		<g:Label styleName="{headerStyle.tooltipText}" ui:field="loginMessageText"></g:Label>
+		       		    </g:FlowPanel>
+		            </panel:HTMLEventPanel>
+		            <g:HTMLPanel ui:field="panelSubmitContainer" styleName="submitContainer">
+						<g:Button styleName="submitLightOrange" text="{i18n.GL3456_2}" ui:field="btnSubmitAllAnswers"/>
+						<g:Button styleName="loginAssessmentOrangeBtn" text="{i18n.GL1185}" ui:field="btnLogin"/>
+					</g:HTMLPanel>
+	            </g:FlowPanel>
+	            <g:HTMLPanel styleName="clear"></g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:Label ui:field="closeButtonForCollection" styleName="player-closeButton"></g:Label>
+	</html5:HeaderTag>
+</ui:UiBinder>

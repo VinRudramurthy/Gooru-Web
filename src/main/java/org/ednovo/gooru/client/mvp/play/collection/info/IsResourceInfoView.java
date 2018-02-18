@@ -24,13 +24,24 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.info;
 
-import org.ednovo.gooru.client.gin.IsViewWithHandlers;
-import org.ednovo.gooru.shared.model.content.CollectionItemDo;
-import org.ednovo.gooru.shared.model.content.ResoruceCollectionDo;
+import java.util.List;
+import java.util.Map;
+
+import org.ednovo.gooru.application.client.gin.IsViewWithHandlers;
+import org.ednovo.gooru.application.shared.model.content.CollectionItemDo;
+import org.ednovo.gooru.application.shared.model.content.ResoruceCollectionDo;
+
+import com.google.gwt.user.client.ui.Button;
 
 public interface IsResourceInfoView extends IsViewWithHandlers<ResourceInfoUiHandlers>{
 	public void setResourceMedaDataInfo(CollectionItemDo collectionItemDo);
 	public void loadResourceCollection(ResoruceCollectionDo resoruceCollectionDo);
 	public void setResourceViewsCount(String viewCount);
-	//public void setResourceLikesCount(int likesCount);
+	public void setCollectionTitle(String mycollectionTitle);
+	
+	public Button getPlusAddTagsButton();
+	public void insertHideButtonAtLast();
+	public void setCollectionType(String collectionType);
+	public void displaySelectedStandards(List<Map<String, String>> standListArray);
+	
 }

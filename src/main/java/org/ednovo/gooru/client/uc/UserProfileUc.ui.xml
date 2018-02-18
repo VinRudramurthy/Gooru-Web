@@ -1,21 +1,18 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gg="urn:import:org.ednovo.gooru.client.uc">
-	<ui:with type="org.ednovo.gooru.client.uc.UcCBundle" field="res" />
-	<g:HTMLPanel styleName="{res.css.toolTip}">
-		<g:HTMLPanel styleName="{res.css.profilePopup}">
-			<g:HTMLPanel styleName="{res.css.profilePopupInnerContaienr}">
-				<g:Image ui:field="profileImage" styleName="{res.css.profilePopupInnerImage}"></g:Image>
-				<g:HTMLPanel styleName="{res.css.profilePopupInnerSeparator}"></g:HTMLPanel>
-				<g:Label styleName="{res.css.profilePopupInnerTitle}" ui:field="userNameLbl"></g:Label>
-				<!-- <g:HTMLPanel styleName="{res.css.profilePopupInnerHints}"> has created 
-					<span>103</span> public collections </g:HTMLPanel> -->
-				<g:Label styleName="{res.css.profilePopupInnerDetails}" ui:field="userProfileDesc"></g:Label>
+	<g:HTMLPanel styleName="Uc-toolTip">
+		<g:HTMLPanel styleName="Uc-profilePopup">
+			<g:HTMLPanel styleName="Uc-profilePopupInnerContaienr">
+				<g:Image ui:field="profileImage" styleName="Uc-profilePopupInnerImage"></g:Image>
+				<g:HTMLPanel styleName="Uc-profilePopupInnerSeparator"></g:HTMLPanel>
+				<g:Label styleName="Uc-profilePopupInnerTitle" ui:field="userNameLbl"></g:Label>
+				<g:Label styleName="Uc-profilePopupInnerDetails" ui:field="userProfileDesc"></g:Label>
 			</g:HTMLPanel>
 		</g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.arrowShadow}"></g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.arrowBorder}"></g:HTMLPanel>
-		<g:HTMLPanel styleName="{res.css.arrow}"></g:HTMLPanel>
+		<g:HTMLPanel styleName="Uc-arrowShadow"></g:HTMLPanel>
+		<g:HTMLPanel styleName="Uc-arrowBorder"></g:HTMLPanel>
+		<g:HTMLPanel styleName="Uc-arrow}"></g:HTMLPanel>
 
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>

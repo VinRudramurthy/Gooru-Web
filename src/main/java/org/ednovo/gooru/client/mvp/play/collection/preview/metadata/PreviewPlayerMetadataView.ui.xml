@@ -4,7 +4,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
 	<ui:style field= "playerStyle" src="previewplayermetadata.css" type="org.ednovo.gooru.client.mvp.play.collection.preview.metadata.PreviewPlayerStyleBundle" />
-	      <g:FlowPanel styleName="{playerStyle.container} {playerStyle.clearfix}">
+	      <g:FlowPanel styleName="{playerStyle.container} {playerStyle.clearfix}" ui:field="mainPlayerContainer">
             <g:FlowPanel styleName="{playerStyle.leftPanel}">
             	<g:FlowPanel ui:field="metadataContainer"></g:FlowPanel>
                 <g:Label styleName="{playerStyle.hrShadow}"></g:Label>
@@ -30,17 +30,19 @@
                     <g:Label styleName="h6" ui:field="lblSeeOtherRelatedConcepts" />
                     <g:HTMLPanel ui:field="relatedConceptsEndPage"></g:HTMLPanel>
                 </g:HTMLPanel>
-                <g:HTMLPanel ui:field="authorPanel" styleName="{playerStyle.infoSection}">
+                <g:HTMLPanel ui:field="authorPanel" styleName="{playerStyle.infoSectionAuthor}">
                     <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblAuthor" />
                     <g:HTMLPanel styleName="{playerStyle.userImageContainer}">
                     	<g:Image styleName="{playerStyle.userImage}" ui:field="profileThumbnailImage"></g:Image>
+                    	<g:HTMLPanel styleName="{playerStyle.teacherTipOuterContainer}">
+                    	<g:Label ui:field="teacherTipLabel"></g:Label></g:HTMLPanel>                  	
                     </g:HTMLPanel>
                     <g:Label styleName="{playerStyle.username}" ui:field="userNameLabel"></g:Label>
                     <g:FlowPanel ui:field="teamContainer" styleName="{playerStyle.username}"></g:FlowPanel>
                 </g:HTMLPanel>
                 <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="courseSection">
                     <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblCourse" />
-                    <g:Label styleName="{playerStyle.courseTitle}" ui:field="courseTitle"></g:Label>
+                    <g:FlowPanel styleName="{playerStyle.courseTitle}" ui:field="courseTitle"></g:FlowPanel>
                 </g:HTMLPanel>
                 <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="standardSection">
                     <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblStandards" />
@@ -49,7 +51,32 @@
                 <g:HTMLPanel styleName="{playerStyle.infoSection}">
                     <g:Label ui:field="viewsCountLabel" styleName="{playerStyle.views}"/>
                 </g:HTMLPanel>
-                <g:HTMLPanel styleName="{playerStyle.infoSection} {playerStyle.relatedConcepts}" ui:field="homePageConceptsPanel">
+               
+                 <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="languageObjectiveContainer">
+                       <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lbllanguageObjectiveText" />
+                       <g:InlineLabel ui:field="lbllanguageObjective" />
+                       <g:Anchor ui:field = "seeMoreAnchor"/>  <g:InlineLabel ui:field="lbllanguageObjectiveAll" />
+                 </g:HTMLPanel>
+                 
+              	<g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="depthOfKnowledgeContainer">
+                       <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lbldepthOfKnowledgeText" />
+                       <g:HTMLPanel ui:field="depthOfKnowledgePanel"></g:HTMLPanel>
+                 </g:HTMLPanel> 
+                 
+                  <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="learningAndInnovationSkillsContainer">
+                       <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lbllearningAndInnovationText" />
+                       <g:HTMLPanel ui:field="learningAndInnovationSkillPanel" />
+                 </g:HTMLPanel>
+                  <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="audienceContainer">
+                       <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblAudienceText" />
+                       <g:HTMLPanel ui:field="audiencePanel"/>
+                 </g:HTMLPanel>
+                  <g:HTMLPanel styleName="{playerStyle.infoSection}" ui:field="InstructionalmethodContainer">
+                       <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblInstructionalmethodText" />
+                       <g:HTMLPanel ui:field="instructionalmethodPanel" />
+                 </g:HTMLPanel>
+                 
+                 <g:HTMLPanel styleName="{playerStyle.infoSection} {playerStyle.relatedConcepts}" ui:field="homePageConceptsPanel">
                     <g:Label styleName="h6 {playerStyle.marginBotton10Px}" ui:field="lblRelatedConcepts" />
                     <g:HTMLPanel ui:field="relatedConceptsCoverPage"></g:HTMLPanel>
                 </g:HTMLPanel>

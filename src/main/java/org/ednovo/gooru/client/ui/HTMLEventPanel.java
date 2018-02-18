@@ -45,6 +45,7 @@ public class HTMLEventPanel extends HTMLPanel implements HasClickHandlers,HasMou
 
 	public HTMLEventPanel(String html) {
 		super(html);
+
 	}
 
 	public HandlerRegistration addClickHandler(ClickHandler handler) {

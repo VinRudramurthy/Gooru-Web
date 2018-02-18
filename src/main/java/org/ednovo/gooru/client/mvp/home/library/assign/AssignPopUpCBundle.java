@@ -250,6 +250,35 @@ public interface AssignPopUpCBundle extends ClientBundle{
 		
 		String buttonWidth();
 		String directionsErrorLbl();
+		
+		String gConnectButton();
+		
+		String divider();
+		
+		String dividerText();
+		
+		String dividerCustomize();
+		
+		String privacyAlignStyle();
+		
+		String privacyContainer();
+		
+		String privacyCustomizeContainer();
+		
+		String errorLabel();
+		
+		String loginPopupStyle();
+		
+		String loginWithGooru();
+		
+		String privacyCustomizeContainernew();
+		
+		String privacyAlignStyleNew();
+	
+		String directionsChrLimit();
+
+		String marginTop();
+		String privacyText();
 	}
 
 	@Source("AssignPopUp.css")

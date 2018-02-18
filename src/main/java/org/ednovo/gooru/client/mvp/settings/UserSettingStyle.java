@@ -28,25 +28,13 @@ import com.google.gwt.resources.client.CssResource;
 
 public interface UserSettingStyle extends CssResource {
 
-	String settingPageRadioButtonHolder();
-	String radio();
 	String radioText();
-	String radioButtonSelected();
-	String publicProfileOnButtonActive();
 
-	String publicProfileOnButtonDeActive();
-
-	String publicProfileOffButtonsActive();
-
-	String publicProfileOffButtonsDeActive();
-	
 	String mandatoryLabel();
 	
 	String profileKinderGartenGrade();
 	
 	String profileHigherEducationGrade();
-	String defaultTextcss();
 	String deafaultCourse();
-	String standardsCheckBox();
 	
 }

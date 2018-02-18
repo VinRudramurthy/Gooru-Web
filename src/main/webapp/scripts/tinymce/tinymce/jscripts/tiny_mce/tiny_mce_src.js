@@ -5975,11 +5975,11 @@ tinymce.dom.TreeWalker = function(start_node, root_node) {
 		},
 
 		show : function(e) {
-			return this.setStyle(e, 'display', 'block');
+//			return this.setStyle(e, 'display', 'block');
 		},
 
 		hide : function(e) {
-			return this.setStyle(e, 'display', 'none');
+//			return this.setStyle(e, 'display', 'none');
 		},
 
 		isHidden : function(e) {

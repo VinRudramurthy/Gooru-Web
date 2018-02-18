@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<name>New Gooru (GWT Version)</name>
 	<groupId>org.ednovo.gooru</groupId>
@@ -9,21 +9,18 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<properties>
-		<env>concept</env>
+		<env>elbprod</env>
 		<!-- Spring properties -->
 		<org.springframework.version>3.1.2.RELEASE</org.springframework.version>
 		<org.springframework.security.version>3.1.1.RELEASE</org.springframework.security.version>
-		<!-- collection player version -->
-		<player.collection.version>SNAPSHOT-5.11.3</player.collection.version>
-		 <!-- resource player versions -->
-		<player.resource.version>SNAPSHOT-5.11.2</player.resource.version>			
 		<!-- Convenience property to set the GWT version -->
-		<gwtVersion>2.5.0</gwtVersion>
-		<!-- <project.build.directory>/home/rajam/pandoraspace</project.build.directory> 
+		<gwtVersion>2.7.0</gwtVersion>
+		<!-- <gwt.style>DETAILED</gwt.style> -->
+		<!-- <project.build.directory>/home/rajam/pandoraspace</project.build.directory>
 			<project.build.finalName>/beta</project.build.finalName> -->
-		<!-- GWT needs at least java 1.6 -->
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
+		<!-- GWT needs at least java 1.7 -->
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 
 		<!-- Don't let your Mac use a crazy non-standard encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,21 +29,59 @@
 		<!-- This is the webapp container to which the WARs are deployed to -->
 		<webapp.container.home>${env.CATALINA_HOME}</webapp.container.home>
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+
+		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<buildNumber>${maven.build.timestamp}</buildNumber>
+
 	</properties>
-	  <repositories>
-	    <repository>
-	      <id>sonatype-snapshots</id>
-	      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-	      <snapshots><enabled>true</enabled></snapshots>
-	      <releases><enabled>false</enabled></releases>
-	    </repository>
-	    <!-- Repository for gquery plugins -->
-    <repository>
-      <id>gwtquery-plugins</id>
-      <url>http://gwtquery-plugins.googlecode.com/svn/mavenrepo</url>
-    </repository>
-	  </repositories>
+	<repositories>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+
+		<!-- Repository for GWT crypto -->
+		<repository>
+			<id>gwt-crypto repo</id>
+			<url>http://gwt-crypto.googlecode.com/svn/trunk/repo/</url>
+		</repository>
+
+
+		<!-- Repository for gquery plugins -->
+		<repository>
+			<id>gwtquery-plugins</id>
+			<url>http://gwtquery-plugins.googlecode.com/svn/mavenrepo</url>
+		</repository>
+	</repositories>
 	<dependencies>
+		<dependency>
+	            <groupId>highcharts.com</groupId>
+	            <artifactId>gwt-highcharts</artifactId>
+	            <version>1.0</version>
+	    </dependency>
+	   <dependency>
+			<groupId>com.bramosystems.oss.player</groupId>
+			<artifactId>bst-player-api</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<!-- Dependency to support GWT crypto -->
+		<dependency>
+			<groupId>com.googlecode.gwt-crypto</groupId>
+			<artifactId>gwt-crypto</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 
 		<!-- Spring dependencies -->
 
@@ -59,13 +94,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>${org.springframework.version}</version>
-			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -111,20 +139,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>${org.springframework.version}</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<!--Restlet Form Problem -->
-		<!-- <dependency>
-			<groupId>org.restlet.jee</groupId>
-			<artifactId>org.restlet</artifactId>
-			<version>2.0.14</version>
-		</dependency> -->
-		<!--Restlet Form problem rectified -->
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework.version}</version>
 			<type>jar</type>
@@ -158,11 +172,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.0</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -187,30 +196,25 @@
 			<artifactId>gwt-user</artifactId>
 			<version>${gwtVersion}</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-incubator</artifactId>
-			<version>2.0.1</version>
-		</dependency>
+			<version>2.1.0</version>
+		</dependency> -->
 		<dependency>
 			<groupId>com.allen-sauer.gwt.dnd</groupId>
 			<artifactId>gwt-dnd</artifactId>
-			<version>3.2.0</version>
+			<version>3.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.gwt.inject</groupId>
 			<artifactId>gin</artifactId>
-			<version>2.0.0</version>
+			<version>2.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
 			<version>3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gwt-dnd</groupId>
-			<artifactId>gwt-dnd</artifactId>
-			<version>2.5.6</version>
 		</dependency>
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
@@ -236,7 +240,7 @@
 			</exclusions>
 		</dependency>
 
-		<!-- Required by Hibernate validator because slf4j-log4j is optional in 
+		<!-- Required by Hibernate validator because slf4j-log4j is optional in
 			the hibernate-validator POM -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -251,39 +255,38 @@
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-servlet</artifactId>
-			<version>2.5.0</version>
+			<version>2.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
-			<version>2.1-M3</version>
+			<version>3.0-M1</version>
 			<type>pom</type>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
-			<version>2.1-M3</version>
+			<version>3.0-M1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet.ext.simple</artifactId>
-			<version>2.1-M3</version>
+			<version>3.0-M1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet.ext.json</artifactId>
-			<version>2.1-M3</version>
+			<version>3.0-M1</version>
 		</dependency>
+		<!-- <dependency> <groupId>org.restlet.jse</groupId> <artifactId>org.restlet.ext.ssl</artifactId>
+			<version>2.1-M6</version> </dependency>
+		<dependency> <groupId>org.restlet.jse</groupId> <artifactId>org.restlet.ext.net</artifactId>
+			<version>2.1-M6</version> </dependency> -->
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
-			<artifactId>org.restlet.ext.ssl</artifactId>
-			<version>2.1-M3</version>
-		</dependency>
-			<dependency>
-			<groupId>org.restlet.jse</groupId>
-			<artifactId>org.restlet.ext.net</artifactId>
-			<version>2.1-M3</version>
+			<artifactId>org.restlet.ext.html</artifactId>
+			<version>3.0-M1</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -296,39 +299,40 @@
 			<version>1.5.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.gooru.resource.player</groupId>
-			<artifactId>gooru.resource.player</artifactId>
-			<version>${player.resource.version}</version>	
-		</dependency>
-		<dependency>
-			<groupId>com.bramosystems.oss.player</groupId>
-			<artifactId>bst-player-api</artifactId>
-			<version>1.3</version>
-		</dependency>
-		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20090211</version>
 		</dependency>
 		<dependency>
-			<groupId>org.gooru.collection.player</groupId>
-			<artifactId>gooru.collection.player</artifactId>
-			<version>${player.collection.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
-			<version>4.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>4.2.2</version>
+			<version>4.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.2</version>
+			<version>4.4</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.apache.httpcomponents</groupId>
+		   <artifactId>httpmime</artifactId>
+		   <version>4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+ 		</dependency>
+
+		<dependency>
+		   	<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
@@ -346,42 +350,69 @@
 			<version>0.4.5</version>
 		</dependency>
 		<dependency>
-            <groupId>com.google.code</groupId>
-            <artifactId>GwtEarth3</artifactId>
-            <version>1.0</version>
-        </dependency>
-		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itextpdf</artifactId>
-			<version>5.4.3</version>
+			<groupId>com.google.code</groupId>
+			<artifactId>GwtEarth3</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>code.google.com</groupId>
 			<artifactId>gwt-print-it</artifactId>
 			<version>1.13</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>code.google.com</groupId>
 			<artifactId>gwt-storage</artifactId>
+			<version>1.2</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.googlecode.gwtupload</groupId>
+			<artifactId>gwtupload</artifactId>
+			<version>0.6.6</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>code.google.com</groupId>
+			<artifactId>gwt-serialization</artifactId>
 			<version>1.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.googlecode.gwtquery</groupId>
+			<artifactId>gwtquery</artifactId>
+			<!-- Check last available version in the downloads page -->
+			<version>1.4.0</version>
+			<!-- If you are using old versions of gwt, uncomment the appropriate line -->
+			<!-- <classifier>2.1.0</classifier> -->
+			<!-- <classifier>2.0.1</classifier> -->
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-        <groupId>com.googlecode.gwtupload</groupId>
-        <artifactId>gwtupload</artifactId>
-        <version>0.6.6</version>
-      </dependency>
+			<groupId>com.github.branflake2267</groupId>
+			<artifactId>gwt-maps-api</artifactId>
+			<version>3.10.0-alpha-7</version>
+			<exclusions>
+			   	<exclusion>
+					<artifactId>gwt-dev</artifactId>
+					<groupId>com.google.gwt</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
-	     <groupId>com.googlecode.gwtquery</groupId>
-	     <artifactId>gwtquery</artifactId>
-	     <!-- Check last available version in the downloads page -->
-	     <version>1.4.0</version>
-	     <!-- If you are using old versions of gwt, uncomment the appropriate line -->
-	     <!-- <classifier>2.1.0</classifier> -->
-	     <!-- <classifier>2.0.1</classifier> -->
-	     <scope>provided</scope>
-	   </dependency>
-		
-		
+			<groupId>com.samaxes.maven</groupId>
+			<artifactId>minify-maven-plugin</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.maven-replacer-plugin</groupId>
+			<artifactId>replacer</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<!--For analytics   -->
+		<dependency>
+		     <groupId>net.sf.advanced-gwt</groupId>
+		     <artifactId>advanced-gwt</artifactId>
+		     <version>2.0.9</version>
+		     <scope>provided</scope>
+		</dependency>
+		<!--For analytics end  -->
 	</dependencies>
 	<profiles>
 		<profile>
@@ -420,54 +451,69 @@
 				<env>qagenx</env>
 			</properties>
 		</profile>
-		
-	 <profile>
-                        <id>qa</id>
-                        <properties>
-                                <env>qa</env>
-                        </properties>
-                </profile>
-	<profile>
+		<profile>
+			<id>qa</id>
+			<properties>
+				<env>qa</env>
+			</properties>
+		</profile>
+		<profile>
 			<id>elbprod</id>
 			<properties>
 				<env>elbprod</env>
 			</properties>
 		</profile>
-
-  <profile>
-                        <id>www2</id>
-                        <properties>
-                                <env>www2</env>
-                        </properties>
-                </profile>
+		<profile>
+			<id>www2</id>
+			<properties>
+				<env>www2</env>
+			</properties>
+		</profile>
 	</profiles>
 	<build>
 		<filters>
 			<filter>build/filter-${env}.properties</filter>
 		</filters>
-		<finalName>${artifactId}</finalName>
-
+		<finalName>${project.artifactId}</finalName>
 		<!-- Generate compiled stuff in the folder used for developing mode -->
 		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 		<plugins>
-
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.4</version>
+				<version>3.0</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo>Displaying value of pom.xml element</echo>
+								<echo>[project.artifactId] ${project.artifactId}</echo>
+								<echo>-------------------------------------------------------------</echo>
+								<echo>[maven.build.timestamp.format]
+									${maven.build.timestamp.format}</echo>
+								<echo>[timestamp] ${timestamp}</echo>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- GWT Maven Plugin -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
-				<!-- TODO: Update version to 2.5.0 once gwt-maven-plugin 2.5.0 final 
-					is released (post-GWT 2.5.0) -->
-				<version>2.5.0</version>
-				<!-- JS is only needed in the package phase, this speeds up testing -->
+				<version>2.7.0</version>
 				<executions>
 					<execution>
 						<phase>prepare-package</phase>
@@ -476,19 +522,22 @@
 						</goals>
 					</execution>
 				</executions>
-
-				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
+				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin
 					documentation at codehaus.org -->
 				<configuration>
 					<!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
 					<runTarget>index.html</runTarget>
 					<!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
-					<compileReport>true</compileReport>
-					<module>org.ednovo.gooru.Gooru</module>
+					<compileReport>false</compileReport>
+					<!-- <module>org.ednovo.gooru.Gooru</module> -->
+					<module>org.ednovo.gooru.application.Application</module>
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<logLevel>ERROR</logLevel>
-					<style>${gwt.style}</style>
-					<extraJvmArgs>-XX:MaxPermSize=1024m -Xmx4024m</extraJvmArgs>
+					<style>PRETTY</style>
+					<!-- <extraJvmArgs>-XX:MaxPermSize=1024m -Xmx4024m</extraJvmArgs> -->
+					<extraJvmArgs>-XX:MaxPermSize=2048m -Xmx4096m</extraJvmArgs>
+					<localWorkers>3</localWorkers>
+					<!-- <extraJvmArgs>-Xmx896M -Xms2048m -XX:PermSize=64m -XX:MaxPermSize=128m</extraJvmArgs> -->
 					<copyWebapp>true</copyWebapp>
 				</configuration>
 				<dependencies>
@@ -501,11 +550,61 @@
 					<dependency>
 						<groupId>com.google.gwt</groupId>
 						<artifactId>gwt-dev</artifactId>
-						<version>${gwtVersion}</version>
+						<version>2.7.0</version>
 					</dependency>
 				</dependencies>
 			</plugin>
-
+			<plugin>
+				<groupId>com.samaxes.maven</groupId>
+				<artifactId>minify-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>minify-css</id>
+						<goals>
+							<goal>minify</goal>
+						</goals>
+						<configuration>
+							<charset>utf-8</charset>
+							<jsEngine>closure</jsEngine>
+							<cssSourceDir>css</cssSourceDir>
+							<cssSourceFiles>
+                                    <cssSourceFile>search/newsearch.css</cssSourceFile>
+                                    <cssSourceFile>search/searchnoresults.css</cssSourceFile>
+                                    <cssSourceFile>search/search-result-resources.css</cssSourceFile>
+                                </cssSourceFiles>
+							<cssSourceIncludes>
+								<cssSourceInclude>*.css</cssSourceInclude>
+							</cssSourceIncludes>
+							<cssSourceExcludes>
+								<cssSourceExclude>*.min.css</cssSourceExclude>
+								<cssSourceExclude>embed.css</cssSourceExclude>
+							</cssSourceExcludes>
+							<cssFinalFile>main-styles.css</cssFinalFile>
+							<!-- JS Minify -->
+							<jsSourceDir>scripts</jsSourceDir>
+							<jsSourceIncludes>
+									<jsSourceInclude>01_bootstrap.js</jsSourceInclude>
+									<jsSourceInclude>02_wow.js</jsSourceInclude>
+									<jsSourceInclude>03_custom.js</jsSourceInclude>
+									<jsSourceInclude>jquery-migrate-1.2.1.js</jsSourceInclude>
+									<jsSourceInclude>04_highcharts.js</jsSourceInclude>
+									<jsSourceInclude>05_basicscripts.js</jsSourceInclude>
+									<jsSourceInclude>06_errorImageFunction.js</jsSourceInclude>
+									<jsSourceInclude>07_push-menu.js</jsSourceInclude>
+									<jsSourceInclude>09_jquery.dataTables.js</jsSourceInclude>
+							</jsSourceIncludes>
+							<jsSourceExcludes>
+								<jsSourceExclude>*.min.js</jsSourceExclude>
+								<jsSourceExclude>08_dataTables.fixedColumns.js</jsSourceExclude>
+							</jsSourceExcludes>
+							<jsFinalFile>main-script.js</jsFinalFile>
+							<warSourceIncludes>*.min.js</warSourceIncludes>
+							<warSourceIncludes>*.min.css</warSourceIncludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- Copy static web files before executing gwt:run -->
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -528,8 +627,51 @@
 							</resources>
 						</configuration>
 					</execution>
+					<execution>
+					        <id>copy-resources-conf-file</id>
+					        <phase>validate</phase>
+					        <goals>
+					          <goal>copy-resources</goal>
+					        </goals>
+					        <configuration>
+								<outputDirectory>${basedir}/src/main/resources/config</outputDirectory>
+								<overwrite>true</overwrite>
+								<echo>Copy only filter-${env}.properties file to config folder.</echo>
+								<resources>
+									<resource>
+										<directory>build/</directory>
+										<includes>
+											<include>filter-${env}.properties</include>
+										</includes>
+	            						<filtering>false</filtering>
+	        						</resource>
+	      						</resources>
+					        </configuration>
+				    </execution>
 				</executions>
 			</plugin>
+			<plugin>
+			    <groupId>com.coderplus.maven.plugins</groupId>
+			    <artifactId>copy-rename-maven-plugin</artifactId>
+			    <version>1.0</version>
+			    <executions>
+			      <execution>
+
+			        <id>rename-file</id>
+			        <phase>validate</phase>
+			        <goals>
+			          	<goal>rename</goal>
+			        </goals>
+
+			        <configuration>
+			        	<overwrite>true</overwrite>
+			        	<echo>Rename filter-${env}.properties file to config.properties</echo>
+						<sourceFile>${basedir}/src/main/resources/config/filter-${env}.properties</sourceFile>
+						<destinationFile>${basedir}/src/main/resources/config/config.properties</destinationFile>
+			        </configuration>
+			      </execution>
+			    </executions>
+			  </plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -537,13 +679,65 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>**/*.xml</include>
-					<include>**/*.css</include>
+					<include>**/*.min.css</include>
 					<include>**/*.html</include>
-					<include>**/*.js</include>
+					<include>**/*.min.js</include>
 					<include>**/*.</include>
 					<include>**/*.properties</include>
 				</includes>
 			</resource>
 		</resources>
+		<!-- <pluginManagement>
+			<plugins>
+				This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.1,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement> -->
 	</build>
+	<!-- <reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.7.0</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>compile-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting> -->
+
 </project>

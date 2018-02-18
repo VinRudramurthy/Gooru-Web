@@ -60,6 +60,8 @@ public  class GooruImagesView extends Composite implements HasClickHandlers{
 	public GooruImagesView() {
 		super();
 		initWidget(uiBinder.createAndBindUi(this));
+		profileGooruDefaultImage.getElement().setId("fpnlProfileGooruDefaultImage");
+		gooruDefaultImage.getElement().setId("imgGooruDefaultImage");
 	}
 	
 	public void setImageUrl(String imageUrl){

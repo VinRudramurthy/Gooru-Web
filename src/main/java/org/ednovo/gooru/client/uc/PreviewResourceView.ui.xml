@@ -2,25 +2,29 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:header="urn:import:org.ednovo.gooru.client.mvp.play.collection.header" xmlns:uc="urn:import:org.ednovo.gooru.client.uc">
 	<ui:style field= "playerStyle" src="previewresourcestyle.css"/>
-	<g:FlowPanel styleName="{playerStyle.resourceContainer}" ui:field="resourceThumbContainer">
-        <g:FlowPanel styleName="{playerStyle.resourceBlock}" ui:field="resourceImageContainer">
-        	<g:FlowPanel styleName="{playerStyle.resource-thumbnail}" >  
-				<g:Image styleName="{playerStyle.resource-image}" ui:field="resourceThumbnail"></g:Image>
-				<g:Label styleName="{playerStyle.resource-type}" ui:field="resourceTypeImage"></g:Label>
+	<g:HTMLPanel styleName="{playerStyle.container}">
+		<g:FlowPanel styleName="{playerStyle.resourceContainer}" ui:field="resourceThumbContainer">
+	        <g:FlowPanel styleName="{playerStyle.resourceBlock}" ui:field="resourceImageContainer">
+	        	<g:FlowPanel styleName="{playerStyle.resource-thumbnail}" >  
+					<g:Image styleName="{playerStyle.resource-image}" ui:field="resourceThumbnail"></g:Image>
+					<g:Label styleName="{playerStyle.resource-type}" ui:field="resourceTypeImage"></g:Label>
+				</g:FlowPanel>
+				 <g:Label styleName="{playerStyle.number}" ui:field="resourceNumber"></g:Label>
+	             <g:HTML styleName="{playerStyle.restitle} navigationText" ui:field="resourceTitle"></g:HTML>
+	             
 			</g:FlowPanel>
-			 <g:Label styleName="{playerStyle.number}" ui:field="resourceNumber"></g:Label>
-             <g:HTML styleName="{playerStyle.restitle} navigationText" ui:field="resourceTitle"></g:HTML>
-		</g:FlowPanel>
-        <g:FlowPanel styleName="{playerStyle.toolTip}">
-            <g:Label styleName="{playerStyle.resourceNumber}" ui:field="resourceIndex"></g:Label>
-            <g:FlowPanel styleName="{playerStyle.resourceInfo}">
-                <g:HTML styleName="{playerStyle.title} navigationText" ui:field="resourceHoverTitle"></g:HTML>
-                <g:Label styleName="{playerStyle.type}" ui:field="resourceCategory"></g:Label>
-                <g:Label styleName="{playerStyle.source}" ui:field="resourceSourceName"></g:Label>
-            </g:FlowPanel>
-        </g:FlowPanel>
-    </g:FlowPanel>
-    
+	        <g:FlowPanel styleName="{playerStyle.toolTip}">
+	            <g:Label styleName="{playerStyle.resourceNumber}" ui:field="resourceIndex"></g:Label>
+	            <g:FlowPanel styleName="{playerStyle.resourceInfo}">
+	                <g:HTML styleName="{playerStyle.title} navigationText" ui:field="resourceHoverTitle"></g:HTML>
+	                <g:Label styleName="{playerStyle.type}" ui:field="resourceCategory"></g:Label>
+	                <g:Label styleName="{playerStyle.source}" ui:field="resourceSourceName"></g:Label>
+	            </g:FlowPanel>
+	        </g:FlowPanel>
+	        
+	    </g:FlowPanel>
+	    <g:FlowPanel styleName="{playerStyle.ratingContainer}" ui:field="ratingWidgetPanel"></g:FlowPanel>
+    </g:HTMLPanel>
 </ui:UiBinder>

@@ -1,0 +1,87 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+    xmlns:span="urn:import:org.ednovo.gooru.client.uc" xmlns:panel="urn:import:org.ednovo.gooru.client.ui">
+	<ui:with field="i18n" type="org.ednovo.gooru.application.shared.i18n.MessageProperties" />
+	<ui:style src=""></ui:style>
+	<g:HTMLPanel>
+	    <span:LoadingUc ui:field="cropImageLoading"/>
+		<g:HTMLPanel styleName="dashboardContainer geryBackgroundBody" ui:field="mainContainer">
+		    <g:HTMLPanel ui:field="emptyDataContainer"></g:HTMLPanel>
+			<g:HTMLPanel styleName="container" ui:field="topContainer">
+			   <div class="row">
+			      <div class="classProgressIndications teachReportUnitNavigationView no-gutter">
+			         <div class="col-md-6 col-sm-6">
+			            <panel:HTMLEventPanel ui:field="allContentPanel" styleName="studentCourseReportProgressHeader cursorPointer">
+			               <span:SpanPanel styleName="left-arrow" ui:field="headerLeftArrow"></span:SpanPanel> 
+			               <span:SpanPanel ui:field="textLbl"></span:SpanPanel>
+			            </panel:HTMLEventPanel>
+			         </div>
+					 <g:HTMLPanel styleName="col-md-6 col-sm-6" ui:field="unitLinks">
+					     <div class="scoreStatus">
+			               <g:Label styleName="red" text="{i18n.GL3469_19}"></g:Label>
+			               <g:Label styleName="org" text="{i18n.GL3469_20}"></g:Label>
+			               <g:Label styleName="yellowgreen" text="{i18n.GL3469_21}"></g:Label>
+			               <g:Label styleName="lightgreen" text="{i18n.GL3469_22}"></g:Label>
+			               <g:Label styleName="green" text="{i18n.GL3469_23}"></g:Label>
+						 </div>
+					 </g:HTMLPanel>
+			         <g:HTMLPanel styleName="col-md-6 col-sm-6" ui:field="scoreLinks">
+						<g:HTMLPanel styleName="my-classes-attempt-menu pull-right">
+							<g:HTMLPanel><span class="thinkGreenSquare"></span><span:StrongPanel text="{i18n.GL2278}"></span:StrongPanel></g:HTMLPanel>
+							<g:HTMLPanel><span class="orangeSquare"></span><span:StrongPanel text="{i18n.GL2279}"></span:StrongPanel></g:HTMLPanel>
+						</g:HTMLPanel>
+					 </g:HTMLPanel>
+					 <g:HTMLPanel styleName="col-md-6 col-sm-6" ui:field="collectionLinks">
+						<g:HTMLPanel styleName="my-classes-attempt-menu pull-right">
+							<g:HTMLPanel><span class="greenSqaure"></span><span:StrongPanel text="{i18n.GL3469_31}"></span:StrongPanel></g:HTMLPanel>
+							<g:HTMLPanel><span class="orgSqaure"></span><span:StrongPanel text="{i18n.GL3469_32}"></span:StrongPanel></g:HTMLPanel>
+							<g:HTMLPanel><span class="redSqaure"></span><span:StrongPanel text="{i18n.GL3469_33}"></span:StrongPanel></g:HTMLPanel>
+						</g:HTMLPanel>
+					 </g:HTMLPanel>
+					 <div class="clearfix"></div>
+			      </div>
+			   </div>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="LearningMapContainer padding-bottom-0" ui:field="learningMapContainer">
+			   <div class="container">
+			      <g:HTMLPanel styleName="row" ui:field="heightPanel">
+					<g:HTMLPanel styleName="headerLinksContainer teachReportUnitNavigationView" ui:field="headerLinksContainer">
+					   <g:HTMLPanel styleName="col-md-7 col-xs-7 col-sm-6">
+					      <g:HTMLPanel styleName="headerBackLinkBox">
+					         <panel:HTMLEventPanel ui:field="currentContentPanel">
+					             <span:SpanPanel ui:field="currentContentName"></span:SpanPanel>
+					         </panel:HTMLEventPanel>
+					      </g:HTMLPanel>
+					   </g:HTMLPanel>
+						<g:HTMLPanel styleName="col-md-5 col-xs-5 col-sm-6" ui:field="assessmentLinks">
+							<g:HTMLPanel styleName="my-classes-assessment-menu pull-right">
+								<panel:HTMLEventPanel styleName="assessmentIcon cursorPointer" ui:field="assessmentIcon">
+								    <g:HTMLPanel styleName="iconImage" ui:field="assStylePanel">
+								        <g:InlineLabel text="{i18n.GL1325}"></g:InlineLabel>
+										<g:InlineLabel styleName="text" text="{i18n.GL2288}"></g:InlineLabel>
+									</g:HTMLPanel>
+								</panel:HTMLEventPanel>
+								<panel:HTMLEventPanel styleName="collectionIcon cursorPointer" ui:field="collectionIcon">
+								    <g:HTMLPanel styleName="iconImage" ui:field="collStylePanel">
+								        <g:InlineLabel text="{i18n.GL1754}"></g:InlineLabel>
+										<g:InlineLabel styleName="text" text="{i18n.GL3469_34}"></g:InlineLabel>
+								    </g:HTMLPanel>
+								</panel:HTMLEventPanel>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+						<g:HTMLPanel styleName="col-md-5 col-xs-5 col-sm-6" ui:field="previewLinks">
+							<g:HTMLPanel styleName="pull-right">
+								<g:Button styleName="secondary downloadBtnIcon" ui:field="btnDownload"  text="{i18n.GL4008}"></g:Button>
+								<g:Button styleName="primary previewBtnIcon" ui:field="btnPreview"></g:Button>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+					   <g:HTMLPanel styleName="clearfix"></g:HTMLPanel>
+					</g:HTMLPanel>
+			      </g:HTMLPanel>
+			   </div>
+			</g:HTMLPanel>
+			<g:Frame ui:field="downloadFile"></g:Frame>
+			<g:HTMLPanel ui:field="bodyView"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -40,36 +40,47 @@ public interface AlmostDoneUcCBundle  extends ClientBundle {
 	
 	public interface AlmostDoneUcCss extends CssResource
 	{
-		String almostDoneFormInputBottomText();
-		String registrationPopupContainer();
-		String registrationPopupInnerdiv();
-		String registrationPopupHeaderBg();
-		String registrationPopupHeaderTitle();
-		String registrationPopupCloseBtnContainer();
-		String registrationPopupBtnSprite();
-		String registrationPopupCloseBtn();
-		String registrationPopupDesc();
-		String registrationPopupInputContainer();
-		String registrationPopupInputText();
-		String registrationPopupInputOuterDiv();
-		String registrationPopupInputControl();
-		String registrationPopupInputBorderNone();
-		String registrationPopupDownArrContainer();
-		String registrationPopupDownArrSprite();
-		String registrationPopupDownArr();
-		String registrationPopupButtonCotnainer();
-		String registrationLegalMessage();
-		String registrationPopupBlueButton();
-		String registrationPopupButtonText();
-		String registrationPopupDropdownControl();
-		String registrationPopupDropdownDesc();
-		String registrationPopupDropdown();
-		String registrationPopupDropdownList();
-		String registrationPopupButton();
-		String registrationPopupRoleText();
-		String registrationPopupInputDropDownText();
-		String almostDoneFormInputBottomRoleText();
-		String anchorText();
+		String popup();
+		String imgBG();
+		String popupInner();
+		String popupHeader();
+		String closeButton();
+		String popupContent();
+		String h1();
+
+		String subheader();
+		String userInfoContainer();
+		String ssoEmail();
+		String role();
+		String roleOption();
+		String teacherRole();
+		String roleOptionImage();
+		String tooltipContainer();
+		String arrowBorder();
+		String arrow();
+		String tooltipContent();
+		String tooltipContentTitle();
+		String studentRole();
+		String parentRole();
+
+		String otherRole();
+		String chooseUsername();
+		String questionHoverContainer();
+		String inputRow();
+		String horizontalTooltipContainer();
+		String submitRegistration();
+		String textUserName();
+		String roleLabel();
+		String teacherRoleSelected();
+		String studentRoleSelected();
+		String parentRoleSelected();
+		String otherRoleSelected();
+		String studentRoleDefault();
+		String userRegErrorStyle();
+		String errorLbl();
+		String usernameToolTipContainer();
+		String roleStep1();
+		String unameStep2();
 	}
 	@Source("AlmostDonePopUp.css")
 	AlmostDoneUcCss css();

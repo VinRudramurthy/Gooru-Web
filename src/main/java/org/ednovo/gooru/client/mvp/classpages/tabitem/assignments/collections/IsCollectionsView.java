@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.classpages.tabitem.assignments.collections;
 
-import org.ednovo.gooru.client.child.IsChildView;
+import org.ednovo.gooru.application.client.child.IsChildView;
 
 /**
  * 
@@ -42,9 +42,111 @@ import org.ednovo.gooru.client.child.IsChildView;
  * @Reviewer:
  */
 public interface IsCollectionsView extends IsChildView<CollectionsPresenter> {
+	/**
+	 * 
+	 * @function updateDirection 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param directionText
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	public void updateDirection(String directionText);
+	/**
+	 * 
+	 * @function updateDueDate 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param dueDate
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	public void updateDueDate(String dueDate);
+	/**
+	 * 
+	 * @function removeClasspageItemWidget 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
 	public void removeClasspageItemWidget();
+	/**
+	 * 
+	 * @function updateCollectionStatus 
+	 * 
+	 * @created_date : 07-Dec-2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * @parm(s) : @param readStatus
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 *
+	 */
+	public void updateCollectionStatus(String readStatus);
+	
+	/**
+	 * @function setButtonVisibility 
+	 * 
+	 * @created_date : Jun 18, 2014
+	 * 
+	 * @description
+	 * 
+	 * 
+	 * 
+	 * @return : void
+	 *
+	 * @throws : <Mentioned if any exceptions>
+	 *
+	 * 
+	 *
+	 * 
+	*/
+	
+	void setButtonVisibility();
+	/**
+	 * This method is used to set the view collection analytics drop down
+	 * @param isaggregateData
+	 */
+	void setViewCollectionAnalytics(boolean isaggregateData);
 	
 }
 

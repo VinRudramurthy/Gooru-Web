@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:span="urn:import:org.ednovo.gooru.client.uc">
+	<ui:style src=""></ui:style>
+	<g:HTMLPanel>
+	    <h3 class="pageSubHeader">Select content to publish</h3>
+		<g:HTMLPanel ui:field="allClassPanel">
+			<div class="siteInfo">
+			   <div class="row">
+			      <div class="col-md-9">
+			         <p><g:Anchor ui:field="anrAllClasses">All Classes</g:Anchor> &gt; <span:SpanPanel ui:field="className"></span:SpanPanel> </p>
+			         <p class="small">Select content to publish to your class. Click save &amp; selected content will show up in your class.</p>
+			      </div>
+			      <div class="col-md-3 ButtonRight ButtonLeft">
+			         <g:Button styleName="primary" ui:field="btnPublish">Publish</g:Button>
+			      </div>
+			      <div class="clearfix"></div>
+			   </div>
+			</div>
+			<g:HTMLPanel styleName="tableItems" ui:field="tableItems"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

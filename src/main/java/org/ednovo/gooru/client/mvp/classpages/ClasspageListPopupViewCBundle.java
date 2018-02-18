@@ -28,7 +28,21 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 
-
+/**
+ * 
+ * @fileName : ClasspageListPopupViewCBundle.java
+ *
+ * @description : 
+ *
+ *
+ * @version : 1.0
+ *
+ * @date: 06-Dec-2014
+ *
+ * @Author Gooru Team
+ *
+ * @Reviewer:
+ */
 public interface ClasspageListPopupViewCBundle extends ClientBundle {
 
 	static final ClasspageListPopupViewCBundle INSTANCE = GWT
@@ -69,6 +83,12 @@ public interface ClasspageListPopupViewCBundle extends ClientBundle {
 		String classpageTitleHeaderActive();
 		
 		String classpageLoadingOnPagination();
+		
+		String inputContainer();
+
+		String tooltipContentTitle();
+
+		String classCodeTxtBox();
 	}
 
 	@Source("ClasspageListPopup.css")

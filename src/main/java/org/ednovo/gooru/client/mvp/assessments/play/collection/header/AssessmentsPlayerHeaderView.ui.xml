@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style field= "headerStyle" src="collectionHeader.css"/>
+	<ui:with type="org.ednovo.gooru.client.uc.PlayerBundle" field="palyerBundle" />
+	<g:FlowPanel styleName="{headerStyle.header}">
+		<g:FlowPanel styleName="{headerStyle.header-inner}">
+			<g:HTML styleName="{headerStyle.player-resource-title}" ui:field="resourceTitle"></g:HTML>
+			<!-- <g:Label styleName="{palyerBundle.getPlayerStyle.thumbsDownNormal}" ui:field="thumbsDownButton"></g:Label>
+			<g:Label styleName="{palyerBundle.getPlayerStyle.thumbsUpNormal}" ui:field="thumbsUpButton"></g:Label> -->
+			<g:FlowPanel styleName="{headerStyle.tabs} {headerStyle.player_buttons}">
+			    <g:Button styleName="{palyerBundle.getPlayerStyle.flagButtonDisable} {headerStyle.tabs}" ui:field="flagButton"></g:Button>
+				<g:Button styleName="{palyerBundle.getPlayerStyle.addButtonDisabled} {headerStyle.tabs}" ui:field="addButton"></g:Button>
+				<g:Button styleName="{palyerBundle.getPlayerStyle.infoButtonDisabled} {headerStyle.tabs}" ui:field="infoButton"></g:Button>
+				<g:Button styleName="{palyerBundle.getPlayerStyle.shareButtonDisabled} {headerStyle.tabs}" ui:field="shareButton"></g:Button>
+				<g:Button styleName="{palyerBundle.getPlayerStyle.narrationButtonDisabled} {headerStyle.tabs}" ui:field="narrationButton"></g:Button>
+				<g:Button styleName="{palyerBundle.getPlayerStyle.navigationButtonDisabled} {headerStyle.tabs}" ui:field="navigationButton"></g:Button>
+				<g:Anchor styleName="{headerStyle.player-studentview-button}" ui:field="studentViewButton"></g:Anchor>
+			</g:FlowPanel>
+		</g:FlowPanel>
+		<g:Label ui:field="closeButtonForCollection" styleName="{headerStyle.close-button}"></g:Label>
+	</g:FlowPanel>
+</ui:UiBinder>

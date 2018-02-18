@@ -27,7 +27,7 @@ package org.ednovo.gooru.client.mvp.home.library.assign;
 /**
  * 
  */
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * @author Gooru Team

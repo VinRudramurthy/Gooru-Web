@@ -1,0 +1,1138 @@
+header {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 98;
+	background: #333;
+	height: 50px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#515151), to(#333));
+	background: -webkit-linear-gradient(top, #515151, #333);
+	background: -moz-linear-gradient(top, #515151, #333);
+	background: -ms-linear-gradient(top, #515151, #333);
+	background: -o-linear-gradient(top, #515151, #333);
+}
+#headerMainPanel .goorusearchTextFont{
+	width: 200%;
+position: absolute;
+color: #fbb03b;
+}
+
+#headerMainPanel .menu {
+	color: white;
+	cursor: pointer;
+	padding: 18px 10px;
+	cursor: pointer;
+}
+
+#headerMainPanel .menuActive {
+	background-color: #393939;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#292929), to(#414141));
+	background: -webkit-linear-gradient(top, #292929, #414141);
+	background: -moz-linear-gradient(top, #292929, #414141);
+	background: -ms-linear-gradient(top, #292929, #414141);
+	background: -o-linear-gradient(top, #292929, #414141);
+	-moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 15px;
+	color: white;
+	font-family: arial;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 18px 16px;
+}
+
+#headerMainPanel .menu:hover {
+	background-color: #393939;
+	color: white;
+	cursor: pointer;
+	padding: 18px 10px;
+	cursor: pointer;
+}
+
+#headerMainPanel .menuActive a, #headerMainPanel .menu a {
+  color: #fff !important;
+  font-size: 12px;
+}
+
+#headerMainPanel .gooruLearningCaption {
+	color: #FFFFFF !important;
+	float: left;
+	font-weight: bold;
+	left: -10px;
+	position: relative;
+	top: 20px;
+}
+
+#headerMainPanel .teachUserNameArrowContainerNew {
+	float: right;
+	width: 11px;
+	height: 6px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+#headerMainPanel .downArrow {
+	background: url(../images/teach-and-study-sprite.png) no-repeat;
+	background-position: 0 -671px;
+	width: 11px;
+	height: 6px;
+}
+
+
+
+
+#headerMainPanel .username {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 8px;
+	padding-right: 0px;
+	float: left;
+}
+
+#headerMainPanel .usernameContainer,#LinkheaderElement5 {
+	padding: 10px !important;
+	padding-right: 5px;
+	height: 50px;
+}
+
+#headerMainPanel .resourceRightsInnerPopup {
+	clear: both;
+	color: #515151;
+	font-size: 15px;
+	font-weight: normal;
+	border: 1px solid #ddd;
+	padding: 10px;
+	background-color: white;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+#headerMainPanel .anchorText {
+	text-decoration: none !important;
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+#headerMainPanel .profileImage {
+	border-radius: 50px;
+	box-shadow: 0 0 0 2px #87badd;
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+#headerMainPanel .borderRightMenu {
+	border-right: 2px solid #515151;
+}
+
+#headerMainPanel.container {
+	height: 10px;
+}
+
+#headerMainPanel .gooruLearningIcon {
+	background: url("${cdn.endpoint}/images/landing-page-sprite.png") -8px -207px transparent;
+	float: left;
+	height: 30px;
+	margin: 10px 5px 10px 0px;
+	width: 108px;
+}
+
+#headerMainPanel .discoverDropDown {
+	width: 8px;
+	height: 4px;
+	background: url(../images/library/partners/discover_arrow.png) no-repeat;
+	float: right;
+	margin-left: 7px;
+	margin-top: 6px;
+}
+
+#headerMainPanel .logo {
+	z-index: 99999;
+}
+
+#headerMainPanel .header-searchbox {
+	padding-left: 0;
+	padding-right: 0;
+	width: 28%;
+}
+
+#headerMainPanel .header-searchbox .form-group {
+	width: 152px;
+}
+
+#headerMainPanel .header-searchbox .navbar-form .form-control {
+	width: 100% !important;
+	padding-right: 20px;
+	margin-bottom: 0px;
+}
+
+#headerMainPanel .header-searchbox .form-control {
+	font-size: 13px;
+	color: #999999;
+}
+
+#headerMainPanel .header-searchbox .form-group {
+	position: relative;
+}
+
+#headerMainPanel .header-mainmenu {
+	width: 55% !important;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default {
+	background-color: transparent;
+	border: none;
+}
+
+#headerMainPanel .header-mainmenu .navbar {
+	margin-bottom: 0;
+}
+
+#headerMainPanel .header-mainmenu .nav {
+	float: right;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>li>a
+	{
+	color: #ffffff;
+	padding-bottom: 17px;
+	padding-top: 17px;
+	font-size: 12px;
+}
+
+#headerMainPanel .header-mainmenu .nav>li {
+	border-right: 1px solid #616161;
+}
+
+#headerMainPanel .header-mainmenu .nav>li:last-child {
+	border-right: none;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>.open>a,#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>.open>a:hover,#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>.open>a:focus
+	{
+	background-color: #393939;
+	color: #ffffff;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>li>a:hover,#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>li>a:focus
+	{
+	color: #ffffff;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>li>a:hover,#headerMainPanel .header-navbar-default .navbar-nav>li>a:focus
+	{
+	background-color: #393939;
+	color: #ffffff;
+	opacity: 1;
+}
+
+#headerMainPanel .header-mainmenu .nav>li.noborder {
+	border-right: none;
+}
+
+#headerMainPanel .header-mainmenu .navbar {
+	margin-bottom: 0;
+}
+
+#headerMainPanel .header-mainmenu .header-navbar-default {
+	background-color: transparent;
+	border: none;
+}
+
+#headerMainPanel .header-mainmenu .navbar-header {
+	float: right;
+}
+
+#headerMainPanel .banner .header-navbar-default {
+	background-color: transparent;
+	border: none;
+}
+
+#headerMainPanel .banner .header-navbar-default .navbar-nav>li>a {
+	color: #515151;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	padding-left: 47px;
+	padding-right: 47px;
+}
+
+#headerMainPanel .banner .header-navbar-default .navbar-nav>li>a:hover {
+	background: #cccccc;
+}
+
+#headerMainPanel .banner .header-navbar-default {
+	margin-bottom: 0;
+}
+
+#headerMainPanel .banner .navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#headerMainPanel .login {
+	color: #FFFFFF;
+}
+
+#headerMainPanel .login:hover {
+	background-color: #393939;
+}
+
+#headerMainPanel .loggedInfo {
+	color: #FFFFFF;
+	cursor: pointer;
+	float: left;
+	padding: 18px 16px;
+}
+
+#headerMainPanel .loggedInfo:HOVER {
+	background-color: #393939;
+}
+
+#headerMainPanel .signup {
+	margin-top: 9px;
+	width: 68px;
+}
+
+#headerMainPanel .banner .header-navbar-default .navbar-nav>li:last-child
+	{
+	background: none;
+}
+
+#headerMainPanel .logoutDownArrow {
+	width: 30px;
+	height: 30px;
+	background: url("${cdn.endpoint}/images/Collection-Search/SettingsIcon.png") no-repeat;
+	float: left;
+	margin: 10px 5px;
+	cursor: pointer;
+}
+
+#headerMainPanel .resourceRightsPopupContainer {
+	margin: 0 auto;
+	width: 479px;
+	position: absolute;
+	left: 31%;
+}
+
+#headerMainPanel .arrowLable {
+	background: url("${cdn.endpoint}/images/ratings/down-arrow.png") 0 12px no-repeat;
+	position: absolute;
+	top: 3px;
+	right: 6px;
+	z-index: 9999999;
+	width: 10px;
+	height: 17px;
+	cursor: pointer;
+}
+
+#headerMainPanel .banner {
+	margin-top: 35px;
+}
+
+#headerMainPanel .banner .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#headerMainPanel .bannerInner .caption {
+	left: 12%;
+	right: 12%;
+	position: absolute;
+	text-align: center;
+	padding-top: 21px;
+}
+
+#headerMainPanel .bannerInner .caption h2 {
+	font-family: 'Arvo', serif !important;
+	font-weight: 600;
+	color: #ffffff;
+	font-size: 36px;
+	text-shadow: 0 2px 4px #666;
+	margin-bottom: 5px;
+}
+
+#headerMainPanel .bannerInner .caption p {
+	color: #ffffff;
+	font-size: 16px;
+	text-shadow: 0 2px 4px #666;
+	margin-bottom: 5px;
+}
+
+#headerMainPanel .bannerInner .caption p.small {
+	font-size: 12px;
+}
+
+#headerMainPanel .bannerInner .caption p.small a {
+	color: #ffffff;
+	text-decoration: underline !important;
+}
+
+#headerMainPanel .bannerInner .caption .btn {
+	padding: 9px 40px;
+}
+
+#headerMainPanel .searchContainer {
+	margin: 25px 0;
+}
+
+#headerMainPanel .searchContainer .sInner {
+	background: #ffffff;
+	border-radius: 4px 4px;
+	padding: 10px 9px;
+	margin-bottom: 15px;
+}
+
+#headerMainPanel .searchContainer .sInner p {
+	font-size: 13px;
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+#headerMainPanel .searchContainer .sInner p.searchFind {
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+#headerMainPanel .searchContainer .col-md-3 .animation {
+	margin-right: 4px;
+	float: left;
+}
+
+#headerMainPanel .searchContainer .col-md-3 h2 {
+	display: inline-block;
+	font-family: 'Arvo', serif !important;
+	font-size: 24px;
+	vertical-align: middle;
+	margin: 44px 0;
+}
+
+#headerMainPanel .searchContainer .col-md-3 .btn {
+	color: #1076BB;
+	padding: 7px 9px;
+	border-radius: 4px;
+	background: #efefef;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd),
+		to(#ddd));
+	background: -webkit-linear-gradient(top, #fdfdfd, #ddd);
+	background: -moz-linear-gradient(top, #fdfdfd, #ddd);
+	background: -ms-linear-gradient(top, #fdfdfd, #ddd);
+	background: -o-linear-gradient(top, #fdfdfd, #ddd);
+	border: 1px solid #ddd;
+}
+
+#headerMainPanel .searchContainer .col-md-3 .btn:hover {
+	background: #efefef;
+	cursor: pointer;
+}
+
+#headerMainPanel .searchContainer .col-md-3 .form-control {
+	/*	float: left;*/
+	display: inline-block;
+	width: 64%;
+}
+
+#headerMainPanel .searchContainer .col-md-3 .searchMAIN .BTN {
+	float: left;
+}
+
+#headerMainPanel .sprite {
+	background-image: url("${cdn.endpoint}/images/landing-page/fmos.png");
+	background-repeat: no-repeat;
+	display: block;
+}
+
+#headerMainPanel .spriteFind {
+	width: 90px;
+	height: 90px;
+	background-position: -2px -2px;
+}
+
+#headerMainPanel .searchButton {
+	margin-left: 5px;
+}
+
+#headerMainPanel .spriteRemix {
+	width: 90px;
+	height: 90px;
+	background-position: -190px -2px;
+}
+
+#headerMainPanel .spacing {
+	margin-bottom: 7px !important;
+}
+
+#headerMainPanel .spriteShare {
+	width: 90px;
+	height: 90px;
+	background-position: -284px -2px;
+}
+
+#headerMainPanel .btnBlock {
+	width: 100%;
+	font-size: 14px;
+}
+
+#headerMainPanel .spriteMonitor {
+    width: 90px;
+    height: 89px;
+    background-position: -96px -2px;
+}
+
+#headerMainPanel .dropdowDisplay {
+	display: block;
+	margin-top: 0;
+	font-size:12px;
+	left: auto;
+	border-radius : 0 0 4px 4px;
+}
+
+#headerMainPanel .dropdowDisplay>li>a:hover {
+	background-color: #cfe3f1;
+}
+
+#headerMainPanel .rightArrow {
+	float: right;
+	margin-top: -16px;
+	margin-right: 10px;
+}
+
+#headerMainPanel .partnersDropdown {
+	position: absolute;
+	top: 38%;
+	left: 100%;
+}
+
+#headerMainPanel .districDropDown {
+	position: absolute;
+	top: 64%;
+	left: 100%;
+}
+
+#headerMainPanel .folderToolTipLabel {
+	padding: 6px !important;
+	cursor: pointer;
+	padding-left: 40px !important;
+	background: url(../images/folders/panel/folder-smaller-icon.png) 10px
+		no-repeat;
+}
+
+#headerMainPanel .collectionToolTipLabel {
+	padding: 6px !important;
+	cursor: pointer;
+	padding-left: 40px !important;
+	background: url(../images/folders/panel/collection-smaller-icon.png) 10px
+		no-repeat;
+}
+
+#headerMainPanel .assessmentToolTipLabel {
+	padding: 6px !important;
+	cursor: pointer;
+	padding-left: 40px !important;
+	background: url(../images/folders/panel/assessment-smal.png) 10px
+		no-repeat;
+	background-size: 21px 15px;
+}
+
+
+#headerMainPanel .tooltipContainer {
+	position: absolute;
+	display: block;
+}
+
+#headerMainPanel .displayRight{
+	right: 0;
+}
+
+#headerMainPanel .logoutText {
+	font-size: 13px !important;
+	color: #515151 ;
+	cursor: pointer !important;
+	float: left;
+	text-decoration: none !important;
+	padding: 4px 0;
+	padding-left: 11px;
+	width: 100%;
+	box-sizing: border-box;
+
+}
+
+#headerMainPanel .logoutText:hover {
+	background-color: #CFE3F1;
+	border-radius: 2px 2px 2px 2px;
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+
+#headerMainPanel .userMenuBottomLine {
+	background-color: #CCC;
+	width: 100%;
+	height: 1px;
+	float: left;
+}
+
+#headerMainPanel .classpageListContainer {
+	background-color: white;
+	width: 204px !important;
+	height: auto;
+	max-height: 265px !important;
+	border: 1px solid #ddd;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 99999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media ( max-width : 767px) {
+	header {
+		position: relative !important;
+	}
+	#headerMainPanel .header-searchbox .navbar-form {
+		box-shadow: none;
+		border-bottom: none;
+		margin: 0 0;
+	}
+	#headerMainPanel .bannerInner img {
+		min-height: 130px;
+	}
+	#headerMainPanel .bodyWrapper {
+		margin-top: 0;
+	}
+	#headerMainPanel .bannerInner .caption {
+		left: 5%;
+		position: absolute;
+		right: 6%;
+		text-align: center;
+		top: -13%;
+	}
+	#headerMainPanel .gooruLearningIcon {
+		margin: 10px;
+	}
+	#headerMainPanel .header-searchbox .navbar-form .form-control {
+		width: 88% !important;
+		margin: 0 auto;
+	}
+	#headerMainPanel .header-searchbox {
+		padding-right: 3px !important;
+	}
+	#headerMainPanel .banner {
+		margin-top: -36px;
+	}
+	#headerMainPanel .header-mainmenu .navbar-header .navbar-toggle {
+		position: absolute;
+		right: 0;
+	}
+	#headerMainPanel .getStart .getContentContainer h4 {
+		font-size: 20px;
+	}
+	#headerMainPanel .getContentContainer p {
+		font-size: 16px;
+	}
+	#headerMainPanel .getStart .getInnerRight h3 {
+		font-size: 30px;
+	}
+	#headerMainPanel .getInnerRight p {
+		font-size: 16px;
+	}
+	#headerMainPanel .getStart .getInnerRight h4 {
+		font-size: 20px;
+	}
+	#headerMainPanel .communityblock {
+		text-align: center;
+	}
+	#headerMainPanel .communityblock a {
+		display: block;
+		margin: 10px 0 0 0;
+	}
+	#headerMainPanel .communityblock a {
+		font-size: 16px;
+	}
+	#headerMainPanel .bannerInner .caption h2 {
+		color: #ffffff;
+		font-family: "Arvo", serif !important;
+		font-size: 18px;
+		font-weight: 600;
+		margin: 2px 5px;
+		text-shadow: 0 2px 4px #666;
+	}
+	#headerMainPanel .bannerInner .caption p {
+		font-size: 12px;
+	}
+	#headerMainPanel .banner #bs-example-navbar-collapse-2 {
+		margin: 0 0;
+	}
+	#headerMainPanel .banner #bs-example-navbar-collapse-3 {
+		margin: 0 0;
+	}
+	#headerMainPanel .banner .navbar-nav {
+		margin: 0 0;
+	}
+	#headerMainPanel .banner .navbar-header {
+		margin: 0 0 !important;
+	}
+	#headerMainPanel .searchContainer .col-md-3 h2 {
+		font-size: 30px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 18px;
+	}
+	#headerMainPanel .searchContainer .sInner .form-control {
+		height: 42px;
+		font-size: 18px;
+	}
+
+
+	#headerMainPanel .social {
+		padding-left: 0;
+		padding-right: 0;
+		text-align: center;
+	}
+	#headerMainPanel .social {
+		text-align: center !important;
+		margin-top: 25px;
+	}
+	footer .col-md-2 {
+		border-right: 1px solid #616161;
+		min-height: 132px;
+	}
+	#headerMainPanel .margin {
+		margin: 15px 0;
+	}
+	#headerMainPanel .header-mainmenu .navbar-toggle {
+		margin-right: 0;
+		margin-top: 13px;
+	}
+	#headerMainPanel .header-searchbox .form-control {
+		height: 37px;
+	}
+	#headerMainPanel .header-searchbox .form-group {
+		width: auto;
+	}
+	#headerMainPanel .header-searchbox {
+		display: none;
+	}
+	#headerMainPanel .header-mainmenu {
+		width: 100% !important;
+		z-index: 5;
+		background: #333;
+	}
+	#headerMainPanel .header-mainmenu .navbar-collapse {
+		width: 100%;
+		float: left;
+		margin-top: 10px;
+	}
+	#headerMainPanel .header-mainmenu .container>.navbar-header, #headerMainPanel .header-mainmenu .container-fluid>.navbar-header,#headerMainPanel .header-mainmenu .container>.navbar-collapse,#headerMainPanel .header-mainmenu .container-fluid>.navbar-collapse
+		{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	#headerMainPanel .header-mainmenu .header-navbar-default .navbar-collapse, #headerMainPanel .header-mainmenu .header-navbar-default .navbar-form
+		{
+		border-color: #333333;
+		height:auto !importnat;
+	}
+	#headerMainPanel .header-mainmenu  .header-navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav .open .dropdown-menu>li>a:focus
+		{
+		color: #ffffff;
+		opacity: 0.7;
+	}
+	#headerMainPanel .header-mainmenu .nav {
+		float: left;
+		width: 100%;
+		margin: 7.5px 0;
+	}
+	#headerMainPanel .header-mainmenu .navbar-collapse {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	#headerMainPanel .searchContainer .col-md-3 h2 {
+		font-size: 30px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 18px;
+	}
+	#headerMainPanel .searchContainer .sInner p>button {
+		font-size: 18px;
+	}
+	#headerMainPanel .searchContainer .sInner .form-control {
+		height: 42px;
+		font-size: 18px;
+	}
+	#headerMainPanel .login a:focus {
+		background-color: #393939;
+		color: #ffffff;
+		opacity: 1;
+	}
+	#headerMainPanel .dropdowDisplay {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
+		color: white;
+	}
+	#headerMainPanel .dropdowDisplay>li>a {
+		color: #ffffff;
+		font-size: 13px;
+	}
+	#headerMainPanel .header-mainmenu .navbar-collapse {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	#headerMainPanel .header-mainmenu .navbar-collapse {
+		width: 100%;
+		float: left;
+		margin-top: 10px;
+	}
+	#headerMainPanel .districDropDown {
+		margin-left: 3%;
+	}
+	#headerMainPanel .header-mainmenu .navbar-header {
+		float: none;
+	}
+	#headerMainPanel .header-mainmenu .nav>li {
+		border-right: 0;
+	}
+	#headerMainPanel .loggedInfo {
+		padding: 18px 0px;
+		float: none;
+	}
+	#headerMainPanel .logoutDownArrow {
+		float: none;
+		display: block;
+	}
+	#headerMainPanel .logoutDownArrow:hover {
+		background-color: #393939;
+	}
+	#headerMainPanel .logoutPanel {
+		background: none;
+	}
+	#headerMainPanel .userMenuBottomLine {
+		height: 0px;
+	}
+	#headerMainPanel .logoutPanel .dropdowDisplay {
+		margin-left: 3%;
+	}
+	#headerMainPanel .arrowLable {
+		background: url("${cdn.endpoint}/images/ratings/down-arrow.png") 0 12px no-repeat;
+		position: absolute;
+		top: 3px;
+		right: 15px;
+		z-index: 9999999;
+		width: 10px;
+		height: 17px;
+		cursor: pointer;
+	}
+	#headerMainPanel .partnersDropdown {
+		margin-left: 3%;
+	}
+	#headerMainPanel .tooltipContainer {
+		position: static;
+		margin-left: 3%;
+	}
+	#headerMainPanel .classpageListContainer {
+		margin-left: 3%;
+	}
+	#headerMainPanel .displayRight {
+		right: 0;
+	}
+	/* Home Page CSS Sprite */
+
+	#headerMainPanel .spacing {
+		margin-bottom: 7px !important;
+	}
+	#headerMainPanel .communityblock .h4 {
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	#headerMainPanel .contributors {
+		margin-top: 10PX;
+		margin-bottom: 10PX;
+	}
+
+	#headerMainPanel .spriteLandingPage {
+
+	}
+
+
+}
+
+@media ( min-width : 480px) and (max-width: 767px) {
+	#headerMainPanel .header-searchbox {
+		display: block !important;
+		z-index: 999;
+	}
+	#headerMainPanel .header-searchbox .form-control {
+		height: 33px;
+	}
+	#headerMainPanel .banner {
+		margin-top: -36px;
+	}
+	#headerMainPanel .displayRight {
+		right: 0;
+	}
+	#headerMainPanel .gooruLearningIcon {
+		margin: 10px;
+	}
+	#headerMainPanel .spacing {
+		margin-bottom: 7px !important;
+	}
+	#headerMainPanel .communityblock .h4 {
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	#headerMainPanel .contributors {
+		margin-top: 10PX;
+		margin-bottom: 10PX;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 991px) {
+	header {
+		position: relative;
+	}
+	#headerMainPanel .banner {
+		/* margin-top: -36px; */
+	}
+	#headerMainPanel .gooruLearningIcon {
+		margin: 0px;
+	}
+	#headerMainPanel .bannerInner .caption {
+		left: 4%;
+		position: absolute;
+		right: 4%;
+		text-align: center;
+		padding-top: 0;
+	}
+	#headerMainPanel .bannerInner .caption h2 {
+		font-size: 33px;
+		margin: 5px 0 0 0;
+	}
+	#headerMainPanel .bannerInner .caption p {
+		font-size: 17px;
+	}
+	#headerMainPanel .bannerInner img {
+		height: 140px;
+		width: 100%;
+	}
+	#headerMainPanel .searchContainer .form-control {
+		height: 43px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 16px;
+	}
+	#headerMainPanel .searchContainer .col-md-3 h2 {
+		font-size: 35px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 14px;
+	}
+	#headerMainPanel .searchContainer .sInner {
+		min-height: 262px;
+	}
+	#headerMainPanel .getStart .getContentContainer h4 {
+		font-size: 25px;
+	}
+	#headerMainPanel .getContentContainer p {
+		font-size: 17px;
+	}
+	#headerMainPanel .getStart .getInnerRight h3 {
+		font-size: 32px;
+	}
+	#headerMainPanel .getStart .getInnerRight h4 {
+		font-size: 22px;
+	}
+	#headerMainPanel .getInnerRight p {
+		font-size: 17px;
+	}
+
+	#headerMainPanel .mission p {
+		font-size: 17px;
+	}
+	#headerMainPanel .margin {
+		margin: 15px 0;
+	}
+
+	#headerMainPanel .social {
+		text-align: center;
+	}
+	footer #headerMainPanel .col-md-2 {
+		border-right: 1px solid #616161;
+		min-height: 132px;
+		padding-left: 20px;
+	}
+	#headerMainPanel .logo {
+		text-align: left;
+		width: 16% !important;
+	}
+	#headerMainPanel .header-searchbox {
+		width: auto !important;
+	}
+	#headerMainPanel .navbar-form {
+		padding: 0px 7px !important;
+	}
+	#headerMainPanel .header-mainmenu {
+		width: auto !important;
+	}
+	#headerMainPanel .header-mainmenu {
+		position: absolute !important;
+		right: 0;
+		top: 0;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	#headerMainPanel .header-mainmenu .header-navbar-default .navbar-nav>li>a
+		{
+		color: #ffffff;
+		padding-bottom: 15px;
+		padding-top: 15px;
+		font-size: 12px;
+	}
+	#headerMainPanel .searchContainer .form-control {
+		height: 43px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 14px;
+	}
+	#headerMainPanel .searchContainer .sInner {
+		min-height: 262px;
+	}
+	#headerMainPanel .searchContainer .sInner p {
+		font-size: 16px;
+	}
+	#headerMainPanel .searchContainer .sInner p>button {
+		font-size: 16px;
+	}
+	#headerMainPanel .searchContainer .col-md-3 h2 {
+		font-size: 35px;
+	}
+	#headerMainPanel .tooltipContainer {
+
+	}
+	#headerMainPanel .menu {
+		padding: 18px 8px;
+	}
+	#headerMainPanel .menu:hover {
+		padding: 18px 8px;
+	}
+	#headerMainPanel .menuActive {
+		padding: 18px 8px;
+	}
+	#headerMainPanel .menuActive:hover {
+		padding: 18px 8px;
+	}
+	#headerMainPanel .districDropDown>li>a {
+		white-space: normal !important;
+	}
+	#headerMainPanel .partnersDropdown>li>a {
+		white-space: normal !important;
+	}
+	#headerMainPanel .arrowLable {
+		background: url("${cdn.endpoint}/images/ratings/down-arrow.png") 0 12px no-repeat;
+		position: absolute;
+		top: 3px;
+		right: 15px;
+		z-index: 9999999;
+		width: 10px;
+		height: 17px;
+		cursor: pointer;
+	}
+	#headerMainPanel .displayRight {
+		right: 0;
+	}
+
+
+	#headerMainPanel .spacing {
+		margin-bottom: 7px !important;
+	}
+	#headerMainPanel .communityblock .h4 {
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	#headerMainPanel .contributors {
+		margin-top: 10PX;
+		margin-bottom: 10PX;
+	}
+}
+
+@media ( min-width : 320px) and (max-width: 479px) {
+	#headerMainPanel .header-searchbox {
+		display: block !important;
+		z-index: 999;
+	}
+	#headerMainPanel .gooruLearningIcon {
+		margin: 10px;
+	}
+	#headerMainPanel .header-searchbox .form-control {
+		height: 33px;
+	}
+	#headerMainPanel .header-searchbox button.primary {
+		display: none;
+	}
+	#headerMainPanel .header-searchbox .form-group {
+		width: 70% !important;
+	}
+	#headerMainPanel .header-searchbox .navbar-form {
+		padding: 6px 0;
+	}
+	#headerMainPanel .banner {
+		margin-top: -36px;
+	}
+	#headerMainPanel .displayRight {
+		right: 0;
+	}
+
+	#headerMainPanel .spacing {
+		margin-bottom: 7px !important;
+	}
+	#headerMainPanel .communityblock .h4 {
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	#headerMainPanel .contributors {
+		margin-top: 10PX;
+		margin-bottom: 10PX;
+	}
+	#headerMainPanel .caption p button #btnHomeSignUp {
+		font-size: 12px;
+		margin-top: -1px;
+	}
+}

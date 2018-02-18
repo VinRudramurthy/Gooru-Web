@@ -24,7 +24,7 @@
  ******************************************************************************/
 package org.ednovo.gooru.client.mvp.play.collection.preview.home.assign;
 
-import org.ednovo.gooru.client.child.ChildPresenter;
+import org.ednovo.gooru.application.client.child.ChildPresenter;
 
 /**
  * 
@@ -42,20 +42,12 @@ import org.ednovo.gooru.client.child.ChildPresenter;
  */
 public class AssignCollectionPresenter extends ChildPresenter<AssignCollectionPresenter, IsCollectionAssign>
 {
-
-	
 	public AssignCollectionPresenter(IsCollectionAssign childView) {
 		super(childView);
 	}
-	
-
-
-	
 	private void onBind() {
 		throw new RuntimeException("Not implemented");
 	}
-	
-	
 	private void onLoad() {
 		throw new RuntimeException("Not implemented");
 	}	

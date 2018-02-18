@@ -42,9 +42,6 @@
 	background: -ms-linear-gradient(top, #666, #515151);
 	/* Opera 11.10+ */
 	background: -o-linear-gradient(top, #666, #515151);
-	/* IE 6-9 */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#666666',
-		EndColorStr='#515151');
 }
 
 .teachPopupContent {
@@ -83,25 +80,6 @@
 	overflow: auto;
 }
 
-.classpageHover {
-	width: 1002px;
-	height: 241px;
-	margin: 0 auto; //
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-	background: url('../images/no-collections.png') no-repeat;
-}
-
-.classpageHoverTitle {
-	font-size: 24px;
-	color: #999;
-	padding: 100px 180px 0px 180px;
-	text-align: center;
-}
-
 .teachContainer {
 	width: 1002px;
 	margin: 0 auto;
@@ -133,7 +111,7 @@
 
 .teachTab .selected {
 	position: relative;
-	left: 7px;
+	/* left: 7px; */
 	border-radius: 5px 0px 0px 5px;
 }
 
@@ -176,7 +154,6 @@
 	vertical-align: top;
 	font-size: 16px;
 	font-weight: bold;
-	padding-bottom: 30px;
 	padding-top: 8px;
 }
 
@@ -217,7 +194,7 @@
 
 .teachDesc {
 	font-size: 12px;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 .checkboxStyle
 {
@@ -239,13 +216,45 @@
 }
 
 .assignDiv {
-	text-align: center;
 	padding-bottom: 20px;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border: 1px solid #ddd;
 	background: #f0f0f0;
+}
+.visibilityDivContainer {
+	margin-bottom:10px;
+}
+
+.radioBtnVisiblity {
+    -webkit-appearance: none;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+-moz-border-radius: 50%;
+outline: none;
+margin: 0;
+float: left;
+
+}
+.radioBtnVisiblitySecondContainer{
+	margin-top:20px;
+}
+
+.radioBtnVisiblity::before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;    
+    border-radius:50%;  
+   -moz-border-radius: 50%;
+	border:1px solid #1076bb;
+    background-color:#fff;
+}
+.radioBtnVisiblity:checked::before {
+   background-color:#1076bb;
 }
 
 .assignTitle {
@@ -261,6 +270,7 @@
 	font-size: 16px;
 	line-height: 240%;
 	text-align: left;
+	font-weight:bold;
 }
 
 .assignTextArea {
@@ -292,7 +302,6 @@
 
 .assignSec {
 	width: 320px;
-	padding: 10px 20px;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -300,7 +309,15 @@
 .assignSecTitle {
 	color: #515151;
 	font-weight: bold;
-	padding: 20px 0px 10px 0px;
+
+}
+
+.assignSecTitleheader {
+	color: #515151;
+	font-weight: bold;
+	padding-top: 8px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .codeContent .icon {
@@ -310,7 +327,7 @@
 
 .input1 {
 	color: #515151;
-	width: 60px !important;
+	width: 84px !important;
 	height: 15px !important;
 	margin-top: 10px;
 	margin-bottom: 15px !important;
@@ -351,10 +368,10 @@
 	margin: 15px 0px;
 }
 
-.btn {
+/* .btn {
 	margin-left: 10px;
 	padding: 7px 20px !important;
-}
+} */
 
 .btn1 {
 	vertical-align: top;
@@ -420,15 +437,6 @@
 	display: inline-block;
 	margin-top: 10px;
 }
-
-.profileImg {
-	display: inline-block;
-	vertical-align: top;
-	width: 50px;
-	height: 50px;
-	background: url(../images/profile.png) no-repeat;
-}
-
 .profileText {
 	display: inline-block;
 	vertical-align: top;
@@ -459,22 +467,60 @@
 }
 
 .twoActions .manage {
-	background: url(../images/manage_list.png) center top no-repeat;
+	background: url(../images/manage_list.png) left top no-repeat;
+	height: 110px;
+    width: 122px;
+    float: left;
+    margin: 0 0;
 }
 
 .twoActions .progress {
 	background: url(../images/class_progress.png) center top no-repeat;
+	height: 110px;
+    width: 122px;
+    float: left;
+    margin: 0 0;
 }
 
 .twoActions div {
 	font-weight: bold;
-	width: 300px;
+	/* width: 450px;*/	
 	font-size: 14px;
 	display: inline-block;
-	margin: 40px 20px;
-	padding-top: 200px;
+	/* margin: 40px 20px; */
+	/* padding-top: 200px; */
 	text-align: center;
 	white-space: normal;
+}
+
+.twoActions .manageText{
+	float: left;
+	/* width: 166px; */
+	text-align: left;
+	margin: 0 0 15px 0;
+}
+
+.twoActions .manageStudents{
+	margin: 50px 0;
+	width: 420px;
+	float: left;
+}
+
+.twoActions .manageProgressStudents{
+	margin: 50px 0;
+	width: 420px;
+}
+
+.twoActions .progressStudents{
+	width: 275px;
+	margin: 0 0;
+	text-align: left;
+}
+
+.twoActions .manageDes{
+	font-weight: normal;
+	margin: 0 0;
+	text-align: left;
 }
 
 .existPopup {
@@ -493,10 +539,6 @@
 	text-align: center;
 	overflow: hidden;
 	white-space: nowrap;
-}
-
-.threeActions .publicImage {
-	background: url(images/Classpage/Features/public.png) center top no-repeat;
 }
 
 .threeActions .analystic {
@@ -548,13 +590,13 @@
 
 .shareTextboxLink {
 	width: 300px;
-	height: 17px;
-	padding: 5px;
+	height: 31px !important;
+	padding: 9px;
 	border: 1px solid #DDD;
 	font-family: arial, sans-serif;
 	font-size: 12px;
-	margin: 10px 3px 0px 10px;
 	background-color: #fff;
+	margin-top: 0px;
 }
 
 .classTypeCheckbox {
@@ -725,6 +767,32 @@ button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
 	text-align: left;
 }
 
+.subBodyInviteContainer{
+	padding: 10px 20px;
+	width:100%;
+	
+}
+
+.leftInviteContainer{
+	width:20%;
+	float:left;
+	margin-top: 29px;
+	
+}
+
+.inviteDivContainer{
+	min-height: 167px;
+}
+
+.rightInviteContainer{
+width: 71%;
+float: left;
+margin-top: 18px;
+margin-left: 43px;
+	
+}
+
+
 .pendingMembers, .activeMembers{
 	color: #515151;
 	font-weight: bold;
@@ -815,7 +883,6 @@ button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
 
 .btnRemove{
     vertical-align: middle;
-    margin-top: -36px;
     margin-left: -10px;
 }
 
@@ -857,4 +924,56 @@ button[disable]:hover, .buttonTooltip:hover .tooltipContainer{
 .seeMoreActive, .seeMorePending, .pleaseWait{
 	float: right;
 }
+
+
+.privacyAlignStyle{
+	margin-right: 2px;
+}
+
+.regularRadioButton input[type="radio"] {
+	display: none;
+}
+
+.regularRadioButton input[type="radio"] + label {
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	border: 1px solid #1076bb;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.regularRadioButton input[type="radio"]:checked + label:after {
+	content: ' ';
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	position: absolute;
+	top:-1px;
+	background: #1076bb;
+	
+	text-shadow: 0px;
+	left: -1px;
+	font-size: 32px;
+}
+
+.regularRadioButton input[type="radio"]:checked + label {
+	background-color: #ffffff;
+	color: #99a1a7;
+	border: 1px solid #1076bb;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.regularRadioButton input[type="radio"] + label:active, .regularRadioButton input[type="radio"]:checked + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.regularRadioButton{
+width: 30px;
+height: 30px;
+float: left;
+text-align: center;
+margin-top: 5px;
+margin-right: 5px;}
 

@@ -1,0 +1,48 @@
+@external .addButonStyleActive;
+.buttonsPanel {
+	width: 660px;
+	margin: 0 auto;
+	white-space: normal;
+}
+
+.tabs_teacher_Summary {
+	
+}
+
+.printSaveContainer {
+	
+}
+
+.addButonStyle {
+	
+}
+
+.mail_icon_image {
+	
+}
+
+.addButonStyleActive {
+	background: #4C98CC !important;
+	cursor: pointer;
+	color: #FFFFFF !important;
+}
+
+.collectionsGroupBtns {
+	
+}
+
+.print_icon_image {
+	
+}
+
+.save_icon_image {
+	
+}
+
+.no-gutter .col-md-1, .no-gutter .col-md-2, .no-gutter .col-md-3, .no-gutter .col-md-4, .no-gutter .col-md-5
+, .no-gutter .col-md-6, .no-gutter .col-md-7, .no-gutter .col-md-8, .no-gutter .col-md-9, .no-gutter .col-md-10
+, .no-gutter .col-md-11, .no-gutter .col-md-12{ 
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+.analyticsPrintSave{}
